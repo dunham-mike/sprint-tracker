@@ -1,20 +1,21 @@
 import React from 'react';
-import Button from '@material-ui/core/Button';
-import CssBaseline from '@material-ui/core/CssBaseline'; // See: https://material-ui.com/components/css-baseline/
+import { ThemeProvider } from '@material-ui/styles';
+import CssBaseline from '@material-ui/core/CssBaseline';
+
+import MainView from './containers/MainView/MainView';
+import Layout from './containers/Layout/Layout';
+import { theme } from './theme/theme';
+
 
 function App() {
-  return (
-    <React.Fragment>
-      <CssBaseline />
-        <div>
-        <Button variant="contained" color="primary">Hello World</Button>
-        <br/>
-        // Layout<br/>
-        Main View<br/>
-        // Layout<br/>
-      </div>
-    </React.Fragment>
-  );
+    return (
+        <ThemeProvider theme={theme}>
+            <CssBaseline />
+            <Layout>
+                <MainView />
+            </Layout>
+        </ThemeProvider>
+    );
 }
 
 export default App;
