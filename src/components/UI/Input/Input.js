@@ -51,7 +51,7 @@ const input = (props) => {
         case('input'):
             inputElement = <input 
                 className={inputClasses.join(' ')} 
-                {...props.elementConfig} 
+                // {...props.elementConfig} 
                 value={props.value}
                 onChange={props.changed}/>;
             break;
@@ -59,7 +59,7 @@ const input = (props) => {
             inputElement = <textarea 
                 className={inputClasses.join(' ')} 
                 rows='3'
-                {...props.elementConfig} 
+                // {...props.elementConfig} 
                 value={props.value}
                 onChange={props.changed}/>;
             break;
@@ -80,7 +80,7 @@ const input = (props) => {
         default:
             inputElement = <input 
                 className={inputClasses.join(' ')} 
-                {...props.elementConfig} 
+                // {...props.elementConfig} 
                 value={props.value}
                 onChange={props.changed}/>;
     }

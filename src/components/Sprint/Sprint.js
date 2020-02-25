@@ -33,7 +33,7 @@ const sprint = (props) => {
                         <ProjectTable 
                             tableData={props.sprint.projects} 
                             tableTitle={'Sprint #' + props.sprint.order + ': ' + props.sprint.startDate + ' to ' + props.sprint.endDate}
-                            sprintType={props.sprintType}
+                            sprintId={props.sprintId}
                             onOpenProject={props.onOpenProject}
                         />
                     </div>

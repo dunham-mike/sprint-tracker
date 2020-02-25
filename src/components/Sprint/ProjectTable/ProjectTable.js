@@ -124,7 +124,7 @@ const projectTable = (props) => {
                   onClick: (event, rowData) => {
                     let newRowData = {...rowData};
                     delete newRowData['tableData'];
-                    return props.onOpenProject(newRowData, props.sprintType, manualColumnNames);
+                    return props.onOpenProject(newRowData, props.sprintId, manualColumnNames);
                   }
                   
                 //   {

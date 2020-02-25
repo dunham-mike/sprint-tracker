@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { withStyles } from '@material-ui/core/styles';
+import { connect } from 'react-redux';
+
 import red from '@material-ui/core/colors/red';
 import Button from '@material-ui/core/Button';
 import SaveIcon from '@material-ui/icons/Save';
@@ -7,6 +9,7 @@ import CancelIcon from '@material-ui/icons/Cancel';
 import CancelOutlinedIcon from '@material-ui/icons/CancelOutlined';
 
 import Input from '../../components/UI/Input/Input';
+import * as actions from '../../store/actions/index';
 
 
 // import classes from './Modal.module.css';
@@ -75,6 +78,7 @@ const styles = theme => ({
 
 class Project extends Component {
     state = {
+        sprintId: null,
         projectData: {
             id: {
                 elementType: 'readonly',
@@ -378,11 +382,11 @@ class Project extends Component {
     }
 
     componentDidMount() {
-        this.loadStateFromProject(this.props.project);
+        this.loadStateFromProject(this.props.sprintId, this.props.project);
     }
 
-    loadStateFromProject = (project) => {
-        let newState = {}
+    loadStateFromProject = (sprintId, project) => {
+        let newProjectState = {}
 
         // console.log(project);
         
@@ -397,12 +401,16 @@ class Project extends Component {
             updatedObject['valid'] = true; // Assume it's true when loading from existing project data
             
             // console.log('fully updatedObject:', updatedObject);
-            newState[projectKeys[i]] = updatedObject;
+            newProjectState[projectKeys[i]] = updatedObject;
         }
 
-        console.log('newState:', newState);
+        console.log('newSprintId:', sprintId);
+        console.log('newProjectState:', newProjectState);
 
-        this.setState({ projectData: newState });
+        this.setState({ 
+            sprintId: sprintId,
+            projectData: newProjectState 
+        });
     }
 
     // inputChangedHandler = () => {
@@ -439,6 +447,8 @@ class Project extends Component {
         console.log('Should update project store here');
 
         event.preventDefault();
+
+        this.props.onUpdateProject(this.state.sprintId, this.state.projectData);
 
         // const formData = {};
         // for (let formElementIdentifier in this.state.orderForm) {
@@ -563,4 +573,10 @@ class Project extends Component {
     }
 }
 
-export default withStyles(styles)(Project);
+const mapDispatchToProps = dispatch => {
+    return {
+        onUpdateProject: (sprintId, projectData) => dispatch(actions.updateProject(sprintId, projectData)),
+    };
+};
+
+export default connect(null, mapDispatchToProps)(withStyles(styles)(Project));

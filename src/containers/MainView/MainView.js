@@ -42,7 +42,7 @@ class MainView extends Component {
         displayQueue: false,
         viewingProject: false,
         projectBeingViewed: null,
-        sprintTypeBeingViewed: null,
+        sprintIdBeingViewed: null,
         columnNamesBeingViewed: null
     }
 
@@ -64,11 +64,11 @@ class MainView extends Component {
         });
     }
 
-    openProject = (project, sprintType, columnNames) => {
+    openProject = (project, sprintId, columnNames) => {
         this.setState({
             viewingProject: true,
             projectBeingViewed: project,
-            sprintTypeBeingViewed: sprintType,
+            sprintIdBeingViewed: sprintId,
             columnNamesBeingViewed: columnNames
         });
     }
@@ -77,7 +77,7 @@ class MainView extends Component {
         this.setState({
             viewingProject: false,
             projectBeingViewed: null,
-            sprintTypeBeingViewed: null,
+            sprintIdBeingViewed: null,
             columnNamesBeingViewed: null
         });
     }
@@ -94,7 +94,7 @@ class MainView extends Component {
                     <div className={classes.innerSprintContainer}>
                         <Sprint 
                             sprint={this.props.sprints[0]} 
-                            sprintType="Current"
+                            sprintId={this.props.sprints[0].id}
                             onOpenProject={this.openProject}
                         />
                     </div>
@@ -111,7 +111,7 @@ class MainView extends Component {
                     <div className={classes.innerSprintContainer}>
                         <Sprint 
                             sprint={null} 
-                            sprintType="Next" 
+                            sprintId={null}
                             onOpenProject={this.openProject}
                         />
                     </div>
@@ -134,6 +134,7 @@ class MainView extends Component {
                 <div>
                     <Project 
                         project={this.state.projectBeingViewed}
+                        sprintId={this.state.sprintIdBeingViewed}
                         columnNames={this.state.columnNamesBeingViewed}
                         onCloseProject={this.closeProject}
                     />
