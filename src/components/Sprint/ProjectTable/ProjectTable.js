@@ -122,9 +122,17 @@ const projectTable = (props) => {
                   icon: Edit,
                   tooltip: 'Edit Project',
                   onClick: (event, rowData) => {
-                      alert("You edited " + rowData.name);
-                      console.log(rowData);
-                  },
+                    let newRowData = {...rowData};
+                    delete newRowData['tableData'];
+                    return props.onOpenProject(newRowData, props.sprintType, manualColumnNames);
+                  }
+                  
+                //   {
+                //       alert("You edited " + rowData.name);
+                //       console.log(event);
+                //       console.log(rowData);
+                //       console.log(props.sprintType);
+                //   },
                 }]}
             localization={{
                 header: {

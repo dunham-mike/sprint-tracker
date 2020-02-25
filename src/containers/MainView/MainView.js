@@ -5,6 +5,7 @@ import { connect } from 'react-redux';
 import Sprint from '../../components/Sprint/Sprint';
 import { withStyles } from '@material-ui/core/styles';
 // import { green } from '@material-ui/core/colors';
+import Project from '../Project/Project';
 
 const styles = theme => ({
     mainViewContainer: {
@@ -38,7 +39,11 @@ class MainView extends Component {
     state = {
         displayCurrentSprint: true,
         displayNextSprint: false,
-        displayQueue: false
+        displayQueue: false,
+        viewingProject: false,
+        projectBeingViewed: null,
+        sprintTypeBeingViewed: null,
+        columnNamesBeingViewed: null
     }
 
     toggleCurrentSprint = () => {
@@ -59,37 +64,81 @@ class MainView extends Component {
         });
     }
 
+    openProject = (project, sprintType, columnNames) => {
+        this.setState({
+            viewingProject: true,
+            projectBeingViewed: project,
+            sprintTypeBeingViewed: sprintType,
+            columnNamesBeingViewed: columnNames
+        });
+    }
+
+    closeProject = () => {
+        this.setState({
+            viewingProject: false,
+            projectBeingViewed: null,
+            sprintTypeBeingViewed: null,
+            columnNamesBeingViewed: null
+        });
+    }
+
     render() {
         const { classes } = this.props;
 
+        // Displaying Current Sprint
         let currentSprint = null;
 
         if (this.state.displayCurrentSprint) {
             currentSprint = (
                 <div className={classes.sprintContainer}>
                     <div className={classes.innerSprintContainer}>
-                        <Sprint sprint={this.props.sprints[0]} />
+                        <Sprint 
+                            sprint={this.props.sprints[0]} 
+                            sprintType="Current"
+                            onOpenProject={this.openProject}
+                        />
                     </div>
                 </div>
             );
         }
 
+        // Displaying Next Sprint
         let nextSprint = null;
 
         if (this.state.displayNextSprint) {
             nextSprint = (
                 <div className={classes.sprintContainer}>
                     <div className={classes.innerSprintContainer}>
-                        <Sprint sprint={null} />
+                        <Sprint 
+                            sprint={null} 
+                            sprintType="Next" 
+                            onOpenProject={this.openProject}
+                        />
                     </div>
                 </div>
             );
         }
 
+        // Displaying Queue
         let queue = null;
 
         if (this.state.displayQueue) {
             queue = (<div>This is the queue so far.</div>);
+        }
+
+        // Displaying a Project
+        let project = null;
+
+        if (this.state.viewingProject) {
+            project = (
+                <div>
+                    <Project 
+                        project={this.state.projectBeingViewed}
+                        columnNames={this.state.columnNamesBeingViewed}
+                        onCloseProject={this.closeProject}
+                    />
+                </div>
+            );
         }
 
         return(
@@ -100,6 +149,7 @@ class MainView extends Component {
                 {nextSprint}
                 <Button variant="contained" color="default" className={classes.buttonSpacing} onClick={this.toggleQueue}>QUEUE</Button>
                 {queue}
+                {project}
             </div>
         );
     }
