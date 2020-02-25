@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import MaterialTable from "material-table";
 import blue from '@material-ui/core/colors/blue';
 

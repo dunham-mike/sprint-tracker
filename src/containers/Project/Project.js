@@ -86,7 +86,7 @@ class Project extends Component {
                     type: 'text',
                     displayName: 'Project ID'
                 },
-                value: null,
+                value: '',
                 validation: {
                     required: true
                 },
@@ -100,7 +100,7 @@ class Project extends Component {
                     type: 'text',
                     displayName: 'Project Name'
                 },
-                value: null,
+                value: '',
                 validation: {
                     required: true
                 },
@@ -114,7 +114,7 @@ class Project extends Component {
                     type: 'text',
                     displayName: 'Project Manager'
                 },
-                value: null,
+                value: '',
                 validation: {
                     required: true
                 },
@@ -128,7 +128,7 @@ class Project extends Component {
                     type: 'text',
                     displayName: 'Description'
                 },
-                value: null,
+                value: '',
                 validation: {
                     required: true
                 },
@@ -142,7 +142,7 @@ class Project extends Component {
                     type: 'text',
                     displayName: 'Category'
                 },
-                value: null,
+                value: '',
                 validation: {
                     required: true
                 },
@@ -156,7 +156,7 @@ class Project extends Component {
                     type: 'text',
                     displayName: 'Category Lead'
                 },
-                value: null,
+                value: '',
                 validation: {
                     required: true
                 },
@@ -179,7 +179,7 @@ class Project extends Component {
                         {value: '34', displayValue: '34 - Gargantuan'}
                     ]
                 },
-                value: null,
+                value: '',
                 validation: {
                     required: true
                 },
@@ -195,7 +195,7 @@ class Project extends Component {
                         {value: 'mustDo', displayValue: 'Must Do'},
                         {value: 'niceToHave', displayValue: 'Nice-to-Have'}]
                 },
-                value: null,
+                value: '',
                 validation: {
                     required: true
                 },
@@ -209,7 +209,7 @@ class Project extends Component {
                     type: 'text',
                     displayName: 'External Due Date'
                 },
-                value: null,
+                value: '',
                 validation: {
                     required: false
                 },
@@ -223,7 +223,7 @@ class Project extends Component {
                     type: 'text',
                     displayName: 'Deliverables / Outcomes'
                 },
-                value: null,
+                value: '',
                 validation: {
                     required: false
                 },
@@ -237,7 +237,7 @@ class Project extends Component {
                     type: 'text',
                     displayName: 'Link to Deliverable'
                 },
-                value: null,
+                value: '',
                 validation: {
                     required: false
                 },
@@ -251,7 +251,7 @@ class Project extends Component {
                     type: 'text',
                     displayName: 'Notes'
                 },
-                value: null,
+                value: '',
                 validation: {
                     required: false
                 },
@@ -264,14 +264,14 @@ class Project extends Component {
                 elementConfig: {
                     displayName: 'Did We Fully Complete the Expected Deliverable?',
                     options: [
-                        {value: null, displayValue: ''},
+                        {value: '', displayValue: ''},
                         {value: 'Yes', displayValue: 'Yes'},
                         {value: 'No, but mostly did', displayValue: 'No, but mostly did'},
                         {value: 'No, but partially did', displayValue: 'No, but partially did'},
                         {value: 'No', displayValue: 'No'},
                     ]
                 },
-                value: null,
+                value: '',
                 validation: {
                     required: false
                 },
@@ -285,7 +285,7 @@ class Project extends Component {
                     type: 'text',
                     displayName: 'If Not, Why Not?'
                 },
-                value: null,
+                value: '',
                 validation: {
                     required: false
                 },
@@ -298,7 +298,7 @@ class Project extends Component {
                 elementConfig: {
                     displayName: 'Status End of Week 1 (0-100%)',
                     options: [
-                        {value: null, displayValue: ''},
+                        {value: '', displayValue: ''},
                         {value: '0%', displayValue: '0%'},
                         {value: '25%', displayValue: '25%'},
                         {value: '50%', displayValue: '50%'},
@@ -306,7 +306,7 @@ class Project extends Component {
                         {value: '100%', displayValue: '100%'},
                     ]
                 },
-                value: null,
+                value: '',
                 validation: {
                     required: false
                 },
@@ -319,7 +319,7 @@ class Project extends Component {
                 elementConfig: {
                     displayName: 'Status End of Week 1 (0-100%)',
                     options: [
-                        {value: null, displayValue: ''},
+                        {value: '', displayValue: ''},
                         {value: '0%', displayValue: '0%'},
                         {value: '25%', displayValue: '25%'},
                         {value: '50%', displayValue: '50%'},
@@ -327,7 +327,7 @@ class Project extends Component {
                         {value: '100%', displayValue: '100%'},
                     ]
                 },
-                value: null,
+                value: '',
                 validation: {
                     required: false
                 },
@@ -340,7 +340,7 @@ class Project extends Component {
                 elementConfig: {
                     displayName: 'Status End of Week 1 (0-100%)',
                     options: [
-                        {value: null, displayValue: ''},
+                        {value: '', displayValue: ''},
                         {value: '0%', displayValue: '0%'},
                         {value: '25%', displayValue: '25%'},
                         {value: '50%', displayValue: '50%'},
@@ -348,7 +348,7 @@ class Project extends Component {
                         {value: '100%', displayValue: '100%'},
                     ]
                 },
-                value: null,
+                value: '',
                 validation: {
                     required: false
                 },
@@ -361,7 +361,7 @@ class Project extends Component {
                 elementConfig: {
                     displayName: 'Status End of Week 1 (0-100%)',
                     options: [
-                        {value: null, displayValue: ''},
+                        {value: '', displayValue: ''},
                         {value: '0%', displayValue: '0%'},
                         {value: '25%', displayValue: '25%'},
                         {value: '50%', displayValue: '50%'},
@@ -369,7 +369,7 @@ class Project extends Component {
                         {value: '100%', displayValue: '100%'},
                     ]
                 },
-                value: null,
+                value: '',
                 validation: {
                     required: false
                 },
@@ -404,8 +404,8 @@ class Project extends Component {
             newProjectState[projectKeys[i]] = updatedObject;
         }
 
-        console.log('newSprintId:', sprintId);
-        console.log('newProjectState:', newProjectState);
+        // console.log('newSprintId:', sprintId);
+        // console.log('newProjectState:', newProjectState);
 
         this.setState({ 
             sprintId: sprintId,
@@ -444,25 +444,20 @@ class Project extends Component {
     }
 
     updateProjectHandler = (event) => {
-        console.log('Should update project store here');
 
         event.preventDefault();
 
-        this.props.onUpdateProject(this.state.sprintId, this.state.projectData);
+        let transformedProjectData = {};
+        let keys = Object.keys(this.state.projectData);
 
-        // const formData = {};
-        // for (let formElementIdentifier in this.state.orderForm) {
-        //     formData[formElementIdentifier] = this.state.orderForm[formElementIdentifier].value;
-        // }
+        for (let i=0; i<keys.length; i++) {
+            let thisObject = { 'value': this.state.projectData[keys[i]].value };
 
-        // const order = {
-        //     ingredients: this.props.ingredients,
-        //     price: this.props.totalPrice, // In production, you should calculate the final price on the server to prevent user cheating
-        //     orderData: formData,
-        //     userId: this.props.userId
-        // }
+            transformedProjectData[keys[i]] = thisObject;
+        }
 
-        // this.props.onOrderBurger(order, this.props.token);
+        this.props.onUpdateProject(this.state.sprintId, transformedProjectData);
+        this.props.onCloseProject();
     }
 
     checkValidity = (value, rules) => {
@@ -510,7 +505,7 @@ class Project extends Component {
             });
         }
 
-        console.log('formElementsArray:', formElementsArray);
+        // console.log('formElementsArray:', formElementsArray);
 
         let form = (
             <form onSubmit={this.updateProjectHandler}>

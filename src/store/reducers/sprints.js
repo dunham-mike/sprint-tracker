@@ -10,70 +10,70 @@ const initialState = {
         owner: 'Mike',
         projects: [
             {
-                id: { displayName: "Project ID", displayOnSprint: true, value: 1 },
-                name: { displayName: "Project Name", displayOnSprint: true, value: 'Verify course equivalencies & Grad Requirements in Illuminate' },
-                manager: { displayName: "Project Manager", displayOnSprint: true, value: 'Bobby' },
-                description: { displayName: "Description", displayOnSprint: true, value: '-Audit all historical expeditions grades & match courses to equivalents' },
-                category: { displayName: "Category", displayOnSprint: true, value: 'Grades & Transcripts' },
-                categoryLead: { displayName: "Category Lead", displayOnSprint: true, value: 'Bobby' },
-                estimatedProjectSize: { displayName: "Estimated Project Size", displayOnSprint: true, value: '3 - Small-to-Medium' },
-                mustDo: { displayName: "Must Do or Nice-to-Have?", displayOnSprint: true, value: 'Nice-to-Have' },
-                externalDueDate: { displayName: "External Due Date", displayOnSprint: true, value: null },
-                deliverables: { displayName: "Deliverables / Outcomes", displayOnSprint: true, value: 'Historical Illuminate courses matched with current equivalencies.' },
-                deliverableLink: { displayName: "Link to Deliverable", displayOnSprint: true, value: null },
-                notes: { displayName: "Notes", displayOnSprint: true, value: null },
-                completionStatus: { displayName: "Did We Fully Complete the Expected Deliverable?", displayOnSprint: true, value: null },
-                notCompletedExplanation: { displayName: "If Not, Why Not?", displayOnSprint: true, value: null },
-                statusEndOfWeek1: { displayName: "Status End of Week 1 (0-100%)", displayOnSprint: true, value: null },
-                statusEndOfWeek2: { displayName: "Status End of Week 2 (0-100%)", displayOnSprint: true, value: null },
-                statusEndOfWeek3: { displayName: "Status End of Week 3 (0-100%)", displayOnSprint: true, value: null },
-                statusEndOfWeek4: { displayName: "Status End of Week 4 (0-100%)", displayOnSprint: true, value: null },
+                id: { value: 1 },
+                name: { value: 'Verify course equivalencies & Grad Requirements in Illuminate' },
+                manager: { value: 'Bobby' },
+                description: { value: '-Audit all historical expeditions grades & match courses to equivalents' },
+                category: { value: 'Grades & Transcripts' },
+                categoryLead: { value: 'Bobby' },
+                estimatedProjectSize: { value: '3 - Small-to-Medium' },
+                mustDo: { value: 'Nice-to-Have' },
+                externalDueDate: { value: '' },
+                deliverables: { value: 'Historical Illuminate courses matched with current equivalencies.' },
+                deliverableLink: { value: '' },
+                notes: { value: '' },
+                completionStatus: { value: '' },
+                notCompletedExplanation: { value: '' },
+                statusEndOfWeek1: { value: '' },
+                statusEndOfWeek2: { value: '' },
+                statusEndOfWeek3: { value: '' },
+                statusEndOfWeek4: { value: '' },
             },
             {
-                id: { displayName: "Project ID", displayOnSprint: true, value: 2 },
-                name: { displayName: "Project Name", displayOnSprint: true, value: 'Verify course equivalencies & Grad Requirements in Illuminate' },
-                manager: { displayName: "Project Manager", displayOnSprint: true, value: 'Bobby' },
-                description: { displayName: "Description", displayOnSprint: true, value: '-Audit all historical expeditions grades & match courses to equivalents' },
-                category: { displayName: "Category", displayOnSprint: true, value: 'Grades & Transcripts' },
-                categoryLead: { displayName: "Category Lead", displayOnSprint: true, value: 'Bobby' },
-                estimatedProjectSize: { displayName: "Estimated Project Size", displayOnSprint: true, value: '3 - Small-to-Medium' },
-                mustDo: { displayName: "Must Do or Nice-to-Have?", displayOnSprint: true, value: 'Nice-to-Have' },
-                externalDueDate: { displayName: "External Due Date", displayOnSprint: true, value: null },
-                deliverables: { displayName: "Deliverables / Outcomes", displayOnSprint: true, value: 'Historical Illuminate courses matched with current equivalencies.' },
-                deliverableLink: { displayName: "Link to Deliverable", displayOnSprint: true, value: null },
-                notes: { displayName: "Notes", displayOnSprint: true, value: null },
-                completionStatus: { displayName: "Did We Fully Complete the Expected Deliverable?", displayOnSprint: true, value: null },
-                notCompletedExplanation: { displayName: "If Not, Why Not?", displayOnSprint: true, value: null },
-                statusEndOfWeek1: { displayName: "Status End of Week 1 (0-100%)", displayOnSprint: true, value: null },
-                statusEndOfWeek2: { displayName: "Status End of Week 2 (0-100%)", displayOnSprint: true, value: null },
-                statusEndOfWeek3: { displayName: "Status End of Week 3 (0-100%)", displayOnSprint: true, value: null },
-                statusEndOfWeek4: { displayName: "Status End of Week 4 (0-100%)", displayOnSprint: true, value: null },
+                id: { value: 2 },
+                name: { value: 'Verify course equivalencies & Grad Requirements in Illuminate' },
+                manager: { value: 'Bobby' },
+                description: { value: '-Audit all historical expeditions grades & match courses to equivalents' },
+                category: { value: 'Grades & Transcripts' },
+                categoryLead: { value: 'Bobby' },
+                estimatedProjectSize: { value: '3 - Small-to-Medium' },
+                mustDo: { value: 'Nice-to-Have' },
+                externalDueDate: { value: '' },
+                deliverables: { value: 'Historical Illuminate courses matched with current equivalencies.' },
+                deliverableLink: { value: '' },
+                notes: { value: '' },
+                completionStatus: { value: '' },
+                notCompletedExplanation: { value: '' },
+                statusEndOfWeek1: { value: '' },
+                statusEndOfWeek2: { value: '' },
+                statusEndOfWeek3: { value: '' },
+                statusEndOfWeek4: { value: '' },
             },
             {
-                id: { displayName: "Project ID", displayOnSprint: true, value: 3 },
-                name: { displayName: "Project Name", displayOnSprint: true, value: 'Verify course equivalencies & Grad Requirements in Illuminate' },
-                manager: { displayName: "Project Manager", displayOnSprint: true, value: 'Bobby' },
-                description: { displayName: "Description", displayOnSprint: true, value: '-Audit all historical expeditions grades & match courses to equivalents' },
-                category: { displayName: "Category", displayOnSprint: true, value: 'Grades & Transcripts' },
-                categoryLead: { displayName: "Category Lead", displayOnSprint: true, value: 'Bobby' },
-                estimatedProjectSize: { displayName: "Estimated Project Size", displayOnSprint: true, value: '3 - Small-to-Medium' },
-                mustDo: { displayName: "Must Do or Nice-to-Have?", displayOnSprint: true, value: 'Nice-to-Have' },
-                externalDueDate: { displayName: "External Due Date", displayOnSprint: true, value: null },
-                deliverables: { displayName: "Deliverables / Outcomes", displayOnSprint: true, value: 'Historical Illuminate courses matched with current equivalencies.' },
-                deliverableLink: { displayName: "Link to Deliverable", displayOnSprint: true, value: null },
-                notes: { displayName: "Notes", displayOnSprint: true, value: null },
-                completionStatus: { displayName: "Did We Fully Complete the Expected Deliverable?", displayOnSprint: true, value: null },
-                notCompletedExplanation: { displayName: "If Not, Why Not?", displayOnSprint: true, value: null },
-                statusEndOfWeek1: { displayName: "Status End of Week 1 (0-100%)", displayOnSprint: true, value: null },
-                statusEndOfWeek2: { displayName: "Status End of Week 2 (0-100%)", displayOnSprint: true, value: null },
-                statusEndOfWeek3: { displayName: "Status End of Week 3 (0-100%)", displayOnSprint: true, value: null },
-                statusEndOfWeek4: { displayName: "Status End of Week 4 (0-100%)", displayOnSprint: true, value: null },
+                id: { value: 3 },
+                name: { value: 'Verify course equivalencies & Grad Requirements in Illuminate' },
+                manager: { value: 'Bobby' },
+                description: { value: '-Audit all historical expeditions grades & match courses to equivalents' },
+                category: { value: 'Grades & Transcripts' },
+                categoryLead: { value: 'Bobby' },
+                estimatedProjectSize: { value: '3 - Small-to-Medium' },
+                mustDo: { value: 'Nice-to-Have' },
+                externalDueDate: { value: '' },
+                deliverables: { value: 'Historical Illuminate courses matched with current equivalencies.' },
+                deliverableLink: { value: '' },
+                notes: { value: '' },
+                completionStatus: { value: '' },
+                notCompletedExplanation: { value: '' },
+                statusEndOfWeek1: { value: '' },
+                statusEndOfWeek2: { value: '' },
+                statusEndOfWeek3: { value: '' },
+                statusEndOfWeek4: { value: '' },
             }
         ]
     }]
 }
 
-const getIndexWithSprintId = (state, sprintId) => {
+const getSprintIndexWithSprintId = (state, sprintId) => {
     for(let i=0; i<state.sprints.length; i++) {
         if(state.sprints[i].id === sprintId) {
             return i;
@@ -82,18 +82,67 @@ const getIndexWithSprintId = (state, sprintId) => {
 
     // If no match found, return null
     return null;
+};
+
+const getProjectIndexWithSprintIndexAndProjectId = (state, sprintIndex, projectId) => {
+    const projectArray = state.sprints[sprintIndex].projects;
+    console.log('projectArray:', projectArray);
+
+    for(let i=0; i<projectArray.length; i++) {
+        if(projectArray[i].id.value === projectId) {
+            return i;
+        }
+    }
+
+    // If no match found, return null
+    return null;
 }
+
+const updateObjectInArray = (array, newItemIndex, newItem) => {
+    // Based on: https://redux.js.org/recipes/structuring-reducers/immutable-update-patterns/#updating-an-item-in-an-array
+    return array.map((item, index) => {
+      if (index !== newItemIndex) {
+        // This isn't the item we care about - keep it as-is
+        return item;
+      }
+      // Otherwise, this is the one we want - return an updated value
+      return {
+        ...item, // TODO: don't understand what the spread operator here is doing...
+        ...newItem
+      }
+    })
+  }
 
 const updateProject = (state, action) => {
     //     type: actionTypes.UPDATE_PROJECT,
     //     sprintId: sprintId,
     //     projectData: projectData
 
-    console.log('Should update the project in this function');
-    console.log('SprintId:', action.sprintId);
-    console.log('Sprint index:', getIndexWithSprintId(state, action.sprintId));
+    const sprintIndex = getSprintIndexWithSprintId(state, action.sprintId);
+    const projectIndex = getProjectIndexWithSprintIndexAndProjectId(state, sprintIndex, action.projectData.id.value);
 
-    return state; // Until I return the updated state
+    // console.log('SprintId:', action.sprintId);
+    // console.log('Sprint index:', sprintIndex);
+    // console.log('projectIndex:', projectIndex);
+    // console.log('projectData:', action.projectData);
+
+    if (sprintIndex === null || projectIndex === null) {
+        console.log('[ERROR] Cannot find sprint and/or project index in current state');
+        return state;
+    } else {
+        // Create new array of projects from the chosen sprint, with the updated projectData replaced at the correct spot
+        const newProjectsArray = updateObjectInArray(state.sprints[sprintIndex].projects, projectIndex, action.projectData);
+        // Create a new sprint object, and then overwrite the existing projects with the newProjectsArray
+        let newSprintObject = { ...state.sprints[sprintIndex] };
+        newSprintObject['projects'] = newProjectsArray;
+        // Create a new array of all the sprints, with the newSprintObject overwriting the sprint at the correct index
+        const newSprintsArray = updateObjectInArray(state.sprints, sprintIndex, newSprintObject);
+
+        return {
+            ...state,
+            sprints: newSprintsArray
+        };
+    }
 }
 
 const reducer = (state = initialState, action) => {

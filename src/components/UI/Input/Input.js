@@ -85,7 +85,7 @@ const input = (props) => {
                 onChange={props.changed}/>;
     }
 
-    console.log('props.validation', props.validation);
+    // console.log('props.validation', props.validation);
 
     return (
         <div 
