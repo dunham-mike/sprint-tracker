@@ -8,8 +8,8 @@ import InsertChartOutlinedOutlinedIcon from '@material-ui/icons/InsertChartOutli
 
 import Sprint from '../../components/Sprint/Sprint';
 import { withStyles } from '@material-ui/core/styles';
-// import { green } from '@material-ui/core/colors';
 import Project from '../Project/Project';
+import * as actions from '../../store/actions/index';
 
 const styles = theme => ({
     mainViewContainer: {
@@ -46,14 +46,12 @@ const styles = theme => ({
         paddingRight: theme.spacing(2),
         width: '100%',
         minHeight: theme.spacing(7),
-        // backgroundColor: 'red'
     },
     innerSprintContainer: {
         position: 'relative',
         width: '100%',
         height: '100%',
         marginBottom: theme.spacing(4)
-        // backgroundColor: 'green',
     },
     sprintMissingMessage: {
         marginBottom: theme.spacing(2)
@@ -62,7 +60,6 @@ const styles = theme => ({
 
 class MainView extends Component {
     state = {
-        dateOrderedSprintsArray: null,
         currentSprintIndex: null,
         nextSprintIndex: null,
         futureSprintsStartIndex: null,
@@ -74,35 +71,25 @@ class MainView extends Component {
         projectBeingViewed: null,
         sprintIdBeingViewed: null,
         columnNamesBeingViewed: null,
-        updateNeeded: false // This is necessary, because a copy of the sprints are re-ordered after being pulled out of the store
     }
 
     componentDidMount = () => {
+        this.props.onOrderSprintsByStartDate();
         this.categorizeSprintsByStartDate();
     }
 
-    componentDidUpdate = () => {
-        if (this.state.updateNeeded) {
-            this.categorizeSprintsByStartDate();
-            this.setState({
-                updateNeeded: false
-            });
-        }
-    }
-
     categorizeSprintsByStartDate = () => {
-        const dateOrderedSprintsArray = this.orderSprintsByStartDate(this.props.sprints);
         let currentSprintIndex = null;
         let nextSprintIndex = null;
         let futureSprintsStartIndex = null;
 
-        for(let i=0; i<dateOrderedSprintsArray.length; i++) {
-            if(dateOrderedSprintsArray[i].startDate < Date.now() && dateOrderedSprintsArray[i].endDate > Date.now()) {
+        for(let i=0; i<this.props.sprints.length; i++) {
+            if(this.props.sprints[i].startDate < Date.now() && this.props.sprints[i].endDate > Date.now()) {
                 currentSprintIndex = i;
                 nextSprintIndex = i+1;
                 futureSprintsStartIndex = i+2;
                 break;
-            } else if (dateOrderedSprintsArray[i].startDate > Date.now() && dateOrderedSprintsArray[i].endDate > Date.now()) {
+            } else if (this.props.sprints[i].startDate > Date.now() && this.props.sprints[i].endDate > Date.now()) {
                 nextSprintIndex = i;
                 futureSprintsStartIndex = i+1;
                 break;
@@ -110,26 +97,9 @@ class MainView extends Component {
         }
 
         this.setState({
-            dateOrderedSprintsArray: dateOrderedSprintsArray,
             currentSprintIndex: currentSprintIndex,
             nextSprintIndex: nextSprintIndex,
             futureSprintsStartIndex: futureSprintsStartIndex,
-        });
-    }
-
-    orderSprintsByStartDate = (sprintsArray) => {
-        let dateOrderedSprintsArray = [...sprintsArray];
-
-        dateOrderedSprintsArray.sort((a, b) => {
-            return a.startDate - b.startDate
-        });
-
-        return dateOrderedSprintsArray;
-    }
-
-    triggerUpdateNeeded = () => {
-        this.setState({
-            updateNeeded: true
         });
     }
 
@@ -181,13 +151,13 @@ class MainView extends Component {
         // Displaying Current Sprint
         let currentSprint = null;
 
-        if (this.state.displayCurrentSprint && this.state.dateOrderedSprintsArray && this.state.currentSprintIndex !== null) {
+        if (this.state.displayCurrentSprint && this.props.sprints && this.state.currentSprintIndex !== null) {
             currentSprint = (
                 <div className={classes.sprintContainer}>
                     <div className={classes.innerSprintContainer}>
                         <Sprint 
-                            sprint={this.state.dateOrderedSprintsArray[this.state.currentSprintIndex]} 
-                            sprintId={this.state.dateOrderedSprintsArray[this.state.currentSprintIndex].id}
+                            sprint={this.props.sprints[this.state.currentSprintIndex]} 
+                            sprintId={this.props.sprints[this.state.currentSprintIndex].id}
                             onOpenProject={this.openProject}
                             sprintType="current"
                         />
@@ -201,13 +171,13 @@ class MainView extends Component {
         // Displaying Next Sprint
         let nextSprint = null;
 
-        if (this.state.displayNextSprint && this.state.dateOrderedSprintsArray && this.state.nextSprintIndex !== null ) {
+        if (this.state.displayNextSprint && this.props.sprints && this.state.nextSprintIndex !== null ) {
             nextSprint = (
                 <div className={classes.sprintContainer}>
                     <div className={classes.innerSprintContainer}>
                         <Sprint 
-                            sprint={this.state.dateOrderedSprintsArray[this.state.nextSprintIndex]} 
-                            sprintId={this.state.dateOrderedSprintsArray[this.state.nextSprintIndex].id}
+                            sprint={this.props.sprints[this.state.nextSprintIndex]} 
+                            sprintId={this.props.sprints[this.state.nextSprintIndex].id}
                             onOpenProject={this.openProject}
                             sprintType="next"
                         />
@@ -241,8 +211,8 @@ class MainView extends Component {
         // Displaying Future Sprints
         let futureSprints = null;
 
-        if (this.state.displayFutureSprints && this.state.dateOrderedSprintsArray && this.state.futureSprintsStartIndex !== null) {
-            const futureSprintsArray = [...this.state.dateOrderedSprintsArray.slice(this.state.futureSprintsStartIndex)]
+        if (this.state.displayFutureSprints && this.props.sprints && this.state.futureSprintsStartIndex !== null) {
+            const futureSprintsArray = [...this.props.sprints.slice(this.state.futureSprintsStartIndex)]
                 .map((futureSprint => {
                     return (<div className={classes.innerSprintContainer} key={futureSprint.id}>
                         <Sprint 
@@ -265,7 +235,7 @@ class MainView extends Component {
 
         // --------------------
 
-        // Displaying a Project
+        // Displaying the Project Editing Modal
         let project = null;
 
         if (this.state.viewingProject) {
@@ -276,7 +246,6 @@ class MainView extends Component {
                         sprintId={this.state.sprintIdBeingViewed}
                         columnNames={this.state.columnNamesBeingViewed}
                         onCloseProject={this.closeProject}
-                        onUpdateNeeded={this.triggerUpdateNeeded}
                     />
                 </div>
             );
@@ -284,10 +253,11 @@ class MainView extends Component {
 
         return(
             <div className={classes.mainViewContainer}>
+                {/* Current Sprint Section */}
                 <div className={classes.sprintSectionContainer}>
                     <div className={classes.buttonsContainer}>
                         <Button variant="contained" color="primary" className={classes.buttonSpacing} onClick={this.toggleCurrentSprint}>CURRENT SPRINT</Button>
-                        {this.state.displayCurrentSprint 
+                        {this.state.displayCurrentSprint && this.state.currentSprintIndex !== null
                         ?   <div className={classes.conditionalButtonsContainer}>
                                 <Button size="small" variant="outlined" color="primary" className={classes.conditionalButtons} startIcon={<AddCircleOutlineOutlinedIcon />}>ADD NEW PROJECT</Button>
                                 <Button size="small" variant="outlined" color="primary" className={classes.conditionalButtons} startIcon={<EditOutlinedIcon />}>EDIT SPRINT</Button>
@@ -299,10 +269,11 @@ class MainView extends Component {
                     {currentSprint}
                 </div>
 
+                {/* Next Sprint Section */}
                 <div className={classes.sprintSectionContainer}>
                     <div className={classes.buttonContainer}>
                         <Button variant="contained" color="secondary" className={classes.buttonSpacing} onClick={this.toggleNextSprint}>NEXT SPRINT</Button>
-                        {this.state.displayNextSprint 
+                        {this.state.displayNextSprint && this.state.nextSprintIndex !== null
                         ?   <div className={classes.conditionalButtonsContainer}>
                                 <Button size="small" variant="outlined" color="secondary" className={classes.conditionalButtons} startIcon={<AddCircleOutlineOutlinedIcon />}>ADD NEW PROJECT</Button>
                                 <Button size="small" variant="outlined" color="secondary" className={classes.conditionalButtons} startIcon={<EditOutlinedIcon />}>EDIT SPRINT</Button>
@@ -314,14 +285,13 @@ class MainView extends Component {
                     {nextSprint}
                 </div>    
 
+                {/* Queue Section */}
                 <div className={classes.sprintSectionContainer}>
                     <div className={classes.buttonContainer}>
                         <Button variant="contained" color="default" className={classes.buttonSpacing} onClick={this.toggleQueue}>PROJECT QUEUE</Button>
                         {this.state.displayQueue
                         ?   <div className={classes.conditionalButtonsContainer}>
                                 <Button size="small" variant="outlined" color="default" className={classes.conditionalButtons} startIcon={<AddCircleOutlineOutlinedIcon />}>ADD NEW PROJECT</Button>
-                                {/* <Button size="small" variant="outlined" color="default" className={classes.conditionalButtons} startIcon={<EditOutlinedIcon />}>EDIT SPRINT</Button>
-                                <Button size="small" variant="outlined" color="default" className={classes.conditionalButtons} startIcon={<InsertChartOutlinedOutlinedIcon />}>SPRINT STATISTICS</Button> */}
                             </div>
                         : null    
                         }
@@ -329,10 +299,11 @@ class MainView extends Component {
                     </div>
                 </div>
 
+                {/* Future Sprints Section */}
                 <div className={classes.sprintSectionContainer}>
                     <div className={classes.buttonContainer}>
                         <Button variant="contained" color="default" className={classes.buttonSpacing} onClick={this.toggleFutureSprints}>FUTURE SPRINTS</Button>
-                        {this.state.displayFutureSprints
+                        {this.state.displayFutureSprints && this.state.futureSprintsStartIndex !== null
                         ?   <div className={classes.conditionalButtonsContainer}>
                                 <Button size="small" variant="outlined" color="default" className={classes.conditionalButtons} startIcon={<AddCircleOutlineOutlinedIcon />}>ADD NEW PROJECT</Button>
                                 <Button size="small" variant="outlined" color="default" className={classes.conditionalButtons} startIcon={<EditOutlinedIcon />}>EDIT SPRINT</Button>
@@ -356,4 +327,10 @@ const mapStateToProps = state => {
     }
 }
 
-export default connect(mapStateToProps)(withStyles(styles)(MainView));
+const mapDispatchToProps = dispatch => {
+    return {
+        onOrderSprintsByStartDate: () => dispatch(actions.orderSprintsByStartDate())
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(withStyles(styles)(MainView));

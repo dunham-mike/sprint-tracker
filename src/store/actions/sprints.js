@@ -7,3 +7,9 @@ export const updateProject = (sprintId, projectData) => {
         projectData: projectData
     }
 };
+
+export const orderSprintsByStartDate = () => {
+    return {
+        type: actionTypes.ORDER_SPRINTS_BY_START_DATE
+    }
+};

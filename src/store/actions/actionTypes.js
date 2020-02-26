@@ -1,2 +1,3 @@
 // sprints.js
 export const UPDATE_PROJECT = 'UPDATE_PROJECT';
+export const ORDER_SPRINTS_BY_START_DATE = 'ORDER_SPRINTS_BY_START_DATE';

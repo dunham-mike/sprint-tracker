@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { createStore, combineReducers } from 'redux';
+import { createStore, combineReducers, compose } from 'redux';
 import { Provider } from 'react-redux';
 
 import './index.css';
@@ -8,11 +8,16 @@ import App from './App';
 import * as serviceWorker from './serviceWorker';
 import sprintReducer from './store/reducers/sprints';
 
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+
 const rootReducer = combineReducers({
-    sprints: sprintReducer
+    sprints: sprintReducer,
 });
 
-const store = createStore(rootReducer);
+const store = createStore(
+    rootReducer,
+    composeEnhancers()
+);
 
 const app = (
     <Provider store={store}>

@@ -1,3 +1,4 @@
 export {
-    updateProject
+    updateProject,
+    orderSprintsByStartDate
 } from './sprints';

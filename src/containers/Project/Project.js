@@ -11,9 +11,6 @@ import CancelOutlinedIcon from '@material-ui/icons/CancelOutlined';
 import Input from '../../components/UI/Input/Input';
 import * as actions from '../../store/actions/index';
 
-
-// import classes from './Modal.module.css';
-
 const styles = theme => ({
     Backdrop: {
         width: '100%',
@@ -43,12 +40,11 @@ const styles = theme => ({
         cursor: 'pointer',
         color: red[100],
     },
-    FormContainer: { // TODO: Get rid of this unless we need it.
+    FormContainer: {
         margin: theme.spacing(1),
         textAlign: 'center'
     },
     FormTitle: {
-        // textAlign: 'center',
         marginTop: theme.spacing(1),
         color: red[300],
         fontWeight: 'bold',
@@ -379,35 +375,23 @@ class Project extends Component {
 
     loadStateFromProject = (sprintId, project) => {
         let newProjectState = {}
-
-        // console.log(project);
         
         const projectKeys = Object.keys(project);
 
         for(let i=0; i < projectKeys.length; i++) {
-            // console.log(projectKeys[i]);
             let updatedObject = this.state.projectData[projectKeys[i]];
-            // console.log('updatedObject:', updatedObject);
 
             updatedObject['value'] = project[projectKeys[i]];
-            updatedObject['valid'] = true; // Assume it's true when loading from existing project data
+            updatedObject['valid'] = true; // Assume it's valid when loading from existing project data
             
-            // console.log('fully updatedObject:', updatedObject);
             newProjectState[projectKeys[i]] = updatedObject;
         }
-
-        // console.log('newSprintId:', sprintId);
-        // console.log('newProjectState:', newProjectState);
 
         this.setState({ 
             sprintId: sprintId,
             projectData: newProjectState 
         });
     }
-
-    // inputChangedHandler = () => {
-    //     console.log('Update input');
-    // }
 
     inputChangedHandler = (event, inputIdentifier) => {
         const updatedProjectData = {
@@ -436,7 +420,6 @@ class Project extends Component {
     }
 
     updateProjectHandler = (event) => {
-        // console.log('updateProjectHandler');
         event.preventDefault();
 
         let transformedProjectData = {};
@@ -450,7 +433,6 @@ class Project extends Component {
 
         this.props.onUpdateProject(this.state.sprintId, transformedProjectData);
         this.props.onCloseProject();
-        this.props.onUpdateNeeded();
     }
 
     checkValidity = (value, rules) => {
@@ -487,8 +469,6 @@ class Project extends Component {
 
     render() {
         const { classes } = this.props;
-        // console.log(this.props.project);
-        // console.log(this.props.columnNames);
 
         const formElementsArray = [];
         for (let key in this.state.projectData) {
@@ -497,8 +477,6 @@ class Project extends Component {
                 config: this.state.projectData[key],
             });
         }
-
-        // console.log('formElementsArray:', formElementsArray);
 
         let form = (
             <form onSubmit={this.updateProjectHandler}>

@@ -101,9 +101,25 @@ const updateProject = (state, action) => {
     }
 };
 
+
+// NOTE: It's important that the sprints always be sorted by start date, so other reducer functions should call this one if they edit any sprint's start date
+const orderSprintsByStartDate = (state, action) => {
+    let dateOrderedSprintsArray = [...state.sprints];
+
+    dateOrderedSprintsArray.sort((a, b) => {
+        return a.startDate - b.startDate
+    });
+
+    return {
+        ...state,
+        sprints: dateOrderedSprintsArray
+    };
+}
+
 const reducer = (state = initialState, action) => {
     switch(action.type) {
         case actionTypes.UPDATE_PROJECT: return updateProject(state, action);
+        case actionTypes.ORDER_SPRINTS_BY_START_DATE: return orderSprintsByStartDate(state, action);
         default: return state;
     }
 };
