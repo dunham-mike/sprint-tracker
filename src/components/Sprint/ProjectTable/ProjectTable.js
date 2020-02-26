@@ -1,6 +1,8 @@
 import React from "react";
 import MaterialTable from "material-table";
 import blue from '@material-ui/core/colors/blue';
+import red from '@material-ui/core/colors/red';
+import grey from '@material-ui/core/colors/grey';
 
 import { forwardRef } from 'react';
 
@@ -41,79 +43,75 @@ const tableIcons = {
   };
 
 const projectTable = (props) => {
-    // Automatically get column names from first row of data; not using this approach in favor of manual formatting
-    // const columnNames = Object.keys(props.tableData[0]).map(
-    //     key => {
-    //         return {
-    //             title: props.tableData[0][key].displayName,
-    //             field: key
-    //         }
-    //     }
-    // );
-    // console.log(columnNames);
-
+    // Widths for table columns
     const width100 = { width: 100 };
     const width150 = { width: 150 };
     const width200 = { width: 200 };
     const width225 = { width: 225 };
     const width250 = { width: 250 };
     const width350 = { width: 350 };
-    const blue500 = { headerStyle: { backgroundColor: blue[500] }};
-    const blue600 = { headerStyle: { backgroundColor: blue[600] }};
-    const blue700 = { headerStyle: { backgroundColor: blue[700] }};
-    const blue800 = { headerStyle: { backgroundColor: blue[800] }};
-    const blue900 = { headerStyle: { backgroundColor: blue[900] }};
-    
+
+    // Colors for sections of table column headers
+    let color1 = { headerStyle: { backgroundColor: blue[500] }};
+    let color2 = { headerStyle: { backgroundColor: blue[600] }};
+    let color3 = { headerStyle: { backgroundColor: blue[700] }};
+    let color4 = { headerStyle: { backgroundColor: blue[800] }};
+    let color5 = { headerStyle: { backgroundColor: blue[900] }};
+
+    if(props.sprintType === "next") {
+        color1 = { headerStyle: { backgroundColor: red[400] }};
+        color2 = { headerStyle: { backgroundColor: red[500] }};
+        color3 = { headerStyle: { backgroundColor: red[600] }};
+        color4 = { headerStyle: { backgroundColor: red[700] }};
+        color5 = { headerStyle: { backgroundColor: red[800] }};
+    } else if(props.sprintType === "queue") {
+        color1 = { headerStyle: { backgroundColor: grey[300], color: '#000' }};
+        color2 = { headerStyle: { backgroundColor: grey[400], color: '#000' }};
+        color3 = { headerStyle: { backgroundColor: grey[500], color: '#000' }};
+        color4 = { headerStyle: { backgroundColor: grey[600] }};
+        color5 = { headerStyle: { backgroundColor: grey[700] }};
+    } 
+
+    const defaultBackgroundColor = color1.headerStyle.backgroundColor;
 
     const manualColumnNames = [
-        // {title: "Project ID", field: "id", ...width100, ...blue500}, // No need for user to see
-        {title: "Project Name", field: "name", ...width250, ...blue500 },
-        {title: "Project Manager", field: "manager", ...width100, ...blue500 },
-        {title: "Description", field: "description", ...width350, ...blue500 },
-        {title: "Category", field: "category", ...width150, ...blue600 },
-        {title: "Category Lead", field: "categoryLead", ...width100, ...blue600 },
-        {title: "Estimated Project Size", field: "estimatedProjectSize", ...width200, ...blue600 },
-        {title: "Must Do or Nice-to-Have?", field: "mustDo", ...width200, ...blue600 },
-        {title: "External Due Date", field: "externalDueDate", ...width150, ...blue700 },
-        {title: "Deliverables / Outcomes", field: "deliverables", ...width250, ...blue700 },
-        {title: "Link to Deliverable", field: "deliverableLink", ...width150, ...blue700 },
-        {title: "Notes", field: "notes", ...width250, ...blue700 },
-        {title: "Did We Fully Complete the Expected Deliverable?", field: "completionStatus", ...width250, ...blue800 },
-        {title: "If Not, Why Not?", field: "notCompletedExplanation", ...width250, ...blue800 },
-        {title: "Status End of Week 1 (0-100%)", field: "statusEndOfWeek1", ...width225, ...blue900 },
-        {title: "Status End of Week 2 (0-100%)", field: "statusEndOfWeek2", ...width225, ...blue900 },
-        {title: "Status End of Week 3 (0-100%)", field: "statusEndOfWeek3", ...width225, ...blue900 },
-        {title: "Status End of Week 4 (0-100%)", field: "statusEndOfWeek4", ...width225, ...blue900 },
+        // {title: "Project ID", field: "id", ...width100, ...color1}, // No need for user to see
+        {title: "Project Name", field: "name", ...width250, ...color1 },
+        {title: "Project Manager", field: "manager", ...width100, ...color1 },
+        {title: "Description", field: "description", ...width350, ...color1 },
+        {title: "Category", field: "category", ...width150, ...color2 },
+        {title: "Category Lead", field: "categoryLead", ...width100, ...color2 },
+        {title: "Estimated Project Size", field: "estimatedProjectSize", ...width200, ...color2 },
+        {title: "Must Do or Nice-to-Have?", field: "mustDo", ...width200, ...color2 },
+        {title: "External Due Date", field: "externalDueDate", ...width150, ...color3 },
+        {title: "Deliverables / Outcomes", field: "deliverables", ...width250, ...color3 },
+        {title: "Link to Deliverable", field: "deliverableLink", ...width150, ...color3 },
+        {title: "Notes", field: "notes", ...width250, ...color3 },
+        {title: "Did We Fully Complete the Expected Deliverable?", field: "completionStatus", ...width250, ...color4 },
+        {title: "If Not, Why Not?", field: "notCompletedExplanation", ...width250, ...color4 },
+        {title: "Status End of Week 1 (0-100%)", field: "statusEndOfWeek1", ...width225, ...color5 },
+        {title: "Status End of Week 2 (0-100%)", field: "statusEndOfWeek2", ...width225, ...color5 },
+        {title: "Status End of Week 3 (0-100%)", field: "statusEndOfWeek3", ...width225, ...color5 },
+        {title: "Status End of Week 4 (0-100%)", field: "statusEndOfWeek4", ...width225, ...color5 },
     ];
 
     // Load each row into a table data object of the expected format
     const formattedTableData = props.tableData.map(row => {
         let formattedRowObject = {};
-
-        // console.log('row:');
-        // console.log(row);
-
         let keysArray = Object.keys(row);
-        // console.log('keysArray:', keysArray);
 
         for (let i=0; i<keysArray.length; i++) {
             let key = keysArray[i];
-            // console.log('key:', key);
             formattedRowObject[key] = row[key].value;
         }
 
-        // console.log('formattedRowObject:', formattedRowObject);
-        
         return formattedRowObject;
     });
-
-    // console.log(formattedTableData);
 
     return (
       <div style={{ maxWidth: "100%" }}>
         <MaterialTable
             icons={tableIcons}
-            // columns={columnNames} // Favoring the manually formatted columns approach
             columns={manualColumnNames}
             data={formattedTableData}
             title={props.tableTitle}
@@ -126,13 +124,6 @@ const projectTable = (props) => {
                     delete newRowData['tableData'];
                     return props.onOpenProject(newRowData, props.sprintId, manualColumnNames);
                   }
-                  
-                //   {
-                //       alert("You edited " + rowData.name);
-                //       console.log(event);
-                //       console.log(rowData);
-                //       console.log(props.sprintType);
-                //   },
                 }]}
             localization={{
                 header: {
@@ -144,7 +135,7 @@ const projectTable = (props) => {
                 tableLayout: 'fixed',
                 sorting: true,
                 headerStyle: {
-                    backgroundColor: blue[500], // Default background color
+                    backgroundColor: defaultBackgroundColor, // Default background color
                     color: '#FFF',
                     textAlign: 'center',
                     fontWeight: 'bold',
@@ -167,25 +158,3 @@ const projectTable = (props) => {
 }
 
 export default projectTable;
-
-
-/* Original example. Note usage of "lookup".
-
-<MaterialTable
-            icons={tableIcons}
-          columns={[
-            { title: "First Name", field: "name" },
-            { title: "Last Name", field: "surname" },
-            { title: "Birth Year", field: "birthYear", type: "numeric" },
-            {
-              title: "Birth City",
-              field: "birthCity",
-              lookup: { 34: "Istanbul", 63: "Not Constantinople" }
-            }
-          ]}
-          data={[
-            { name: "Mehmet", surname: "Baran", birthYear: 1987, birthCity: 63 }
-          ]}
-          title={props.tableTitle}
-        />
-*/

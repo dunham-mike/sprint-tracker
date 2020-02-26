@@ -1,77 +1,7 @@
 import * as actionTypes from '../actions/actionTypes';
+import { initialSprintState } from '../initialData';
 
-const initialState = {
-    sprints: [{
-        id: 1,
-        order: 1,
-        startDate: 'February 24, 2020',
-        endDate: 'March 6, 2020',
-        participants: ['Mike', 'Bobby'],
-        owner: 'Mike',
-        projects: [
-            {
-                id: { value: 1 },
-                name: { value: 'Verify course equivalencies & Grad Requirements in Illuminate' },
-                manager: { value: 'Bobby' },
-                description: { value: '-Audit all historical expeditions grades & match courses to equivalents' },
-                category: { value: 'Grades & Transcripts' },
-                categoryLead: { value: 'Bobby' },
-                estimatedProjectSize: { value: '3 - Small-to-Medium' },
-                mustDo: { value: 'Nice-to-Have' },
-                externalDueDate: { value: '' },
-                deliverables: { value: 'Historical Illuminate courses matched with current equivalencies.' },
-                deliverableLink: { value: '' },
-                notes: { value: '' },
-                completionStatus: { value: '' },
-                notCompletedExplanation: { value: '' },
-                statusEndOfWeek1: { value: '' },
-                statusEndOfWeek2: { value: '' },
-                statusEndOfWeek3: { value: '' },
-                statusEndOfWeek4: { value: '' },
-            },
-            {
-                id: { value: 2 },
-                name: { value: 'Verify course equivalencies & Grad Requirements in Illuminate' },
-                manager: { value: 'Bobby' },
-                description: { value: '-Audit all historical expeditions grades & match courses to equivalents' },
-                category: { value: 'Grades & Transcripts' },
-                categoryLead: { value: 'Bobby' },
-                estimatedProjectSize: { value: '3 - Small-to-Medium' },
-                mustDo: { value: 'Nice-to-Have' },
-                externalDueDate: { value: '' },
-                deliverables: { value: 'Historical Illuminate courses matched with current equivalencies.' },
-                deliverableLink: { value: '' },
-                notes: { value: '' },
-                completionStatus: { value: '' },
-                notCompletedExplanation: { value: '' },
-                statusEndOfWeek1: { value: '' },
-                statusEndOfWeek2: { value: '' },
-                statusEndOfWeek3: { value: '' },
-                statusEndOfWeek4: { value: '' },
-            },
-            {
-                id: { value: 3 },
-                name: { value: 'Verify course equivalencies & Grad Requirements in Illuminate' },
-                manager: { value: 'Bobby' },
-                description: { value: '-Audit all historical expeditions grades & match courses to equivalents' },
-                category: { value: 'Grades & Transcripts' },
-                categoryLead: { value: 'Bobby' },
-                estimatedProjectSize: { value: '3 - Small-to-Medium' },
-                mustDo: { value: 'Nice-to-Have' },
-                externalDueDate: { value: '' },
-                deliverables: { value: 'Historical Illuminate courses matched with current equivalencies.' },
-                deliverableLink: { value: '' },
-                notes: { value: '' },
-                completionStatus: { value: '' },
-                notCompletedExplanation: { value: '' },
-                statusEndOfWeek1: { value: '' },
-                statusEndOfWeek2: { value: '' },
-                statusEndOfWeek3: { value: '' },
-                statusEndOfWeek4: { value: '' },
-            }
-        ]
-    }]
-}
+const initialState = initialSprintState;
 
 const getSprintIndexWithSprintId = (state, sprintId) => {
     for(let i=0; i<state.sprints.length; i++) {
@@ -85,7 +15,13 @@ const getSprintIndexWithSprintId = (state, sprintId) => {
 };
 
 const getProjectIndexWithSprintIndexAndProjectId = (state, sprintIndex, projectId) => {
-    const projectArray = state.sprints[sprintIndex].projects;
+    let projectArray;
+    if (sprintIndex === -1) { // A value of -1 indicates the sprint is the queue
+        projectArray = state.queue;
+    } else {
+        projectArray = state.sprints[sprintIndex].projects;
+    }
+    
     console.log('projectArray:', projectArray);
 
     for(let i=0; i<projectArray.length; i++) {
@@ -96,7 +32,7 @@ const getProjectIndexWithSprintIndexAndProjectId = (state, sprintIndex, projectI
 
     // If no match found, return null
     return null;
-}
+};
 
 const updateObjectInArray = (array, newItemIndex, newItem) => {
     // Based on: https://redux.js.org/recipes/structuring-reducers/immutable-update-patterns/#updating-an-item-in-an-array
@@ -111,20 +47,13 @@ const updateObjectInArray = (array, newItemIndex, newItem) => {
         ...newItem
       }
     })
-  }
+};
 
-const updateProject = (state, action) => {
-    //     type: actionTypes.UPDATE_PROJECT,
-    //     sprintId: sprintId,
-    //     projectData: projectData
-
+const updateProjectOnSprint = (state, action) => {
     const sprintIndex = getSprintIndexWithSprintId(state, action.sprintId);
     const projectIndex = getProjectIndexWithSprintIndexAndProjectId(state, sprintIndex, action.projectData.id.value);
-
-    // console.log('SprintId:', action.sprintId);
-    // console.log('Sprint index:', sprintIndex);
-    // console.log('projectIndex:', projectIndex);
-    // console.log('projectData:', action.projectData);
+    console.log('sprintIndex:', sprintIndex);
+    console.log('projectIndex:', projectIndex);
 
     if (sprintIndex === null || projectIndex === null) {
         console.log('[ERROR] Cannot find sprint and/or project index in current state');
@@ -143,13 +72,40 @@ const updateProject = (state, action) => {
             sprints: newSprintsArray
         };
     }
-}
+};
+
+const updateProjectOnQueue = (state, action) => {
+    // action.sprintId should equal -1, which will search the queue when passed to this function
+    const projectIndex = getProjectIndexWithSprintIndexAndProjectId(state, action.sprintId, action.projectData.id.value);
+
+    if (projectIndex === null) {
+        return state;
+    } else {
+        // Create new array of projects from the queue, with the updated projectData replaced at the correct spot
+        const newProjectsArray = updateObjectInArray(state.queue, projectIndex, action.projectData);
+
+        // Assign newProjectsArray to the queue key
+        return {
+            ...state,
+            queue: newProjectsArray
+        };
+    }
+};
+
+const updateProject = (state, action) => {
+    // console.log('updateProject', action.sprintId);
+    if (action.sprintId === -1) {
+        return updateProjectOnQueue(state, action);
+    } else {
+        return updateProjectOnSprint(state, action);
+    }
+};
 
 const reducer = (state = initialState, action) => {
     switch(action.type) {
         case actionTypes.UPDATE_PROJECT: return updateProject(state, action);
         default: return state;
     }
-}
+};
 
 export default reducer;

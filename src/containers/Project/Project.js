@@ -19,28 +19,20 @@ const styles = theme => ({
         width: '100%',
         height: '100%',
         position: 'fixed',
-        zIndex: '900',
+        zIndex: '9000',
         left: '0',
         top: '0',
         backgroundColor: 'black',
         opacity: '0.6',
-        // animationName: 'fadeInTo60',
-        // animationIterationCount: '1',
-        // animationTimingFunction: 'ease-in',
-        // animationDuration: '1s'
     },
     Modal: {
         position: 'fixed',
-        zIndex: '1000',
+        zIndex: '10000',
         width: '86%',
         height: '86%',
         left: '7%',
         top: '7%',
         opacity: '1',
-        // animationName: 'fadeInTo100',
-        // animationIterationCount: '1',
-        // animationTimingFunction: 'ease-in',
-        // animationDuration: '1s',
         backgroundColor: 'white',
         overflow: 'auto'
     },
@@ -444,7 +436,7 @@ class Project extends Component {
     }
 
     updateProjectHandler = (event) => {
-
+        // console.log('updateProjectHandler');
         event.preventDefault();
 
         let transformedProjectData = {};
@@ -458,6 +450,7 @@ class Project extends Component {
 
         this.props.onUpdateProject(this.state.sprintId, transformedProjectData);
         this.props.onCloseProject();
+        this.props.onUpdateNeeded();
     }
 
     checkValidity = (value, rules) => {

@@ -31,6 +31,10 @@ const styles = {
     list: {
         width: 250,
     },
+    childrenContainer: {
+        position: 'relative',
+        marginTop: theme.spacing(9),
+    }
 };
 
 class Layout extends Component {
@@ -78,7 +82,7 @@ class Layout extends Component {
 
         return(
             <div className={classes.root}>
-                <AppBar position="static">
+                <AppBar position="fixed">
                     <Toolbar>
                     <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu" onClick={this.toggleDrawer}>
                         <MenuIcon />
@@ -92,7 +96,9 @@ class Layout extends Component {
                 <Drawer open={this.state.showDrawer} onClose={this.toggleDrawer}>
                     {sideList('left')}
                 </Drawer>
-                {this.props.children}
+                <div className={classes.childrenContainer}>
+                    {this.props.children}
+                </div>
             </div>
         );
     }
