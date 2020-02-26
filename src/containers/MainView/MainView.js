@@ -29,9 +29,27 @@ const styles = theme => ({
     conditionalButtonsContainer: {
         paddingTop: theme.spacing(0.75),
         paddingRight: theme.spacing(2),
-        position: 'absolute',
-        right: '0',
-        top: '0',
+        display: 'flex',
+        justifyContent: 'flex-end',
+        flexWrap: 'wrap',
+        marginTop: theme.spacing(-5),
+    },
+    futureSprintsContainer: {
+        marginTop: theme.spacing(-5),
+    },
+    [theme.breakpoints.down('sm')]: { // Docs: https://material-ui.com/customization/breakpoints/#theme-breakpoints-down-key-media-query
+        conditionalButtonsContainer: {
+            marginTop: '0',
+        },
+        futureSprintsContainer: {
+            marginTop: '0',
+        },
+      },
+    futureSprintsConditionalButtonsContainer: {
+        marginTop: theme.spacing(0.75),
+        display: 'flex',
+        justifyContent: 'flex-end',
+        flexWrap: 'wrap',
     },
     conditionalButtons: {
         margin: '0 2px',
@@ -78,6 +96,7 @@ class MainView extends Component {
         this.categorizeSprintsByStartDate();
     }
 
+    // TODO: if user changes sprint start dates, need to trigger this to re-run. Perhaps store these values in the Redux store?
     categorizeSprintsByStartDate = () => {
         let currentSprintIndex = null;
         let nextSprintIndex = null;
@@ -214,14 +233,23 @@ class MainView extends Component {
         if (this.state.displayFutureSprints && this.props.sprints && this.state.futureSprintsStartIndex !== null) {
             const futureSprintsArray = [...this.props.sprints.slice(this.state.futureSprintsStartIndex)]
                 .map((futureSprint => {
-                    return (<div className={classes.innerSprintContainer} key={futureSprint.id}>
+                    return (
+                    <div key={futureSprint.id}>
+                        <div className={classes.futureSprintsConditionalButtonsContainer}>
+                            <Button size="small" variant="outlined" color="default" className={classes.conditionalButtons} startIcon={<AddCircleOutlineOutlinedIcon />}>ADD NEW PROJECT</Button>
+                            <Button size="small" variant="outlined" color="default" className={classes.conditionalButtons} startIcon={<EditOutlinedIcon />}>EDIT SPRINT</Button>
+                            <Button size="small" variant="outlined" color="default" className={classes.conditionalButtons} startIcon={<InsertChartOutlinedOutlinedIcon />}>SPRINT STATISTICS</Button>
+                        </div>
+                        <div className={classes.innerSprintContainer}>
                         <Sprint 
                             sprint={futureSprint} 
                             sprintId={futureSprint.id}
                             onOpenProject={this.openProject}
                             sprintType="future"
                         />
-                    </div>)
+                        </div>
+                    </div>
+                    )
                 }));
             
             futureSprints = (
@@ -255,7 +283,7 @@ class MainView extends Component {
             <div className={classes.mainViewContainer}>
                 {/* Current Sprint Section */}
                 <div className={classes.sprintSectionContainer}>
-                    <div className={classes.buttonsContainer}>
+                    <div className={classes.buttonContainer}>
                         <Button variant="contained" color="primary" className={classes.buttonSpacing} onClick={this.toggleCurrentSprint}>CURRENT SPRINT</Button>
                         {this.state.displayCurrentSprint && this.state.currentSprintIndex !== null
                         ?   <div className={classes.conditionalButtonsContainer}>
@@ -303,18 +331,14 @@ class MainView extends Component {
                 <div className={classes.sprintSectionContainer}>
                     <div className={classes.buttonContainer}>
                         <Button variant="contained" color="default" className={classes.buttonSpacing} onClick={this.toggleFutureSprints}>FUTURE SPRINTS</Button>
-                        {this.state.displayFutureSprints && this.state.futureSprintsStartIndex !== null
-                        ?   <div className={classes.conditionalButtonsContainer}>
-                                <Button size="small" variant="outlined" color="default" className={classes.conditionalButtons} startIcon={<AddCircleOutlineOutlinedIcon />}>ADD NEW PROJECT</Button>
-                                <Button size="small" variant="outlined" color="default" className={classes.conditionalButtons} startIcon={<EditOutlinedIcon />}>EDIT SPRINT</Button>
-                                <Button size="small" variant="outlined" color="default" className={classes.conditionalButtons} startIcon={<InsertChartOutlinedOutlinedIcon />}>SPRINT STATISTICS</Button>
-                            </div>
-                        : null    
-                        }
-                        {futureSprints}
+                        <div className={classes.futureSprintsContainer}>
+                            {futureSprints}
+                        </div>
                     </div>
-                    {project}
                 </div>
+
+                {/* Edit Project Modal */}
+                {project}
             </div>
         );
     }
