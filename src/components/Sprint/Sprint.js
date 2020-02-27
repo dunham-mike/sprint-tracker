@@ -1,5 +1,6 @@
 import React from 'react';
 import { withStyles } from '@material-ui/core/styles';
+import * as moment from 'moment';
 
 import ProjectTable from './ProjectTable/ProjectTable';
 
@@ -31,9 +32,11 @@ const sprint = (props) => {
                         <ProjectTable 
                             tableData={props.sprint.projects} 
                             tableTitle={
-                                'Sprint #' + props.sprint.order + ': ' 
-                                + (props.sprint.startDate.getMonth()+1) + '/' + props.sprint.startDate.getDate() // + '/' + props.sprint.endDate.getFullYear().toString().substr(-2)
-                                + ' to ' + (props.sprint.endDate.getMonth()+1) + '/' + props.sprint.endDate.getDate() + '/' + props.sprint.endDate.getFullYear().toString().substr(-2)
+                                props.sprint.name + ': ' 
+                                + moment(props.sprint.startDate).format("M") + '/' + moment(props.sprint.startDate).format("D") + 
+                                // Conditionally show start date's year if it is different than the end date's year
+                                (moment(props.sprint.startDate).format("YY") !== moment(props.sprint.endDate).format("YY") ? '/' + moment(props.sprint.startDate).format("YY") : '' )
+                                + ' to ' + moment(props.sprint.endDate).format("M") + '/' + moment(props.sprint.endDate).format("D") + '/' + moment(props.sprint.endDate).format("YY")
                             }
                             sprintId={props.sprintId}
                             onOpenProject={props.onOpenProject}

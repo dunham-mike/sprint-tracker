@@ -106,7 +106,10 @@ class MainView extends Component {
         this.categorizeSprintsByStartDate();
     }
 
-    // TODO: if user changes sprint start dates, need to trigger this to re-run. Perhaps store these values in the Redux store?
+    componentDidUpdate = () => {
+        this.categorizeSprintsByStartDate(); // This function only conditionally updates state, so it shouldn't lead to any infinite loops.
+    }
+
     categorizeSprintsByStartDate = () => {
         let currentSprintIndex = null;
         let nextSprintIndex = null;
@@ -125,11 +128,16 @@ class MainView extends Component {
             }
         }
 
-        this.setState({
-            currentSprintIndex: currentSprintIndex,
-            nextSprintIndex: nextSprintIndex,
-            futureSprintsStartIndex: futureSprintsStartIndex,
-        });
+        if (this.state.currentSprintIndex !== currentSprintIndex 
+            || this.state.nextSprintIndex !== nextSprintIndex
+            || this.state.futureSprintsStartIndex !== futureSprintsStartIndex) {
+
+            this.setState({
+                currentSprintIndex: currentSprintIndex,
+                nextSprintIndex: nextSprintIndex,
+                futureSprintsStartIndex: futureSprintsStartIndex,
+            });
+        }        
     }
 
     toggleCurrentSprint = () => {
@@ -279,7 +287,12 @@ class MainView extends Component {
                             >
                                 ADD NEW PROJECT
                             </Button>
-                            <Button size="small" variant="outlined" color="default" className={classes.conditionalButtons} startIcon={<EditOutlinedIcon />}>EDIT SPRINT</Button>
+                            <Button 
+                                size="small" variant="outlined" color="default" className={classes.conditionalButtons} startIcon={<EditOutlinedIcon />}
+                                onClick={() => this.openEditingSprint(futureSprint.id)}
+                            >
+                                EDIT SPRINT
+                            </Button>
                             <Button size="small" variant="outlined" color="default" className={classes.conditionalButtons} startIcon={<InsertChartOutlinedOutlinedIcon />}>SPRINT STATISTICS</Button>
                         </div>
                         <div className={classes.innerSprintContainer}>
@@ -345,7 +358,7 @@ class MainView extends Component {
                 <div>
                     <EditSprint
                         sprintId={this.state.sprintIdBeingViewed}
-                        onCloseProject={this.closeEditingSprint}
+                        onCloseSprint={this.closeEditingSprint}
                         actionType={"edit"}
                      />
                 </div>
@@ -395,7 +408,12 @@ class MainView extends Component {
                                 >
                                     ADD NEW PROJECT
                                 </Button>
-                                <Button size="small" variant="outlined" color="secondary" className={classes.conditionalButtons} startIcon={<EditOutlinedIcon />}>EDIT SPRINT</Button>
+                                <Button 
+                                    size="small" variant="outlined" color="secondary" className={classes.conditionalButtons} startIcon={<EditOutlinedIcon />}
+                                    onClick={() => this.openEditingSprint(this.props.sprints[this.state.nextSprintIndex].id)}
+                                >
+                                    EDIT SPRINT
+                                </Button>
                                 <Button size="small" variant="outlined" color="secondary" className={classes.conditionalButtons} startIcon={<InsertChartOutlinedOutlinedIcon />}>SPRINT STATISTICS</Button>
                             </div>
                         : null    

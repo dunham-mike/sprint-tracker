@@ -13,6 +13,7 @@ import Input from '../../components/UI/Input/Input';
 import Backdrop from '../../components/UI/Backdrop/Backdrop';
 import Modal from '../../components/UI/Modal/Modal';
 import * as actions from '../../store/actions/index';
+import { checkValidity } from '../../shared/utility';
 
 const styles = theme => ({
     CancelButtonContainer: {
@@ -49,6 +50,7 @@ const styles = theme => ({
 class Project extends Component {
     state = {
         sprintId: null,
+        formIsValid: false,
         projectData: {
             id: {
                 elementType: 'readonly',
@@ -347,8 +349,7 @@ class Project extends Component {
                 valid: true,
                 touched: false
             },
-        },
-        formIsValid: false
+        }
     };
 
     componentDidMount() {
@@ -404,7 +405,7 @@ class Project extends Component {
         };
         updatedFormElement.value = event.target.value;
         if(updatedFormElement.validation) {
-            updatedFormElement.valid = this.checkValidity(updatedFormElement.value, updatedFormElement.validation);
+            updatedFormElement.valid = checkValidity(updatedFormElement.value, updatedFormElement.validation);
         }
         updatedFormElement.touched = true;
         updatedProjectData[inputIdentifier] = updatedFormElement;
@@ -441,38 +442,6 @@ class Project extends Component {
         }
         
         this.props.onCloseProject();
-    }
-
-    checkValidity = (value, rules) => {
-        let isValid = true;
-    
-        if (!rules) {
-            return true;
-        }
-    
-        if (isValid && rules.required) {
-            isValid = value.trim() !== ''; // Remove white space before and after and check that it's not blank
-        }
-    
-        if (isValid && rules.minLength) {
-            isValid = value.length >= rules.minLength;
-        }
-    
-        if (isValid && rules.maxLength) {
-            isValid = value.length <= rules.maxLength;
-        }
-    
-        if (isValid && rules.isEmail) {
-            const pattern = /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/;
-            isValid = pattern.test(value);
-        }
-    
-        if (isValid && rules.isNumeric) {
-            const pattern = /^\d+$/;
-            isValid = pattern.test(value);
-        }
-    
-        return isValid;
     }
 
     render() {

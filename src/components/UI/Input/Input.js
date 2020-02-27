@@ -1,5 +1,9 @@
 import React from 'react';
 import { withStyles } from '@material-ui/core/styles';
+import Datetime from 'react-datetime';
+import * as moment from 'moment';
+
+import './Input.css';
 
 const styles = theme => ({
     Input: {
@@ -31,7 +35,7 @@ const styles = theme => ({
     Invalid: {
         border: '1px solid red',
         backgroundColor: '#FDA49A'
-    }
+    },
 });
 
 const input = (props) => {
@@ -51,7 +55,6 @@ const input = (props) => {
         case('input'):
             inputElement = <input 
                 className={inputClasses.join(' ')} 
-                // {...props.elementConfig} 
                 value={props.value}
                 onChange={props.changed}/>;
             break;
@@ -59,7 +62,6 @@ const input = (props) => {
             inputElement = <textarea 
                 className={inputClasses.join(' ')} 
                 rows='3'
-                // {...props.elementConfig} 
                 value={props.value}
                 onChange={props.changed}/>;
             break;
@@ -77,10 +79,22 @@ const input = (props) => {
                     ))}
                 </select>);
             break;
+        case ('date'):
+            inputElement = (
+                <Datetime 
+                    utc={true}
+                    value={moment.utc(props.value).format("ddd. MMM. D, YYYY")}
+                    viewDate={props.value}
+                    onChange={props.dateChanged}
+                    closeOnSelect={true}
+                    timeFormat={false}
+                    inputProps={{readOnly: true, className: "customInput"}} // Per: https://github.com/YouCanBookMe/react-datetime/issues/46
+                />
+            );
+            break;
         default:
             inputElement = <input 
                 className={inputClasses.join(' ')} 
-                // {...props.elementConfig} 
                 value={props.value}
                 onChange={props.changed}/>;
     }

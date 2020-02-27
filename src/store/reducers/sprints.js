@@ -158,14 +158,46 @@ const addProject = (state, action) => {
     }
 }
 
+const updateSprint = (state, action) => {
+    // Important Note: action.sprintData does NOT include the existing projects, so those need to be copied onto the updated sprint object
+    const sprintIndex = getSprintIndexWithSprintId(state, action.sprintId);
+    let newSprintObjectWithProjects = {...action.sprintData};
+    newSprintObjectWithProjects['projects'] = state.sprints[sprintIndex].projects;
+
+    // Put the updated sprint object into a new copy of the sprints array
+    let updatedFullSprintsArray = updateObjectInArray(state.sprints, sprintIndex, newSprintObjectWithProjects);
+
+    // Check if startDate changed, and if so, reorder the full sprints array
+    if(state.sprints[sprintIndex].startDate.toString() !== newSprintObjectWithProjects.startDate.toString()) {  
+        updatedFullSprintsArray = getNewSprintsArrayOrderedByStartDate(updatedFullSprintsArray);
+    }
+
+    return {
+        ...state,
+        sprints: updatedFullSprintsArray
+    };
+};
+
+const addSprint = (state, action) => {
+    console.log('addSprint reducer function firing');
+
+    // TODO: Always call a orderSprintsByStartDate helper function as well
+    return state;
+}
 
 // NOTE: It's important that the sprints always be sorted by start date, so other reducer functions should call this one if they edit any sprint's start date
-const orderSprintsByStartDate = (state, action) => {
-    let dateOrderedSprintsArray = [...state.sprints];
+const getNewSprintsArrayOrderedByStartDate = (sprintsArray) => {
+    let newDateOrderedSprintsArray = [...sprintsArray];
 
-    dateOrderedSprintsArray.sort((a, b) => {
+    newDateOrderedSprintsArray.sort((a, b) => {
         return a.startDate - b.startDate
     });
+
+    return newDateOrderedSprintsArray;
+}
+
+const orderSprintsByStartDate = (state, action) => {
+    const dateOrderedSprintsArray = getNewSprintsArrayOrderedByStartDate(state.sprints); // This uses a helper function, because other reducer functions will also use this helper.
 
     return {
         ...state,
@@ -177,6 +209,8 @@ const reducer = (state = initialState, action) => {
     switch(action.type) {
         case actionTypes.UPDATE_PROJECT: return updateProject(state, action);
         case actionTypes.ADD_PROJECT: return addProject(state, action);
+        case actionTypes.UPDATE_SPRINT: return updateSprint(state, action);
+        case actionTypes.ADD_SPRINT: return addSprint(state, action);
         case actionTypes.ORDER_SPRINTS_BY_START_DATE: return orderSprintsByStartDate(state, action);
         default: return state;
     }

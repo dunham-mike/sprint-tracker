@@ -16,6 +16,21 @@ export const addProject = (sprintId, projectData) => {
     }
 };
 
+export const updateSprint = (sprintId, sprintData) => {
+    return {
+        type: actionTypes.UPDATE_SPRINT,
+        sprintId: sprintId,
+        sprintData: sprintData
+    }
+};
+
+export const addSprint = (sprintData) => {
+    return {
+        type: actionTypes.ADD_SPRINT,
+        sprintData: sprintData
+    }
+};
+
 export const orderSprintsByStartDate = () => {
     return {
         type: actionTypes.ORDER_SPRINTS_BY_START_DATE

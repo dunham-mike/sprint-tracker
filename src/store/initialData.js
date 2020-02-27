@@ -1,11 +1,13 @@
+import * as moment from 'moment';
+
 export const initialSprintState = {
     sprints: [
         {
             id: 1,
-            order: 1,
-            startDate: new Date("Feb 24 2020 00:00:00 GMT-0800 (Pacific Standard Time)"),
-            endDate: new Date("Mar 6 2020 23:59:59 GMT-0800 (Pacific Standard Time)"),
-            participants: ['Mike', 'Bobby'],
+            name: 'Sprint #1',
+            startDate: moment.utc("2020-02-24"), // new Date("Feb 24 2020 00:00:00 GMT-0800 (Pacific Standard Time)"),
+            endDate: moment.utc("2020-03-06"), //new Date("Mar 6 2020 23:59:59 GMT-0800 (Pacific Standard Time)"),
+            participants: 'Mike, Bobby',
             owner: 'Mike',
             projects: [
                 {
@@ -252,10 +254,10 @@ export const initialSprintState = {
         },
         {
             id: 2,
-            order: 2,
-            startDate: new Date("Mar 9 2020 00:00:00 GMT-0800 (Pacific Standard Time)"),
-            endDate: new Date("Mar 20 2020 22:59:59 GMT-0800 (Pacific Standard Time)"),
-            participants: ['Mike', 'Bobby'],
+            name: 'Sprint #2',
+            startDate: moment.utc("2020-03-09"), // new Date("Mar 9 2020 00:00:00 GMT-0800 (Pacific Standard Time)"),
+            endDate: moment.utc("2020-03-20"), // new Date("Mar 20 2020 22:59:59 GMT-0800 (Pacific Standard Time)"),
+            participants: 'Mike, Bobby',
             owner: 'Mike',
             projects: [
                 {
@@ -322,10 +324,10 @@ export const initialSprintState = {
         },
         {
             id: 3,
-            order: 3,
-            startDate: new Date("Mar 23 2020 00:00:00 GMT-0800 (Pacific Standard Time)"),
-            endDate: new Date("Apr 4 2020 22:59:59 GMT-0800 (Pacific Standard Time)"),
-            participants: ['Mike', 'Bobby'],
+            name: 'Sprint #3',
+            startDate: moment.utc("2020-03-23"), // new Date("Mar 23 2020 00:00:00 GMT-0800 (Pacific Standard Time)"),
+            endDate: moment.utc("2020-04-04"), // new Date("Apr 4 2020 22:59:59 GMT-0800 (Pacific Standard Time)"),
+            participants: 'Mike, Bobby',
             owner: 'Mike',
             projects: [
                 {
@@ -392,10 +394,10 @@ export const initialSprintState = {
         },
         {
             id: 4,
-            order: 4,
-            startDate: new Date("Apr 6 2020 00:00:00 GMT-0800 (Pacific Standard Time)"),
-            endDate: new Date("Apr 17 2020 22:59:59 GMT-0800 (Pacific Standard Time)"),
-            participants: ['Mike', 'Bobby'],
+            name: 'Sprint #4',
+            startDate: moment.utc("2020-04-06"), // new Date("Apr 6 2020 00:00:00 GMT-0800 (Pacific Standard Time)"),
+            endDate: moment.utc("2020-04-17"), // new Date("Apr 17 2020 22:59:59 GMT-0800 (Pacific Standard Time)"),
+            participants: 'Mike, Bobby',
             owner: 'Mike',
             projects: [
                 {
