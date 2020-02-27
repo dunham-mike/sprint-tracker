@@ -78,17 +78,24 @@ const styles = theme => ({
 
 class MainView extends Component {
     state = {
+        // Tracking which sprints to display
         currentSprintIndex: null,
         nextSprintIndex: null,
+        queueSprintId: -1,
         futureSprintsStartIndex: null,
+
+        // Tracking which sections to display
         displayCurrentSprint: true,
         displayNextSprint: false,
         displayQueue: false,
         displayFutureSprints: false,
-        viewingProject: false,
-        projectBeingViewed: null,
+
+        // Editing/creating a project
+        // TODO: refactor this just to pull data directly from state, rather than being passed in
+        editingProject: false,
+        creatingProject: false,
+        projectBeingViewed: null, // TODO: refactor to projectIdBeingViewed
         sprintIdBeingViewed: null,
-        columnNamesBeingViewed: null,
     }
 
     componentDidMount = () => {
@@ -146,21 +153,33 @@ class MainView extends Component {
         });
     }
 
-    openProject = (project, sprintId, columnNames) => {
+    openEditingProject = (project, sprintId, columnNames) => {
         this.setState({
-            viewingProject: true,
+            editingProject: true,
             projectBeingViewed: project,
             sprintIdBeingViewed: sprintId,
-            columnNamesBeingViewed: columnNames
         });
     }
 
-    closeProject = () => {
+    closeEditingProject = () => {
         this.setState({
-            viewingProject: false,
+            editingProject: false,
             projectBeingViewed: null,
             sprintIdBeingViewed: null,
-            columnNamesBeingViewed: null
+        });
+    }
+
+    openCreatingProject = (sprintId) => {
+        this.setState({
+            creatingProject: true,
+            sprintIdBeingViewed: sprintId,
+        });
+    }
+
+    closeCreatingProject = () => {
+        this.setState({
+            creatingProject: false,
+            sprintIdBeingViewed: null,
         });
     }
 
@@ -177,7 +196,7 @@ class MainView extends Component {
                         <Sprint 
                             sprint={this.props.sprints[this.state.currentSprintIndex]} 
                             sprintId={this.props.sprints[this.state.currentSprintIndex].id}
-                            onOpenProject={this.openProject}
+                            onOpenProject={this.openEditingProject}
                             sprintType="current"
                         />
                     </div>
@@ -197,7 +216,7 @@ class MainView extends Component {
                         <Sprint 
                             sprint={this.props.sprints[this.state.nextSprintIndex]} 
                             sprintId={this.props.sprints[this.state.nextSprintIndex].id}
-                            onOpenProject={this.openProject}
+                            onOpenProject={this.openEditingProject}
                             sprintType="next"
                         />
                     </div>
@@ -216,8 +235,8 @@ class MainView extends Component {
                     <div className={classes.innerSprintContainer}>
                         <Sprint 
                             sprint={this.props.queue} 
-                            sprintId={-1}
-                            onOpenProject={this.openProject}
+                            sprintId={this.state.queueSprintId}
+                            onOpenProject={this.openEditingProject}
                             sprintType="queue"
                         />
                     </div>
@@ -236,7 +255,13 @@ class MainView extends Component {
                     return (
                     <div key={futureSprint.id}>
                         <div className={classes.futureSprintsConditionalButtonsContainer}>
-                            <Button size="small" variant="outlined" color="default" className={classes.conditionalButtons} startIcon={<AddCircleOutlineOutlinedIcon />}>ADD NEW PROJECT</Button>
+                            <Button 
+                                size="small" variant="outlined" color="default" className={classes.conditionalButtons} 
+                                startIcon={<AddCircleOutlineOutlinedIcon />}
+                                onClick={() => this.openCreatingProject(futureSprint.id)}
+                            >
+                                ADD NEW PROJECT
+                            </Button>
                             <Button size="small" variant="outlined" color="default" className={classes.conditionalButtons} startIcon={<EditOutlinedIcon />}>EDIT SPRINT</Button>
                             <Button size="small" variant="outlined" color="default" className={classes.conditionalButtons} startIcon={<InsertChartOutlinedOutlinedIcon />}>SPRINT STATISTICS</Button>
                         </div>
@@ -244,7 +269,7 @@ class MainView extends Component {
                         <Sprint 
                             sprint={futureSprint} 
                             sprintId={futureSprint.id}
-                            onOpenProject={this.openProject}
+                            onOpenProject={this.openEditingProject}
                             sprintType="future"
                         />
                         </div>
@@ -264,16 +289,32 @@ class MainView extends Component {
         // --------------------
 
         // Displaying the Project Editing Modal
-        let project = null;
+        let projectEdit = null;
 
-        if (this.state.viewingProject) {
-            project = (
+        if (this.state.editingProject) {
+            projectEdit = (
                 <div>
                     <Project 
                         project={this.state.projectBeingViewed}
                         sprintId={this.state.sprintIdBeingViewed}
-                        columnNames={this.state.columnNamesBeingViewed}
-                        onCloseProject={this.closeProject}
+                        onCloseProject={this.closeEditingProject}
+                        actionType={"edit"}
+                    />
+                </div>
+            );
+        }
+
+        // Displaying the Project Creating Modal
+        let projectCreate = null;
+
+        if (this.state.creatingProject) {
+            projectCreate = (
+                <div>
+                    <Project 
+                        project={null}
+                        sprintId={this.state.sprintIdBeingViewed}
+                        onCloseProject={this.closeCreatingProject}
+                        actionType={"create"}
                     />
                 </div>
             );
@@ -287,7 +328,13 @@ class MainView extends Component {
                         <Button variant="contained" color="primary" className={classes.buttonSpacing} onClick={this.toggleCurrentSprint}>CURRENT SPRINT</Button>
                         {this.state.displayCurrentSprint && this.state.currentSprintIndex !== null
                         ?   <div className={classes.conditionalButtonsContainer}>
-                                <Button size="small" variant="outlined" color="primary" className={classes.conditionalButtons} startIcon={<AddCircleOutlineOutlinedIcon />}>ADD NEW PROJECT</Button>
+                                <Button 
+                                    size="small" variant="outlined" color="primary" className={classes.conditionalButtons} 
+                                    startIcon={<AddCircleOutlineOutlinedIcon />} 
+                                    onClick={() => this.openCreatingProject(this.props.sprints[this.state.currentSprintIndex].id)}
+                                >
+                                    ADD NEW PROJECT
+                                </Button>
                                 <Button size="small" variant="outlined" color="primary" className={classes.conditionalButtons} startIcon={<EditOutlinedIcon />}>EDIT SPRINT</Button>
                                 <Button size="small" variant="outlined" color="primary" className={classes.conditionalButtons} startIcon={<InsertChartOutlinedOutlinedIcon />}>SPRINT STATISTICS</Button>
                             </div>
@@ -303,7 +350,13 @@ class MainView extends Component {
                         <Button variant="contained" color="secondary" className={classes.buttonSpacing} onClick={this.toggleNextSprint}>NEXT SPRINT</Button>
                         {this.state.displayNextSprint && this.state.nextSprintIndex !== null
                         ?   <div className={classes.conditionalButtonsContainer}>
-                                <Button size="small" variant="outlined" color="secondary" className={classes.conditionalButtons} startIcon={<AddCircleOutlineOutlinedIcon />}>ADD NEW PROJECT</Button>
+                                <Button 
+                                    size="small" variant="outlined" color="secondary" className={classes.conditionalButtons} 
+                                    startIcon={<AddCircleOutlineOutlinedIcon />}
+                                    onClick={() => this.openCreatingProject(this.props.sprints[this.state.nextSprintIndex].id)}
+                                >
+                                    ADD NEW PROJECT
+                                </Button>
                                 <Button size="small" variant="outlined" color="secondary" className={classes.conditionalButtons} startIcon={<EditOutlinedIcon />}>EDIT SPRINT</Button>
                                 <Button size="small" variant="outlined" color="secondary" className={classes.conditionalButtons} startIcon={<InsertChartOutlinedOutlinedIcon />}>SPRINT STATISTICS</Button>
                             </div>
@@ -319,7 +372,13 @@ class MainView extends Component {
                         <Button variant="contained" color="default" className={classes.buttonSpacing} onClick={this.toggleQueue}>PROJECT QUEUE</Button>
                         {this.state.displayQueue
                         ?   <div className={classes.conditionalButtonsContainer}>
-                                <Button size="small" variant="outlined" color="default" className={classes.conditionalButtons} startIcon={<AddCircleOutlineOutlinedIcon />}>ADD NEW PROJECT</Button>
+                                <Button 
+                                    size="small" variant="outlined" color="default" className={classes.conditionalButtons} 
+                                    startIcon={<AddCircleOutlineOutlinedIcon />}
+                                    onClick={() => this.openCreatingProject(this.state.queueSprintId)}
+                                >
+                                    ADD NEW PROJECT
+                                </Button>
                             </div>
                         : null    
                         }
@@ -338,7 +397,8 @@ class MainView extends Component {
                 </div>
 
                 {/* Edit Project Modal */}
-                {project}
+                {projectEdit}
+                {projectCreate}
             </div>
         );
     }

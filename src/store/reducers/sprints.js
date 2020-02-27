@@ -4,17 +4,27 @@ import { initialSprintState } from '../initialData';
 const initialState = initialSprintState;
 
 const getSprintIndexWithSprintId = (state, sprintId) => {
+    console.log('Start of getSprintIndexWithSprintId');
+    console.log('state.sprints.length:', state.sprints.length);
+
     for(let i=0; i<state.sprints.length; i++) {
+        console.log('running i =', i);
         if(state.sprints[i].id === sprintId) {
+            console.log('returning i=', i);
             return i;
         }
     };
 
+    console.log('returning null');
     // If no match found, return null
     return null;
 };
 
 const getProjectIndexWithSprintIndexAndProjectId = (state, sprintIndex, projectId) => {
+    console.log('state:', state);
+    console.log('sprintIndex:', sprintIndex);
+    console.log('projectId:', projectId);
+
     let projectArray;
     if (sprintIndex === -1) { // A value of -1 indicates the sprint is the queue
         projectArray = state.queue;
@@ -50,10 +60,15 @@ const updateObjectInArray = (array, newItemIndex, newItem) => {
 };
 
 const updateProjectOnSprint = (state, action) => {
+    console.log('state:', state);
+    console.log('action:', action);
+    console.log('action.sprintId:', action.sprintId);
+
     const sprintIndex = getSprintIndexWithSprintId(state, action.sprintId);
-    const projectIndex = getProjectIndexWithSprintIndexAndProjectId(state, sprintIndex, action.projectData.id.value);
     console.log('sprintIndex:', sprintIndex);
-    console.log('projectIndex:', projectIndex);
+    const projectIndex = getProjectIndexWithSprintIndexAndProjectId(state, sprintIndex, action.projectData.id.value);
+    // console.log('sprintIndex:', sprintIndex);
+    // console.log('projectIndex:', projectIndex);
 
     if (sprintIndex === null || projectIndex === null) {
         console.log('[ERROR] Cannot find sprint and/or project index in current state');
@@ -74,6 +89,30 @@ const updateProjectOnSprint = (state, action) => {
     }
 };
 
+const addProjectOnSprint = (state, action) => {
+    const sprintIndex = getSprintIndexWithSprintId(state, action.sprintId);
+
+    if (sprintIndex === null) {
+        console.log('[ERROR] Cannot find sprint index in current state');
+        return state;
+    } else {
+        console.log('Placeholder: add project to an existing sprint');
+        let newProjectsArray = [...state.sprints[sprintIndex].projects];
+        newProjectsArray.push(action.projectData);
+
+        let newSprintObject = {...state.sprints[sprintIndex]};
+        newSprintObject.projects = newProjectsArray;
+
+        let newSprintsArray = updateObjectInArray(state.sprints, sprintIndex, newSprintObject);
+
+        return {
+            ...state,
+            sprints: newSprintsArray
+        }
+    }
+}
+
+
 const updateProjectOnQueue = (state, action) => {
     // action.sprintId should equal -1, which will search the queue when passed to this function
     const projectIndex = getProjectIndexWithSprintIndexAndProjectId(state, action.sprintId, action.projectData.id.value);
@@ -92,6 +131,16 @@ const updateProjectOnQueue = (state, action) => {
     }
 };
 
+const addProjectOnQueue = (state, action) => {
+    const newQueueArray = [...state.queue]
+    newQueueArray.push(action.projectData);
+
+    return {
+        ...state,
+        queue: newQueueArray
+    }
+}
+
 const updateProject = (state, action) => {
     // console.log('updateProject', action.sprintId);
     if (action.sprintId === -1) {
@@ -100,6 +149,14 @@ const updateProject = (state, action) => {
         return updateProjectOnSprint(state, action);
     }
 };
+
+const addProject = (state, action) => {
+    if (action.sprintId === -1) {
+        return addProjectOnQueue(state, action);
+    } else {
+        return addProjectOnSprint(state, action);
+    }
+}
 
 
 // NOTE: It's important that the sprints always be sorted by start date, so other reducer functions should call this one if they edit any sprint's start date
@@ -119,6 +176,7 @@ const orderSprintsByStartDate = (state, action) => {
 const reducer = (state = initialState, action) => {
     switch(action.type) {
         case actionTypes.UPDATE_PROJECT: return updateProject(state, action);
+        case actionTypes.ADD_PROJECT: return addProject(state, action);
         case actionTypes.ORDER_SPRINTS_BY_START_DATE: return orderSprintsByStartDate(state, action);
         default: return state;
     }

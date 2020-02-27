@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { withStyles } from '@material-ui/core/styles';
 import { connect } from 'react-redux';
+import { v4 as uuidv4 } from 'uuid'; // https://github.com/uuidjs/uuid
 
 import red from '@material-ui/core/colors/red';
 import Button from '@material-ui/core/Button';
@@ -79,7 +80,7 @@ class Project extends Component {
                     required: true
                 },
                 editable: false,
-                valid: false,
+                valid: true,
                 touched: false
             },
             name: {
@@ -157,22 +158,22 @@ class Project extends Component {
                 elementConfig: {
                     displayName: 'Estimated Project Size',
                     options: [
-                        {value: '1', displayValue: '1 - Extra Small'},
-                        {value: '2', displayValue: '2 - Small'},
-                        {value: '3', displayValue: '3 - Small-to-Medium'},
-                        {value: '5', displayValue: '5 - Medium'},
-                        {value: '8', displayValue: '8 - Medium-to-Large'},
-                        {value: '13', displayValue: '13 - Large'},
-                        {value: '21', displayValue: '21 - Extra Large'},
-                        {value: '34', displayValue: '34 - Gargantuan'}
+                        {value: '1 - Extra Small', displayValue: '1 - Extra Small'},
+                        {value: '2 - Small', displayValue: '2 - Small'},
+                        {value: '3 - Small-to-Medium', displayValue: '3 - Small-to-Medium'},
+                        {value: '5 - Medium', displayValue: '5 - Medium'},
+                        {value: '8 - Medium-to-Large', displayValue: '8 - Medium-to-Large'},
+                        {value: '13 - Large', displayValue: '13 - Large'},
+                        {value: '21 - Extra Large', displayValue: '21 - Extra Large'},
+                        {value: '34 - Gargantuan', displayValue: '34 - Gargantuan'}
                     ]
                 },
-                value: '',
+                value: '1 - Extra Small',
                 validation: {
                     required: true
                 },
                 editable: true,
-                valid: false,
+                valid: true,
                 touched: false
             },
             mustDo: {
@@ -180,15 +181,15 @@ class Project extends Component {
                 elementConfig: {
                     displayName: 'Must Do or Nice-to-Have?',
                     options: [
-                        {value: 'mustDo', displayValue: 'Must Do'},
-                        {value: 'niceToHave', displayValue: 'Nice-to-Have'}]
+                        {value: 'Must Do', displayValue: 'Must Do'},
+                        {value: 'Nice-to-Have', displayValue: 'Nice-to-Have'}]
                 },
-                value: '',
+                value: 'Must Do',
                 validation: {
                     required: true
                 },
                 editable: true,
-                valid: false,
+                valid: true,
                 touched: false
             },
             externalDueDate: {
@@ -202,7 +203,7 @@ class Project extends Component {
                     required: false
                 },
                 editable: true,
-                valid: false,
+                valid: true, // Any field that is not required defaults to valid
                 touched: false
             },
             deliverables: {
@@ -216,7 +217,7 @@ class Project extends Component {
                     required: false
                 },
                 editable: true,
-                valid: false,
+                valid: true,
                 touched: false
             },
             deliverableLink: {
@@ -230,7 +231,7 @@ class Project extends Component {
                     required: false
                 },
                 editable: true,
-                valid: false,
+                valid: true,
                 touched: false
             },
             notes: {
@@ -244,7 +245,7 @@ class Project extends Component {
                     required: false
                 },
                 editable: true,
-                valid: false,
+                valid: true,
                 touched: false
             },
             completionStatus: {
@@ -264,7 +265,7 @@ class Project extends Component {
                     required: false
                 },
                 editable: true,
-                valid: false,
+                valid: true,
                 touched: false
             },
             notCompletedExplanation: {
@@ -278,7 +279,7 @@ class Project extends Component {
                     required: false
                 },
                 editable: true,
-                valid: false,
+                valid: true,
                 touched: false
             },
             statusEndOfWeek1: {
@@ -299,7 +300,7 @@ class Project extends Component {
                     required: false
                 },
                 editable: true,
-                valid: false,
+                valid: true,
                 touched: false
             },
             statusEndOfWeek2: {
@@ -320,7 +321,7 @@ class Project extends Component {
                     required: false
                 },
                 editable: true,
-                valid: false,
+                valid: true,
                 touched: false
             },
             statusEndOfWeek3: {
@@ -341,7 +342,7 @@ class Project extends Component {
                     required: false
                 },
                 editable: true,
-                valid: false,
+                valid: true,
                 touched: false
             },
             statusEndOfWeek4: {
@@ -362,18 +363,37 @@ class Project extends Component {
                     required: false
                 },
                 editable: true,
-                valid: false,
+                valid: true,
                 touched: false
             },
         },
         formIsValid: false
-    }
+    };
 
     componentDidMount() {
-        this.loadStateFromProject(this.props.sprintId, this.props.project);
+        // console.log('initialProjectState:', initialProjectState);
+        if(this.props.actionType === "edit") {
+            this.loadStateFromExistingProject(this.props.sprintId, this.props.project);
+        } else if (this.props.actionType === "create") {
+            this.loadStateForNewProject();
+        } else {
+            console.log('[Project.js] Error: missing actionType prop');
+        }
     }
 
-    loadStateFromProject = (sprintId, project) => {
+    loadStateForNewProject = () => {
+        let updatedProjectData = {...this.state.projectData};
+
+        // Generate new unique project Id
+        updatedProjectData.id.value = uuidv4();
+
+        this.setState({
+            sprintId: this.props.sprintId,
+            projectData: updatedProjectData
+        });
+    }
+
+    loadStateFromExistingProject = (sprintId, project) => {
         let newProjectState = {}
         
         const projectKeys = Object.keys(project);
@@ -419,7 +439,7 @@ class Project extends Component {
         });
     }
 
-    updateProjectHandler = (event) => {
+    saveProjectHandler = (event) => {
         event.preventDefault();
 
         let transformedProjectData = {};
@@ -431,7 +451,14 @@ class Project extends Component {
             transformedProjectData[keys[i]] = thisObject;
         }
 
-        this.props.onUpdateProject(this.state.sprintId, transformedProjectData);
+        if (this.props.actionType === "edit") {
+            this.props.onUpdateProject(this.state.sprintId, transformedProjectData);
+        } else if (this.props.actionType === "create") {
+            this.props.onAddProject(this.state.sprintId, transformedProjectData);
+        } else {
+            console.log('[Project.js] Error: missing actionType prop');
+        }
+        
         this.props.onCloseProject();
     }
 
@@ -479,7 +506,15 @@ class Project extends Component {
         }
 
         let form = (
-            <form onSubmit={this.updateProjectHandler}>
+            <form onSubmit={this.saveProjectHandler}>
+                    {/* Display Sprint Info */}
+                    <Input 
+                        elementType="readonly"
+                        elementConfig={{ displayName: 'Sprint ID'}}
+                        required={true}
+                        value={this.props.sprintId === -1 ? "n/a - on Project Queue" : this.props.sprintId}
+                    />
+                    {/* Display Rest of Form Elements */}
                     {formElementsArray.map(formElement => (
                         <Input 
                             key={formElement.id}
@@ -516,6 +551,13 @@ class Project extends Component {
             </form>
         );
 
+        let verb1 = "Edit";
+        let verb2 = "Edit";
+
+        if(this.props.actionType === "create") {
+            verb1 = "Create";
+            verb2 = "Enter";
+        }
 
         return (
             <React.Fragment>
@@ -526,8 +568,8 @@ class Project extends Component {
                 <div className={classes.Modal}>
                     <div className={classes.CancelButtonContainer} onClick={this.props.onCloseProject}><CancelOutlinedIcon fontSize="large"/></div>
                     <div className={classes.FormContainer}>
-                        <div className={classes.FormTitle}>Edit Project</div>
-                        <div>Edit the project information and click "Save" below. * = required field</div>
+                        <div className={classes.FormTitle}>{verb1} Project</div>
+                        <div>{verb2} the project information and click "Save" below. * = required field</div>
                         <div className={classes.Form}>
                             {form}
                         </div>
@@ -542,6 +584,7 @@ class Project extends Component {
 const mapDispatchToProps = dispatch => {
     return {
         onUpdateProject: (sprintId, projectData) => dispatch(actions.updateProject(sprintId, projectData)),
+        onAddProject: (sprintId, projectData) => dispatch(actions.addProject(sprintId, projectData)),
     };
 };
 
