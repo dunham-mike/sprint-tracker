@@ -7,6 +7,7 @@ import EditOutlinedIcon from '@material-ui/icons/EditOutlined';
 import InsertChartOutlinedOutlinedIcon from '@material-ui/icons/InsertChartOutlinedOutlined';
 
 import Sprint from '../../components/Sprint/Sprint';
+import EditSprint from '../../components/EditSprint/EditSprint';
 import { withStyles } from '@material-ui/core/styles';
 import Project from '../Project/Project';
 import * as actions from '../../store/actions/index';
@@ -94,6 +95,8 @@ class MainView extends Component {
         // TODO: refactor this just to pull data directly from state, rather than being passed in
         editingProject: false,
         creatingProject: false,
+        editingSprint: false,
+        // creatingSprint: false,
         projectBeingViewed: null, // TODO: refactor to projectIdBeingViewed
         sprintIdBeingViewed: null,
     }
@@ -179,6 +182,20 @@ class MainView extends Component {
     closeCreatingProject = () => {
         this.setState({
             creatingProject: false,
+            sprintIdBeingViewed: null,
+        });
+    }
+
+    openEditingSprint = (sprintId) => {
+        this.setState({
+            editingSprint: true,
+            sprintIdBeingViewed: sprintId,
+        });
+    }
+
+    closeEditingSprint = () => {
+        this.setState({
+            editingSprint: false,
             sprintIdBeingViewed: null,
         });
     }
@@ -320,6 +337,21 @@ class MainView extends Component {
             );
         }
 
+        // Displaying the Sprint Editing Modal
+        let sprintEdit = null;
+
+        if (this.state.editingSprint) {
+            sprintEdit = (
+                <div>
+                    <EditSprint
+                        sprintId={this.state.sprintIdBeingViewed}
+                        onCloseProject={this.closeEditingSprint}
+                        actionType={"edit"}
+                     />
+                </div>
+            );
+        }
+
         return(
             <div className={classes.mainViewContainer}>
                 {/* Current Sprint Section */}
@@ -335,7 +367,13 @@ class MainView extends Component {
                                 >
                                     ADD NEW PROJECT
                                 </Button>
-                                <Button size="small" variant="outlined" color="primary" className={classes.conditionalButtons} startIcon={<EditOutlinedIcon />}>EDIT SPRINT</Button>
+                                <Button 
+                                    size="small" variant="outlined" color="primary" className={classes.conditionalButtons} 
+                                    startIcon={<EditOutlinedIcon />}
+                                    onClick={() => this.openEditingSprint(this.props.sprints[this.state.currentSprintIndex].id)}
+                                >
+                                    EDIT SPRINT
+                                </Button>
                                 <Button size="small" variant="outlined" color="primary" className={classes.conditionalButtons} startIcon={<InsertChartOutlinedOutlinedIcon />}>SPRINT STATISTICS</Button>
                             </div>
                         : null    
@@ -396,9 +434,10 @@ class MainView extends Component {
                     </div>
                 </div>
 
-                {/* Edit Project Modal */}
+                {/* Edit Projects and Sprints Modals */}
                 {projectEdit}
                 {projectCreate}
+                {sprintEdit}
             </div>
         );
     }

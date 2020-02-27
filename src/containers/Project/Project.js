@@ -10,30 +10,11 @@ import CancelIcon from '@material-ui/icons/Cancel';
 import CancelOutlinedIcon from '@material-ui/icons/CancelOutlined';
 
 import Input from '../../components/UI/Input/Input';
+import Backdrop from '../../components/UI/Backdrop/Backdrop';
+import Modal from '../../components/UI/Modal/Modal';
 import * as actions from '../../store/actions/index';
 
 const styles = theme => ({
-    Backdrop: {
-        width: '100%',
-        height: '100%',
-        position: 'fixed',
-        zIndex: '9000',
-        left: '0',
-        top: '0',
-        backgroundColor: 'black',
-        opacity: '0.6',
-    },
-    Modal: {
-        position: 'fixed',
-        zIndex: '10000',
-        width: '86%',
-        height: '86%',
-        left: '7%',
-        top: '7%',
-        opacity: '1',
-        backgroundColor: 'white',
-        overflow: 'auto'
-    },
     CancelButtonContainer: {
         position: 'fixed',
         top: '7%',
@@ -561,11 +542,8 @@ class Project extends Component {
 
         return (
             <React.Fragment>
-                <div 
-                    className={classes.Backdrop} 
-                    // onClick={this.props.onCloseProject} // Commenting this out so users don't accidentally click out while editing.
-                />
-                <div className={classes.Modal}>
+                <Backdrop />
+                <Modal>
                     <div className={classes.CancelButtonContainer} onClick={this.props.onCloseProject}><CancelOutlinedIcon fontSize="large"/></div>
                     <div className={classes.FormContainer}>
                         <div className={classes.FormTitle}>{verb1} Project</div>
@@ -575,7 +553,7 @@ class Project extends Component {
                         </div>
                         
                     </div>
-                </div>
+                </Modal>
             </React.Fragment>
         );
     }
