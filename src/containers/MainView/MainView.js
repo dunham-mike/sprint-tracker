@@ -11,6 +11,7 @@ import EditSprint from '../EditSprint/EditSprint';
 import { withStyles } from '@material-ui/core/styles';
 import Project from '../Project/Project';
 import * as actions from '../../store/actions/index';
+import SprintStatistics from '../../components/SprintStatistics/SprintStatistics';
 
 const styles = theme => ({
     mainViewContainer: {
@@ -99,6 +100,9 @@ class MainView extends Component {
         creatingSprint: false,
         projectBeingViewed: null, // TODO: refactor to projectIdBeingViewed
         sprintIdBeingViewed: null,
+
+        // Sprint Statistics
+        displayingSprintStatistics: false,
     }
 
     componentDidMount = () => {
@@ -221,6 +225,20 @@ class MainView extends Component {
         });
     }
 
+    openSprintStatistics = (sprintId) => {
+        this.setState({
+            displayingSprintStatistics: true,
+            sprintIdBeingViewed: sprintId,
+        })
+    }
+
+    closeSprintStatistics = () => {
+        this.setState({
+            displayingSprintStatistics: false,
+            sprintIdBeingViewed: null,
+        })
+    }
+
     render() {
         const { classes } = this.props;
 
@@ -301,12 +319,19 @@ class MainView extends Component {
                                 ADD NEW PROJECT
                             </Button>
                             <Button 
-                                size="small" variant="outlined" color="default" className={classes.conditionalButtons} startIcon={<EditOutlinedIcon />}
+                                size="small" variant="outlined" color="default" className={classes.conditionalButtons} 
+                                startIcon={<EditOutlinedIcon />}
                                 onClick={() => this.openEditingSprint(futureSprint.id)}
                             >
                                 EDIT SPRINT
                             </Button>
-                            <Button size="small" variant="outlined" color="default" className={classes.conditionalButtons} startIcon={<InsertChartOutlinedOutlinedIcon />}>SPRINT STATISTICS</Button>
+                            <Button 
+                                size="small" variant="outlined" color="default" className={classes.conditionalButtons} 
+                                startIcon={<InsertChartOutlinedOutlinedIcon />}
+                                onClick={() => this.openSprintStatistics(futureSprint.id)}
+                            >
+                                SPRINT STATISTICS
+                            </Button>
                         </div>
                         <div className={classes.innerSprintContainer}>
                         <Sprint 
@@ -394,6 +419,20 @@ class MainView extends Component {
             );
         }
 
+        // Displaying the Sprint Statistics Modal
+        let sprintStatistics = null;
+
+        if (this.state.displayingSprintStatistics) {
+            sprintStatistics = (
+                <div>
+                    <SprintStatistics 
+                        sprintId = {this.state.sprintIdBeingViewed}
+                        onCloseSprintStatistics = {this.closeSprintStatistics}
+                    />
+                </div>
+            );
+        }
+
         return(
             <div className={classes.mainViewContainer}>
                 {/* Current Sprint Section */}
@@ -416,7 +455,13 @@ class MainView extends Component {
                                 >
                                     EDIT SPRINT
                                 </Button>
-                                <Button size="small" variant="outlined" color="primary" className={classes.conditionalButtons} startIcon={<InsertChartOutlinedOutlinedIcon />}>SPRINT STATISTICS</Button>
+                                <Button 
+                                    size="small" variant="outlined" color="primary" className={classes.conditionalButtons} 
+                                    startIcon={<InsertChartOutlinedOutlinedIcon />}
+                                    onClick={() => this.openSprintStatistics(this.props.sprints[this.state.currentSprintIndex].id)}
+                                >
+                                    SPRINT STATISTICS
+                                </Button>
                             </div>
                         : null    
                         }
@@ -438,12 +483,19 @@ class MainView extends Component {
                                     ADD NEW PROJECT
                                 </Button>
                                 <Button 
-                                    size="small" variant="outlined" color="secondary" className={classes.conditionalButtons} startIcon={<EditOutlinedIcon />}
+                                    size="small" variant="outlined" color="secondary" className={classes.conditionalButtons} 
+                                    startIcon={<EditOutlinedIcon />}
                                     onClick={() => this.openEditingSprint(this.props.sprints[this.state.nextSprintIndex].id)}
                                 >
                                     EDIT SPRINT
                                 </Button>
-                                <Button size="small" variant="outlined" color="secondary" className={classes.conditionalButtons} startIcon={<InsertChartOutlinedOutlinedIcon />}>SPRINT STATISTICS</Button>
+                                <Button 
+                                    size="small" variant="outlined" color="secondary" className={classes.conditionalButtons} 
+                                    startIcon={<InsertChartOutlinedOutlinedIcon />}
+                                    onClick={() => this.openSprintStatistics(this.props.sprints[this.state.nextSprintIndex].id)}
+                                >
+                                    SPRINT STATISTICS
+                                </Button>
                             </div>
                         : null    
                         }
@@ -497,6 +549,9 @@ class MainView extends Component {
                 {projectCreate}
                 {sprintEdit}
                 {sprintCreate}
+
+                {/* Sprint Statistics Modal */}
+                {sprintStatistics}
             </div>
         );
     }
