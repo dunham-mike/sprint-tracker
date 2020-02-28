@@ -7,7 +7,7 @@ import EditOutlinedIcon from '@material-ui/icons/EditOutlined';
 import InsertChartOutlinedOutlinedIcon from '@material-ui/icons/InsertChartOutlinedOutlined';
 
 import Sprint from '../../components/Sprint/Sprint';
-import EditSprint from '../../components/EditSprint/EditSprint';
+import EditSprint from '../EditSprint/EditSprint';
 import { withStyles } from '@material-ui/core/styles';
 import Project from '../Project/Project';
 import * as actions from '../../store/actions/index';
@@ -92,11 +92,11 @@ class MainView extends Component {
         displayFutureSprints: false,
 
         // Editing/creating a project
-        // TODO: refactor this just to pull data directly from state, rather than being passed in
+        // TODO: refactor this just to pull data directly from state, rather than being passed in for the project component
         editingProject: false,
         creatingProject: false,
         editingSprint: false,
-        // creatingSprint: false,
+        creatingSprint: false,
         projectBeingViewed: null, // TODO: refactor to projectIdBeingViewed
         sprintIdBeingViewed: null,
     }
@@ -111,6 +111,7 @@ class MainView extends Component {
     }
 
     categorizeSprintsByStartDate = () => {
+        console.log('Running categorizeSprintsByStartDate()');
         let currentSprintIndex = null;
         let nextSprintIndex = null;
         let futureSprintsStartIndex = null;
@@ -205,6 +206,18 @@ class MainView extends Component {
         this.setState({
             editingSprint: false,
             sprintIdBeingViewed: null,
+        });
+    }
+
+    openCreatingSprint = (sprintId) => {
+        this.setState({
+            creatingSprint: true,
+        });
+    }
+
+    closeCreatingSprint = () => {
+        this.setState({
+            creatingSprint: false,
         });
     }
 
@@ -308,8 +321,10 @@ class MainView extends Component {
                 }));
             
             futureSprints = (
-                <div className={classes.sprintContainer}>
-                    {futureSprintsArray}
+                <div className={classes.futureSprintsContainer}>
+                    <div className={classes.sprintContainer}>
+                        {futureSprintsArray}
+                    </div>
                 </div>
             );
         } else if(this.state.displayFutureSprints) {
@@ -360,6 +375,20 @@ class MainView extends Component {
                         sprintId={this.state.sprintIdBeingViewed}
                         onCloseSprint={this.closeEditingSprint}
                         actionType={"edit"}
+                     />
+                </div>
+            );
+        }
+
+        // Displaying the Sprint Editing Modal
+        let sprintCreate = null;
+
+        if (this.state.creatingSprint) {
+            sprintCreate = (
+                <div>
+                    <EditSprint
+                        onCloseSprint={this.closeCreatingSprint}
+                        actionType={"create"}
                      />
                 </div>
             );
@@ -446,9 +475,20 @@ class MainView extends Component {
                 <div className={classes.sprintSectionContainer}>
                     <div className={classes.buttonContainer}>
                         <Button variant="contained" color="default" className={classes.buttonSpacing} onClick={this.toggleFutureSprints}>FUTURE SPRINTS</Button>
-                        <div className={classes.futureSprintsContainer}>
                             {futureSprints}
-                        </div>
+                    </div>
+                </div>
+
+                {/* Create New Sprint Section */}
+                <div className={classes.sprintSectionContainer}>
+                    <div className={classes.buttonContainer}>
+                        <Button 
+                            variant="text" color="default" className={classes.buttonSpacing} 
+                            startIcon={<AddCircleOutlineOutlinedIcon />}
+                            onClick={this.openCreatingSprint}
+                        >
+                            CREATE NEW SPRINT
+                        </Button>
                     </div>
                 </div>
 
@@ -456,6 +496,7 @@ class MainView extends Component {
                 {projectEdit}
                 {projectCreate}
                 {sprintEdit}
+                {sprintCreate}
             </div>
         );
     }

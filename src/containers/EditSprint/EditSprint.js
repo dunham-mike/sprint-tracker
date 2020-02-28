@@ -11,8 +11,8 @@ import CancelIcon from '@material-ui/icons/Cancel';
 import CancelOutlinedIcon from '@material-ui/icons/CancelOutlined';
 
 import Input from '../../components/UI/Input/Input';
-import Backdrop from '../UI/Backdrop/Backdrop';
-import Modal from '../UI/Modal/Modal';
+import Backdrop from '../../components/UI/Backdrop/Backdrop';
+import Modal from '../../components/UI/Modal/Modal';
 import { checkValidity } from '../../shared/utility';
 import * as actions from '../../store/actions/index';
 
@@ -72,14 +72,14 @@ class editSprint extends Component {
                 elementType: 'input',
                 elementConfig: {
                     type: 'text',
-                    displayName: 'Sprint Name (e.g., #4)'
+                    displayName: 'Sprint Name (e.g., Sprint #4)'
                 },
                 value: '',
                 validation: {
-                    required: false
+                    required: true
                 },
                 editable: true,
-                valid: true,
+                valid: false,
                 touched: false
             },
             startDate: {
@@ -232,7 +232,7 @@ class editSprint extends Component {
         /* If new date isn't valid (say, by typing in something invalid), then mark the form as invalid to prevent saving and don't update 
            the value in the state. Note: Additionally, datetime is configured so users cannot manually edit the input. */
         if (!moment(updatedDate).isValid()) {
-            console.log('Date is not valid!');
+            console.log('[Error] Date is not valid!');
             this.setState({
                 formIsValid: false
             })
@@ -263,7 +263,6 @@ class editSprint extends Component {
             formIsValid = updatedSprintData.endDate.value >= updatedSprintData.startDate.value;
         }
 
-        console.log('Updating sprintData in state:', updatedSprintData);
         this.setState({
             sprintData: updatedSprintData,
             formIsValid: formIsValid
@@ -285,7 +284,7 @@ class editSprint extends Component {
             this.props.onUpdateSprint(this.props.sprintId, transformedSprintData);
         } else if (this.props.actionType === "create") {
             console.log('Dispatch an action to create the sprint');
-            // this.props.onAddProject(this.state.sprintId, transformedProjectData);
+            this.props.onAddSprint(transformedSprintData);
         } else {
             console.log('[Project.js] Error: missing actionType prop');
         }

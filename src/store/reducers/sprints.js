@@ -181,8 +181,23 @@ const updateSprint = (state, action) => {
 const addSprint = (state, action) => {
     console.log('addSprint reducer function firing');
 
-    // TODO: Always call a orderSprintsByStartDate helper function as well
-    return state;
+    // Important Note: action.sprintData does NOT include a projects key, so that needs to be added
+    let newSprintObjectWithProjects = {...action.sprintData};
+    newSprintObjectWithProjects['projects'] = [];
+
+    // Push the updated sprint object onto a new copy of the sprints array
+    let updatedFullSprintsArray = [...state.sprints];
+    updatedFullSprintsArray.push(newSprintObjectWithProjects);
+
+    // If the new sprint's start date is not after the last sprint's start date, then reorder
+    if(state.sprints[state.sprints.length-1].startDate > newSprintObjectWithProjects.startDate) {
+        updatedFullSprintsArray = getNewSprintsArrayOrderedByStartDate(updatedFullSprintsArray);
+    }
+
+    return {
+        ...state,
+        sprints: updatedFullSprintsArray
+    };
 }
 
 // NOTE: It's important that the sprints always be sorted by start date, so other reducer functions should call this one if they edit any sprint's start date
