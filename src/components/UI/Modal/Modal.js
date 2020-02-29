@@ -1,6 +1,8 @@
 import React from 'react';
 import { withStyles } from '@material-ui/core/styles';
 
+import Paper from '@material-ui/core/Paper';
+
 const styles = theme => ({
     Modal: {
         position: 'fixed',
@@ -19,9 +21,9 @@ const modal = (props) => {
     const { classes } = props;
 
     return(
-        <div className={classes.Modal}>
+        <Paper className={classes.Modal}>
             {props.children}
-        </div>
+        </Paper>
     );
 }
 
