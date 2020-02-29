@@ -5,8 +5,6 @@ import { LineChart, Line, CartesianGrid, XAxis, YAxis, Tooltip, ResponsiveContai
 
 import red from '@material-ui/core/colors/red';
 import blue from '@material-ui/core/colors/blue';
-// import grey from '@material-ui/core/colors/grey';
-import CancelOutlinedIcon from '@material-ui/icons/CancelOutlined';
 
 import Grid from '@material-ui/core/Grid';
 import List from '@material-ui/core/List';
@@ -18,15 +16,13 @@ import Typography from '@material-ui/core/Typography';
 
 import Backdrop from '../UI/Backdrop/Backdrop';
 import Modal from '../UI/Modal/Modal';
-
+import CancelButton from '../UI/CancelButton/CancelButton';
 
 const styles = theme => ({
-    CancelButtonContainer: {
+    cancelButtonContainer: {
         position: 'fixed',
         top: '7%',
         right: '7%',
-        cursor: 'pointer',
-        color: red[100],
     },
     blue: {
         color: theme.palette.getContrastText(blue[500]),
@@ -307,7 +303,9 @@ const sprintStatistics = (props) => {
         <React.Fragment>
             <Backdrop />
             <Modal>
-                <div className={classes.CancelButtonContainer} onClick={props.onCloseSprintStatistics}><CancelOutlinedIcon fontSize="large"/></div>
+                <div className={classes.cancelButtonContainer} >
+                    <CancelButton clicked={props.onCloseSprintStatistics} />
+                </div>
                 <div>
                     <Grid container spacing={2}>
                         <Grid item xs={12}>

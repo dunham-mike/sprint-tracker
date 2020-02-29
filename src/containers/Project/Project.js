@@ -7,21 +7,20 @@ import red from '@material-ui/core/colors/red';
 import Button from '@material-ui/core/Button';
 import SaveIcon from '@material-ui/icons/Save';
 import CancelIcon from '@material-ui/icons/Cancel';
-import CancelOutlinedIcon from '@material-ui/icons/CancelOutlined';
+import Typography from '@material-ui/core/Typography';
 
 import Input from '../../components/UI/Input/Input';
 import Backdrop from '../../components/UI/Backdrop/Backdrop';
 import Modal from '../../components/UI/Modal/Modal';
+import CancelButton from '../../components/UI/CancelButton/CancelButton';
 import * as actions from '../../store/actions/index';
 import { checkValidity } from '../../shared/utility';
 
 const styles = theme => ({
-    CancelButtonContainer: {
+    cancelButtonContainer: {
         position: 'fixed',
         top: '7%',
         right: '7%',
-        cursor: 'pointer',
-        color: red[100],
     },
     FormContainer: {
         margin: theme.spacing(1),
@@ -30,8 +29,6 @@ const styles = theme => ({
     FormTitle: {
         marginTop: theme.spacing(1),
         color: red[300],
-        fontWeight: 'bold',
-        fontSize: '1.5rem'
     },
     Form: {
         textAlign: 'left'
@@ -513,9 +510,13 @@ class Project extends Component {
             <React.Fragment>
                 <Backdrop />
                 <Modal>
-                    <div className={classes.CancelButtonContainer} onClick={this.props.onCloseProject}><CancelOutlinedIcon fontSize="large"/></div>
+                    <div className={classes.cancelButtonContainer} >
+                        <CancelButton clicked={this.props.onCloseProject} />
+                    </div>
                     <div className={classes.FormContainer}>
-                        <div className={classes.FormTitle}>{verb1} Project</div>
+                        <div className={classes.FormTitle}>
+                            <Typography variant="h4">{verb1} Project</Typography>
+                        </div>
                         <div>{verb2} the project information and click "Save" below. * = required field</div>
                         <div className={classes.Form}>
                             {form}

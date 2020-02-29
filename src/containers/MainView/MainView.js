@@ -17,8 +17,8 @@ const styles = theme => ({
     mainViewContainer: {
         display: 'flex',
         flexDirection: 'column',
-        marginTop: theme.spacing(2),
-        marginLeft: theme.spacing(2),
+        paddingTop: theme.spacing(1),
+        marginLeft: theme.spacing(3),
         position: 'relative',
     },
     sprintSectionContainer: {
@@ -30,7 +30,7 @@ const styles = theme => ({
     },
     conditionalButtonsContainer: {
         paddingTop: theme.spacing(0.75),
-        paddingRight: theme.spacing(2),
+        paddingRight: theme.spacing(3),
         display: 'flex',
         justifyContent: 'flex-end',
         flexWrap: 'wrap',
@@ -63,7 +63,7 @@ const styles = theme => ({
     },
     sprintContainer: {
         marginBottom: theme.spacing(2),
-        paddingRight: theme.spacing(2),
+        paddingRight: theme.spacing(3),
         width: '100%',
         minHeight: theme.spacing(7),
     },
