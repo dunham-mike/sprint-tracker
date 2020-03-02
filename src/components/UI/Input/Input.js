@@ -3,6 +3,8 @@ import { withStyles } from '@material-ui/core/styles';
 import Datetime from 'react-datetime';
 import * as moment from 'moment';
 
+import grey from '@material-ui/core/colors/grey';
+
 import './Input.css';
 
 const styles = theme => ({
@@ -25,6 +27,10 @@ const styles = theme => ({
         display: 'block',
         width: '100%',
         boxSizing: 'border-box',
+        '&:focus': {
+            outline: 'none',
+            backgroundColor: grey[100],
+        },
     },
     
     // InputElement:focus: {
