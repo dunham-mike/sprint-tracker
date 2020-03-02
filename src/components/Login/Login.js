@@ -65,14 +65,18 @@ const styles = theme => ({
         margin: theme.spacing(1),
         color: red[400],
     },
+    loginErrorMessage: {
+        marginTop: theme.spacing(2),
+        color: red[400],
+        textAlign: 'center',
+    },
     createAccount: {
         marginTop: theme.spacing(3),
         textAlign: 'center',
         a: {
             color: grey[300],
         }
-        
-    }
+    },
 });
 
 
@@ -80,22 +84,17 @@ const styles = theme => ({
 const login = (props) => {
     const { classes } = props;
 
-    let loadingSpinner = null;
-    // TODO: create spinner
-    if(props.loading) {
-        loadingSpinner = (
-            <div>
-                LOADING SPINNER GOES HERE
-            </div>
-        );
-    }
-
-    // TODO: process and format error message
     let errorMessage = null;
 
     if (props.error) {
+        const errorMessageTranslation = {
+            'EMAIL_NOT_FOUND' : 'No account found for this email address',
+            'INVALID_PASSWORD' : 'Incorrect password',
+            'USER_DISABLED' : 'This user has been disabled by an administrator',
+        }
+
         errorMessage = (
-            <p>{props.error.message}</p>
+            errorMessageTranslation[props.error.message] ? errorMessageTranslation[props.error.message] : props.error.message
         );
     }
 
@@ -105,7 +104,6 @@ const login = (props) => {
     }
 
     const submitHandler = (values, { setSubmitting }) => {
-        console.log('values:', values);
         props.onKickoffLogin(values.email, values.password, false);
         setSubmitting(false);
     }
@@ -114,7 +112,7 @@ const login = (props) => {
         <Paper className={classes.paper}>
             {authRedirect}
             <div className={classes.loginContainer}>
-                {loadingSpinner}
+                {/* {loadingSpinner} */}
                 <Typography variant="h5">Log into Sprint Tracker</Typography>
                 <Formik
                     initialValues={{ email: '', password: '' }}
@@ -127,17 +125,7 @@ const login = (props) => {
                             .max(20, 'Must be 20 characters or less')
                             .required('Required'),
                     })}
-                    onSubmit={(values, { setSubmitting }) => { submitHandler(values, { setSubmitting })}
-                    //     (values, { setSubmitting }) => {
-                    //     console.log('values:', values);
-                    //     props.onKickoffLogin(values.email, values.password, false);
-                    //     setSubmitting(false);
-                    //     // setTimeout(() => {
-                    //     //     alert(JSON.stringify(values, null, 2));
-                    //     //     setSubmitting(false);
-                    //     // }, 400);
-                    // }
-                }
+                    onSubmit={(values, { setSubmitting }) => { submitHandler(values, { setSubmitting })}}
                 >
                     {({ isSubmitting }) => (
                     <Form>
@@ -167,6 +155,8 @@ const login = (props) => {
                                     >
                                         LOG IN
                                     </Button>
+                                </div>
+                                <div className={classes.loginErrorMessage}>
                                     {errorMessage}
                                 </div>
                                 <div className={classes.createAccount}>
@@ -187,7 +177,6 @@ const mapStateToProps = state => {
         loading: state.authentication.loading,
         error: state.authentication.error,
         isAuth: state.authentication.token !== null,
-        token: state.authentication.token, // TODO: Temporary
         authRedirectPath: state.authentication.authRedirectPath
     };
 };

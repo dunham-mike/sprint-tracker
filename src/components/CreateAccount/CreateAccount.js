@@ -2,6 +2,8 @@ import React from 'react';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
 import { withStyles } from '@material-ui/core/styles';
+import { connect } from 'react-redux';
+import { Redirect } from 'react-router-dom';
 
 import Paper from '@material-ui/core/Paper';
 import Typography from '@material-ui/core/Typography';
@@ -9,6 +11,8 @@ import Link from '@material-ui/core/Link';
 import Button from '@material-ui/core/Button';
 import grey from '@material-ui/core/colors/grey';
 import red from '@material-ui/core/colors/red';
+
+import * as actions from '../../store/actions/index';
 
 const styles = theme => ({
     paper: {
@@ -61,6 +65,11 @@ const styles = theme => ({
         margin: theme.spacing(1),
         color: red[400],
     },
+    signupErrorMessage: {
+        marginTop: theme.spacing(2),
+        color: red[400],
+        textAlign: 'center',
+    },
     createAccount: {
         marginTop: theme.spacing(3),
         textAlign: 'center',
@@ -73,6 +82,30 @@ const styles = theme => ({
 
 const createAccount = (props) => {
     const { classes } = props;
+
+    let errorMessage = null;
+
+    if (props.error) {
+        const errorMessageTranslation = {
+            'EMAIL_EXISTS' : 'An account with that email address already exists',
+            'OPERATION_NOT_ALLOWED' : 'New account signups are not allowed at this time',
+            'TOO_MANY_ATTEMPTS_TRY_LATER' : 'All requests from this device have been blocked due to unusual activity. Try again later.',
+        }
+
+        errorMessage = (
+            errorMessageTranslation[props.error.message] ? errorMessageTranslation[props.error.message] : props.error.message
+        );
+    }
+
+    let authRedirect = null;
+    if (props.isAuth) {
+        authRedirect = <Redirect to={props.authRedirectPath} />
+    }
+
+    const submitHandler = (values, { setSubmitting }) => {
+        props.onKickoffSignup(values.email, values.password, values.firstName, values.lastName);
+        setSubmitting(false);
+    }
     
     return(
         <Paper className={classes.paper}>
@@ -96,12 +129,7 @@ const createAccount = (props) => {
                             .max(20, 'Must be 20 characters or less')
                             .required('Required'),
                     })}
-                    onSubmit={(values, { setSubmitting }) => {
-                    setTimeout(() => {
-                        alert(JSON.stringify(values, null, 2));
-                        setSubmitting(false);
-                    }, 400);
-                    }}
+                    onSubmit={(values, { setSubmitting }) => { submitHandler(values, { setSubmitting })}}
                 >
                     {({ isSubmitting }) => (
                     <Form>
@@ -140,12 +168,14 @@ const createAccount = (props) => {
                                         className={classes.Button}
                                         variant="contained"
                                         color="primary"
-                                        // startIcon={<SaveIcon />}
                                         disabled={isSubmitting}
                                         type="submit"
                                     >
                                         CREATE ACCOUNT
                                     </Button>
+                                </div>
+                                <div className={classes.signupErrorMessage}>
+                                    {errorMessage}
                                 </div>
                                 <div className={classes.createAccount}>
                                     <Link href="/login" color="inherit" variant="body2">Need to log in instead?</Link>
@@ -158,8 +188,21 @@ const createAccount = (props) => {
             </div>
         </Paper>
     );
-    
+}
 
+const mapStateToProps = state => {
+    return {
+        loading: state.authentication.loading,
+        error: state.authentication.error,
+        isAuth: state.authentication.token !== null,
+        authRedirectPath: state.authentication.authRedirectPath
+    };
+};
+
+const mapDispatchToProps = dispatch => {
+    return {
+        onKickoffSignup: (email, password, firstName, lastName) => dispatch(actions.kickoffAuthentication(email, password, true, firstName, lastName)),
+    }
 }
   
-  export default withStyles(styles)(createAccount);
+  export default connect(mapStateToProps, mapDispatchToProps)(withStyles(styles)(createAccount));

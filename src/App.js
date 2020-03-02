@@ -43,7 +43,6 @@ class App extends Component {
                 </Switch>
               </Suspense>
             );
-            
         }
 
         return(

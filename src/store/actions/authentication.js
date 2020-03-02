@@ -64,7 +64,7 @@ export const authCheckState = () => {
     };
 };
 
-export const kickoffAuthentication = (email, password, isCreateAccount) => {
+export const kickoffAuthentication = (email, password, isCreateAccount, firstName, lastName) => {
     return dispatch => {
         dispatch(authStart());
         const authData = { 
@@ -72,6 +72,10 @@ export const kickoffAuthentication = (email, password, isCreateAccount) => {
             password: password,
             returnSecureToken: true
         };
+
+        // TODO: Store first and last somewhere
+        console.log('firstName:', firstName);
+        console.log('lastName:', lastName);
 
         // TODO: Update these specifically for this app.
         let url = 'https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyCIkqUP0Y8W1b8Tvnv60WVf0-R4ag6fQ4g';
