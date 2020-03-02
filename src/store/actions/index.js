@@ -3,5 +3,11 @@ export {
     addProject,
     updateSprint,
     addSprint,
-    orderSprintsByStartDate
+    orderSprintsByStartDate,
 } from './sprints';
+
+export {
+    kickoffAuthentication,
+    authCheckState,
+    logout,
+} from './authentication';

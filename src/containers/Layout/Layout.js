@@ -1,4 +1,7 @@
 import React, { Component } from 'react'
+import { connect } from 'react-redux';
+import { Link as RouterLink } from 'react-router-dom';
+
 import { withStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
@@ -6,6 +9,7 @@ import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
+import Link from '@material-ui/core/Link';
 
 import Drawer from '@material-ui/core/Drawer';
 import List from '@material-ui/core/List';
@@ -88,9 +92,14 @@ class Layout extends Component {
                         <MenuIcon />
                     </IconButton>
                     <Typography variant="h6" className={classes.title}>
-                        Sprint Tracker
+                        <Link href="/" color="inherit" variant="h6" underline="none">
+                            Sprint Tracker
+                        </Link>
                     </Typography>
-                    <Button color="inherit">Login</Button>
+                    {this.props.isAuth 
+                        ? <Button color="inherit" component={RouterLink} to="/logout">Log Out</Button> 
+                        : <Button color="inherit" component={RouterLink} to="/login">Login</Button>
+                    }
                     </Toolbar>
                 </AppBar>
                 <Drawer open={this.state.showDrawer} onClose={this.toggleDrawer}>
@@ -104,4 +113,10 @@ class Layout extends Component {
     }
 };
 
-export default withStyles(styles)(Layout);
+const mapStateToProps = state => {
+    return {
+      isAuth: state.authentication.token !== null
+    };
+};
+
+export default connect(mapStateToProps)(withStyles(styles)(Layout));

@@ -1,23 +1,28 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter } from 'react-router-dom';
-import { createStore, combineReducers, compose } from 'redux';
+import { createStore, applyMiddleware, combineReducers, compose } from 'redux';
 import { Provider } from 'react-redux';
+import thunk from 'redux-thunk';
 
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 import sprintReducer from './store/reducers/sprints';
+import authenticationReducer from './store/reducers/authentication';
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
 const rootReducer = combineReducers({
     sprints: sprintReducer,
+    authentication: authenticationReducer,
 });
 
 const store = createStore(
     rootReducer,
-    composeEnhancers()
+    composeEnhancers(
+        applyMiddleware(thunk)
+    ),
 );
 
 const app = (

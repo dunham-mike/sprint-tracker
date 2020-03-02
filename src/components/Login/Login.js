@@ -2,6 +2,8 @@ import React from 'react';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
 import { withStyles } from '@material-ui/core/styles';
+import { connect } from 'react-redux';
+import { Redirect } from 'react-router-dom';
 
 import Paper from '@material-ui/core/Paper';
 import Typography from '@material-ui/core/Typography';
@@ -9,6 +11,8 @@ import Link from '@material-ui/core/Link';
 import Button from '@material-ui/core/Button';
 import grey from '@material-ui/core/colors/grey';
 import red from '@material-ui/core/colors/red';
+
+import * as actions from '../../store/actions/index';
 
 const styles = theme => ({
     paper: {
@@ -71,12 +75,46 @@ const styles = theme => ({
     }
 });
 
+
+
 const login = (props) => {
     const { classes } = props;
+
+    let loadingSpinner = null;
+    // TODO: create spinner
+    if(props.loading) {
+        loadingSpinner = (
+            <div>
+                LOADING SPINNER GOES HERE
+            </div>
+        );
+    }
+
+    // TODO: process and format error message
+    let errorMessage = null;
+
+    if (props.error) {
+        errorMessage = (
+            <p>{props.error.message}</p>
+        );
+    }
+
+    let authRedirect = null;
+    if (props.isAuth) {
+        authRedirect = <Redirect to={props.authRedirectPath} />
+    }
+
+    const submitHandler = (values, { setSubmitting }) => {
+        console.log('values:', values);
+        props.onKickoffLogin(values.email, values.password, false);
+        setSubmitting(false);
+    }
     
     return(
         <Paper className={classes.paper}>
+            {authRedirect}
             <div className={classes.loginContainer}>
+                {loadingSpinner}
                 <Typography variant="h5">Log into Sprint Tracker</Typography>
                 <Formik
                     initialValues={{ email: '', password: '' }}
@@ -89,12 +127,17 @@ const login = (props) => {
                             .max(20, 'Must be 20 characters or less')
                             .required('Required'),
                     })}
-                    onSubmit={(values, { setSubmitting }) => {
-                    setTimeout(() => {
-                        alert(JSON.stringify(values, null, 2));
-                        setSubmitting(false);
-                    }, 400);
-                    }}
+                    onSubmit={(values, { setSubmitting }) => { submitHandler(values, { setSubmitting })}
+                    //     (values, { setSubmitting }) => {
+                    //     console.log('values:', values);
+                    //     props.onKickoffLogin(values.email, values.password, false);
+                    //     setSubmitting(false);
+                    //     // setTimeout(() => {
+                    //     //     alert(JSON.stringify(values, null, 2));
+                    //     //     setSubmitting(false);
+                    //     // }, 400);
+                    // }
+                }
                 >
                     {({ isSubmitting }) => (
                     <Form>
@@ -119,12 +162,12 @@ const login = (props) => {
                                         className={classes.Button}
                                         variant="contained"
                                         color="primary"
-                                        // startIcon={<SaveIcon />}
-                                        disabled={isSubmitting}
+                                        disabled={props.loading}
                                         type="submit"
                                     >
                                         LOG IN
                                     </Button>
+                                    {errorMessage}
                                 </div>
                                 <div className={classes.createAccount}>
                                     <Link href="/create-account" color="inherit" variant="body2">Need to create an account instead?</Link>
@@ -137,8 +180,22 @@ const login = (props) => {
             </div>
         </Paper>
     );
-    
+}
 
+const mapStateToProps = state => {
+    return {
+        loading: state.authentication.loading,
+        error: state.authentication.error,
+        isAuth: state.authentication.token !== null,
+        token: state.authentication.token, // TODO: Temporary
+        authRedirectPath: state.authentication.authRedirectPath
+    };
+};
+
+const mapDispatchToProps = dispatch => {
+    return {
+        onKickoffLogin: (email, password) => dispatch(actions.kickoffAuthentication(email, password, false)),
+    }
 }
   
-  export default withStyles(styles)(login);
+export default connect(mapStateToProps, mapDispatchToProps)(withStyles(styles)(login));
