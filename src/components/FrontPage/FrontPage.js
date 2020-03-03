@@ -66,7 +66,7 @@ const cards = [
     {
         imageUrl: 'https://images.unsplash.com/photo-1568584263125-bf8f0a77d51c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1051&q=80',
         heading: 'Simple, structured sprints.',
-        content: 'For when teams need to be on the same page but don\'t all need to use the same tools.',
+        content: 'Purposely designed for lightweight data collection, so individuals can be flexible in how they hit their goals.',
     }, 
     {
         imageUrl: 'https://images.unsplash.com/photo-1559526323-cb2f2fe2591b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80',

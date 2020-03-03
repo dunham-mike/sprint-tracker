@@ -2,12 +2,16 @@ import React, { Component } from 'react';
 import { withStyles } from '@material-ui/core/styles';
 import { connect } from 'react-redux';
 import { v4 as uuidv4 } from 'uuid'; // https://github.com/uuidjs/uuid
+import * as moment from 'moment';
 
 import red from '@material-ui/core/colors/red';
 import Button from '@material-ui/core/Button';
 import SaveIcon from '@material-ui/icons/Save';
 import CancelIcon from '@material-ui/icons/Cancel';
 import DeleteIcon from '@material-ui/icons/Delete';
+import DeleteOutlinedIcon from '@material-ui/icons/DeleteOutlined';
+import AssignmentReturnedOutlinedIcon from '@material-ui/icons/AssignmentReturnedOutlined';
+import InputOutlinedIcon from '@material-ui/icons/InputOutlined';
 import Typography from '@material-ui/core/Typography';
 
 import Dialog from '@material-ui/core/Dialog';
@@ -15,6 +19,18 @@ import DialogActions from '@material-ui/core/DialogActions';
 import DialogContent from '@material-ui/core/DialogContent';
 import DialogContentText from '@material-ui/core/DialogContentText';
 import DialogTitle from '@material-ui/core/DialogTitle';
+
+import Avatar from '@material-ui/core/Avatar';
+import List from '@material-ui/core/List';
+import ListItem from '@material-ui/core/ListItem';
+import ListItemAvatar from '@material-ui/core/ListItemAvatar';
+import ListItemText from '@material-ui/core/ListItemText';
+import PersonIcon from '@material-ui/icons/Person';
+import AddIcon from '@material-ui/icons/Add';
+import { blue } from '@material-ui/core/colors';
+import { green } from '@material-ui/core/colors';
+import CloseIcon from '@material-ui/icons/Close';
+import CheckIcon from '@material-ui/icons/Check';
 
 import Input from '../../components/UI/Input/Input';
 import Backdrop from '../../components/UI/Backdrop/Backdrop';
@@ -47,8 +63,15 @@ const styles = theme => ({
     },
     Button: {
         marginLeft: theme.spacing(2)
-    }
-    
+    },
+    avatar: {
+        backgroundColor: blue[100],
+        color: blue[600],
+    },
+    avatarCurrent: {
+        backgroundColor: green[100],
+        color: green[600],
+    },
 });
 
 class Project extends Component {
@@ -56,6 +79,7 @@ class Project extends Component {
         sprintId: null,
         formIsValid: false,
         openConfirmDeleteDialog: false,
+        openAssignSprintDialog: false,
         projectData: {
             id: {
                 elementType: 'readonly',
@@ -464,6 +488,14 @@ class Project extends Component {
         this.props.onCloseProject();
     }
 
+    openAssignSprintDialog = () => {
+        this.setState( { openAssignSprintDialog: true });
+    }
+
+    closeAssignSprintDialog = () => {
+        this.setState( { openAssignSprintDialog: false });
+    }
+
     render() {
         const { classes } = this.props;
 
@@ -512,10 +544,22 @@ class Project extends Component {
                                 className={classes.Button}
                                 variant="outlined"
                                 color="secondary"
-                                startIcon={<DeleteIcon />}
+                                startIcon={<DeleteOutlinedIcon />}
                                 onClick={this.openConfirmDeleteDialog}
                             >
                             DELETE PROJECT
+                        </Button>
+                            : null
+                        }
+                        { this.props.actionType === "edit"
+                            ? <Button
+                                className={classes.Button}
+                                variant="outlined"
+                                color="secondary"
+                                startIcon={<InputOutlinedIcon />}
+                                onClick={this.openAssignSprintDialog}
+                            >
+                            ASSIGN TO ANOTHER SPRINT
                         </Button>
                             : null
                         }
@@ -541,6 +585,114 @@ class Project extends Component {
             verb2 = "Enter";
         }
 
+        const confirmDeleteDialog = (
+            <Dialog
+                open={this.state.openConfirmDeleteDialog}
+                onClose={this.closeConfirmDeleteDialog}
+                aria-labelledby="alert-dialog-title"
+                aria-describedby="alert-dialog-description"
+            >
+                <DialogTitle id="alert-dialog-title">
+                    {"Are you certain you want to delete the \'" + this.state.projectData.name.value + "\' project?"}
+                </DialogTitle>
+                <DialogContent>
+                    <DialogContentText id="alert-dialog-description">
+                        This cannot be undone.
+                    </DialogContentText>
+                </DialogContent>
+                <DialogActions>
+                    <Button onClick={this.closeConfirmDeleteDialog} color="primary">
+                        No, take me back.
+                    </Button>
+                    <Button onClick={this.deleteProjectHandler} color="secondary" autoFocus>
+                        Yes, I'm certain I want to delete it.
+                    </Button>
+                </DialogActions>
+            </Dialog>
+        );
+
+        let sprints = null;
+        let selectNewSprintDialog = null;
+
+        // Only calculate AssignSprintDialog data if it is shown
+        if (this.state.openAssignSprintDialog) {
+            sprints = this.props.sprints
+            // Show only sprints that have not yet ended
+            .filter(
+                (sprint) => moment(sprint.endDate) > moment()
+            )
+            // Transform each sprint into an object for display
+            .map(sprint => {
+                const isCurrentAssignment = sprint.id === this.state.sprintId;
+
+                const sprintDateDisplay = ': ' 
+                    + moment(sprint.startDate).format("M") + '/' + moment(sprint.startDate).format("D") + 
+                    // Conditionally show start date's year if it is different than the end date's year
+                    (moment(sprint.startDate).format("YY") !== moment(sprint.endDate).format("YY") ? '/' + moment(sprint.startDate).format("YY") : '' )
+                    + ' to ' + moment(sprint.endDate).format("M") + '/' + moment(sprint.endDate).format("D") + '/' + moment(sprint.endDate).format("YY");
+
+                const displayName = (isCurrentAssignment ? '[Current Assignment] ' : '') + sprint.name + sprintDateDisplay;
+                return {
+                    sprintId: sprint.id,
+                    isCurrentAssignment: isCurrentAssignment,
+                    displayName: displayName,
+                }
+            });
+
+            // Add the object representing the Project Queue
+            sprints.push(
+                {
+                    sprintId: -1,
+                    isCurrentAssignment: (this.state.sprintId === -1 ? true : false),
+                    displayName: (this.state.sprintId === -1 ? '[Current Assignment] ' : '') + 'Project Queue',
+                }
+            );
+
+            selectNewSprintDialog = (
+                <Dialog onClose={this.closeAssignSprintDialog} aria-labelledby="simple-dialog-title" open={this.state.openAssignSprintDialog}>
+                    <DialogTitle id="simple-dialog-title">Select New Sprint</DialogTitle>
+                    <List>
+                        { sprints.map(sprint => {
+
+                            return (
+                                <ListItem button={!sprint.isCurrentAssignment} onClick={null} key={sprint.sprintId}>
+                                    {/* () => handleListItemClick(email) */}
+                                    <ListItemAvatar>
+                                    <Avatar 
+                                        className={
+                                            sprint.isCurrentAssignment
+                                            ? classes.avatarCurrent
+                                            : classes.avatar
+                                        }
+                                    >
+                                        {sprint.isCurrentAssignment
+                                            ? <CheckIcon /> 
+                                            : <AddIcon />
+                                        }
+                                        
+                                    </Avatar>
+                                    </ListItemAvatar>
+                                    <ListItemText primary={sprint.displayName} />
+                                </ListItem>
+                            );
+                            
+                            }
+                        )
+                        }
+
+                        <ListItem autoFocus button onClick={this.closeAssignSprintDialog}> {/* () => handleListItemClick('addAccount') */}
+                            <ListItemAvatar>
+                                <Avatar>
+                                    <CloseIcon />
+                                </Avatar>
+                            </ListItemAvatar>
+                            <ListItemText primary="Cancel" />
+                        </ListItem>
+                    </List>
+                </Dialog>
+            );
+        } // End of "if (this.state.openAssignSprintDialog)"
+
         return (
             <React.Fragment>
                 <Backdrop />
@@ -559,31 +711,16 @@ class Project extends Component {
                         
                     </div>
                 </Modal>
-                <Dialog
-                    open={this.state.openConfirmDeleteDialog}
-                    onClose={this.closeConfirmDeleteDialog}
-                    aria-labelledby="alert-dialog-title"
-                    aria-describedby="alert-dialog-description"
-                >
-                    <DialogTitle id="alert-dialog-title">
-                        {"Are you certain you want to delete the \'" + this.state.projectData.name.value + "\' project?"}
-                    </DialogTitle>
-                    <DialogContent>
-                        <DialogContentText id="alert-dialog-description">
-                            This cannot be undone.
-                        </DialogContentText>
-                    </DialogContent>
-                    <DialogActions>
-                        <Button onClick={this.closeConfirmDeleteDialog} color="primary">
-                            No, take me back.
-                        </Button>
-                        <Button onClick={this.deleteProjectHandler} color="secondary" autoFocus>
-                            Yes, I'm certain I want to delete it.
-                        </Button>
-                    </DialogActions>
-                </Dialog>
+                {confirmDeleteDialog}
+                {selectNewSprintDialog}
             </React.Fragment>
         );
+    }
+}
+
+const mapStateToProps = state => {
+    return {
+        sprints: state.sprints.sprints
     }
 }
 
@@ -595,4 +732,4 @@ const mapDispatchToProps = dispatch => {
     };
 };
 
-export default connect(null, mapDispatchToProps)(withStyles(styles)(Project));
+export default connect(mapStateToProps, mapDispatchToProps)(withStyles(styles)(Project));
