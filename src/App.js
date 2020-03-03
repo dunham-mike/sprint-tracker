@@ -5,6 +5,7 @@ import { connect } from 'react-redux';
 import { ThemeProvider } from '@material-ui/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
 
+import FrontPage from './components/FrontPage/FrontPage';
 import MainView from './containers/MainView/MainView';
 import Layout from './containers/Layout/Layout';
 import { theme } from './theme/theme';
@@ -24,7 +25,11 @@ class App extends Component {
                 <Switch>
                     <Route path="/login" component={Login} />
                     <Route path="/create-account" component={CreateAccount} />
-                    <Route path="/" exact component = {MainView}/>
+                    <Route path="/" exact component = {FrontPage}/>
+                    <Route
+                        path='/demo'
+                        render={(props) => <MainView isDemo={true} />}
+                    />
                     <Redirect to="/" />
                 </Switch>
             </Suspense>
@@ -39,6 +44,10 @@ class App extends Component {
                     <Route path="/login" component={Login} /> {/* So Redirect inside Login can work and route to different areas of the app that require login. */}
                     <Route path="/" exact component = {MainView}/>
                     <Route path="/logout" component={Logout} />
+                    <Route
+                        path='/demo'
+                        render={(props) => <MainView isDemo={true} />}
+                    />
                     <Redirect to="/" />
                 </Switch>
               </Suspense>

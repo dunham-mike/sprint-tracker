@@ -1,6 +1,12 @@
 import * as actionTypes from './actionTypes';
 import axios from 'axios';
 
+export const initiateDemo = () => {
+    return {
+        type: actionTypes.INITIATE_DEMO
+    }
+}
+
 export const authStart = () => {
     return {
         type: actionTypes.AUTH_START

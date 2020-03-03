@@ -108,6 +108,9 @@ class MainView extends Component {
     componentDidMount = () => {
         this.props.onOrderSprintsByStartDate();
         this.categorizeSprintsByStartDate();
+        if(this.props.isDemo) {
+            this.props.onInitiateDemo();
+        }
     }
 
     componentDidUpdate = () => {
@@ -566,7 +569,8 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
     return {
-        onOrderSprintsByStartDate: () => dispatch(actions.orderSprintsByStartDate())
+        onOrderSprintsByStartDate: () => dispatch(actions.orderSprintsByStartDate()),
+        onInitiateDemo: () => dispatch(actions.initiateDemo()),
     }
 }
 

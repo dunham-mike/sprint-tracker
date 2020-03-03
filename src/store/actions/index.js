@@ -10,4 +10,5 @@ export {
     kickoffAuthentication,
     authCheckState,
     logout,
+    initiateDemo,
 } from './authentication';

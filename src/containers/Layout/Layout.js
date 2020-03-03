@@ -93,12 +93,12 @@ class Layout extends Component {
                     </IconButton>
                     <Typography variant="h6" className={classes.title}>
                         <Link href="/" color="inherit" variant="h6" underline="none">
-                            Sprint Tracker
+                            Deliberate Sprints
                         </Link>
                     </Typography>
                     {this.props.isAuth 
-                        ? <Button color="inherit" component={RouterLink} to="/logout">Log Out</Button> 
-                        : <Button color="inherit" component={RouterLink} to="/login">Login</Button>
+                        ? <Button color="inherit" component={RouterLink} to="/logout">Log out</Button> 
+                        : <Button color="inherit" component={RouterLink} to="/login">Log in</Button>
                     }
                     </Toolbar>
                 </AppBar>

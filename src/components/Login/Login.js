@@ -113,7 +113,7 @@ const login = (props) => {
             {authRedirect}
             <div className={classes.loginContainer}>
                 {/* {loadingSpinner} */}
-                <Typography variant="h5">Log into Sprint Tracker</Typography>
+                <Typography variant="h5">Log into Deliberate Sprints</Typography>
                 <Formik
                     initialValues={{ email: '', password: '' }}
                     validationSchema={Yup.object({
