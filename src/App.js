@@ -1,6 +1,7 @@
 import React, { Component, Suspense } from 'react';
 import { Route, Redirect, Switch } from 'react-router-dom';
 import { connect } from 'react-redux';
+// import { ConfirmProvider } from 'material-ui-confirm';
 
 import { ThemeProvider } from '@material-ui/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
@@ -56,10 +57,12 @@ class App extends Component {
 
         return(
             <ThemeProvider theme={theme}>
-                <CssBaseline />
-                <Layout>
-                    {routes}
-                </Layout>
+                {/* <ConfirmProvider> */}
+                    <CssBaseline />
+                    <Layout>
+                        {routes}
+                    </Layout>
+                {/* </ConfirmProvider> */}
             </ThemeProvider>
         );
     }

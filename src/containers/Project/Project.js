@@ -7,6 +7,7 @@ import red from '@material-ui/core/colors/red';
 import Button from '@material-ui/core/Button';
 import SaveIcon from '@material-ui/icons/Save';
 import CancelIcon from '@material-ui/icons/Cancel';
+import DeleteIcon from '@material-ui/icons/Delete';
 import Typography from '@material-ui/core/Typography';
 
 import Input from '../../components/UI/Input/Input';
@@ -441,6 +442,10 @@ class Project extends Component {
         this.props.onCloseProject();
     }
 
+    deleteProjectHandler = () => {
+        console.log('Deleting project');
+    }
+
     render() {
         const { classes } = this.props;
 
@@ -484,6 +489,18 @@ class Project extends Component {
                         >
                             CANCEL
                         </Button>
+                        { this.props.actionType === "edit"
+                            ? <Button
+                                className={classes.Button}
+                                variant="outlined"
+                                color="secondary"
+                                startIcon={<DeleteIcon />}
+                                onClick={this.deleteProjectHandler}
+                            >
+                            DELETE PROJECT
+                        </Button>
+                            : null
+                        }
                         <Button 
                             className={classes.Button}
                             variant="contained"
