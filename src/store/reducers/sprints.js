@@ -1,5 +1,6 @@
 import * as actionTypes from '../actions/actionTypes';
 import { initialSprintState } from '../initialData';
+// import { deleteProject } from '../actions';
 
 const initialState = initialSprintState;
 
@@ -112,6 +113,29 @@ const addProjectOnSprint = (state, action) => {
     }
 }
 
+const deleteProjectOnSprint = (state, action) => {
+    const sprintIndex = getSprintIndexWithSprintId(state, action.sprintId);
+
+    if (sprintIndex === null) {
+        console.log('[ERROR] Cannot find sprint index in current state');
+        return state;
+    } else {
+        const projectIndex = getProjectIndexWithSprintIndexAndProjectId(state, sprintIndex, action.projectId);
+        let newProjectsArray = [...state.sprints[sprintIndex].projects];
+
+        newProjectsArray = [...newProjectsArray.slice(0, projectIndex), ...newProjectsArray.slice(projectIndex + 1)];
+
+        let newSprintObject = {...state.sprints[sprintIndex]};
+        newSprintObject.projects = newProjectsArray;
+
+        let newSprintsArray = updateObjectInArray(state.sprints, sprintIndex, newSprintObject);
+
+        return {
+            ...state,
+            sprints: newSprintsArray
+        }
+    }
+}
 
 const updateProjectOnQueue = (state, action) => {
     // action.sprintId should equal -1, which will search the queue when passed to this function
@@ -141,8 +165,20 @@ const addProjectOnQueue = (state, action) => {
     }
 }
 
+const deleteProjectOnQueue = (state, action) => {
+    const queueIndex = getProjectIndexWithSprintIndexAndProjectId(state, action.sprintId, action.projectId);
+
+    let newQueueArray = [...state.queue];
+
+    newQueueArray = [...newQueueArray.slice(0, queueIndex), ...newQueueArray.slice(queueIndex + 1)];
+
+    return {
+        ...state,
+        queue: newQueueArray
+    };
+}
+
 const updateProject = (state, action) => {
-    // console.log('updateProject', action.sprintId);
     if (action.sprintId === -1) {
         return updateProjectOnQueue(state, action);
     } else {
@@ -155,6 +191,14 @@ const addProject = (state, action) => {
         return addProjectOnQueue(state, action);
     } else {
         return addProjectOnSprint(state, action);
+    }
+}
+
+const deleteProject = (state, action) => {
+    if (action.sprintId === -1) {
+        return deleteProjectOnQueue(state, action);
+    } else {
+        return deleteProjectOnSprint(state, action);
     }
 }
 
@@ -224,6 +268,7 @@ const reducer = (state = initialState, action) => {
     switch(action.type) {
         case actionTypes.UPDATE_PROJECT: return updateProject(state, action);
         case actionTypes.ADD_PROJECT: return addProject(state, action);
+        case actionTypes.DELETE_PROJECT: return deleteProject(state, action);
         case actionTypes.UPDATE_SPRINT: return updateSprint(state, action);
         case actionTypes.ADD_SPRINT: return addSprint(state, action);
         case actionTypes.ORDER_SPRINTS_BY_START_DATE: return orderSprintsByStartDate(state, action);

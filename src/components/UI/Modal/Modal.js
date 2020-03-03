@@ -6,7 +6,7 @@ import Paper from '@material-ui/core/Paper';
 const styles = theme => ({
     Modal: {
         position: 'fixed',
-        zIndex: '10000',
+        zIndex: '1120',
         width: '86%',
         height: '86%',
         left: '7%',

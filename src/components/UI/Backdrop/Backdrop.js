@@ -6,7 +6,7 @@ const styles = theme => ({
         width: '100%',
         height: '100%',
         position: 'fixed',
-        zIndex: '9000',
+        zIndex: '1110',
         left: '0',
         top: '0',
         backgroundColor: 'black',

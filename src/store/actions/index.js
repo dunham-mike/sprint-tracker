@@ -1,6 +1,7 @@
 export {
     updateProject,
     addProject,
+    deleteProject,
     updateSprint,
     addSprint,
     orderSprintsByStartDate,

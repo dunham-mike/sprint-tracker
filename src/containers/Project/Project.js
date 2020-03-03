@@ -10,6 +10,12 @@ import CancelIcon from '@material-ui/icons/Cancel';
 import DeleteIcon from '@material-ui/icons/Delete';
 import Typography from '@material-ui/core/Typography';
 
+import Dialog from '@material-ui/core/Dialog';
+import DialogActions from '@material-ui/core/DialogActions';
+import DialogContent from '@material-ui/core/DialogContent';
+import DialogContentText from '@material-ui/core/DialogContentText';
+import DialogTitle from '@material-ui/core/DialogTitle';
+
 import Input from '../../components/UI/Input/Input';
 import Backdrop from '../../components/UI/Backdrop/Backdrop';
 import Modal from '../../components/UI/Modal/Modal';
@@ -49,6 +55,7 @@ class Project extends Component {
     state = {
         sprintId: null,
         formIsValid: false,
+        openConfirmDeleteDialog: false,
         projectData: {
             id: {
                 elementType: 'readonly',
@@ -442,8 +449,19 @@ class Project extends Component {
         this.props.onCloseProject();
     }
 
+    openConfirmDeleteDialog = () => {
+        this.setState( { openConfirmDeleteDialog: true });
+    }
+
+    closeConfirmDeleteDialog = () => {
+        this.setState( { openConfirmDeleteDialog: false });
+    }
+
     deleteProjectHandler = () => {
-        console.log('Deleting project');
+        console.log('Deleting projectId ' + this.state.projectData.id.value + ' from sprintId ' + this.props.sprintId);
+        this.closeConfirmDeleteDialog();
+        this.props.onDeleteProject(this.props.sprintId, this.state.projectData.id.value);
+        this.props.onCloseProject();
     }
 
     render() {
@@ -495,7 +513,7 @@ class Project extends Component {
                                 variant="outlined"
                                 color="secondary"
                                 startIcon={<DeleteIcon />}
-                                onClick={this.deleteProjectHandler}
+                                onClick={this.openConfirmDeleteDialog}
                             >
                             DELETE PROJECT
                         </Button>
@@ -541,6 +559,29 @@ class Project extends Component {
                         
                     </div>
                 </Modal>
+                <Dialog
+                    open={this.state.openConfirmDeleteDialog}
+                    onClose={this.closeConfirmDeleteDialog}
+                    aria-labelledby="alert-dialog-title"
+                    aria-describedby="alert-dialog-description"
+                >
+                    <DialogTitle id="alert-dialog-title">
+                        {"Are you certain you want to delete the \'" + this.state.projectData.name.value + "\' project?"}
+                    </DialogTitle>
+                    <DialogContent>
+                        <DialogContentText id="alert-dialog-description">
+                            This cannot be undone.
+                        </DialogContentText>
+                    </DialogContent>
+                    <DialogActions>
+                        <Button onClick={this.closeConfirmDeleteDialog} color="primary">
+                            No, take me back.
+                        </Button>
+                        <Button onClick={this.deleteProjectHandler} color="secondary" autoFocus>
+                            Yes, I'm certain I want to delete it.
+                        </Button>
+                    </DialogActions>
+                </Dialog>
             </React.Fragment>
         );
     }
@@ -550,6 +591,7 @@ const mapDispatchToProps = dispatch => {
     return {
         onUpdateProject: (sprintId, projectData) => dispatch(actions.updateProject(sprintId, projectData)),
         onAddProject: (sprintId, projectData) => dispatch(actions.addProject(sprintId, projectData)),
+        onDeleteProject: (sprintId, projectId) => dispatch(actions.deleteProject(sprintId, projectId)),
     };
 };
 
