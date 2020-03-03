@@ -24,6 +24,13 @@ export const deleteProject = (sprintId, projectId) => {
     }
 };
 
+export const moveProject = (originSprintId, destinationSprintId, projectData) => {
+    return dispatch => {
+        dispatch(addProject(destinationSprintId, projectData));
+        dispatch(deleteProject(originSprintId, projectData.id.value));
+    }
+}
+
 export const updateSprint = (sprintId, sprintData) => {
     return {
         type: actionTypes.UPDATE_SPRINT,

@@ -2,6 +2,7 @@ export {
     updateProject,
     addProject,
     deleteProject,
+    moveProject,
     updateSprint,
     addSprint,
     deleteSprint,

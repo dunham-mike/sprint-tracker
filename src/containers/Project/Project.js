@@ -450,9 +450,7 @@ class Project extends Component {
         });
     }
 
-    saveProjectHandler = (event) => {
-        event.preventDefault();
-
+    getTransformedProjectData = () => {
         let transformedProjectData = {};
         let keys = Object.keys(this.state.projectData);
 
@@ -461,6 +459,23 @@ class Project extends Component {
 
             transformedProjectData[keys[i]] = thisObject;
         }
+
+        return transformedProjectData;
+    }
+
+    saveProjectHandler = (event) => {
+        event.preventDefault();
+
+        // let transformedProjectData = {};
+        // let keys = Object.keys(this.state.projectData);
+
+        // for (let i=0; i<keys.length; i++) {
+        //     let thisObject = { 'value': this.state.projectData[keys[i]].value };
+
+        //     transformedProjectData[keys[i]] = thisObject;
+        // }
+
+        const transformedProjectData = this.getTransformedProjectData();
 
         if (this.props.actionType === "edit") {
             this.props.onUpdateProject(this.state.sprintId, transformedProjectData);
@@ -494,6 +509,14 @@ class Project extends Component {
 
     closeAssignSprintDialog = () => {
         this.setState( { openAssignSprintDialog: false });
+    }
+
+    moveProjectHandler = (originSprintId, destinationSprintId) => {
+        const projectData = this.getTransformedProjectData();
+
+        this.props.onMoveProject(originSprintId, destinationSprintId, projectData);
+        this.closeAssignSprintDialog();
+        this.props.onCloseProject();
     }
 
     render() {
@@ -655,8 +678,7 @@ class Project extends Component {
                         { sprints.map(sprint => {
 
                             return (
-                                <ListItem button={!sprint.isCurrentAssignment} onClick={null} key={sprint.sprintId}>
-                                    {/* () => handleListItemClick(email) */}
+                                <ListItem button={!sprint.isCurrentAssignment} onClick={sprint.isCurrentAssignment ? null : () => this.moveProjectHandler(this.state.sprintId, sprint.sprintId)} key={sprint.sprintId}>
                                     <ListItemAvatar>
                                     <Avatar 
                                         className={
@@ -680,7 +702,7 @@ class Project extends Component {
                         )
                         }
 
-                        <ListItem autoFocus button onClick={this.closeAssignSprintDialog}> {/* () => handleListItemClick('addAccount') */}
+                        <ListItem autoFocus button onClick={this.closeAssignSprintDialog}>
                             <ListItemAvatar>
                                 <Avatar>
                                     <CloseIcon />
@@ -729,6 +751,7 @@ const mapDispatchToProps = dispatch => {
         onUpdateProject: (sprintId, projectData) => dispatch(actions.updateProject(sprintId, projectData)),
         onAddProject: (sprintId, projectData) => dispatch(actions.addProject(sprintId, projectData)),
         onDeleteProject: (sprintId, projectId) => dispatch(actions.deleteProject(sprintId, projectId)),
+        onMoveProject: (originSprintId, destinationSprintId, projectData) => dispatch(actions.moveProject(originSprintId, destinationSprintId, projectData)),
     };
 };
 
