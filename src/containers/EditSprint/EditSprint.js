@@ -8,7 +8,14 @@ import red from '@material-ui/core/colors/red';
 import Button from '@material-ui/core/Button';
 import SaveIcon from '@material-ui/icons/Save';
 import CancelIcon from '@material-ui/icons/Cancel';
+import DeleteIcon from '@material-ui/icons/Delete';
 import Typography from '@material-ui/core/Typography';
+
+import Dialog from '@material-ui/core/Dialog';
+import DialogActions from '@material-ui/core/DialogActions';
+import DialogContent from '@material-ui/core/DialogContent';
+import DialogContentText from '@material-ui/core/DialogContentText';
+import DialogTitle from '@material-ui/core/DialogTitle';
 
 import Input from '../../components/UI/Input/Input';
 import Backdrop from '../../components/UI/Backdrop/Backdrop';
@@ -53,7 +60,9 @@ class editSprint extends Component {
     // Props from store: sprints (array of the sprints in the store)
 
     state = {
+        openConfirmDeleteDialog: false,
         formIsValid: false,
+        sprintHasProjects: false,
         sprintData: {
             id: {
                 elementType: 'readonly',
@@ -191,8 +200,11 @@ class editSprint extends Component {
             newSprintData[sprintKeys[i]] = updatedObject;
         }
 
+        const sprintHasProjects = this.props.sprints[sprintIndex].projects.length > 0;
+
         this.setState({ 
-            sprintData: newSprintData
+            sprintData: newSprintData,
+            sprintHasProjects: sprintHasProjects
         });
     }
 
@@ -293,6 +305,21 @@ class editSprint extends Component {
         this.props.onCloseSprint();
     }
 
+    openConfirmDeleteDialog = () => {
+        this.setState( { openConfirmDeleteDialog: true });
+    }
+
+    closeConfirmDeleteDialog = () => {
+        this.setState( { openConfirmDeleteDialog: false });
+    }
+
+    deleteSprintHandler = () => {
+        console.log('Deleting sprintId ' + this.props.sprintId);
+        this.closeConfirmDeleteDialog();
+        this.props.onDeleteSprint(this.props.sprintId);
+        this.props.onCloseSprint();
+    }
+
     render() {
         const { classes } = this.props;
 
@@ -330,6 +357,18 @@ class editSprint extends Component {
                         >
                             CANCEL
                         </Button>
+                        { this.props.actionType === "edit"
+                            ? <Button
+                                className={classes.Button}
+                                variant="outlined"
+                                color="secondary"
+                                startIcon={<DeleteIcon />}
+                                onClick={this.openConfirmDeleteDialog}
+                            >
+                            DELETE SPRINT
+                        </Button>
+                            : null
+                        }
                         <Button 
                             className={classes.Button}
                             variant="contained"
@@ -343,6 +382,57 @@ class editSprint extends Component {
                     </div>
             </form>
         );
+
+        let dialog = (
+            <Dialog
+                open={this.state.openConfirmDeleteDialog}
+                onClose={this.closeConfirmDeleteDialog}
+                aria-labelledby="alert-dialog-title"
+                aria-describedby="alert-dialog-description"
+            >
+                <DialogTitle id="alert-dialog-title">
+                    {"Are you certain you want to delete the \'" + this.state.sprintData.name.value + "\' sprint?"}
+                </DialogTitle>
+                <DialogContent>
+                    <DialogContentText id="alert-dialog-description">
+                        This cannot be undone.
+                    </DialogContentText>
+                </DialogContent>
+                <DialogActions>
+                    <Button onClick={this.closeConfirmDeleteDialog} color="primary">
+                        No, take me back.
+                    </Button>
+                    <Button onClick={this.deleteSprintHandler} color="secondary" autoFocus>
+                        Yes, I'm certain I want to delete it.
+                    </Button>
+                </DialogActions>
+            </Dialog>
+        );
+        
+        if(this.state.sprintHasProjects) {
+            dialog = (
+                <Dialog
+                    open={this.state.openConfirmDeleteDialog}
+                    onClose={this.closeConfirmDeleteDialog}
+                    aria-labelledby="alert-dialog-title"
+                    aria-describedby="alert-dialog-description"
+                >
+                    <DialogTitle id="alert-dialog-title">
+                        {"This sprint cannot be deleted, because it has projects attached to it."}
+                    </DialogTitle>
+                    <DialogContent>
+                        <DialogContentText id="alert-dialog-description">
+                            Delete the projects or move them to other sprints, then try again.
+                        </DialogContentText>
+                    </DialogContent>
+                    <DialogActions>
+                        <Button onClick={this.closeConfirmDeleteDialog} color="primary">
+                            Okay, take me back.
+                        </Button>
+                    </DialogActions>
+                </Dialog>
+            );
+        }
 
         let verb1 = "Edit";
         let verb2 = "Edit";
@@ -369,9 +459,9 @@ class editSprint extends Component {
                         <div className={classes.Form}>
                             {form}
                         </div>
-                        
                     </div>
                 </Modal>
+                {dialog}
             </React.Fragment>
         );
     }
@@ -387,6 +477,7 @@ const mapDispatchToProps = dispatch => {
     return {
         onUpdateSprint: (sprintId, sprintData) => dispatch(actions.updateSprint(sprintId, sprintData)),
         onAddSprint: (sprintData) => dispatch(actions.addSprint(sprintData)),
+        onDeleteSprint: (sprintId) => dispatch(actions.deleteSprint(sprintId)),
     };
 };
 

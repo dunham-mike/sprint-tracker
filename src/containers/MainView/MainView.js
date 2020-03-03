@@ -126,12 +126,24 @@ class MainView extends Component {
         for(let i=0; i<this.props.sprints.length; i++) {
             if(this.props.sprints[i].startDate < Date.now() && this.props.sprints[i].endDate > Date.now()) {
                 currentSprintIndex = i;
-                nextSprintIndex = i+1;
-                futureSprintsStartIndex = i+2;
+
+                // Make sure later indexes are in bounds
+                if (i+1 < this.props.sprints.length) {
+                    nextSprintIndex = i+1;
+                }
+                
+                if (i+2 < this.props.sprints.length) {
+                    futureSprintsStartIndex = i+2;
+                }
+                
                 break;
             } else if (this.props.sprints[i].startDate > Date.now() && this.props.sprints[i].endDate > Date.now()) {
                 nextSprintIndex = i;
-                futureSprintsStartIndex = i+1;
+
+                if (i+1 < this.props.sprints.length) {
+                    futureSprintsStartIndex = i+1;
+                }
+                
                 break;
             }
         }
@@ -274,7 +286,12 @@ class MainView extends Component {
                     <div className={classes.innerSprintContainer}>
                         <Sprint 
                             sprint={this.props.sprints[this.state.nextSprintIndex]} 
-                            sprintId={this.props.sprints[this.state.nextSprintIndex].id}
+                            sprintId={
+                                // This check is necessary to avoid an error when first deleting the next sprint
+                                this.props.sprints[this.state.nextSprintIndex] 
+                                ? this.props.sprints[this.state.nextSprintIndex].id
+                                : null
+                            }
                             onOpenProject={this.openEditingProject}
                             sprintType="next"
                         />
@@ -309,6 +326,7 @@ class MainView extends Component {
         let futureSprints = null;
 
         if (this.state.displayFutureSprints && this.props.sprints && this.state.futureSprintsStartIndex !== null) {
+            console.log('this.state.futureSprintsStartIndex:', this.state.futureSprintsStartIndex);
             const futureSprintsArray = [...this.props.sprints.slice(this.state.futureSprintsStartIndex)]
                 .map((futureSprint => {
                     return (

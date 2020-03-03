@@ -4,6 +4,7 @@ export {
     deleteProject,
     updateSprint,
     addSprint,
+    deleteSprint,
     orderSprintsByStartDate,
 } from './sprints';
 

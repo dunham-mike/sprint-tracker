@@ -22,7 +22,7 @@ export const deleteProject = (sprintId, projectId) => {
         sprintId: sprintId,
         projectId: projectId,
     }
-}
+};
 
 export const updateSprint = (sprintId, sprintData) => {
     return {
@@ -36,6 +36,13 @@ export const addSprint = (sprintData) => {
     return {
         type: actionTypes.ADD_SPRINT,
         sprintData: sprintData
+    }
+};
+
+export const deleteSprint = (sprintId) => {
+    return {
+        type: actionTypes.DELETE_SPRINT,
+        sprintId: sprintId,
     }
 };
 

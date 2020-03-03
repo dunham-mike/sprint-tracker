@@ -244,6 +244,24 @@ const addSprint = (state, action) => {
     };
 }
 
+const deleteSprint = (state, action) => {
+    const sprintIndex = getSprintIndexWithSprintId(state, action.sprintId);
+
+    if (state.sprints[sprintIndex].projects.length > 0) {
+        console.log('[Reducer] deleteSprint error, because sprint still has projects on it.')
+        return state;
+    }
+
+    let newSprintsArray = [...state.sprints];
+
+    newSprintsArray = [...newSprintsArray.slice(0, sprintIndex), ...newSprintsArray.slice(sprintIndex + 1)];
+
+    return {
+        ...state,
+        sprints: newSprintsArray
+    }
+}
+
 // NOTE: It's important that the sprints always be sorted by start date, so other reducer functions should call this one if they edit any sprint's start date
 const getNewSprintsArrayOrderedByStartDate = (sprintsArray) => {
     let newDateOrderedSprintsArray = [...sprintsArray];
@@ -271,6 +289,7 @@ const reducer = (state = initialState, action) => {
         case actionTypes.DELETE_PROJECT: return deleteProject(state, action);
         case actionTypes.UPDATE_SPRINT: return updateSprint(state, action);
         case actionTypes.ADD_SPRINT: return addSprint(state, action);
+        case actionTypes.DELETE_SPRINT: return deleteSprint(state, action);
         case actionTypes.ORDER_SPRINTS_BY_START_DATE: return orderSprintsByStartDate(state, action);
         default: return state;
     }
