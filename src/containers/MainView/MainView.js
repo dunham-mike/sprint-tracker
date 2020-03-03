@@ -266,7 +266,12 @@ class MainView extends Component {
                     <div className={classes.innerSprintContainer}>
                         <Sprint 
                             sprint={this.props.sprints[this.state.currentSprintIndex]} 
-                            sprintId={this.props.sprints[this.state.currentSprintIndex].id}
+                            sprintId={
+                                // This check is necessary to avoid an error when first deleting the current sprint
+                                this.props.sprints[this.state.currentSprintIndex]
+                                ? this.props.sprints[this.state.currentSprintIndex].id
+                                : null
+                            }
                             onOpenProject={this.openEditingProject}
                             sprintType="current"
                         />
