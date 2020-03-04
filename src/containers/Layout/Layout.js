@@ -18,7 +18,11 @@ import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 import InboxIcon from '@material-ui/icons/MoveToInbox';
-import MailIcon from '@material-ui/icons/Mail';
+import HomeIcon from '@material-ui/icons/Home';
+import ExitToAppIcon from '@material-ui/icons/ExitToApp';
+import ArrowForwardIcon from '@material-ui/icons/ArrowForward';
+import AccountBoxIcon from '@material-ui/icons/AccountBox';
+import DvrIcon from '@material-ui/icons/Dvr';
 
 import { theme } from '../../theme/theme';
 
@@ -65,21 +69,48 @@ class Layout extends Component {
                 // onKeyDown={toggleDrawer(side, false)}
             >
                 <List>
-                {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
-                    <ListItem button key={text}>
-                    <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
-                    <ListItemText primary={text} />
-                    </ListItem>
-                ))}
+                    {
+                        this.props.isAuth
+                        ?
+                            <ListItem button component={RouterLink} to="/">
+                                <ListItemIcon><HomeIcon /></ListItemIcon>
+                                <ListItemText primary="Home"/>
+                            </ListItem>
+                        :
+                            <React.Fragment>
+                                <ListItem button component={RouterLink} to="/">
+                                    <ListItemIcon><HomeIcon /></ListItemIcon>
+                                    <ListItemText primary="Home"/>
+                                </ListItem>
+                                <ListItem button component={RouterLink} to="/demo">
+                                    <ListItemIcon><DvrIcon /></ListItemIcon>
+                                    <ListItemText primary="Try Demo"/>
+                                </ListItem>
+                            </React.Fragment>
+                    }
                 </List>
                 <Divider />
                 <List>
-                {['All mail', 'Trash', 'Spam'].map((text, index) => (
-                    <ListItem button key={text}>
-                    <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
-                    <ListItemText primary={text} />
-                    </ListItem>
-                ))}
+                    {
+                        this.props.isAuth
+                        ?
+                            <ListItem button component={RouterLink} to="/logout">
+                                <ListItemIcon><ExitToAppIcon /></ListItemIcon>
+                                <ListItemText primary="Log out"/>
+                            </ListItem>
+                        :
+                            <React.Fragment>
+                                <ListItem button component={RouterLink} to="/create-account">
+                                    <ListItemIcon><AccountBoxIcon /></ListItemIcon>
+                                    <ListItemText primary="Create account"/>
+                                </ListItem>
+                                <ListItem button component={RouterLink} to="/login">
+                                    <ListItemIcon><ArrowForwardIcon /></ListItemIcon>
+                                    <ListItemText primary="Log in"/>
+                                </ListItem>
+                            </React.Fragment>
+                    }
+                    
                 </List>
             </div>
         );
@@ -92,7 +123,7 @@ class Layout extends Component {
                         <MenuIcon />
                     </IconButton>
                     <Typography variant="h6" className={classes.title}>
-                        <Link href="/" color="inherit" variant="h6" underline="none">
+                        <Link component={RouterLink} to="/" color="inherit" variant="h6" underline="none">
                             Deliberate Sprints
                         </Link>
                     </Typography>

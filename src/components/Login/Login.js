@@ -4,6 +4,7 @@ import * as Yup from 'yup';
 import { withStyles } from '@material-ui/core/styles';
 import { connect } from 'react-redux';
 import { Redirect } from 'react-router-dom';
+import { Link as RouterLink } from 'react-router-dom';
 
 import Paper from '@material-ui/core/Paper';
 import Typography from '@material-ui/core/Typography';
@@ -160,7 +161,7 @@ const login = (props) => {
                                     {errorMessage}
                                 </div>
                                 <div className={classes.createAccount}>
-                                    <Link href="/create-account" color="inherit" variant="body2">Need to create an account instead?</Link>
+                                    <Link component={RouterLink} to="/create-account" color="inherit" variant="body2">Need to create an account instead?</Link>
                                 </div>
                             </div>
                         </div>
