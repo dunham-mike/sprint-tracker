@@ -628,7 +628,7 @@ class Project extends Component {
                 aria-describedby="alert-dialog-description"
             >
                 <DialogTitle id="alert-dialog-title">
-                    {"Are you certain you want to delete the \'" + this.state.projectData.name.value + "\' project?"}
+                    {"Are you certain you want to delete the '" + this.state.projectData.name.value + "' project?"}
                 </DialogTitle>
                 <DialogContent>
                     <DialogContentText id="alert-dialog-description">

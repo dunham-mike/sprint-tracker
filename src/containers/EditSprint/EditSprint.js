@@ -404,7 +404,7 @@ class editSprint extends Component {
                 aria-describedby="alert-dialog-description"
             >
                 <DialogTitle id="alert-dialog-title">
-                    {"Are you certain you want to delete the \'" + this.state.sprintData.name.value + "\' sprint?"}
+                    {"Are you certain you want to delete the '" + this.state.sprintData.name.value + "' sprint?"}
                 </DialogTitle>
                 <DialogContent>
                     <DialogContentText id="alert-dialog-description">

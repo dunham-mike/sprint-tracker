@@ -118,7 +118,7 @@ class MainView extends Component {
     }
 
     categorizeSprintsByStartDate = () => {
-        console.log('Running categorizeSprintsByStartDate()');
+        // console.log('Running categorizeSprintsByStartDate()');
         let currentSprintIndex = null;
         let nextSprintIndex = null;
         let futureSprintsStartIndex = null;

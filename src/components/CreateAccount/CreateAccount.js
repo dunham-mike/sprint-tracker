@@ -109,6 +109,7 @@ const createAccount = (props) => {
     
     return(
         <Paper className={classes.paper}>
+            {authRedirect}
             <div className={classes.loginContainer}>
                 <Typography variant="h5">Create Account</Typography>
                 <Formik

@@ -35,8 +35,6 @@ class App extends Component {
                 </Switch>
             </Suspense>
         );
-
-        console.log('this.props.isAuth:', this.props.isAuth);
     
         if (this.props.isAuth) {
             routes = (
