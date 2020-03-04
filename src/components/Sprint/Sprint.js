@@ -24,6 +24,11 @@ const sprint = (props) => {
         </div>
     );
 
+    const getSprintLength = () => {
+        const sprintLengthInDays = props.sprint.endDate.diff(props.sprint.startDate, 'days') + 1; // Add 1 because dates are inclusive        
+        return Math.ceil(sprintLengthInDays / 7);
+    }
+
     if (props.sprint && (props.sprintType === "current" || props.sprintType === "next" || props.sprintType === "future")) {
         sprintToDisplay = (
             <div>
@@ -41,6 +46,7 @@ const sprint = (props) => {
                             sprintId={props.sprintId}
                             onOpenProject={props.onOpenProject}
                             sprintType={props.sprintType}
+                            sprintLength={getSprintLength()}
                         />
                     </div>
             </div>
@@ -59,6 +65,7 @@ const sprint = (props) => {
                         sprintId={props.sprintId}
                         onOpenProject={props.onOpenProject}
                         sprintType={props.sprintType}
+                        sprintLength={8}
                     />
                 </div>
             </div>

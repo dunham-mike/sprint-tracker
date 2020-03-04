@@ -89,11 +89,27 @@ const projectTable = (props) => {
         {title: "Notes", field: "notes", ...width250, ...color3 },
         {title: "Did We Fully Complete the Expected Deliverable?", field: "completionStatus", ...width250, ...color4 },
         {title: "If Not, Why Not?", field: "notCompletedExplanation", ...width250, ...color4 },
-        {title: "Status End of Week 1 (0-100%)", field: "statusEndOfWeek1", ...width225, ...color5 },
-        {title: "Status End of Week 2 (0-100%)", field: "statusEndOfWeek2", ...width225, ...color5 },
-        {title: "Status End of Week 3 (0-100%)", field: "statusEndOfWeek3", ...width225, ...color5 },
-        {title: "Status End of Week 4 (0-100%)", field: "statusEndOfWeek4", ...width225, ...color5 },
+        // {title: "Status End of Week 1 (0-100%)", field: "statusEndOfWeek1", ...width225, ...color5 },
+        // {title: "Status End of Week 2 (0-100%)", field: "statusEndOfWeek2", ...width225, ...color5 },
+        // {title: "Status End of Week 3 (0-100%)", field: "statusEndOfWeek3", ...width225, ...color5 },
+        // {title: "Status End of Week 4 (0-100%)", field: "statusEndOfWeek4", ...width225, ...color5 },
+        // {title: "Status End of Week 5 (0-100%)", field: "statusEndOfWeek5", ...width225, ...color5 },
+        // {title: "Status End of Week 6 (0-100%)", field: "statusEndOfWeek6", ...width225, ...color5 },
+        // {title: "Status End of Week 7 (0-100%)", field: "statusEndOfWeek7", ...width225, ...color5 },
+        // {title: "Status End of Week 8 (0-100%)", field: "statusEndOfWeek8", ...width225, ...color5 },
     ];
+
+    // Add status columns
+    for(let i=1; i<=props.sprintLength && i<=8; i++) { // Start at Week 1; don't go past Week 8
+        const columnObject = {
+            title: "Status End of Week " + i + " (0-100%)",
+            field: "statusEndOfWeek" + i,
+            ...width225,
+            ...color5
+        };
+
+        manualColumnNames.push(columnObject);
+    }
 
     // Load each row into a table data object of the expected format
     const formattedTableData = props.tableData.map(row => {

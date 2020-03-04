@@ -330,7 +330,7 @@ class Project extends Component {
             statusEndOfWeek2: {
                 elementType: 'select',
                 elementConfig: {
-                    displayName: 'Status End of Week 1 (0-100%)',
+                    displayName: 'Status End of Week 2 (0-100%)',
                     options: [
                         {value: '', displayValue: ''},
                         {value: '0%', displayValue: '0%'},
@@ -351,7 +351,7 @@ class Project extends Component {
             statusEndOfWeek3: {
                 elementType: 'select',
                 elementConfig: {
-                    displayName: 'Status End of Week 1 (0-100%)',
+                    displayName: 'Status End of Week 3 (0-100%)',
                     options: [
                         {value: '', displayValue: ''},
                         {value: '0%', displayValue: '0%'},
@@ -372,7 +372,91 @@ class Project extends Component {
             statusEndOfWeek4: {
                 elementType: 'select',
                 elementConfig: {
-                    displayName: 'Status End of Week 1 (0-100%)',
+                    displayName: 'Status End of Week 4 (0-100%)',
+                    options: [
+                        {value: '', displayValue: ''},
+                        {value: '0%', displayValue: '0%'},
+                        {value: '25%', displayValue: '25%'},
+                        {value: '50%', displayValue: '50%'},
+                        {value: '75%', displayValue: '75%'},
+                        {value: '100%', displayValue: '100%'},
+                    ]
+                },
+                value: '',
+                validation: {
+                    required: false
+                },
+                editable: true,
+                valid: true,
+                touched: false
+            },
+            statusEndOfWeek5: {
+                elementType: 'select',
+                elementConfig: {
+                    displayName: 'Status End of Week 5 (0-100%)',
+                    options: [
+                        {value: '', displayValue: ''},
+                        {value: '0%', displayValue: '0%'},
+                        {value: '25%', displayValue: '25%'},
+                        {value: '50%', displayValue: '50%'},
+                        {value: '75%', displayValue: '75%'},
+                        {value: '100%', displayValue: '100%'},
+                    ]
+                },
+                value: '',
+                validation: {
+                    required: false
+                },
+                editable: true,
+                valid: true,
+                touched: false
+            },
+            statusEndOfWeek6: {
+                elementType: 'select',
+                elementConfig: {
+                    displayName: 'Status End of Week 6 (0-100%)',
+                    options: [
+                        {value: '', displayValue: ''},
+                        {value: '0%', displayValue: '0%'},
+                        {value: '25%', displayValue: '25%'},
+                        {value: '50%', displayValue: '50%'},
+                        {value: '75%', displayValue: '75%'},
+                        {value: '100%', displayValue: '100%'},
+                    ]
+                },
+                value: '',
+                validation: {
+                    required: false
+                },
+                editable: true,
+                valid: true,
+                touched: false
+            },
+            statusEndOfWeek7: {
+                elementType: 'select',
+                elementConfig: {
+                    displayName: 'Status End of Week 7 (0-100%)',
+                    options: [
+                        {value: '', displayValue: ''},
+                        {value: '0%', displayValue: '0%'},
+                        {value: '25%', displayValue: '25%'},
+                        {value: '50%', displayValue: '50%'},
+                        {value: '75%', displayValue: '75%'},
+                        {value: '100%', displayValue: '100%'},
+                    ]
+                },
+                value: '',
+                validation: {
+                    required: false
+                },
+                editable: true,
+                valid: true,
+                touched: false
+            },
+            statusEndOfWeek8: {
+                elementType: 'select',
+                elementConfig: {
+                    displayName: 'Status End of Week 8 (0-100%)',
                     options: [
                         {value: '', displayValue: ''},
                         {value: '0%', displayValue: '0%'},
@@ -478,15 +562,6 @@ class Project extends Component {
     saveProjectHandler = (event) => {
         event.preventDefault();
 
-        // let transformedProjectData = {};
-        // let keys = Object.keys(this.state.projectData);
-
-        // for (let i=0; i<keys.length; i++) {
-        //     let thisObject = { 'value': this.state.projectData[keys[i]].value };
-
-        //     transformedProjectData[keys[i]] = thisObject;
-        // }
-
         const transformedProjectData = this.getTransformedProjectData();
 
         if (this.props.actionType === "edit") {
@@ -531,15 +606,40 @@ class Project extends Component {
         this.props.onCloseProject();
     }
 
+    getSprintLength = () => {
+        if (this.props.sprintIndex !== null) {
+            const sprintForProject = this.props.sprints[this.props.sprintIndex];
+            const sprintLengthInDays = sprintForProject.endDate.diff(sprintForProject.startDate, 'days') + 1; // Add 1 because dates are inclusive
+            console.log('sprintLengthInDays:', sprintLengthInDays);
+            
+            return Math.ceil(sprintLengthInDays / 7);
+        } else {
+            return null;
+        }
+    }
+
     render() {
         const { classes } = this.props;
 
+        const sprintLength = this.getSprintLength();
+
         const formElementsArray = [];
         for (let key in this.state.projectData) {
-            formElementsArray.push({
-                id: key,
-                config: this.state.projectData[key],
-            });
+            // Filter out statusEndOfWeek keys beyond the length of the sprint
+            let includeKey = true;
+
+            if(sprintLength !== null && key.startsWith('statusEndOfWeek')) {
+                if(Number(key.slice(15)) > sprintLength) {
+                    includeKey = false;
+                }
+            }
+
+            if(includeKey) {
+                formElementsArray.push({
+                    id: key,
+                    config: this.state.projectData[key],
+                });
+            }
         }
 
         let form = (

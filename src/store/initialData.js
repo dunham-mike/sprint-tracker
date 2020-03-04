@@ -29,6 +29,10 @@ export const initialSprintState = {
                     statusEndOfWeek2: { value: '' },
                     statusEndOfWeek3: { value: '' },
                     statusEndOfWeek4: { value: '' },
+                    statusEndOfWeek5: { value: '' },
+                    statusEndOfWeek6: { value: '' },
+                    statusEndOfWeek7: { value: '' },
+                    statusEndOfWeek8: { value: '' },
                 },
                 {
                     id: { value: 2 },
@@ -49,6 +53,10 @@ export const initialSprintState = {
                     statusEndOfWeek2: { value: '' },
                     statusEndOfWeek3: { value: '' },
                     statusEndOfWeek4: { value: '' },
+                    statusEndOfWeek5: { value: '' },
+                    statusEndOfWeek6: { value: '' },
+                    statusEndOfWeek7: { value: '' },
+                    statusEndOfWeek8: { value: '' },
                 },
                 {
                     id: { value: 3 },
@@ -69,6 +77,10 @@ export const initialSprintState = {
                     statusEndOfWeek2: { value: '' },
                     statusEndOfWeek3: { value: '' },
                     statusEndOfWeek4: { value: '' },
+                    statusEndOfWeek5: { value: '' },
+                    statusEndOfWeek6: { value: '' },
+                    statusEndOfWeek7: { value: '' },
+                    statusEndOfWeek8: { value: '' },
                 },
                 {
                     id: { value: 4 },
@@ -89,6 +101,10 @@ export const initialSprintState = {
                     statusEndOfWeek2: { value: '' },
                     statusEndOfWeek3: { value: '' },
                     statusEndOfWeek4: { value: '' },
+                    statusEndOfWeek5: { value: '' },
+                    statusEndOfWeek6: { value: '' },
+                    statusEndOfWeek7: { value: '' },
+                    statusEndOfWeek8: { value: '' },
                 },
                 {
                     id: { value: 5 },
@@ -109,6 +125,10 @@ export const initialSprintState = {
                     statusEndOfWeek2: { value: '' },
                     statusEndOfWeek3: { value: '' },
                     statusEndOfWeek4: { value: '' },
+                    statusEndOfWeek5: { value: '' },
+                    statusEndOfWeek6: { value: '' },
+                    statusEndOfWeek7: { value: '' },
+                    statusEndOfWeek8: { value: '' },
                 },
                 {
                     id: { value: 6 },
@@ -129,6 +149,10 @@ export const initialSprintState = {
                     statusEndOfWeek2: { value: '' },
                     statusEndOfWeek3: { value: '' },
                     statusEndOfWeek4: { value: '' },
+                    statusEndOfWeek5: { value: '' },
+                    statusEndOfWeek6: { value: '' },
+                    statusEndOfWeek7: { value: '' },
+                    statusEndOfWeek8: { value: '' },
                 },
                 {
                     id: { value: 7 },
@@ -149,6 +173,10 @@ export const initialSprintState = {
                     statusEndOfWeek2: { value: '' },
                     statusEndOfWeek3: { value: '' },
                     statusEndOfWeek4: { value: '' },
+                    statusEndOfWeek5: { value: '' },
+                    statusEndOfWeek6: { value: '' },
+                    statusEndOfWeek7: { value: '' },
+                    statusEndOfWeek8: { value: '' },
                 },
                 {
                     id: { value: 8 },
@@ -169,6 +197,10 @@ export const initialSprintState = {
                     statusEndOfWeek2: { value: '' },
                     statusEndOfWeek3: { value: '' },
                     statusEndOfWeek4: { value: '' },
+                    statusEndOfWeek5: { value: '' },
+                    statusEndOfWeek6: { value: '' },
+                    statusEndOfWeek7: { value: '' },
+                    statusEndOfWeek8: { value: '' },
                 },
                 {
                     id: { value: 9 },
@@ -189,6 +221,10 @@ export const initialSprintState = {
                     statusEndOfWeek2: { value: '' },
                     statusEndOfWeek3: { value: '' },
                     statusEndOfWeek4: { value: '' },
+                    statusEndOfWeek5: { value: '' },
+                    statusEndOfWeek6: { value: '' },
+                    statusEndOfWeek7: { value: '' },
+                    statusEndOfWeek8: { value: '' },
                 },
                 {
                     id: { value: 10 },
@@ -209,6 +245,10 @@ export const initialSprintState = {
                     statusEndOfWeek2: { value: '' },
                     statusEndOfWeek3: { value: '' },
                     statusEndOfWeek4: { value: '' },
+                    statusEndOfWeek5: { value: '' },
+                    statusEndOfWeek6: { value: '' },
+                    statusEndOfWeek7: { value: '' },
+                    statusEndOfWeek8: { value: '' },
                 },
                 {
                     id: { value: 11 },
@@ -229,6 +269,10 @@ export const initialSprintState = {
                     statusEndOfWeek2: { value: '' },
                     statusEndOfWeek3: { value: '' },
                     statusEndOfWeek4: { value: '' },
+                    statusEndOfWeek5: { value: '' },
+                    statusEndOfWeek6: { value: '' },
+                    statusEndOfWeek7: { value: '' },
+                    statusEndOfWeek8: { value: '' },
                 },
                 {
                     id: { value: 12 },
@@ -249,6 +293,10 @@ export const initialSprintState = {
                     statusEndOfWeek2: { value: '' },
                     statusEndOfWeek3: { value: '' },
                     statusEndOfWeek4: { value: '' },
+                    statusEndOfWeek5: { value: '' },
+                    statusEndOfWeek6: { value: '' },
+                    statusEndOfWeek7: { value: '' },
+                    statusEndOfWeek8: { value: '' },
                 },
             ]
         },
@@ -279,6 +327,10 @@ export const initialSprintState = {
                     statusEndOfWeek2: { value: '' },
                     statusEndOfWeek3: { value: '' },
                     statusEndOfWeek4: { value: '' },
+                    statusEndOfWeek5: { value: '' },
+                    statusEndOfWeek6: { value: '' },
+                    statusEndOfWeek7: { value: '' },
+                    statusEndOfWeek8: { value: '' },
                 },
                 {
                     id: { value: 14 },
@@ -299,6 +351,10 @@ export const initialSprintState = {
                     statusEndOfWeek2: { value: '' },
                     statusEndOfWeek3: { value: '' },
                     statusEndOfWeek4: { value: '' },
+                    statusEndOfWeek5: { value: '' },
+                    statusEndOfWeek6: { value: '' },
+                    statusEndOfWeek7: { value: '' },
+                    statusEndOfWeek8: { value: '' },
                 },
                 {
                     id: { value: 15 },
@@ -319,6 +375,10 @@ export const initialSprintState = {
                     statusEndOfWeek2: { value: '' },
                     statusEndOfWeek3: { value: '' },
                     statusEndOfWeek4: { value: '' },
+                    statusEndOfWeek5: { value: '' },
+                    statusEndOfWeek6: { value: '' },
+                    statusEndOfWeek7: { value: '' },
+                    statusEndOfWeek8: { value: '' },
                 }
             ]
         },
@@ -349,6 +409,10 @@ export const initialSprintState = {
                     statusEndOfWeek2: { value: '' },
                     statusEndOfWeek3: { value: '' },
                     statusEndOfWeek4: { value: '' },
+                    statusEndOfWeek5: { value: '' },
+                    statusEndOfWeek6: { value: '' },
+                    statusEndOfWeek7: { value: '' },
+                    statusEndOfWeek8: { value: '' },
                 },
                 {
                     id: { value: 20 },
@@ -369,6 +433,10 @@ export const initialSprintState = {
                     statusEndOfWeek2: { value: '' },
                     statusEndOfWeek3: { value: '' },
                     statusEndOfWeek4: { value: '' },
+                    statusEndOfWeek5: { value: '' },
+                    statusEndOfWeek6: { value: '' },
+                    statusEndOfWeek7: { value: '' },
+                    statusEndOfWeek8: { value: '' },
                 },
                 {
                     id: { value: 21 },
@@ -389,6 +457,10 @@ export const initialSprintState = {
                     statusEndOfWeek2: { value: '' },
                     statusEndOfWeek3: { value: '' },
                     statusEndOfWeek4: { value: '' },
+                    statusEndOfWeek5: { value: '' },
+                    statusEndOfWeek6: { value: '' },
+                    statusEndOfWeek7: { value: '' },
+                    statusEndOfWeek8: { value: '' },
                 }
             ]
         },
@@ -419,6 +491,10 @@ export const initialSprintState = {
                     statusEndOfWeek2: { value: '' },
                     statusEndOfWeek3: { value: '' },
                     statusEndOfWeek4: { value: '' },
+                    statusEndOfWeek5: { value: '' },
+                    statusEndOfWeek6: { value: '' },
+                    statusEndOfWeek7: { value: '' },
+                    statusEndOfWeek8: { value: '' },
                 },
                 {
                     id: { value: 23 },
@@ -439,6 +515,10 @@ export const initialSprintState = {
                     statusEndOfWeek2: { value: '' },
                     statusEndOfWeek3: { value: '' },
                     statusEndOfWeek4: { value: '' },
+                    statusEndOfWeek5: { value: '' },
+                    statusEndOfWeek6: { value: '' },
+                    statusEndOfWeek7: { value: '' },
+                    statusEndOfWeek8: { value: '' },
                 },
                 {
                     id: { value: 24 },
@@ -459,6 +539,10 @@ export const initialSprintState = {
                     statusEndOfWeek2: { value: '' },
                     statusEndOfWeek3: { value: '' },
                     statusEndOfWeek4: { value: '' },
+                    statusEndOfWeek5: { value: '' },
+                    statusEndOfWeek6: { value: '' },
+                    statusEndOfWeek7: { value: '' },
+                    statusEndOfWeek8: { value: '' },
                 }
             ]
         },
@@ -484,6 +568,10 @@ export const initialSprintState = {
             statusEndOfWeek2: { value: '' },
             statusEndOfWeek3: { value: '' },
             statusEndOfWeek4: { value: '' },
+            statusEndOfWeek5: { value: '' },
+            statusEndOfWeek6: { value: '' },
+            statusEndOfWeek7: { value: '' },
+            statusEndOfWeek8: { value: '' },
         },
         {
             id: { value: 17 },
@@ -504,6 +592,10 @@ export const initialSprintState = {
             statusEndOfWeek2: { value: '' },
             statusEndOfWeek3: { value: '' },
             statusEndOfWeek4: { value: '' },
+            statusEndOfWeek5: { value: '' },
+            statusEndOfWeek6: { value: '' },
+            statusEndOfWeek7: { value: '' },
+            statusEndOfWeek8: { value: '' },
         },
         {
             id: { value: 18 },
@@ -524,6 +616,10 @@ export const initialSprintState = {
             statusEndOfWeek2: { value: '' },
             statusEndOfWeek3: { value: '' },
             statusEndOfWeek4: { value: '' },
+            statusEndOfWeek5: { value: '' },
+            statusEndOfWeek6: { value: '' },
+            statusEndOfWeek7: { value: '' },
+            statusEndOfWeek8: { value: '' },
         },
     ], // End of queue
 };

@@ -224,12 +224,14 @@ const sprintStatistics = (props) => {
     }
 
     const generateProgressData = (numWeeks) => {
+        let boundedNumWeeks = Math.min(numWeeks, 8); // Ignore weeks beyond 8
+
         let progressData = [  
             {name: 'Start', actualPoints: 0, expectedPoints: 0},
         ];
 
-        for(let i=1; i<=numWeeks; i++) { // Not using an index for this for loop, so it starts at 1 and uses <= to determine end
-            progressData.push(generateOneWeeksProgressData(i, numWeeks));
+        for(let i=1; i<=boundedNumWeeks; i++) { // Not using an index for this for loop, so it starts at 1 and uses <= to determine end
+            progressData.push(generateOneWeeksProgressData(i, boundedNumWeeks));
         }
 
         return progressData;
@@ -294,7 +296,18 @@ const sprintStatistics = (props) => {
     });  
 
     // Recharts
-    const progressData = generateProgressData(4); // TODO: Dynamically determine number of weeks to chart based on length of sprint
+    const getSprintLength = () => {
+        if (props.sprintIndex !== null) {
+            const sprintForProject = props.sprints[props.sprintIndex];
+            const sprintLengthInDays = sprintForProject.endDate.diff(sprintForProject.startDate, 'days') + 1; // Add 1 because dates are inclusive
+            
+            return Math.ceil(sprintLengthInDays / 7);
+        } else {
+            return null;
+        }
+    }
+
+    const progressData = generateProgressData(getSprintLength());
 
     const renderLineChart = (
         <ResponsiveContainer height={350}>
@@ -308,7 +321,7 @@ const sprintStatistics = (props) => {
                 <CartesianGrid stroke="#ccc" strokeDasharray="5 5"/>
                 <XAxis dataKey="name" />
                 <YAxis />
-                <Tooltip formatter={(value, name) => [value, (name === 'actualPoints' ? 'Actual Points' : 'Expected Points')]}/>
+                <Tooltip formatter={(value, name) => [value.toFixed(1), (name === 'actualPoints' ? 'Actual Points' : 'Expected Points')]}/>
             </LineChart>
         </ResponsiveContainer>
       );

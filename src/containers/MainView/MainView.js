@@ -100,6 +100,7 @@ class MainView extends Component {
         creatingSprint: false,
         projectBeingViewed: null, // TODO: refactor to projectIdBeingViewed
         sprintIdBeingViewed: null,
+        sprintIndexBeingViewed: null,
 
         // Sprint Statistics
         displayingSprintStatistics: false,
@@ -184,11 +185,22 @@ class MainView extends Component {
         });
     }
 
+    getSprintIndexFromSprintId = (sprintId) => {
+        for(let i=0; i<this.props.sprints.length; i++) {
+            if(this.props.sprints[i].id === sprintId) {
+                return i;
+            }
+        }
+
+        return null;
+    }
+
     openEditingProject = (project, sprintId, columnNames) => {
         this.setState({
             editingProject: true,
             projectBeingViewed: project,
             sprintIdBeingViewed: sprintId,
+            sprintIndexBeingViewed: this.getSprintIndexFromSprintId(sprintId),
         });
     }
 
@@ -197,6 +209,7 @@ class MainView extends Component {
             editingProject: false,
             projectBeingViewed: null,
             sprintIdBeingViewed: null,
+            sprintIndexBeingViewed: null,
         });
     }
 
@@ -204,6 +217,7 @@ class MainView extends Component {
         this.setState({
             creatingProject: true,
             sprintIdBeingViewed: sprintId,
+            sprintIndexBeingViewed: this.getSprintIndexFromSprintId(sprintId),
         });
     }
 
@@ -211,6 +225,7 @@ class MainView extends Component {
         this.setState({
             creatingProject: false,
             sprintIdBeingViewed: null,
+            sprintIndexBeingViewed: null,
         });
     }
 
@@ -218,6 +233,7 @@ class MainView extends Component {
         this.setState({
             editingSprint: true,
             sprintIdBeingViewed: sprintId,
+            // sprintIndexBeingViewed not necessary here
         });
     }
 
@@ -225,6 +241,7 @@ class MainView extends Component {
         this.setState({
             editingSprint: false,
             sprintIdBeingViewed: null,
+            // sprintIndexBeingViewed not necessary here
         });
     }
 
@@ -244,6 +261,7 @@ class MainView extends Component {
         this.setState({
             displayingSprintStatistics: true,
             sprintIdBeingViewed: sprintId,
+            sprintIndexBeingViewed: this.getSprintIndexFromSprintId(sprintId),
         })
     }
 
@@ -251,6 +269,7 @@ class MainView extends Component {
         this.setState({
             displayingSprintStatistics: false,
             sprintIdBeingViewed: null,
+            sprintIndexBeingViewed: null,
         })
     }
 
@@ -393,6 +412,7 @@ class MainView extends Component {
                     <EditProject 
                         project={this.state.projectBeingViewed}
                         sprintId={this.state.sprintIdBeingViewed}
+                        sprintIndex={this.state.sprintIndexBeingViewed}
                         onCloseProject={this.closeEditingProject}
                         actionType={"edit"}
                     />
@@ -409,6 +429,7 @@ class MainView extends Component {
                     <EditProject 
                         project={null}
                         sprintId={this.state.sprintIdBeingViewed}
+                        sprintIndex={this.state.sprintIndexBeingViewed}
                         onCloseProject={this.closeCreatingProject}
                         actionType={"create"}
                     />
@@ -431,7 +452,7 @@ class MainView extends Component {
             );
         }
 
-        // Displaying the Sprint Editing Modal
+        // Displaying the Sprint Creating Modal
         let sprintCreate = null;
 
         if (this.state.creatingSprint) {
@@ -453,6 +474,7 @@ class MainView extends Component {
                 <div>
                     <SprintStatistics 
                         sprintId = {this.state.sprintIdBeingViewed}
+                        sprintIndex= {this.state.sprintIndexBeingViewed}
                         onCloseSprintStatistics = {this.closeSprintStatistics}
                     />
                 </div>
