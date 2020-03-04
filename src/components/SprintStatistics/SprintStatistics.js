@@ -14,8 +14,9 @@ import ListItemText from '@material-ui/core/ListItemText';
 import Avatar from '@material-ui/core/Avatar';
 import Typography from '@material-ui/core/Typography';
 
-import Backdrop from '../UI/Backdrop/Backdrop';
-import Modal from '../UI/Modal/Modal';
+import Modal from '@material-ui/core/Modal';
+import Paper from '@material-ui/core/Paper';
+
 import CancelButton from '../UI/CancelButton/CancelButton';
 
 const styles = theme => ({
@@ -63,6 +64,19 @@ const styles = theme => ({
         xsOnlyHorizontalRule: {
             width: '60%',
         }
+    },
+    paper: {
+        backgroundColor: theme.palette.background.paper,
+        boxShadow: theme.shadows[5],
+        padding: theme.spacing(2, 4, 3),
+        outline: '0',
+        position: 'fixed',
+        zIndex: '1120',
+        width: '86%',
+        height: '86%',
+        left: '7%',
+        top: '7%',
+        overflow: 'auto',
     },
 });
 
@@ -300,9 +314,13 @@ const sprintStatistics = (props) => {
       );
 
     return(
-        <React.Fragment>
-            <Backdrop />
-            <Modal>
+        <Modal
+            aria-labelledby="simple-modal-title"
+            aria-describedby="simple-modal-description"
+            open={true}
+            onClose={props.onCloseSprintStatistics}
+        >
+            <Paper className={classes.paper}>
                 <div className={classes.cancelButtonContainer} >
                     <CancelButton clicked={props.onCloseSprintStatistics} />
                 </div>
@@ -367,8 +385,8 @@ const sprintStatistics = (props) => {
                         </Grid>
                     </Grid>
                 </div>
-            </Modal>
-        </React.Fragment>
+            </Paper>
+        </Modal>
     );
 };
 

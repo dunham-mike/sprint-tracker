@@ -8,9 +8,7 @@ import red from '@material-ui/core/colors/red';
 import Button from '@material-ui/core/Button';
 import SaveIcon from '@material-ui/icons/Save';
 import CancelIcon from '@material-ui/icons/Cancel';
-import DeleteIcon from '@material-ui/icons/Delete';
 import DeleteOutlinedIcon from '@material-ui/icons/DeleteOutlined';
-import AssignmentReturnedOutlinedIcon from '@material-ui/icons/AssignmentReturnedOutlined';
 import InputOutlinedIcon from '@material-ui/icons/InputOutlined';
 import Typography from '@material-ui/core/Typography';
 
@@ -20,12 +18,14 @@ import DialogContent from '@material-ui/core/DialogContent';
 import DialogContentText from '@material-ui/core/DialogContentText';
 import DialogTitle from '@material-ui/core/DialogTitle';
 
+import Modal from '@material-ui/core/Modal';
+import Paper from '@material-ui/core/Paper';
+
 import Avatar from '@material-ui/core/Avatar';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemAvatar from '@material-ui/core/ListItemAvatar';
 import ListItemText from '@material-ui/core/ListItemText';
-import PersonIcon from '@material-ui/icons/Person';
 import AddIcon from '@material-ui/icons/Add';
 import { blue } from '@material-ui/core/colors';
 import { green } from '@material-ui/core/colors';
@@ -33,8 +33,6 @@ import CloseIcon from '@material-ui/icons/Close';
 import CheckIcon from '@material-ui/icons/Check';
 
 import Input from '../../components/UI/Input/Input';
-import Backdrop from '../../components/UI/Backdrop/Backdrop';
-import Modal from '../../components/UI/Modal/Modal';
 import CancelButton from '../../components/UI/CancelButton/CancelButton';
 import * as actions from '../../store/actions/index';
 import { checkValidity } from '../../shared/utility';
@@ -60,9 +58,10 @@ const styles = theme => ({
         margin: '0 auto',
         display: 'flex',
         justifyContent: 'center',
+        flexWrap: 'wrap',
     },
     Button: {
-        marginLeft: theme.spacing(2)
+        margin: theme.spacing(1)
     },
     avatar: {
         backgroundColor: blue[100],
@@ -71,6 +70,19 @@ const styles = theme => ({
     avatarCurrent: {
         backgroundColor: green[100],
         color: green[600],
+    },
+    paper: {
+        backgroundColor: theme.palette.background.paper,
+        boxShadow: theme.shadows[5],
+        padding: theme.spacing(2, 4, 3),
+        outline: '0',
+        position: 'fixed',
+        zIndex: '1120',
+        width: '86%',
+        height: '86%',
+        left: '7%',
+        top: '7%',
+        overflow: 'auto',
     },
 });
 
@@ -563,28 +575,28 @@ class Project extends Component {
                             CANCEL
                         </Button>
                         { this.props.actionType === "edit"
-                            ? <Button
-                                className={classes.Button}
-                                variant="outlined"
-                                color="secondary"
-                                startIcon={<DeleteOutlinedIcon />}
-                                onClick={this.openConfirmDeleteDialog}
-                            >
-                            DELETE PROJECT
-                        </Button>
-                            : null
+                            ?   <Button
+                                    className={classes.Button}
+                                    variant="outlined"
+                                    color="secondary"
+                                    startIcon={<DeleteOutlinedIcon />}
+                                    onClick={this.openConfirmDeleteDialog}
+                                >
+                                    DELETE PROJECT
+                                </Button>
+                            :   null
                         }
                         { this.props.actionType === "edit"
-                            ? <Button
-                                className={classes.Button}
-                                variant="outlined"
-                                color="secondary"
-                                startIcon={<InputOutlinedIcon />}
-                                onClick={this.openAssignSprintDialog}
-                            >
-                            ASSIGN TO ANOTHER SPRINT
-                        </Button>
-                            : null
+                            ?   <Button
+                                    className={classes.Button}
+                                    variant="outlined"
+                                    color="secondary"
+                                    startIcon={<InputOutlinedIcon />}
+                                    onClick={this.openAssignSprintDialog}
+                                >
+                                    ASSIGN TO ANOTHER SPRINT
+                                </Button>
+                            :   null
                         }
                         <Button 
                             className={classes.Button}
@@ -716,9 +728,13 @@ class Project extends Component {
         } // End of "if (this.state.openAssignSprintDialog)"
 
         return (
-            <React.Fragment>
-                <Backdrop />
-                <Modal>
+            <Modal
+                aria-labelledby="simple-modal-title"
+                aria-describedby="simple-modal-description"
+                open={true}
+                onClose={this.props.onCloseProject}
+            >
+                <Paper className={classes.paper}>
                     <div className={classes.cancelButtonContainer} >
                         <CancelButton clicked={this.props.onCloseProject} />
                     </div>
@@ -730,12 +746,11 @@ class Project extends Component {
                         <div className={classes.Form}>
                             {form}
                         </div>
-                        
                     </div>
-                </Modal>
-                {confirmDeleteDialog}
-                {selectNewSprintDialog}
-            </React.Fragment>
+                    {confirmDeleteDialog}
+                    {selectNewSprintDialog}
+                </Paper>
+            </Modal>
         );
     }
 }

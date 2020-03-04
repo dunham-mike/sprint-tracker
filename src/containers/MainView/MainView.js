@@ -9,7 +9,7 @@ import InsertChartOutlinedOutlinedIcon from '@material-ui/icons/InsertChartOutli
 import Sprint from '../../components/Sprint/Sprint';
 import EditSprint from '../EditSprint/EditSprint';
 import { withStyles } from '@material-ui/core/styles';
-import Project from '../Project/Project';
+import EditProject from '../EditProject/EditProject';
 import * as actions from '../../store/actions/index';
 import SprintStatistics from '../../components/SprintStatistics/SprintStatistics';
 
@@ -390,7 +390,7 @@ class MainView extends Component {
         if (this.state.editingProject) {
             projectEdit = (
                 <div>
-                    <Project 
+                    <EditProject 
                         project={this.state.projectBeingViewed}
                         sprintId={this.state.sprintIdBeingViewed}
                         onCloseProject={this.closeEditingProject}
@@ -406,7 +406,7 @@ class MainView extends Component {
         if (this.state.creatingProject) {
             projectCreate = (
                 <div>
-                    <Project 
+                    <EditProject 
                         project={null}
                         sprintId={this.state.sprintIdBeingViewed}
                         onCloseProject={this.closeCreatingProject}

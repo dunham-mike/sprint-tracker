@@ -17,9 +17,10 @@ import DialogContent from '@material-ui/core/DialogContent';
 import DialogContentText from '@material-ui/core/DialogContentText';
 import DialogTitle from '@material-ui/core/DialogTitle';
 
+import Modal from '@material-ui/core/Modal';
+import Paper from '@material-ui/core/Paper';
+
 import Input from '../../components/UI/Input/Input';
-import Backdrop from '../../components/UI/Backdrop/Backdrop';
-import Modal from '../../components/UI/Modal/Modal';
 import CancelButton from '../../components/UI/CancelButton/CancelButton';
 import { checkValidity } from '../../shared/utility';
 import * as actions from '../../store/actions/index';
@@ -39,8 +40,6 @@ const styles = theme => ({
     FormTitle: {
         marginTop: theme.spacing(1),
         color: red[300],
-        // fontWeight: 'bold',
-        // fontSize: '1.5rem'
     },
     Form: {
         textAlign: 'left'
@@ -49,10 +48,24 @@ const styles = theme => ({
         margin: '0 auto',
         display: 'flex',
         justifyContent: 'center',
+        flexWrap: 'wrap',
     },
     Button: {
-        marginLeft: theme.spacing(2)
-    }
+        margin: theme.spacing(1)
+    },
+    paper: {
+        backgroundColor: theme.palette.background.paper,
+        boxShadow: theme.shadows[5],
+        padding: theme.spacing(2, 4, 3),
+        outline: '0',
+        position: 'fixed',
+        zIndex: '1120',
+        width: '86%',
+        height: '86%',
+        left: '7%',
+        top: '7%',
+        overflow: 'auto',
+    },
 });
 
 class editSprint extends Component {
@@ -443,26 +456,30 @@ class editSprint extends Component {
         }
 
         return (
-            <React.Fragment>
-                <Backdrop />
-                <Modal>
-                    <div className={classes.cancelButtonContainer} >
-                        <CancelButton clicked={this.props.onCloseSprint} />
-                    </div>
-                    <div className={classes.FormContainer}>
-                        <div className={classes.FormTitle}>
-                            <Typography variant="h4">
-                                {verb1} Sprint
-                            </Typography>
+                <Modal
+                    aria-labelledby="simple-modal-title"
+                    aria-describedby="simple-modal-description"
+                    open={true}
+                    onClose={this.props.onCloseSprint}
+                >
+                    <Paper className={classes.paper}>
+                        <div className={classes.cancelButtonContainer} >
+                            <CancelButton clicked={this.props.onCloseSprint} />
                         </div>
-                        <div>{verb2} the sprint information and click "Save" below. * = required field</div>
-                        <div className={classes.Form}>
-                            {form}
+                        <div className={classes.FormContainer}>
+                            <div className={classes.FormTitle}>
+                                <Typography variant="h4">
+                                    {verb1} Sprint
+                                </Typography>
+                            </div>
+                            <div>{verb2} the sprint information and click "Save" below. * = required field</div>
+                            <div className={classes.Form}>
+                                {form}
+                            </div>
                         </div>
-                    </div>
+                        {dialog}
+                    </Paper>
                 </Modal>
-                {dialog}
-            </React.Fragment>
         );
     }
 };
