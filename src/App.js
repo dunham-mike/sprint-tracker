@@ -1,7 +1,6 @@
 import React, { Component, Suspense } from 'react';
-import { Route, Redirect, Switch } from 'react-router-dom';
+import { Route, Redirect, Switch, withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
-// import { ConfirmProvider } from 'material-ui-confirm';
 
 import { ThemeProvider } from '@material-ui/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
@@ -17,11 +16,15 @@ import * as actions from './store/actions/index';
 import Logout from './components/Login/Logout/Logout';
 
 class App extends Component {
-    componentDidMount =() => {
-        this.props.onTryAutoLogin();
+    componentDidMount = () => {
+        // Only try to login if the user is not starting on the demo page
+        if(this.props.location.pathname !== "/demo") {
+            this.props.onTryAutoLogin();
+        }
     }
 
     render() {
+
         let routes = (
             <Suspense fallback={<div>Loading...</div>}>
                 <Switch>
@@ -42,14 +45,20 @@ class App extends Component {
               <Suspense fallback={<div>Loading...</div>}>
                 <Switch>
                     <Route path="/login" component={Login} /> {/* So Redirect inside Login can work and route to different areas of the app that require login. */}
-                    <Route path="/" exact component = {MainView}/>
+                    {this.props.isDemo 
+                        ? null
+                        : <Route path="/" exact component = {MainView}/>
+                    }
                     <Route path="/logout" component={Logout} />
                     <Route path="/past-sprints" component={PastSprints} />
                     <Route
                         path='/demo'
                         render={(props) => <MainView isDemo={true} />}
                     />
-                    <Redirect to="/" />
+                    {this.props.isDemo 
+                        ? <Redirect to="/demo" />
+                        : <Redirect to="/" />
+                    }
                 </Switch>
               </Suspense>
             );
@@ -70,7 +79,8 @@ class App extends Component {
 
 const mapStateToProps = state => {
     return {
-      isAuth: state.authentication.token !== null
+      isAuth: state.authentication.token !== null,
+      isDemo: state.authentication.token === "demo",
     };
 };
 
@@ -80,4 +90,4 @@ const mapDispatchToProps = dispatch => {
     };
   };  
 
-export default connect(mapStateToProps, mapDispatchToProps)(App);
+export default connect(mapStateToProps, mapDispatchToProps)(withRouter(App));

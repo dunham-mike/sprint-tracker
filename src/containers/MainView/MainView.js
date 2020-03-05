@@ -54,7 +54,7 @@ const styles = theme => ({
         flexWrap: 'wrap',
     },
     conditionalButtons: {
-        margin: '0 2px',
+        margin: '2px 2px',
     },
     buttonSpacing: {
         marginBottom: theme.spacing(1),
