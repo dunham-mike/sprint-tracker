@@ -8,6 +8,7 @@ import CssBaseline from '@material-ui/core/CssBaseline';
 
 import FrontPage from './components/FrontPage/FrontPage';
 import MainView from './containers/MainView/MainView';
+import PastSprints from './containers/PastSprints/PastSprints';
 import Layout from './containers/Layout/Layout';
 import { theme } from './theme/theme';
 import Login from './components/Login/Login';
@@ -43,6 +44,7 @@ class App extends Component {
                     <Route path="/login" component={Login} /> {/* So Redirect inside Login can work and route to different areas of the app that require login. */}
                     <Route path="/" exact component = {MainView}/>
                     <Route path="/logout" component={Logout} />
+                    <Route path="/past-sprints" component={PastSprints} />
                     <Route
                         path='/demo'
                         render={(props) => <MainView isDemo={true} />}

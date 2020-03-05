@@ -17,12 +17,12 @@ import Divider from '@material-ui/core/Divider';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
-import InboxIcon from '@material-ui/icons/MoveToInbox';
 import HomeIcon from '@material-ui/icons/Home';
 import ExitToAppIcon from '@material-ui/icons/ExitToApp';
 import ArrowForwardIcon from '@material-ui/icons/ArrowForward';
 import AccountBoxIcon from '@material-ui/icons/AccountBox';
 import DvrIcon from '@material-ui/icons/Dvr';
+import HistoryIcon from '@material-ui/icons/History';
 
 import { theme } from '../../theme/theme';
 
@@ -72,10 +72,16 @@ class Layout extends Component {
                     {
                         this.props.isAuth
                         ?
-                            <ListItem button component={RouterLink} to="/">
-                                <ListItemIcon><HomeIcon /></ListItemIcon>
-                                <ListItemText primary="Home"/>
-                            </ListItem>
+                            <React.Fragment>
+                                <ListItem button component={RouterLink} to="/">
+                                    <ListItemIcon><HomeIcon /></ListItemIcon>
+                                    <ListItemText primary="Home"/>
+                                </ListItem>
+                                <ListItem button component={RouterLink} to="/past-sprints">
+                                    <ListItemIcon><HistoryIcon /></ListItemIcon>
+                                    <ListItemText primary="Past Sprints"/>
+                                </ListItem>
+                            </React.Fragment>
                         :
                             <React.Fragment>
                                 <ListItem button component={RouterLink} to="/">

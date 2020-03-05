@@ -5,8 +5,8 @@ export const initialSprintState = {
         {
             id: 1,
             name: 'Sprint #1',
-            startDate: moment.utc("2020-02-24"), // new Date("Feb 24 2020 00:00:00 GMT-0800 (Pacific Standard Time)"),
-            endDate: moment.utc("2020-03-06"), //new Date("Mar 6 2020 23:59:59 GMT-0800 (Pacific Standard Time)"),
+            startDate: moment.utc("2020-01-24"), // new Date("Feb 24 2020 00:00:00 GMT-0800 (Pacific Standard Time)"),
+            endDate: moment.utc("2020-02-06"), //new Date("Mar 6 2020 23:59:59 GMT-0800 (Pacific Standard Time)"),
             participants: 'Mike, Bobby',
             owner: 'Mike',
             projects: [
@@ -303,8 +303,8 @@ export const initialSprintState = {
         {
             id: 2,
             name: 'Sprint #2',
-            startDate: moment.utc("2020-03-09"), // new Date("Mar 9 2020 00:00:00 GMT-0800 (Pacific Standard Time)"),
-            endDate: moment.utc("2020-03-20"), // new Date("Mar 20 2020 22:59:59 GMT-0800 (Pacific Standard Time)"),
+            startDate: moment.utc("2020-02-09"), // new Date("Mar 9 2020 00:00:00 GMT-0800 (Pacific Standard Time)"),
+            endDate: moment.utc("2020-02-20"), // new Date("Mar 20 2020 22:59:59 GMT-0800 (Pacific Standard Time)"),
             participants: 'Mike, Bobby',
             owner: 'Mike',
             projects: [

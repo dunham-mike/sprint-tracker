@@ -3,6 +3,7 @@ import MaterialTable from "material-table";
 import blue from '@material-ui/core/colors/blue';
 import red from '@material-ui/core/colors/red';
 import grey from '@material-ui/core/colors/grey';
+import yellow from '@material-ui/core/colors/yellow';
 
 import { forwardRef } from 'react';
 
@@ -70,6 +71,12 @@ const projectTable = (props) => {
         color3 = { headerStyle: { backgroundColor: grey[500], color: '#000' }};
         color4 = { headerStyle: { backgroundColor: grey[600] }};
         color5 = { headerStyle: { backgroundColor: grey[700] }};
+    } else if(props.sprintType === "past") {
+        color1 = { headerStyle: { backgroundColor: yellow[400], color: '#000' }};
+        color2 = { headerStyle: { backgroundColor: yellow[500], color: '#000' }};
+        color3 = { headerStyle: { backgroundColor: yellow[600], color: '#000' }};
+        color4 = { headerStyle: { backgroundColor: yellow[700], color: '#000' }};
+        color5 = { headerStyle: { backgroundColor: yellow[800], color: '#000' }};
     } 
 
     const defaultBackgroundColor = color1.headerStyle.backgroundColor;
@@ -124,6 +131,20 @@ const projectTable = (props) => {
         return formattedRowObject;
     });
 
+    let actionsArray = [{
+        icon: Edit,
+        tooltip: 'Edit Project',
+        onClick: (event, rowData) => {
+          let newRowData = {...rowData};
+          delete newRowData['tableData'];
+          return props.onOpenProject(newRowData, props.sprintId, manualColumnNames);
+        }
+      }];
+
+    if (props.pastSprint) {
+        actionsArray = [];
+    }
+
     return (
       <div style={{ maxWidth: "100%" }}>
         <MaterialTable
@@ -131,16 +152,7 @@ const projectTable = (props) => {
             columns={manualColumnNames}
             data={formattedTableData}
             title={props.tableTitle}
-            actions={[
-                {
-                  icon: Edit,
-                  tooltip: 'Edit Project',
-                  onClick: (event, rowData) => {
-                    let newRowData = {...rowData};
-                    delete newRowData['tableData'];
-                    return props.onOpenProject(newRowData, props.sprintId, manualColumnNames);
-                  }
-                }]}
+            actions={actionsArray}
             localization={{
                 header: {
                     actions: ''
