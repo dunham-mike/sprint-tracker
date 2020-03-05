@@ -94,7 +94,7 @@ const createAccount = (props) => {
         }
 
         errorMessage = (
-            errorMessageTranslation[props.error.message] ? errorMessageTranslation[props.error.message] : props.error.message
+            errorMessageTranslation[props.error.message] ? errorMessageTranslation[props.error.message] : null // Show no error if it's not in the list above
         );
     }
 

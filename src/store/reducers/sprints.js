@@ -1,6 +1,5 @@
 import * as actionTypes from '../actions/actionTypes';
 import { initialSprintState } from '../initialData';
-// import { deleteProject } from '../actions';
 
 const initialState = initialSprintState;
 

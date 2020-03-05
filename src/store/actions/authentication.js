@@ -1,5 +1,6 @@
 import * as actionTypes from './actionTypes';
 import axios from 'axios';
+const FIREBASE_API_KEY = process.env.REACT_APP_FIREBASE_API_KEY;
 
 export const initiateDemo = () => {
     return {
@@ -83,11 +84,10 @@ export const kickoffAuthentication = (email, password, isCreateAccount, firstNam
         console.log('firstName:', firstName);
         console.log('lastName:', lastName);
 
-        // TODO: Update these specifically for this app.
-        let url = 'https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyCIkqUP0Y8W1b8Tvnv60WVf0-R4ag6fQ4g';
+        let url = 'https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=' + FIREBASE_API_KEY;
         
         if(isCreateAccount) {
-            url = 'https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyCIkqUP0Y8W1b8Tvnv60WVf0-R4ag6fQ4g';
+            url = 'https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=' + FIREBASE_API_KEY;
         }
         
         axios.post(url, authData)

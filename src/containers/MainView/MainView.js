@@ -107,6 +107,7 @@ class MainView extends Component {
     }
 
     componentDidMount = () => {
+        console.log('process.env.REACT_APP_FIREBASE_API_KEY:', process.env.REACT_APP_FIREBASE_API_KEY);
         this.props.onOrderSprintsByStartDate();
         this.categorizeSprintsByStartDate();
         if(this.props.isDemo) {
