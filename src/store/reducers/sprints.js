@@ -6,6 +6,7 @@ import * as moment from 'moment';
 const initialState = {
     sprints: [],
     queue: [],
+    error: false,
 }
 
 const getSprintIndexWithSprintId = (state, sprintId) => {
@@ -337,6 +338,13 @@ const initializeDemoData = (state, action) => {
     }
 }
 
+const markServerUpdateError = (state, action) => {
+    return {
+        ...state,
+        error: true,
+    }
+}
+
 const reducer = (state = initialState, action) => {
     switch(action.type) {
         case actionTypes.UPDATE_PROJECT: return updateProject(state, action);
@@ -349,6 +357,7 @@ const reducer = (state = initialState, action) => {
         case actionTypes.CLEAR_SPRINT_STORE: return clearSprintStore(state, action);
         case actionTypes.LOAD_SPRINT_STORE: return loadSprintStore(state, action);
         case actionTypes.INITIALIZE_DEMO_DATA: return initializeDemoData(state, action);
+        case actionTypes.MARK_SERVER_UPDATE_ERROR: return markServerUpdateError(state, action);
         default: return state;
     }
 };

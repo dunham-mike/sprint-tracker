@@ -25,11 +25,17 @@ export const updateProject = (sprintId, projectData, token, userId) => {
                 })
                 .catch(error => {
                     console.log('[Error] Updating this project failed:', error);
-                    // TODO: kill app here
+                    dispatch(markServerUpdateError());
                 });
         }
     }
 };
+
+const markServerUpdateError = () => {
+    return {
+        type: actionTypes.MARK_SERVER_UPDATE_ERROR,
+    }
+}
 
 const updateProjectInStore = (sprintId, projectData) => {
     return {
@@ -61,7 +67,7 @@ export const addProject = (sprintId, projectData, token, userId) => {
                 })
                 .catch(error => {
                     console.log('[Error] Adding this project failed:', error);
-                    // TODO: kill app here
+                    dispatch(markServerUpdateError());
                 });
         }        
     }
@@ -98,7 +104,7 @@ export const deleteProject = (sprintId, projectId, token, userId) => {
                 })
                 .catch(error => {
                     console.log('[Error] Deleting this project failed:', error);
-                    // TODO: kill app here
+                    dispatch(markServerUpdateError());
                 });
         }
     }
@@ -133,7 +139,7 @@ export const updateSprint = (sprintId, sprintData, token, userId) => {
                 })
                 .catch(error => {
                     console.log('[Error] Updating this sprint failed:', error);
-                    // TODO: kill app here
+                    dispatch(markServerUpdateError());
                 });
         } 
     }
@@ -161,7 +167,7 @@ export const addSprint = (sprintData, token, userId) => {
                 })
                 .catch(error => {
                     console.log('[Error] Adding this sprint failed:', error);
-                    // TODO: kill app here
+                    dispatch(markServerUpdateError());
                 });
         }
     }
@@ -188,7 +194,7 @@ export const deleteSprint = (sprintId, token, userId) => {
                 })
                 .catch(error => {
                     console.log('[Error] Deleting this sprint failed:', error);
-                    // TODO: kill app here
+                    dispatch(markServerUpdateError());
                 });
         }
     }

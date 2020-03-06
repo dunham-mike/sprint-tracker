@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 
 import { ThemeProvider } from '@material-ui/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
+import Typography from '@material-ui/core/Typography';
 
 import FrontPage from './components/FrontPage/FrontPage';
 import MainView from './containers/MainView/MainView';
@@ -64,6 +65,14 @@ class App extends Component {
             );
         }
 
+        if (this.props.isServerError) {
+            routes = (
+                <Typography variant="h5" style={{textAlign: 'center', padding: '10px',}}>
+                    Deliberate Sprints is unable to reach the server. Please check your internet connection and refresh the page.
+                </Typography>
+            );
+        }
+
         return(
             <ThemeProvider theme={theme}>
                 {/* <ConfirmProvider> */}
@@ -81,6 +90,7 @@ const mapStateToProps = state => {
     return {
       isAuth: state.authentication.token !== null,
       isDemo: state.authentication.token === "demo",
+      isServerError: state.sprints.error,
     };
 };
 

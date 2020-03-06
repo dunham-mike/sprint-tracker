@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-
 import { withStyles } from '@material-ui/core/styles';
+
+import Typography from '@material-ui/core/Typography';
 
 import PastSprint from './PastSprint/PastSprint';
 import SprintStatistics from '../../components/SprintStatistics/SprintStatistics';
@@ -56,6 +57,12 @@ class PastSprints extends Component {
     render(){
         const { classes } = this.props;
 
+        const noSprintsMessage = (
+            <Typography variant="h5" style={{textAlign: 'center',}}>
+                There are no completed sprints to display.
+            </Typography>
+        );
+    
         const sprintsToDisplay = this.props.sprints
             .filter(sprint => sprint.endDate < Date.now())
             .sort((a, b) => b.endDate - a.endDate) // Sort so most recent end dates are at the top
@@ -69,6 +76,7 @@ class PastSprints extends Component {
                 );
             });
 
+        
         console.log('sprintsToDisplay:', sprintsToDisplay);
 
         // Displaying the Sprint Statistics Modal
@@ -88,6 +96,7 @@ class PastSprints extends Component {
 
         return(
             <div className={classes.mainViewContainer}>
+                {sprintsToDisplay.length === 0 ? noSprintsMessage : null}
                 {sprintsToDisplay}
                 {sprintStatistics}
             </div>

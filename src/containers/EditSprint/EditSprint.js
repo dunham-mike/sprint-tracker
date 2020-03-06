@@ -199,8 +199,19 @@ class editSprint extends Component {
         if (sprintIndex === null) {
             console.log('[EditSprint.js] Error loading sprint data');
         }
+
+        const predefinedSprintKeysOrder = {
+            'id': 10,
+            'name': 20,
+            'startDate': 30,
+            'endDate': 40,
+            'participants': 50,
+            'owner': 60,
+            'projects': 70,
+        }
         
-        const sprintKeys = Object.keys(this.state.sprintData);
+        const sprintKeys = Object.keys(this.state.sprintData)
+            .sort((a, b) => { return predefinedSprintKeysOrder[a] - predefinedSprintKeysOrder[b]});
         // console.log('sprintKeys:', sprintKeys);
 
         for(let i=0; i < sprintKeys.length; i++) {

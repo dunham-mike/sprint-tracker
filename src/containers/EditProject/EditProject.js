@@ -502,8 +502,34 @@ class Project extends Component {
 
     loadStateFromExistingProject = (sprintId, project) => {
         let newProjectState = {}
+
+        const predefinedProjectKeysOrder = {
+            'id': 10,
+            'name': 20,
+            'manager': 30, 
+            'description': 40,
+            'category': 50,
+            'categoryLead': 60,
+            'estimatedProjectSize': 70, 
+            'mustDo': 80, 
+            'externalDueDate': 90, 
+            'deliverables': 100,
+            'deliverableLink': 110,
+            'notes': 120,
+            'completionStatus': 130,
+            'notCompletedExplanation': 140,
+            'statusEndOfWeek1': 150, 
+            'statusEndOfWeek2': 160, 
+            'statusEndOfWeek3': 170, 
+            'statusEndOfWeek4': 180, 
+            'statusEndOfWeek5': 190, 
+            'statusEndOfWeek6': 200, 
+            'statusEndOfWeek7': 210, 
+            'statusEndOfWeek8': 220, 
+        }
         
-        const projectKeys = Object.keys(project);
+        const projectKeys = Object.keys(project)
+            .sort((a, b) => { return predefinedProjectKeysOrder[a] - predefinedProjectKeysOrder[b]});
 
         for(let i=0; i < projectKeys.length; i++) {
             let updatedObject = this.state.projectData[projectKeys[i]];
