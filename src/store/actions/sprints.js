@@ -3,17 +3,69 @@ import axios from 'axios';
 
 const FIREBASE_URL = process.env.REACT_APP_FIREBASE_URL;
 
-export const updateProject = (sprintId, projectData) => {
-    /* 
-        Firebase:
-        - Replace project's data with new projectData
-    */
+export const updateProject = (sprintId, projectData, token, userId) => {
+    return dispatch => {
+        if(token === 'demo') { // Skip server logic if this is the demo
+            dispatch(updateProjectInStore(sprintId, projectData));
+        } else {
+            let updateProjectURL = FIREBASE_URL + '/users/' + userId; 
 
+            if(sprintId === -1) {
+                // Add to queue
+                updateProjectURL += '/queue/' + projectData.id.value + '.json?auth=' + token;
+            } else {
+                // Add to normal sprint
+                updateProjectURL += '/sprints/' + sprintId + '/projects/' + projectData.id.value + '.json?auth=' + token;
+            }
+
+            axios.put(updateProjectURL, projectData)
+                .then((response) => {
+                    console.log('updateProject response:', response);
+                    dispatch(updateProjectInStore(sprintId, projectData));
+                })
+                .catch(error => {
+                    console.log('[Error] Updating this project failed:', error);
+                    // TODO: kill app here
+                });
+        }
+    }
+};
+
+export const updateProjectInStore = (sprintId, projectData) => {
     return {
         type: actionTypes.UPDATE_PROJECT,
         sprintId: sprintId,
         projectData: projectData
     }
+};
+
+export const addProject = (sprintId, projectData, token, userId) => {
+    return dispatch => {
+        if(token === 'demo') { // Skip server logic if this is the demo
+            dispatch(addProjectToStore(sprintId, projectData));
+        } else {
+            let addProjectURL = FIREBASE_URL + '/users/' + userId; 
+
+            if(sprintId === -1) {
+                // Add to queue
+                addProjectURL += '/queue/' + projectData.id.value + '.json?auth=' + token;
+            } else {
+                // Add to normal sprint
+                addProjectURL += '/sprints/' + sprintId + '/projects/' + projectData.id.value + '.json?auth=' + token;
+            }
+
+            axios.put(addProjectURL, projectData)
+                .then((response) => {
+                    console.log('addProject response:', response);
+                    dispatch(addProjectToStore(sprintId, projectData));
+                })
+                .catch(error => {
+                    console.log('[Error] Adding this project failed:', error);
+                    // TODO: kill app here
+                });
+        }        
+    }
+    
 };
 
 export const addProjectToStore = (sprintId, projectData) => {
@@ -24,42 +76,35 @@ export const addProjectToStore = (sprintId, projectData) => {
     }
 }
 
-export const addProject = (sprintId, projectData, token, userId) => {
+export const deleteProject = (sprintId, projectId, token, userId) => {
     return dispatch => {
         if(token === 'demo') { // Skip server logic if this is the demo
-            dispatch(addProjectToStore(sprintId, projectData));
-        }
-
-        let addProjectURL = FIREBASE_URL + '/users/' + userId; 
-
-        if(sprintId === -1) {
-            // Add to queue
-            addProjectURL += '/queue/' + projectData.id.value + '.json?auth=' + token;
+            dispatch(deleteProjectInStore(sprintId, projectId));
         } else {
-            // Add to normal sprint
-            addProjectURL += '/sprints/' + sprintId + '/projects/' + projectData.id.value + '.json?auth=' + token;
-        }
+            let deleteProjectURL = FIREBASE_URL + '/users/' + userId; 
 
-        axios.put(addProjectURL, projectData)
-            .then((response) => {
-                console.log('addProject response:', response);
-                dispatch(addProjectToStore(sprintId, projectData));
-            })
-            .catch(error => {
-                console.log('[Error] Adding this project failed:', error);
-                // TODO: kill app here
-            });
+            if(sprintId === -1) {
+                // Delete from queue
+                deleteProjectURL += '/queue/' + projectId + '.json?auth=' + token;
+            } else {
+                // Delete from normal sprint
+                deleteProjectURL += '/sprints/' + sprintId + '/projects/' + projectId + '.json?auth=' + token;
+            }
+
+            axios.delete(deleteProjectURL)
+                .then((response) => {
+                    console.log('deleteProject response:', response);
+                    dispatch(deleteProjectInStore(sprintId, projectId));
+                })
+                .catch(error => {
+                    console.log('[Error] Deleting this project failed:', error);
+                    // TODO: kill app here
+                });
+        }
     }
-    
 };
 
-export const deleteProject = (sprintId, projectId) => {
-    /* 
-        Firebase:
-        - Delete project from projects object
-        - Delete projects from associated sprintId
-    */
-
+export const deleteProjectInStore = (sprintId, projectId) => {
     return {
         type: actionTypes.DELETE_PROJECT,
         sprintId: sprintId,
@@ -67,30 +112,58 @@ export const deleteProject = (sprintId, projectId) => {
     }
 };
 
-export const moveProject = (originSprintId, destinationSprintId, projectData) => {
-    /* 
-        Firebase:
-        - Updated projectData on project and update its associated sprint
-        - Delete project from originSprintId
-        - Add project to destinationSprintId
-    */
-
+export const moveProject = (originSprintId, destinationSprintId, projectData, token, userId) => {
     return dispatch => {
-        dispatch(addProject(destinationSprintId, projectData));
-        dispatch(deleteProject(originSprintId, projectData.id.value));
+        dispatch(addProject(destinationSprintId, projectData, token, userId));
+        dispatch(deleteProject(originSprintId, projectData.id.value, token, userId));
     }
 }
 
-export const updateSprint = (sprintId, sprintData) => {
-    /* 
-        Firebase:
-        - Update data for sprint object
-    */
+export const updateSprint = (sprintId, sprintData, token, userId) => {
+    return dispatch => {
+        if(token === 'demo') { // Skip server logic if this is the demo
+            dispatch(updateSprintInStore(sprintId, sprintData));
+        } else {
+            let updateSprintURL = FIREBASE_URL + '/users/' + userId + '/sprints/' + sprintData.id + '.json?auth=' + token; 
 
+            axios.put(updateSprintURL, sprintData)
+                .then((response) => {
+                    console.log('updateSprint response:', response);
+                    dispatch(updateSprintInStore(sprintId, sprintData));
+                })
+                .catch(error => {
+                    console.log('[Error] Updating this sprint failed:', error);
+                    // TODO: kill app here
+                });
+        } 
+    }
+};
+
+export const updateSprintInStore = (sprintId, sprintData) => {
     return {
         type: actionTypes.UPDATE_SPRINT,
         sprintId: sprintId,
         sprintData: sprintData
+    }
+};
+
+export const addSprint = (sprintData, token, userId) => {
+   return dispatch => {
+        if(token === 'demo') { // Skip server logic if this is the demo
+            dispatch(addSprintToStore(sprintData));
+        } else {
+            let addSprintURL = FIREBASE_URL + '/users/' + userId + '/sprints/' + sprintData.id + '.json?auth=' + token; 
+
+            axios.put(addSprintURL, sprintData)
+                .then((response) => {
+                    console.log('addSprint response:', response);
+                    dispatch(addSprintToStore(sprintData));
+                })
+                .catch(error => {
+                    console.log('[Error] Adding this sprint failed:', error);
+                    // TODO: kill app here
+                });
+        }
     }
 };
 
@@ -101,32 +174,27 @@ export const addSprintToStore = (sprintData) => {
     }
 };
 
-export const addSprint = (sprintData, token, userId) => {
-   return dispatch => {
+export const deleteSprint = (sprintId, token, userId) => {
+    return dispatch => {
         if(token === 'demo') { // Skip server logic if this is the demo
-            dispatch(addSprintToStore(sprintData));
+            dispatch(deleteSprintInStore(sprintId));
+        } else {
+            let deleteSprintURL = FIREBASE_URL + '/users/' + userId + '/sprints/' + sprintId + '.json?auth=' + token; 
+
+            axios.delete(deleteSprintURL)
+                .then((response) => {
+                    console.log('deleteSprint response:', response);
+                    dispatch(deleteSprintInStore(sprintId));
+                })
+                .catch(error => {
+                    console.log('[Error] Deleting this sprint failed:', error);
+                    // TODO: kill app here
+                });
         }
-
-        let addSprintURL = FIREBASE_URL + '/users/' + userId + '/sprints/' + sprintData.id + '.json?auth=' + token; 
-
-        axios.put(addSprintURL, sprintData)
-            .then((response) => {
-                console.log('addSprint response:', response);
-                dispatch(addSprintToStore(sprintData));
-            })
-            .catch(error => {
-                console.log('[Error] Adding this sprint failed:', error);
-                // TODO: kill app here
-            });
     }
 };
 
-export const deleteSprint = (sprintId) => {
-    /* 
-        Firebase:
-        - Delete sprint from sprint object
-    */
-
+export const deleteSprintInStore = (sprintId) => {
     return {
         type: actionTypes.DELETE_SPRINT,
         sprintId: sprintId,

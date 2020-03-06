@@ -565,7 +565,7 @@ class Project extends Component {
         const transformedProjectData = this.getTransformedProjectData();
 
         if (this.props.actionType === "edit") {
-            this.props.onUpdateProject(this.state.sprintId, transformedProjectData);
+            this.props.onUpdateProject(this.state.sprintId, transformedProjectData, this.props.token, this.props.userId);
         } else if (this.props.actionType === "create") {
             this.props.onAddProject(this.state.sprintId, transformedProjectData, this.props.token, this.props.userId);
         } else {
@@ -586,7 +586,7 @@ class Project extends Component {
     deleteProjectHandler = () => {
         console.log('Deleting projectId ' + this.state.projectData.id.value + ' from sprintId ' + this.props.sprintId);
         this.closeConfirmDeleteDialog();
-        this.props.onDeleteProject(this.props.sprintId, this.state.projectData.id.value);
+        this.props.onDeleteProject(this.props.sprintId, this.state.projectData.id.value, this.props.token, this.props.userId);
         this.props.onCloseProject();
     }
 
@@ -601,7 +601,7 @@ class Project extends Component {
     moveProjectHandler = (originSprintId, destinationSprintId) => {
         const projectData = this.getTransformedProjectData();
 
-        this.props.onMoveProject(originSprintId, destinationSprintId, projectData);
+        this.props.onMoveProject(originSprintId, destinationSprintId, projectData, this.props.token, this.props.userId);
         this.closeAssignSprintDialog();
         this.props.onCloseProject();
     }
@@ -865,10 +865,10 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
     return {
-        onUpdateProject: (sprintId, projectData) => dispatch(actions.updateProject(sprintId, projectData)),
+        onUpdateProject: (sprintId, projectData, token, userId) => dispatch(actions.updateProject(sprintId, projectData, token, userId)),
         onAddProject: (sprintId, projectData, token, userId) => dispatch(actions.addProject(sprintId, projectData, token, userId)),
-        onDeleteProject: (sprintId, projectId) => dispatch(actions.deleteProject(sprintId, projectId)),
-        onMoveProject: (originSprintId, destinationSprintId, projectData) => dispatch(actions.moveProject(originSprintId, destinationSprintId, projectData)),
+        onDeleteProject: (sprintId, projectId, token, userId) => dispatch(actions.deleteProject(sprintId, projectId, token, userId)),
+        onMoveProject: (originSprintId, destinationSprintId, projectData, token, userId) => dispatch(actions.moveProject(originSprintId, destinationSprintId, projectData, token, userId)),
     };
 };
 

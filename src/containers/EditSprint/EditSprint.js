@@ -307,7 +307,7 @@ class editSprint extends Component {
 
         if (this.props.actionType === "edit") {
             console.log('Dispatch an action to edit the sprint');
-            this.props.onUpdateSprint(this.props.sprintId, transformedSprintData);
+            this.props.onUpdateSprint(this.props.sprintId, transformedSprintData, this.props.token, this.props.userId);
         } else if (this.props.actionType === "create") {
             console.log('Dispatch an action to create the sprint');
             this.props.onAddSprint(transformedSprintData, this.props.token, this.props.userId);
@@ -329,7 +329,7 @@ class editSprint extends Component {
     deleteSprintHandler = () => {
         console.log('Deleting sprintId ' + this.props.sprintId);
         this.closeConfirmDeleteDialog();
-        this.props.onDeleteSprint(this.props.sprintId);
+        this.props.onDeleteSprint(this.props.sprintId, this.props.token, this.props.userId);
         this.props.onCloseSprint();
     }
 
@@ -494,9 +494,9 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
     return {
-        onUpdateSprint: (sprintId, sprintData) => dispatch(actions.updateSprint(sprintId, sprintData)),
+        onUpdateSprint: (sprintId, sprintData, token, userId) => dispatch(actions.updateSprint(sprintId, sprintData, token, userId)),
         onAddSprint: (sprintData, token, userId) => dispatch(actions.addSprint(sprintData, token, userId)),
-        onDeleteSprint: (sprintId) => dispatch(actions.deleteSprint(sprintId)),
+        onDeleteSprint: (sprintId, token, userId) => dispatch(actions.deleteSprint(sprintId, token, userId)),
     };
 };
 
