@@ -39,7 +39,7 @@ const authLogout = (state, action) => {
     return updateObject(state, { token: null, userId: null });
 };
 
-const initiateDemo = (state, action) => {
+const initiateDemoAuth = (state, action) => {
     return updateObject(state, { token: 'demo', userId: null, error: null });
 };
 
@@ -53,7 +53,7 @@ const reducer = (state = initialState, action) => {
         case actionTypes.AUTH_SUCCESS: return authSuccess(state, action);
         case actionTypes.AUTH_FAIL: return authFail(state, action);
         case actionTypes.AUTH_LOGOUT: return authLogout(state, action);
-        case actionTypes.INITIATE_DEMO: return initiateDemo(state, action);
+        case actionTypes.INITIATE_DEMO_AUTH: return initiateDemoAuth(state, action);
         case actionTypes.SET_AUTH_REDIRECT_PATH: return setAuthRedirectPath(state, action);
         default: return state;
     }

@@ -1,6 +1,6 @@
 import * as moment from 'moment';
 
-export const initialSprintState = {
+export const initialDemoState = {
     sprints: [
         {
             id: 1,

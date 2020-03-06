@@ -1,7 +1,12 @@
 import * as actionTypes from '../actions/actionTypes';
-import { initialSprintState } from '../initialData';
+import { initialDemoState } from '../initialData';
+import { convertObjectIntoArrayOfItsValues } from '../utility';
+import * as moment from 'moment';
 
-const initialState = initialSprintState;
+const initialState = {
+    sprints: [],
+    queue: [],
+}
 
 const getSprintIndexWithSprintId = (state, sprintId) => {
     console.log('Start of getSprintIndexWithSprintId');
@@ -233,7 +238,7 @@ const addSprint = (state, action) => {
     updatedFullSprintsArray.push(newSprintObjectWithProjects);
 
     // If the new sprint's start date is not after the last sprint's start date, then reorder
-    if(state.sprints[state.sprints.length-1].startDate > newSprintObjectWithProjects.startDate) {
+    if(state.sprints.length > 1 && state.sprints[state.sprints.length-1].startDate > newSprintObjectWithProjects.startDate) {
         updatedFullSprintsArray = getNewSprintsArrayOrderedByStartDate(updatedFullSprintsArray);
     }
 
@@ -289,6 +294,49 @@ const clearSprintStore = (state, action) => {
     }
 }
 
+const loadSprintStore = (state, action) => {
+    let sprintArray = [];
+    let queueArray = [];
+
+    // Convert fetched sprint data into an array of sprints and format the individual sprint objects into what the Redux store expects
+    if(action.fetchedSprintData) {
+        sprintArray = convertObjectIntoArrayOfItsValues(action.fetchedSprintData);
+
+        for (let i=0; i<sprintArray.length; i++) {
+            // Add a projects key-value pair if there isn't one
+            if(!sprintArray[i].projects) {
+                sprintArray[i]['projects'] = [];
+            } else {
+                // Turn projects object into an array
+                sprintArray[i]['projects'] = convertObjectIntoArrayOfItsValues(sprintArray[i]['projects']);
+            }
+    
+            // Convert start and end dates into moment objects
+            sprintArray[i].startDate = moment.utc(sprintArray[i].startDate);
+            sprintArray[i].endDate = moment.utc(sprintArray[i].endDate);
+        }
+    }
+    
+    // Convert fetched queue data into an array of projects
+    if(action.fetchedQueueData) {
+        queueArray = convertObjectIntoArrayOfItsValues(action.fetchedQueueData);
+    }
+    
+    return {
+        ...state,
+        sprints: sprintArray,
+        queue: queueArray,
+    }
+}
+
+const initializeDemoData = (state, action) => {
+    return {
+        ...state,
+        sprints: initialDemoState['sprints'],
+        queue: initialDemoState['queue'],
+    }
+}
+
 const reducer = (state = initialState, action) => {
     switch(action.type) {
         case actionTypes.UPDATE_PROJECT: return updateProject(state, action);
@@ -299,6 +347,8 @@ const reducer = (state = initialState, action) => {
         case actionTypes.DELETE_SPRINT: return deleteSprint(state, action);
         case actionTypes.ORDER_SPRINTS_BY_START_DATE: return orderSprintsByStartDate(state, action);
         case actionTypes.CLEAR_SPRINT_STORE: return clearSprintStore(state, action);
+        case actionTypes.LOAD_SPRINT_STORE: return loadSprintStore(state, action);
+        case actionTypes.INITIALIZE_DEMO_DATA: return initializeDemoData(state, action);
         default: return state;
     }
 };

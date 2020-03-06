@@ -31,7 +31,7 @@ export const updateProject = (sprintId, projectData, token, userId) => {
     }
 };
 
-export const updateProjectInStore = (sprintId, projectData) => {
+const updateProjectInStore = (sprintId, projectData) => {
     return {
         type: actionTypes.UPDATE_PROJECT,
         sprintId: sprintId,
@@ -68,7 +68,7 @@ export const addProject = (sprintId, projectData, token, userId) => {
     
 };
 
-export const addProjectToStore = (sprintId, projectData) => {
+const addProjectToStore = (sprintId, projectData) => {
     return {
         type: actionTypes.ADD_PROJECT,
         sprintId: sprintId,
@@ -104,7 +104,7 @@ export const deleteProject = (sprintId, projectId, token, userId) => {
     }
 };
 
-export const deleteProjectInStore = (sprintId, projectId) => {
+const deleteProjectInStore = (sprintId, projectId) => {
     return {
         type: actionTypes.DELETE_PROJECT,
         sprintId: sprintId,
@@ -139,7 +139,7 @@ export const updateSprint = (sprintId, sprintData, token, userId) => {
     }
 };
 
-export const updateSprintInStore = (sprintId, sprintData) => {
+const updateSprintInStore = (sprintId, sprintData) => {
     return {
         type: actionTypes.UPDATE_SPRINT,
         sprintId: sprintId,
@@ -167,7 +167,7 @@ export const addSprint = (sprintData, token, userId) => {
     }
 };
 
-export const addSprintToStore = (sprintData) => {
+const addSprintToStore = (sprintData) => {
     return {
         type: actionTypes.ADD_SPRINT,
         sprintData: sprintData
@@ -194,7 +194,7 @@ export const deleteSprint = (sprintId, token, userId) => {
     }
 };
 
-export const deleteSprintInStore = (sprintId) => {
+const deleteSprintInStore = (sprintId) => {
     return {
         type: actionTypes.DELETE_SPRINT,
         sprintId: sprintId,
