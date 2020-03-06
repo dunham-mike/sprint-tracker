@@ -1,6 +1,7 @@
 import * as actionTypes from './actionTypes';
 import axios from 'axios';
 const FIREBASE_API_KEY = process.env.REACT_APP_FIREBASE_API_KEY;
+const REACT_APP_FIREBASE_URL = process.env.REACT_APP_FIREBASE_URL;
 
 export const initiateDemo = () => {
     return {
@@ -71,6 +72,12 @@ export const authCheckState = () => {
     };
 };
 
+export const clearSprintStore = () => {
+    return {
+        type: actionTypes.CLEAR_SPRINT_STORE,
+    }
+}
+
 export const kickoffAuthentication = (email, password, isCreateAccount, firstName, lastName) => {
     return dispatch => {
         dispatch(authStart());
@@ -79,10 +86,6 @@ export const kickoffAuthentication = (email, password, isCreateAccount, firstNam
             password: password,
             returnSecureToken: true
         };
-
-        // TODO: Store first and last somewhere
-        console.log('firstName:', firstName);
-        console.log('lastName:', lastName);
 
         let url = 'https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=' + FIREBASE_API_KEY;
         
@@ -98,6 +101,24 @@ export const kickoffAuthentication = (email, password, isCreateAccount, firstNam
                 localStorage.setItem('userId', response.data.localId);
                 dispatch(authSuccess(response.data.idToken, response.data.localId));
                 dispatch(checkAuthTimeout(response.data.expiresIn));
+
+                if(isCreateAccount) {
+                    const initializeUserDataUrl = REACT_APP_FIREBASE_URL + '/users/' + response.data.localId + '.json?auth=' + response.data.idToken;
+                    const initialUserData = {
+                            'firstName': firstName,
+                            'lastName': lastName,
+                            // 'sprints': { 'tempId': false }, // Dummy data to represent empty sprints
+                            // 'queue': { 'tempId': false },
+                        };
+                    
+                    axios.put(initializeUserDataUrl, initialUserData)
+                        .then(initalizeResponse => {
+                            dispatch(clearSprintStore());
+                        })
+                        .catch(initializeErr => {
+                            console.log('[Error] User Initialization Failed');
+                        });
+                }
             })
             .catch(err => {
                 dispatch(authFail(err.response.data.error));

@@ -6,6 +6,7 @@ export const UPDATE_SPRINT = 'UPDATE_SPRINT';
 export const ADD_SPRINT = 'ADD_SPRINT';
 export const DELETE_SPRINT = 'DELETE_SPRINT';
 export const ORDER_SPRINTS_BY_START_DATE = 'ORDER_SPRINTS_BY_START_DATE';
+export const CLEAR_SPRINT_STORE = 'CLEAR_SPRINT_STORE';
 
 // authentication.js
 export const AUTH_START = 'AUTH_START';

@@ -281,6 +281,14 @@ const orderSprintsByStartDate = (state, action) => {
     };
 }
 
+const clearSprintStore = (state, action) => {
+    return {
+        ...state,
+        sprints: [],
+        queue: [],
+    }
+}
+
 const reducer = (state = initialState, action) => {
     switch(action.type) {
         case actionTypes.UPDATE_PROJECT: return updateProject(state, action);
@@ -290,6 +298,7 @@ const reducer = (state = initialState, action) => {
         case actionTypes.ADD_SPRINT: return addSprint(state, action);
         case actionTypes.DELETE_SPRINT: return deleteSprint(state, action);
         case actionTypes.ORDER_SPRINTS_BY_START_DATE: return orderSprintsByStartDate(state, action);
+        case actionTypes.CLEAR_SPRINT_STORE: return clearSprintStore(state, action);
         default: return state;
     }
 };
