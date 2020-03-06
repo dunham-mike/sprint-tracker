@@ -1,7 +1,7 @@
 import * as actionTypes from './actionTypes';
 import axios from 'axios';
 const FIREBASE_API_KEY = process.env.REACT_APP_FIREBASE_API_KEY;
-const REACT_APP_FIREBASE_URL = process.env.REACT_APP_FIREBASE_URL;
+const FIREBASE_URL = process.env.REACT_APP_FIREBASE_URL;
 
 export const initiateDemo = () => {
     return {
@@ -103,7 +103,7 @@ export const kickoffAuthentication = (email, password, isCreateAccount, firstNam
                 dispatch(checkAuthTimeout(response.data.expiresIn));
 
                 if(isCreateAccount) {
-                    const initializeUserDataUrl = REACT_APP_FIREBASE_URL + '/users/' + response.data.localId + '.json?auth=' + response.data.idToken;
+                    const initializeUserDataUrl = FIREBASE_URL + '/users/' + response.data.localId + '.json?auth=' + response.data.idToken;
                     const initialUserData = {
                             'firstName': firstName,
                             'lastName': lastName,

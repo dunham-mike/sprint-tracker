@@ -1,4 +1,7 @@
 import * as actionTypes from './actionTypes';
+import axios from 'axios';
+
+const FIREBASE_URL = process.env.REACT_APP_FIREBASE_URL;
 
 export const updateProject = (sprintId, projectData) => {
     /* 
@@ -13,18 +16,41 @@ export const updateProject = (sprintId, projectData) => {
     }
 };
 
-export const addProject = (sprintId, projectData) => {
-    /* 
-        Firebase:
-        - Add projectData to projects object
-        - Add project to associated sprintId
-    */
-
+export const addProjectToStore = (sprintId, projectData) => {
     return {
         type: actionTypes.ADD_PROJECT,
         sprintId: sprintId,
         projectData: projectData
     }
+}
+
+export const addProject = (sprintId, projectData, token, userId) => {
+    return dispatch => {
+        if(token === 'demo') { // Skip server logic if this is the demo
+            dispatch(addProjectToStore(sprintId, projectData));
+        }
+
+        let addProjectURL = FIREBASE_URL + '/users/' + userId; 
+
+        if(sprintId === -1) {
+            // Add to queue
+            addProjectURL += '/queue/' + projectData.id.value + '.json?auth=' + token;
+        } else {
+            // Add to normal sprint
+            addProjectURL += '/sprints/' + sprintId + '/projects/' + projectData.id.value + '.json?auth=' + token;
+        }
+
+        axios.put(addProjectURL, projectData)
+            .then((response) => {
+                console.log('addProject response:', response);
+                dispatch(addProjectToStore(sprintId, projectData));
+            })
+            .catch(error => {
+                console.log('[Error] Adding this project failed:', error);
+                // TODO: kill app here
+            });
+    }
+    
 };
 
 export const deleteProject = (sprintId, projectId) => {
@@ -68,15 +94,30 @@ export const updateSprint = (sprintId, sprintData) => {
     }
 };
 
-export const addSprint = (sprintData) => {
-    /* 
-        Firebase:
-        - Add new sprint to sprint object
-    */
-
+export const addSprintToStore = (sprintData) => {
     return {
         type: actionTypes.ADD_SPRINT,
         sprintData: sprintData
+    }
+};
+
+export const addSprint = (sprintData, token, userId) => {
+   return dispatch => {
+        if(token === 'demo') { // Skip server logic if this is the demo
+            dispatch(addSprintToStore(sprintData));
+        }
+
+        let addSprintURL = FIREBASE_URL + '/users/' + userId + '/sprints/' + sprintData.id + '.json?auth=' + token; 
+
+        axios.put(addSprintURL, sprintData)
+            .then((response) => {
+                console.log('addSprint response:', response);
+                dispatch(addSprintToStore(sprintData));
+            })
+            .catch(error => {
+                console.log('[Error] Adding this sprint failed:', error);
+                // TODO: kill app here
+            });
     }
 };
 

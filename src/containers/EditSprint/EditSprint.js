@@ -310,7 +310,7 @@ class editSprint extends Component {
             this.props.onUpdateSprint(this.props.sprintId, transformedSprintData);
         } else if (this.props.actionType === "create") {
             console.log('Dispatch an action to create the sprint');
-            this.props.onAddSprint(transformedSprintData);
+            this.props.onAddSprint(transformedSprintData, this.props.token, this.props.userId);
         } else {
             console.log('[Project.js] Error: missing actionType prop');
         }
@@ -486,14 +486,16 @@ class editSprint extends Component {
 
 const mapStateToProps = state => {
     return {
-        sprints: state.sprints.sprints
+        sprints: state.sprints.sprints,
+        token: state.authentication.token,
+        userId: state.authentication.userId,
     }
 }
 
 const mapDispatchToProps = dispatch => {
     return {
         onUpdateSprint: (sprintId, sprintData) => dispatch(actions.updateSprint(sprintId, sprintData)),
-        onAddSprint: (sprintData) => dispatch(actions.addSprint(sprintData)),
+        onAddSprint: (sprintData, token, userId) => dispatch(actions.addSprint(sprintData, token, userId)),
         onDeleteSprint: (sprintId) => dispatch(actions.deleteSprint(sprintId)),
     };
 };

@@ -567,7 +567,7 @@ class Project extends Component {
         if (this.props.actionType === "edit") {
             this.props.onUpdateProject(this.state.sprintId, transformedProjectData);
         } else if (this.props.actionType === "create") {
-            this.props.onAddProject(this.state.sprintId, transformedProjectData);
+            this.props.onAddProject(this.state.sprintId, transformedProjectData, this.props.token, this.props.userId);
         } else {
             console.log('[Project.js] Error: missing actionType prop');
         }
@@ -857,14 +857,16 @@ class Project extends Component {
 
 const mapStateToProps = state => {
     return {
-        sprints: state.sprints.sprints
+        sprints: state.sprints.sprints,
+        token: state.authentication.token,
+        userId: state.authentication.userId
     }
 }
 
 const mapDispatchToProps = dispatch => {
     return {
         onUpdateProject: (sprintId, projectData) => dispatch(actions.updateProject(sprintId, projectData)),
-        onAddProject: (sprintId, projectData) => dispatch(actions.addProject(sprintId, projectData)),
+        onAddProject: (sprintId, projectData, token, userId) => dispatch(actions.addProject(sprintId, projectData, token, userId)),
         onDeleteProject: (sprintId, projectId) => dispatch(actions.deleteProject(sprintId, projectId)),
         onMoveProject: (originSprintId, destinationSprintId, projectData) => dispatch(actions.moveProject(originSprintId, destinationSprintId, projectData)),
     };
