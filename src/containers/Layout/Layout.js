@@ -102,7 +102,7 @@ class Layout extends Component {
                         ?
                             <ListItem button component={RouterLink} to="/logout">
                                 <ListItemIcon><ExitToAppIcon /></ListItemIcon>
-                                <ListItemText primary="Log out"/>
+                                <ListItemText primary={this.props.isDemo ? "End Demo" : "Log out"}/>
                             </ListItem>
                         :
                             <React.Fragment>
@@ -134,7 +134,7 @@ class Layout extends Component {
                         </Link>
                     </Typography>
                     {this.props.isAuth 
-                        ? <Button color="inherit" component={RouterLink} to="/logout">Log out</Button> 
+                        ? <Button color="inherit" component={RouterLink} to="/logout">{this.props.isDemo ? "End Demo" : "Log out"}</Button> 
                         : <Button color="inherit" component={RouterLink} to="/login">Log in</Button>
                     }
                     </Toolbar>
@@ -152,7 +152,8 @@ class Layout extends Component {
 
 const mapStateToProps = state => {
     return {
-      isAuth: state.authentication.token !== null
+      isAuth: state.authentication.token !== null,
+      isDemo: state.authentication.token === "demo",
     };
 };
 

@@ -168,7 +168,7 @@ export const kickoffAuthentication = (email, password, isCreateAccount, firstNam
                             // TODO: Kill the app here
                         });
                 } else {
-                    dispatch(fetchDataForAuthenticatedUser(response.data.localId, response.data.idToken));
+                    dispatch(fetchDataForAuthenticatedUser(response.data.idToken, response.data.localId));
                 }
             })
             .catch(err => {
