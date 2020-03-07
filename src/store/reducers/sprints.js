@@ -208,6 +208,8 @@ const deleteProject = (state, action) => {
 }
 
 const updateSprint = (state, action) => {
+    console.log('updateSprint triggered');
+
     // Important Note: action.sprintData does NOT include the existing projects, so those need to be copied onto the updated sprint object
     const sprintIndex = getSprintIndexWithSprintId(state, action.sprintId);
     let newSprintObjectWithProjects = {...action.sprintData};
@@ -216,9 +218,11 @@ const updateSprint = (state, action) => {
     // Put the updated sprint object into a new copy of the sprints array
     let updatedFullSprintsArray = updateObjectInArray(state.sprints, sprintIndex, newSprintObjectWithProjects);
 
-    // Check if startDate changed, and if so, reorder the full sprints array
-    if(state.sprints[sprintIndex].startDate.toString() !== newSprintObjectWithProjects.startDate.toString()) {  
-        updatedFullSprintsArray = getNewSprintsArrayOrderedByStartDate(updatedFullSprintsArray);
+    // Check if startDate or endDate changed, and if so, reorder the full sprints array
+    if( !moment.utc(state.sprints[sprintIndex].startDate).isSame(moment.utc(newSprintObjectWithProjects.startDate))
+        || !moment.utc(state.sprints[sprintIndex].endDate).isSame(moment.utc(newSprintObjectWithProjects.endDate))
+        ) {  
+            updatedFullSprintsArray = getNewSprintsArrayOrderedByStartDate(updatedFullSprintsArray);
     }
 
     return {
@@ -238,8 +242,8 @@ const addSprint = (state, action) => {
     let updatedFullSprintsArray = [...state.sprints];
     updatedFullSprintsArray.push(newSprintObjectWithProjects);
 
-    // If the new sprint's start date is not after the last sprint's start date, then reorder
-    if(state.sprints.length > 1 && state.sprints[state.sprints.length-1].startDate > newSprintObjectWithProjects.startDate) {
+    // If the new sprint's start date is same or before the last sprint's start date, then reorder 
+    if(state.sprints.length > 1 && moment.utc(newSprintObjectWithProjects.startDate).isSameOrBefore(moment.utc(state.sprints[state.sprints.length-1].startDate)), "day") {
         updatedFullSprintsArray = getNewSprintsArrayOrderedByStartDate(updatedFullSprintsArray);
     }
 
@@ -267,12 +271,18 @@ const deleteSprint = (state, action) => {
     }
 }
 
-// NOTE: It's important that the sprints always be sorted by start date, so other reducer functions should call this one if they edit any sprint's start date
+// NOTE: It's important that the sprints always be sorted by start date, then end date, so other reducer functions should call this one if they edit any sprint's start date or end date
 const getNewSprintsArrayOrderedByStartDate = (sprintsArray) => {
     let newDateOrderedSprintsArray = [...sprintsArray];
 
     newDateOrderedSprintsArray.sort((a, b) => {
-        return a.startDate - b.startDate
+        if(moment.utc(a.startDate).isSame(moment.utc(b.startDate), "day")) {
+            console.log('Ordering based on end date (a, b):', a.endDate, b.endDate);
+            return a.endDate - b.endDate;
+        } else {
+            console.log('Ordering based on start date (a, b):', a.startDate, b.startDate);
+            return a.startDate - b.startDate;
+        }
     });
 
     return newDateOrderedSprintsArray;

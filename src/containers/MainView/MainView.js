@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import Button from '@material-ui/core/Button';
 import { connect } from 'react-redux';
 
+import * as moment from 'moment';
+
 import AddCircleOutlineOutlinedIcon from '@material-ui/icons/AddCircleOutlineOutlined';
 import EditOutlinedIcon from '@material-ui/icons/EditOutlined';
 import InsertChartOutlinedOutlinedIcon from '@material-ui/icons/InsertChartOutlinedOutlined';
@@ -126,27 +128,33 @@ class MainView extends Component {
         let futureSprintsStartIndex = null;
 
         for(let i=0; i<this.props.sprints.length; i++) {
-            if(this.props.sprints[i].startDate < Date.now() && this.props.sprints[i].endDate > Date.now()) {
-                currentSprintIndex = i;
+            if(
+                moment.utc().isSameOrAfter(moment.utc(this.props.sprints[i].startDate), "day") // "Now" is same or after the start date
+                && moment.utc().isSameOrBefore(moment.utc(this.props.sprints[i].endDate), "day") // "Now" is same or before the end date
+                ) {
+                    currentSprintIndex = i;
 
-                // Make sure later indexes are in bounds
-                if (i+1 < this.props.sprints.length) {
-                    nextSprintIndex = i+1;
-                }
-                
-                if (i+2 < this.props.sprints.length) {
-                    futureSprintsStartIndex = i+2;
-                }
-                
-                break;
-            } else if (this.props.sprints[i].startDate > Date.now() && this.props.sprints[i].endDate > Date.now()) {
-                nextSprintIndex = i;
+                    // Make sure later indexes are in bounds
+                    if (i+1 < this.props.sprints.length) {
+                        nextSprintIndex = i+1;
+                    }
+                    
+                    if (i+2 < this.props.sprints.length) {
+                        futureSprintsStartIndex = i+2;
+                    }
+                    
+                    break;
+            } else if (
+                moment.utc().isBefore(moment.utc(this.props.sprints[i].startDate), "day") // "Now" is before the start date
+                && moment.utc().isBefore(moment.utc(this.props.sprints[i].endDate), "day") // "Now" is before the end date
+                ) {
+                    nextSprintIndex = i;
 
-                if (i+1 < this.props.sprints.length) {
-                    futureSprintsStartIndex = i+1;
-                }
-                
-                break;
+                    if (i+1 < this.props.sprints.length) {
+                        futureSprintsStartIndex = i+1;
+                    }
+                    
+                    break;
             }
         }
 

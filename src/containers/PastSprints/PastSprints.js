@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { withStyles } from '@material-ui/core/styles';
 
+import * as moment from 'moment';
+
 import Typography from '@material-ui/core/Typography';
 
 import PastSprint from './PastSprint/PastSprint';
@@ -64,7 +66,9 @@ class PastSprints extends Component {
         );
     
         const sprintsToDisplay = this.props.sprints
-            .filter(sprint => sprint.endDate < Date.now())
+            .filter(sprint => { 
+                return  moment.utc().isAfter(moment.utc(sprint.endDate), "day"); }
+            )
             .sort((a, b) => b.endDate - a.endDate) // Sort so most recent end dates are at the top
             .map(sprint => {
                 return (
