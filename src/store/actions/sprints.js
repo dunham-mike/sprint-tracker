@@ -6,7 +6,7 @@ const FIREBASE_URL = process.env.REACT_APP_FIREBASE_URL;
 export const updateProject = (sprintId, projectData, token, userId) => {
     return dispatch => {
         if(token === 'demo') { // Skip server logic if this is the demo
-            dispatch(updateProjectInStore(sprintId, projectData));
+            return dispatch(updateProjectInStore(sprintId, projectData));
         } else {
             let updateProjectURL = FIREBASE_URL + '/users/' + userId; 
 
@@ -18,7 +18,7 @@ export const updateProject = (sprintId, projectData, token, userId) => {
                 updateProjectURL += '/sprints/' + sprintId + '/projects/' + projectData.id.value + '.json?auth=' + token;
             }
 
-            axios.put(updateProjectURL, projectData)
+            return axios.put(updateProjectURL, projectData)
                 .then((response) => {
                     console.log('updateProject response:', response);
                     dispatch(updateProjectInStore(sprintId, projectData));
