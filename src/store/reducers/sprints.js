@@ -1,5 +1,5 @@
 import * as actionTypes from '../actions/actionTypes';
-import { initialDemoState } from '../initialData';
+import { initialDemoState } from '../initialDemoData';
 import { convertObjectIntoArrayOfItsValues } from '../utility';
 import * as moment from 'moment';
 
@@ -10,13 +10,13 @@ const initialState = {
 }
 
 const getSprintIndexWithSprintId = (state, sprintId) => {
-    console.log('Start of getSprintIndexWithSprintId');
-    console.log('state.sprints.length:', state.sprints.length);
+    // console.log('Start of getSprintIndexWithSprintId');
+    // console.log('state.sprints.length:', state.sprints.length);
 
     for(let i=0; i<state.sprints.length; i++) {
-        console.log('running i =', i);
+        // console.log('running i =', i);
         if(state.sprints[i].id === sprintId) {
-            console.log('returning i=', i);
+            // console.log('returning i=', i);
             return i;
         }
     };
@@ -27,9 +27,9 @@ const getSprintIndexWithSprintId = (state, sprintId) => {
 };
 
 const getProjectIndexWithSprintIndexAndProjectId = (state, sprintIndex, projectId) => {
-    console.log('state:', state);
-    console.log('sprintIndex:', sprintIndex);
-    console.log('projectId:', projectId);
+    // console.log('state:', state);
+    // console.log('sprintIndex:', sprintIndex);
+    // console.log('projectId:', projectId);
 
     let projectArray;
     if (sprintIndex === -1) { // A value of -1 indicates the sprint is the queue
@@ -38,7 +38,7 @@ const getProjectIndexWithSprintIndexAndProjectId = (state, sprintIndex, projectI
         projectArray = state.sprints[sprintIndex].projects;
     }
     
-    console.log('projectArray:', projectArray);
+    // console.log('projectArray:', projectArray);
 
     for(let i=0; i<projectArray.length; i++) {
         if(projectArray[i].id.value === projectId) {
@@ -66,12 +66,12 @@ const updateObjectInArray = (array, newItemIndex, newItem) => {
 };
 
 const updateProjectOnSprint = (state, action) => {
-    console.log('state:', state);
-    console.log('action:', action);
-    console.log('action.sprintId:', action.sprintId);
+    // console.log('state:', state);
+    // console.log('action:', action);
+    // console.log('action.sprintId:', action.sprintId);
 
     const sprintIndex = getSprintIndexWithSprintId(state, action.sprintId);
-    console.log('sprintIndex:', sprintIndex);
+    // console.log('sprintIndex:', sprintIndex);
     const projectIndex = getProjectIndexWithSprintIndexAndProjectId(state, sprintIndex, action.projectData.id.value);
     // console.log('sprintIndex:', sprintIndex);
     // console.log('projectIndex:', projectIndex);
@@ -102,7 +102,6 @@ const addProjectOnSprint = (state, action) => {
         console.log('[ERROR] Cannot find sprint index in current state');
         return state;
     } else {
-        console.log('Placeholder: add project to an existing sprint');
         let newProjectsArray = [...state.sprints[sprintIndex].projects];
         newProjectsArray.push(action.projectData);
 
@@ -208,7 +207,7 @@ const deleteProject = (state, action) => {
 }
 
 const updateSprint = (state, action) => {
-    console.log('updateSprint triggered');
+    // console.log('updateSprint triggered');
 
     // Important Note: action.sprintData does NOT include the existing projects, so those need to be copied onto the updated sprint object
     const sprintIndex = getSprintIndexWithSprintId(state, action.sprintId);
@@ -232,18 +231,18 @@ const updateSprint = (state, action) => {
 };
 
 const addSprint = (state, action) => {
-    console.log('addSprint reducer function firing');
+    // console.log('addSprint reducer function firing');
 
     // Important Note: action.sprintData does NOT include a projects key, so that needs to be added
     let newSprintObjectWithProjects = {...action.sprintData};
-    newSprintObjectWithProjects['projects'] = [];
+    // newSprintObjectWithProjects['projects'] = []; // Commenting out to handle in EditSprint
 
     // Push the updated sprint object onto a new copy of the sprints array
     let updatedFullSprintsArray = [...state.sprints];
     updatedFullSprintsArray.push(newSprintObjectWithProjects);
 
     // If the new sprint's start date is same or before the last sprint's start date, then reorder 
-    if(state.sprints.length > 1 && moment.utc(newSprintObjectWithProjects.startDate).isSameOrBefore(moment.utc(state.sprints[state.sprints.length-1].startDate)), "day") {
+    if(state.sprints.length > 1 && moment.utc(newSprintObjectWithProjects.startDate).isSameOrBefore(moment.utc(state.sprints[state.sprints.length-1].startDate), "day")) {
         updatedFullSprintsArray = getNewSprintsArrayOrderedByStartDate(updatedFullSprintsArray);
     }
 
@@ -257,7 +256,7 @@ const deleteSprint = (state, action) => {
     const sprintIndex = getSprintIndexWithSprintId(state, action.sprintId);
 
     if (state.sprints[sprintIndex].projects.length > 0) {
-        console.log('[Reducer] deleteSprint error, because sprint still has projects on it.')
+        console.log('[Reducer] deleteSprint error, because sprint still has projects on it.', state.sprints[sprintIndex].projects)
         return state;
     }
 
@@ -277,10 +276,10 @@ const getNewSprintsArrayOrderedByStartDate = (sprintsArray) => {
 
     newDateOrderedSprintsArray.sort((a, b) => {
         if(moment.utc(a.startDate).isSame(moment.utc(b.startDate), "day")) {
-            console.log('Ordering based on end date (a, b):', a.endDate, b.endDate);
+            // console.log('Ordering based on end date (a, b):', a.endDate, b.endDate);
             return a.endDate - b.endDate;
         } else {
-            console.log('Ordering based on start date (a, b):', a.startDate, b.startDate);
+            // console.log('Ordering based on start date (a, b):', a.startDate, b.startDate);
             return a.startDate - b.startDate;
         }
     });

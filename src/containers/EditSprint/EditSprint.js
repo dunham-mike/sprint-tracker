@@ -317,10 +317,11 @@ class editSprint extends Component {
         }
 
         if (this.props.actionType === "edit") {
-            console.log('Dispatch an action to edit the sprint');
+            // console.log('Dispatch an action to edit the sprint');
             this.props.onUpdateSprint(this.props.sprintId, transformedSprintData, this.props.token, this.props.userId);
         } else if (this.props.actionType === "create") {
-            console.log('Dispatch an action to create the sprint');
+            transformedSprintData['projects'] = [];
+            // console.log('Dispatch an action to create the sprint');
             this.props.onAddSprint(transformedSprintData, this.props.token, this.props.userId);
         } else {
             console.log('[Project.js] Error: missing actionType prop');
