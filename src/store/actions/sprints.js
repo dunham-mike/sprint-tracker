@@ -60,7 +60,7 @@ export const addProject = (sprintId, projectData, token, userId) => {
                 addProjectURL += '/sprints/' + sprintId + '/projects/' + projectData.id.value + '.json?auth=' + token;
             }
 
-            axios.put(addProjectURL, projectData)
+            return axios.put(addProjectURL, projectData)
                 .then((response) => {
                     console.log('addProject response:', response);
                     dispatch(addProjectToStore(sprintId, projectData));
@@ -97,7 +97,7 @@ export const deleteProject = (sprintId, projectId, token, userId) => {
                 deleteProjectURL += '/sprints/' + sprintId + '/projects/' + projectId + '.json?auth=' + token;
             }
 
-            axios.delete(deleteProjectURL)
+            return axios.delete(deleteProjectURL)
                 .then((response) => {
                     console.log('deleteProject response:', response);
                     dispatch(deleteProjectInStore(sprintId, projectId));
@@ -132,7 +132,7 @@ export const updateSprint = (sprintId, sprintData, token, userId) => {
         } else {
             let updateSprintURL = FIREBASE_URL + '/users/' + userId + '/sprints/' + sprintData.id + '.json?auth=' + token; 
 
-            axios.put(updateSprintURL, sprintData)
+            return axios.put(updateSprintURL, sprintData)
                 .then((response) => {
                     console.log('updateSprint response:', response);
                     dispatch(updateSprintInStore(sprintId, sprintData));
@@ -160,7 +160,7 @@ export const addSprint = (sprintData, token, userId) => {
         } else {
             let addSprintURL = FIREBASE_URL + '/users/' + userId + '/sprints/' + sprintData.id + '.json?auth=' + token; 
 
-            axios.put(addSprintURL, sprintData)
+            return axios.put(addSprintURL, sprintData)
                 .then((response) => {
                     console.log('addSprint response:', response);
                     dispatch(addSprintToStore(sprintData));
@@ -187,7 +187,7 @@ export const deleteSprint = (sprintId, token, userId) => {
         } else {
             let deleteSprintURL = FIREBASE_URL + '/users/' + userId + '/sprints/' + sprintId + '.json?auth=' + token; 
 
-            axios.delete(deleteSprintURL)
+            return axios.delete(deleteSprintURL)
                 .then((response) => {
                     console.log('deleteSprint response:', response);
                     dispatch(deleteSprintInStore(sprintId));
