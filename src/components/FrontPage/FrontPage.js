@@ -71,12 +71,12 @@ const cards = [
     {
         imageUrl: 'https://images.unsplash.com/photo-1559526323-cb2f2fe2591b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80',
         heading: 'Weekly progress tracking.',
-        content: 'Updating and seeing a team\'s progress is a breeze.',
+        content: 'Updating and seeing a sprint\'s progress is a breeze.',
     }, 
     {
         imageUrl: 'https://images.unsplash.com/photo-1581291518857-4e27b48ff24e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80',
         heading: 'Authentication built-in.',
-        content: 'Make sure your team\'s work stays private.',
+        content: 'Make sure your work stays private.',
     }, 
 ];
 

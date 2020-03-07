@@ -72,7 +72,7 @@ const stateWithTwoSprints = {
     ],
     queue: [],
     error: false,
-}
+};
 
 const updatedSprintId1 = {
     id: '1',
@@ -82,7 +82,7 @@ const updatedSprintId1 = {
     participants: 'Mike, Bobby',
     owner: 'Mike',
     projects: [],
-}
+};
 
 const stateWithTwoSprintsWithSameStartDate = {
     sprints: [
@@ -107,7 +107,7 @@ const stateWithTwoSprintsWithSameStartDate = {
     ],
     queue: [],
     error: false,
-}
+};
 
 const stateWithTwoUnorderedSprints = {
     sprints: [
@@ -132,7 +132,7 @@ const stateWithTwoUnorderedSprints = {
     ],
     queue: [],
     error: false,
-}
+};
 
 const stateWithOneSprintAndOneQueueProject = {
     sprints: [
