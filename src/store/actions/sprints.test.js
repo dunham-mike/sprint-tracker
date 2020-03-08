@@ -10,6 +10,8 @@ import thunk from 'redux-thunk';
 const middleware = [thunk]
 const mockStore = configureMockStore(middleware)
 
+jest.mock('axios');
+
 
 /* --- Test Data --- */
 
@@ -64,11 +66,20 @@ describe('synchronous sprints actions', () => {
                 type: actionTypes.ORDER_SPRINTS_BY_START_DATE
             }
         )
-      });
+    });
 
+    it('should create MARK_SERVER_UPDATE_ERROR when markServerUpdateError() is called', () => {
+        expect(
+            actions.markServerUpdateError()
+        )
+        .toEqual(
+            {
+                type: actionTypes.MARK_SERVER_UPDATE_ERROR
+            }
+        )
+    });
 });
 
-jest.mock('axios');
 
 describe('async sprints actions', () => {
 

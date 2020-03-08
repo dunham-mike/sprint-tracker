@@ -35,6 +35,7 @@
     "build": "react-scripts build",
     "test": "jest",
     "test:watch": "npm test -- --watch",
+    "test:coverage": "set CI=true && react-scripts test --coverage",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {

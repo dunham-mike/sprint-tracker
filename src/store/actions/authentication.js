@@ -1,5 +1,7 @@
 import * as actionTypes from './actionTypes';
 import axios from 'axios';
+import { markServerUpdateError } from './index';
+
 const FIREBASE_API_KEY = process.env.REACT_APP_FIREBASE_API_KEY;
 const FIREBASE_URL = process.env.REACT_APP_FIREBASE_URL;
 
@@ -110,18 +112,18 @@ const loadSprintStore = (fetchedSprintData, fetchedQueueData) => {
     }
 }
 
-const fetchDataForAuthenticatedUser = (token, userId) => {
+export const fetchDataForAuthenticatedUser = (token, userId) => {
     return dispatch => {
         console.log('Trying to fetch data...');
         const fetchDataFromFirebaseURL = FIREBASE_URL + '/users/' + userId + '.json?auth=' + token;
-        axios.get(fetchDataFromFirebaseURL)
+        return axios.get(fetchDataFromFirebaseURL)
             .then(fetchResponse => {
                 console.log('fetchResponse:', fetchResponse);
                 dispatch(loadSprintStore(fetchResponse.data.sprints, fetchResponse.data.queue));
             })
             .catch(fetchErr => {
                 console.log('[Error] Fetching Data Failed:', fetchErr);
-                // TODO: Kill the app here
+                dispatch(markServerUpdateError());
             });
     }
 }
@@ -141,7 +143,7 @@ export const kickoffAuthentication = (email, password, isCreateAccount, firstNam
             url = 'https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=' + FIREBASE_API_KEY;
         }
         
-        axios.post(url, authData)
+        return axios.post(url, authData)
             .then(response => {
                 const expirationDate = new Date(new Date().getTime() + response.data.expiresIn * 1000); // JS time works in milliseconds
                 localStorage.setItem('token', response.data.idToken);
@@ -155,8 +157,6 @@ export const kickoffAuthentication = (email, password, isCreateAccount, firstNam
                     const initialUserData = {
                             'firstName': firstName,
                             'lastName': lastName,
-                            // 'sprints': { 'tempId': false }, // Dummy data to represent empty sprints
-                            // 'queue': { 'tempId': false },
                         };
                     
                     axios.put(initializeUserDataUrl, initialUserData)
@@ -165,7 +165,7 @@ export const kickoffAuthentication = (email, password, isCreateAccount, firstNam
                         })
                         .catch(initializeErr => {
                             console.log('[Error] User Initialization Failed:', initializeErr);
-                            // TODO: Kill the app here
+                            dispatch(markServerUpdateError());
                         });
                 } else {
                     dispatch(fetchDataForAuthenticatedUser(response.data.idToken, response.data.localId));

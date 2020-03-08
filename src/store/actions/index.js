@@ -1,4 +1,5 @@
 export {
+    markServerUpdateError,
     updateProject,
     addProject,
     deleteProject,
@@ -14,4 +15,5 @@ export {
     authCheckState,
     logout,
     initiateDemo,
+    setAuthRedirectPath,
 } from './authentication';

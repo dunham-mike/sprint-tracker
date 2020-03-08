@@ -31,7 +31,7 @@ export const updateProject = (sprintId, projectData, token, userId) => {
     }
 };
 
-const markServerUpdateError = () => {
+export const markServerUpdateError = () => {
     return {
         type: actionTypes.MARK_SERVER_UPDATE_ERROR,
     }
