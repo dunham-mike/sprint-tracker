@@ -32,12 +32,6 @@ const styles = theme => ({
             backgroundColor: grey[100],
         },
     },
-    
-    // InputElement:focus: {
-    //     outline: 'none'
-    //     backgroundColor: '#ccc',
-    // },
-    
     Invalid: {
         border: '1px solid red',
         backgroundColor: '#FDA49A'
@@ -120,8 +114,12 @@ const input = (props) => {
             {inputElement}
         </div>
     );
-}
+};
 
-
+input.defaultProps = {
+    elementConfig: {
+        displayName: '',
+    }
+};
 
 export default withStyles(styles)(input);

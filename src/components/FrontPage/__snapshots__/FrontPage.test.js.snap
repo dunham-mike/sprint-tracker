@@ -1,0 +1,299 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Render FrontPage renders FrontPage component correctly 1`] = `
+Array [
+  <main>
+    <div
+      className="frontPage-heroContent-2"
+    >
+      <div
+        className="MuiContainer-root MuiContainer-maxWidthSm"
+      >
+        <h1
+          className="MuiTypography-root MuiTypography-h2 MuiTypography-colorTextPrimary MuiTypography-gutterBottom MuiTypography-alignCenter"
+        >
+          Deliberate Sprints
+        </h1>
+        <p
+          className="MuiTypography-root MuiTypography-h5 MuiTypography-colorTextSecondary MuiTypography-paragraph MuiTypography-alignCenter"
+        >
+          Sprint tracking. With a point of view.
+        </p>
+        <div
+          className="frontPage-heroButtons-3"
+        >
+          <div
+            className="MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-2 MuiGrid-justify-xs-center"
+          >
+            <div
+              className="MuiGrid-root MuiGrid-item"
+            >
+              <a
+                aria-disabled={false}
+                className="MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary"
+                href="/demo"
+                onBlur={[Function]}
+                onClick={[Function]}
+                onDragLeave={[Function]}
+                onFocus={[Function]}
+                onKeyDown={[Function]}
+                onKeyUp={[Function]}
+                onMouseDown={[Function]}
+                onMouseLeave={[Function]}
+                onMouseUp={[Function]}
+                onTouchEnd={[Function]}
+                onTouchMove={[Function]}
+                onTouchStart={[Function]}
+                role="button"
+                tabIndex={0}
+              >
+                <span
+                  className="MuiButton-label"
+                >
+                  Try a demo
+                </span>
+              </a>
+            </div>
+            <div
+              className="MuiGrid-root MuiGrid-item"
+            >
+              <a
+                aria-disabled={false}
+                className="MuiButtonBase-root MuiButton-root MuiButton-outlined MuiButton-outlinedPrimary"
+                href="/create-account"
+                onBlur={[Function]}
+                onClick={[Function]}
+                onDragLeave={[Function]}
+                onFocus={[Function]}
+                onKeyDown={[Function]}
+                onKeyUp={[Function]}
+                onMouseDown={[Function]}
+                onMouseLeave={[Function]}
+                onMouseUp={[Function]}
+                onTouchEnd={[Function]}
+                onTouchMove={[Function]}
+                onTouchStart={[Function]}
+                role="button"
+                tabIndex={0}
+              >
+                <span
+                  className="MuiButton-label"
+                >
+                  Create an account
+                </span>
+              </a>
+            </div>
+            <div
+              className="MuiGrid-root MuiGrid-item"
+            >
+              <a
+                aria-disabled={false}
+                className="MuiButtonBase-root MuiButton-root MuiButton-outlined MuiButton-outlinedPrimary"
+                href="/login"
+                onBlur={[Function]}
+                onClick={[Function]}
+                onDragLeave={[Function]}
+                onFocus={[Function]}
+                onKeyDown={[Function]}
+                onKeyUp={[Function]}
+                onMouseDown={[Function]}
+                onMouseLeave={[Function]}
+                onMouseUp={[Function]}
+                onTouchEnd={[Function]}
+                onTouchMove={[Function]}
+                onTouchStart={[Function]}
+                role="button"
+                tabIndex={0}
+              >
+                <span
+                  className="MuiButton-label"
+                >
+                  Log in
+                </span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      className="MuiContainer-root frontPage-cardGrid-4 MuiContainer-maxWidthMd"
+    >
+      <div
+        className="MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-4"
+      >
+        <div
+          className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-sm-6 MuiGrid-grid-md-4"
+        >
+          <div
+            className="MuiPaper-root MuiCard-root frontPage-card-5 MuiPaper-elevation1 MuiPaper-rounded"
+          >
+            <div
+              className="MuiCardMedia-root frontPage-cardMedia-6"
+              style={
+                Object {
+                  "backgroundImage": "url(\\"https://images.unsplash.com/photo-1568584263125-bf8f0a77d51c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1051&q=80\\")",
+                }
+              }
+              title="Simple, structured sprints."
+            />
+            <div
+              className="MuiCardContent-root frontPage-cardContent-7"
+            >
+              <h2
+                className="MuiTypography-root MuiTypography-h5 MuiTypography-gutterBottom"
+              >
+                Simple, structured sprints.
+              </h2>
+              <p
+                className="MuiTypography-root MuiTypography-body1"
+              >
+                Purposely designed for lightweight data collection, so individuals can be flexible in how they hit their goals.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div
+          className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-sm-6 MuiGrid-grid-md-4"
+        >
+          <div
+            className="MuiPaper-root MuiCard-root frontPage-card-5 MuiPaper-elevation1 MuiPaper-rounded"
+          >
+            <div
+              className="MuiCardMedia-root frontPage-cardMedia-6"
+              style={
+                Object {
+                  "backgroundImage": "url(\\"https://images.unsplash.com/photo-1559526323-cb2f2fe2591b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80\\")",
+                }
+              }
+              title="Weekly progress tracking."
+            />
+            <div
+              className="MuiCardContent-root frontPage-cardContent-7"
+            >
+              <h2
+                className="MuiTypography-root MuiTypography-h5 MuiTypography-gutterBottom"
+              >
+                Weekly progress tracking.
+              </h2>
+              <p
+                className="MuiTypography-root MuiTypography-body1"
+              >
+                Updating and seeing a sprint's progress is a breeze.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div
+          className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-sm-6 MuiGrid-grid-md-4"
+        >
+          <div
+            className="MuiPaper-root MuiCard-root frontPage-card-5 MuiPaper-elevation1 MuiPaper-rounded"
+          >
+            <div
+              className="MuiCardMedia-root frontPage-cardMedia-6"
+              style={
+                Object {
+                  "backgroundImage": "url(\\"https://images.unsplash.com/photo-1581291518857-4e27b48ff24e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80\\")",
+                }
+              }
+              title="Authentication built-in."
+            />
+            <div
+              className="MuiCardContent-root frontPage-cardContent-7"
+            >
+              <h2
+                className="MuiTypography-root MuiTypography-h5 MuiTypography-gutterBottom"
+              >
+                Authentication built-in.
+              </h2>
+              <p
+                className="MuiTypography-root MuiTypography-body1"
+              >
+                Make sure your work stays private.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      className="frontPage-tryDemo-8"
+    >
+      <div
+        className="MuiContainer-root MuiContainer-maxWidthSm"
+      >
+        <a
+          aria-disabled={false}
+          className="MuiButtonBase-root MuiButton-root MuiButton-outlined MuiButton-outlinedSecondary"
+          href="/create-account"
+          onBlur={[Function]}
+          onClick={[Function]}
+          onDragLeave={[Function]}
+          onFocus={[Function]}
+          onKeyDown={[Function]}
+          onKeyUp={[Function]}
+          onMouseDown={[Function]}
+          onMouseLeave={[Function]}
+          onMouseUp={[Function]}
+          onTouchEnd={[Function]}
+          onTouchMove={[Function]}
+          onTouchStart={[Function]}
+          role="button"
+          tabIndex={0}
+        >
+          <span
+            className="MuiButton-label"
+          >
+            Create your free account
+          </span>
+        </a>
+      </div>
+    </div>
+  </main>,
+  <footer
+    className="frontPage-footer-9"
+  >
+    <h6
+      className="MuiTypography-root MuiTypography-h6 MuiTypography-gutterBottom MuiTypography-alignCenter"
+    >
+      Built with React and Material UI.
+    </h6>
+    <p
+      className="MuiTypography-root MuiTypography-subtitle1 MuiTypography-colorTextSecondary MuiTypography-alignCenter"
+    >
+      Made with 
+      <svg
+        aria-hidden="true"
+        className="MuiSvgIcon-root MuiSvgIcon-colorSecondary MuiSvgIcon-fontSizeSmall"
+        focusable="false"
+        role="presentation"
+        viewBox="0 0 24 24"
+      >
+        <path
+          d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"
+        />
+      </svg>
+       in Burlingame, CA.
+    </p>
+    <p
+      className="MuiTypography-root MuiTypography-body2 MuiTypography-colorTextSecondary MuiTypography-alignCenter"
+    >
+      Copyright © 
+      <a
+        className="MuiTypography-root MuiLink-root MuiLink-underlineHover MuiTypography-colorInherit"
+        href="https://github.com/dunham-mike"
+        onBlur={[Function]}
+        onFocus={[Function]}
+        rel="noopener noreferrer"
+        target="_blank"
+      >
+        Mike Dunham
+      </a>
+       
+      2020
+      .
+    </p>
+  </footer>,
+]
+`;
