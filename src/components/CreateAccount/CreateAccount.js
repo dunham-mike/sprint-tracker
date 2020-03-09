@@ -93,8 +93,13 @@ const createAccount = (props) => {
             'TOO_MANY_ATTEMPTS_TRY_LATER' : 'All requests from this device have been blocked due to unusual activity. Try again later.',
         }
 
+        // Show no error if it's not in the list above
         errorMessage = (
-            errorMessageTranslation[props.error.message] ? errorMessageTranslation[props.error.message] : null // Show no error if it's not in the list above
+            errorMessageTranslation[props.error.message] 
+                ? (<div id="signupErrorMessage" className={classes.signupErrorMessage}>
+                    {errorMessageTranslation[props.error.message]}
+                </div>)
+                : null
         );
     }
 
@@ -176,9 +181,7 @@ const createAccount = (props) => {
                                         CREATE ACCOUNT
                                     </Button>
                                 </div>
-                                <div className={classes.signupErrorMessage}>
-                                    {errorMessage}
-                                </div>
+                                {errorMessage}
                                 <div className={classes.createAccount}>
                                     <Link component={RouterLink} to="/login" color="inherit" variant="body2">Need to log in instead?</Link>
                                 </div>
@@ -207,4 +210,4 @@ const mapDispatchToProps = dispatch => {
     }
 }
   
-  export default connect(mapStateToProps, mapDispatchToProps)(withStyles(styles)(createAccount));
+export default connect(mapStateToProps, mapDispatchToProps)(withStyles(styles)(createAccount));

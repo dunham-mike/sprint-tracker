@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`CreateAccount Component should render with given state from Redux store 1`] = `
+exports[`CreateAccount Component should match the snapshot 1`] = `
 <BrowserRouter>
   <Router
     history={
@@ -793,9 +793,6 @@ exports[`CreateAccount Component should render with given state from Redux store
                                   </ForwardRef(Button)>
                                 </WithStyles(ForwardRef(Button))>
                               </div>
-                              <div
-                                className="createAccount-signupErrorMessage-10"
-                              />
                               <div
                                 className="createAccount-createAccount-11"
                               >
