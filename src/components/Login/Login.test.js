@@ -7,7 +7,7 @@ import toJson from 'enzyme-to-json';
 import configureStore from 'redux-mock-store';
 import { Redirect } from 'react-router-dom';
 
-import CreateAccount from './CreateAccount';
+import Login from './Login';
 
 Enzyme.configure({ adapter: new Adapter() })
 
@@ -39,7 +39,7 @@ const mountSetup = (storeData) => {
     const enzymeMountWrapper = mount(
         <BrowserRouter>
             <Provider store={store}>
-                <CreateAccount 
+                <Login 
                     // {...props}
                 />
             </Provider>
@@ -52,17 +52,15 @@ const mountSetup = (storeData) => {
     }
 }
 
-describe('CreateAccount Component', () => {
+describe('Login Component', () => {
 
     it('should match the snapshot', () => {
         const { enzymeMountWrapper } = mountSetup();
         expect(toJson(enzymeMountWrapper)).toMatchSnapshot();
     });
 
-    it('should show the four input fields', () => {
+    it('should show the two input fields', () => {
         const { enzymeMountWrapper } = mountSetup();
-        expect(enzymeMountWrapper.find('input[type="firstName"]')).toHaveLength(1);
-        expect(enzymeMountWrapper.find('input[type="lastName"]')).toHaveLength(1);
         expect(enzymeMountWrapper.find('input[type="email"]')).toHaveLength(1);
         expect(enzymeMountWrapper.find('input[type="password"]')).toHaveLength(1);
     });
@@ -73,14 +71,14 @@ describe('CreateAccount Component', () => {
                 authentication: {
                     loading: false,
                     error: {
-                        message: 'EMAIL_EXISTS',
+                        message: 'EMAIL_NOT_FOUND',
                     },
                     token: null,
                     authRedirectPath: "/",
                     },
             }
         );
-        expect(enzymeMountWrapper.find('#signupErrorMessage')).toHaveLength(1);
+        expect(enzymeMountWrapper.find('#loginErrorMessage')).toHaveLength(1);
     });
 
     it('should display no error message if the store error is not in the translation list', () => {
@@ -96,12 +94,12 @@ describe('CreateAccount Component', () => {
                     },
             }
         );
-        expect(enzymeMountWrapper.find('#signupErrorMessage')).toHaveLength(0);
+        expect(enzymeMountWrapper.find('#loginErrorMessage')).toHaveLength(0);
     });
 
     it('should not display an error message if error in the store is null', () => {
         const { enzymeMountWrapper } = mountSetup();
-        expect(enzymeMountWrapper.find('#signupErrorMessage')).toHaveLength(0);
+        expect(enzymeMountWrapper.find('#loginErrorMessage')).toHaveLength(0);
     });
 
     it('should render a <Redirect> component if the user is authenticated', () => {

@@ -94,8 +94,13 @@ const login = (props) => {
             'USER_DISABLED' : 'This user has been disabled by an administrator',
         }
 
+        // Show no error if it's not in the list above
         errorMessage = (
-            errorMessageTranslation[props.error.message] ? errorMessageTranslation[props.error.message] : null // Show no error if it's not in the list above
+            errorMessageTranslation[props.error.message] 
+            ?   (<div id="loginErrorMessage" className={classes.loginErrorMessage}>
+                    {errorMessageTranslation[props.error.message]}
+                </div>)
+            : null 
         );
     }
 
@@ -157,9 +162,7 @@ const login = (props) => {
                                         LOG IN
                                     </Button>
                                 </div>
-                                <div className={classes.loginErrorMessage}>
-                                    {errorMessage}
-                                </div>
+                                {errorMessage}
                                 <div className={classes.createAccount}>
                                     <Link component={RouterLink} to="/create-account" color="inherit" variant="body2">Need to create an account instead?</Link>
                                 </div>

@@ -1,0 +1,743 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Login Component should match the snapshot 1`] = `
+<BrowserRouter>
+  <Router
+    history={
+      Object {
+        "action": "POP",
+        "block": [Function],
+        "createHref": [Function],
+        "go": [Function],
+        "goBack": [Function],
+        "goForward": [Function],
+        "length": 1,
+        "listen": [Function],
+        "location": Object {
+          "hash": "",
+          "pathname": "/",
+          "search": "",
+          "state": undefined,
+        },
+        "push": [Function],
+        "replace": [Function],
+      }
+    }
+  >
+    <Provider
+      store={
+        Object {
+          "clearActions": [Function],
+          "dispatch": [Function],
+          "getActions": [Function],
+          "getState": [Function],
+          "replaceReducer": [Function],
+          "subscribe": [Function],
+        }
+      }
+    >
+      <Connect(WithStyles(login))>
+        <WithStyles(login)
+          authRedirectPath="/"
+          error={null}
+          isAuth={false}
+          loading={false}
+          onKickoffLogin={[Function]}
+        >
+          <login
+            authRedirectPath="/"
+            classes={
+              Object {
+                "createAccount": "login-createAccount-11",
+                "errorMessage": "login-errorMessage-9",
+                "field": "login-field-8",
+                "fieldContainer": "login-fieldContainer-5",
+                "formContainer": "login-formContainer-3",
+                "innerFormContainer": "login-innerFormContainer-4",
+                "label": "login-label-6",
+                "loginContainer": "login-loginContainer-2",
+                "loginErrorMessage": "login-loginErrorMessage-10",
+                "paper": "login-paper-1",
+                "submitContainer": "login-submitContainer-7",
+              }
+            }
+            error={null}
+            isAuth={false}
+            loading={false}
+            onKickoffLogin={[Function]}
+          >
+            <WithStyles(ForwardRef(Paper))
+              className="login-paper-1"
+            >
+              <ForwardRef(Paper)
+                className="login-paper-1"
+                classes={
+                  Object {
+                    "elevation0": "MuiPaper-elevation0",
+                    "elevation1": "MuiPaper-elevation1",
+                    "elevation10": "MuiPaper-elevation10",
+                    "elevation11": "MuiPaper-elevation11",
+                    "elevation12": "MuiPaper-elevation12",
+                    "elevation13": "MuiPaper-elevation13",
+                    "elevation14": "MuiPaper-elevation14",
+                    "elevation15": "MuiPaper-elevation15",
+                    "elevation16": "MuiPaper-elevation16",
+                    "elevation17": "MuiPaper-elevation17",
+                    "elevation18": "MuiPaper-elevation18",
+                    "elevation19": "MuiPaper-elevation19",
+                    "elevation2": "MuiPaper-elevation2",
+                    "elevation20": "MuiPaper-elevation20",
+                    "elevation21": "MuiPaper-elevation21",
+                    "elevation22": "MuiPaper-elevation22",
+                    "elevation23": "MuiPaper-elevation23",
+                    "elevation24": "MuiPaper-elevation24",
+                    "elevation3": "MuiPaper-elevation3",
+                    "elevation4": "MuiPaper-elevation4",
+                    "elevation5": "MuiPaper-elevation5",
+                    "elevation6": "MuiPaper-elevation6",
+                    "elevation7": "MuiPaper-elevation7",
+                    "elevation8": "MuiPaper-elevation8",
+                    "elevation9": "MuiPaper-elevation9",
+                    "outlined": "MuiPaper-outlined",
+                    "root": "MuiPaper-root",
+                    "rounded": "MuiPaper-rounded",
+                  }
+                }
+              >
+                <div
+                  className="MuiPaper-root login-paper-1 MuiPaper-elevation1 MuiPaper-rounded"
+                >
+                  <div
+                    className="login-loginContainer-2"
+                  >
+                    <WithStyles(ForwardRef(Typography))
+                      variant="h5"
+                    >
+                      <ForwardRef(Typography)
+                        classes={
+                          Object {
+                            "alignCenter": "MuiTypography-alignCenter",
+                            "alignJustify": "MuiTypography-alignJustify",
+                            "alignLeft": "MuiTypography-alignLeft",
+                            "alignRight": "MuiTypography-alignRight",
+                            "body1": "MuiTypography-body1",
+                            "body2": "MuiTypography-body2",
+                            "button": "MuiTypography-button",
+                            "caption": "MuiTypography-caption",
+                            "colorError": "MuiTypography-colorError",
+                            "colorInherit": "MuiTypography-colorInherit",
+                            "colorPrimary": "MuiTypography-colorPrimary",
+                            "colorSecondary": "MuiTypography-colorSecondary",
+                            "colorTextPrimary": "MuiTypography-colorTextPrimary",
+                            "colorTextSecondary": "MuiTypography-colorTextSecondary",
+                            "displayBlock": "MuiTypography-displayBlock",
+                            "displayInline": "MuiTypography-displayInline",
+                            "gutterBottom": "MuiTypography-gutterBottom",
+                            "h1": "MuiTypography-h1",
+                            "h2": "MuiTypography-h2",
+                            "h3": "MuiTypography-h3",
+                            "h4": "MuiTypography-h4",
+                            "h5": "MuiTypography-h5",
+                            "h6": "MuiTypography-h6",
+                            "noWrap": "MuiTypography-noWrap",
+                            "overline": "MuiTypography-overline",
+                            "paragraph": "MuiTypography-paragraph",
+                            "root": "MuiTypography-root",
+                            "srOnly": "MuiTypography-srOnly",
+                            "subtitle1": "MuiTypography-subtitle1",
+                            "subtitle2": "MuiTypography-subtitle2",
+                          }
+                        }
+                        variant="h5"
+                      >
+                        <h5
+                          className="MuiTypography-root MuiTypography-h5"
+                        >
+                          Log into Deliberate Sprints
+                        </h5>
+                      </ForwardRef(Typography)>
+                    </WithStyles(ForwardRef(Typography))>
+                    <Formik
+                      initialValues={
+                        Object {
+                          "email": "",
+                          "password": "",
+                        }
+                      }
+                      onSubmit={[Function]}
+                      validationSchema={
+                        ObjectSchema {
+                          "_blacklist": RefSet {
+                            "list": Set {},
+                            "refs": Map {},
+                          },
+                          "_conditions": Array [],
+                          "_defaultDefault": [Function],
+                          "_deps": Array [],
+                          "_excludedEdges": Array [],
+                          "_exclusive": Object {},
+                          "_mutate": undefined,
+                          "_nodes": Array [
+                            "password",
+                            "email",
+                          ],
+                          "_options": Object {
+                            "abortEarly": true,
+                            "recursive": true,
+                          },
+                          "_type": "object",
+                          "_typeError": [Function],
+                          "_whitelist": RefSet {
+                            "list": Set {},
+                            "refs": Map {},
+                          },
+                          "fields": Object {
+                            "email": StringSchema {
+                              "_blacklist": RefSet {
+                                "list": Set {},
+                                "refs": Map {},
+                              },
+                              "_conditions": Array [],
+                              "_deps": Array [],
+                              "_exclusive": Object {
+                                "email": false,
+                                "required": true,
+                              },
+                              "_mutate": undefined,
+                              "_options": Object {
+                                "abortEarly": true,
+                                "recursive": true,
+                              },
+                              "_type": "string",
+                              "_typeError": [Function],
+                              "_whitelist": RefSet {
+                                "list": Set {},
+                                "refs": Map {},
+                              },
+                              "tests": Array [
+                                [Function],
+                                [Function],
+                              ],
+                              "transforms": Array [
+                                [Function],
+                              ],
+                            },
+                            "password": StringSchema {
+                              "_blacklist": RefSet {
+                                "list": Set {},
+                                "refs": Map {},
+                              },
+                              "_conditions": Array [],
+                              "_deps": Array [],
+                              "_exclusive": Object {
+                                "max": true,
+                                "min": true,
+                                "required": true,
+                              },
+                              "_mutate": undefined,
+                              "_options": Object {
+                                "abortEarly": true,
+                                "recursive": true,
+                              },
+                              "_type": "string",
+                              "_typeError": [Function],
+                              "_whitelist": RefSet {
+                                "list": Set {},
+                                "refs": Map {},
+                              },
+                              "tests": Array [
+                                [Function],
+                                [Function],
+                                [Function],
+                              ],
+                              "transforms": Array [
+                                [Function],
+                              ],
+                            },
+                          },
+                          "tests": Array [],
+                          "transforms": Array [
+                            [Function],
+                          ],
+                        }
+                      }
+                    >
+                      <Form>
+                        <form
+                          action="#"
+                          onReset={[Function]}
+                          onSubmit={[Function]}
+                        >
+                          <div
+                            className="login-formContainer-3"
+                          >
+                            <div
+                              className="login-innerFormContainer-4"
+                            >
+                              <div
+                                className="login-fieldContainer-5"
+                              >
+                                <div
+                                  className="login-label-6"
+                                >
+                                  Email:
+                                </div>
+                                <Field
+                                  className="login-field-8"
+                                  name="email"
+                                  type="email"
+                                >
+                                  <input
+                                    className="login-field-8"
+                                    name="email"
+                                    onBlur={[Function]}
+                                    onChange={[Function]}
+                                    type="email"
+                                    value=""
+                                  />
+                                </Field>
+                                <FormikConnect(ErrorMessageImpl)
+                                  className="login-errorMessage-9"
+                                  component="div"
+                                  name="email"
+                                >
+                                  <ErrorMessageImpl
+                                    className="login-errorMessage-9"
+                                    component="div"
+                                    formik={
+                                      Object {
+                                        "dirty": false,
+                                        "errors": Object {},
+                                        "getFieldHelpers": [Function],
+                                        "getFieldMeta": [Function],
+                                        "getFieldProps": [Function],
+                                        "handleBlur": [Function],
+                                        "handleChange": [Function],
+                                        "handleReset": [Function],
+                                        "handleSubmit": [Function],
+                                        "initialErrors": Object {},
+                                        "initialStatus": undefined,
+                                        "initialTouched": Object {},
+                                        "initialValues": Object {
+                                          "email": "",
+                                          "password": "",
+                                        },
+                                        "isSubmitting": false,
+                                        "isValid": true,
+                                        "isValidating": false,
+                                        "registerField": [Function],
+                                        "resetForm": [Function],
+                                        "setErrors": [Function],
+                                        "setFieldError": [Function],
+                                        "setFieldTouched": [Function],
+                                        "setFieldValue": [Function],
+                                        "setFormikState": [Function],
+                                        "setStatus": [Function],
+                                        "setSubmitting": [Function],
+                                        "setTouched": [Function],
+                                        "setValues": [Function],
+                                        "status": undefined,
+                                        "submitCount": 0,
+                                        "submitForm": [Function],
+                                        "touched": Object {},
+                                        "unregisterField": [Function],
+                                        "validateField": [Function],
+                                        "validateForm": [Function],
+                                        "validateOnBlur": true,
+                                        "validateOnChange": true,
+                                        "validateOnMount": false,
+                                        "values": Object {
+                                          "email": "",
+                                          "password": "",
+                                        },
+                                      }
+                                    }
+                                    name="email"
+                                  />
+                                </FormikConnect(ErrorMessageImpl)>
+                              </div>
+                              <div
+                                className="login-fieldContainer-5"
+                              >
+                                <div
+                                  className="login-label-6"
+                                >
+                                  Password:
+                                </div>
+                                <Field
+                                  className="login-field-8"
+                                  name="password"
+                                  type="password"
+                                >
+                                  <input
+                                    className="login-field-8"
+                                    name="password"
+                                    onBlur={[Function]}
+                                    onChange={[Function]}
+                                    type="password"
+                                    value=""
+                                  />
+                                </Field>
+                                <FormikConnect(ErrorMessageImpl)
+                                  className="login-errorMessage-9"
+                                  component="div"
+                                  name="password"
+                                >
+                                  <ErrorMessageImpl
+                                    className="login-errorMessage-9"
+                                    component="div"
+                                    formik={
+                                      Object {
+                                        "dirty": false,
+                                        "errors": Object {},
+                                        "getFieldHelpers": [Function],
+                                        "getFieldMeta": [Function],
+                                        "getFieldProps": [Function],
+                                        "handleBlur": [Function],
+                                        "handleChange": [Function],
+                                        "handleReset": [Function],
+                                        "handleSubmit": [Function],
+                                        "initialErrors": Object {},
+                                        "initialStatus": undefined,
+                                        "initialTouched": Object {},
+                                        "initialValues": Object {
+                                          "email": "",
+                                          "password": "",
+                                        },
+                                        "isSubmitting": false,
+                                        "isValid": true,
+                                        "isValidating": false,
+                                        "registerField": [Function],
+                                        "resetForm": [Function],
+                                        "setErrors": [Function],
+                                        "setFieldError": [Function],
+                                        "setFieldTouched": [Function],
+                                        "setFieldValue": [Function],
+                                        "setFormikState": [Function],
+                                        "setStatus": [Function],
+                                        "setSubmitting": [Function],
+                                        "setTouched": [Function],
+                                        "setValues": [Function],
+                                        "status": undefined,
+                                        "submitCount": 0,
+                                        "submitForm": [Function],
+                                        "touched": Object {},
+                                        "unregisterField": [Function],
+                                        "validateField": [Function],
+                                        "validateForm": [Function],
+                                        "validateOnBlur": true,
+                                        "validateOnChange": true,
+                                        "validateOnMount": false,
+                                        "values": Object {
+                                          "email": "",
+                                          "password": "",
+                                        },
+                                      }
+                                    }
+                                    name="password"
+                                  />
+                                </FormikConnect(ErrorMessageImpl)>
+                              </div>
+                              <div
+                                className="login-submitContainer-7"
+                              >
+                                <WithStyles(ForwardRef(Button))
+                                  color="primary"
+                                  disabled={false}
+                                  type="submit"
+                                  variant="contained"
+                                >
+                                  <ForwardRef(Button)
+                                    classes={
+                                      Object {
+                                        "colorInherit": "MuiButton-colorInherit",
+                                        "contained": "MuiButton-contained",
+                                        "containedPrimary": "MuiButton-containedPrimary",
+                                        "containedSecondary": "MuiButton-containedSecondary",
+                                        "containedSizeLarge": "MuiButton-containedSizeLarge",
+                                        "containedSizeSmall": "MuiButton-containedSizeSmall",
+                                        "disableElevation": "MuiButton-disableElevation",
+                                        "disabled": "Mui-disabled",
+                                        "endIcon": "MuiButton-endIcon",
+                                        "focusVisible": "Mui-focusVisible",
+                                        "fullWidth": "MuiButton-fullWidth",
+                                        "iconSizeLarge": "MuiButton-iconSizeLarge",
+                                        "iconSizeMedium": "MuiButton-iconSizeMedium",
+                                        "iconSizeSmall": "MuiButton-iconSizeSmall",
+                                        "label": "MuiButton-label",
+                                        "outlined": "MuiButton-outlined",
+                                        "outlinedPrimary": "MuiButton-outlinedPrimary",
+                                        "outlinedSecondary": "MuiButton-outlinedSecondary",
+                                        "outlinedSizeLarge": "MuiButton-outlinedSizeLarge",
+                                        "outlinedSizeSmall": "MuiButton-outlinedSizeSmall",
+                                        "root": "MuiButton-root",
+                                        "sizeLarge": "MuiButton-sizeLarge",
+                                        "sizeSmall": "MuiButton-sizeSmall",
+                                        "startIcon": "MuiButton-startIcon",
+                                        "text": "MuiButton-text",
+                                        "textPrimary": "MuiButton-textPrimary",
+                                        "textSecondary": "MuiButton-textSecondary",
+                                        "textSizeLarge": "MuiButton-textSizeLarge",
+                                        "textSizeSmall": "MuiButton-textSizeSmall",
+                                      }
+                                    }
+                                    color="primary"
+                                    disabled={false}
+                                    type="submit"
+                                    variant="contained"
+                                  >
+                                    <WithStyles(ForwardRef(ButtonBase))
+                                      className="MuiButton-root MuiButton-contained MuiButton-containedPrimary"
+                                      component="button"
+                                      disabled={false}
+                                      focusRipple={true}
+                                      focusVisibleClassName="Mui-focusVisible"
+                                      type="submit"
+                                    >
+                                      <ForwardRef(ButtonBase)
+                                        className="MuiButton-root MuiButton-contained MuiButton-containedPrimary"
+                                        classes={
+                                          Object {
+                                            "disabled": "Mui-disabled",
+                                            "focusVisible": "Mui-focusVisible",
+                                            "root": "MuiButtonBase-root",
+                                          }
+                                        }
+                                        component="button"
+                                        disabled={false}
+                                        focusRipple={true}
+                                        focusVisibleClassName="Mui-focusVisible"
+                                        type="submit"
+                                      >
+                                        <button
+                                          className="MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary"
+                                          disabled={false}
+                                          onBlur={[Function]}
+                                          onDragLeave={[Function]}
+                                          onFocus={[Function]}
+                                          onKeyDown={[Function]}
+                                          onKeyUp={[Function]}
+                                          onMouseDown={[Function]}
+                                          onMouseLeave={[Function]}
+                                          onMouseUp={[Function]}
+                                          onTouchEnd={[Function]}
+                                          onTouchMove={[Function]}
+                                          onTouchStart={[Function]}
+                                          tabIndex={0}
+                                          type="submit"
+                                        >
+                                          <span
+                                            className="MuiButton-label"
+                                          >
+                                            LOG IN
+                                          </span>
+                                          <NoSsr>
+                                            <WithStyles(undefined)
+                                              center={false}
+                                            >
+                                              <ForwardRef(TouchRipple)
+                                                center={false}
+                                                classes={
+                                                  Object {
+                                                    "child": "MuiTouchRipple-child",
+                                                    "childLeaving": "MuiTouchRipple-childLeaving",
+                                                    "childPulsate": "MuiTouchRipple-childPulsate",
+                                                    "ripple": "MuiTouchRipple-ripple",
+                                                    "ripplePulsate": "MuiTouchRipple-ripplePulsate",
+                                                    "rippleVisible": "MuiTouchRipple-rippleVisible",
+                                                    "root": "MuiTouchRipple-root",
+                                                  }
+                                                }
+                                              >
+                                                <span
+                                                  className="MuiTouchRipple-root"
+                                                >
+                                                  <TransitionGroup
+                                                    childFactory={[Function]}
+                                                    component={null}
+                                                    exit={true}
+                                                  />
+                                                </span>
+                                              </ForwardRef(TouchRipple)>
+                                            </WithStyles(undefined)>
+                                          </NoSsr>
+                                        </button>
+                                      </ForwardRef(ButtonBase)>
+                                    </WithStyles(ForwardRef(ButtonBase))>
+                                  </ForwardRef(Button)>
+                                </WithStyles(ForwardRef(Button))>
+                              </div>
+                              <div
+                                className="login-createAccount-11"
+                              >
+                                <WithStyles(ForwardRef(Link))
+                                  color="inherit"
+                                  component={
+                                    Object {
+                                      "$$typeof": Symbol(react.forward_ref),
+                                      "displayName": "Link",
+                                      "propTypes": Object {
+                                        "innerRef": [Function],
+                                        "onClick": [Function],
+                                        "replace": [Function],
+                                        "target": [Function],
+                                        "to": [Function],
+                                      },
+                                      "render": [Function],
+                                    }
+                                  }
+                                  to="/create-account"
+                                  variant="body2"
+                                >
+                                  <ForwardRef(Link)
+                                    classes={
+                                      Object {
+                                        "button": "MuiLink-button",
+                                        "focusVisible": "Mui-focusVisible",
+                                        "root": "MuiLink-root",
+                                        "underlineAlways": "MuiLink-underlineAlways",
+                                        "underlineHover": "MuiLink-underlineHover",
+                                        "underlineNone": "MuiLink-underlineNone",
+                                      }
+                                    }
+                                    color="inherit"
+                                    component={
+                                      Object {
+                                        "$$typeof": Symbol(react.forward_ref),
+                                        "displayName": "Link",
+                                        "propTypes": Object {
+                                          "innerRef": [Function],
+                                          "onClick": [Function],
+                                          "replace": [Function],
+                                          "target": [Function],
+                                          "to": [Function],
+                                        },
+                                        "render": [Function],
+                                      }
+                                    }
+                                    to="/create-account"
+                                    variant="body2"
+                                  >
+                                    <WithStyles(ForwardRef(Typography))
+                                      className="MuiLink-root MuiLink-underlineHover"
+                                      color="inherit"
+                                      component={
+                                        Object {
+                                          "$$typeof": Symbol(react.forward_ref),
+                                          "displayName": "Link",
+                                          "propTypes": Object {
+                                            "innerRef": [Function],
+                                            "onClick": [Function],
+                                            "replace": [Function],
+                                            "target": [Function],
+                                            "to": [Function],
+                                          },
+                                          "render": [Function],
+                                        }
+                                      }
+                                      onBlur={[Function]}
+                                      onFocus={[Function]}
+                                      to="/create-account"
+                                      variant="body2"
+                                    >
+                                      <ForwardRef(Typography)
+                                        className="MuiLink-root MuiLink-underlineHover"
+                                        classes={
+                                          Object {
+                                            "alignCenter": "MuiTypography-alignCenter",
+                                            "alignJustify": "MuiTypography-alignJustify",
+                                            "alignLeft": "MuiTypography-alignLeft",
+                                            "alignRight": "MuiTypography-alignRight",
+                                            "body1": "MuiTypography-body1",
+                                            "body2": "MuiTypography-body2",
+                                            "button": "MuiTypography-button",
+                                            "caption": "MuiTypography-caption",
+                                            "colorError": "MuiTypography-colorError",
+                                            "colorInherit": "MuiTypography-colorInherit",
+                                            "colorPrimary": "MuiTypography-colorPrimary",
+                                            "colorSecondary": "MuiTypography-colorSecondary",
+                                            "colorTextPrimary": "MuiTypography-colorTextPrimary",
+                                            "colorTextSecondary": "MuiTypography-colorTextSecondary",
+                                            "displayBlock": "MuiTypography-displayBlock",
+                                            "displayInline": "MuiTypography-displayInline",
+                                            "gutterBottom": "MuiTypography-gutterBottom",
+                                            "h1": "MuiTypography-h1",
+                                            "h2": "MuiTypography-h2",
+                                            "h3": "MuiTypography-h3",
+                                            "h4": "MuiTypography-h4",
+                                            "h5": "MuiTypography-h5",
+                                            "h6": "MuiTypography-h6",
+                                            "noWrap": "MuiTypography-noWrap",
+                                            "overline": "MuiTypography-overline",
+                                            "paragraph": "MuiTypography-paragraph",
+                                            "root": "MuiTypography-root",
+                                            "srOnly": "MuiTypography-srOnly",
+                                            "subtitle1": "MuiTypography-subtitle1",
+                                            "subtitle2": "MuiTypography-subtitle2",
+                                          }
+                                        }
+                                        color="inherit"
+                                        component={
+                                          Object {
+                                            "$$typeof": Symbol(react.forward_ref),
+                                            "displayName": "Link",
+                                            "propTypes": Object {
+                                              "innerRef": [Function],
+                                              "onClick": [Function],
+                                              "replace": [Function],
+                                              "target": [Function],
+                                              "to": [Function],
+                                            },
+                                            "render": [Function],
+                                          }
+                                        }
+                                        onBlur={[Function]}
+                                        onFocus={[Function]}
+                                        to="/create-account"
+                                        variant="body2"
+                                      >
+                                        <Link
+                                          className="MuiTypography-root MuiLink-root MuiLink-underlineHover MuiTypography-body2 MuiTypography-colorInherit"
+                                          onBlur={[Function]}
+                                          onFocus={[Function]}
+                                          to="/create-account"
+                                        >
+                                          <LinkAnchor
+                                            className="MuiTypography-root MuiLink-root MuiLink-underlineHover MuiTypography-body2 MuiTypography-colorInherit"
+                                            href="/create-account"
+                                            navigate={[Function]}
+                                            onBlur={[Function]}
+                                            onFocus={[Function]}
+                                          >
+                                            <a
+                                              className="MuiTypography-root MuiLink-root MuiLink-underlineHover MuiTypography-body2 MuiTypography-colorInherit"
+                                              href="/create-account"
+                                              onBlur={[Function]}
+                                              onClick={[Function]}
+                                              onFocus={[Function]}
+                                            >
+                                              Need to create an account instead?
+                                            </a>
+                                          </LinkAnchor>
+                                        </Link>
+                                      </ForwardRef(Typography)>
+                                    </WithStyles(ForwardRef(Typography))>
+                                  </ForwardRef(Link)>
+                                </WithStyles(ForwardRef(Link))>
+                              </div>
+                            </div>
+                          </div>
+                        </form>
+                      </Form>
+                    </Formik>
+                  </div>
+                </div>
+              </ForwardRef(Paper)>
+            </WithStyles(ForwardRef(Paper))>
+          </login>
+        </WithStyles(login)>
+      </Connect(WithStyles(login))>
+    </Provider>
+  </Router>
+</BrowserRouter>
+`;
