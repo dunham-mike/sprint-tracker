@@ -67,4 +67,16 @@ describe('Render Input', () => {
         expect(InputComponent).toMatchSnapshot();
     });
 
+    it('renders Input component when it is invalid correctly', () => {  
+        const props = {
+            elementType: "input",
+            value: "input value",
+            valid: false,
+            shouldValidate: true,
+            touched: true,
+        };
+
+        const InputComponent = renderer.create(<Input {...props} />).toJSON();
+        expect(InputComponent).toMatchSnapshot();
+    });
 });
