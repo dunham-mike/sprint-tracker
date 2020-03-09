@@ -6,9 +6,10 @@ import { BrowserRouter } from 'react-router-dom';
 import toJson from 'enzyme-to-json';
 import configureStore from 'redux-mock-store';
 import { Redirect } from 'react-router-dom';
-import { act, Simulate } from 'react-dom/test-utils';
-import { fireEvent, wait } from '@testing-library/react';
 
+// import { createShallow } from '@material-ui/core/test-utils';
+// import { createMount } from '@material-ui/core/test-utils';
+// import { ThemeProvider } from '@material-ui/core/styles';
 
 import CreateAccount from './CreateAccount';
 
@@ -33,12 +34,18 @@ const mountSetup = (storeData) => {
         });
     }
 
-    // store.dispatch = jest.fn();
+    // const onKickoffSignup = jest.fn();
+
+    // const props = {
+    //     onKickoffSignup: onKickoffSignup
+    // }
 
     const enzymeMountWrapper = mount(
         <BrowserRouter>
             <Provider store={store}>
-                <CreateAccount />
+                <CreateAccount 
+                    // {...props}
+                />
             </Provider>
         </BrowserRouter>
     );

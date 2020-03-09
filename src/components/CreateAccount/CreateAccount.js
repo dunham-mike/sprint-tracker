@@ -81,7 +81,7 @@ const styles = theme => ({
     }
 });
 
-const createAccount = (props) => {
+export const createAccount = (props) => {
     const { classes } = props;
 
     let errorMessage = null;
