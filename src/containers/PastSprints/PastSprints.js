@@ -8,6 +8,7 @@ import Typography from '@material-ui/core/Typography';
 
 import PastSprint from './PastSprint/PastSprint';
 import SprintStatistics from '../../components/SprintStatistics/SprintStatistics';
+import ModalErrorBoundary from '../ErrorBoundary/ModalErrorBoundary/ModalErrorBoundary';
 
 const styles = theme => ({
     mainViewContainer: {
@@ -89,11 +90,15 @@ class PastSprints extends Component {
         if (this.state.displayingSprintStatistics) {
             sprintStatistics = (
                 <div>
-                    <SprintStatistics 
-                        sprintId = {this.state.sprintIdBeingViewed}
-                        sprintIndex= {this.state.sprintIndexBeingViewed}
-                        onCloseSprintStatistics = {this.closeSprintStatistics}
-                    />
+                    <ModalErrorBoundary
+                        onClose={this.closeSprintStatistics}
+                    >
+                        <SprintStatistics 
+                            sprintId = {this.state.sprintIdBeingViewed}
+                            sprintIndex= {this.state.sprintIndexBeingViewed}
+                            onCloseSprintStatistics = {this.closeSprintStatistics}
+                        />
+                    </ModalErrorBoundary>
                 </div>
             );
         }

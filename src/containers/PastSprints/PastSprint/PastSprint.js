@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 // import { connect } from 'react-redux';
-import * as moment from 'moment';
+// import * as moment from 'moment';
+// Changed import from 'import * as moment' to accommodate testing, per: https://github.com/palantir/blueprint/issues/959#issuecomment-562836914
+import moment from 'moment'; 
 
 import { withStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
