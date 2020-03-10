@@ -93,7 +93,7 @@ const sprintStatistics = (props) => {
             }
         }
         
-        return null;
+        // return null;
     }
 
     const calculateNumProjectsByGrouping = (grouping) => {
@@ -101,9 +101,9 @@ const sprintStatistics = (props) => {
         console.log('calculateNumProjectsByGrouping()');
 
         const sprintIndex = getSprintIndexBySprintId(props.sprintId);
-        if (sprintIndex === null) {
-            return null;
-        }
+        // if (sprintIndex === null) {
+        //     return null;
+        // }
         let projectCountByGrouping = {};
         const sprintProjectsArray = props.sprints[sprintIndex].projects;
 
@@ -114,9 +114,10 @@ const sprintStatistics = (props) => {
                 groupingHolder = sprintProjectsArray[i].manager.value;
             } else if (grouping === 'category') {
                 groupingHolder = sprintProjectsArray[i].category.value;
-            } else {
-                return null;
-            }
+            } 
+            // else {
+            //     return null;
+            // }
             
 
             if(projectCountByGrouping[groupingHolder]) {
@@ -134,9 +135,9 @@ const sprintStatistics = (props) => {
         console.log('calculateProjectPointsByGrouping()');
 
         const sprintIndex = getSprintIndexBySprintId(props.sprintId);
-        if (sprintIndex === null) {
-            return null;
-        }
+        // if (sprintIndex === null) {
+        //     return null;
+        // }
         let projectPointsByGrouping = {};
         const sprintProjectsArray = props.sprints[sprintIndex].projects;
 
@@ -147,9 +148,10 @@ const sprintStatistics = (props) => {
                 groupingHolder = sprintProjectsArray[i].manager.value;
             } else if (grouping === 'category') {
                 groupingHolder = sprintProjectsArray[i].category.value;
-            } else {
-                return null;
-            }
+            } 
+            // else {
+            //     return null;
+            // }
             
             const estimatedProjectSizeString = sprintProjectsArray[i].estimatedProjectSize.value;
             const projectPoints = Number(estimatedProjectSizeString.slice(0, estimatedProjectSizeString.indexOf(' ')));
@@ -166,18 +168,18 @@ const sprintStatistics = (props) => {
 
     const calculateTotalProjects = () => {
         const sprintIndex = getSprintIndexBySprintId(props.sprintId);
-        if (sprintIndex !== null) {
+        // if (sprintIndex !== null) {
             return props.sprints[sprintIndex].projects.length;
-        } else {
-            return null;
-        }
+        // } else {
+        //     return null;
+        // }
     }
 
     const calculateTotalProjectPoints = () => {
         const sprintIndex = getSprintIndexBySprintId(props.sprintId);
-        if (sprintIndex === null) {
-            return null;
-        }
+        // if (sprintIndex === null) {
+        //     return null;
+        // }
 
         let totalProjectPoints = 0;
         const sprintProjectsArray = props.sprints[sprintIndex].projects;
@@ -297,14 +299,14 @@ const sprintStatistics = (props) => {
 
     // Recharts
     const getSprintLength = () => {
-        if (props.sprintIndex !== null) {
+        // if (props.sprintIndex !== null) {
             const sprintForProject = props.sprints[props.sprintIndex];
             const sprintLengthInDays = sprintForProject.endDate.diff(sprintForProject.startDate, 'days') + 1; // Add 1 because dates are inclusive
             
             return Math.ceil(sprintLengthInDays / 7);
-        } else {
-            return null;
-        }
+        // } else {
+        //     return null;
+        // }
     }
 
     const progressData = generateProgressData(getSprintLength());
