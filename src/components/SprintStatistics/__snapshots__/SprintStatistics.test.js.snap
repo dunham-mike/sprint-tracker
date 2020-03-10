@@ -1,0 +1,2529 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SprintStatistics Component should match the snapshot 1`] = `
+<BrowserRouter>
+  <Router
+    history={
+      Object {
+        "action": "POP",
+        "block": [Function],
+        "createHref": [Function],
+        "go": [Function],
+        "goBack": [Function],
+        "goForward": [Function],
+        "length": 1,
+        "listen": [Function],
+        "location": Object {
+          "hash": "",
+          "pathname": "/",
+          "search": "",
+          "state": undefined,
+        },
+        "push": [Function],
+        "replace": [Function],
+      }
+    }
+  >
+    <Provider
+      store={
+        Object {
+          "clearActions": [Function],
+          "dispatch": [Function],
+          "getActions": [Function],
+          "getState": [Function],
+          "replaceReducer": [Function],
+          "subscribe": [Function],
+        }
+      }
+    >
+      <Connect(WithStyles(sprintStatistics))
+        onCloseSprintStatistics={[MockFunction]}
+        sprintId="test_sprintId"
+        sprintIndex={0}
+      >
+        <WithStyles(sprintStatistics)
+          dispatch={[Function]}
+          onCloseSprintStatistics={[MockFunction]}
+          sprintId="test_sprintId"
+          sprintIndex={0}
+          sprints={
+            Array [
+              Object {
+                "endDate": "2020-02-06T00:00:00.000Z",
+                "id": "test_sprintId",
+                "name": "Sprint #1",
+                "owner": "Mike",
+                "participants": "Mike, Bobby",
+                "projects": Array [
+                  Object {
+                    "category": Object {
+                      "value": "Grades & Transcripts",
+                    },
+                    "categoryLead": Object {
+                      "value": "Bobby",
+                    },
+                    "completionStatus": Object {
+                      "value": "",
+                    },
+                    "deliverableLink": Object {
+                      "value": "",
+                    },
+                    "deliverables": Object {
+                      "value": "Historical Illuminate courses matched with current equivalencies.",
+                    },
+                    "description": Object {
+                      "value": "-Audit all historical expeditions grades & match courses to equivalents",
+                    },
+                    "estimatedProjectSize": Object {
+                      "value": "3 - Small-to-Medium",
+                    },
+                    "externalDueDate": Object {
+                      "value": "",
+                    },
+                    "id": Object {
+                      "value": 1,
+                    },
+                    "manager": Object {
+                      "value": "Bobby",
+                    },
+                    "mustDo": Object {
+                      "value": "Nice-to-Have",
+                    },
+                    "name": Object {
+                      "value": "Verify course equivalencies & Grad Requirements in Illuminate",
+                    },
+                    "notCompletedExplanation": Object {
+                      "value": "",
+                    },
+                    "notes": Object {
+                      "value": "",
+                    },
+                    "statusEndOfWeek1": Object {
+                      "value": "25%",
+                    },
+                    "statusEndOfWeek2": Object {
+                      "value": "",
+                    },
+                    "statusEndOfWeek3": Object {
+                      "value": "",
+                    },
+                    "statusEndOfWeek4": Object {
+                      "value": "",
+                    },
+                    "statusEndOfWeek5": Object {
+                      "value": "",
+                    },
+                    "statusEndOfWeek6": Object {
+                      "value": "",
+                    },
+                    "statusEndOfWeek7": Object {
+                      "value": "",
+                    },
+                    "statusEndOfWeek8": Object {
+                      "value": "",
+                    },
+                  },
+                  Object {
+                    "category": Object {
+                      "value": "Grades & Transcripts",
+                    },
+                    "categoryLead": Object {
+                      "value": "Bobby",
+                    },
+                    "completionStatus": Object {
+                      "value": "",
+                    },
+                    "deliverableLink": Object {
+                      "value": "",
+                    },
+                    "deliverables": Object {
+                      "value": "Historical Illuminate courses matched with current equivalencies.",
+                    },
+                    "description": Object {
+                      "value": "-Audit all historical expeditions grades & match courses to equivalents",
+                    },
+                    "estimatedProjectSize": Object {
+                      "value": "3 - Small-to-Medium",
+                    },
+                    "externalDueDate": Object {
+                      "value": "",
+                    },
+                    "id": Object {
+                      "value": 2,
+                    },
+                    "manager": Object {
+                      "value": "Mike",
+                    },
+                    "mustDo": Object {
+                      "value": "Nice-to-Have",
+                    },
+                    "name": Object {
+                      "value": "Verify course equivalencies & Grad Requirements in Illuminate",
+                    },
+                    "notCompletedExplanation": Object {
+                      "value": "",
+                    },
+                    "notes": Object {
+                      "value": "",
+                    },
+                    "statusEndOfWeek1": Object {
+                      "value": "",
+                    },
+                    "statusEndOfWeek2": Object {
+                      "value": "",
+                    },
+                    "statusEndOfWeek3": Object {
+                      "value": "",
+                    },
+                    "statusEndOfWeek4": Object {
+                      "value": "",
+                    },
+                    "statusEndOfWeek5": Object {
+                      "value": "",
+                    },
+                    "statusEndOfWeek6": Object {
+                      "value": "",
+                    },
+                    "statusEndOfWeek7": Object {
+                      "value": "",
+                    },
+                    "statusEndOfWeek8": Object {
+                      "value": "",
+                    },
+                  },
+                  Object {
+                    "category": Object {
+                      "value": "Grades & Transcripts",
+                    },
+                    "categoryLead": Object {
+                      "value": "Bobby",
+                    },
+                    "completionStatus": Object {
+                      "value": "",
+                    },
+                    "deliverableLink": Object {
+                      "value": "",
+                    },
+                    "deliverables": Object {
+                      "value": "Historical Illuminate courses matched with current equivalencies.",
+                    },
+                    "description": Object {
+                      "value": "-Audit all historical expeditions grades & match courses to equivalents",
+                    },
+                    "estimatedProjectSize": Object {
+                      "value": "1 - Extra Small",
+                    },
+                    "externalDueDate": Object {
+                      "value": "",
+                    },
+                    "id": Object {
+                      "value": 3,
+                    },
+                    "manager": Object {
+                      "value": "Bobby",
+                    },
+                    "mustDo": Object {
+                      "value": "Nice-to-Have",
+                    },
+                    "name": Object {
+                      "value": "Verify course equivalencies & Grad Requirements in Illuminate",
+                    },
+                    "notCompletedExplanation": Object {
+                      "value": "",
+                    },
+                    "notes": Object {
+                      "value": "",
+                    },
+                    "statusEndOfWeek1": Object {
+                      "value": "",
+                    },
+                    "statusEndOfWeek2": Object {
+                      "value": "",
+                    },
+                    "statusEndOfWeek3": Object {
+                      "value": "",
+                    },
+                    "statusEndOfWeek4": Object {
+                      "value": "",
+                    },
+                    "statusEndOfWeek5": Object {
+                      "value": "",
+                    },
+                    "statusEndOfWeek6": Object {
+                      "value": "",
+                    },
+                    "statusEndOfWeek7": Object {
+                      "value": "",
+                    },
+                    "statusEndOfWeek8": Object {
+                      "value": "",
+                    },
+                  },
+                ],
+                "startDate": "2020-01-24T00:00:00.000Z",
+              },
+              Object {
+                "endDate": "2020-03-06T00:00:00.000Z",
+                "id": "test_sprintId2",
+                "name": "Sprint #2",
+                "owner": "Mike",
+                "participants": "Mike, Bobby",
+                "projects": Array [],
+                "startDate": "2020-02-10T00:00:00.000Z",
+              },
+            ]
+          }
+        >
+          <sprintStatistics
+            classes={
+              Object {
+                "blue": "sprintStatistics-blue-2",
+                "cancelButtonContainer": "sprintStatistics-cancelButtonContainer-1",
+                "centeredContentSection": "sprintStatistics-centeredContentSection-7",
+                "contentContainer": "sprintStatistics-contentContainer-5",
+                "contentSection": "sprintStatistics-contentSection-6",
+                "horizontalRule": "sprintStatistics-horizontalRule-9",
+                "paper": "sprintStatistics-paper-11",
+                "red": "sprintStatistics-red-3",
+                "title": "sprintStatistics-title-4",
+                "unorderedList": "sprintStatistics-unorderedList-8",
+                "xsOnlyHorizontalRule": "sprintStatistics-xsOnlyHorizontalRule-10",
+              }
+            }
+            dispatch={[Function]}
+            onCloseSprintStatistics={[MockFunction]}
+            sprintId="test_sprintId"
+            sprintIndex={0}
+            sprints={
+              Array [
+                Object {
+                  "endDate": "2020-02-06T00:00:00.000Z",
+                  "id": "test_sprintId",
+                  "name": "Sprint #1",
+                  "owner": "Mike",
+                  "participants": "Mike, Bobby",
+                  "projects": Array [
+                    Object {
+                      "category": Object {
+                        "value": "Grades & Transcripts",
+                      },
+                      "categoryLead": Object {
+                        "value": "Bobby",
+                      },
+                      "completionStatus": Object {
+                        "value": "",
+                      },
+                      "deliverableLink": Object {
+                        "value": "",
+                      },
+                      "deliverables": Object {
+                        "value": "Historical Illuminate courses matched with current equivalencies.",
+                      },
+                      "description": Object {
+                        "value": "-Audit all historical expeditions grades & match courses to equivalents",
+                      },
+                      "estimatedProjectSize": Object {
+                        "value": "3 - Small-to-Medium",
+                      },
+                      "externalDueDate": Object {
+                        "value": "",
+                      },
+                      "id": Object {
+                        "value": 1,
+                      },
+                      "manager": Object {
+                        "value": "Bobby",
+                      },
+                      "mustDo": Object {
+                        "value": "Nice-to-Have",
+                      },
+                      "name": Object {
+                        "value": "Verify course equivalencies & Grad Requirements in Illuminate",
+                      },
+                      "notCompletedExplanation": Object {
+                        "value": "",
+                      },
+                      "notes": Object {
+                        "value": "",
+                      },
+                      "statusEndOfWeek1": Object {
+                        "value": "25%",
+                      },
+                      "statusEndOfWeek2": Object {
+                        "value": "",
+                      },
+                      "statusEndOfWeek3": Object {
+                        "value": "",
+                      },
+                      "statusEndOfWeek4": Object {
+                        "value": "",
+                      },
+                      "statusEndOfWeek5": Object {
+                        "value": "",
+                      },
+                      "statusEndOfWeek6": Object {
+                        "value": "",
+                      },
+                      "statusEndOfWeek7": Object {
+                        "value": "",
+                      },
+                      "statusEndOfWeek8": Object {
+                        "value": "",
+                      },
+                    },
+                    Object {
+                      "category": Object {
+                        "value": "Grades & Transcripts",
+                      },
+                      "categoryLead": Object {
+                        "value": "Bobby",
+                      },
+                      "completionStatus": Object {
+                        "value": "",
+                      },
+                      "deliverableLink": Object {
+                        "value": "",
+                      },
+                      "deliverables": Object {
+                        "value": "Historical Illuminate courses matched with current equivalencies.",
+                      },
+                      "description": Object {
+                        "value": "-Audit all historical expeditions grades & match courses to equivalents",
+                      },
+                      "estimatedProjectSize": Object {
+                        "value": "3 - Small-to-Medium",
+                      },
+                      "externalDueDate": Object {
+                        "value": "",
+                      },
+                      "id": Object {
+                        "value": 2,
+                      },
+                      "manager": Object {
+                        "value": "Mike",
+                      },
+                      "mustDo": Object {
+                        "value": "Nice-to-Have",
+                      },
+                      "name": Object {
+                        "value": "Verify course equivalencies & Grad Requirements in Illuminate",
+                      },
+                      "notCompletedExplanation": Object {
+                        "value": "",
+                      },
+                      "notes": Object {
+                        "value": "",
+                      },
+                      "statusEndOfWeek1": Object {
+                        "value": "",
+                      },
+                      "statusEndOfWeek2": Object {
+                        "value": "",
+                      },
+                      "statusEndOfWeek3": Object {
+                        "value": "",
+                      },
+                      "statusEndOfWeek4": Object {
+                        "value": "",
+                      },
+                      "statusEndOfWeek5": Object {
+                        "value": "",
+                      },
+                      "statusEndOfWeek6": Object {
+                        "value": "",
+                      },
+                      "statusEndOfWeek7": Object {
+                        "value": "",
+                      },
+                      "statusEndOfWeek8": Object {
+                        "value": "",
+                      },
+                    },
+                    Object {
+                      "category": Object {
+                        "value": "Grades & Transcripts",
+                      },
+                      "categoryLead": Object {
+                        "value": "Bobby",
+                      },
+                      "completionStatus": Object {
+                        "value": "",
+                      },
+                      "deliverableLink": Object {
+                        "value": "",
+                      },
+                      "deliverables": Object {
+                        "value": "Historical Illuminate courses matched with current equivalencies.",
+                      },
+                      "description": Object {
+                        "value": "-Audit all historical expeditions grades & match courses to equivalents",
+                      },
+                      "estimatedProjectSize": Object {
+                        "value": "1 - Extra Small",
+                      },
+                      "externalDueDate": Object {
+                        "value": "",
+                      },
+                      "id": Object {
+                        "value": 3,
+                      },
+                      "manager": Object {
+                        "value": "Bobby",
+                      },
+                      "mustDo": Object {
+                        "value": "Nice-to-Have",
+                      },
+                      "name": Object {
+                        "value": "Verify course equivalencies & Grad Requirements in Illuminate",
+                      },
+                      "notCompletedExplanation": Object {
+                        "value": "",
+                      },
+                      "notes": Object {
+                        "value": "",
+                      },
+                      "statusEndOfWeek1": Object {
+                        "value": "",
+                      },
+                      "statusEndOfWeek2": Object {
+                        "value": "",
+                      },
+                      "statusEndOfWeek3": Object {
+                        "value": "",
+                      },
+                      "statusEndOfWeek4": Object {
+                        "value": "",
+                      },
+                      "statusEndOfWeek5": Object {
+                        "value": "",
+                      },
+                      "statusEndOfWeek6": Object {
+                        "value": "",
+                      },
+                      "statusEndOfWeek7": Object {
+                        "value": "",
+                      },
+                      "statusEndOfWeek8": Object {
+                        "value": "",
+                      },
+                    },
+                  ],
+                  "startDate": "2020-01-24T00:00:00.000Z",
+                },
+                Object {
+                  "endDate": "2020-03-06T00:00:00.000Z",
+                  "id": "test_sprintId2",
+                  "name": "Sprint #2",
+                  "owner": "Mike",
+                  "participants": "Mike, Bobby",
+                  "projects": Array [],
+                  "startDate": "2020-02-10T00:00:00.000Z",
+                },
+              ]
+            }
+          >
+            <ForwardRef(Modal)
+              aria-describedby="simple-modal-description"
+              aria-labelledby="simple-modal-title"
+              onClose={[MockFunction]}
+              open={true}
+            >
+              <ForwardRef(Portal)
+                disablePortal={false}
+              >
+                <Portal
+                  containerInfo={
+                    <body
+                      style="padding-right: 0px; overflow: hidden;"
+                    >
+                      <div
+                        aria-describedby="simple-modal-description"
+                        aria-labelledby="simple-modal-title"
+                        role="presentation"
+                        style="position: fixed; z-index: 1300; right: 0px; bottom: 0px; top: 0px; left: 0px;"
+                      >
+                        <div
+                          aria-hidden="true"
+                          style="z-index: -1; position: fixed; right: 0px; bottom: 0px; top: 0px; left: 0px; background-color: rgba(0, 0, 0, 0.5);"
+                        />
+                        <div
+                          data-test="sentinelStart"
+                          tabindex="0"
+                        />
+                        <div
+                          class="MuiPaper-root sprintStatistics-paper-11 MuiPaper-elevation1 MuiPaper-rounded"
+                          tabindex="-1"
+                        >
+                          <div
+                            class="sprintStatistics-cancelButtonContainer-1"
+                          >
+                            <div
+                              class="cancelButton-cancelButtonContainer-40"
+                            >
+                              <svg
+                                aria-hidden="true"
+                                class="MuiSvgIcon-root MuiSvgIcon-fontSizeLarge"
+                                focusable="false"
+                                role="presentation"
+                                viewBox="0 0 24 24"
+                              >
+                                <path
+                                  d="M12 2C6.47 2 2 6.47 2 12s4.47 10 10 10 10-4.47 10-10S17.53 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm3.59-13L12 10.59 8.41 7 7 8.41 10.59 12 7 15.59 8.41 17 12 13.41 15.59 17 17 15.59 13.41 12 17 8.41z"
+                                />
+                              </svg>
+                            </div>
+                          </div>
+                          <div>
+                            <div
+                              class="MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-2"
+                            >
+                              <div
+                                class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12"
+                              >
+                                <div
+                                  class="sprintStatistics-title-4"
+                                >
+                                  <h4
+                                    class="MuiTypography-root MuiTypography-h4"
+                                  >
+                                    Sprint #1
+                                     Overview
+                                  </h4>
+                                </div>
+                              </div>
+                              <div
+                                class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-md-4"
+                              >
+                                <div
+                                  class="sprintStatistics-contentContainer-5"
+                                >
+                                  <div
+                                    class="sprintStatistics-contentSection-6"
+                                  >
+                                    <h6
+                                      class="MuiTypography-root MuiTypography-h6"
+                                    >
+                                      Sprint Size
+                                    </h6>
+                                    <ul
+                                      class="sprintStatistics-unorderedList-8"
+                                    >
+                                      <li>
+                                        <p
+                                          class="MuiTypography-root MuiTypography-body2"
+                                        >
+                                          3
+                                           projects
+                                        </p>
+                                      </li>
+                                      <li>
+                                        <p
+                                          class="MuiTypography-root MuiTypography-body2"
+                                        >
+                                          7
+                                           project points
+                                           (3.5 avg. per PM)
+                                        </p>
+                                      </li>
+                                    </ul>
+                                  </div>
+                                  <hr
+                                    class="sprintStatistics-horizontalRule-9"
+                                  />
+                                  <div
+                                    class="sprintStatistics-contentSection-6"
+                                  >
+                                    <h6
+                                      class="MuiTypography-root MuiTypography-h6"
+                                    >
+                                      Allocation by Project Manager
+                                    </h6>
+                                    <ul
+                                      class="MuiList-root MuiList-padding"
+                                    >
+                                      <div>
+                                        <li
+                                          class="MuiListItem-root MuiListItem-gutters"
+                                        >
+                                          <div
+                                            class="MuiListItemAvatar-root"
+                                          >
+                                            <div
+                                              class="MuiAvatar-root MuiAvatar-circle sprintStatistics-blue-2 MuiAvatar-colorDefault"
+                                            >
+                                              B
+                                            </div>
+                                          </div>
+                                          <div
+                                            class="MuiListItemText-root MuiListItemText-multiline"
+                                          >
+                                            <span
+                                              class="MuiTypography-root MuiListItemText-primary MuiTypography-body1"
+                                            >
+                                              Bobby
+                                            </span>
+                                            <p
+                                              class="MuiTypography-root MuiListItemText-secondary MuiTypography-body2 MuiTypography-colorTextSecondary"
+                                            >
+                                              2 projects  |  4 project points
+                                            </p>
+                                          </div>
+                                        </li>
+                                      </div>
+                                      <div>
+                                        <li
+                                          class="MuiListItem-root MuiListItem-gutters"
+                                        >
+                                          <div
+                                            class="MuiListItemAvatar-root"
+                                          >
+                                            <div
+                                              class="MuiAvatar-root MuiAvatar-circle sprintStatistics-blue-2 MuiAvatar-colorDefault"
+                                            >
+                                              M
+                                            </div>
+                                          </div>
+                                          <div
+                                            class="MuiListItemText-root MuiListItemText-multiline"
+                                          >
+                                            <span
+                                              class="MuiTypography-root MuiListItemText-primary MuiTypography-body1"
+                                            >
+                                              Mike
+                                            </span>
+                                            <p
+                                              class="MuiTypography-root MuiListItemText-secondary MuiTypography-body2 MuiTypography-colorTextSecondary"
+                                            >
+                                              1 project  |  3 project points
+                                            </p>
+                                          </div>
+                                        </li>
+                                      </div>
+                                    </ul>
+                                  </div>
+                                  <hr
+                                    class="sprintStatistics-horizontalRule-9"
+                                  />
+                                  <div
+                                    class="sprintStatistics-contentSection-6"
+                                  >
+                                    <h6
+                                      class="MuiTypography-root MuiTypography-h6"
+                                    >
+                                      Projects by Category
+                                    </h6>
+                                    <ul
+                                      class="MuiList-root MuiList-padding"
+                                    >
+                                      <div>
+                                        <li
+                                          class="MuiListItem-root MuiListItem-gutters"
+                                        >
+                                          <div
+                                            class="MuiListItemAvatar-root"
+                                          >
+                                            <div
+                                              class="MuiAvatar-root MuiAvatar-circle sprintStatistics-red-3 MuiAvatar-colorDefault"
+                                            >
+                                              G
+                                            </div>
+                                          </div>
+                                          <div
+                                            class="MuiListItemText-root MuiListItemText-multiline"
+                                          >
+                                            <span
+                                              class="MuiTypography-root MuiListItemText-primary MuiTypography-body1"
+                                            >
+                                              Grades & Transcripts
+                                            </span>
+                                            <p
+                                              class="MuiTypography-root MuiListItemText-secondary MuiTypography-body2 MuiTypography-colorTextSecondary"
+                                            >
+                                              3 projects  |  7 project points
+                                            </p>
+                                          </div>
+                                        </li>
+                                      </div>
+                                    </ul>
+                                  </div>
+                                </div>
+                              </div>
+                              <div
+                                class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-md-8"
+                              >
+                                <div
+                                  class="sprintStatistics-contentContainer-5"
+                                >
+                                  <hr
+                                    class="sprintStatistics-xsOnlyHorizontalRule-10"
+                                  />
+                                  <div
+                                    class="sprintStatistics-contentSection-6"
+                                  >
+                                    <h6
+                                      class="MuiTypography-root MuiTypography-h6"
+                                    >
+                                      Sprint Progress
+                                    </h6>
+                                  </div>
+                                  <div
+                                    class="sprintStatistics-centeredContentSection-7"
+                                  >
+                                    <div
+                                      class="recharts-responsive-container"
+                                      id="undefined"
+                                      style="width: 100%; height: 350px;"
+                                    >
+                                      <div />
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div
+                          data-test="sentinelEnd"
+                          tabindex="0"
+                        />
+                      </div>
+                    </body>
+                  }
+                >
+                  <div
+                    aria-describedby="simple-modal-description"
+                    aria-labelledby="simple-modal-title"
+                    onKeyDown={[Function]}
+                    role="presentation"
+                    style={
+                      Object {
+                        "bottom": 0,
+                        "left": 0,
+                        "position": "fixed",
+                        "right": 0,
+                        "top": 0,
+                        "zIndex": 1300,
+                      }
+                    }
+                  >
+                    <ForwardRef(SimpleBackdrop)
+                      onClick={[Function]}
+                      open={true}
+                    >
+                      <div
+                        aria-hidden={true}
+                        onClick={[Function]}
+                        style={
+                          Object {
+                            "WebkitTapHighlightColor": "transparent",
+                            "backgroundColor": "rgba(0, 0, 0, 0.5)",
+                            "bottom": 0,
+                            "left": 0,
+                            "position": "fixed",
+                            "right": 0,
+                            "top": 0,
+                            "zIndex": -1,
+                          }
+                        }
+                      />
+                    </ForwardRef(SimpleBackdrop)>
+                    <TrapFocus
+                      disableAutoFocus={false}
+                      disableEnforceFocus={false}
+                      disableRestoreFocus={false}
+                      getDoc={[Function]}
+                      isEnabled={[Function]}
+                      open={true}
+                    >
+                      <div
+                        data-test="sentinelStart"
+                        tabIndex={0}
+                      />
+                      <WithStyles(ForwardRef(Paper))
+                        className="sprintStatistics-paper-11"
+                        tabIndex="-1"
+                      >
+                        <ForwardRef(Paper)
+                          className="sprintStatistics-paper-11"
+                          classes={
+                            Object {
+                              "elevation0": "MuiPaper-elevation0",
+                              "elevation1": "MuiPaper-elevation1",
+                              "elevation10": "MuiPaper-elevation10",
+                              "elevation11": "MuiPaper-elevation11",
+                              "elevation12": "MuiPaper-elevation12",
+                              "elevation13": "MuiPaper-elevation13",
+                              "elevation14": "MuiPaper-elevation14",
+                              "elevation15": "MuiPaper-elevation15",
+                              "elevation16": "MuiPaper-elevation16",
+                              "elevation17": "MuiPaper-elevation17",
+                              "elevation18": "MuiPaper-elevation18",
+                              "elevation19": "MuiPaper-elevation19",
+                              "elevation2": "MuiPaper-elevation2",
+                              "elevation20": "MuiPaper-elevation20",
+                              "elevation21": "MuiPaper-elevation21",
+                              "elevation22": "MuiPaper-elevation22",
+                              "elevation23": "MuiPaper-elevation23",
+                              "elevation24": "MuiPaper-elevation24",
+                              "elevation3": "MuiPaper-elevation3",
+                              "elevation4": "MuiPaper-elevation4",
+                              "elevation5": "MuiPaper-elevation5",
+                              "elevation6": "MuiPaper-elevation6",
+                              "elevation7": "MuiPaper-elevation7",
+                              "elevation8": "MuiPaper-elevation8",
+                              "elevation9": "MuiPaper-elevation9",
+                              "outlined": "MuiPaper-outlined",
+                              "root": "MuiPaper-root",
+                              "rounded": "MuiPaper-rounded",
+                            }
+                          }
+                          tabIndex="-1"
+                        >
+                          <div
+                            className="MuiPaper-root sprintStatistics-paper-11 MuiPaper-elevation1 MuiPaper-rounded"
+                            tabIndex="-1"
+                          >
+                            <div
+                              className="sprintStatistics-cancelButtonContainer-1"
+                            >
+                              <WithStyles(cancelButton)
+                                clicked={[MockFunction]}
+                              >
+                                <cancelButton
+                                  classes={
+                                    Object {
+                                      "cancelButtonContainer": "cancelButton-cancelButtonContainer-40",
+                                    }
+                                  }
+                                  clicked={[MockFunction]}
+                                >
+                                  <div
+                                    className="cancelButton-cancelButtonContainer-40"
+                                    onClick={[MockFunction]}
+                                  >
+                                    <ForwardRef
+                                      fontSize="large"
+                                    >
+                                      <WithStyles(ForwardRef(SvgIcon))
+                                        fontSize="large"
+                                      >
+                                        <ForwardRef(SvgIcon)
+                                          classes={
+                                            Object {
+                                              "colorAction": "MuiSvgIcon-colorAction",
+                                              "colorDisabled": "MuiSvgIcon-colorDisabled",
+                                              "colorError": "MuiSvgIcon-colorError",
+                                              "colorPrimary": "MuiSvgIcon-colorPrimary",
+                                              "colorSecondary": "MuiSvgIcon-colorSecondary",
+                                              "fontSizeInherit": "MuiSvgIcon-fontSizeInherit",
+                                              "fontSizeLarge": "MuiSvgIcon-fontSizeLarge",
+                                              "fontSizeSmall": "MuiSvgIcon-fontSizeSmall",
+                                              "root": "MuiSvgIcon-root",
+                                            }
+                                          }
+                                          fontSize="large"
+                                        >
+                                          <svg
+                                            aria-hidden="true"
+                                            className="MuiSvgIcon-root MuiSvgIcon-fontSizeLarge"
+                                            focusable="false"
+                                            role="presentation"
+                                            viewBox="0 0 24 24"
+                                          >
+                                            <path
+                                              d="M12 2C6.47 2 2 6.47 2 12s4.47 10 10 10 10-4.47 10-10S17.53 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm3.59-13L12 10.59 8.41 7 7 8.41 10.59 12 7 15.59 8.41 17 12 13.41 15.59 17 17 15.59 13.41 12 17 8.41z"
+                                            />
+                                          </svg>
+                                        </ForwardRef(SvgIcon)>
+                                      </WithStyles(ForwardRef(SvgIcon))>
+                                    </ForwardRef>
+                                  </div>
+                                </cancelButton>
+                              </WithStyles(cancelButton)>
+                            </div>
+                            <div>
+                              <WithStyles(ForwardRef(Grid))
+                                container={true}
+                                spacing={2}
+                              >
+                                <ForwardRef(Grid)
+                                  classes={
+                                    Object {
+                                      "align-content-xs-center": "MuiGrid-align-content-xs-center",
+                                      "align-content-xs-flex-end": "MuiGrid-align-content-xs-flex-end",
+                                      "align-content-xs-flex-start": "MuiGrid-align-content-xs-flex-start",
+                                      "align-content-xs-space-around": "MuiGrid-align-content-xs-space-around",
+                                      "align-content-xs-space-between": "MuiGrid-align-content-xs-space-between",
+                                      "align-items-xs-baseline": "MuiGrid-align-items-xs-baseline",
+                                      "align-items-xs-center": "MuiGrid-align-items-xs-center",
+                                      "align-items-xs-flex-end": "MuiGrid-align-items-xs-flex-end",
+                                      "align-items-xs-flex-start": "MuiGrid-align-items-xs-flex-start",
+                                      "container": "MuiGrid-container",
+                                      "direction-xs-column": "MuiGrid-direction-xs-column",
+                                      "direction-xs-column-reverse": "MuiGrid-direction-xs-column-reverse",
+                                      "direction-xs-row-reverse": "MuiGrid-direction-xs-row-reverse",
+                                      "grid-lg-1": "MuiGrid-grid-lg-1",
+                                      "grid-lg-10": "MuiGrid-grid-lg-10",
+                                      "grid-lg-11": "MuiGrid-grid-lg-11",
+                                      "grid-lg-12": "MuiGrid-grid-lg-12",
+                                      "grid-lg-2": "MuiGrid-grid-lg-2",
+                                      "grid-lg-3": "MuiGrid-grid-lg-3",
+                                      "grid-lg-4": "MuiGrid-grid-lg-4",
+                                      "grid-lg-5": "MuiGrid-grid-lg-5",
+                                      "grid-lg-6": "MuiGrid-grid-lg-6",
+                                      "grid-lg-7": "MuiGrid-grid-lg-7",
+                                      "grid-lg-8": "MuiGrid-grid-lg-8",
+                                      "grid-lg-9": "MuiGrid-grid-lg-9",
+                                      "grid-lg-auto": "MuiGrid-grid-lg-auto",
+                                      "grid-lg-true": "MuiGrid-grid-lg-true",
+                                      "grid-md-1": "MuiGrid-grid-md-1",
+                                      "grid-md-10": "MuiGrid-grid-md-10",
+                                      "grid-md-11": "MuiGrid-grid-md-11",
+                                      "grid-md-12": "MuiGrid-grid-md-12",
+                                      "grid-md-2": "MuiGrid-grid-md-2",
+                                      "grid-md-3": "MuiGrid-grid-md-3",
+                                      "grid-md-4": "MuiGrid-grid-md-4",
+                                      "grid-md-5": "MuiGrid-grid-md-5",
+                                      "grid-md-6": "MuiGrid-grid-md-6",
+                                      "grid-md-7": "MuiGrid-grid-md-7",
+                                      "grid-md-8": "MuiGrid-grid-md-8",
+                                      "grid-md-9": "MuiGrid-grid-md-9",
+                                      "grid-md-auto": "MuiGrid-grid-md-auto",
+                                      "grid-md-true": "MuiGrid-grid-md-true",
+                                      "grid-sm-1": "MuiGrid-grid-sm-1",
+                                      "grid-sm-10": "MuiGrid-grid-sm-10",
+                                      "grid-sm-11": "MuiGrid-grid-sm-11",
+                                      "grid-sm-12": "MuiGrid-grid-sm-12",
+                                      "grid-sm-2": "MuiGrid-grid-sm-2",
+                                      "grid-sm-3": "MuiGrid-grid-sm-3",
+                                      "grid-sm-4": "MuiGrid-grid-sm-4",
+                                      "grid-sm-5": "MuiGrid-grid-sm-5",
+                                      "grid-sm-6": "MuiGrid-grid-sm-6",
+                                      "grid-sm-7": "MuiGrid-grid-sm-7",
+                                      "grid-sm-8": "MuiGrid-grid-sm-8",
+                                      "grid-sm-9": "MuiGrid-grid-sm-9",
+                                      "grid-sm-auto": "MuiGrid-grid-sm-auto",
+                                      "grid-sm-true": "MuiGrid-grid-sm-true",
+                                      "grid-xl-1": "MuiGrid-grid-xl-1",
+                                      "grid-xl-10": "MuiGrid-grid-xl-10",
+                                      "grid-xl-11": "MuiGrid-grid-xl-11",
+                                      "grid-xl-12": "MuiGrid-grid-xl-12",
+                                      "grid-xl-2": "MuiGrid-grid-xl-2",
+                                      "grid-xl-3": "MuiGrid-grid-xl-3",
+                                      "grid-xl-4": "MuiGrid-grid-xl-4",
+                                      "grid-xl-5": "MuiGrid-grid-xl-5",
+                                      "grid-xl-6": "MuiGrid-grid-xl-6",
+                                      "grid-xl-7": "MuiGrid-grid-xl-7",
+                                      "grid-xl-8": "MuiGrid-grid-xl-8",
+                                      "grid-xl-9": "MuiGrid-grid-xl-9",
+                                      "grid-xl-auto": "MuiGrid-grid-xl-auto",
+                                      "grid-xl-true": "MuiGrid-grid-xl-true",
+                                      "grid-xs-1": "MuiGrid-grid-xs-1",
+                                      "grid-xs-10": "MuiGrid-grid-xs-10",
+                                      "grid-xs-11": "MuiGrid-grid-xs-11",
+                                      "grid-xs-12": "MuiGrid-grid-xs-12",
+                                      "grid-xs-2": "MuiGrid-grid-xs-2",
+                                      "grid-xs-3": "MuiGrid-grid-xs-3",
+                                      "grid-xs-4": "MuiGrid-grid-xs-4",
+                                      "grid-xs-5": "MuiGrid-grid-xs-5",
+                                      "grid-xs-6": "MuiGrid-grid-xs-6",
+                                      "grid-xs-7": "MuiGrid-grid-xs-7",
+                                      "grid-xs-8": "MuiGrid-grid-xs-8",
+                                      "grid-xs-9": "MuiGrid-grid-xs-9",
+                                      "grid-xs-auto": "MuiGrid-grid-xs-auto",
+                                      "grid-xs-true": "MuiGrid-grid-xs-true",
+                                      "item": "MuiGrid-item",
+                                      "justify-xs-center": "MuiGrid-justify-xs-center",
+                                      "justify-xs-flex-end": "MuiGrid-justify-xs-flex-end",
+                                      "justify-xs-space-around": "MuiGrid-justify-xs-space-around",
+                                      "justify-xs-space-between": "MuiGrid-justify-xs-space-between",
+                                      "justify-xs-space-evenly": "MuiGrid-justify-xs-space-evenly",
+                                      "root": "MuiGrid-root",
+                                      "spacing-xs-1": "MuiGrid-spacing-xs-1",
+                                      "spacing-xs-10": "MuiGrid-spacing-xs-10",
+                                      "spacing-xs-2": "MuiGrid-spacing-xs-2",
+                                      "spacing-xs-3": "MuiGrid-spacing-xs-3",
+                                      "spacing-xs-4": "MuiGrid-spacing-xs-4",
+                                      "spacing-xs-5": "MuiGrid-spacing-xs-5",
+                                      "spacing-xs-6": "MuiGrid-spacing-xs-6",
+                                      "spacing-xs-7": "MuiGrid-spacing-xs-7",
+                                      "spacing-xs-8": "MuiGrid-spacing-xs-8",
+                                      "spacing-xs-9": "MuiGrid-spacing-xs-9",
+                                      "wrap-xs-nowrap": "MuiGrid-wrap-xs-nowrap",
+                                      "wrap-xs-wrap-reverse": "MuiGrid-wrap-xs-wrap-reverse",
+                                      "zeroMinWidth": "MuiGrid-zeroMinWidth",
+                                    }
+                                  }
+                                  container={true}
+                                  spacing={2}
+                                >
+                                  <div
+                                    className="MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-2"
+                                  >
+                                    <WithStyles(ForwardRef(Grid))
+                                      item={true}
+                                      xs={12}
+                                    >
+                                      <ForwardRef(Grid)
+                                        classes={
+                                          Object {
+                                            "align-content-xs-center": "MuiGrid-align-content-xs-center",
+                                            "align-content-xs-flex-end": "MuiGrid-align-content-xs-flex-end",
+                                            "align-content-xs-flex-start": "MuiGrid-align-content-xs-flex-start",
+                                            "align-content-xs-space-around": "MuiGrid-align-content-xs-space-around",
+                                            "align-content-xs-space-between": "MuiGrid-align-content-xs-space-between",
+                                            "align-items-xs-baseline": "MuiGrid-align-items-xs-baseline",
+                                            "align-items-xs-center": "MuiGrid-align-items-xs-center",
+                                            "align-items-xs-flex-end": "MuiGrid-align-items-xs-flex-end",
+                                            "align-items-xs-flex-start": "MuiGrid-align-items-xs-flex-start",
+                                            "container": "MuiGrid-container",
+                                            "direction-xs-column": "MuiGrid-direction-xs-column",
+                                            "direction-xs-column-reverse": "MuiGrid-direction-xs-column-reverse",
+                                            "direction-xs-row-reverse": "MuiGrid-direction-xs-row-reverse",
+                                            "grid-lg-1": "MuiGrid-grid-lg-1",
+                                            "grid-lg-10": "MuiGrid-grid-lg-10",
+                                            "grid-lg-11": "MuiGrid-grid-lg-11",
+                                            "grid-lg-12": "MuiGrid-grid-lg-12",
+                                            "grid-lg-2": "MuiGrid-grid-lg-2",
+                                            "grid-lg-3": "MuiGrid-grid-lg-3",
+                                            "grid-lg-4": "MuiGrid-grid-lg-4",
+                                            "grid-lg-5": "MuiGrid-grid-lg-5",
+                                            "grid-lg-6": "MuiGrid-grid-lg-6",
+                                            "grid-lg-7": "MuiGrid-grid-lg-7",
+                                            "grid-lg-8": "MuiGrid-grid-lg-8",
+                                            "grid-lg-9": "MuiGrid-grid-lg-9",
+                                            "grid-lg-auto": "MuiGrid-grid-lg-auto",
+                                            "grid-lg-true": "MuiGrid-grid-lg-true",
+                                            "grid-md-1": "MuiGrid-grid-md-1",
+                                            "grid-md-10": "MuiGrid-grid-md-10",
+                                            "grid-md-11": "MuiGrid-grid-md-11",
+                                            "grid-md-12": "MuiGrid-grid-md-12",
+                                            "grid-md-2": "MuiGrid-grid-md-2",
+                                            "grid-md-3": "MuiGrid-grid-md-3",
+                                            "grid-md-4": "MuiGrid-grid-md-4",
+                                            "grid-md-5": "MuiGrid-grid-md-5",
+                                            "grid-md-6": "MuiGrid-grid-md-6",
+                                            "grid-md-7": "MuiGrid-grid-md-7",
+                                            "grid-md-8": "MuiGrid-grid-md-8",
+                                            "grid-md-9": "MuiGrid-grid-md-9",
+                                            "grid-md-auto": "MuiGrid-grid-md-auto",
+                                            "grid-md-true": "MuiGrid-grid-md-true",
+                                            "grid-sm-1": "MuiGrid-grid-sm-1",
+                                            "grid-sm-10": "MuiGrid-grid-sm-10",
+                                            "grid-sm-11": "MuiGrid-grid-sm-11",
+                                            "grid-sm-12": "MuiGrid-grid-sm-12",
+                                            "grid-sm-2": "MuiGrid-grid-sm-2",
+                                            "grid-sm-3": "MuiGrid-grid-sm-3",
+                                            "grid-sm-4": "MuiGrid-grid-sm-4",
+                                            "grid-sm-5": "MuiGrid-grid-sm-5",
+                                            "grid-sm-6": "MuiGrid-grid-sm-6",
+                                            "grid-sm-7": "MuiGrid-grid-sm-7",
+                                            "grid-sm-8": "MuiGrid-grid-sm-8",
+                                            "grid-sm-9": "MuiGrid-grid-sm-9",
+                                            "grid-sm-auto": "MuiGrid-grid-sm-auto",
+                                            "grid-sm-true": "MuiGrid-grid-sm-true",
+                                            "grid-xl-1": "MuiGrid-grid-xl-1",
+                                            "grid-xl-10": "MuiGrid-grid-xl-10",
+                                            "grid-xl-11": "MuiGrid-grid-xl-11",
+                                            "grid-xl-12": "MuiGrid-grid-xl-12",
+                                            "grid-xl-2": "MuiGrid-grid-xl-2",
+                                            "grid-xl-3": "MuiGrid-grid-xl-3",
+                                            "grid-xl-4": "MuiGrid-grid-xl-4",
+                                            "grid-xl-5": "MuiGrid-grid-xl-5",
+                                            "grid-xl-6": "MuiGrid-grid-xl-6",
+                                            "grid-xl-7": "MuiGrid-grid-xl-7",
+                                            "grid-xl-8": "MuiGrid-grid-xl-8",
+                                            "grid-xl-9": "MuiGrid-grid-xl-9",
+                                            "grid-xl-auto": "MuiGrid-grid-xl-auto",
+                                            "grid-xl-true": "MuiGrid-grid-xl-true",
+                                            "grid-xs-1": "MuiGrid-grid-xs-1",
+                                            "grid-xs-10": "MuiGrid-grid-xs-10",
+                                            "grid-xs-11": "MuiGrid-grid-xs-11",
+                                            "grid-xs-12": "MuiGrid-grid-xs-12",
+                                            "grid-xs-2": "MuiGrid-grid-xs-2",
+                                            "grid-xs-3": "MuiGrid-grid-xs-3",
+                                            "grid-xs-4": "MuiGrid-grid-xs-4",
+                                            "grid-xs-5": "MuiGrid-grid-xs-5",
+                                            "grid-xs-6": "MuiGrid-grid-xs-6",
+                                            "grid-xs-7": "MuiGrid-grid-xs-7",
+                                            "grid-xs-8": "MuiGrid-grid-xs-8",
+                                            "grid-xs-9": "MuiGrid-grid-xs-9",
+                                            "grid-xs-auto": "MuiGrid-grid-xs-auto",
+                                            "grid-xs-true": "MuiGrid-grid-xs-true",
+                                            "item": "MuiGrid-item",
+                                            "justify-xs-center": "MuiGrid-justify-xs-center",
+                                            "justify-xs-flex-end": "MuiGrid-justify-xs-flex-end",
+                                            "justify-xs-space-around": "MuiGrid-justify-xs-space-around",
+                                            "justify-xs-space-between": "MuiGrid-justify-xs-space-between",
+                                            "justify-xs-space-evenly": "MuiGrid-justify-xs-space-evenly",
+                                            "root": "MuiGrid-root",
+                                            "spacing-xs-1": "MuiGrid-spacing-xs-1",
+                                            "spacing-xs-10": "MuiGrid-spacing-xs-10",
+                                            "spacing-xs-2": "MuiGrid-spacing-xs-2",
+                                            "spacing-xs-3": "MuiGrid-spacing-xs-3",
+                                            "spacing-xs-4": "MuiGrid-spacing-xs-4",
+                                            "spacing-xs-5": "MuiGrid-spacing-xs-5",
+                                            "spacing-xs-6": "MuiGrid-spacing-xs-6",
+                                            "spacing-xs-7": "MuiGrid-spacing-xs-7",
+                                            "spacing-xs-8": "MuiGrid-spacing-xs-8",
+                                            "spacing-xs-9": "MuiGrid-spacing-xs-9",
+                                            "wrap-xs-nowrap": "MuiGrid-wrap-xs-nowrap",
+                                            "wrap-xs-wrap-reverse": "MuiGrid-wrap-xs-wrap-reverse",
+                                            "zeroMinWidth": "MuiGrid-zeroMinWidth",
+                                          }
+                                        }
+                                        item={true}
+                                        xs={12}
+                                      >
+                                        <div
+                                          className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12"
+                                        >
+                                          <div
+                                            className="sprintStatistics-title-4"
+                                          >
+                                            <WithStyles(ForwardRef(Typography))
+                                              variant="h4"
+                                            >
+                                              <ForwardRef(Typography)
+                                                classes={
+                                                  Object {
+                                                    "alignCenter": "MuiTypography-alignCenter",
+                                                    "alignJustify": "MuiTypography-alignJustify",
+                                                    "alignLeft": "MuiTypography-alignLeft",
+                                                    "alignRight": "MuiTypography-alignRight",
+                                                    "body1": "MuiTypography-body1",
+                                                    "body2": "MuiTypography-body2",
+                                                    "button": "MuiTypography-button",
+                                                    "caption": "MuiTypography-caption",
+                                                    "colorError": "MuiTypography-colorError",
+                                                    "colorInherit": "MuiTypography-colorInherit",
+                                                    "colorPrimary": "MuiTypography-colorPrimary",
+                                                    "colorSecondary": "MuiTypography-colorSecondary",
+                                                    "colorTextPrimary": "MuiTypography-colorTextPrimary",
+                                                    "colorTextSecondary": "MuiTypography-colorTextSecondary",
+                                                    "displayBlock": "MuiTypography-displayBlock",
+                                                    "displayInline": "MuiTypography-displayInline",
+                                                    "gutterBottom": "MuiTypography-gutterBottom",
+                                                    "h1": "MuiTypography-h1",
+                                                    "h2": "MuiTypography-h2",
+                                                    "h3": "MuiTypography-h3",
+                                                    "h4": "MuiTypography-h4",
+                                                    "h5": "MuiTypography-h5",
+                                                    "h6": "MuiTypography-h6",
+                                                    "noWrap": "MuiTypography-noWrap",
+                                                    "overline": "MuiTypography-overline",
+                                                    "paragraph": "MuiTypography-paragraph",
+                                                    "root": "MuiTypography-root",
+                                                    "srOnly": "MuiTypography-srOnly",
+                                                    "subtitle1": "MuiTypography-subtitle1",
+                                                    "subtitle2": "MuiTypography-subtitle2",
+                                                  }
+                                                }
+                                                variant="h4"
+                                              >
+                                                <h4
+                                                  className="MuiTypography-root MuiTypography-h4"
+                                                >
+                                                  Sprint #1
+                                                   Overview
+                                                </h4>
+                                              </ForwardRef(Typography)>
+                                            </WithStyles(ForwardRef(Typography))>
+                                          </div>
+                                        </div>
+                                      </ForwardRef(Grid)>
+                                    </WithStyles(ForwardRef(Grid))>
+                                    <WithStyles(ForwardRef(Grid))
+                                      item={true}
+                                      md={4}
+                                      xs={12}
+                                    >
+                                      <ForwardRef(Grid)
+                                        classes={
+                                          Object {
+                                            "align-content-xs-center": "MuiGrid-align-content-xs-center",
+                                            "align-content-xs-flex-end": "MuiGrid-align-content-xs-flex-end",
+                                            "align-content-xs-flex-start": "MuiGrid-align-content-xs-flex-start",
+                                            "align-content-xs-space-around": "MuiGrid-align-content-xs-space-around",
+                                            "align-content-xs-space-between": "MuiGrid-align-content-xs-space-between",
+                                            "align-items-xs-baseline": "MuiGrid-align-items-xs-baseline",
+                                            "align-items-xs-center": "MuiGrid-align-items-xs-center",
+                                            "align-items-xs-flex-end": "MuiGrid-align-items-xs-flex-end",
+                                            "align-items-xs-flex-start": "MuiGrid-align-items-xs-flex-start",
+                                            "container": "MuiGrid-container",
+                                            "direction-xs-column": "MuiGrid-direction-xs-column",
+                                            "direction-xs-column-reverse": "MuiGrid-direction-xs-column-reverse",
+                                            "direction-xs-row-reverse": "MuiGrid-direction-xs-row-reverse",
+                                            "grid-lg-1": "MuiGrid-grid-lg-1",
+                                            "grid-lg-10": "MuiGrid-grid-lg-10",
+                                            "grid-lg-11": "MuiGrid-grid-lg-11",
+                                            "grid-lg-12": "MuiGrid-grid-lg-12",
+                                            "grid-lg-2": "MuiGrid-grid-lg-2",
+                                            "grid-lg-3": "MuiGrid-grid-lg-3",
+                                            "grid-lg-4": "MuiGrid-grid-lg-4",
+                                            "grid-lg-5": "MuiGrid-grid-lg-5",
+                                            "grid-lg-6": "MuiGrid-grid-lg-6",
+                                            "grid-lg-7": "MuiGrid-grid-lg-7",
+                                            "grid-lg-8": "MuiGrid-grid-lg-8",
+                                            "grid-lg-9": "MuiGrid-grid-lg-9",
+                                            "grid-lg-auto": "MuiGrid-grid-lg-auto",
+                                            "grid-lg-true": "MuiGrid-grid-lg-true",
+                                            "grid-md-1": "MuiGrid-grid-md-1",
+                                            "grid-md-10": "MuiGrid-grid-md-10",
+                                            "grid-md-11": "MuiGrid-grid-md-11",
+                                            "grid-md-12": "MuiGrid-grid-md-12",
+                                            "grid-md-2": "MuiGrid-grid-md-2",
+                                            "grid-md-3": "MuiGrid-grid-md-3",
+                                            "grid-md-4": "MuiGrid-grid-md-4",
+                                            "grid-md-5": "MuiGrid-grid-md-5",
+                                            "grid-md-6": "MuiGrid-grid-md-6",
+                                            "grid-md-7": "MuiGrid-grid-md-7",
+                                            "grid-md-8": "MuiGrid-grid-md-8",
+                                            "grid-md-9": "MuiGrid-grid-md-9",
+                                            "grid-md-auto": "MuiGrid-grid-md-auto",
+                                            "grid-md-true": "MuiGrid-grid-md-true",
+                                            "grid-sm-1": "MuiGrid-grid-sm-1",
+                                            "grid-sm-10": "MuiGrid-grid-sm-10",
+                                            "grid-sm-11": "MuiGrid-grid-sm-11",
+                                            "grid-sm-12": "MuiGrid-grid-sm-12",
+                                            "grid-sm-2": "MuiGrid-grid-sm-2",
+                                            "grid-sm-3": "MuiGrid-grid-sm-3",
+                                            "grid-sm-4": "MuiGrid-grid-sm-4",
+                                            "grid-sm-5": "MuiGrid-grid-sm-5",
+                                            "grid-sm-6": "MuiGrid-grid-sm-6",
+                                            "grid-sm-7": "MuiGrid-grid-sm-7",
+                                            "grid-sm-8": "MuiGrid-grid-sm-8",
+                                            "grid-sm-9": "MuiGrid-grid-sm-9",
+                                            "grid-sm-auto": "MuiGrid-grid-sm-auto",
+                                            "grid-sm-true": "MuiGrid-grid-sm-true",
+                                            "grid-xl-1": "MuiGrid-grid-xl-1",
+                                            "grid-xl-10": "MuiGrid-grid-xl-10",
+                                            "grid-xl-11": "MuiGrid-grid-xl-11",
+                                            "grid-xl-12": "MuiGrid-grid-xl-12",
+                                            "grid-xl-2": "MuiGrid-grid-xl-2",
+                                            "grid-xl-3": "MuiGrid-grid-xl-3",
+                                            "grid-xl-4": "MuiGrid-grid-xl-4",
+                                            "grid-xl-5": "MuiGrid-grid-xl-5",
+                                            "grid-xl-6": "MuiGrid-grid-xl-6",
+                                            "grid-xl-7": "MuiGrid-grid-xl-7",
+                                            "grid-xl-8": "MuiGrid-grid-xl-8",
+                                            "grid-xl-9": "MuiGrid-grid-xl-9",
+                                            "grid-xl-auto": "MuiGrid-grid-xl-auto",
+                                            "grid-xl-true": "MuiGrid-grid-xl-true",
+                                            "grid-xs-1": "MuiGrid-grid-xs-1",
+                                            "grid-xs-10": "MuiGrid-grid-xs-10",
+                                            "grid-xs-11": "MuiGrid-grid-xs-11",
+                                            "grid-xs-12": "MuiGrid-grid-xs-12",
+                                            "grid-xs-2": "MuiGrid-grid-xs-2",
+                                            "grid-xs-3": "MuiGrid-grid-xs-3",
+                                            "grid-xs-4": "MuiGrid-grid-xs-4",
+                                            "grid-xs-5": "MuiGrid-grid-xs-5",
+                                            "grid-xs-6": "MuiGrid-grid-xs-6",
+                                            "grid-xs-7": "MuiGrid-grid-xs-7",
+                                            "grid-xs-8": "MuiGrid-grid-xs-8",
+                                            "grid-xs-9": "MuiGrid-grid-xs-9",
+                                            "grid-xs-auto": "MuiGrid-grid-xs-auto",
+                                            "grid-xs-true": "MuiGrid-grid-xs-true",
+                                            "item": "MuiGrid-item",
+                                            "justify-xs-center": "MuiGrid-justify-xs-center",
+                                            "justify-xs-flex-end": "MuiGrid-justify-xs-flex-end",
+                                            "justify-xs-space-around": "MuiGrid-justify-xs-space-around",
+                                            "justify-xs-space-between": "MuiGrid-justify-xs-space-between",
+                                            "justify-xs-space-evenly": "MuiGrid-justify-xs-space-evenly",
+                                            "root": "MuiGrid-root",
+                                            "spacing-xs-1": "MuiGrid-spacing-xs-1",
+                                            "spacing-xs-10": "MuiGrid-spacing-xs-10",
+                                            "spacing-xs-2": "MuiGrid-spacing-xs-2",
+                                            "spacing-xs-3": "MuiGrid-spacing-xs-3",
+                                            "spacing-xs-4": "MuiGrid-spacing-xs-4",
+                                            "spacing-xs-5": "MuiGrid-spacing-xs-5",
+                                            "spacing-xs-6": "MuiGrid-spacing-xs-6",
+                                            "spacing-xs-7": "MuiGrid-spacing-xs-7",
+                                            "spacing-xs-8": "MuiGrid-spacing-xs-8",
+                                            "spacing-xs-9": "MuiGrid-spacing-xs-9",
+                                            "wrap-xs-nowrap": "MuiGrid-wrap-xs-nowrap",
+                                            "wrap-xs-wrap-reverse": "MuiGrid-wrap-xs-wrap-reverse",
+                                            "zeroMinWidth": "MuiGrid-zeroMinWidth",
+                                          }
+                                        }
+                                        item={true}
+                                        md={4}
+                                        xs={12}
+                                      >
+                                        <div
+                                          className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-md-4"
+                                        >
+                                          <div
+                                            className="sprintStatistics-contentContainer-5"
+                                          >
+                                            <div
+                                              className="sprintStatistics-contentSection-6"
+                                            >
+                                              <WithStyles(ForwardRef(Typography))
+                                                variant="h6"
+                                              >
+                                                <ForwardRef(Typography)
+                                                  classes={
+                                                    Object {
+                                                      "alignCenter": "MuiTypography-alignCenter",
+                                                      "alignJustify": "MuiTypography-alignJustify",
+                                                      "alignLeft": "MuiTypography-alignLeft",
+                                                      "alignRight": "MuiTypography-alignRight",
+                                                      "body1": "MuiTypography-body1",
+                                                      "body2": "MuiTypography-body2",
+                                                      "button": "MuiTypography-button",
+                                                      "caption": "MuiTypography-caption",
+                                                      "colorError": "MuiTypography-colorError",
+                                                      "colorInherit": "MuiTypography-colorInherit",
+                                                      "colorPrimary": "MuiTypography-colorPrimary",
+                                                      "colorSecondary": "MuiTypography-colorSecondary",
+                                                      "colorTextPrimary": "MuiTypography-colorTextPrimary",
+                                                      "colorTextSecondary": "MuiTypography-colorTextSecondary",
+                                                      "displayBlock": "MuiTypography-displayBlock",
+                                                      "displayInline": "MuiTypography-displayInline",
+                                                      "gutterBottom": "MuiTypography-gutterBottom",
+                                                      "h1": "MuiTypography-h1",
+                                                      "h2": "MuiTypography-h2",
+                                                      "h3": "MuiTypography-h3",
+                                                      "h4": "MuiTypography-h4",
+                                                      "h5": "MuiTypography-h5",
+                                                      "h6": "MuiTypography-h6",
+                                                      "noWrap": "MuiTypography-noWrap",
+                                                      "overline": "MuiTypography-overline",
+                                                      "paragraph": "MuiTypography-paragraph",
+                                                      "root": "MuiTypography-root",
+                                                      "srOnly": "MuiTypography-srOnly",
+                                                      "subtitle1": "MuiTypography-subtitle1",
+                                                      "subtitle2": "MuiTypography-subtitle2",
+                                                    }
+                                                  }
+                                                  variant="h6"
+                                                >
+                                                  <h6
+                                                    className="MuiTypography-root MuiTypography-h6"
+                                                  >
+                                                    Sprint Size
+                                                  </h6>
+                                                </ForwardRef(Typography)>
+                                              </WithStyles(ForwardRef(Typography))>
+                                              <ul
+                                                className="sprintStatistics-unorderedList-8"
+                                              >
+                                                <li>
+                                                  <WithStyles(ForwardRef(Typography))
+                                                    variant="body2"
+                                                  >
+                                                    <ForwardRef(Typography)
+                                                      classes={
+                                                        Object {
+                                                          "alignCenter": "MuiTypography-alignCenter",
+                                                          "alignJustify": "MuiTypography-alignJustify",
+                                                          "alignLeft": "MuiTypography-alignLeft",
+                                                          "alignRight": "MuiTypography-alignRight",
+                                                          "body1": "MuiTypography-body1",
+                                                          "body2": "MuiTypography-body2",
+                                                          "button": "MuiTypography-button",
+                                                          "caption": "MuiTypography-caption",
+                                                          "colorError": "MuiTypography-colorError",
+                                                          "colorInherit": "MuiTypography-colorInherit",
+                                                          "colorPrimary": "MuiTypography-colorPrimary",
+                                                          "colorSecondary": "MuiTypography-colorSecondary",
+                                                          "colorTextPrimary": "MuiTypography-colorTextPrimary",
+                                                          "colorTextSecondary": "MuiTypography-colorTextSecondary",
+                                                          "displayBlock": "MuiTypography-displayBlock",
+                                                          "displayInline": "MuiTypography-displayInline",
+                                                          "gutterBottom": "MuiTypography-gutterBottom",
+                                                          "h1": "MuiTypography-h1",
+                                                          "h2": "MuiTypography-h2",
+                                                          "h3": "MuiTypography-h3",
+                                                          "h4": "MuiTypography-h4",
+                                                          "h5": "MuiTypography-h5",
+                                                          "h6": "MuiTypography-h6",
+                                                          "noWrap": "MuiTypography-noWrap",
+                                                          "overline": "MuiTypography-overline",
+                                                          "paragraph": "MuiTypography-paragraph",
+                                                          "root": "MuiTypography-root",
+                                                          "srOnly": "MuiTypography-srOnly",
+                                                          "subtitle1": "MuiTypography-subtitle1",
+                                                          "subtitle2": "MuiTypography-subtitle2",
+                                                        }
+                                                      }
+                                                      variant="body2"
+                                                    >
+                                                      <p
+                                                        className="MuiTypography-root MuiTypography-body2"
+                                                      >
+                                                        3
+                                                         projects
+                                                      </p>
+                                                    </ForwardRef(Typography)>
+                                                  </WithStyles(ForwardRef(Typography))>
+                                                </li>
+                                                <li>
+                                                  <WithStyles(ForwardRef(Typography))
+                                                    variant="body2"
+                                                  >
+                                                    <ForwardRef(Typography)
+                                                      classes={
+                                                        Object {
+                                                          "alignCenter": "MuiTypography-alignCenter",
+                                                          "alignJustify": "MuiTypography-alignJustify",
+                                                          "alignLeft": "MuiTypography-alignLeft",
+                                                          "alignRight": "MuiTypography-alignRight",
+                                                          "body1": "MuiTypography-body1",
+                                                          "body2": "MuiTypography-body2",
+                                                          "button": "MuiTypography-button",
+                                                          "caption": "MuiTypography-caption",
+                                                          "colorError": "MuiTypography-colorError",
+                                                          "colorInherit": "MuiTypography-colorInherit",
+                                                          "colorPrimary": "MuiTypography-colorPrimary",
+                                                          "colorSecondary": "MuiTypography-colorSecondary",
+                                                          "colorTextPrimary": "MuiTypography-colorTextPrimary",
+                                                          "colorTextSecondary": "MuiTypography-colorTextSecondary",
+                                                          "displayBlock": "MuiTypography-displayBlock",
+                                                          "displayInline": "MuiTypography-displayInline",
+                                                          "gutterBottom": "MuiTypography-gutterBottom",
+                                                          "h1": "MuiTypography-h1",
+                                                          "h2": "MuiTypography-h2",
+                                                          "h3": "MuiTypography-h3",
+                                                          "h4": "MuiTypography-h4",
+                                                          "h5": "MuiTypography-h5",
+                                                          "h6": "MuiTypography-h6",
+                                                          "noWrap": "MuiTypography-noWrap",
+                                                          "overline": "MuiTypography-overline",
+                                                          "paragraph": "MuiTypography-paragraph",
+                                                          "root": "MuiTypography-root",
+                                                          "srOnly": "MuiTypography-srOnly",
+                                                          "subtitle1": "MuiTypography-subtitle1",
+                                                          "subtitle2": "MuiTypography-subtitle2",
+                                                        }
+                                                      }
+                                                      variant="body2"
+                                                    >
+                                                      <p
+                                                        className="MuiTypography-root MuiTypography-body2"
+                                                      >
+                                                        7
+                                                         project points
+                                                         (3.5 avg. per PM)
+                                                      </p>
+                                                    </ForwardRef(Typography)>
+                                                  </WithStyles(ForwardRef(Typography))>
+                                                </li>
+                                              </ul>
+                                            </div>
+                                            <hr
+                                              className="sprintStatistics-horizontalRule-9"
+                                            />
+                                            <div
+                                              className="sprintStatistics-contentSection-6"
+                                            >
+                                              <WithStyles(ForwardRef(Typography))
+                                                variant="h6"
+                                              >
+                                                <ForwardRef(Typography)
+                                                  classes={
+                                                    Object {
+                                                      "alignCenter": "MuiTypography-alignCenter",
+                                                      "alignJustify": "MuiTypography-alignJustify",
+                                                      "alignLeft": "MuiTypography-alignLeft",
+                                                      "alignRight": "MuiTypography-alignRight",
+                                                      "body1": "MuiTypography-body1",
+                                                      "body2": "MuiTypography-body2",
+                                                      "button": "MuiTypography-button",
+                                                      "caption": "MuiTypography-caption",
+                                                      "colorError": "MuiTypography-colorError",
+                                                      "colorInherit": "MuiTypography-colorInherit",
+                                                      "colorPrimary": "MuiTypography-colorPrimary",
+                                                      "colorSecondary": "MuiTypography-colorSecondary",
+                                                      "colorTextPrimary": "MuiTypography-colorTextPrimary",
+                                                      "colorTextSecondary": "MuiTypography-colorTextSecondary",
+                                                      "displayBlock": "MuiTypography-displayBlock",
+                                                      "displayInline": "MuiTypography-displayInline",
+                                                      "gutterBottom": "MuiTypography-gutterBottom",
+                                                      "h1": "MuiTypography-h1",
+                                                      "h2": "MuiTypography-h2",
+                                                      "h3": "MuiTypography-h3",
+                                                      "h4": "MuiTypography-h4",
+                                                      "h5": "MuiTypography-h5",
+                                                      "h6": "MuiTypography-h6",
+                                                      "noWrap": "MuiTypography-noWrap",
+                                                      "overline": "MuiTypography-overline",
+                                                      "paragraph": "MuiTypography-paragraph",
+                                                      "root": "MuiTypography-root",
+                                                      "srOnly": "MuiTypography-srOnly",
+                                                      "subtitle1": "MuiTypography-subtitle1",
+                                                      "subtitle2": "MuiTypography-subtitle2",
+                                                    }
+                                                  }
+                                                  variant="h6"
+                                                >
+                                                  <h6
+                                                    className="MuiTypography-root MuiTypography-h6"
+                                                  >
+                                                    Allocation by Project Manager
+                                                  </h6>
+                                                </ForwardRef(Typography)>
+                                              </WithStyles(ForwardRef(Typography))>
+                                              <WithStyles(ForwardRef(List))>
+                                                <ForwardRef(List)
+                                                  classes={
+                                                    Object {
+                                                      "dense": "MuiList-dense",
+                                                      "padding": "MuiList-padding",
+                                                      "root": "MuiList-root",
+                                                      "subheader": "MuiList-subheader",
+                                                    }
+                                                  }
+                                                >
+                                                  <ul
+                                                    className="MuiList-root MuiList-padding"
+                                                  >
+                                                    <div
+                                                      key="Bobby"
+                                                    >
+                                                      <WithStyles(ForwardRef(ListItem))>
+                                                        <ForwardRef(ListItem)
+                                                          classes={
+                                                            Object {
+                                                              "alignItemsFlexStart": "MuiListItem-alignItemsFlexStart",
+                                                              "button": "MuiListItem-button",
+                                                              "container": "MuiListItem-container",
+                                                              "dense": "MuiListItem-dense",
+                                                              "disabled": "Mui-disabled",
+                                                              "divider": "MuiListItem-divider",
+                                                              "focusVisible": "Mui-focusVisible",
+                                                              "gutters": "MuiListItem-gutters",
+                                                              "root": "MuiListItem-root",
+                                                              "secondaryAction": "MuiListItem-secondaryAction",
+                                                              "selected": "Mui-selected",
+                                                            }
+                                                          }
+                                                        >
+                                                          <li
+                                                            className="MuiListItem-root MuiListItem-gutters"
+                                                            disabled={false}
+                                                          >
+                                                            <WithStyles(ForwardRef(ListItemAvatar))
+                                                              key=".0"
+                                                            >
+                                                              <ForwardRef(ListItemAvatar)
+                                                                classes={
+                                                                  Object {
+                                                                    "alignItemsFlexStart": "MuiListItemAvatar-alignItemsFlexStart",
+                                                                    "root": "MuiListItemAvatar-root",
+                                                                  }
+                                                                }
+                                                              >
+                                                                <div
+                                                                  className="MuiListItemAvatar-root"
+                                                                >
+                                                                  <WithStyles(ForwardRef(Avatar))
+                                                                    className="sprintStatistics-blue-2"
+                                                                  >
+                                                                    <ForwardRef(Avatar)
+                                                                      className="sprintStatistics-blue-2"
+                                                                      classes={
+                                                                        Object {
+                                                                          "circle": "MuiAvatar-circle",
+                                                                          "colorDefault": "MuiAvatar-colorDefault",
+                                                                          "fallback": "MuiAvatar-fallback",
+                                                                          "img": "MuiAvatar-img",
+                                                                          "root": "MuiAvatar-root",
+                                                                          "rounded": "MuiAvatar-rounded",
+                                                                          "square": "MuiAvatar-square",
+                                                                        }
+                                                                      }
+                                                                    >
+                                                                      <div
+                                                                        className="MuiAvatar-root MuiAvatar-circle sprintStatistics-blue-2 MuiAvatar-colorDefault"
+                                                                      >
+                                                                        B
+                                                                      </div>
+                                                                    </ForwardRef(Avatar)>
+                                                                  </WithStyles(ForwardRef(Avatar))>
+                                                                </div>
+                                                              </ForwardRef(ListItemAvatar)>
+                                                            </WithStyles(ForwardRef(ListItemAvatar))>
+                                                            <WithStyles(ForwardRef(ListItemText))
+                                                              key=".1"
+                                                              primary="Bobby"
+                                                              secondary="2 projects  |  4 project points"
+                                                            >
+                                                              <ForwardRef(ListItemText)
+                                                                classes={
+                                                                  Object {
+                                                                    "dense": "MuiListItemText-dense",
+                                                                    "inset": "MuiListItemText-inset",
+                                                                    "multiline": "MuiListItemText-multiline",
+                                                                    "primary": "MuiListItemText-primary",
+                                                                    "root": "MuiListItemText-root",
+                                                                    "secondary": "MuiListItemText-secondary",
+                                                                  }
+                                                                }
+                                                                primary="Bobby"
+                                                                secondary="2 projects  |  4 project points"
+                                                              >
+                                                                <div
+                                                                  className="MuiListItemText-root MuiListItemText-multiline"
+                                                                >
+                                                                  <WithStyles(ForwardRef(Typography))
+                                                                    className="MuiListItemText-primary"
+                                                                    component="span"
+                                                                    variant="body1"
+                                                                  >
+                                                                    <ForwardRef(Typography)
+                                                                      className="MuiListItemText-primary"
+                                                                      classes={
+                                                                        Object {
+                                                                          "alignCenter": "MuiTypography-alignCenter",
+                                                                          "alignJustify": "MuiTypography-alignJustify",
+                                                                          "alignLeft": "MuiTypography-alignLeft",
+                                                                          "alignRight": "MuiTypography-alignRight",
+                                                                          "body1": "MuiTypography-body1",
+                                                                          "body2": "MuiTypography-body2",
+                                                                          "button": "MuiTypography-button",
+                                                                          "caption": "MuiTypography-caption",
+                                                                          "colorError": "MuiTypography-colorError",
+                                                                          "colorInherit": "MuiTypography-colorInherit",
+                                                                          "colorPrimary": "MuiTypography-colorPrimary",
+                                                                          "colorSecondary": "MuiTypography-colorSecondary",
+                                                                          "colorTextPrimary": "MuiTypography-colorTextPrimary",
+                                                                          "colorTextSecondary": "MuiTypography-colorTextSecondary",
+                                                                          "displayBlock": "MuiTypography-displayBlock",
+                                                                          "displayInline": "MuiTypography-displayInline",
+                                                                          "gutterBottom": "MuiTypography-gutterBottom",
+                                                                          "h1": "MuiTypography-h1",
+                                                                          "h2": "MuiTypography-h2",
+                                                                          "h3": "MuiTypography-h3",
+                                                                          "h4": "MuiTypography-h4",
+                                                                          "h5": "MuiTypography-h5",
+                                                                          "h6": "MuiTypography-h6",
+                                                                          "noWrap": "MuiTypography-noWrap",
+                                                                          "overline": "MuiTypography-overline",
+                                                                          "paragraph": "MuiTypography-paragraph",
+                                                                          "root": "MuiTypography-root",
+                                                                          "srOnly": "MuiTypography-srOnly",
+                                                                          "subtitle1": "MuiTypography-subtitle1",
+                                                                          "subtitle2": "MuiTypography-subtitle2",
+                                                                        }
+                                                                      }
+                                                                      component="span"
+                                                                      variant="body1"
+                                                                    >
+                                                                      <span
+                                                                        className="MuiTypography-root MuiListItemText-primary MuiTypography-body1"
+                                                                      >
+                                                                        Bobby
+                                                                      </span>
+                                                                    </ForwardRef(Typography)>
+                                                                  </WithStyles(ForwardRef(Typography))>
+                                                                  <WithStyles(ForwardRef(Typography))
+                                                                    className="MuiListItemText-secondary"
+                                                                    color="textSecondary"
+                                                                    variant="body2"
+                                                                  >
+                                                                    <ForwardRef(Typography)
+                                                                      className="MuiListItemText-secondary"
+                                                                      classes={
+                                                                        Object {
+                                                                          "alignCenter": "MuiTypography-alignCenter",
+                                                                          "alignJustify": "MuiTypography-alignJustify",
+                                                                          "alignLeft": "MuiTypography-alignLeft",
+                                                                          "alignRight": "MuiTypography-alignRight",
+                                                                          "body1": "MuiTypography-body1",
+                                                                          "body2": "MuiTypography-body2",
+                                                                          "button": "MuiTypography-button",
+                                                                          "caption": "MuiTypography-caption",
+                                                                          "colorError": "MuiTypography-colorError",
+                                                                          "colorInherit": "MuiTypography-colorInherit",
+                                                                          "colorPrimary": "MuiTypography-colorPrimary",
+                                                                          "colorSecondary": "MuiTypography-colorSecondary",
+                                                                          "colorTextPrimary": "MuiTypography-colorTextPrimary",
+                                                                          "colorTextSecondary": "MuiTypography-colorTextSecondary",
+                                                                          "displayBlock": "MuiTypography-displayBlock",
+                                                                          "displayInline": "MuiTypography-displayInline",
+                                                                          "gutterBottom": "MuiTypography-gutterBottom",
+                                                                          "h1": "MuiTypography-h1",
+                                                                          "h2": "MuiTypography-h2",
+                                                                          "h3": "MuiTypography-h3",
+                                                                          "h4": "MuiTypography-h4",
+                                                                          "h5": "MuiTypography-h5",
+                                                                          "h6": "MuiTypography-h6",
+                                                                          "noWrap": "MuiTypography-noWrap",
+                                                                          "overline": "MuiTypography-overline",
+                                                                          "paragraph": "MuiTypography-paragraph",
+                                                                          "root": "MuiTypography-root",
+                                                                          "srOnly": "MuiTypography-srOnly",
+                                                                          "subtitle1": "MuiTypography-subtitle1",
+                                                                          "subtitle2": "MuiTypography-subtitle2",
+                                                                        }
+                                                                      }
+                                                                      color="textSecondary"
+                                                                      variant="body2"
+                                                                    >
+                                                                      <p
+                                                                        className="MuiTypography-root MuiListItemText-secondary MuiTypography-body2 MuiTypography-colorTextSecondary"
+                                                                      >
+                                                                        2 projects  |  4 project points
+                                                                      </p>
+                                                                    </ForwardRef(Typography)>
+                                                                  </WithStyles(ForwardRef(Typography))>
+                                                                </div>
+                                                              </ForwardRef(ListItemText)>
+                                                            </WithStyles(ForwardRef(ListItemText))>
+                                                          </li>
+                                                        </ForwardRef(ListItem)>
+                                                      </WithStyles(ForwardRef(ListItem))>
+                                                    </div>
+                                                    <div
+                                                      key="Mike"
+                                                    >
+                                                      <WithStyles(ForwardRef(ListItem))>
+                                                        <ForwardRef(ListItem)
+                                                          classes={
+                                                            Object {
+                                                              "alignItemsFlexStart": "MuiListItem-alignItemsFlexStart",
+                                                              "button": "MuiListItem-button",
+                                                              "container": "MuiListItem-container",
+                                                              "dense": "MuiListItem-dense",
+                                                              "disabled": "Mui-disabled",
+                                                              "divider": "MuiListItem-divider",
+                                                              "focusVisible": "Mui-focusVisible",
+                                                              "gutters": "MuiListItem-gutters",
+                                                              "root": "MuiListItem-root",
+                                                              "secondaryAction": "MuiListItem-secondaryAction",
+                                                              "selected": "Mui-selected",
+                                                            }
+                                                          }
+                                                        >
+                                                          <li
+                                                            className="MuiListItem-root MuiListItem-gutters"
+                                                            disabled={false}
+                                                          >
+                                                            <WithStyles(ForwardRef(ListItemAvatar))
+                                                              key=".0"
+                                                            >
+                                                              <ForwardRef(ListItemAvatar)
+                                                                classes={
+                                                                  Object {
+                                                                    "alignItemsFlexStart": "MuiListItemAvatar-alignItemsFlexStart",
+                                                                    "root": "MuiListItemAvatar-root",
+                                                                  }
+                                                                }
+                                                              >
+                                                                <div
+                                                                  className="MuiListItemAvatar-root"
+                                                                >
+                                                                  <WithStyles(ForwardRef(Avatar))
+                                                                    className="sprintStatistics-blue-2"
+                                                                  >
+                                                                    <ForwardRef(Avatar)
+                                                                      className="sprintStatistics-blue-2"
+                                                                      classes={
+                                                                        Object {
+                                                                          "circle": "MuiAvatar-circle",
+                                                                          "colorDefault": "MuiAvatar-colorDefault",
+                                                                          "fallback": "MuiAvatar-fallback",
+                                                                          "img": "MuiAvatar-img",
+                                                                          "root": "MuiAvatar-root",
+                                                                          "rounded": "MuiAvatar-rounded",
+                                                                          "square": "MuiAvatar-square",
+                                                                        }
+                                                                      }
+                                                                    >
+                                                                      <div
+                                                                        className="MuiAvatar-root MuiAvatar-circle sprintStatistics-blue-2 MuiAvatar-colorDefault"
+                                                                      >
+                                                                        M
+                                                                      </div>
+                                                                    </ForwardRef(Avatar)>
+                                                                  </WithStyles(ForwardRef(Avatar))>
+                                                                </div>
+                                                              </ForwardRef(ListItemAvatar)>
+                                                            </WithStyles(ForwardRef(ListItemAvatar))>
+                                                            <WithStyles(ForwardRef(ListItemText))
+                                                              key=".1"
+                                                              primary="Mike"
+                                                              secondary="1 project  |  3 project points"
+                                                            >
+                                                              <ForwardRef(ListItemText)
+                                                                classes={
+                                                                  Object {
+                                                                    "dense": "MuiListItemText-dense",
+                                                                    "inset": "MuiListItemText-inset",
+                                                                    "multiline": "MuiListItemText-multiline",
+                                                                    "primary": "MuiListItemText-primary",
+                                                                    "root": "MuiListItemText-root",
+                                                                    "secondary": "MuiListItemText-secondary",
+                                                                  }
+                                                                }
+                                                                primary="Mike"
+                                                                secondary="1 project  |  3 project points"
+                                                              >
+                                                                <div
+                                                                  className="MuiListItemText-root MuiListItemText-multiline"
+                                                                >
+                                                                  <WithStyles(ForwardRef(Typography))
+                                                                    className="MuiListItemText-primary"
+                                                                    component="span"
+                                                                    variant="body1"
+                                                                  >
+                                                                    <ForwardRef(Typography)
+                                                                      className="MuiListItemText-primary"
+                                                                      classes={
+                                                                        Object {
+                                                                          "alignCenter": "MuiTypography-alignCenter",
+                                                                          "alignJustify": "MuiTypography-alignJustify",
+                                                                          "alignLeft": "MuiTypography-alignLeft",
+                                                                          "alignRight": "MuiTypography-alignRight",
+                                                                          "body1": "MuiTypography-body1",
+                                                                          "body2": "MuiTypography-body2",
+                                                                          "button": "MuiTypography-button",
+                                                                          "caption": "MuiTypography-caption",
+                                                                          "colorError": "MuiTypography-colorError",
+                                                                          "colorInherit": "MuiTypography-colorInherit",
+                                                                          "colorPrimary": "MuiTypography-colorPrimary",
+                                                                          "colorSecondary": "MuiTypography-colorSecondary",
+                                                                          "colorTextPrimary": "MuiTypography-colorTextPrimary",
+                                                                          "colorTextSecondary": "MuiTypography-colorTextSecondary",
+                                                                          "displayBlock": "MuiTypography-displayBlock",
+                                                                          "displayInline": "MuiTypography-displayInline",
+                                                                          "gutterBottom": "MuiTypography-gutterBottom",
+                                                                          "h1": "MuiTypography-h1",
+                                                                          "h2": "MuiTypography-h2",
+                                                                          "h3": "MuiTypography-h3",
+                                                                          "h4": "MuiTypography-h4",
+                                                                          "h5": "MuiTypography-h5",
+                                                                          "h6": "MuiTypography-h6",
+                                                                          "noWrap": "MuiTypography-noWrap",
+                                                                          "overline": "MuiTypography-overline",
+                                                                          "paragraph": "MuiTypography-paragraph",
+                                                                          "root": "MuiTypography-root",
+                                                                          "srOnly": "MuiTypography-srOnly",
+                                                                          "subtitle1": "MuiTypography-subtitle1",
+                                                                          "subtitle2": "MuiTypography-subtitle2",
+                                                                        }
+                                                                      }
+                                                                      component="span"
+                                                                      variant="body1"
+                                                                    >
+                                                                      <span
+                                                                        className="MuiTypography-root MuiListItemText-primary MuiTypography-body1"
+                                                                      >
+                                                                        Mike
+                                                                      </span>
+                                                                    </ForwardRef(Typography)>
+                                                                  </WithStyles(ForwardRef(Typography))>
+                                                                  <WithStyles(ForwardRef(Typography))
+                                                                    className="MuiListItemText-secondary"
+                                                                    color="textSecondary"
+                                                                    variant="body2"
+                                                                  >
+                                                                    <ForwardRef(Typography)
+                                                                      className="MuiListItemText-secondary"
+                                                                      classes={
+                                                                        Object {
+                                                                          "alignCenter": "MuiTypography-alignCenter",
+                                                                          "alignJustify": "MuiTypography-alignJustify",
+                                                                          "alignLeft": "MuiTypography-alignLeft",
+                                                                          "alignRight": "MuiTypography-alignRight",
+                                                                          "body1": "MuiTypography-body1",
+                                                                          "body2": "MuiTypography-body2",
+                                                                          "button": "MuiTypography-button",
+                                                                          "caption": "MuiTypography-caption",
+                                                                          "colorError": "MuiTypography-colorError",
+                                                                          "colorInherit": "MuiTypography-colorInherit",
+                                                                          "colorPrimary": "MuiTypography-colorPrimary",
+                                                                          "colorSecondary": "MuiTypography-colorSecondary",
+                                                                          "colorTextPrimary": "MuiTypography-colorTextPrimary",
+                                                                          "colorTextSecondary": "MuiTypography-colorTextSecondary",
+                                                                          "displayBlock": "MuiTypography-displayBlock",
+                                                                          "displayInline": "MuiTypography-displayInline",
+                                                                          "gutterBottom": "MuiTypography-gutterBottom",
+                                                                          "h1": "MuiTypography-h1",
+                                                                          "h2": "MuiTypography-h2",
+                                                                          "h3": "MuiTypography-h3",
+                                                                          "h4": "MuiTypography-h4",
+                                                                          "h5": "MuiTypography-h5",
+                                                                          "h6": "MuiTypography-h6",
+                                                                          "noWrap": "MuiTypography-noWrap",
+                                                                          "overline": "MuiTypography-overline",
+                                                                          "paragraph": "MuiTypography-paragraph",
+                                                                          "root": "MuiTypography-root",
+                                                                          "srOnly": "MuiTypography-srOnly",
+                                                                          "subtitle1": "MuiTypography-subtitle1",
+                                                                          "subtitle2": "MuiTypography-subtitle2",
+                                                                        }
+                                                                      }
+                                                                      color="textSecondary"
+                                                                      variant="body2"
+                                                                    >
+                                                                      <p
+                                                                        className="MuiTypography-root MuiListItemText-secondary MuiTypography-body2 MuiTypography-colorTextSecondary"
+                                                                      >
+                                                                        1 project  |  3 project points
+                                                                      </p>
+                                                                    </ForwardRef(Typography)>
+                                                                  </WithStyles(ForwardRef(Typography))>
+                                                                </div>
+                                                              </ForwardRef(ListItemText)>
+                                                            </WithStyles(ForwardRef(ListItemText))>
+                                                          </li>
+                                                        </ForwardRef(ListItem)>
+                                                      </WithStyles(ForwardRef(ListItem))>
+                                                    </div>
+                                                  </ul>
+                                                </ForwardRef(List)>
+                                              </WithStyles(ForwardRef(List))>
+                                            </div>
+                                            <hr
+                                              className="sprintStatistics-horizontalRule-9"
+                                            />
+                                            <div
+                                              className="sprintStatistics-contentSection-6"
+                                            >
+                                              <WithStyles(ForwardRef(Typography))
+                                                variant="h6"
+                                              >
+                                                <ForwardRef(Typography)
+                                                  classes={
+                                                    Object {
+                                                      "alignCenter": "MuiTypography-alignCenter",
+                                                      "alignJustify": "MuiTypography-alignJustify",
+                                                      "alignLeft": "MuiTypography-alignLeft",
+                                                      "alignRight": "MuiTypography-alignRight",
+                                                      "body1": "MuiTypography-body1",
+                                                      "body2": "MuiTypography-body2",
+                                                      "button": "MuiTypography-button",
+                                                      "caption": "MuiTypography-caption",
+                                                      "colorError": "MuiTypography-colorError",
+                                                      "colorInherit": "MuiTypography-colorInherit",
+                                                      "colorPrimary": "MuiTypography-colorPrimary",
+                                                      "colorSecondary": "MuiTypography-colorSecondary",
+                                                      "colorTextPrimary": "MuiTypography-colorTextPrimary",
+                                                      "colorTextSecondary": "MuiTypography-colorTextSecondary",
+                                                      "displayBlock": "MuiTypography-displayBlock",
+                                                      "displayInline": "MuiTypography-displayInline",
+                                                      "gutterBottom": "MuiTypography-gutterBottom",
+                                                      "h1": "MuiTypography-h1",
+                                                      "h2": "MuiTypography-h2",
+                                                      "h3": "MuiTypography-h3",
+                                                      "h4": "MuiTypography-h4",
+                                                      "h5": "MuiTypography-h5",
+                                                      "h6": "MuiTypography-h6",
+                                                      "noWrap": "MuiTypography-noWrap",
+                                                      "overline": "MuiTypography-overline",
+                                                      "paragraph": "MuiTypography-paragraph",
+                                                      "root": "MuiTypography-root",
+                                                      "srOnly": "MuiTypography-srOnly",
+                                                      "subtitle1": "MuiTypography-subtitle1",
+                                                      "subtitle2": "MuiTypography-subtitle2",
+                                                    }
+                                                  }
+                                                  variant="h6"
+                                                >
+                                                  <h6
+                                                    className="MuiTypography-root MuiTypography-h6"
+                                                  >
+                                                    Projects by Category
+                                                  </h6>
+                                                </ForwardRef(Typography)>
+                                              </WithStyles(ForwardRef(Typography))>
+                                              <WithStyles(ForwardRef(List))>
+                                                <ForwardRef(List)
+                                                  classes={
+                                                    Object {
+                                                      "dense": "MuiList-dense",
+                                                      "padding": "MuiList-padding",
+                                                      "root": "MuiList-root",
+                                                      "subheader": "MuiList-subheader",
+                                                    }
+                                                  }
+                                                >
+                                                  <ul
+                                                    className="MuiList-root MuiList-padding"
+                                                  >
+                                                    <div
+                                                      key="Grades & Transcripts"
+                                                    >
+                                                      <WithStyles(ForwardRef(ListItem))>
+                                                        <ForwardRef(ListItem)
+                                                          classes={
+                                                            Object {
+                                                              "alignItemsFlexStart": "MuiListItem-alignItemsFlexStart",
+                                                              "button": "MuiListItem-button",
+                                                              "container": "MuiListItem-container",
+                                                              "dense": "MuiListItem-dense",
+                                                              "disabled": "Mui-disabled",
+                                                              "divider": "MuiListItem-divider",
+                                                              "focusVisible": "Mui-focusVisible",
+                                                              "gutters": "MuiListItem-gutters",
+                                                              "root": "MuiListItem-root",
+                                                              "secondaryAction": "MuiListItem-secondaryAction",
+                                                              "selected": "Mui-selected",
+                                                            }
+                                                          }
+                                                        >
+                                                          <li
+                                                            className="MuiListItem-root MuiListItem-gutters"
+                                                            disabled={false}
+                                                          >
+                                                            <WithStyles(ForwardRef(ListItemAvatar))
+                                                              key=".0"
+                                                            >
+                                                              <ForwardRef(ListItemAvatar)
+                                                                classes={
+                                                                  Object {
+                                                                    "alignItemsFlexStart": "MuiListItemAvatar-alignItemsFlexStart",
+                                                                    "root": "MuiListItemAvatar-root",
+                                                                  }
+                                                                }
+                                                              >
+                                                                <div
+                                                                  className="MuiListItemAvatar-root"
+                                                                >
+                                                                  <WithStyles(ForwardRef(Avatar))
+                                                                    className="sprintStatistics-red-3"
+                                                                  >
+                                                                    <ForwardRef(Avatar)
+                                                                      className="sprintStatistics-red-3"
+                                                                      classes={
+                                                                        Object {
+                                                                          "circle": "MuiAvatar-circle",
+                                                                          "colorDefault": "MuiAvatar-colorDefault",
+                                                                          "fallback": "MuiAvatar-fallback",
+                                                                          "img": "MuiAvatar-img",
+                                                                          "root": "MuiAvatar-root",
+                                                                          "rounded": "MuiAvatar-rounded",
+                                                                          "square": "MuiAvatar-square",
+                                                                        }
+                                                                      }
+                                                                    >
+                                                                      <div
+                                                                        className="MuiAvatar-root MuiAvatar-circle sprintStatistics-red-3 MuiAvatar-colorDefault"
+                                                                      >
+                                                                        G
+                                                                      </div>
+                                                                    </ForwardRef(Avatar)>
+                                                                  </WithStyles(ForwardRef(Avatar))>
+                                                                </div>
+                                                              </ForwardRef(ListItemAvatar)>
+                                                            </WithStyles(ForwardRef(ListItemAvatar))>
+                                                            <WithStyles(ForwardRef(ListItemText))
+                                                              key=".1"
+                                                              primary="Grades & Transcripts"
+                                                              secondary="3 projects  |  7 project points"
+                                                            >
+                                                              <ForwardRef(ListItemText)
+                                                                classes={
+                                                                  Object {
+                                                                    "dense": "MuiListItemText-dense",
+                                                                    "inset": "MuiListItemText-inset",
+                                                                    "multiline": "MuiListItemText-multiline",
+                                                                    "primary": "MuiListItemText-primary",
+                                                                    "root": "MuiListItemText-root",
+                                                                    "secondary": "MuiListItemText-secondary",
+                                                                  }
+                                                                }
+                                                                primary="Grades & Transcripts"
+                                                                secondary="3 projects  |  7 project points"
+                                                              >
+                                                                <div
+                                                                  className="MuiListItemText-root MuiListItemText-multiline"
+                                                                >
+                                                                  <WithStyles(ForwardRef(Typography))
+                                                                    className="MuiListItemText-primary"
+                                                                    component="span"
+                                                                    variant="body1"
+                                                                  >
+                                                                    <ForwardRef(Typography)
+                                                                      className="MuiListItemText-primary"
+                                                                      classes={
+                                                                        Object {
+                                                                          "alignCenter": "MuiTypography-alignCenter",
+                                                                          "alignJustify": "MuiTypography-alignJustify",
+                                                                          "alignLeft": "MuiTypography-alignLeft",
+                                                                          "alignRight": "MuiTypography-alignRight",
+                                                                          "body1": "MuiTypography-body1",
+                                                                          "body2": "MuiTypography-body2",
+                                                                          "button": "MuiTypography-button",
+                                                                          "caption": "MuiTypography-caption",
+                                                                          "colorError": "MuiTypography-colorError",
+                                                                          "colorInherit": "MuiTypography-colorInherit",
+                                                                          "colorPrimary": "MuiTypography-colorPrimary",
+                                                                          "colorSecondary": "MuiTypography-colorSecondary",
+                                                                          "colorTextPrimary": "MuiTypography-colorTextPrimary",
+                                                                          "colorTextSecondary": "MuiTypography-colorTextSecondary",
+                                                                          "displayBlock": "MuiTypography-displayBlock",
+                                                                          "displayInline": "MuiTypography-displayInline",
+                                                                          "gutterBottom": "MuiTypography-gutterBottom",
+                                                                          "h1": "MuiTypography-h1",
+                                                                          "h2": "MuiTypography-h2",
+                                                                          "h3": "MuiTypography-h3",
+                                                                          "h4": "MuiTypography-h4",
+                                                                          "h5": "MuiTypography-h5",
+                                                                          "h6": "MuiTypography-h6",
+                                                                          "noWrap": "MuiTypography-noWrap",
+                                                                          "overline": "MuiTypography-overline",
+                                                                          "paragraph": "MuiTypography-paragraph",
+                                                                          "root": "MuiTypography-root",
+                                                                          "srOnly": "MuiTypography-srOnly",
+                                                                          "subtitle1": "MuiTypography-subtitle1",
+                                                                          "subtitle2": "MuiTypography-subtitle2",
+                                                                        }
+                                                                      }
+                                                                      component="span"
+                                                                      variant="body1"
+                                                                    >
+                                                                      <span
+                                                                        className="MuiTypography-root MuiListItemText-primary MuiTypography-body1"
+                                                                      >
+                                                                        Grades & Transcripts
+                                                                      </span>
+                                                                    </ForwardRef(Typography)>
+                                                                  </WithStyles(ForwardRef(Typography))>
+                                                                  <WithStyles(ForwardRef(Typography))
+                                                                    className="MuiListItemText-secondary"
+                                                                    color="textSecondary"
+                                                                    variant="body2"
+                                                                  >
+                                                                    <ForwardRef(Typography)
+                                                                      className="MuiListItemText-secondary"
+                                                                      classes={
+                                                                        Object {
+                                                                          "alignCenter": "MuiTypography-alignCenter",
+                                                                          "alignJustify": "MuiTypography-alignJustify",
+                                                                          "alignLeft": "MuiTypography-alignLeft",
+                                                                          "alignRight": "MuiTypography-alignRight",
+                                                                          "body1": "MuiTypography-body1",
+                                                                          "body2": "MuiTypography-body2",
+                                                                          "button": "MuiTypography-button",
+                                                                          "caption": "MuiTypography-caption",
+                                                                          "colorError": "MuiTypography-colorError",
+                                                                          "colorInherit": "MuiTypography-colorInherit",
+                                                                          "colorPrimary": "MuiTypography-colorPrimary",
+                                                                          "colorSecondary": "MuiTypography-colorSecondary",
+                                                                          "colorTextPrimary": "MuiTypography-colorTextPrimary",
+                                                                          "colorTextSecondary": "MuiTypography-colorTextSecondary",
+                                                                          "displayBlock": "MuiTypography-displayBlock",
+                                                                          "displayInline": "MuiTypography-displayInline",
+                                                                          "gutterBottom": "MuiTypography-gutterBottom",
+                                                                          "h1": "MuiTypography-h1",
+                                                                          "h2": "MuiTypography-h2",
+                                                                          "h3": "MuiTypography-h3",
+                                                                          "h4": "MuiTypography-h4",
+                                                                          "h5": "MuiTypography-h5",
+                                                                          "h6": "MuiTypography-h6",
+                                                                          "noWrap": "MuiTypography-noWrap",
+                                                                          "overline": "MuiTypography-overline",
+                                                                          "paragraph": "MuiTypography-paragraph",
+                                                                          "root": "MuiTypography-root",
+                                                                          "srOnly": "MuiTypography-srOnly",
+                                                                          "subtitle1": "MuiTypography-subtitle1",
+                                                                          "subtitle2": "MuiTypography-subtitle2",
+                                                                        }
+                                                                      }
+                                                                      color="textSecondary"
+                                                                      variant="body2"
+                                                                    >
+                                                                      <p
+                                                                        className="MuiTypography-root MuiListItemText-secondary MuiTypography-body2 MuiTypography-colorTextSecondary"
+                                                                      >
+                                                                        3 projects  |  7 project points
+                                                                      </p>
+                                                                    </ForwardRef(Typography)>
+                                                                  </WithStyles(ForwardRef(Typography))>
+                                                                </div>
+                                                              </ForwardRef(ListItemText)>
+                                                            </WithStyles(ForwardRef(ListItemText))>
+                                                          </li>
+                                                        </ForwardRef(ListItem)>
+                                                      </WithStyles(ForwardRef(ListItem))>
+                                                    </div>
+                                                  </ul>
+                                                </ForwardRef(List)>
+                                              </WithStyles(ForwardRef(List))>
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </ForwardRef(Grid)>
+                                    </WithStyles(ForwardRef(Grid))>
+                                    <WithStyles(ForwardRef(Grid))
+                                      item={true}
+                                      md={8}
+                                      xs={12}
+                                    >
+                                      <ForwardRef(Grid)
+                                        classes={
+                                          Object {
+                                            "align-content-xs-center": "MuiGrid-align-content-xs-center",
+                                            "align-content-xs-flex-end": "MuiGrid-align-content-xs-flex-end",
+                                            "align-content-xs-flex-start": "MuiGrid-align-content-xs-flex-start",
+                                            "align-content-xs-space-around": "MuiGrid-align-content-xs-space-around",
+                                            "align-content-xs-space-between": "MuiGrid-align-content-xs-space-between",
+                                            "align-items-xs-baseline": "MuiGrid-align-items-xs-baseline",
+                                            "align-items-xs-center": "MuiGrid-align-items-xs-center",
+                                            "align-items-xs-flex-end": "MuiGrid-align-items-xs-flex-end",
+                                            "align-items-xs-flex-start": "MuiGrid-align-items-xs-flex-start",
+                                            "container": "MuiGrid-container",
+                                            "direction-xs-column": "MuiGrid-direction-xs-column",
+                                            "direction-xs-column-reverse": "MuiGrid-direction-xs-column-reverse",
+                                            "direction-xs-row-reverse": "MuiGrid-direction-xs-row-reverse",
+                                            "grid-lg-1": "MuiGrid-grid-lg-1",
+                                            "grid-lg-10": "MuiGrid-grid-lg-10",
+                                            "grid-lg-11": "MuiGrid-grid-lg-11",
+                                            "grid-lg-12": "MuiGrid-grid-lg-12",
+                                            "grid-lg-2": "MuiGrid-grid-lg-2",
+                                            "grid-lg-3": "MuiGrid-grid-lg-3",
+                                            "grid-lg-4": "MuiGrid-grid-lg-4",
+                                            "grid-lg-5": "MuiGrid-grid-lg-5",
+                                            "grid-lg-6": "MuiGrid-grid-lg-6",
+                                            "grid-lg-7": "MuiGrid-grid-lg-7",
+                                            "grid-lg-8": "MuiGrid-grid-lg-8",
+                                            "grid-lg-9": "MuiGrid-grid-lg-9",
+                                            "grid-lg-auto": "MuiGrid-grid-lg-auto",
+                                            "grid-lg-true": "MuiGrid-grid-lg-true",
+                                            "grid-md-1": "MuiGrid-grid-md-1",
+                                            "grid-md-10": "MuiGrid-grid-md-10",
+                                            "grid-md-11": "MuiGrid-grid-md-11",
+                                            "grid-md-12": "MuiGrid-grid-md-12",
+                                            "grid-md-2": "MuiGrid-grid-md-2",
+                                            "grid-md-3": "MuiGrid-grid-md-3",
+                                            "grid-md-4": "MuiGrid-grid-md-4",
+                                            "grid-md-5": "MuiGrid-grid-md-5",
+                                            "grid-md-6": "MuiGrid-grid-md-6",
+                                            "grid-md-7": "MuiGrid-grid-md-7",
+                                            "grid-md-8": "MuiGrid-grid-md-8",
+                                            "grid-md-9": "MuiGrid-grid-md-9",
+                                            "grid-md-auto": "MuiGrid-grid-md-auto",
+                                            "grid-md-true": "MuiGrid-grid-md-true",
+                                            "grid-sm-1": "MuiGrid-grid-sm-1",
+                                            "grid-sm-10": "MuiGrid-grid-sm-10",
+                                            "grid-sm-11": "MuiGrid-grid-sm-11",
+                                            "grid-sm-12": "MuiGrid-grid-sm-12",
+                                            "grid-sm-2": "MuiGrid-grid-sm-2",
+                                            "grid-sm-3": "MuiGrid-grid-sm-3",
+                                            "grid-sm-4": "MuiGrid-grid-sm-4",
+                                            "grid-sm-5": "MuiGrid-grid-sm-5",
+                                            "grid-sm-6": "MuiGrid-grid-sm-6",
+                                            "grid-sm-7": "MuiGrid-grid-sm-7",
+                                            "grid-sm-8": "MuiGrid-grid-sm-8",
+                                            "grid-sm-9": "MuiGrid-grid-sm-9",
+                                            "grid-sm-auto": "MuiGrid-grid-sm-auto",
+                                            "grid-sm-true": "MuiGrid-grid-sm-true",
+                                            "grid-xl-1": "MuiGrid-grid-xl-1",
+                                            "grid-xl-10": "MuiGrid-grid-xl-10",
+                                            "grid-xl-11": "MuiGrid-grid-xl-11",
+                                            "grid-xl-12": "MuiGrid-grid-xl-12",
+                                            "grid-xl-2": "MuiGrid-grid-xl-2",
+                                            "grid-xl-3": "MuiGrid-grid-xl-3",
+                                            "grid-xl-4": "MuiGrid-grid-xl-4",
+                                            "grid-xl-5": "MuiGrid-grid-xl-5",
+                                            "grid-xl-6": "MuiGrid-grid-xl-6",
+                                            "grid-xl-7": "MuiGrid-grid-xl-7",
+                                            "grid-xl-8": "MuiGrid-grid-xl-8",
+                                            "grid-xl-9": "MuiGrid-grid-xl-9",
+                                            "grid-xl-auto": "MuiGrid-grid-xl-auto",
+                                            "grid-xl-true": "MuiGrid-grid-xl-true",
+                                            "grid-xs-1": "MuiGrid-grid-xs-1",
+                                            "grid-xs-10": "MuiGrid-grid-xs-10",
+                                            "grid-xs-11": "MuiGrid-grid-xs-11",
+                                            "grid-xs-12": "MuiGrid-grid-xs-12",
+                                            "grid-xs-2": "MuiGrid-grid-xs-2",
+                                            "grid-xs-3": "MuiGrid-grid-xs-3",
+                                            "grid-xs-4": "MuiGrid-grid-xs-4",
+                                            "grid-xs-5": "MuiGrid-grid-xs-5",
+                                            "grid-xs-6": "MuiGrid-grid-xs-6",
+                                            "grid-xs-7": "MuiGrid-grid-xs-7",
+                                            "grid-xs-8": "MuiGrid-grid-xs-8",
+                                            "grid-xs-9": "MuiGrid-grid-xs-9",
+                                            "grid-xs-auto": "MuiGrid-grid-xs-auto",
+                                            "grid-xs-true": "MuiGrid-grid-xs-true",
+                                            "item": "MuiGrid-item",
+                                            "justify-xs-center": "MuiGrid-justify-xs-center",
+                                            "justify-xs-flex-end": "MuiGrid-justify-xs-flex-end",
+                                            "justify-xs-space-around": "MuiGrid-justify-xs-space-around",
+                                            "justify-xs-space-between": "MuiGrid-justify-xs-space-between",
+                                            "justify-xs-space-evenly": "MuiGrid-justify-xs-space-evenly",
+                                            "root": "MuiGrid-root",
+                                            "spacing-xs-1": "MuiGrid-spacing-xs-1",
+                                            "spacing-xs-10": "MuiGrid-spacing-xs-10",
+                                            "spacing-xs-2": "MuiGrid-spacing-xs-2",
+                                            "spacing-xs-3": "MuiGrid-spacing-xs-3",
+                                            "spacing-xs-4": "MuiGrid-spacing-xs-4",
+                                            "spacing-xs-5": "MuiGrid-spacing-xs-5",
+                                            "spacing-xs-6": "MuiGrid-spacing-xs-6",
+                                            "spacing-xs-7": "MuiGrid-spacing-xs-7",
+                                            "spacing-xs-8": "MuiGrid-spacing-xs-8",
+                                            "spacing-xs-9": "MuiGrid-spacing-xs-9",
+                                            "wrap-xs-nowrap": "MuiGrid-wrap-xs-nowrap",
+                                            "wrap-xs-wrap-reverse": "MuiGrid-wrap-xs-wrap-reverse",
+                                            "zeroMinWidth": "MuiGrid-zeroMinWidth",
+                                          }
+                                        }
+                                        item={true}
+                                        md={8}
+                                        xs={12}
+                                      >
+                                        <div
+                                          className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-md-8"
+                                        >
+                                          <div
+                                            className="sprintStatistics-contentContainer-5"
+                                          >
+                                            <hr
+                                              className="sprintStatistics-xsOnlyHorizontalRule-10"
+                                            />
+                                            <div
+                                              className="sprintStatistics-contentSection-6"
+                                            >
+                                              <WithStyles(ForwardRef(Typography))
+                                                variant="h6"
+                                              >
+                                                <ForwardRef(Typography)
+                                                  classes={
+                                                    Object {
+                                                      "alignCenter": "MuiTypography-alignCenter",
+                                                      "alignJustify": "MuiTypography-alignJustify",
+                                                      "alignLeft": "MuiTypography-alignLeft",
+                                                      "alignRight": "MuiTypography-alignRight",
+                                                      "body1": "MuiTypography-body1",
+                                                      "body2": "MuiTypography-body2",
+                                                      "button": "MuiTypography-button",
+                                                      "caption": "MuiTypography-caption",
+                                                      "colorError": "MuiTypography-colorError",
+                                                      "colorInherit": "MuiTypography-colorInherit",
+                                                      "colorPrimary": "MuiTypography-colorPrimary",
+                                                      "colorSecondary": "MuiTypography-colorSecondary",
+                                                      "colorTextPrimary": "MuiTypography-colorTextPrimary",
+                                                      "colorTextSecondary": "MuiTypography-colorTextSecondary",
+                                                      "displayBlock": "MuiTypography-displayBlock",
+                                                      "displayInline": "MuiTypography-displayInline",
+                                                      "gutterBottom": "MuiTypography-gutterBottom",
+                                                      "h1": "MuiTypography-h1",
+                                                      "h2": "MuiTypography-h2",
+                                                      "h3": "MuiTypography-h3",
+                                                      "h4": "MuiTypography-h4",
+                                                      "h5": "MuiTypography-h5",
+                                                      "h6": "MuiTypography-h6",
+                                                      "noWrap": "MuiTypography-noWrap",
+                                                      "overline": "MuiTypography-overline",
+                                                      "paragraph": "MuiTypography-paragraph",
+                                                      "root": "MuiTypography-root",
+                                                      "srOnly": "MuiTypography-srOnly",
+                                                      "subtitle1": "MuiTypography-subtitle1",
+                                                      "subtitle2": "MuiTypography-subtitle2",
+                                                    }
+                                                  }
+                                                  variant="h6"
+                                                >
+                                                  <h6
+                                                    className="MuiTypography-root MuiTypography-h6"
+                                                  >
+                                                    Sprint Progress
+                                                  </h6>
+                                                </ForwardRef(Typography)>
+                                              </WithStyles(ForwardRef(Typography))>
+                                            </div>
+                                            <div
+                                              className="sprintStatistics-centeredContentSection-7"
+                                            >
+                                              <ResponsiveContainer
+                                                debounce={0}
+                                                height={350}
+                                                width="100%"
+                                              >
+                                                <div
+                                                  className="recharts-responsive-container"
+                                                  id="undefined"
+                                                  style={
+                                                    Object {
+                                                      "height": 350,
+                                                      "maxHeight": undefined,
+                                                      "minHeight": undefined,
+                                                      "minWidth": undefined,
+                                                      "width": "100%",
+                                                    }
+                                                  }
+                                                >
+                                                  <LineChart
+                                                    barCategoryGap="10%"
+                                                    barGap={4}
+                                                    data={
+                                                      Array [
+                                                        Object {
+                                                          "actualPoints": 0,
+                                                          "expectedPoints": 0,
+                                                          "name": "Start",
+                                                        },
+                                                        Object {
+                                                          "actualPoints": 0.75,
+                                                          "expectedPoints": 3.5,
+                                                          "name": "End of Week 1",
+                                                        },
+                                                        Object {
+                                                          "actualPoints": 0,
+                                                          "expectedPoints": 7,
+                                                          "name": "End of Week 2",
+                                                        },
+                                                      ]
+                                                    }
+                                                    height={350}
+                                                    layout="horizontal"
+                                                    margin={
+                                                      Object {
+                                                        "bottom": 5,
+                                                        "left": 0,
+                                                        "right": 50,
+                                                        "top": 5,
+                                                      }
+                                                    }
+                                                    reverseStackOrder={false}
+                                                    stackOffset="none"
+                                                    width={0}
+                                                  />
+                                                  <ResizeDetector
+                                                    handleHeight={true}
+                                                    handleWidth={true}
+                                                    nodeType="div"
+                                                    onResize={[Function]}
+                                                    querySelector={null}
+                                                    refreshRate={1000}
+                                                    skipOnMount={false}
+                                                    targetDomEl={null}
+                                                  >
+                                                    <ChildWrapper>
+                                                      <div />
+                                                    </ChildWrapper>
+                                                  </ResizeDetector>
+                                                </div>
+                                              </ResponsiveContainer>
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </ForwardRef(Grid)>
+                                    </WithStyles(ForwardRef(Grid))>
+                                  </div>
+                                </ForwardRef(Grid)>
+                              </WithStyles(ForwardRef(Grid))>
+                            </div>
+                          </div>
+                        </ForwardRef(Paper)>
+                      </WithStyles(ForwardRef(Paper))>
+                      <div
+                        data-test="sentinelEnd"
+                        tabIndex={0}
+                      />
+                    </TrapFocus>
+                  </div>
+                </Portal>
+              </ForwardRef(Portal)>
+            </ForwardRef(Modal)>
+          </sprintStatistics>
+        </WithStyles(sprintStatistics)>
+      </Connect(WithStyles(sprintStatistics))>
+    </Provider>
+  </Router>
+</BrowserRouter>
+`;

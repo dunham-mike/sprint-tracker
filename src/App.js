@@ -16,6 +16,8 @@ import CreateAccount from './components/CreateAccount/CreateAccount';
 import * as actions from './store/actions/index';
 import Logout from './components/Login/Logout/Logout';
 
+import ErrorBoundary from './containers/ErrorBoundary/ErrorBoundary';
+
 class App extends Component {
     componentDidMount = () => {
         // Only try to login if the user is not starting on the demo page
@@ -77,9 +79,13 @@ class App extends Component {
             <ThemeProvider theme={theme}>
                 {/* <ConfirmProvider> */}
                     <CssBaseline />
-                    <Layout>
-                        {routes}
-                    </Layout>
+                    <ErrorBoundary>
+                        <Layout>
+                            <ErrorBoundary>
+                                {routes}
+                            </ErrorBoundary>
+                        </Layout>
+                    </ErrorBoundary>
                 {/* </ConfirmProvider> */}
             </ThemeProvider>
         );

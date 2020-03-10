@@ -14,6 +14,7 @@ import { withStyles } from '@material-ui/core/styles';
 import EditProject from '../EditProject/EditProject';
 import * as actions from '../../store/actions/index';
 import SprintStatistics from '../../components/SprintStatistics/SprintStatistics';
+import ModalErrorBoundary from '../ErrorBoundary/ModalErrorBoundary/ModalErrorBoundary';
 
 const styles = theme => ({
     mainViewContainer: {
@@ -418,13 +419,17 @@ class MainView extends Component {
         if (this.state.editingProject) {
             projectEdit = (
                 <div>
-                    <EditProject 
-                        project={this.state.projectBeingViewed}
-                        sprintId={this.state.sprintIdBeingViewed}
-                        sprintIndex={this.state.sprintIndexBeingViewed}
-                        onCloseProject={this.closeEditingProject}
-                        actionType={"edit"}
-                    />
+                    <ModalErrorBoundary
+                        onClose={this.closeEditingProject}
+                    >
+                        <EditProject 
+                            project={this.state.projectBeingViewed}
+                            sprintId={this.state.sprintIdBeingViewed}
+                            sprintIndex={this.state.sprintIndexBeingViewed}
+                            onCloseProject={this.closeEditingProject}
+                            actionType={"edit"}
+                        />
+                    </ModalErrorBoundary>
                 </div>
             );
         }
@@ -435,13 +440,17 @@ class MainView extends Component {
         if (this.state.creatingProject) {
             projectCreate = (
                 <div>
-                    <EditProject 
-                        project={null}
-                        sprintId={this.state.sprintIdBeingViewed}
-                        sprintIndex={this.state.sprintIndexBeingViewed}
-                        onCloseProject={this.closeCreatingProject}
-                        actionType={"create"}
-                    />
+                    <ModalErrorBoundary
+                        onClose={this.closeCreatingProject}
+                    >
+                        <EditProject 
+                            project={null}
+                            sprintId={this.state.sprintIdBeingViewed}
+                            sprintIndex={this.state.sprintIndexBeingViewed}
+                            onCloseProject={this.closeCreatingProject}
+                            actionType={"create"}
+                        />
+                    </ModalErrorBoundary>
                 </div>
             );
         }
@@ -452,11 +461,15 @@ class MainView extends Component {
         if (this.state.editingSprint) {
             sprintEdit = (
                 <div>
-                    <EditSprint
-                        sprintId={this.state.sprintIdBeingViewed}
-                        onCloseSprint={this.closeEditingSprint}
-                        actionType={"edit"}
-                     />
+                    <ModalErrorBoundary
+                        onClose={this.closeEditingSprint}
+                    >
+                        <EditSprint
+                            sprintId={this.state.sprintIdBeingViewed}
+                            onCloseSprint={this.closeEditingSprint}
+                            actionType={"edit"}
+                        />
+                     </ModalErrorBoundary>
                 </div>
             );
         }
@@ -467,10 +480,14 @@ class MainView extends Component {
         if (this.state.creatingSprint) {
             sprintCreate = (
                 <div>
-                    <EditSprint
-                        onCloseSprint={this.closeCreatingSprint}
-                        actionType={"create"}
-                     />
+                    <ModalErrorBoundary
+                        onClose={this.closeCreatingSprint}
+                    >
+                        <EditSprint
+                            onCloseSprint={this.closeCreatingSprint}
+                            actionType={"create"}
+                        />
+                     </ModalErrorBoundary>
                 </div>
             );
         }
@@ -481,11 +498,15 @@ class MainView extends Component {
         if (this.state.displayingSprintStatistics) {
             sprintStatistics = (
                 <div>
-                    <SprintStatistics 
-                        sprintId = {this.state.sprintIdBeingViewed}
-                        sprintIndex= {this.state.sprintIndexBeingViewed}
-                        onCloseSprintStatistics = {this.closeSprintStatistics}
-                    />
+                    <ModalErrorBoundary
+                        onClose={this.closeSprintStatistics}
+                    >
+                        <SprintStatistics 
+                            sprintId={this.state.sprintIdBeingViewed}
+                            sprintIndex={this.state.sprintIndexBeingViewed}
+                            onCloseSprintStatistics={this.closeSprintStatistics}
+                        />
+                    </ModalErrorBoundary>
                 </div>
             );
         }
