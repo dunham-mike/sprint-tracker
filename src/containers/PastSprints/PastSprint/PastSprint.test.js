@@ -113,7 +113,7 @@ const mountSetup = (sprintData, sprintId) => {
     }
 
     const enzymeMountWrapper = mount(
-                <PastSprint {...props} />
+        <PastSprint {...props} />
     );
 
     return {
