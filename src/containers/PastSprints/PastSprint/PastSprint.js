@@ -115,7 +115,6 @@ class PastSprints extends Component {
                                 onOpenProject={null}
                                 sprintType={"past"}
                                 sprintLength={this.getSprintLength()}
-                                pastSprint={true}
                             />
                         </div>
                     </div>

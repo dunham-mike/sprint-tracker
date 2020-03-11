@@ -205,7 +205,7 @@ class MainView extends Component {
         return null;
     }
 
-    openEditingProject = (project, sprintId, columnNames) => {
+    openEditingProject = (project, sprintId) => {
         this.setState({
             editingProject: true,
             projectBeingViewed: project,
