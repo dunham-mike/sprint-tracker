@@ -1,0 +1,1258 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PastSprints Component should match the snapshot 1`] = `
+<Provider
+  store={
+    Object {
+      "clearActions": [Function],
+      "dispatch": [Function],
+      "getActions": [Function],
+      "getState": [Function],
+      "replaceReducer": [Function],
+      "subscribe": [Function],
+    }
+  }
+>
+  <Connect(WithStyles(PastSprints))>
+    <WithStyles(PastSprints)
+      dispatch={[Function]}
+      sprints={
+        Array [
+          Object {
+            "endDate": "2020-02-06T00:00:00.000Z",
+            "id": "test_sprintId",
+            "name": "Sprint #1",
+            "owner": "Mike",
+            "participants": "Mike, Bobby",
+            "projects": Array [
+              Object {
+                "category": Object {
+                  "value": "Grades & Transcripts",
+                },
+                "categoryLead": Object {
+                  "value": "Bobby",
+                },
+                "completionStatus": Object {
+                  "value": "",
+                },
+                "deliverableLink": Object {
+                  "value": "",
+                },
+                "deliverables": Object {
+                  "value": "Historical Illuminate courses matched with current equivalencies.",
+                },
+                "description": Object {
+                  "value": "-Audit all historical expeditions grades & match courses to equivalents",
+                },
+                "estimatedProjectSize": Object {
+                  "value": "3 - Small-to-Medium",
+                },
+                "externalDueDate": Object {
+                  "value": "",
+                },
+                "id": Object {
+                  "value": 1,
+                },
+                "manager": Object {
+                  "value": "Bobby",
+                },
+                "mustDo": Object {
+                  "value": "Nice-to-Have",
+                },
+                "name": Object {
+                  "value": "Verify course equivalencies & Grad Requirements in Illuminate",
+                },
+                "notCompletedExplanation": Object {
+                  "value": "",
+                },
+                "notes": Object {
+                  "value": "",
+                },
+                "statusEndOfWeek1": Object {
+                  "value": "25%",
+                },
+                "statusEndOfWeek2": Object {
+                  "value": "",
+                },
+                "statusEndOfWeek3": Object {
+                  "value": "",
+                },
+                "statusEndOfWeek4": Object {
+                  "value": "",
+                },
+                "statusEndOfWeek5": Object {
+                  "value": "",
+                },
+                "statusEndOfWeek6": Object {
+                  "value": "",
+                },
+                "statusEndOfWeek7": Object {
+                  "value": "",
+                },
+                "statusEndOfWeek8": Object {
+                  "value": "",
+                },
+              },
+              Object {
+                "category": Object {
+                  "value": "Grades & Transcripts",
+                },
+                "categoryLead": Object {
+                  "value": "Bobby",
+                },
+                "completionStatus": Object {
+                  "value": "",
+                },
+                "deliverableLink": Object {
+                  "value": "",
+                },
+                "deliverables": Object {
+                  "value": "Historical Illuminate courses matched with current equivalencies.",
+                },
+                "description": Object {
+                  "value": "-Audit all historical expeditions grades & match courses to equivalents",
+                },
+                "estimatedProjectSize": Object {
+                  "value": "3 - Small-to-Medium",
+                },
+                "externalDueDate": Object {
+                  "value": "",
+                },
+                "id": Object {
+                  "value": 2,
+                },
+                "manager": Object {
+                  "value": "Mike",
+                },
+                "mustDo": Object {
+                  "value": "Nice-to-Have",
+                },
+                "name": Object {
+                  "value": "Verify course equivalencies & Grad Requirements in Illuminate",
+                },
+                "notCompletedExplanation": Object {
+                  "value": "",
+                },
+                "notes": Object {
+                  "value": "",
+                },
+                "statusEndOfWeek1": Object {
+                  "value": "",
+                },
+                "statusEndOfWeek2": Object {
+                  "value": "",
+                },
+                "statusEndOfWeek3": Object {
+                  "value": "",
+                },
+                "statusEndOfWeek4": Object {
+                  "value": "",
+                },
+                "statusEndOfWeek5": Object {
+                  "value": "",
+                },
+                "statusEndOfWeek6": Object {
+                  "value": "",
+                },
+                "statusEndOfWeek7": Object {
+                  "value": "",
+                },
+                "statusEndOfWeek8": Object {
+                  "value": "",
+                },
+              },
+              Object {
+                "category": Object {
+                  "value": "Grades & Transcripts",
+                },
+                "categoryLead": Object {
+                  "value": "Bobby",
+                },
+                "completionStatus": Object {
+                  "value": "",
+                },
+                "deliverableLink": Object {
+                  "value": "",
+                },
+                "deliverables": Object {
+                  "value": "Historical Illuminate courses matched with current equivalencies.",
+                },
+                "description": Object {
+                  "value": "-Audit all historical expeditions grades & match courses to equivalents",
+                },
+                "estimatedProjectSize": Object {
+                  "value": "1 - Extra Small",
+                },
+                "externalDueDate": Object {
+                  "value": "",
+                },
+                "id": Object {
+                  "value": 3,
+                },
+                "manager": Object {
+                  "value": "Bobby",
+                },
+                "mustDo": Object {
+                  "value": "Nice-to-Have",
+                },
+                "name": Object {
+                  "value": "Verify course equivalencies & Grad Requirements in Illuminate",
+                },
+                "notCompletedExplanation": Object {
+                  "value": "",
+                },
+                "notes": Object {
+                  "value": "",
+                },
+                "statusEndOfWeek1": Object {
+                  "value": "",
+                },
+                "statusEndOfWeek2": Object {
+                  "value": "",
+                },
+                "statusEndOfWeek3": Object {
+                  "value": "",
+                },
+                "statusEndOfWeek4": Object {
+                  "value": "",
+                },
+                "statusEndOfWeek5": Object {
+                  "value": "",
+                },
+                "statusEndOfWeek6": Object {
+                  "value": "",
+                },
+                "statusEndOfWeek7": Object {
+                  "value": "",
+                },
+                "statusEndOfWeek8": Object {
+                  "value": "",
+                },
+              },
+            ],
+            "startDate": "2020-01-24T00:00:00.000Z",
+          },
+          Object {
+            "endDate": "2020-03-06T00:00:00.000Z",
+            "id": "test_sprintId2",
+            "name": "Sprint #2",
+            "owner": "Mike",
+            "participants": "Mike, Bobby",
+            "projects": Array [],
+            "startDate": "2020-02-10T00:00:00.000Z",
+          },
+        ]
+      }
+    >
+      <PastSprints
+        classes={
+          Object {
+            "mainViewContainer": "PastSprints-mainViewContainer-1",
+          }
+        }
+        dispatch={[Function]}
+        sprints={
+          Array [
+            Object {
+              "endDate": "2020-02-06T00:00:00.000Z",
+              "id": "test_sprintId",
+              "name": "Sprint #1",
+              "owner": "Mike",
+              "participants": "Mike, Bobby",
+              "projects": Array [
+                Object {
+                  "category": Object {
+                    "value": "Grades & Transcripts",
+                  },
+                  "categoryLead": Object {
+                    "value": "Bobby",
+                  },
+                  "completionStatus": Object {
+                    "value": "",
+                  },
+                  "deliverableLink": Object {
+                    "value": "",
+                  },
+                  "deliverables": Object {
+                    "value": "Historical Illuminate courses matched with current equivalencies.",
+                  },
+                  "description": Object {
+                    "value": "-Audit all historical expeditions grades & match courses to equivalents",
+                  },
+                  "estimatedProjectSize": Object {
+                    "value": "3 - Small-to-Medium",
+                  },
+                  "externalDueDate": Object {
+                    "value": "",
+                  },
+                  "id": Object {
+                    "value": 1,
+                  },
+                  "manager": Object {
+                    "value": "Bobby",
+                  },
+                  "mustDo": Object {
+                    "value": "Nice-to-Have",
+                  },
+                  "name": Object {
+                    "value": "Verify course equivalencies & Grad Requirements in Illuminate",
+                  },
+                  "notCompletedExplanation": Object {
+                    "value": "",
+                  },
+                  "notes": Object {
+                    "value": "",
+                  },
+                  "statusEndOfWeek1": Object {
+                    "value": "25%",
+                  },
+                  "statusEndOfWeek2": Object {
+                    "value": "",
+                  },
+                  "statusEndOfWeek3": Object {
+                    "value": "",
+                  },
+                  "statusEndOfWeek4": Object {
+                    "value": "",
+                  },
+                  "statusEndOfWeek5": Object {
+                    "value": "",
+                  },
+                  "statusEndOfWeek6": Object {
+                    "value": "",
+                  },
+                  "statusEndOfWeek7": Object {
+                    "value": "",
+                  },
+                  "statusEndOfWeek8": Object {
+                    "value": "",
+                  },
+                },
+                Object {
+                  "category": Object {
+                    "value": "Grades & Transcripts",
+                  },
+                  "categoryLead": Object {
+                    "value": "Bobby",
+                  },
+                  "completionStatus": Object {
+                    "value": "",
+                  },
+                  "deliverableLink": Object {
+                    "value": "",
+                  },
+                  "deliverables": Object {
+                    "value": "Historical Illuminate courses matched with current equivalencies.",
+                  },
+                  "description": Object {
+                    "value": "-Audit all historical expeditions grades & match courses to equivalents",
+                  },
+                  "estimatedProjectSize": Object {
+                    "value": "3 - Small-to-Medium",
+                  },
+                  "externalDueDate": Object {
+                    "value": "",
+                  },
+                  "id": Object {
+                    "value": 2,
+                  },
+                  "manager": Object {
+                    "value": "Mike",
+                  },
+                  "mustDo": Object {
+                    "value": "Nice-to-Have",
+                  },
+                  "name": Object {
+                    "value": "Verify course equivalencies & Grad Requirements in Illuminate",
+                  },
+                  "notCompletedExplanation": Object {
+                    "value": "",
+                  },
+                  "notes": Object {
+                    "value": "",
+                  },
+                  "statusEndOfWeek1": Object {
+                    "value": "",
+                  },
+                  "statusEndOfWeek2": Object {
+                    "value": "",
+                  },
+                  "statusEndOfWeek3": Object {
+                    "value": "",
+                  },
+                  "statusEndOfWeek4": Object {
+                    "value": "",
+                  },
+                  "statusEndOfWeek5": Object {
+                    "value": "",
+                  },
+                  "statusEndOfWeek6": Object {
+                    "value": "",
+                  },
+                  "statusEndOfWeek7": Object {
+                    "value": "",
+                  },
+                  "statusEndOfWeek8": Object {
+                    "value": "",
+                  },
+                },
+                Object {
+                  "category": Object {
+                    "value": "Grades & Transcripts",
+                  },
+                  "categoryLead": Object {
+                    "value": "Bobby",
+                  },
+                  "completionStatus": Object {
+                    "value": "",
+                  },
+                  "deliverableLink": Object {
+                    "value": "",
+                  },
+                  "deliverables": Object {
+                    "value": "Historical Illuminate courses matched with current equivalencies.",
+                  },
+                  "description": Object {
+                    "value": "-Audit all historical expeditions grades & match courses to equivalents",
+                  },
+                  "estimatedProjectSize": Object {
+                    "value": "1 - Extra Small",
+                  },
+                  "externalDueDate": Object {
+                    "value": "",
+                  },
+                  "id": Object {
+                    "value": 3,
+                  },
+                  "manager": Object {
+                    "value": "Bobby",
+                  },
+                  "mustDo": Object {
+                    "value": "Nice-to-Have",
+                  },
+                  "name": Object {
+                    "value": "Verify course equivalencies & Grad Requirements in Illuminate",
+                  },
+                  "notCompletedExplanation": Object {
+                    "value": "",
+                  },
+                  "notes": Object {
+                    "value": "",
+                  },
+                  "statusEndOfWeek1": Object {
+                    "value": "",
+                  },
+                  "statusEndOfWeek2": Object {
+                    "value": "",
+                  },
+                  "statusEndOfWeek3": Object {
+                    "value": "",
+                  },
+                  "statusEndOfWeek4": Object {
+                    "value": "",
+                  },
+                  "statusEndOfWeek5": Object {
+                    "value": "",
+                  },
+                  "statusEndOfWeek6": Object {
+                    "value": "",
+                  },
+                  "statusEndOfWeek7": Object {
+                    "value": "",
+                  },
+                  "statusEndOfWeek8": Object {
+                    "value": "",
+                  },
+                },
+              ],
+              "startDate": "2020-01-24T00:00:00.000Z",
+            },
+            Object {
+              "endDate": "2020-03-06T00:00:00.000Z",
+              "id": "test_sprintId2",
+              "name": "Sprint #2",
+              "owner": "Mike",
+              "participants": "Mike, Bobby",
+              "projects": Array [],
+              "startDate": "2020-02-10T00:00:00.000Z",
+            },
+          ]
+        }
+      >
+        <div
+          className="PastSprints-mainViewContainer-1"
+        >
+          <WithStyles(PastSprints)
+            key="test_sprintId2"
+            openSprintStatistics={[Function]}
+            sprint={
+              Object {
+                "endDate": "2020-03-06T00:00:00.000Z",
+                "id": "test_sprintId2",
+                "name": "Sprint #2",
+                "owner": "Mike",
+                "participants": "Mike, Bobby",
+                "projects": Array [],
+                "startDate": "2020-02-10T00:00:00.000Z",
+              }
+            }
+          >
+            <PastSprints
+              classes={
+                Object {
+                  "buttonContainer": "PastSprints-buttonContainer-3",
+                  "buttonSpacing": "PastSprints-buttonSpacing-6",
+                  "conditionalButtons": "PastSprints-conditionalButtons-5",
+                  "conditionalButtonsContainer": "PastSprints-conditionalButtonsContainer-4",
+                  "innerSprintContainer": "PastSprints-innerSprintContainer-8",
+                  "sprintContainer": "PastSprints-sprintContainer-7",
+                  "sprintSectionContainer": "PastSprints-sprintSectionContainer-2",
+                  "tableContainer": "PastSprints-tableContainer-9",
+                }
+              }
+              openSprintStatistics={[Function]}
+              sprint={
+                Object {
+                  "endDate": "2020-03-06T00:00:00.000Z",
+                  "id": "test_sprintId2",
+                  "name": "Sprint #2",
+                  "owner": "Mike",
+                  "participants": "Mike, Bobby",
+                  "projects": Array [],
+                  "startDate": "2020-02-10T00:00:00.000Z",
+                }
+              }
+            >
+              <div
+                className="PastSprints-sprintSectionContainer-2"
+              >
+                <div
+                  className="PastSprints-buttonContainer-3"
+                >
+                  <WithStyles(ForwardRef(Button))
+                    className="PastSprints-buttonSpacing-6"
+                    color="primary"
+                    onClick={[Function]}
+                    variant="contained"
+                  >
+                    <ForwardRef(Button)
+                      className="PastSprints-buttonSpacing-6"
+                      classes={
+                        Object {
+                          "colorInherit": "MuiButton-colorInherit",
+                          "contained": "MuiButton-contained",
+                          "containedPrimary": "MuiButton-containedPrimary",
+                          "containedSecondary": "MuiButton-containedSecondary",
+                          "containedSizeLarge": "MuiButton-containedSizeLarge",
+                          "containedSizeSmall": "MuiButton-containedSizeSmall",
+                          "disableElevation": "MuiButton-disableElevation",
+                          "disabled": "Mui-disabled",
+                          "endIcon": "MuiButton-endIcon",
+                          "focusVisible": "Mui-focusVisible",
+                          "fullWidth": "MuiButton-fullWidth",
+                          "iconSizeLarge": "MuiButton-iconSizeLarge",
+                          "iconSizeMedium": "MuiButton-iconSizeMedium",
+                          "iconSizeSmall": "MuiButton-iconSizeSmall",
+                          "label": "MuiButton-label",
+                          "outlined": "MuiButton-outlined",
+                          "outlinedPrimary": "MuiButton-outlinedPrimary",
+                          "outlinedSecondary": "MuiButton-outlinedSecondary",
+                          "outlinedSizeLarge": "MuiButton-outlinedSizeLarge",
+                          "outlinedSizeSmall": "MuiButton-outlinedSizeSmall",
+                          "root": "MuiButton-root",
+                          "sizeLarge": "MuiButton-sizeLarge",
+                          "sizeSmall": "MuiButton-sizeSmall",
+                          "startIcon": "MuiButton-startIcon",
+                          "text": "MuiButton-text",
+                          "textPrimary": "MuiButton-textPrimary",
+                          "textSecondary": "MuiButton-textSecondary",
+                          "textSizeLarge": "MuiButton-textSizeLarge",
+                          "textSizeSmall": "MuiButton-textSizeSmall",
+                        }
+                      }
+                      color="primary"
+                      onClick={[Function]}
+                      variant="contained"
+                    >
+                      <WithStyles(ForwardRef(ButtonBase))
+                        className="MuiButton-root MuiButton-contained PastSprints-buttonSpacing-6 MuiButton-containedPrimary"
+                        component="button"
+                        disabled={false}
+                        focusRipple={true}
+                        focusVisibleClassName="Mui-focusVisible"
+                        onClick={[Function]}
+                        type="button"
+                      >
+                        <ForwardRef(ButtonBase)
+                          className="MuiButton-root MuiButton-contained PastSprints-buttonSpacing-6 MuiButton-containedPrimary"
+                          classes={
+                            Object {
+                              "disabled": "Mui-disabled",
+                              "focusVisible": "Mui-focusVisible",
+                              "root": "MuiButtonBase-root",
+                            }
+                          }
+                          component="button"
+                          disabled={false}
+                          focusRipple={true}
+                          focusVisibleClassName="Mui-focusVisible"
+                          onClick={[Function]}
+                          type="button"
+                        >
+                          <button
+                            className="MuiButtonBase-root MuiButton-root MuiButton-contained PastSprints-buttonSpacing-6 MuiButton-containedPrimary"
+                            disabled={false}
+                            onBlur={[Function]}
+                            onClick={[Function]}
+                            onDragLeave={[Function]}
+                            onFocus={[Function]}
+                            onKeyDown={[Function]}
+                            onKeyUp={[Function]}
+                            onMouseDown={[Function]}
+                            onMouseLeave={[Function]}
+                            onMouseUp={[Function]}
+                            onTouchEnd={[Function]}
+                            onTouchMove={[Function]}
+                            onTouchStart={[Function]}
+                            tabIndex={0}
+                            type="button"
+                          >
+                            <span
+                              className="MuiButton-label"
+                            >
+                              Sprint #2
+                            </span>
+                            <NoSsr>
+                              <WithStyles(undefined)
+                                center={false}
+                              >
+                                <ForwardRef(TouchRipple)
+                                  center={false}
+                                  classes={
+                                    Object {
+                                      "child": "MuiTouchRipple-child",
+                                      "childLeaving": "MuiTouchRipple-childLeaving",
+                                      "childPulsate": "MuiTouchRipple-childPulsate",
+                                      "ripple": "MuiTouchRipple-ripple",
+                                      "ripplePulsate": "MuiTouchRipple-ripplePulsate",
+                                      "rippleVisible": "MuiTouchRipple-rippleVisible",
+                                      "root": "MuiTouchRipple-root",
+                                    }
+                                  }
+                                >
+                                  <span
+                                    className="MuiTouchRipple-root"
+                                  >
+                                    <TransitionGroup
+                                      childFactory={[Function]}
+                                      component={null}
+                                      exit={true}
+                                    />
+                                  </span>
+                                </ForwardRef(TouchRipple)>
+                              </WithStyles(undefined)>
+                            </NoSsr>
+                          </button>
+                        </ForwardRef(ButtonBase)>
+                      </WithStyles(ForwardRef(ButtonBase))>
+                    </ForwardRef(Button)>
+                  </WithStyles(ForwardRef(Button))>
+                </div>
+              </div>
+            </PastSprints>
+          </WithStyles(PastSprints)>
+          <WithStyles(PastSprints)
+            key="test_sprintId"
+            openSprintStatistics={[Function]}
+            sprint={
+              Object {
+                "endDate": "2020-02-06T00:00:00.000Z",
+                "id": "test_sprintId",
+                "name": "Sprint #1",
+                "owner": "Mike",
+                "participants": "Mike, Bobby",
+                "projects": Array [
+                  Object {
+                    "category": Object {
+                      "value": "Grades & Transcripts",
+                    },
+                    "categoryLead": Object {
+                      "value": "Bobby",
+                    },
+                    "completionStatus": Object {
+                      "value": "",
+                    },
+                    "deliverableLink": Object {
+                      "value": "",
+                    },
+                    "deliverables": Object {
+                      "value": "Historical Illuminate courses matched with current equivalencies.",
+                    },
+                    "description": Object {
+                      "value": "-Audit all historical expeditions grades & match courses to equivalents",
+                    },
+                    "estimatedProjectSize": Object {
+                      "value": "3 - Small-to-Medium",
+                    },
+                    "externalDueDate": Object {
+                      "value": "",
+                    },
+                    "id": Object {
+                      "value": 1,
+                    },
+                    "manager": Object {
+                      "value": "Bobby",
+                    },
+                    "mustDo": Object {
+                      "value": "Nice-to-Have",
+                    },
+                    "name": Object {
+                      "value": "Verify course equivalencies & Grad Requirements in Illuminate",
+                    },
+                    "notCompletedExplanation": Object {
+                      "value": "",
+                    },
+                    "notes": Object {
+                      "value": "",
+                    },
+                    "statusEndOfWeek1": Object {
+                      "value": "25%",
+                    },
+                    "statusEndOfWeek2": Object {
+                      "value": "",
+                    },
+                    "statusEndOfWeek3": Object {
+                      "value": "",
+                    },
+                    "statusEndOfWeek4": Object {
+                      "value": "",
+                    },
+                    "statusEndOfWeek5": Object {
+                      "value": "",
+                    },
+                    "statusEndOfWeek6": Object {
+                      "value": "",
+                    },
+                    "statusEndOfWeek7": Object {
+                      "value": "",
+                    },
+                    "statusEndOfWeek8": Object {
+                      "value": "",
+                    },
+                  },
+                  Object {
+                    "category": Object {
+                      "value": "Grades & Transcripts",
+                    },
+                    "categoryLead": Object {
+                      "value": "Bobby",
+                    },
+                    "completionStatus": Object {
+                      "value": "",
+                    },
+                    "deliverableLink": Object {
+                      "value": "",
+                    },
+                    "deliverables": Object {
+                      "value": "Historical Illuminate courses matched with current equivalencies.",
+                    },
+                    "description": Object {
+                      "value": "-Audit all historical expeditions grades & match courses to equivalents",
+                    },
+                    "estimatedProjectSize": Object {
+                      "value": "3 - Small-to-Medium",
+                    },
+                    "externalDueDate": Object {
+                      "value": "",
+                    },
+                    "id": Object {
+                      "value": 2,
+                    },
+                    "manager": Object {
+                      "value": "Mike",
+                    },
+                    "mustDo": Object {
+                      "value": "Nice-to-Have",
+                    },
+                    "name": Object {
+                      "value": "Verify course equivalencies & Grad Requirements in Illuminate",
+                    },
+                    "notCompletedExplanation": Object {
+                      "value": "",
+                    },
+                    "notes": Object {
+                      "value": "",
+                    },
+                    "statusEndOfWeek1": Object {
+                      "value": "",
+                    },
+                    "statusEndOfWeek2": Object {
+                      "value": "",
+                    },
+                    "statusEndOfWeek3": Object {
+                      "value": "",
+                    },
+                    "statusEndOfWeek4": Object {
+                      "value": "",
+                    },
+                    "statusEndOfWeek5": Object {
+                      "value": "",
+                    },
+                    "statusEndOfWeek6": Object {
+                      "value": "",
+                    },
+                    "statusEndOfWeek7": Object {
+                      "value": "",
+                    },
+                    "statusEndOfWeek8": Object {
+                      "value": "",
+                    },
+                  },
+                  Object {
+                    "category": Object {
+                      "value": "Grades & Transcripts",
+                    },
+                    "categoryLead": Object {
+                      "value": "Bobby",
+                    },
+                    "completionStatus": Object {
+                      "value": "",
+                    },
+                    "deliverableLink": Object {
+                      "value": "",
+                    },
+                    "deliverables": Object {
+                      "value": "Historical Illuminate courses matched with current equivalencies.",
+                    },
+                    "description": Object {
+                      "value": "-Audit all historical expeditions grades & match courses to equivalents",
+                    },
+                    "estimatedProjectSize": Object {
+                      "value": "1 - Extra Small",
+                    },
+                    "externalDueDate": Object {
+                      "value": "",
+                    },
+                    "id": Object {
+                      "value": 3,
+                    },
+                    "manager": Object {
+                      "value": "Bobby",
+                    },
+                    "mustDo": Object {
+                      "value": "Nice-to-Have",
+                    },
+                    "name": Object {
+                      "value": "Verify course equivalencies & Grad Requirements in Illuminate",
+                    },
+                    "notCompletedExplanation": Object {
+                      "value": "",
+                    },
+                    "notes": Object {
+                      "value": "",
+                    },
+                    "statusEndOfWeek1": Object {
+                      "value": "",
+                    },
+                    "statusEndOfWeek2": Object {
+                      "value": "",
+                    },
+                    "statusEndOfWeek3": Object {
+                      "value": "",
+                    },
+                    "statusEndOfWeek4": Object {
+                      "value": "",
+                    },
+                    "statusEndOfWeek5": Object {
+                      "value": "",
+                    },
+                    "statusEndOfWeek6": Object {
+                      "value": "",
+                    },
+                    "statusEndOfWeek7": Object {
+                      "value": "",
+                    },
+                    "statusEndOfWeek8": Object {
+                      "value": "",
+                    },
+                  },
+                ],
+                "startDate": "2020-01-24T00:00:00.000Z",
+              }
+            }
+          >
+            <PastSprints
+              classes={
+                Object {
+                  "buttonContainer": "PastSprints-buttonContainer-3",
+                  "buttonSpacing": "PastSprints-buttonSpacing-6",
+                  "conditionalButtons": "PastSprints-conditionalButtons-5",
+                  "conditionalButtonsContainer": "PastSprints-conditionalButtonsContainer-4",
+                  "innerSprintContainer": "PastSprints-innerSprintContainer-8",
+                  "sprintContainer": "PastSprints-sprintContainer-7",
+                  "sprintSectionContainer": "PastSprints-sprintSectionContainer-2",
+                  "tableContainer": "PastSprints-tableContainer-9",
+                }
+              }
+              openSprintStatistics={[Function]}
+              sprint={
+                Object {
+                  "endDate": "2020-02-06T00:00:00.000Z",
+                  "id": "test_sprintId",
+                  "name": "Sprint #1",
+                  "owner": "Mike",
+                  "participants": "Mike, Bobby",
+                  "projects": Array [
+                    Object {
+                      "category": Object {
+                        "value": "Grades & Transcripts",
+                      },
+                      "categoryLead": Object {
+                        "value": "Bobby",
+                      },
+                      "completionStatus": Object {
+                        "value": "",
+                      },
+                      "deliverableLink": Object {
+                        "value": "",
+                      },
+                      "deliverables": Object {
+                        "value": "Historical Illuminate courses matched with current equivalencies.",
+                      },
+                      "description": Object {
+                        "value": "-Audit all historical expeditions grades & match courses to equivalents",
+                      },
+                      "estimatedProjectSize": Object {
+                        "value": "3 - Small-to-Medium",
+                      },
+                      "externalDueDate": Object {
+                        "value": "",
+                      },
+                      "id": Object {
+                        "value": 1,
+                      },
+                      "manager": Object {
+                        "value": "Bobby",
+                      },
+                      "mustDo": Object {
+                        "value": "Nice-to-Have",
+                      },
+                      "name": Object {
+                        "value": "Verify course equivalencies & Grad Requirements in Illuminate",
+                      },
+                      "notCompletedExplanation": Object {
+                        "value": "",
+                      },
+                      "notes": Object {
+                        "value": "",
+                      },
+                      "statusEndOfWeek1": Object {
+                        "value": "25%",
+                      },
+                      "statusEndOfWeek2": Object {
+                        "value": "",
+                      },
+                      "statusEndOfWeek3": Object {
+                        "value": "",
+                      },
+                      "statusEndOfWeek4": Object {
+                        "value": "",
+                      },
+                      "statusEndOfWeek5": Object {
+                        "value": "",
+                      },
+                      "statusEndOfWeek6": Object {
+                        "value": "",
+                      },
+                      "statusEndOfWeek7": Object {
+                        "value": "",
+                      },
+                      "statusEndOfWeek8": Object {
+                        "value": "",
+                      },
+                    },
+                    Object {
+                      "category": Object {
+                        "value": "Grades & Transcripts",
+                      },
+                      "categoryLead": Object {
+                        "value": "Bobby",
+                      },
+                      "completionStatus": Object {
+                        "value": "",
+                      },
+                      "deliverableLink": Object {
+                        "value": "",
+                      },
+                      "deliverables": Object {
+                        "value": "Historical Illuminate courses matched with current equivalencies.",
+                      },
+                      "description": Object {
+                        "value": "-Audit all historical expeditions grades & match courses to equivalents",
+                      },
+                      "estimatedProjectSize": Object {
+                        "value": "3 - Small-to-Medium",
+                      },
+                      "externalDueDate": Object {
+                        "value": "",
+                      },
+                      "id": Object {
+                        "value": 2,
+                      },
+                      "manager": Object {
+                        "value": "Mike",
+                      },
+                      "mustDo": Object {
+                        "value": "Nice-to-Have",
+                      },
+                      "name": Object {
+                        "value": "Verify course equivalencies & Grad Requirements in Illuminate",
+                      },
+                      "notCompletedExplanation": Object {
+                        "value": "",
+                      },
+                      "notes": Object {
+                        "value": "",
+                      },
+                      "statusEndOfWeek1": Object {
+                        "value": "",
+                      },
+                      "statusEndOfWeek2": Object {
+                        "value": "",
+                      },
+                      "statusEndOfWeek3": Object {
+                        "value": "",
+                      },
+                      "statusEndOfWeek4": Object {
+                        "value": "",
+                      },
+                      "statusEndOfWeek5": Object {
+                        "value": "",
+                      },
+                      "statusEndOfWeek6": Object {
+                        "value": "",
+                      },
+                      "statusEndOfWeek7": Object {
+                        "value": "",
+                      },
+                      "statusEndOfWeek8": Object {
+                        "value": "",
+                      },
+                    },
+                    Object {
+                      "category": Object {
+                        "value": "Grades & Transcripts",
+                      },
+                      "categoryLead": Object {
+                        "value": "Bobby",
+                      },
+                      "completionStatus": Object {
+                        "value": "",
+                      },
+                      "deliverableLink": Object {
+                        "value": "",
+                      },
+                      "deliverables": Object {
+                        "value": "Historical Illuminate courses matched with current equivalencies.",
+                      },
+                      "description": Object {
+                        "value": "-Audit all historical expeditions grades & match courses to equivalents",
+                      },
+                      "estimatedProjectSize": Object {
+                        "value": "1 - Extra Small",
+                      },
+                      "externalDueDate": Object {
+                        "value": "",
+                      },
+                      "id": Object {
+                        "value": 3,
+                      },
+                      "manager": Object {
+                        "value": "Bobby",
+                      },
+                      "mustDo": Object {
+                        "value": "Nice-to-Have",
+                      },
+                      "name": Object {
+                        "value": "Verify course equivalencies & Grad Requirements in Illuminate",
+                      },
+                      "notCompletedExplanation": Object {
+                        "value": "",
+                      },
+                      "notes": Object {
+                        "value": "",
+                      },
+                      "statusEndOfWeek1": Object {
+                        "value": "",
+                      },
+                      "statusEndOfWeek2": Object {
+                        "value": "",
+                      },
+                      "statusEndOfWeek3": Object {
+                        "value": "",
+                      },
+                      "statusEndOfWeek4": Object {
+                        "value": "",
+                      },
+                      "statusEndOfWeek5": Object {
+                        "value": "",
+                      },
+                      "statusEndOfWeek6": Object {
+                        "value": "",
+                      },
+                      "statusEndOfWeek7": Object {
+                        "value": "",
+                      },
+                      "statusEndOfWeek8": Object {
+                        "value": "",
+                      },
+                    },
+                  ],
+                  "startDate": "2020-01-24T00:00:00.000Z",
+                }
+              }
+            >
+              <div
+                className="PastSprints-sprintSectionContainer-2"
+              >
+                <div
+                  className="PastSprints-buttonContainer-3"
+                >
+                  <WithStyles(ForwardRef(Button))
+                    className="PastSprints-buttonSpacing-6"
+                    color="primary"
+                    onClick={[Function]}
+                    variant="contained"
+                  >
+                    <ForwardRef(Button)
+                      className="PastSprints-buttonSpacing-6"
+                      classes={
+                        Object {
+                          "colorInherit": "MuiButton-colorInherit",
+                          "contained": "MuiButton-contained",
+                          "containedPrimary": "MuiButton-containedPrimary",
+                          "containedSecondary": "MuiButton-containedSecondary",
+                          "containedSizeLarge": "MuiButton-containedSizeLarge",
+                          "containedSizeSmall": "MuiButton-containedSizeSmall",
+                          "disableElevation": "MuiButton-disableElevation",
+                          "disabled": "Mui-disabled",
+                          "endIcon": "MuiButton-endIcon",
+                          "focusVisible": "Mui-focusVisible",
+                          "fullWidth": "MuiButton-fullWidth",
+                          "iconSizeLarge": "MuiButton-iconSizeLarge",
+                          "iconSizeMedium": "MuiButton-iconSizeMedium",
+                          "iconSizeSmall": "MuiButton-iconSizeSmall",
+                          "label": "MuiButton-label",
+                          "outlined": "MuiButton-outlined",
+                          "outlinedPrimary": "MuiButton-outlinedPrimary",
+                          "outlinedSecondary": "MuiButton-outlinedSecondary",
+                          "outlinedSizeLarge": "MuiButton-outlinedSizeLarge",
+                          "outlinedSizeSmall": "MuiButton-outlinedSizeSmall",
+                          "root": "MuiButton-root",
+                          "sizeLarge": "MuiButton-sizeLarge",
+                          "sizeSmall": "MuiButton-sizeSmall",
+                          "startIcon": "MuiButton-startIcon",
+                          "text": "MuiButton-text",
+                          "textPrimary": "MuiButton-textPrimary",
+                          "textSecondary": "MuiButton-textSecondary",
+                          "textSizeLarge": "MuiButton-textSizeLarge",
+                          "textSizeSmall": "MuiButton-textSizeSmall",
+                        }
+                      }
+                      color="primary"
+                      onClick={[Function]}
+                      variant="contained"
+                    >
+                      <WithStyles(ForwardRef(ButtonBase))
+                        className="MuiButton-root MuiButton-contained PastSprints-buttonSpacing-6 MuiButton-containedPrimary"
+                        component="button"
+                        disabled={false}
+                        focusRipple={true}
+                        focusVisibleClassName="Mui-focusVisible"
+                        onClick={[Function]}
+                        type="button"
+                      >
+                        <ForwardRef(ButtonBase)
+                          className="MuiButton-root MuiButton-contained PastSprints-buttonSpacing-6 MuiButton-containedPrimary"
+                          classes={
+                            Object {
+                              "disabled": "Mui-disabled",
+                              "focusVisible": "Mui-focusVisible",
+                              "root": "MuiButtonBase-root",
+                            }
+                          }
+                          component="button"
+                          disabled={false}
+                          focusRipple={true}
+                          focusVisibleClassName="Mui-focusVisible"
+                          onClick={[Function]}
+                          type="button"
+                        >
+                          <button
+                            className="MuiButtonBase-root MuiButton-root MuiButton-contained PastSprints-buttonSpacing-6 MuiButton-containedPrimary"
+                            disabled={false}
+                            onBlur={[Function]}
+                            onClick={[Function]}
+                            onDragLeave={[Function]}
+                            onFocus={[Function]}
+                            onKeyDown={[Function]}
+                            onKeyUp={[Function]}
+                            onMouseDown={[Function]}
+                            onMouseLeave={[Function]}
+                            onMouseUp={[Function]}
+                            onTouchEnd={[Function]}
+                            onTouchMove={[Function]}
+                            onTouchStart={[Function]}
+                            tabIndex={0}
+                            type="button"
+                          >
+                            <span
+                              className="MuiButton-label"
+                            >
+                              Sprint #1
+                            </span>
+                            <NoSsr>
+                              <WithStyles(undefined)
+                                center={false}
+                              >
+                                <ForwardRef(TouchRipple)
+                                  center={false}
+                                  classes={
+                                    Object {
+                                      "child": "MuiTouchRipple-child",
+                                      "childLeaving": "MuiTouchRipple-childLeaving",
+                                      "childPulsate": "MuiTouchRipple-childPulsate",
+                                      "ripple": "MuiTouchRipple-ripple",
+                                      "ripplePulsate": "MuiTouchRipple-ripplePulsate",
+                                      "rippleVisible": "MuiTouchRipple-rippleVisible",
+                                      "root": "MuiTouchRipple-root",
+                                    }
+                                  }
+                                >
+                                  <span
+                                    className="MuiTouchRipple-root"
+                                  >
+                                    <TransitionGroup
+                                      childFactory={[Function]}
+                                      component={null}
+                                      exit={true}
+                                    />
+                                  </span>
+                                </ForwardRef(TouchRipple)>
+                              </WithStyles(undefined)>
+                            </NoSsr>
+                          </button>
+                        </ForwardRef(ButtonBase)>
+                      </WithStyles(ForwardRef(ButtonBase))>
+                    </ForwardRef(Button)>
+                  </WithStyles(ForwardRef(Button))>
+                </div>
+              </div>
+            </PastSprints>
+          </WithStyles(PastSprints)>
+        </div>
+      </PastSprints>
+    </WithStyles(PastSprints)>
+  </Connect(WithStyles(PastSprints))>
+</Provider>
+`;

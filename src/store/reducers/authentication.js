@@ -36,7 +36,7 @@ const authFail = (state, action) => {
 };
 
 const authLogout = (state, action) => {
-    return updateObject(state, { token: null, userId: null });
+    return updateObject(state, { token: null, userId: null, error: null });
 };
 
 const initiateDemoAuth = (state, action) => {

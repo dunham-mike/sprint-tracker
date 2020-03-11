@@ -27,18 +27,12 @@ class PastSprints extends Component {
         sprintIndexBeingViewed: null,
     }
 
-    toggleCurrentSprint = () => {
-        console.log('toggleCurrentSprint');
-    }
-
     getSprintIndexFromSprintId = (sprintId) => {
         for(let i=0; i<this.props.sprints.length; i++) {
             if(this.props.sprints[i].id === sprintId) {
                 return i;
             }
         }
-
-        return null;
     }
 
     openSprintStatistics = (sprintId) => {
@@ -80,9 +74,6 @@ class PastSprints extends Component {
                     />
                 );
             });
-
-        
-        console.log('sprintsToDisplay:', sprintsToDisplay);
 
         // Displaying the Sprint Statistics Modal
         let sprintStatistics = null;
