@@ -74,6 +74,11 @@ describe('checkValidity() function', () => {
             },
         )).toEqual(true);
 
+        expect(checkValidity(
+            null, 
+            null,
+        )).toEqual(true);
+
     });
 
     it('should evaluate minLength', () => {

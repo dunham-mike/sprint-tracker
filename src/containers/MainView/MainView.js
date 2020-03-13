@@ -96,12 +96,11 @@ class MainView extends Component {
         displayFutureSprints: false,
 
         // Editing/creating a project
-        // TODO: refactor this just to pull data directly from state, rather than being passed in for the project component
         editingProject: false,
         creatingProject: false,
         editingSprint: false,
         creatingSprint: false,
-        projectBeingViewed: null, // TODO: refactor to projectIdBeingViewed
+        projectIdBeingViewed: null,
         sprintIdBeingViewed: null,
         sprintIndexBeingViewed: null,
 
@@ -205,10 +204,10 @@ class MainView extends Component {
         return null;
     }
 
-    openEditingProject = (project, sprintId) => {
+    openEditingProject = (projectId, sprintId) => {
         this.setState({
             editingProject: true,
-            projectBeingViewed: project,
+            projectIdBeingViewed: projectId,
             sprintIdBeingViewed: sprintId,
             sprintIndexBeingViewed: this.getSprintIndexFromSprintId(sprintId),
         });
@@ -217,7 +216,7 @@ class MainView extends Component {
     closeEditingProject = () => {
         this.setState({
             editingProject: false,
-            projectBeingViewed: null,
+            projectIdBeingViewed: null,
             sprintIdBeingViewed: null,
             sprintIndexBeingViewed: null,
         });
@@ -423,7 +422,7 @@ class MainView extends Component {
                         onClose={this.closeEditingProject}
                     >
                         <EditProject 
-                            project={this.state.projectBeingViewed}
+                            projectId={this.state.projectIdBeingViewed}
                             sprintId={this.state.sprintIdBeingViewed}
                             sprintIndex={this.state.sprintIndexBeingViewed}
                             onCloseProject={this.closeEditingProject}
@@ -444,7 +443,7 @@ class MainView extends Component {
                         onClose={this.closeCreatingProject}
                     >
                         <EditProject 
-                            project={null}
+                            projectId={null}
                             sprintId={this.state.sprintIdBeingViewed}
                             sprintIndex={this.state.sprintIndexBeingViewed}
                             onCloseProject={this.closeCreatingProject}

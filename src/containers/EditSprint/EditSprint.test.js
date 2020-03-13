@@ -1,7 +1,6 @@
 import React from 'react';
-import Enzyme, { mount, shallow } from 'enzyme'
+import Enzyme, { mount } from 'enzyme'
 import Adapter from 'enzyme-adapter-react-16'
-import { BrowserRouter } from 'react-router-dom';
 import toJson from 'enzyme-to-json';
 import * as moment from 'moment';
 
@@ -137,9 +136,7 @@ const mountSetup = (actionType, sprintId) => {
     }
 
     const enzymeMountWrapper = mount(
-        <BrowserRouter>
-            <UnconnectedEditSprint {...props} />
-        </BrowserRouter>
+        <UnconnectedEditSprint {...props} />
     );
 
     return {

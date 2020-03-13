@@ -86,7 +86,7 @@ const styles = theme => ({
     },
 });
 
-class Project extends Component {
+export class editProject extends Component {
     state = {
         sprintId: null,
         formIsValid: false,
@@ -480,13 +480,45 @@ class Project extends Component {
     componentDidMount() {
         // console.log('initialProjectState:', initialProjectState);
         if(this.props.actionType === "edit") {
-            this.loadStateFromExistingProject(this.props.sprintId, this.props.project);
+            this.loadStateFromExistingProject(this.props.sprintId, this.props.projectId);
         } else if (this.props.actionType === "create") {
             this.loadStateForNewProject();
         } else {
-            console.log('[Project.js] Error: missing actionType prop');
+            throw new Error("[EditProject.js] Error: missing appropriate actionType prop");
         }
     }
+
+    getSprintIndexWithSprintId = (sprintId) => {
+
+        if(sprintId === -1) {
+            return -1;
+        }
+    
+        for(let i=0; i<this.props.sprints.length; i++) {
+            if(this.props.sprints[i].id === sprintId) {
+                return i;
+            }
+        };
+    
+        throw new Error("[EditProject.js] Error: cannot find sprintIndex");
+    };
+
+    getProjectIndexWithSprintIndexAndProjectId = (sprintIndex, projectId) => {
+        let projectArray;
+        if (sprintIndex === -1) { // A value of -1 indicates the sprint is the queue
+            projectArray = this.props.queue;
+        } else {
+            projectArray = this.props.sprints[sprintIndex].projects;
+        }
+        
+        for(let i=0; i<projectArray.length; i++) {
+            if(projectArray[i].id.value === projectId) {
+                return i;
+            }
+        }
+    
+        throw new Error("[EditProject.js] Error: cannot find projectIndex");
+    };
 
     loadStateForNewProject = () => {
         let updatedProjectData = {...this.state.projectData};
@@ -500,7 +532,7 @@ class Project extends Component {
         });
     }
 
-    loadStateFromExistingProject = (sprintId, project) => {
+    loadStateFromExistingProject = (sprintId, projectId) => {
         let newProjectState = {}
 
         const predefinedProjectKeysOrder = {
@@ -527,18 +559,35 @@ class Project extends Component {
             'statusEndOfWeek7': 210, 
             'statusEndOfWeek8': 220, 
         }
+
+        const sprintIndex = this.getSprintIndexWithSprintId(sprintId);
+        const projectIndex = this.getProjectIndexWithSprintIndexAndProjectId(sprintIndex, projectId);
+
+        let projectData = null;
         
-        const projectKeys = Object.keys(project)
+        if(sprintIndex === -1) {
+            projectData = this.props.queue[projectIndex];
+        } else {
+            projectData = this.props.sprints[sprintIndex].projects[projectIndex];
+        }
+
+        console.log('projectData:', projectData);
+        
+        const projectKeys = Object.keys(projectData)
             .sort((a, b) => { return predefinedProjectKeysOrder[a] - predefinedProjectKeysOrder[b]});
 
         for(let i=0; i < projectKeys.length; i++) {
-            let updatedObject = this.state.projectData[projectKeys[i]];
+            let updatedObject = { ...this.state.projectData[projectKeys[i]] };
 
-            updatedObject['value'] = project[projectKeys[i]];
+            console.log('updatedObject:', updatedObject);
+
+            updatedObject['value'] = projectData[projectKeys[i]].value;
             updatedObject['valid'] = true; // Assume it's valid when loading from existing project data
             
             newProjectState[projectKeys[i]] = updatedObject;
         }
+
+        console.log('newProjectState:', newProjectState);
 
         this.setState({ 
             sprintId: sprintId,
@@ -594,8 +643,6 @@ class Project extends Component {
             this.props.onUpdateProject(this.state.sprintId, transformedProjectData, this.props.token, this.props.userId);
         } else if (this.props.actionType === "create") {
             this.props.onAddProject(this.state.sprintId, transformedProjectData, this.props.token, this.props.userId);
-        } else {
-            console.log('[Project.js] Error: missing actionType prop');
         }
         
         this.props.onCloseProject();
@@ -884,6 +931,7 @@ class Project extends Component {
 const mapStateToProps = state => {
     return {
         sprints: state.sprints.sprints,
+        queue: state.sprints.queue,
         token: state.authentication.token,
         userId: state.authentication.userId
     }
@@ -898,4 +946,4 @@ const mapDispatchToProps = dispatch => {
     };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(withStyles(styles)(Project));
+export default connect(mapStateToProps, mapDispatchToProps)(withStyles(styles)(editProject));
