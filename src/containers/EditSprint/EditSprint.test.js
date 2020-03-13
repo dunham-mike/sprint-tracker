@@ -402,7 +402,7 @@ describe('EditSprint Component', () => {
 
     /* --- Error Conditions --- */
 
-    it("[Error] Passing a non-conforming action to the sprint should throw an error.", () => {
+    it("[Error] Passing a non-conforming action type to the sprint should throw an error.", () => {
 
         expect(() => mountSetup("non-conforming action")).toThrow();
     });

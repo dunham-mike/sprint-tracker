@@ -1,0 +1,3491 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`EditProject Component should match the snapshot 1`] = `
+<editProject
+  actionType="edit"
+  authentication={
+    Object {
+      "token": "test_token",
+      "userId": "test_userId",
+    }
+  }
+  classes={Object {}}
+  onAddProject={[MockFunction]}
+  onCloseProject={[MockFunction]}
+  onDeleteProject={[MockFunction]}
+  onMoveProject={[MockFunction]}
+  onUpdateProject={[MockFunction]}
+  projectId={1}
+  sprintId="test_sprintId"
+  sprintIndex={0}
+  sprints={
+    Array [
+      Object {
+        "endDate": "2020-02-06T00:00:00.000Z",
+        "id": "test_sprintId",
+        "name": "Sprint #1",
+        "owner": "Mike",
+        "participants": "Mike, Bobby",
+        "projects": Array [
+          Object {
+            "category": Object {
+              "value": "Grades & Transcripts",
+            },
+            "categoryLead": Object {
+              "value": "Bobby",
+            },
+            "completionStatus": Object {
+              "value": "",
+            },
+            "deliverableLink": Object {
+              "value": "",
+            },
+            "deliverables": Object {
+              "value": "Historical Illuminate courses matched with current equivalencies.",
+            },
+            "description": Object {
+              "value": "-Audit all historical expeditions grades & match courses to equivalents",
+            },
+            "estimatedProjectSize": Object {
+              "value": "3 - Small-to-Medium",
+            },
+            "externalDueDate": Object {
+              "value": "",
+            },
+            "id": Object {
+              "value": 1,
+            },
+            "manager": Object {
+              "value": "Bobby",
+            },
+            "mustDo": Object {
+              "value": "Nice-to-Have",
+            },
+            "name": Object {
+              "value": "Verify course equivalencies & Grad Requirements in Illuminate",
+            },
+            "notCompletedExplanation": Object {
+              "value": "",
+            },
+            "notes": Object {
+              "value": "",
+            },
+            "statusEndOfWeek1": Object {
+              "value": "25%",
+            },
+            "statusEndOfWeek2": Object {
+              "value": "",
+            },
+            "statusEndOfWeek3": Object {
+              "value": "",
+            },
+            "statusEndOfWeek4": Object {
+              "value": "",
+            },
+            "statusEndOfWeek5": Object {
+              "value": "",
+            },
+            "statusEndOfWeek6": Object {
+              "value": "",
+            },
+            "statusEndOfWeek7": Object {
+              "value": "",
+            },
+            "statusEndOfWeek8": Object {
+              "value": "",
+            },
+          },
+          Object {
+            "category": Object {
+              "value": "Grades & Transcripts",
+            },
+            "categoryLead": Object {
+              "value": "Bobby",
+            },
+            "completionStatus": Object {
+              "value": "",
+            },
+            "deliverableLink": Object {
+              "value": "",
+            },
+            "deliverables": Object {
+              "value": "Historical Illuminate courses matched with current equivalencies.",
+            },
+            "description": Object {
+              "value": "-Audit all historical expeditions grades & match courses to equivalents",
+            },
+            "estimatedProjectSize": Object {
+              "value": "3 - Small-to-Medium",
+            },
+            "externalDueDate": Object {
+              "value": "",
+            },
+            "id": Object {
+              "value": 2,
+            },
+            "manager": Object {
+              "value": "Mike",
+            },
+            "mustDo": Object {
+              "value": "Nice-to-Have",
+            },
+            "name": Object {
+              "value": "Verify course equivalencies & Grad Requirements in Illuminate",
+            },
+            "notCompletedExplanation": Object {
+              "value": "",
+            },
+            "notes": Object {
+              "value": "",
+            },
+            "statusEndOfWeek1": Object {
+              "value": "",
+            },
+            "statusEndOfWeek2": Object {
+              "value": "",
+            },
+            "statusEndOfWeek3": Object {
+              "value": "",
+            },
+            "statusEndOfWeek4": Object {
+              "value": "",
+            },
+            "statusEndOfWeek5": Object {
+              "value": "",
+            },
+            "statusEndOfWeek6": Object {
+              "value": "",
+            },
+            "statusEndOfWeek7": Object {
+              "value": "",
+            },
+            "statusEndOfWeek8": Object {
+              "value": "",
+            },
+          },
+          Object {
+            "category": Object {
+              "value": "Grades & Transcripts",
+            },
+            "categoryLead": Object {
+              "value": "Bobby",
+            },
+            "completionStatus": Object {
+              "value": "",
+            },
+            "deliverableLink": Object {
+              "value": "",
+            },
+            "deliverables": Object {
+              "value": "Historical Illuminate courses matched with current equivalencies.",
+            },
+            "description": Object {
+              "value": "-Audit all historical expeditions grades & match courses to equivalents",
+            },
+            "estimatedProjectSize": Object {
+              "value": "1 - Extra Small",
+            },
+            "externalDueDate": Object {
+              "value": "",
+            },
+            "id": Object {
+              "value": 3,
+            },
+            "manager": Object {
+              "value": "Bobby",
+            },
+            "mustDo": Object {
+              "value": "Nice-to-Have",
+            },
+            "name": Object {
+              "value": "Verify course equivalencies & Grad Requirements in Illuminate",
+            },
+            "notCompletedExplanation": Object {
+              "value": "",
+            },
+            "notes": Object {
+              "value": "",
+            },
+            "statusEndOfWeek1": Object {
+              "value": "",
+            },
+            "statusEndOfWeek2": Object {
+              "value": "",
+            },
+            "statusEndOfWeek3": Object {
+              "value": "",
+            },
+            "statusEndOfWeek4": Object {
+              "value": "",
+            },
+            "statusEndOfWeek5": Object {
+              "value": "",
+            },
+            "statusEndOfWeek6": Object {
+              "value": "",
+            },
+            "statusEndOfWeek7": Object {
+              "value": "",
+            },
+            "statusEndOfWeek8": Object {
+              "value": "",
+            },
+          },
+        ],
+        "startDate": "2020-01-24T00:00:00.000Z",
+      },
+      Object {
+        "endDate": "2020-03-06T00:00:00.000Z",
+        "id": "test_sprintId2",
+        "name": "Sprint #2",
+        "owner": "Mike",
+        "participants": "Mike, Bobby",
+        "projects": Array [],
+        "startDate": "2020-02-10T00:00:00.000Z",
+      },
+    ]
+  }
+>
+  <ForwardRef(Modal)
+    aria-describedby="simple-modal-description"
+    aria-labelledby="simple-modal-title"
+    onClose={[MockFunction]}
+    open={true}
+  >
+    <ForwardRef(Portal)
+      disablePortal={false}
+    >
+      <Portal
+        containerInfo={
+          <body
+            style="padding-right: 0px; overflow: hidden;"
+          >
+            <div
+              aria-describedby="simple-modal-description"
+              aria-labelledby="simple-modal-title"
+              role="presentation"
+              style="position: fixed; z-index: 1300; right: 0px; bottom: 0px; top: 0px; left: 0px;"
+            >
+              <div
+                aria-hidden="true"
+                style="z-index: -1; position: fixed; right: 0px; bottom: 0px; top: 0px; left: 0px; background-color: rgba(0, 0, 0, 0.5);"
+              />
+              <div
+                data-test="sentinelStart"
+                tabindex="0"
+              />
+              <div
+                class="MuiPaper-root MuiPaper-elevation1 MuiPaper-rounded"
+                tabindex="-1"
+              >
+                <div>
+                  <div
+                    class="cancelButton-cancelButtonContainer-29"
+                  >
+                    <svg
+                      aria-hidden="true"
+                      class="MuiSvgIcon-root MuiSvgIcon-fontSizeLarge"
+                      focusable="false"
+                      role="presentation"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        d="M12 2C6.47 2 2 6.47 2 12s4.47 10 10 10 10-4.47 10-10S17.53 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm3.59-13L12 10.59 8.41 7 7 8.41 10.59 12 7 15.59 8.41 17 12 13.41 15.59 17 17 15.59 13.41 12 17 8.41z"
+                      />
+                    </svg>
+                  </div>
+                </div>
+                <div>
+                  <div>
+                    <h4
+                      class="MuiTypography-root MuiTypography-h4"
+                    >
+                      Edit
+                       Project
+                    </h4>
+                  </div>
+                  <div>
+                    Edit
+                     the project information and click "Save" below. * = required field
+                  </div>
+                  <div>
+                    <form>
+                      <div
+                        class="input-Input-69"
+                      >
+                        <label
+                          class="input-Label-70"
+                        >
+                          Sprint ID
+                          *
+                        </label>
+                        <div>
+                          test_sprintId
+                        </div>
+                      </div>
+                      <div
+                        class="input-Input-69"
+                      >
+                        <label
+                          class="input-Label-70"
+                        >
+                          Project ID
+                          *
+                        </label>
+                        <div>
+                          1
+                        </div>
+                      </div>
+                      <div
+                        class="input-Input-69"
+                      >
+                        <label
+                          class="input-Label-70"
+                        >
+                          Project Name
+                          *
+                        </label>
+                        <input
+                          class="input-InputElement-71"
+                          value="Verify course equivalencies & Grad Requirements in Illuminate"
+                        />
+                      </div>
+                      <div
+                        class="input-Input-69"
+                      >
+                        <label
+                          class="input-Label-70"
+                        >
+                          Project Manager
+                          *
+                        </label>
+                        <input
+                          class="input-InputElement-71"
+                          value="Bobby"
+                        />
+                      </div>
+                      <div
+                        class="input-Input-69"
+                      >
+                        <label
+                          class="input-Label-70"
+                        >
+                          Description
+                          *
+                        </label>
+                        <textarea
+                          class="input-InputElement-71"
+                          rows="3"
+                        >
+                          -Audit all historical expeditions grades & match courses to equivalents
+                        </textarea>
+                      </div>
+                      <div
+                        class="input-Input-69"
+                      >
+                        <label
+                          class="input-Label-70"
+                        >
+                          Category
+                          *
+                        </label>
+                        <input
+                          class="input-InputElement-71"
+                          value="Grades & Transcripts"
+                        />
+                      </div>
+                      <div
+                        class="input-Input-69"
+                      >
+                        <label
+                          class="input-Label-70"
+                        >
+                          Category Lead
+                          *
+                        </label>
+                        <input
+                          class="input-InputElement-71"
+                          value="Bobby"
+                        />
+                      </div>
+                      <div
+                        class="input-Input-69"
+                      >
+                        <label
+                          class="input-Label-70"
+                        >
+                          Estimated Project Size
+                          *
+                        </label>
+                        <select
+                          class="input-InputElement-71 Select"
+                          style="width: auto;"
+                        >
+                          <option
+                            value="1 - Extra Small"
+                          >
+                            1 - Extra Small
+                          </option>
+                          <option
+                            value="2 - Small"
+                          >
+                            2 - Small
+                          </option>
+                          <option
+                            value="3 - Small-to-Medium"
+                          >
+                            3 - Small-to-Medium
+                          </option>
+                          <option
+                            value="5 - Medium"
+                          >
+                            5 - Medium
+                          </option>
+                          <option
+                            value="8 - Medium-to-Large"
+                          >
+                            8 - Medium-to-Large
+                          </option>
+                          <option
+                            value="13 - Large"
+                          >
+                            13 - Large
+                          </option>
+                          <option
+                            value="21 - Extra Large"
+                          >
+                            21 - Extra Large
+                          </option>
+                          <option
+                            value="34 - Gargantuan"
+                          >
+                            34 - Gargantuan
+                          </option>
+                        </select>
+                      </div>
+                      <div
+                        class="input-Input-69"
+                      >
+                        <label
+                          class="input-Label-70"
+                        >
+                          Must Do or Nice-to-Have?
+                          *
+                        </label>
+                        <select
+                          class="input-InputElement-71 Select"
+                          style="width: auto;"
+                        >
+                          <option
+                            value="Must Do"
+                          >
+                            Must Do
+                          </option>
+                          <option
+                            value="Nice-to-Have"
+                          >
+                            Nice-to-Have
+                          </option>
+                        </select>
+                      </div>
+                      <div
+                        class="input-Input-69"
+                      >
+                        <label
+                          class="input-Label-70"
+                        >
+                          External Due Date
+                        </label>
+                        <input
+                          class="input-InputElement-71"
+                          value=""
+                        />
+                      </div>
+                      <div
+                        class="input-Input-69"
+                      >
+                        <label
+                          class="input-Label-70"
+                        >
+                          Deliverables / Outcomes
+                        </label>
+                        <textarea
+                          class="input-InputElement-71"
+                          rows="3"
+                        >
+                          Historical Illuminate courses matched with current equivalencies.
+                        </textarea>
+                      </div>
+                      <div
+                        class="input-Input-69"
+                      >
+                        <label
+                          class="input-Label-70"
+                        >
+                          Link to Deliverable
+                        </label>
+                        <input
+                          class="input-InputElement-71"
+                          value=""
+                        />
+                      </div>
+                      <div
+                        class="input-Input-69"
+                      >
+                        <label
+                          class="input-Label-70"
+                        >
+                          Notes
+                        </label>
+                        <textarea
+                          class="input-InputElement-71"
+                          rows="3"
+                        />
+                      </div>
+                      <div
+                        class="input-Input-69"
+                      >
+                        <label
+                          class="input-Label-70"
+                        >
+                          Did We Fully Complete the Expected Deliverable?
+                        </label>
+                        <select
+                          class="input-InputElement-71 Select"
+                          style="width: auto;"
+                        >
+                          <option
+                            value=""
+                          />
+                          <option
+                            value="Yes"
+                          >
+                            Yes
+                          </option>
+                          <option
+                            value="No, but mostly did"
+                          >
+                            No, but mostly did
+                          </option>
+                          <option
+                            value="No, but partially did"
+                          >
+                            No, but partially did
+                          </option>
+                          <option
+                            value="No"
+                          >
+                            No
+                          </option>
+                        </select>
+                      </div>
+                      <div
+                        class="input-Input-69"
+                      >
+                        <label
+                          class="input-Label-70"
+                        >
+                          If Not, Why Not?
+                        </label>
+                        <textarea
+                          class="input-InputElement-71"
+                          rows="3"
+                        />
+                      </div>
+                      <div
+                        class="input-Input-69"
+                      >
+                        <label
+                          class="input-Label-70"
+                        >
+                          Status End of Week 1 (0-100%)
+                        </label>
+                        <select
+                          class="input-InputElement-71 Select"
+                          style="width: auto;"
+                        >
+                          <option
+                            value=""
+                          />
+                          <option
+                            value="0%"
+                          >
+                            0%
+                          </option>
+                          <option
+                            value="25%"
+                          >
+                            25%
+                          </option>
+                          <option
+                            value="50%"
+                          >
+                            50%
+                          </option>
+                          <option
+                            value="75%"
+                          >
+                            75%
+                          </option>
+                          <option
+                            value="100%"
+                          >
+                            100%
+                          </option>
+                        </select>
+                      </div>
+                      <div
+                        class="input-Input-69"
+                      >
+                        <label
+                          class="input-Label-70"
+                        >
+                          Status End of Week 2 (0-100%)
+                        </label>
+                        <select
+                          class="input-InputElement-71 Select"
+                          style="width: auto;"
+                        >
+                          <option
+                            value=""
+                          />
+                          <option
+                            value="0%"
+                          >
+                            0%
+                          </option>
+                          <option
+                            value="25%"
+                          >
+                            25%
+                          </option>
+                          <option
+                            value="50%"
+                          >
+                            50%
+                          </option>
+                          <option
+                            value="75%"
+                          >
+                            75%
+                          </option>
+                          <option
+                            value="100%"
+                          >
+                            100%
+                          </option>
+                        </select>
+                      </div>
+                      <div>
+                        <button
+                          class="MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedSecondary"
+                          tabindex="0"
+                          type="button"
+                        >
+                          <span
+                            class="MuiButton-label"
+                          >
+                            <span
+                              class="MuiButton-startIcon MuiButton-iconSizeMedium"
+                            >
+                              <svg
+                                aria-hidden="true"
+                                class="MuiSvgIcon-root"
+                                focusable="false"
+                                role="presentation"
+                                viewBox="0 0 24 24"
+                              >
+                                <path
+                                  d="M12 2C6.47 2 2 6.47 2 12s4.47 10 10 10 10-4.47 10-10S17.53 2 12 2zm5 13.59L15.59 17 12 13.41 8.41 17 7 15.59 10.59 12 7 8.41 8.41 7 12 10.59 15.59 7 17 8.41 13.41 12 17 15.59z"
+                                />
+                              </svg>
+                            </span>
+                            CANCEL
+                          </span>
+                          <span
+                            class="MuiTouchRipple-root"
+                          />
+                        </button>
+                        <button
+                          class="MuiButtonBase-root MuiButton-root MuiButton-outlined MuiButton-outlinedSecondary"
+                          tabindex="0"
+                          type="button"
+                        >
+                          <span
+                            class="MuiButton-label"
+                          >
+                            <span
+                              class="MuiButton-startIcon MuiButton-iconSizeMedium"
+                            >
+                              <svg
+                                aria-hidden="true"
+                                class="MuiSvgIcon-root"
+                                focusable="false"
+                                role="presentation"
+                                viewBox="0 0 24 24"
+                              >
+                                <path
+                                  d="M16 9v10H8V9h8m-1.5-6h-5l-1 1H5v2h14V4h-3.5l-1-1zM18 7H6v12c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7z"
+                                />
+                              </svg>
+                            </span>
+                            DELETE PROJECT
+                          </span>
+                          <span
+                            class="MuiTouchRipple-root"
+                          />
+                        </button>
+                        <button
+                          class="MuiButtonBase-root MuiButton-root MuiButton-outlined MuiButton-outlinedSecondary"
+                          tabindex="0"
+                          type="button"
+                        >
+                          <span
+                            class="MuiButton-label"
+                          >
+                            <span
+                              class="MuiButton-startIcon MuiButton-iconSizeMedium"
+                            >
+                              <svg
+                                aria-hidden="true"
+                                class="MuiSvgIcon-root"
+                                focusable="false"
+                                role="presentation"
+                                viewBox="0 0 24 24"
+                              >
+                                <path
+                                  d="M21 3.01H3c-1.1 0-2 .9-2 2V9h2V4.99h18v14.03H3V15H1v4.01c0 1.1.9 1.98 2 1.98h18c1.1 0 2-.88 2-1.98v-14c0-1.11-.9-2-2-2zM11 16l4-4-4-4v3H1v2h10v3zM21 3.01H3c-1.1 0-2 .9-2 2V9h2V4.99h18v14.03H3V15H1v4.01c0 1.1.9 1.98 2 1.98h18c1.1 0 2-.88 2-1.98v-14c0-1.11-.9-2-2-2zM11 16l4-4-4-4v3H1v2h10v3z"
+                                />
+                              </svg>
+                            </span>
+                            ASSIGN TO ANOTHER SPRINT
+                          </span>
+                          <span
+                            class="MuiTouchRipple-root"
+                          />
+                        </button>
+                        <button
+                          class="MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary Mui-disabled Mui-disabled"
+                          disabled=""
+                          tabindex="-1"
+                          type="submit"
+                        >
+                          <span
+                            class="MuiButton-label"
+                          >
+                            <span
+                              class="MuiButton-startIcon MuiButton-iconSizeMedium"
+                            >
+                              <svg
+                                aria-hidden="true"
+                                class="MuiSvgIcon-root"
+                                focusable="false"
+                                role="presentation"
+                                viewBox="0 0 24 24"
+                              >
+                                <path
+                                  d="M17 3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V7l-4-4zm-5 16c-1.66 0-3-1.34-3-3s1.34-3 3-3 3 1.34 3 3-1.34 3-3 3zm3-10H5V5h10v4z"
+                                />
+                              </svg>
+                            </span>
+                            SAVE
+                          </span>
+                        </button>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+              <div
+                data-test="sentinelEnd"
+                tabindex="0"
+              />
+            </div>
+          </body>
+        }
+      >
+        <div
+          aria-describedby="simple-modal-description"
+          aria-labelledby="simple-modal-title"
+          onKeyDown={[Function]}
+          role="presentation"
+          style={
+            Object {
+              "bottom": 0,
+              "left": 0,
+              "position": "fixed",
+              "right": 0,
+              "top": 0,
+              "zIndex": 1300,
+            }
+          }
+        >
+          <ForwardRef(SimpleBackdrop)
+            onClick={[Function]}
+            open={true}
+          >
+            <div
+              aria-hidden={true}
+              onClick={[Function]}
+              style={
+                Object {
+                  "WebkitTapHighlightColor": "transparent",
+                  "backgroundColor": "rgba(0, 0, 0, 0.5)",
+                  "bottom": 0,
+                  "left": 0,
+                  "position": "fixed",
+                  "right": 0,
+                  "top": 0,
+                  "zIndex": -1,
+                }
+              }
+            />
+          </ForwardRef(SimpleBackdrop)>
+          <TrapFocus
+            disableAutoFocus={false}
+            disableEnforceFocus={false}
+            disableRestoreFocus={false}
+            getDoc={[Function]}
+            isEnabled={[Function]}
+            open={true}
+          >
+            <div
+              data-test="sentinelStart"
+              tabIndex={0}
+            />
+            <WithStyles(ForwardRef(Paper))
+              tabIndex="-1"
+            >
+              <ForwardRef(Paper)
+                classes={
+                  Object {
+                    "elevation0": "MuiPaper-elevation0",
+                    "elevation1": "MuiPaper-elevation1",
+                    "elevation10": "MuiPaper-elevation10",
+                    "elevation11": "MuiPaper-elevation11",
+                    "elevation12": "MuiPaper-elevation12",
+                    "elevation13": "MuiPaper-elevation13",
+                    "elevation14": "MuiPaper-elevation14",
+                    "elevation15": "MuiPaper-elevation15",
+                    "elevation16": "MuiPaper-elevation16",
+                    "elevation17": "MuiPaper-elevation17",
+                    "elevation18": "MuiPaper-elevation18",
+                    "elevation19": "MuiPaper-elevation19",
+                    "elevation2": "MuiPaper-elevation2",
+                    "elevation20": "MuiPaper-elevation20",
+                    "elevation21": "MuiPaper-elevation21",
+                    "elevation22": "MuiPaper-elevation22",
+                    "elevation23": "MuiPaper-elevation23",
+                    "elevation24": "MuiPaper-elevation24",
+                    "elevation3": "MuiPaper-elevation3",
+                    "elevation4": "MuiPaper-elevation4",
+                    "elevation5": "MuiPaper-elevation5",
+                    "elevation6": "MuiPaper-elevation6",
+                    "elevation7": "MuiPaper-elevation7",
+                    "elevation8": "MuiPaper-elevation8",
+                    "elevation9": "MuiPaper-elevation9",
+                    "outlined": "MuiPaper-outlined",
+                    "root": "MuiPaper-root",
+                    "rounded": "MuiPaper-rounded",
+                  }
+                }
+                tabIndex="-1"
+              >
+                <div
+                  className="MuiPaper-root MuiPaper-elevation1 MuiPaper-rounded"
+                  tabIndex="-1"
+                >
+                  <div>
+                    <WithStyles(cancelButton)
+                      clicked={[MockFunction]}
+                    >
+                      <cancelButton
+                        classes={
+                          Object {
+                            "cancelButtonContainer": "cancelButton-cancelButtonContainer-29",
+                          }
+                        }
+                        clicked={[MockFunction]}
+                      >
+                        <div
+                          className="cancelButton-cancelButtonContainer-29"
+                          onClick={[MockFunction]}
+                        >
+                          <ForwardRef
+                            fontSize="large"
+                          >
+                            <WithStyles(ForwardRef(SvgIcon))
+                              fontSize="large"
+                            >
+                              <ForwardRef(SvgIcon)
+                                classes={
+                                  Object {
+                                    "colorAction": "MuiSvgIcon-colorAction",
+                                    "colorDisabled": "MuiSvgIcon-colorDisabled",
+                                    "colorError": "MuiSvgIcon-colorError",
+                                    "colorPrimary": "MuiSvgIcon-colorPrimary",
+                                    "colorSecondary": "MuiSvgIcon-colorSecondary",
+                                    "fontSizeInherit": "MuiSvgIcon-fontSizeInherit",
+                                    "fontSizeLarge": "MuiSvgIcon-fontSizeLarge",
+                                    "fontSizeSmall": "MuiSvgIcon-fontSizeSmall",
+                                    "root": "MuiSvgIcon-root",
+                                  }
+                                }
+                                fontSize="large"
+                              >
+                                <svg
+                                  aria-hidden="true"
+                                  className="MuiSvgIcon-root MuiSvgIcon-fontSizeLarge"
+                                  focusable="false"
+                                  role="presentation"
+                                  viewBox="0 0 24 24"
+                                >
+                                  <path
+                                    d="M12 2C6.47 2 2 6.47 2 12s4.47 10 10 10 10-4.47 10-10S17.53 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm3.59-13L12 10.59 8.41 7 7 8.41 10.59 12 7 15.59 8.41 17 12 13.41 15.59 17 17 15.59 13.41 12 17 8.41z"
+                                  />
+                                </svg>
+                              </ForwardRef(SvgIcon)>
+                            </WithStyles(ForwardRef(SvgIcon))>
+                          </ForwardRef>
+                        </div>
+                      </cancelButton>
+                    </WithStyles(cancelButton)>
+                  </div>
+                  <div>
+                    <div>
+                      <WithStyles(ForwardRef(Typography))
+                        variant="h4"
+                      >
+                        <ForwardRef(Typography)
+                          classes={
+                            Object {
+                              "alignCenter": "MuiTypography-alignCenter",
+                              "alignJustify": "MuiTypography-alignJustify",
+                              "alignLeft": "MuiTypography-alignLeft",
+                              "alignRight": "MuiTypography-alignRight",
+                              "body1": "MuiTypography-body1",
+                              "body2": "MuiTypography-body2",
+                              "button": "MuiTypography-button",
+                              "caption": "MuiTypography-caption",
+                              "colorError": "MuiTypography-colorError",
+                              "colorInherit": "MuiTypography-colorInherit",
+                              "colorPrimary": "MuiTypography-colorPrimary",
+                              "colorSecondary": "MuiTypography-colorSecondary",
+                              "colorTextPrimary": "MuiTypography-colorTextPrimary",
+                              "colorTextSecondary": "MuiTypography-colorTextSecondary",
+                              "displayBlock": "MuiTypography-displayBlock",
+                              "displayInline": "MuiTypography-displayInline",
+                              "gutterBottom": "MuiTypography-gutterBottom",
+                              "h1": "MuiTypography-h1",
+                              "h2": "MuiTypography-h2",
+                              "h3": "MuiTypography-h3",
+                              "h4": "MuiTypography-h4",
+                              "h5": "MuiTypography-h5",
+                              "h6": "MuiTypography-h6",
+                              "noWrap": "MuiTypography-noWrap",
+                              "overline": "MuiTypography-overline",
+                              "paragraph": "MuiTypography-paragraph",
+                              "root": "MuiTypography-root",
+                              "srOnly": "MuiTypography-srOnly",
+                              "subtitle1": "MuiTypography-subtitle1",
+                              "subtitle2": "MuiTypography-subtitle2",
+                            }
+                          }
+                          variant="h4"
+                        >
+                          <h4
+                            className="MuiTypography-root MuiTypography-h4"
+                          >
+                            Edit
+                             Project
+                          </h4>
+                        </ForwardRef(Typography)>
+                      </WithStyles(ForwardRef(Typography))>
+                    </div>
+                    <div>
+                      Edit
+                       the project information and click "Save" below. * = required field
+                    </div>
+                    <div>
+                      <form
+                        onSubmit={[Function]}
+                      >
+                        <WithStyles(input)
+                          elementConfig={
+                            Object {
+                              "displayName": "Sprint ID",
+                            }
+                          }
+                          elementType="readonly"
+                          required={true}
+                          value="test_sprintId"
+                        >
+                          <input
+                            classes={
+                              Object {
+                                "Input": "input-Input-69",
+                                "InputElement": "input-InputElement-71",
+                                "Invalid": "input-Invalid-72",
+                                "Label": "input-Label-70",
+                              }
+                            }
+                            elementConfig={
+                              Object {
+                                "displayName": "Sprint ID",
+                              }
+                            }
+                            elementType="readonly"
+                            required={true}
+                            value="test_sprintId"
+                          >
+                            <div
+                              className="input-Input-69"
+                            >
+                              <label
+                                className="input-Label-70"
+                              >
+                                Sprint ID
+                                *
+                              </label>
+                              <div>
+                                test_sprintId
+                              </div>
+                            </div>
+                          </input>
+                        </WithStyles(input)>
+                        <WithStyles(input)
+                          changed={[Function]}
+                          elementConfig={
+                            Object {
+                              "displayName": "Project ID",
+                              "type": "text",
+                            }
+                          }
+                          elementType="readonly"
+                          key="id"
+                          required={true}
+                          shouldValidate={
+                            Object {
+                              "required": true,
+                            }
+                          }
+                          touched={false}
+                          valid={true}
+                          value={1}
+                        >
+                          <input
+                            changed={[Function]}
+                            classes={
+                              Object {
+                                "Input": "input-Input-69",
+                                "InputElement": "input-InputElement-71",
+                                "Invalid": "input-Invalid-72",
+                                "Label": "input-Label-70",
+                              }
+                            }
+                            elementConfig={
+                              Object {
+                                "displayName": "Project ID",
+                                "type": "text",
+                              }
+                            }
+                            elementType="readonly"
+                            required={true}
+                            shouldValidate={
+                              Object {
+                                "required": true,
+                              }
+                            }
+                            touched={false}
+                            valid={true}
+                            value={1}
+                          >
+                            <div
+                              className="input-Input-69"
+                            >
+                              <label
+                                className="input-Label-70"
+                              >
+                                Project ID
+                                *
+                              </label>
+                              <div>
+                                1
+                              </div>
+                            </div>
+                          </input>
+                        </WithStyles(input)>
+                        <WithStyles(input)
+                          changed={[Function]}
+                          elementConfig={
+                            Object {
+                              "displayName": "Project Name",
+                              "type": "text",
+                            }
+                          }
+                          elementType="input"
+                          key="name"
+                          required={true}
+                          shouldValidate={
+                            Object {
+                              "required": true,
+                            }
+                          }
+                          touched={false}
+                          valid={true}
+                          value="Verify course equivalencies & Grad Requirements in Illuminate"
+                        >
+                          <input
+                            changed={[Function]}
+                            classes={
+                              Object {
+                                "Input": "input-Input-69",
+                                "InputElement": "input-InputElement-71",
+                                "Invalid": "input-Invalid-72",
+                                "Label": "input-Label-70",
+                              }
+                            }
+                            elementConfig={
+                              Object {
+                                "displayName": "Project Name",
+                                "type": "text",
+                              }
+                            }
+                            elementType="input"
+                            required={true}
+                            shouldValidate={
+                              Object {
+                                "required": true,
+                              }
+                            }
+                            touched={false}
+                            valid={true}
+                            value="Verify course equivalencies & Grad Requirements in Illuminate"
+                          >
+                            <div
+                              className="input-Input-69"
+                            >
+                              <label
+                                className="input-Label-70"
+                              >
+                                Project Name
+                                *
+                              </label>
+                              <input
+                                className="input-InputElement-71"
+                                onChange={[Function]}
+                                value="Verify course equivalencies & Grad Requirements in Illuminate"
+                              />
+                            </div>
+                          </input>
+                        </WithStyles(input)>
+                        <WithStyles(input)
+                          changed={[Function]}
+                          elementConfig={
+                            Object {
+                              "displayName": "Project Manager",
+                              "type": "text",
+                            }
+                          }
+                          elementType="input"
+                          key="manager"
+                          required={true}
+                          shouldValidate={
+                            Object {
+                              "required": true,
+                            }
+                          }
+                          touched={false}
+                          valid={true}
+                          value="Bobby"
+                        >
+                          <input
+                            changed={[Function]}
+                            classes={
+                              Object {
+                                "Input": "input-Input-69",
+                                "InputElement": "input-InputElement-71",
+                                "Invalid": "input-Invalid-72",
+                                "Label": "input-Label-70",
+                              }
+                            }
+                            elementConfig={
+                              Object {
+                                "displayName": "Project Manager",
+                                "type": "text",
+                              }
+                            }
+                            elementType="input"
+                            required={true}
+                            shouldValidate={
+                              Object {
+                                "required": true,
+                              }
+                            }
+                            touched={false}
+                            valid={true}
+                            value="Bobby"
+                          >
+                            <div
+                              className="input-Input-69"
+                            >
+                              <label
+                                className="input-Label-70"
+                              >
+                                Project Manager
+                                *
+                              </label>
+                              <input
+                                className="input-InputElement-71"
+                                onChange={[Function]}
+                                value="Bobby"
+                              />
+                            </div>
+                          </input>
+                        </WithStyles(input)>
+                        <WithStyles(input)
+                          changed={[Function]}
+                          elementConfig={
+                            Object {
+                              "displayName": "Description",
+                              "type": "text",
+                            }
+                          }
+                          elementType="textarea"
+                          key="description"
+                          required={true}
+                          shouldValidate={
+                            Object {
+                              "required": true,
+                            }
+                          }
+                          touched={false}
+                          valid={true}
+                          value="-Audit all historical expeditions grades & match courses to equivalents"
+                        >
+                          <input
+                            changed={[Function]}
+                            classes={
+                              Object {
+                                "Input": "input-Input-69",
+                                "InputElement": "input-InputElement-71",
+                                "Invalid": "input-Invalid-72",
+                                "Label": "input-Label-70",
+                              }
+                            }
+                            elementConfig={
+                              Object {
+                                "displayName": "Description",
+                                "type": "text",
+                              }
+                            }
+                            elementType="textarea"
+                            required={true}
+                            shouldValidate={
+                              Object {
+                                "required": true,
+                              }
+                            }
+                            touched={false}
+                            valid={true}
+                            value="-Audit all historical expeditions grades & match courses to equivalents"
+                          >
+                            <div
+                              className="input-Input-69"
+                            >
+                              <label
+                                className="input-Label-70"
+                              >
+                                Description
+                                *
+                              </label>
+                              <textarea
+                                className="input-InputElement-71"
+                                onChange={[Function]}
+                                rows="3"
+                                value="-Audit all historical expeditions grades & match courses to equivalents"
+                              />
+                            </div>
+                          </input>
+                        </WithStyles(input)>
+                        <WithStyles(input)
+                          changed={[Function]}
+                          elementConfig={
+                            Object {
+                              "displayName": "Category",
+                              "type": "text",
+                            }
+                          }
+                          elementType="input"
+                          key="category"
+                          required={true}
+                          shouldValidate={
+                            Object {
+                              "required": true,
+                            }
+                          }
+                          touched={false}
+                          valid={true}
+                          value="Grades & Transcripts"
+                        >
+                          <input
+                            changed={[Function]}
+                            classes={
+                              Object {
+                                "Input": "input-Input-69",
+                                "InputElement": "input-InputElement-71",
+                                "Invalid": "input-Invalid-72",
+                                "Label": "input-Label-70",
+                              }
+                            }
+                            elementConfig={
+                              Object {
+                                "displayName": "Category",
+                                "type": "text",
+                              }
+                            }
+                            elementType="input"
+                            required={true}
+                            shouldValidate={
+                              Object {
+                                "required": true,
+                              }
+                            }
+                            touched={false}
+                            valid={true}
+                            value="Grades & Transcripts"
+                          >
+                            <div
+                              className="input-Input-69"
+                            >
+                              <label
+                                className="input-Label-70"
+                              >
+                                Category
+                                *
+                              </label>
+                              <input
+                                className="input-InputElement-71"
+                                onChange={[Function]}
+                                value="Grades & Transcripts"
+                              />
+                            </div>
+                          </input>
+                        </WithStyles(input)>
+                        <WithStyles(input)
+                          changed={[Function]}
+                          elementConfig={
+                            Object {
+                              "displayName": "Category Lead",
+                              "type": "text",
+                            }
+                          }
+                          elementType="input"
+                          key="categoryLead"
+                          required={true}
+                          shouldValidate={
+                            Object {
+                              "required": true,
+                            }
+                          }
+                          touched={false}
+                          valid={true}
+                          value="Bobby"
+                        >
+                          <input
+                            changed={[Function]}
+                            classes={
+                              Object {
+                                "Input": "input-Input-69",
+                                "InputElement": "input-InputElement-71",
+                                "Invalid": "input-Invalid-72",
+                                "Label": "input-Label-70",
+                              }
+                            }
+                            elementConfig={
+                              Object {
+                                "displayName": "Category Lead",
+                                "type": "text",
+                              }
+                            }
+                            elementType="input"
+                            required={true}
+                            shouldValidate={
+                              Object {
+                                "required": true,
+                              }
+                            }
+                            touched={false}
+                            valid={true}
+                            value="Bobby"
+                          >
+                            <div
+                              className="input-Input-69"
+                            >
+                              <label
+                                className="input-Label-70"
+                              >
+                                Category Lead
+                                *
+                              </label>
+                              <input
+                                className="input-InputElement-71"
+                                onChange={[Function]}
+                                value="Bobby"
+                              />
+                            </div>
+                          </input>
+                        </WithStyles(input)>
+                        <WithStyles(input)
+                          changed={[Function]}
+                          elementConfig={
+                            Object {
+                              "displayName": "Estimated Project Size",
+                              "options": Array [
+                                Object {
+                                  "displayValue": "1 - Extra Small",
+                                  "value": "1 - Extra Small",
+                                },
+                                Object {
+                                  "displayValue": "2 - Small",
+                                  "value": "2 - Small",
+                                },
+                                Object {
+                                  "displayValue": "3 - Small-to-Medium",
+                                  "value": "3 - Small-to-Medium",
+                                },
+                                Object {
+                                  "displayValue": "5 - Medium",
+                                  "value": "5 - Medium",
+                                },
+                                Object {
+                                  "displayValue": "8 - Medium-to-Large",
+                                  "value": "8 - Medium-to-Large",
+                                },
+                                Object {
+                                  "displayValue": "13 - Large",
+                                  "value": "13 - Large",
+                                },
+                                Object {
+                                  "displayValue": "21 - Extra Large",
+                                  "value": "21 - Extra Large",
+                                },
+                                Object {
+                                  "displayValue": "34 - Gargantuan",
+                                  "value": "34 - Gargantuan",
+                                },
+                              ],
+                            }
+                          }
+                          elementType="select"
+                          key="estimatedProjectSize"
+                          required={true}
+                          shouldValidate={
+                            Object {
+                              "required": true,
+                            }
+                          }
+                          touched={false}
+                          valid={true}
+                          value="3 - Small-to-Medium"
+                        >
+                          <input
+                            changed={[Function]}
+                            classes={
+                              Object {
+                                "Input": "input-Input-69",
+                                "InputElement": "input-InputElement-71",
+                                "Invalid": "input-Invalid-72",
+                                "Label": "input-Label-70",
+                              }
+                            }
+                            elementConfig={
+                              Object {
+                                "displayName": "Estimated Project Size",
+                                "options": Array [
+                                  Object {
+                                    "displayValue": "1 - Extra Small",
+                                    "value": "1 - Extra Small",
+                                  },
+                                  Object {
+                                    "displayValue": "2 - Small",
+                                    "value": "2 - Small",
+                                  },
+                                  Object {
+                                    "displayValue": "3 - Small-to-Medium",
+                                    "value": "3 - Small-to-Medium",
+                                  },
+                                  Object {
+                                    "displayValue": "5 - Medium",
+                                    "value": "5 - Medium",
+                                  },
+                                  Object {
+                                    "displayValue": "8 - Medium-to-Large",
+                                    "value": "8 - Medium-to-Large",
+                                  },
+                                  Object {
+                                    "displayValue": "13 - Large",
+                                    "value": "13 - Large",
+                                  },
+                                  Object {
+                                    "displayValue": "21 - Extra Large",
+                                    "value": "21 - Extra Large",
+                                  },
+                                  Object {
+                                    "displayValue": "34 - Gargantuan",
+                                    "value": "34 - Gargantuan",
+                                  },
+                                ],
+                              }
+                            }
+                            elementType="select"
+                            required={true}
+                            shouldValidate={
+                              Object {
+                                "required": true,
+                              }
+                            }
+                            touched={false}
+                            valid={true}
+                            value="3 - Small-to-Medium"
+                          >
+                            <div
+                              className="input-Input-69"
+                            >
+                              <label
+                                className="input-Label-70"
+                              >
+                                Estimated Project Size
+                                *
+                              </label>
+                              <select
+                                className="input-InputElement-71 Select"
+                                onChange={[Function]}
+                                style={
+                                  Object {
+                                    "width": "auto",
+                                  }
+                                }
+                                value="3 - Small-to-Medium"
+                              >
+                                <option
+                                  key="1 - Extra Small"
+                                  value="1 - Extra Small"
+                                >
+                                  1 - Extra Small
+                                </option>
+                                <option
+                                  key="2 - Small"
+                                  value="2 - Small"
+                                >
+                                  2 - Small
+                                </option>
+                                <option
+                                  key="3 - Small-to-Medium"
+                                  value="3 - Small-to-Medium"
+                                >
+                                  3 - Small-to-Medium
+                                </option>
+                                <option
+                                  key="5 - Medium"
+                                  value="5 - Medium"
+                                >
+                                  5 - Medium
+                                </option>
+                                <option
+                                  key="8 - Medium-to-Large"
+                                  value="8 - Medium-to-Large"
+                                >
+                                  8 - Medium-to-Large
+                                </option>
+                                <option
+                                  key="13 - Large"
+                                  value="13 - Large"
+                                >
+                                  13 - Large
+                                </option>
+                                <option
+                                  key="21 - Extra Large"
+                                  value="21 - Extra Large"
+                                >
+                                  21 - Extra Large
+                                </option>
+                                <option
+                                  key="34 - Gargantuan"
+                                  value="34 - Gargantuan"
+                                >
+                                  34 - Gargantuan
+                                </option>
+                              </select>
+                            </div>
+                          </input>
+                        </WithStyles(input)>
+                        <WithStyles(input)
+                          changed={[Function]}
+                          elementConfig={
+                            Object {
+                              "displayName": "Must Do or Nice-to-Have?",
+                              "options": Array [
+                                Object {
+                                  "displayValue": "Must Do",
+                                  "value": "Must Do",
+                                },
+                                Object {
+                                  "displayValue": "Nice-to-Have",
+                                  "value": "Nice-to-Have",
+                                },
+                              ],
+                            }
+                          }
+                          elementType="select"
+                          key="mustDo"
+                          required={true}
+                          shouldValidate={
+                            Object {
+                              "required": true,
+                            }
+                          }
+                          touched={false}
+                          valid={true}
+                          value="Nice-to-Have"
+                        >
+                          <input
+                            changed={[Function]}
+                            classes={
+                              Object {
+                                "Input": "input-Input-69",
+                                "InputElement": "input-InputElement-71",
+                                "Invalid": "input-Invalid-72",
+                                "Label": "input-Label-70",
+                              }
+                            }
+                            elementConfig={
+                              Object {
+                                "displayName": "Must Do or Nice-to-Have?",
+                                "options": Array [
+                                  Object {
+                                    "displayValue": "Must Do",
+                                    "value": "Must Do",
+                                  },
+                                  Object {
+                                    "displayValue": "Nice-to-Have",
+                                    "value": "Nice-to-Have",
+                                  },
+                                ],
+                              }
+                            }
+                            elementType="select"
+                            required={true}
+                            shouldValidate={
+                              Object {
+                                "required": true,
+                              }
+                            }
+                            touched={false}
+                            valid={true}
+                            value="Nice-to-Have"
+                          >
+                            <div
+                              className="input-Input-69"
+                            >
+                              <label
+                                className="input-Label-70"
+                              >
+                                Must Do or Nice-to-Have?
+                                *
+                              </label>
+                              <select
+                                className="input-InputElement-71 Select"
+                                onChange={[Function]}
+                                style={
+                                  Object {
+                                    "width": "auto",
+                                  }
+                                }
+                                value="Nice-to-Have"
+                              >
+                                <option
+                                  key="Must Do"
+                                  value="Must Do"
+                                >
+                                  Must Do
+                                </option>
+                                <option
+                                  key="Nice-to-Have"
+                                  value="Nice-to-Have"
+                                >
+                                  Nice-to-Have
+                                </option>
+                              </select>
+                            </div>
+                          </input>
+                        </WithStyles(input)>
+                        <WithStyles(input)
+                          changed={[Function]}
+                          elementConfig={
+                            Object {
+                              "displayName": "External Due Date",
+                              "type": "text",
+                            }
+                          }
+                          elementType="input"
+                          key="externalDueDate"
+                          required={false}
+                          shouldValidate={
+                            Object {
+                              "required": false,
+                            }
+                          }
+                          touched={false}
+                          valid={true}
+                          value=""
+                        >
+                          <input
+                            changed={[Function]}
+                            classes={
+                              Object {
+                                "Input": "input-Input-69",
+                                "InputElement": "input-InputElement-71",
+                                "Invalid": "input-Invalid-72",
+                                "Label": "input-Label-70",
+                              }
+                            }
+                            elementConfig={
+                              Object {
+                                "displayName": "External Due Date",
+                                "type": "text",
+                              }
+                            }
+                            elementType="input"
+                            required={false}
+                            shouldValidate={
+                              Object {
+                                "required": false,
+                              }
+                            }
+                            touched={false}
+                            valid={true}
+                            value=""
+                          >
+                            <div
+                              className="input-Input-69"
+                            >
+                              <label
+                                className="input-Label-70"
+                              >
+                                External Due Date
+                              </label>
+                              <input
+                                className="input-InputElement-71"
+                                onChange={[Function]}
+                                value=""
+                              />
+                            </div>
+                          </input>
+                        </WithStyles(input)>
+                        <WithStyles(input)
+                          changed={[Function]}
+                          elementConfig={
+                            Object {
+                              "displayName": "Deliverables / Outcomes",
+                              "type": "text",
+                            }
+                          }
+                          elementType="textarea"
+                          key="deliverables"
+                          required={false}
+                          shouldValidate={
+                            Object {
+                              "required": false,
+                            }
+                          }
+                          touched={false}
+                          valid={true}
+                          value="Historical Illuminate courses matched with current equivalencies."
+                        >
+                          <input
+                            changed={[Function]}
+                            classes={
+                              Object {
+                                "Input": "input-Input-69",
+                                "InputElement": "input-InputElement-71",
+                                "Invalid": "input-Invalid-72",
+                                "Label": "input-Label-70",
+                              }
+                            }
+                            elementConfig={
+                              Object {
+                                "displayName": "Deliverables / Outcomes",
+                                "type": "text",
+                              }
+                            }
+                            elementType="textarea"
+                            required={false}
+                            shouldValidate={
+                              Object {
+                                "required": false,
+                              }
+                            }
+                            touched={false}
+                            valid={true}
+                            value="Historical Illuminate courses matched with current equivalencies."
+                          >
+                            <div
+                              className="input-Input-69"
+                            >
+                              <label
+                                className="input-Label-70"
+                              >
+                                Deliverables / Outcomes
+                              </label>
+                              <textarea
+                                className="input-InputElement-71"
+                                onChange={[Function]}
+                                rows="3"
+                                value="Historical Illuminate courses matched with current equivalencies."
+                              />
+                            </div>
+                          </input>
+                        </WithStyles(input)>
+                        <WithStyles(input)
+                          changed={[Function]}
+                          elementConfig={
+                            Object {
+                              "displayName": "Link to Deliverable",
+                              "type": "text",
+                            }
+                          }
+                          elementType="input"
+                          key="deliverableLink"
+                          required={false}
+                          shouldValidate={
+                            Object {
+                              "required": false,
+                            }
+                          }
+                          touched={false}
+                          valid={true}
+                          value=""
+                        >
+                          <input
+                            changed={[Function]}
+                            classes={
+                              Object {
+                                "Input": "input-Input-69",
+                                "InputElement": "input-InputElement-71",
+                                "Invalid": "input-Invalid-72",
+                                "Label": "input-Label-70",
+                              }
+                            }
+                            elementConfig={
+                              Object {
+                                "displayName": "Link to Deliverable",
+                                "type": "text",
+                              }
+                            }
+                            elementType="input"
+                            required={false}
+                            shouldValidate={
+                              Object {
+                                "required": false,
+                              }
+                            }
+                            touched={false}
+                            valid={true}
+                            value=""
+                          >
+                            <div
+                              className="input-Input-69"
+                            >
+                              <label
+                                className="input-Label-70"
+                              >
+                                Link to Deliverable
+                              </label>
+                              <input
+                                className="input-InputElement-71"
+                                onChange={[Function]}
+                                value=""
+                              />
+                            </div>
+                          </input>
+                        </WithStyles(input)>
+                        <WithStyles(input)
+                          changed={[Function]}
+                          elementConfig={
+                            Object {
+                              "displayName": "Notes",
+                              "type": "text",
+                            }
+                          }
+                          elementType="textarea"
+                          key="notes"
+                          required={false}
+                          shouldValidate={
+                            Object {
+                              "required": false,
+                            }
+                          }
+                          touched={false}
+                          valid={true}
+                          value=""
+                        >
+                          <input
+                            changed={[Function]}
+                            classes={
+                              Object {
+                                "Input": "input-Input-69",
+                                "InputElement": "input-InputElement-71",
+                                "Invalid": "input-Invalid-72",
+                                "Label": "input-Label-70",
+                              }
+                            }
+                            elementConfig={
+                              Object {
+                                "displayName": "Notes",
+                                "type": "text",
+                              }
+                            }
+                            elementType="textarea"
+                            required={false}
+                            shouldValidate={
+                              Object {
+                                "required": false,
+                              }
+                            }
+                            touched={false}
+                            valid={true}
+                            value=""
+                          >
+                            <div
+                              className="input-Input-69"
+                            >
+                              <label
+                                className="input-Label-70"
+                              >
+                                Notes
+                              </label>
+                              <textarea
+                                className="input-InputElement-71"
+                                onChange={[Function]}
+                                rows="3"
+                                value=""
+                              />
+                            </div>
+                          </input>
+                        </WithStyles(input)>
+                        <WithStyles(input)
+                          changed={[Function]}
+                          elementConfig={
+                            Object {
+                              "displayName": "Did We Fully Complete the Expected Deliverable?",
+                              "options": Array [
+                                Object {
+                                  "displayValue": "",
+                                  "value": "",
+                                },
+                                Object {
+                                  "displayValue": "Yes",
+                                  "value": "Yes",
+                                },
+                                Object {
+                                  "displayValue": "No, but mostly did",
+                                  "value": "No, but mostly did",
+                                },
+                                Object {
+                                  "displayValue": "No, but partially did",
+                                  "value": "No, but partially did",
+                                },
+                                Object {
+                                  "displayValue": "No",
+                                  "value": "No",
+                                },
+                              ],
+                            }
+                          }
+                          elementType="select"
+                          key="completionStatus"
+                          required={false}
+                          shouldValidate={
+                            Object {
+                              "required": false,
+                            }
+                          }
+                          touched={false}
+                          valid={true}
+                          value=""
+                        >
+                          <input
+                            changed={[Function]}
+                            classes={
+                              Object {
+                                "Input": "input-Input-69",
+                                "InputElement": "input-InputElement-71",
+                                "Invalid": "input-Invalid-72",
+                                "Label": "input-Label-70",
+                              }
+                            }
+                            elementConfig={
+                              Object {
+                                "displayName": "Did We Fully Complete the Expected Deliverable?",
+                                "options": Array [
+                                  Object {
+                                    "displayValue": "",
+                                    "value": "",
+                                  },
+                                  Object {
+                                    "displayValue": "Yes",
+                                    "value": "Yes",
+                                  },
+                                  Object {
+                                    "displayValue": "No, but mostly did",
+                                    "value": "No, but mostly did",
+                                  },
+                                  Object {
+                                    "displayValue": "No, but partially did",
+                                    "value": "No, but partially did",
+                                  },
+                                  Object {
+                                    "displayValue": "No",
+                                    "value": "No",
+                                  },
+                                ],
+                              }
+                            }
+                            elementType="select"
+                            required={false}
+                            shouldValidate={
+                              Object {
+                                "required": false,
+                              }
+                            }
+                            touched={false}
+                            valid={true}
+                            value=""
+                          >
+                            <div
+                              className="input-Input-69"
+                            >
+                              <label
+                                className="input-Label-70"
+                              >
+                                Did We Fully Complete the Expected Deliverable?
+                              </label>
+                              <select
+                                className="input-InputElement-71 Select"
+                                onChange={[Function]}
+                                style={
+                                  Object {
+                                    "width": "auto",
+                                  }
+                                }
+                                value=""
+                              >
+                                <option
+                                  key=""
+                                  value=""
+                                />
+                                <option
+                                  key="Yes"
+                                  value="Yes"
+                                >
+                                  Yes
+                                </option>
+                                <option
+                                  key="No, but mostly did"
+                                  value="No, but mostly did"
+                                >
+                                  No, but mostly did
+                                </option>
+                                <option
+                                  key="No, but partially did"
+                                  value="No, but partially did"
+                                >
+                                  No, but partially did
+                                </option>
+                                <option
+                                  key="No"
+                                  value="No"
+                                >
+                                  No
+                                </option>
+                              </select>
+                            </div>
+                          </input>
+                        </WithStyles(input)>
+                        <WithStyles(input)
+                          changed={[Function]}
+                          elementConfig={
+                            Object {
+                              "displayName": "If Not, Why Not?",
+                              "type": "text",
+                            }
+                          }
+                          elementType="textarea"
+                          key="notCompletedExplanation"
+                          required={false}
+                          shouldValidate={
+                            Object {
+                              "required": false,
+                            }
+                          }
+                          touched={false}
+                          valid={true}
+                          value=""
+                        >
+                          <input
+                            changed={[Function]}
+                            classes={
+                              Object {
+                                "Input": "input-Input-69",
+                                "InputElement": "input-InputElement-71",
+                                "Invalid": "input-Invalid-72",
+                                "Label": "input-Label-70",
+                              }
+                            }
+                            elementConfig={
+                              Object {
+                                "displayName": "If Not, Why Not?",
+                                "type": "text",
+                              }
+                            }
+                            elementType="textarea"
+                            required={false}
+                            shouldValidate={
+                              Object {
+                                "required": false,
+                              }
+                            }
+                            touched={false}
+                            valid={true}
+                            value=""
+                          >
+                            <div
+                              className="input-Input-69"
+                            >
+                              <label
+                                className="input-Label-70"
+                              >
+                                If Not, Why Not?
+                              </label>
+                              <textarea
+                                className="input-InputElement-71"
+                                onChange={[Function]}
+                                rows="3"
+                                value=""
+                              />
+                            </div>
+                          </input>
+                        </WithStyles(input)>
+                        <WithStyles(input)
+                          changed={[Function]}
+                          elementConfig={
+                            Object {
+                              "displayName": "Status End of Week 1 (0-100%)",
+                              "options": Array [
+                                Object {
+                                  "displayValue": "",
+                                  "value": "",
+                                },
+                                Object {
+                                  "displayValue": "0%",
+                                  "value": "0%",
+                                },
+                                Object {
+                                  "displayValue": "25%",
+                                  "value": "25%",
+                                },
+                                Object {
+                                  "displayValue": "50%",
+                                  "value": "50%",
+                                },
+                                Object {
+                                  "displayValue": "75%",
+                                  "value": "75%",
+                                },
+                                Object {
+                                  "displayValue": "100%",
+                                  "value": "100%",
+                                },
+                              ],
+                            }
+                          }
+                          elementType="select"
+                          key="statusEndOfWeek1"
+                          required={false}
+                          shouldValidate={
+                            Object {
+                              "required": false,
+                            }
+                          }
+                          touched={false}
+                          valid={true}
+                          value="25%"
+                        >
+                          <input
+                            changed={[Function]}
+                            classes={
+                              Object {
+                                "Input": "input-Input-69",
+                                "InputElement": "input-InputElement-71",
+                                "Invalid": "input-Invalid-72",
+                                "Label": "input-Label-70",
+                              }
+                            }
+                            elementConfig={
+                              Object {
+                                "displayName": "Status End of Week 1 (0-100%)",
+                                "options": Array [
+                                  Object {
+                                    "displayValue": "",
+                                    "value": "",
+                                  },
+                                  Object {
+                                    "displayValue": "0%",
+                                    "value": "0%",
+                                  },
+                                  Object {
+                                    "displayValue": "25%",
+                                    "value": "25%",
+                                  },
+                                  Object {
+                                    "displayValue": "50%",
+                                    "value": "50%",
+                                  },
+                                  Object {
+                                    "displayValue": "75%",
+                                    "value": "75%",
+                                  },
+                                  Object {
+                                    "displayValue": "100%",
+                                    "value": "100%",
+                                  },
+                                ],
+                              }
+                            }
+                            elementType="select"
+                            required={false}
+                            shouldValidate={
+                              Object {
+                                "required": false,
+                              }
+                            }
+                            touched={false}
+                            valid={true}
+                            value="25%"
+                          >
+                            <div
+                              className="input-Input-69"
+                            >
+                              <label
+                                className="input-Label-70"
+                              >
+                                Status End of Week 1 (0-100%)
+                              </label>
+                              <select
+                                className="input-InputElement-71 Select"
+                                onChange={[Function]}
+                                style={
+                                  Object {
+                                    "width": "auto",
+                                  }
+                                }
+                                value="25%"
+                              >
+                                <option
+                                  key=""
+                                  value=""
+                                />
+                                <option
+                                  key="0%"
+                                  value="0%"
+                                >
+                                  0%
+                                </option>
+                                <option
+                                  key="25%"
+                                  value="25%"
+                                >
+                                  25%
+                                </option>
+                                <option
+                                  key="50%"
+                                  value="50%"
+                                >
+                                  50%
+                                </option>
+                                <option
+                                  key="75%"
+                                  value="75%"
+                                >
+                                  75%
+                                </option>
+                                <option
+                                  key="100%"
+                                  value="100%"
+                                >
+                                  100%
+                                </option>
+                              </select>
+                            </div>
+                          </input>
+                        </WithStyles(input)>
+                        <WithStyles(input)
+                          changed={[Function]}
+                          elementConfig={
+                            Object {
+                              "displayName": "Status End of Week 2 (0-100%)",
+                              "options": Array [
+                                Object {
+                                  "displayValue": "",
+                                  "value": "",
+                                },
+                                Object {
+                                  "displayValue": "0%",
+                                  "value": "0%",
+                                },
+                                Object {
+                                  "displayValue": "25%",
+                                  "value": "25%",
+                                },
+                                Object {
+                                  "displayValue": "50%",
+                                  "value": "50%",
+                                },
+                                Object {
+                                  "displayValue": "75%",
+                                  "value": "75%",
+                                },
+                                Object {
+                                  "displayValue": "100%",
+                                  "value": "100%",
+                                },
+                              ],
+                            }
+                          }
+                          elementType="select"
+                          key="statusEndOfWeek2"
+                          required={false}
+                          shouldValidate={
+                            Object {
+                              "required": false,
+                            }
+                          }
+                          touched={false}
+                          valid={true}
+                          value=""
+                        >
+                          <input
+                            changed={[Function]}
+                            classes={
+                              Object {
+                                "Input": "input-Input-69",
+                                "InputElement": "input-InputElement-71",
+                                "Invalid": "input-Invalid-72",
+                                "Label": "input-Label-70",
+                              }
+                            }
+                            elementConfig={
+                              Object {
+                                "displayName": "Status End of Week 2 (0-100%)",
+                                "options": Array [
+                                  Object {
+                                    "displayValue": "",
+                                    "value": "",
+                                  },
+                                  Object {
+                                    "displayValue": "0%",
+                                    "value": "0%",
+                                  },
+                                  Object {
+                                    "displayValue": "25%",
+                                    "value": "25%",
+                                  },
+                                  Object {
+                                    "displayValue": "50%",
+                                    "value": "50%",
+                                  },
+                                  Object {
+                                    "displayValue": "75%",
+                                    "value": "75%",
+                                  },
+                                  Object {
+                                    "displayValue": "100%",
+                                    "value": "100%",
+                                  },
+                                ],
+                              }
+                            }
+                            elementType="select"
+                            required={false}
+                            shouldValidate={
+                              Object {
+                                "required": false,
+                              }
+                            }
+                            touched={false}
+                            valid={true}
+                            value=""
+                          >
+                            <div
+                              className="input-Input-69"
+                            >
+                              <label
+                                className="input-Label-70"
+                              >
+                                Status End of Week 2 (0-100%)
+                              </label>
+                              <select
+                                className="input-InputElement-71 Select"
+                                onChange={[Function]}
+                                style={
+                                  Object {
+                                    "width": "auto",
+                                  }
+                                }
+                                value=""
+                              >
+                                <option
+                                  key=""
+                                  value=""
+                                />
+                                <option
+                                  key="0%"
+                                  value="0%"
+                                >
+                                  0%
+                                </option>
+                                <option
+                                  key="25%"
+                                  value="25%"
+                                >
+                                  25%
+                                </option>
+                                <option
+                                  key="50%"
+                                  value="50%"
+                                >
+                                  50%
+                                </option>
+                                <option
+                                  key="75%"
+                                  value="75%"
+                                >
+                                  75%
+                                </option>
+                                <option
+                                  key="100%"
+                                  value="100%"
+                                >
+                                  100%
+                                </option>
+                              </select>
+                            </div>
+                          </input>
+                        </WithStyles(input)>
+                        <div>
+                          <WithStyles(ForwardRef(Button))
+                            color="secondary"
+                            onClick={[MockFunction]}
+                            startIcon={<UNDEFINED />}
+                            variant="contained"
+                          >
+                            <ForwardRef(Button)
+                              classes={
+                                Object {
+                                  "colorInherit": "MuiButton-colorInherit",
+                                  "contained": "MuiButton-contained",
+                                  "containedPrimary": "MuiButton-containedPrimary",
+                                  "containedSecondary": "MuiButton-containedSecondary",
+                                  "containedSizeLarge": "MuiButton-containedSizeLarge",
+                                  "containedSizeSmall": "MuiButton-containedSizeSmall",
+                                  "disableElevation": "MuiButton-disableElevation",
+                                  "disabled": "Mui-disabled",
+                                  "endIcon": "MuiButton-endIcon",
+                                  "focusVisible": "Mui-focusVisible",
+                                  "fullWidth": "MuiButton-fullWidth",
+                                  "iconSizeLarge": "MuiButton-iconSizeLarge",
+                                  "iconSizeMedium": "MuiButton-iconSizeMedium",
+                                  "iconSizeSmall": "MuiButton-iconSizeSmall",
+                                  "label": "MuiButton-label",
+                                  "outlined": "MuiButton-outlined",
+                                  "outlinedPrimary": "MuiButton-outlinedPrimary",
+                                  "outlinedSecondary": "MuiButton-outlinedSecondary",
+                                  "outlinedSizeLarge": "MuiButton-outlinedSizeLarge",
+                                  "outlinedSizeSmall": "MuiButton-outlinedSizeSmall",
+                                  "root": "MuiButton-root",
+                                  "sizeLarge": "MuiButton-sizeLarge",
+                                  "sizeSmall": "MuiButton-sizeSmall",
+                                  "startIcon": "MuiButton-startIcon",
+                                  "text": "MuiButton-text",
+                                  "textPrimary": "MuiButton-textPrimary",
+                                  "textSecondary": "MuiButton-textSecondary",
+                                  "textSizeLarge": "MuiButton-textSizeLarge",
+                                  "textSizeSmall": "MuiButton-textSizeSmall",
+                                }
+                              }
+                              color="secondary"
+                              onClick={[MockFunction]}
+                              startIcon={<UNDEFINED />}
+                              variant="contained"
+                            >
+                              <WithStyles(ForwardRef(ButtonBase))
+                                className="MuiButton-root MuiButton-contained MuiButton-containedSecondary"
+                                component="button"
+                                disabled={false}
+                                focusRipple={true}
+                                focusVisibleClassName="Mui-focusVisible"
+                                onClick={[MockFunction]}
+                                type="button"
+                              >
+                                <ForwardRef(ButtonBase)
+                                  className="MuiButton-root MuiButton-contained MuiButton-containedSecondary"
+                                  classes={
+                                    Object {
+                                      "disabled": "Mui-disabled",
+                                      "focusVisible": "Mui-focusVisible",
+                                      "root": "MuiButtonBase-root",
+                                    }
+                                  }
+                                  component="button"
+                                  disabled={false}
+                                  focusRipple={true}
+                                  focusVisibleClassName="Mui-focusVisible"
+                                  onClick={[MockFunction]}
+                                  type="button"
+                                >
+                                  <button
+                                    className="MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedSecondary"
+                                    disabled={false}
+                                    onBlur={[Function]}
+                                    onClick={[MockFunction]}
+                                    onDragLeave={[Function]}
+                                    onFocus={[Function]}
+                                    onKeyDown={[Function]}
+                                    onKeyUp={[Function]}
+                                    onMouseDown={[Function]}
+                                    onMouseLeave={[Function]}
+                                    onMouseUp={[Function]}
+                                    onTouchEnd={[Function]}
+                                    onTouchMove={[Function]}
+                                    onTouchStart={[Function]}
+                                    tabIndex={0}
+                                    type="button"
+                                  >
+                                    <span
+                                      className="MuiButton-label"
+                                    >
+                                      <span
+                                        className="MuiButton-startIcon MuiButton-iconSizeMedium"
+                                      >
+                                        <ForwardRef>
+                                          <WithStyles(ForwardRef(SvgIcon))>
+                                            <ForwardRef(SvgIcon)
+                                              classes={
+                                                Object {
+                                                  "colorAction": "MuiSvgIcon-colorAction",
+                                                  "colorDisabled": "MuiSvgIcon-colorDisabled",
+                                                  "colorError": "MuiSvgIcon-colorError",
+                                                  "colorPrimary": "MuiSvgIcon-colorPrimary",
+                                                  "colorSecondary": "MuiSvgIcon-colorSecondary",
+                                                  "fontSizeInherit": "MuiSvgIcon-fontSizeInherit",
+                                                  "fontSizeLarge": "MuiSvgIcon-fontSizeLarge",
+                                                  "fontSizeSmall": "MuiSvgIcon-fontSizeSmall",
+                                                  "root": "MuiSvgIcon-root",
+                                                }
+                                              }
+                                            >
+                                              <svg
+                                                aria-hidden="true"
+                                                className="MuiSvgIcon-root"
+                                                focusable="false"
+                                                role="presentation"
+                                                viewBox="0 0 24 24"
+                                              >
+                                                <path
+                                                  d="M12 2C6.47 2 2 6.47 2 12s4.47 10 10 10 10-4.47 10-10S17.53 2 12 2zm5 13.59L15.59 17 12 13.41 8.41 17 7 15.59 10.59 12 7 8.41 8.41 7 12 10.59 15.59 7 17 8.41 13.41 12 17 15.59z"
+                                                />
+                                              </svg>
+                                            </ForwardRef(SvgIcon)>
+                                          </WithStyles(ForwardRef(SvgIcon))>
+                                        </ForwardRef>
+                                      </span>
+                                      CANCEL
+                                    </span>
+                                    <NoSsr>
+                                      <WithStyles(undefined)
+                                        center={false}
+                                      >
+                                        <ForwardRef(TouchRipple)
+                                          center={false}
+                                          classes={
+                                            Object {
+                                              "child": "MuiTouchRipple-child",
+                                              "childLeaving": "MuiTouchRipple-childLeaving",
+                                              "childPulsate": "MuiTouchRipple-childPulsate",
+                                              "ripple": "MuiTouchRipple-ripple",
+                                              "ripplePulsate": "MuiTouchRipple-ripplePulsate",
+                                              "rippleVisible": "MuiTouchRipple-rippleVisible",
+                                              "root": "MuiTouchRipple-root",
+                                            }
+                                          }
+                                        >
+                                          <span
+                                            className="MuiTouchRipple-root"
+                                          >
+                                            <TransitionGroup
+                                              childFactory={[Function]}
+                                              component={null}
+                                              exit={true}
+                                            />
+                                          </span>
+                                        </ForwardRef(TouchRipple)>
+                                      </WithStyles(undefined)>
+                                    </NoSsr>
+                                  </button>
+                                </ForwardRef(ButtonBase)>
+                              </WithStyles(ForwardRef(ButtonBase))>
+                            </ForwardRef(Button)>
+                          </WithStyles(ForwardRef(Button))>
+                          <WithStyles(ForwardRef(Button))
+                            color="secondary"
+                            onClick={[Function]}
+                            startIcon={<UNDEFINED />}
+                            variant="outlined"
+                          >
+                            <ForwardRef(Button)
+                              classes={
+                                Object {
+                                  "colorInherit": "MuiButton-colorInherit",
+                                  "contained": "MuiButton-contained",
+                                  "containedPrimary": "MuiButton-containedPrimary",
+                                  "containedSecondary": "MuiButton-containedSecondary",
+                                  "containedSizeLarge": "MuiButton-containedSizeLarge",
+                                  "containedSizeSmall": "MuiButton-containedSizeSmall",
+                                  "disableElevation": "MuiButton-disableElevation",
+                                  "disabled": "Mui-disabled",
+                                  "endIcon": "MuiButton-endIcon",
+                                  "focusVisible": "Mui-focusVisible",
+                                  "fullWidth": "MuiButton-fullWidth",
+                                  "iconSizeLarge": "MuiButton-iconSizeLarge",
+                                  "iconSizeMedium": "MuiButton-iconSizeMedium",
+                                  "iconSizeSmall": "MuiButton-iconSizeSmall",
+                                  "label": "MuiButton-label",
+                                  "outlined": "MuiButton-outlined",
+                                  "outlinedPrimary": "MuiButton-outlinedPrimary",
+                                  "outlinedSecondary": "MuiButton-outlinedSecondary",
+                                  "outlinedSizeLarge": "MuiButton-outlinedSizeLarge",
+                                  "outlinedSizeSmall": "MuiButton-outlinedSizeSmall",
+                                  "root": "MuiButton-root",
+                                  "sizeLarge": "MuiButton-sizeLarge",
+                                  "sizeSmall": "MuiButton-sizeSmall",
+                                  "startIcon": "MuiButton-startIcon",
+                                  "text": "MuiButton-text",
+                                  "textPrimary": "MuiButton-textPrimary",
+                                  "textSecondary": "MuiButton-textSecondary",
+                                  "textSizeLarge": "MuiButton-textSizeLarge",
+                                  "textSizeSmall": "MuiButton-textSizeSmall",
+                                }
+                              }
+                              color="secondary"
+                              onClick={[Function]}
+                              startIcon={<UNDEFINED />}
+                              variant="outlined"
+                            >
+                              <WithStyles(ForwardRef(ButtonBase))
+                                className="MuiButton-root MuiButton-outlined MuiButton-outlinedSecondary"
+                                component="button"
+                                disabled={false}
+                                focusRipple={true}
+                                focusVisibleClassName="Mui-focusVisible"
+                                onClick={[Function]}
+                                type="button"
+                              >
+                                <ForwardRef(ButtonBase)
+                                  className="MuiButton-root MuiButton-outlined MuiButton-outlinedSecondary"
+                                  classes={
+                                    Object {
+                                      "disabled": "Mui-disabled",
+                                      "focusVisible": "Mui-focusVisible",
+                                      "root": "MuiButtonBase-root",
+                                    }
+                                  }
+                                  component="button"
+                                  disabled={false}
+                                  focusRipple={true}
+                                  focusVisibleClassName="Mui-focusVisible"
+                                  onClick={[Function]}
+                                  type="button"
+                                >
+                                  <button
+                                    className="MuiButtonBase-root MuiButton-root MuiButton-outlined MuiButton-outlinedSecondary"
+                                    disabled={false}
+                                    onBlur={[Function]}
+                                    onClick={[Function]}
+                                    onDragLeave={[Function]}
+                                    onFocus={[Function]}
+                                    onKeyDown={[Function]}
+                                    onKeyUp={[Function]}
+                                    onMouseDown={[Function]}
+                                    onMouseLeave={[Function]}
+                                    onMouseUp={[Function]}
+                                    onTouchEnd={[Function]}
+                                    onTouchMove={[Function]}
+                                    onTouchStart={[Function]}
+                                    tabIndex={0}
+                                    type="button"
+                                  >
+                                    <span
+                                      className="MuiButton-label"
+                                    >
+                                      <span
+                                        className="MuiButton-startIcon MuiButton-iconSizeMedium"
+                                      >
+                                        <ForwardRef>
+                                          <WithStyles(ForwardRef(SvgIcon))>
+                                            <ForwardRef(SvgIcon)
+                                              classes={
+                                                Object {
+                                                  "colorAction": "MuiSvgIcon-colorAction",
+                                                  "colorDisabled": "MuiSvgIcon-colorDisabled",
+                                                  "colorError": "MuiSvgIcon-colorError",
+                                                  "colorPrimary": "MuiSvgIcon-colorPrimary",
+                                                  "colorSecondary": "MuiSvgIcon-colorSecondary",
+                                                  "fontSizeInherit": "MuiSvgIcon-fontSizeInherit",
+                                                  "fontSizeLarge": "MuiSvgIcon-fontSizeLarge",
+                                                  "fontSizeSmall": "MuiSvgIcon-fontSizeSmall",
+                                                  "root": "MuiSvgIcon-root",
+                                                }
+                                              }
+                                            >
+                                              <svg
+                                                aria-hidden="true"
+                                                className="MuiSvgIcon-root"
+                                                focusable="false"
+                                                role="presentation"
+                                                viewBox="0 0 24 24"
+                                              >
+                                                <path
+                                                  d="M16 9v10H8V9h8m-1.5-6h-5l-1 1H5v2h14V4h-3.5l-1-1zM18 7H6v12c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7z"
+                                                />
+                                              </svg>
+                                            </ForwardRef(SvgIcon)>
+                                          </WithStyles(ForwardRef(SvgIcon))>
+                                        </ForwardRef>
+                                      </span>
+                                      DELETE PROJECT
+                                    </span>
+                                    <NoSsr>
+                                      <WithStyles(undefined)
+                                        center={false}
+                                      >
+                                        <ForwardRef(TouchRipple)
+                                          center={false}
+                                          classes={
+                                            Object {
+                                              "child": "MuiTouchRipple-child",
+                                              "childLeaving": "MuiTouchRipple-childLeaving",
+                                              "childPulsate": "MuiTouchRipple-childPulsate",
+                                              "ripple": "MuiTouchRipple-ripple",
+                                              "ripplePulsate": "MuiTouchRipple-ripplePulsate",
+                                              "rippleVisible": "MuiTouchRipple-rippleVisible",
+                                              "root": "MuiTouchRipple-root",
+                                            }
+                                          }
+                                        >
+                                          <span
+                                            className="MuiTouchRipple-root"
+                                          >
+                                            <TransitionGroup
+                                              childFactory={[Function]}
+                                              component={null}
+                                              exit={true}
+                                            />
+                                          </span>
+                                        </ForwardRef(TouchRipple)>
+                                      </WithStyles(undefined)>
+                                    </NoSsr>
+                                  </button>
+                                </ForwardRef(ButtonBase)>
+                              </WithStyles(ForwardRef(ButtonBase))>
+                            </ForwardRef(Button)>
+                          </WithStyles(ForwardRef(Button))>
+                          <WithStyles(ForwardRef(Button))
+                            color="secondary"
+                            onClick={[Function]}
+                            startIcon={<UNDEFINED />}
+                            variant="outlined"
+                          >
+                            <ForwardRef(Button)
+                              classes={
+                                Object {
+                                  "colorInherit": "MuiButton-colorInherit",
+                                  "contained": "MuiButton-contained",
+                                  "containedPrimary": "MuiButton-containedPrimary",
+                                  "containedSecondary": "MuiButton-containedSecondary",
+                                  "containedSizeLarge": "MuiButton-containedSizeLarge",
+                                  "containedSizeSmall": "MuiButton-containedSizeSmall",
+                                  "disableElevation": "MuiButton-disableElevation",
+                                  "disabled": "Mui-disabled",
+                                  "endIcon": "MuiButton-endIcon",
+                                  "focusVisible": "Mui-focusVisible",
+                                  "fullWidth": "MuiButton-fullWidth",
+                                  "iconSizeLarge": "MuiButton-iconSizeLarge",
+                                  "iconSizeMedium": "MuiButton-iconSizeMedium",
+                                  "iconSizeSmall": "MuiButton-iconSizeSmall",
+                                  "label": "MuiButton-label",
+                                  "outlined": "MuiButton-outlined",
+                                  "outlinedPrimary": "MuiButton-outlinedPrimary",
+                                  "outlinedSecondary": "MuiButton-outlinedSecondary",
+                                  "outlinedSizeLarge": "MuiButton-outlinedSizeLarge",
+                                  "outlinedSizeSmall": "MuiButton-outlinedSizeSmall",
+                                  "root": "MuiButton-root",
+                                  "sizeLarge": "MuiButton-sizeLarge",
+                                  "sizeSmall": "MuiButton-sizeSmall",
+                                  "startIcon": "MuiButton-startIcon",
+                                  "text": "MuiButton-text",
+                                  "textPrimary": "MuiButton-textPrimary",
+                                  "textSecondary": "MuiButton-textSecondary",
+                                  "textSizeLarge": "MuiButton-textSizeLarge",
+                                  "textSizeSmall": "MuiButton-textSizeSmall",
+                                }
+                              }
+                              color="secondary"
+                              onClick={[Function]}
+                              startIcon={<UNDEFINED />}
+                              variant="outlined"
+                            >
+                              <WithStyles(ForwardRef(ButtonBase))
+                                className="MuiButton-root MuiButton-outlined MuiButton-outlinedSecondary"
+                                component="button"
+                                disabled={false}
+                                focusRipple={true}
+                                focusVisibleClassName="Mui-focusVisible"
+                                onClick={[Function]}
+                                type="button"
+                              >
+                                <ForwardRef(ButtonBase)
+                                  className="MuiButton-root MuiButton-outlined MuiButton-outlinedSecondary"
+                                  classes={
+                                    Object {
+                                      "disabled": "Mui-disabled",
+                                      "focusVisible": "Mui-focusVisible",
+                                      "root": "MuiButtonBase-root",
+                                    }
+                                  }
+                                  component="button"
+                                  disabled={false}
+                                  focusRipple={true}
+                                  focusVisibleClassName="Mui-focusVisible"
+                                  onClick={[Function]}
+                                  type="button"
+                                >
+                                  <button
+                                    className="MuiButtonBase-root MuiButton-root MuiButton-outlined MuiButton-outlinedSecondary"
+                                    disabled={false}
+                                    onBlur={[Function]}
+                                    onClick={[Function]}
+                                    onDragLeave={[Function]}
+                                    onFocus={[Function]}
+                                    onKeyDown={[Function]}
+                                    onKeyUp={[Function]}
+                                    onMouseDown={[Function]}
+                                    onMouseLeave={[Function]}
+                                    onMouseUp={[Function]}
+                                    onTouchEnd={[Function]}
+                                    onTouchMove={[Function]}
+                                    onTouchStart={[Function]}
+                                    tabIndex={0}
+                                    type="button"
+                                  >
+                                    <span
+                                      className="MuiButton-label"
+                                    >
+                                      <span
+                                        className="MuiButton-startIcon MuiButton-iconSizeMedium"
+                                      >
+                                        <ForwardRef>
+                                          <WithStyles(ForwardRef(SvgIcon))>
+                                            <ForwardRef(SvgIcon)
+                                              classes={
+                                                Object {
+                                                  "colorAction": "MuiSvgIcon-colorAction",
+                                                  "colorDisabled": "MuiSvgIcon-colorDisabled",
+                                                  "colorError": "MuiSvgIcon-colorError",
+                                                  "colorPrimary": "MuiSvgIcon-colorPrimary",
+                                                  "colorSecondary": "MuiSvgIcon-colorSecondary",
+                                                  "fontSizeInherit": "MuiSvgIcon-fontSizeInherit",
+                                                  "fontSizeLarge": "MuiSvgIcon-fontSizeLarge",
+                                                  "fontSizeSmall": "MuiSvgIcon-fontSizeSmall",
+                                                  "root": "MuiSvgIcon-root",
+                                                }
+                                              }
+                                            >
+                                              <svg
+                                                aria-hidden="true"
+                                                className="MuiSvgIcon-root"
+                                                focusable="false"
+                                                role="presentation"
+                                                viewBox="0 0 24 24"
+                                              >
+                                                <path
+                                                  d="M21 3.01H3c-1.1 0-2 .9-2 2V9h2V4.99h18v14.03H3V15H1v4.01c0 1.1.9 1.98 2 1.98h18c1.1 0 2-.88 2-1.98v-14c0-1.11-.9-2-2-2zM11 16l4-4-4-4v3H1v2h10v3zM21 3.01H3c-1.1 0-2 .9-2 2V9h2V4.99h18v14.03H3V15H1v4.01c0 1.1.9 1.98 2 1.98h18c1.1 0 2-.88 2-1.98v-14c0-1.11-.9-2-2-2zM11 16l4-4-4-4v3H1v2h10v3z"
+                                                />
+                                              </svg>
+                                            </ForwardRef(SvgIcon)>
+                                          </WithStyles(ForwardRef(SvgIcon))>
+                                        </ForwardRef>
+                                      </span>
+                                      ASSIGN TO ANOTHER SPRINT
+                                    </span>
+                                    <NoSsr>
+                                      <WithStyles(undefined)
+                                        center={false}
+                                      >
+                                        <ForwardRef(TouchRipple)
+                                          center={false}
+                                          classes={
+                                            Object {
+                                              "child": "MuiTouchRipple-child",
+                                              "childLeaving": "MuiTouchRipple-childLeaving",
+                                              "childPulsate": "MuiTouchRipple-childPulsate",
+                                              "ripple": "MuiTouchRipple-ripple",
+                                              "ripplePulsate": "MuiTouchRipple-ripplePulsate",
+                                              "rippleVisible": "MuiTouchRipple-rippleVisible",
+                                              "root": "MuiTouchRipple-root",
+                                            }
+                                          }
+                                        >
+                                          <span
+                                            className="MuiTouchRipple-root"
+                                          >
+                                            <TransitionGroup
+                                              childFactory={[Function]}
+                                              component={null}
+                                              exit={true}
+                                            />
+                                          </span>
+                                        </ForwardRef(TouchRipple)>
+                                      </WithStyles(undefined)>
+                                    </NoSsr>
+                                  </button>
+                                </ForwardRef(ButtonBase)>
+                              </WithStyles(ForwardRef(ButtonBase))>
+                            </ForwardRef(Button)>
+                          </WithStyles(ForwardRef(Button))>
+                          <WithStyles(ForwardRef(Button))
+                            color="primary"
+                            disabled={true}
+                            startIcon={<UNDEFINED />}
+                            type="submit"
+                            variant="contained"
+                          >
+                            <ForwardRef(Button)
+                              classes={
+                                Object {
+                                  "colorInherit": "MuiButton-colorInherit",
+                                  "contained": "MuiButton-contained",
+                                  "containedPrimary": "MuiButton-containedPrimary",
+                                  "containedSecondary": "MuiButton-containedSecondary",
+                                  "containedSizeLarge": "MuiButton-containedSizeLarge",
+                                  "containedSizeSmall": "MuiButton-containedSizeSmall",
+                                  "disableElevation": "MuiButton-disableElevation",
+                                  "disabled": "Mui-disabled",
+                                  "endIcon": "MuiButton-endIcon",
+                                  "focusVisible": "Mui-focusVisible",
+                                  "fullWidth": "MuiButton-fullWidth",
+                                  "iconSizeLarge": "MuiButton-iconSizeLarge",
+                                  "iconSizeMedium": "MuiButton-iconSizeMedium",
+                                  "iconSizeSmall": "MuiButton-iconSizeSmall",
+                                  "label": "MuiButton-label",
+                                  "outlined": "MuiButton-outlined",
+                                  "outlinedPrimary": "MuiButton-outlinedPrimary",
+                                  "outlinedSecondary": "MuiButton-outlinedSecondary",
+                                  "outlinedSizeLarge": "MuiButton-outlinedSizeLarge",
+                                  "outlinedSizeSmall": "MuiButton-outlinedSizeSmall",
+                                  "root": "MuiButton-root",
+                                  "sizeLarge": "MuiButton-sizeLarge",
+                                  "sizeSmall": "MuiButton-sizeSmall",
+                                  "startIcon": "MuiButton-startIcon",
+                                  "text": "MuiButton-text",
+                                  "textPrimary": "MuiButton-textPrimary",
+                                  "textSecondary": "MuiButton-textSecondary",
+                                  "textSizeLarge": "MuiButton-textSizeLarge",
+                                  "textSizeSmall": "MuiButton-textSizeSmall",
+                                }
+                              }
+                              color="primary"
+                              disabled={true}
+                              startIcon={<UNDEFINED />}
+                              type="submit"
+                              variant="contained"
+                            >
+                              <WithStyles(ForwardRef(ButtonBase))
+                                className="MuiButton-root MuiButton-contained MuiButton-containedPrimary Mui-disabled"
+                                component="button"
+                                disabled={true}
+                                focusRipple={true}
+                                focusVisibleClassName="Mui-focusVisible"
+                                type="submit"
+                              >
+                                <ForwardRef(ButtonBase)
+                                  className="MuiButton-root MuiButton-contained MuiButton-containedPrimary Mui-disabled"
+                                  classes={
+                                    Object {
+                                      "disabled": "Mui-disabled",
+                                      "focusVisible": "Mui-focusVisible",
+                                      "root": "MuiButtonBase-root",
+                                    }
+                                  }
+                                  component="button"
+                                  disabled={true}
+                                  focusRipple={true}
+                                  focusVisibleClassName="Mui-focusVisible"
+                                  type="submit"
+                                >
+                                  <button
+                                    className="MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary Mui-disabled Mui-disabled"
+                                    disabled={true}
+                                    onBlur={[Function]}
+                                    onDragLeave={[Function]}
+                                    onFocus={[Function]}
+                                    onKeyDown={[Function]}
+                                    onKeyUp={[Function]}
+                                    onMouseDown={[Function]}
+                                    onMouseLeave={[Function]}
+                                    onMouseUp={[Function]}
+                                    onTouchEnd={[Function]}
+                                    onTouchMove={[Function]}
+                                    onTouchStart={[Function]}
+                                    tabIndex={-1}
+                                    type="submit"
+                                  >
+                                    <span
+                                      className="MuiButton-label"
+                                    >
+                                      <span
+                                        className="MuiButton-startIcon MuiButton-iconSizeMedium"
+                                      >
+                                        <ForwardRef>
+                                          <WithStyles(ForwardRef(SvgIcon))>
+                                            <ForwardRef(SvgIcon)
+                                              classes={
+                                                Object {
+                                                  "colorAction": "MuiSvgIcon-colorAction",
+                                                  "colorDisabled": "MuiSvgIcon-colorDisabled",
+                                                  "colorError": "MuiSvgIcon-colorError",
+                                                  "colorPrimary": "MuiSvgIcon-colorPrimary",
+                                                  "colorSecondary": "MuiSvgIcon-colorSecondary",
+                                                  "fontSizeInherit": "MuiSvgIcon-fontSizeInherit",
+                                                  "fontSizeLarge": "MuiSvgIcon-fontSizeLarge",
+                                                  "fontSizeSmall": "MuiSvgIcon-fontSizeSmall",
+                                                  "root": "MuiSvgIcon-root",
+                                                }
+                                              }
+                                            >
+                                              <svg
+                                                aria-hidden="true"
+                                                className="MuiSvgIcon-root"
+                                                focusable="false"
+                                                role="presentation"
+                                                viewBox="0 0 24 24"
+                                              >
+                                                <path
+                                                  d="M17 3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V7l-4-4zm-5 16c-1.66 0-3-1.34-3-3s1.34-3 3-3 3 1.34 3 3-1.34 3-3 3zm3-10H5V5h10v4z"
+                                                />
+                                              </svg>
+                                            </ForwardRef(SvgIcon)>
+                                          </WithStyles(ForwardRef(SvgIcon))>
+                                        </ForwardRef>
+                                      </span>
+                                      SAVE
+                                    </span>
+                                    <NoSsr />
+                                  </button>
+                                </ForwardRef(ButtonBase)>
+                              </WithStyles(ForwardRef(ButtonBase))>
+                            </ForwardRef(Button)>
+                          </WithStyles(ForwardRef(Button))>
+                        </div>
+                      </form>
+                    </div>
+                  </div>
+                  <WithStyles(ForwardRef(Dialog))
+                    aria-describedby="alert-dialog-description"
+                    aria-labelledby="alert-dialog-title"
+                    onClose={[Function]}
+                    open={false}
+                  >
+                    <ForwardRef(Dialog)
+                      aria-describedby="alert-dialog-description"
+                      aria-labelledby="alert-dialog-title"
+                      classes={
+                        Object {
+                          "container": "MuiDialog-container",
+                          "paper": "MuiDialog-paper",
+                          "paperFullScreen": "MuiDialog-paperFullScreen",
+                          "paperFullWidth": "MuiDialog-paperFullWidth",
+                          "paperScrollBody": "MuiDialog-paperScrollBody",
+                          "paperScrollPaper": "MuiDialog-paperScrollPaper",
+                          "paperWidthFalse": "MuiDialog-paperWidthFalse",
+                          "paperWidthLg": "MuiDialog-paperWidthLg",
+                          "paperWidthMd": "MuiDialog-paperWidthMd",
+                          "paperWidthSm": "MuiDialog-paperWidthSm",
+                          "paperWidthXl": "MuiDialog-paperWidthXl",
+                          "paperWidthXs": "MuiDialog-paperWidthXs",
+                          "root": "MuiDialog-root",
+                          "scrollBody": "MuiDialog-scrollBody",
+                          "scrollPaper": "MuiDialog-scrollPaper",
+                        }
+                      }
+                      onClose={[Function]}
+                      open={false}
+                    >
+                      <ForwardRef(Modal)
+                        BackdropComponent={
+                          Object {
+                            "$$typeof": Symbol(react.forward_ref),
+                            "Naked": Object {
+                              "$$typeof": Symbol(react.forward_ref),
+                              "propTypes": Object {
+                                "children": [Function],
+                                "className": [Function],
+                                "classes": [Function],
+                                "invisible": [Function],
+                                "open": [Function],
+                                "transitionDuration": [Function],
+                              },
+                              "render": [Function],
+                            },
+                            "defaultProps": undefined,
+                            "displayName": "WithStyles(ForwardRef(Backdrop))",
+                            "options": Object {
+                              "defaultTheme": Object {
+                                "breakpoints": Object {
+                                  "between": [Function],
+                                  "down": [Function],
+                                  "keys": Array [
+                                    "xs",
+                                    "sm",
+                                    "md",
+                                    "lg",
+                                    "xl",
+                                  ],
+                                  "only": [Function],
+                                  "up": [Function],
+                                  "values": Object {
+                                    "lg": 1280,
+                                    "md": 960,
+                                    "sm": 600,
+                                    "xl": 1920,
+                                    "xs": 0,
+                                  },
+                                  "width": [Function],
+                                },
+                                "direction": "ltr",
+                                "mixins": Object {
+                                  "gutters": [Function],
+                                  "toolbar": Object {
+                                    "@media (min-width:0px) and (orientation: landscape)": Object {
+                                      "minHeight": 48,
+                                    },
+                                    "@media (min-width:600px)": Object {
+                                      "minHeight": 64,
+                                    },
+                                    "minHeight": 56,
+                                  },
+                                },
+                                "overrides": Object {},
+                                "palette": Object {
+                                  "action": Object {
+                                    "activatedOpacity": 0.12,
+                                    "active": "rgba(0, 0, 0, 0.54)",
+                                    "disabled": "rgba(0, 0, 0, 0.26)",
+                                    "disabledBackground": "rgba(0, 0, 0, 0.12)",
+                                    "disabledOpacity": 0.38,
+                                    "focus": "rgba(0, 0, 0, 0.12)",
+                                    "focusOpacity": 0.12,
+                                    "hover": "rgba(0, 0, 0, 0.04)",
+                                    "hoverOpacity": 0.04,
+                                    "selected": "rgba(0, 0, 0, 0.08)",
+                                    "selectedOpacity": 0.08,
+                                  },
+                                  "augmentColor": [Function],
+                                  "background": Object {
+                                    "default": "#fafafa",
+                                    "paper": "#fff",
+                                  },
+                                  "common": Object {
+                                    "black": "#000",
+                                    "white": "#fff",
+                                  },
+                                  "contrastThreshold": 3,
+                                  "divider": "rgba(0, 0, 0, 0.12)",
+                                  "error": Object {
+                                    "contrastText": "#fff",
+                                    "dark": "#d32f2f",
+                                    "light": "#e57373",
+                                    "main": "#f44336",
+                                  },
+                                  "getContrastText": [Function],
+                                  "grey": Object {
+                                    "100": "#f5f5f5",
+                                    "200": "#eeeeee",
+                                    "300": "#e0e0e0",
+                                    "400": "#bdbdbd",
+                                    "50": "#fafafa",
+                                    "500": "#9e9e9e",
+                                    "600": "#757575",
+                                    "700": "#616161",
+                                    "800": "#424242",
+                                    "900": "#212121",
+                                    "A100": "#d5d5d5",
+                                    "A200": "#aaaaaa",
+                                    "A400": "#303030",
+                                    "A700": "#616161",
+                                  },
+                                  "info": Object {
+                                    "contrastText": "#fff",
+                                    "dark": "#1976d2",
+                                    "light": "#64b5f6",
+                                    "main": "#2196f3",
+                                  },
+                                  "primary": Object {
+                                    "contrastText": "#fff",
+                                    "dark": "#303f9f",
+                                    "light": "#7986cb",
+                                    "main": "#3f51b5",
+                                  },
+                                  "secondary": Object {
+                                    "contrastText": "#fff",
+                                    "dark": "#c51162",
+                                    "light": "#ff4081",
+                                    "main": "#f50057",
+                                  },
+                                  "success": Object {
+                                    "contrastText": "rgba(0, 0, 0, 0.87)",
+                                    "dark": "#388e3c",
+                                    "light": "#81c784",
+                                    "main": "#4caf50",
+                                  },
+                                  "text": Object {
+                                    "disabled": "rgba(0, 0, 0, 0.38)",
+                                    "hint": "rgba(0, 0, 0, 0.38)",
+                                    "primary": "rgba(0, 0, 0, 0.87)",
+                                    "secondary": "rgba(0, 0, 0, 0.54)",
+                                  },
+                                  "tonalOffset": 0.2,
+                                  "type": "light",
+                                  "warning": Object {
+                                    "contrastText": "rgba(0, 0, 0, 0.87)",
+                                    "dark": "#f57c00",
+                                    "light": "#ffb74d",
+                                    "main": "#ff9800",
+                                  },
+                                },
+                                "props": Object {},
+                                "shadows": Array [
+                                  "none",
+                                  "0px 2px 1px -1px rgba(0,0,0,0.2),0px 1px 1px 0px rgba(0,0,0,0.14),0px 1px 3px 0px rgba(0,0,0,0.12)",
+                                  "0px 3px 1px -2px rgba(0,0,0,0.2),0px 2px 2px 0px rgba(0,0,0,0.14),0px 1px 5px 0px rgba(0,0,0,0.12)",
+                                  "0px 3px 3px -2px rgba(0,0,0,0.2),0px 3px 4px 0px rgba(0,0,0,0.14),0px 1px 8px 0px rgba(0,0,0,0.12)",
+                                  "0px 2px 4px -1px rgba(0,0,0,0.2),0px 4px 5px 0px rgba(0,0,0,0.14),0px 1px 10px 0px rgba(0,0,0,0.12)",
+                                  "0px 3px 5px -1px rgba(0,0,0,0.2),0px 5px 8px 0px rgba(0,0,0,0.14),0px 1px 14px 0px rgba(0,0,0,0.12)",
+                                  "0px 3px 5px -1px rgba(0,0,0,0.2),0px 6px 10px 0px rgba(0,0,0,0.14),0px 1px 18px 0px rgba(0,0,0,0.12)",
+                                  "0px 4px 5px -2px rgba(0,0,0,0.2),0px 7px 10px 1px rgba(0,0,0,0.14),0px 2px 16px 1px rgba(0,0,0,0.12)",
+                                  "0px 5px 5px -3px rgba(0,0,0,0.2),0px 8px 10px 1px rgba(0,0,0,0.14),0px 3px 14px 2px rgba(0,0,0,0.12)",
+                                  "0px 5px 6px -3px rgba(0,0,0,0.2),0px 9px 12px 1px rgba(0,0,0,0.14),0px 3px 16px 2px rgba(0,0,0,0.12)",
+                                  "0px 6px 6px -3px rgba(0,0,0,0.2),0px 10px 14px 1px rgba(0,0,0,0.14),0px 4px 18px 3px rgba(0,0,0,0.12)",
+                                  "0px 6px 7px -4px rgba(0,0,0,0.2),0px 11px 15px 1px rgba(0,0,0,0.14),0px 4px 20px 3px rgba(0,0,0,0.12)",
+                                  "0px 7px 8px -4px rgba(0,0,0,0.2),0px 12px 17px 2px rgba(0,0,0,0.14),0px 5px 22px 4px rgba(0,0,0,0.12)",
+                                  "0px 7px 8px -4px rgba(0,0,0,0.2),0px 13px 19px 2px rgba(0,0,0,0.14),0px 5px 24px 4px rgba(0,0,0,0.12)",
+                                  "0px 7px 9px -4px rgba(0,0,0,0.2),0px 14px 21px 2px rgba(0,0,0,0.14),0px 5px 26px 4px rgba(0,0,0,0.12)",
+                                  "0px 8px 9px -5px rgba(0,0,0,0.2),0px 15px 22px 2px rgba(0,0,0,0.14),0px 6px 28px 5px rgba(0,0,0,0.12)",
+                                  "0px 8px 10px -5px rgba(0,0,0,0.2),0px 16px 24px 2px rgba(0,0,0,0.14),0px 6px 30px 5px rgba(0,0,0,0.12)",
+                                  "0px 8px 11px -5px rgba(0,0,0,0.2),0px 17px 26px 2px rgba(0,0,0,0.14),0px 6px 32px 5px rgba(0,0,0,0.12)",
+                                  "0px 9px 11px -5px rgba(0,0,0,0.2),0px 18px 28px 2px rgba(0,0,0,0.14),0px 7px 34px 6px rgba(0,0,0,0.12)",
+                                  "0px 9px 12px -6px rgba(0,0,0,0.2),0px 19px 29px 2px rgba(0,0,0,0.14),0px 7px 36px 6px rgba(0,0,0,0.12)",
+                                  "0px 10px 13px -6px rgba(0,0,0,0.2),0px 20px 31px 3px rgba(0,0,0,0.14),0px 8px 38px 7px rgba(0,0,0,0.12)",
+                                  "0px 10px 13px -6px rgba(0,0,0,0.2),0px 21px 33px 3px rgba(0,0,0,0.14),0px 8px 40px 7px rgba(0,0,0,0.12)",
+                                  "0px 10px 14px -6px rgba(0,0,0,0.2),0px 22px 35px 3px rgba(0,0,0,0.14),0px 8px 42px 7px rgba(0,0,0,0.12)",
+                                  "0px 11px 14px -7px rgba(0,0,0,0.2),0px 23px 36px 3px rgba(0,0,0,0.14),0px 9px 44px 8px rgba(0,0,0,0.12)",
+                                  "0px 11px 15px -7px rgba(0,0,0,0.2),0px 24px 38px 3px rgba(0,0,0,0.14),0px 9px 46px 8px rgba(0,0,0,0.12)",
+                                ],
+                                "shape": Object {
+                                  "borderRadius": 4,
+                                },
+                                "spacing": [Function],
+                                "transitions": Object {
+                                  "create": [Function],
+                                  "duration": Object {
+                                    "complex": 375,
+                                    "enteringScreen": 225,
+                                    "leavingScreen": 195,
+                                    "short": 250,
+                                    "shorter": 200,
+                                    "shortest": 150,
+                                    "standard": 300,
+                                  },
+                                  "easing": Object {
+                                    "easeIn": "cubic-bezier(0.4, 0, 1, 1)",
+                                    "easeInOut": "cubic-bezier(0.4, 0, 0.2, 1)",
+                                    "easeOut": "cubic-bezier(0.0, 0, 0.2, 1)",
+                                    "sharp": "cubic-bezier(0.4, 0, 0.6, 1)",
+                                  },
+                                  "getAutoHeightDuration": [Function],
+                                },
+                                "typography": Object {
+                                  "body1": Object {
+                                    "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                                    "fontSize": "1rem",
+                                    "fontWeight": 400,
+                                    "letterSpacing": "0.00938em",
+                                    "lineHeight": 1.5,
+                                  },
+                                  "body2": Object {
+                                    "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                                    "fontSize": "0.875rem",
+                                    "fontWeight": 400,
+                                    "letterSpacing": "0.01071em",
+                                    "lineHeight": 1.43,
+                                  },
+                                  "button": Object {
+                                    "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                                    "fontSize": "0.875rem",
+                                    "fontWeight": 500,
+                                    "letterSpacing": "0.02857em",
+                                    "lineHeight": 1.75,
+                                    "textTransform": "uppercase",
+                                  },
+                                  "caption": Object {
+                                    "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                                    "fontSize": "0.75rem",
+                                    "fontWeight": 400,
+                                    "letterSpacing": "0.03333em",
+                                    "lineHeight": 1.66,
+                                  },
+                                  "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                                  "fontSize": 14,
+                                  "fontWeightBold": 700,
+                                  "fontWeightLight": 300,
+                                  "fontWeightMedium": 500,
+                                  "fontWeightRegular": 400,
+                                  "h1": Object {
+                                    "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                                    "fontSize": "6rem",
+                                    "fontWeight": 300,
+                                    "letterSpacing": "-0.01562em",
+                                    "lineHeight": 1.167,
+                                  },
+                                  "h2": Object {
+                                    "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                                    "fontSize": "3.75rem",
+                                    "fontWeight": 300,
+                                    "letterSpacing": "-0.00833em",
+                                    "lineHeight": 1.2,
+                                  },
+                                  "h3": Object {
+                                    "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                                    "fontSize": "3rem",
+                                    "fontWeight": 400,
+                                    "letterSpacing": "0em",
+                                    "lineHeight": 1.167,
+                                  },
+                                  "h4": Object {
+                                    "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                                    "fontSize": "2.125rem",
+                                    "fontWeight": 400,
+                                    "letterSpacing": "0.00735em",
+                                    "lineHeight": 1.235,
+                                  },
+                                  "h5": Object {
+                                    "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                                    "fontSize": "1.5rem",
+                                    "fontWeight": 400,
+                                    "letterSpacing": "0em",
+                                    "lineHeight": 1.334,
+                                  },
+                                  "h6": Object {
+                                    "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                                    "fontSize": "1.25rem",
+                                    "fontWeight": 500,
+                                    "letterSpacing": "0.0075em",
+                                    "lineHeight": 1.6,
+                                  },
+                                  "htmlFontSize": 16,
+                                  "overline": Object {
+                                    "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                                    "fontSize": "0.75rem",
+                                    "fontWeight": 400,
+                                    "letterSpacing": "0.08333em",
+                                    "lineHeight": 2.66,
+                                    "textTransform": "uppercase",
+                                  },
+                                  "pxToRem": [Function],
+                                  "round": [Function],
+                                  "subtitle1": Object {
+                                    "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                                    "fontSize": "1rem",
+                                    "fontWeight": 400,
+                                    "letterSpacing": "0.00938em",
+                                    "lineHeight": 1.75,
+                                  },
+                                  "subtitle2": Object {
+                                    "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                                    "fontSize": "0.875rem",
+                                    "fontWeight": 500,
+                                    "letterSpacing": "0.00714em",
+                                    "lineHeight": 1.57,
+                                  },
+                                },
+                                "zIndex": Object {
+                                  "appBar": 1100,
+                                  "drawer": 1200,
+                                  "mobileStepper": 1000,
+                                  "modal": 1300,
+                                  "snackbar": 1400,
+                                  "speedDial": 1050,
+                                  "tooltip": 1500,
+                                },
+                              },
+                              "name": "MuiBackdrop",
+                            },
+                            "propTypes": Object {
+                              "classes": [Function],
+                              "innerRef": [Function],
+                            },
+                            "render": [Function],
+                            "useStyles": [Function],
+                          }
+                        }
+                        BackdropProps={
+                          Object {
+                            "transitionDuration": Object {
+                              "enter": 225,
+                              "exit": 195,
+                            },
+                          }
+                        }
+                        className="MuiDialog-root"
+                        closeAfterTransition={true}
+                        disableBackdropClick={false}
+                        disableEscapeKeyDown={false}
+                        onClose={[Function]}
+                        open={false}
+                      />
+                    </ForwardRef(Dialog)>
+                  </WithStyles(ForwardRef(Dialog))>
+                </div>
+              </ForwardRef(Paper)>
+            </WithStyles(ForwardRef(Paper))>
+            <div
+              data-test="sentinelEnd"
+              tabIndex={0}
+            />
+          </TrapFocus>
+        </div>
+      </Portal>
+    </ForwardRef(Portal)>
+  </ForwardRef(Modal)>
+</editProject>
+`;

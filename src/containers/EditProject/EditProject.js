@@ -488,20 +488,20 @@ export class editProject extends Component {
         }
     }
 
-    getSprintIndexWithSprintId = (sprintId) => {
+    // getSprintIndexWithSprintId = (sprintId) => {
 
-        if(sprintId === -1) {
-            return -1;
-        }
+    //     if(sprintId === -1) {
+    //         return -1;
+    //     }
     
-        for(let i=0; i<this.props.sprints.length; i++) {
-            if(this.props.sprints[i].id === sprintId) {
-                return i;
-            }
-        };
+    //     for(let i=0; i<this.props.sprints.length; i++) {
+    //         if(this.props.sprints[i].id === sprintId) {
+    //             return i;
+    //         }
+    //     };
     
-        throw new Error("[EditProject.js] Error: cannot find sprintIndex");
-    };
+    //     throw new Error("[EditProject.js] Error: cannot find sprintIndex");
+    // };
 
     getProjectIndexWithSprintIndexAndProjectId = (sprintIndex, projectId) => {
         let projectArray;
@@ -560,7 +560,7 @@ export class editProject extends Component {
             'statusEndOfWeek8': 220, 
         }
 
-        const sprintIndex = this.getSprintIndexWithSprintId(sprintId);
+        const sprintIndex = this.props.sprintIndex;
         const projectIndex = this.getProjectIndexWithSprintIndexAndProjectId(sprintIndex, projectId);
 
         let projectData = null;
@@ -571,7 +571,7 @@ export class editProject extends Component {
             projectData = this.props.sprints[sprintIndex].projects[projectIndex];
         }
 
-        console.log('projectData:', projectData);
+        // console.log('projectData:', projectData);
         
         const projectKeys = Object.keys(projectData)
             .sort((a, b) => { return predefinedProjectKeysOrder[a] - predefinedProjectKeysOrder[b]});
@@ -579,7 +579,7 @@ export class editProject extends Component {
         for(let i=0; i < projectKeys.length; i++) {
             let updatedObject = { ...this.state.projectData[projectKeys[i]] };
 
-            console.log('updatedObject:', updatedObject);
+            // console.log('updatedObject:', updatedObject);
 
             updatedObject['value'] = projectData[projectKeys[i]].value;
             updatedObject['valid'] = true; // Assume it's valid when loading from existing project data
@@ -587,7 +587,7 @@ export class editProject extends Component {
             newProjectState[projectKeys[i]] = updatedObject;
         }
 
-        console.log('newProjectState:', newProjectState);
+        // console.log('newProjectState:', newProjectState);
 
         this.setState({ 
             sprintId: sprintId,
