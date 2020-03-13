@@ -84,7 +84,7 @@ class PastSprints extends Component {
                 displaySprint: !prevState.displaySprint
             }
         });
-        console.log('toggleCurrentSprint');
+        // console.log('toggleCurrentSprint');
     }
 
     getSprintLength = () => {

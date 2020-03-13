@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import { withStyles } from '@material-ui/core/styles';
 import { connect } from 'react-redux';
 import { v4 as uuidv4 } from 'uuid'; // https://github.com/uuidjs/uuid
-import * as moment from 'moment';
+// Changed import from 'import * as moment' to accommodate testing, per: https://github.com/palantir/blueprint/issues/959#issuecomment-562836914
+import moment from 'moment'; 
 
 import red from '@material-ui/core/colors/red';
 import Button from '@material-ui/core/Button';
@@ -68,7 +69,7 @@ const styles = theme => ({
     },
 });
 
-class editSprint extends Component {
+export class editSprint extends Component {
     // Props from parent component: sprintId, onCloseSprint, actionType ("edit" or "create")
     // Props from store: sprints (array of the sprints in the store)
 
@@ -170,7 +171,7 @@ class editSprint extends Component {
         } else if (this.props.actionType === "create") {
             this.loadStateForNewSprint();
         } else {
-            console.log('[EditSprint.js] Error: missing actionType prop');
+            throw new Error("[EditSprint.js] Error: missing appropriate actionType prop");
         }
     }
 
@@ -197,7 +198,7 @@ class editSprint extends Component {
         }
 
         if (sprintIndex === null) {
-            console.log('[EditSprint.js] Error loading sprint data');
+            throw new Error("[EditSprint.js] Error loading sprint data");
         }
 
         const predefinedSprintKeysOrder = {
@@ -233,6 +234,8 @@ class editSprint extends Component {
     }
 
     inputChangedHandler = (event, inputIdentifier) => {
+        console.log('inputChangedHandler firing');
+
         const updatedSprintData = {
             ...this.state.sprintData
         };
@@ -263,7 +266,14 @@ class editSprint extends Component {
            hold onto their initial value in _i, even though the current value is captured in _d. When using console.log, this
            will cause confusing output, so creating a fresh object makes debugging easier. */
         // console.log('incomingDateObject:', incomingDateObject);
-        const updatedDate = moment.utc(incomingDateObject.toString()); 
+        let updatedDate = null;
+
+        if (moment.isMoment(incomingDateObject)) {
+            updatedDate = moment.utc(incomingDateObject.toString()); 
+        } else {
+            updatedDate = incomingDateObject.target.value;
+        }
+        
         // console.log('updatedDate:', updatedDate);
 
         /* If new date isn't valid (say, by typing in something invalid), then mark the form as invalid to prevent saving and don't update 
@@ -323,8 +333,6 @@ class editSprint extends Component {
             transformedSprintData['projects'] = [];
             // console.log('Dispatch an action to create the sprint');
             this.props.onAddSprint(transformedSprintData, this.props.token, this.props.userId);
-        } else {
-            console.log('[Project.js] Error: missing actionType prop');
         }
         
         this.props.onCloseSprint();
@@ -339,7 +347,7 @@ class editSprint extends Component {
     }
 
     deleteSprintHandler = () => {
-        console.log('Deleting sprintId ' + this.props.sprintId);
+        // console.log('Deleting sprintId ' + this.props.sprintId);
         this.closeConfirmDeleteDialog();
         this.props.onDeleteSprint(this.props.sprintId, this.props.token, this.props.userId);
         this.props.onCloseSprint();

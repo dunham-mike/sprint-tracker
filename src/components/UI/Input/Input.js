@@ -84,7 +84,7 @@ const input = (props) => {
                 <Datetime 
                     utc={true}
                     value={(props.value !== '') ? moment.utc(props.value).format("ddd. MMM. D, YYYY") : null}
-                    viewDate={props.value}
+                    viewDate={moment.utc(props.value)}
                     onChange={props.dateChanged}
                     closeOnSelect={true}
                     timeFormat={false}

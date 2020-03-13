@@ -136,8 +136,7 @@ describe('PastSprint Component', () => {
     it('should show the sprint button with the sprint title but not the sprint table', () => {
         const { enzymeMountWrapper } = mountSetup();
 
-        // TODO: It's not clear why the wrapper has the sprint name sandwiched by undefined values. Maybe the spans are seen as undefined?
-        expect(enzymeMountWrapper.find('.MuiButton-label').prop('children')).toEqual([undefined, "Sprint #1", undefined]);
+        expect(enzymeMountWrapper.find('.MuiButton-label').prop('children')).toEqual(expect.arrayContaining(["Sprint #1"]));
 
         expect(enzymeMountWrapper.find('projectTable')).toHaveLength(0);
     });
