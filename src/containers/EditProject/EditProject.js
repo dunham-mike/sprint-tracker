@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import { withStyles } from '@material-ui/core/styles';
 import { connect } from 'react-redux';
 import { v4 as uuidv4 } from 'uuid'; // https://github.com/uuidjs/uuid
-import * as moment from 'moment';
+// Changed import from 'import * as moment' to accommodate testing, per: https://github.com/palantir/blueprint/issues/959#issuecomment-562836914
+import moment from 'moment'; 
 
 import red from '@material-ui/core/colors/red';
 import Button from '@material-ui/core/Button';
@@ -488,21 +489,6 @@ export class editProject extends Component {
         }
     }
 
-    // getSprintIndexWithSprintId = (sprintId) => {
-
-    //     if(sprintId === -1) {
-    //         return -1;
-    //     }
-    
-    //     for(let i=0; i<this.props.sprints.length; i++) {
-    //         if(this.props.sprints[i].id === sprintId) {
-    //             return i;
-    //         }
-    //     };
-    
-    //     throw new Error("[EditProject.js] Error: cannot find sprintIndex");
-    // };
-
     getProjectIndexWithSprintIndexAndProjectId = (sprintIndex, projectId) => {
         let projectArray;
         if (sprintIndex === -1) { // A value of -1 indicates the sprint is the queue
@@ -568,18 +554,17 @@ export class editProject extends Component {
         if(sprintIndex === -1) {
             projectData = this.props.queue[projectIndex];
         } else {
+            if(this.props.sprints[sprintIndex].id !== sprintId) {
+                throw new Error("[EditProject.js] Error: sprintIndex and sprintId don't match the same sprint");
+            }
             projectData = this.props.sprints[sprintIndex].projects[projectIndex];
         }
-
-        // console.log('projectData:', projectData);
         
         const projectKeys = Object.keys(projectData)
             .sort((a, b) => { return predefinedProjectKeysOrder[a] - predefinedProjectKeysOrder[b]});
 
         for(let i=0; i < projectKeys.length; i++) {
             let updatedObject = { ...this.state.projectData[projectKeys[i]] };
-
-            // console.log('updatedObject:', updatedObject);
 
             updatedObject['value'] = projectData[projectKeys[i]].value;
             updatedObject['valid'] = true; // Assume it's valid when loading from existing project data
@@ -680,14 +665,13 @@ export class editProject extends Component {
     }
 
     getSprintLength = () => {
-        if (this.props.sprintIndex !== null) {
+        if (this.props.sprintIndex === -1) {
+            return 8;
+        } else {
             const sprintForProject = this.props.sprints[this.props.sprintIndex];
             const sprintLengthInDays = sprintForProject.endDate.diff(sprintForProject.startDate, 'days') + 1; // Add 1 because dates are inclusive
-            console.log('sprintLengthInDays:', sprintLengthInDays);
             
             return Math.ceil(sprintLengthInDays / 7);
-        } else {
-            return null;
         }
     }
 

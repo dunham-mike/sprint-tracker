@@ -195,13 +195,15 @@ class MainView extends Component {
     }
 
     getSprintIndexFromSprintId = (sprintId) => {
-        for(let i=0; i<this.props.sprints.length; i++) {
-            if(this.props.sprints[i].id === sprintId) {
-                return i;
+        if(sprintId === -1) {
+            return -1;
+        } else {
+            for(let i=0; i<this.props.sprints.length; i++) {
+                if(this.props.sprints[i].id === sprintId) {
+                    return i;
+                }
             }
         }
-
-        return null;
     }
 
     openEditingProject = (projectId, sprintId) => {
@@ -242,7 +244,7 @@ class MainView extends Component {
         this.setState({
             editingSprint: true,
             sprintIdBeingViewed: sprintId,
-            // sprintIndexBeingViewed not necessary here
+            sprintIndexBeingViewed: this.getSprintIndexFromSprintId(sprintId),
         });
     }
 
@@ -250,7 +252,7 @@ class MainView extends Component {
         this.setState({
             editingSprint: false,
             sprintIdBeingViewed: null,
-            // sprintIndexBeingViewed not necessary here
+            sprintIndexBeingViewed: null,
         });
     }
 

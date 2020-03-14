@@ -16,12 +16,84 @@ exports[`EditProject Component should match the snapshot 1`] = `
   onMoveProject={[MockFunction]}
   onUpdateProject={[MockFunction]}
   projectId={1}
+  queue={
+    Array [
+      Object {
+        "category": Object {
+          "value": "Grades & Transcripts",
+        },
+        "categoryLead": Object {
+          "value": "Bobby",
+        },
+        "completionStatus": Object {
+          "value": "",
+        },
+        "deliverableLink": Object {
+          "value": "",
+        },
+        "deliverables": Object {
+          "value": "Historical Illuminate courses matched with current equivalencies.",
+        },
+        "description": Object {
+          "value": "-Audit all historical expeditions grades & match courses to equivalents",
+        },
+        "estimatedProjectSize": Object {
+          "value": "1 - Extra Small",
+        },
+        "externalDueDate": Object {
+          "value": "",
+        },
+        "id": Object {
+          "value": 4,
+        },
+        "manager": Object {
+          "value": "Bobby",
+        },
+        "mustDo": Object {
+          "value": "Nice-to-Have",
+        },
+        "name": Object {
+          "value": "Verify course equivalencies & Grad Requirements in Illuminate",
+        },
+        "notCompletedExplanation": Object {
+          "value": "",
+        },
+        "notes": Object {
+          "value": "",
+        },
+        "statusEndOfWeek1": Object {
+          "value": "",
+        },
+        "statusEndOfWeek2": Object {
+          "value": "",
+        },
+        "statusEndOfWeek3": Object {
+          "value": "",
+        },
+        "statusEndOfWeek4": Object {
+          "value": "",
+        },
+        "statusEndOfWeek5": Object {
+          "value": "",
+        },
+        "statusEndOfWeek6": Object {
+          "value": "",
+        },
+        "statusEndOfWeek7": Object {
+          "value": "",
+        },
+        "statusEndOfWeek8": Object {
+          "value": "",
+        },
+      },
+    ]
+  }
   sprintId="test_sprintId"
   sprintIndex={0}
   sprints={
     Array [
       Object {
-        "endDate": "2020-02-06T00:00:00.000Z",
+        "endDate": "2020-01-15T00:00:00.000Z",
         "id": "test_sprintId",
         "name": "Sprint #1",
         "owner": "Mike",
@@ -232,7 +304,7 @@ exports[`EditProject Component should match the snapshot 1`] = `
             },
           },
         ],
-        "startDate": "2020-01-24T00:00:00.000Z",
+        "startDate": "2019-12-31T00:00:00.000Z",
       },
       Object {
         "endDate": "2020-03-06T00:00:00.000Z",
@@ -641,6 +713,48 @@ exports[`EditProject Component should match the snapshot 1`] = `
                           class="input-Label-70"
                         >
                           Status End of Week 2 (0-100%)
+                        </label>
+                        <select
+                          class="input-InputElement-71 Select"
+                          style="width: auto;"
+                        >
+                          <option
+                            value=""
+                          />
+                          <option
+                            value="0%"
+                          >
+                            0%
+                          </option>
+                          <option
+                            value="25%"
+                          >
+                            25%
+                          </option>
+                          <option
+                            value="50%"
+                          >
+                            50%
+                          </option>
+                          <option
+                            value="75%"
+                          >
+                            75%
+                          </option>
+                          <option
+                            value="100%"
+                          >
+                            100%
+                          </option>
+                        </select>
+                      </div>
+                      <div
+                        class="input-Input-69"
+                      >
+                        <label
+                          class="input-Label-70"
+                        >
+                          Status End of Week 3 (0-100%)
                         </label>
                         <select
                           class="input-InputElement-71 Select"
@@ -2434,6 +2548,159 @@ exports[`EditProject Component should match the snapshot 1`] = `
                                 className="input-Label-70"
                               >
                                 Status End of Week 2 (0-100%)
+                              </label>
+                              <select
+                                className="input-InputElement-71 Select"
+                                onChange={[Function]}
+                                style={
+                                  Object {
+                                    "width": "auto",
+                                  }
+                                }
+                                value=""
+                              >
+                                <option
+                                  key=""
+                                  value=""
+                                />
+                                <option
+                                  key="0%"
+                                  value="0%"
+                                >
+                                  0%
+                                </option>
+                                <option
+                                  key="25%"
+                                  value="25%"
+                                >
+                                  25%
+                                </option>
+                                <option
+                                  key="50%"
+                                  value="50%"
+                                >
+                                  50%
+                                </option>
+                                <option
+                                  key="75%"
+                                  value="75%"
+                                >
+                                  75%
+                                </option>
+                                <option
+                                  key="100%"
+                                  value="100%"
+                                >
+                                  100%
+                                </option>
+                              </select>
+                            </div>
+                          </input>
+                        </WithStyles(input)>
+                        <WithStyles(input)
+                          changed={[Function]}
+                          elementConfig={
+                            Object {
+                              "displayName": "Status End of Week 3 (0-100%)",
+                              "options": Array [
+                                Object {
+                                  "displayValue": "",
+                                  "value": "",
+                                },
+                                Object {
+                                  "displayValue": "0%",
+                                  "value": "0%",
+                                },
+                                Object {
+                                  "displayValue": "25%",
+                                  "value": "25%",
+                                },
+                                Object {
+                                  "displayValue": "50%",
+                                  "value": "50%",
+                                },
+                                Object {
+                                  "displayValue": "75%",
+                                  "value": "75%",
+                                },
+                                Object {
+                                  "displayValue": "100%",
+                                  "value": "100%",
+                                },
+                              ],
+                            }
+                          }
+                          elementType="select"
+                          key="statusEndOfWeek3"
+                          required={false}
+                          shouldValidate={
+                            Object {
+                              "required": false,
+                            }
+                          }
+                          touched={false}
+                          valid={true}
+                          value=""
+                        >
+                          <input
+                            changed={[Function]}
+                            classes={
+                              Object {
+                                "Input": "input-Input-69",
+                                "InputElement": "input-InputElement-71",
+                                "Invalid": "input-Invalid-72",
+                                "Label": "input-Label-70",
+                              }
+                            }
+                            elementConfig={
+                              Object {
+                                "displayName": "Status End of Week 3 (0-100%)",
+                                "options": Array [
+                                  Object {
+                                    "displayValue": "",
+                                    "value": "",
+                                  },
+                                  Object {
+                                    "displayValue": "0%",
+                                    "value": "0%",
+                                  },
+                                  Object {
+                                    "displayValue": "25%",
+                                    "value": "25%",
+                                  },
+                                  Object {
+                                    "displayValue": "50%",
+                                    "value": "50%",
+                                  },
+                                  Object {
+                                    "displayValue": "75%",
+                                    "value": "75%",
+                                  },
+                                  Object {
+                                    "displayValue": "100%",
+                                    "value": "100%",
+                                  },
+                                ],
+                              }
+                            }
+                            elementType="select"
+                            required={false}
+                            shouldValidate={
+                              Object {
+                                "required": false,
+                              }
+                            }
+                            touched={false}
+                            valid={true}
+                            value=""
+                          >
+                            <div
+                              className="input-Input-69"
+                            >
+                              <label
+                                className="input-Label-70"
+                              >
+                                Status End of Week 3 (0-100%)
                               </label>
                               <select
                                 className="input-InputElement-71 Select"
