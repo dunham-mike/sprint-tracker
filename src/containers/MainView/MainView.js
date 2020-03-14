@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Button from '@material-ui/core/Button';
 import { connect } from 'react-redux';
 
-import * as moment from 'moment';
+import moment from 'moment'; 
 
 import AddCircleOutlineOutlinedIcon from '@material-ui/icons/AddCircleOutlineOutlined';
 import EditOutlinedIcon from '@material-ui/icons/EditOutlined';
@@ -81,7 +81,7 @@ const styles = theme => ({
     }
 });
 
-class MainView extends Component {
+export class MainView extends Component {
     state = {
         // Tracking which sprints to display
         currentSprintIndex: null,

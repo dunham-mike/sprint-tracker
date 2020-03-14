@@ -25,7 +25,7 @@ Enzyme.configure({ adapter: new Adapter() })
     actionType={"create"}
 /> */
 
-const mountSetup = (actionType, staticTime, sprintId, sprintIndex, projectId, sprintLengthInDays) => {
+const mountSetup = (actionType, staticDates, sprintId, sprintIndex, projectId, sprintLengthInDays) => {
 
     const onCloseProject = jest.fn();
     const onAddProject = jest.fn();
@@ -36,7 +36,7 @@ const mountSetup = (actionType, staticTime, sprintId, sprintIndex, projectId, sp
     let startDate = moment.utc(moment());
     let endDate = moment.utc(moment().add((sprintLengthInDays || 15) - 1,'day'));
 
-    if(staticTime) {
+    if(staticDates) {
         startDate = moment.utc("2019–12–31", 'YYYY-MM-DD');
         endDate = moment.utc("2020–01–15", 'YYYY-MM-DD');
     }

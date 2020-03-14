@@ -413,4 +413,33 @@ describe('EditSprint Component', () => {
     });
 
 
+
+    /* --- Bug Fixing --- */
+
+    it("[Bug] Creating a new sprint, then editing an input, should not cause the date fields to fail to display a date.", () => {
+
+        const { enzymeMountWrapper } = mountSetup("create");
+
+        // Edit sprint name
+        expect(enzymeMountWrapper.find('input input').at(0).prop('value')).toEqual(''); // Before
+        enzymeMountWrapper.find('input input').at(0).simulate('change', { target: {value: 'New Sprint Name' } } ); 
+        expect(enzymeMountWrapper.find('input input').at(0).prop('value')).toEqual('New Sprint Name'); // After
+
+        // Expect start date to have value of ''
+        expect(enzymeMountWrapper.find('input input').at(1).prop('value')).toEqual(''); // Before
+
+        // Expect end date to have value of ''
+        expect(enzymeMountWrapper.find('input input').at(2).prop('value')).toEqual(''); // Before
+
+        // Clicking start date field input should open up the pop-up calendar
+        expect(enzymeMountWrapper.find('div.rdt.rdtOpen')).toHaveLength(0); // Before
+        enzymeMountWrapper.find('input input').at(1).simulate('click'); // Click
+        expect(enzymeMountWrapper.find('div.rdt.rdtOpen')).toHaveLength(1); // After
+
+        // Two calendar pop-ups should render 6 rows of 7 days each 
+        // (Note: they are present in the mounted DOM even before the calendar is clicked)
+        expect(enzymeMountWrapper.find('tbody tr')).toHaveLength(12);
+        expect(enzymeMountWrapper.find('tbody tr td')).toHaveLength(84);
+    });
+
 });
