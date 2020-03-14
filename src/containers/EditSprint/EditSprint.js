@@ -176,6 +176,8 @@ export class editSprint extends Component {
     }
 
     loadStateForNewSprint = () => {
+        console.log('loadStateForNewSprint!');
+
         let updatedSprintData = {...this.state.sprintData};
 
         // Generate new unique sprint Id
@@ -187,6 +189,8 @@ export class editSprint extends Component {
     }
 
     loadStateFromExistingSprint = () => {
+        console.log('loadStateFromExistingSprint!');
+
         let newSprintData = {}
 
         let sprintIndex = null;
