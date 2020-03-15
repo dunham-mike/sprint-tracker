@@ -316,7 +316,9 @@ exports[`EditSprint Component should match the snapshot 1`] = `
                           Sprint ID
                           *
                         </label>
-                        <div>
+                        <div
+                          data-testid="readonly"
+                        >
                           test_sprintId
                         </div>
                       </div>
@@ -1441,7 +1443,9 @@ exports[`EditSprint Component should match the snapshot 1`] = `
                                 Sprint ID
                                 *
                               </label>
-                              <div>
+                              <div
+                                data-testid="readonly"
+                              >
                                 test_sprintId
                               </div>
                             </div>

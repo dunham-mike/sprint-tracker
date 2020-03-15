@@ -614,7 +614,9 @@ exports[`MainView Component should match the snapshot 1`] = `
           </ForwardRef(Button)>
         </WithStyles(ForwardRef(Button))>
       </div>
-      <div>
+      <div
+        data-testid="NoCurrentSprint"
+      >
         No current sprint.
       </div>
     </div>

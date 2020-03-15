@@ -434,7 +434,9 @@ exports[`Render Input renders Input component as "readonly" correctly 1`] = `
   >
     
   </label>
-  <div>
+  <div
+    data-testid="readonly"
+  >
     readonly value
   </div>
 </div>

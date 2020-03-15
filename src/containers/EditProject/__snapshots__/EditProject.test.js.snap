@@ -391,7 +391,9 @@ exports[`EditProject Component should match the snapshot 1`] = `
                           Sprint ID
                           *
                         </label>
-                        <div>
+                        <div
+                          data-testid="readonly"
+                        >
                           test_sprintId
                         </div>
                       </div>
@@ -404,7 +406,9 @@ exports[`EditProject Component should match the snapshot 1`] = `
                           Project ID
                           *
                         </label>
-                        <div>
+                        <div
+                          data-testid="readonly"
+                        >
                           1
                         </div>
                       </div>
@@ -1161,7 +1165,9 @@ exports[`EditProject Component should match the snapshot 1`] = `
                                 Sprint ID
                                 *
                               </label>
-                              <div>
+                              <div
+                                data-testid="readonly"
+                              >
                                 test_sprintId
                               </div>
                             </div>
@@ -1223,7 +1229,9 @@ exports[`EditProject Component should match the snapshot 1`] = `
                                 Project ID
                                 *
                               </label>
-                              <div>
+                              <div
+                                data-testid="readonly"
+                              >
                                 1
                               </div>
                             </div>

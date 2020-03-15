@@ -50,7 +50,7 @@ const input = (props) => {
 
     switch (props.elementType) {
         case('readonly'):
-            inputElement = (<div>{props.value}</div>);
+            inputElement = (<div data-testid={'readonly'}>{props.value}</div>);
             break;
         case('input'):
             inputElement = <input 

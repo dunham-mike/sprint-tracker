@@ -4,6 +4,11 @@ import Adapter from 'enzyme-adapter-react-16'
 import toJson from 'enzyme-to-json';
 import moment from 'moment'; 
 
+import { Provider } from 'react-redux';
+import configureStore from 'redux-mock-store';
+import thunk from "redux-thunk";
+import MainView from './MainView';
+
 import { MainView as UnconnectedMainView } from './MainView';
 
 Enzyme.configure({ adapter: new Adapter() })
@@ -125,7 +130,7 @@ const staticSprintData = [
     }
 ];
 
-const queueData = [
+const testQueueData = [
     {
         id: { value: 1 },
         name: { value: 'Verify course equivalencies & Grad Requirements in Illuminate' },
@@ -388,7 +393,7 @@ const extraSprint = {
     ],
 };
 
-const mountSetup = (sprintData, isDemo) => {
+const mountSetup = (sprintData, queueData, isDemo) => {
 
     const onOrderSprintsByStartDate = jest.fn();
     const onInitiateDemo = jest.fn();
@@ -399,11 +404,47 @@ const mountSetup = (sprintData, isDemo) => {
         isDemo: isDemo || true,
         classes: {}, // Necessary to work with Material UI
         sprints: sprintData || dynamicSprintData,
-        queue: queueData,
+        queue: queueData || testQueueData,
     }
 
     const enzymeMountWrapper = mount(
         <UnconnectedMainView {...props} />
+    );
+
+    return {
+        enzymeMountWrapper,
+    }
+}
+
+const mountSetupWithMockStore = (sprintData, isDemo) => {
+    const onOrderSprintsByStartDate = jest.fn();
+    const onInitiateDemo = jest.fn();
+
+    const props = {
+        onOrderSprintsByStartDate: onOrderSprintsByStartDate,
+        onInitiateDemo: onInitiateDemo,
+        isDemo: isDemo || true,
+        classes: {}, // Necessary to work with Material UI
+    }
+
+    // Add thunk to avoid an error, per: https://philihp.com/2018/testing-a-redux-connected-component-with-thunk-actions-with-enzyme.html
+    const mockStore = configureStore([thunk]);
+    
+    let store = mockStore({
+        sprints: {
+            sprints: sprintData || dynamicSprintData,
+            queue: testQueueData,
+        },
+        authentication: {
+            token: 'test_token',
+            userId: 'test_userId',
+        }
+    });
+
+    const enzymeMountWrapper = mount(
+        <Provider store={store}>
+            <MainView {...props} />
+        </Provider>
     );
 
     return {
@@ -602,9 +643,259 @@ describe('MainView Component', () => {
 
 
 
+    /* --- Action Buttons for Each Sprint Type and the Queue --- */
+
+    it("Current Sprint's three action buttons should open the appropriate modals and close properly.", () => {
+        const { enzymeMountWrapper } = mountSetupWithMockStore();
+
+        /* --- Add New Project --- */
+
+            // Click Add New Project
+            expect(enzymeMountWrapper.find('button.MuiButton-outlined span.MuiButton-label').at(0).prop('children'))
+                .toEqual(expect.arrayContaining(['ADD NEW PROJECT']));
+            enzymeMountWrapper.find('button.MuiButton-outlined span.MuiButton-label').at(0).simulate('click');
+
+            // Add New Project modal visible with the correct sprint Id
+            expect(enzymeMountWrapper.find('.MuiTypography-h4').prop('children'))
+                .toEqual(["Create", " Project"]);
+            expect(enzymeMountWrapper.find('[data-testid="readonly"]').at(0).prop('children'))
+                .toEqual("test_sprintId");
+
+            // Click upper-right cancel button and modal is removed
+            enzymeMountWrapper.find('.MuiSvgIcon-root.MuiSvgIcon-fontSizeLarge').simulate('click');
+            expect(enzymeMountWrapper.find('.MuiTypography-h4')).toHaveLength(0);
+
+        /* --- Edit Sprint --- */
+
+            // Click Edit Sprint
+            expect(enzymeMountWrapper.find('button.MuiButton-outlined span.MuiButton-label').at(1).prop('children'))
+                .toEqual(expect.arrayContaining(['EDIT SPRINT']));
+            enzymeMountWrapper.find('button.MuiButton-outlined span.MuiButton-label').at(1).simulate('click');
+
+            // Edit Sprint modal visible with the correct sprint Id
+            expect(enzymeMountWrapper.find('.MuiTypography-h4').prop('children'))
+                .toEqual(["Edit", " Sprint"]);
+            expect(enzymeMountWrapper.find('[data-testid="readonly"]').at(0).prop('children'))
+                .toEqual("test_sprintId");
+
+            // Click upper-right cancel button and modal is removed
+            enzymeMountWrapper.find('.MuiSvgIcon-root.MuiSvgIcon-fontSizeLarge').simulate('click');
+            expect(enzymeMountWrapper.find('.MuiTypography-h4')).toHaveLength(0);
+
+        /* --- Sprint Statistics --- */
+
+            // Click Sprint Statistics
+            expect(enzymeMountWrapper.find('button.MuiButton-outlined span.MuiButton-label').at(2).prop('children'))
+                .toEqual(expect.arrayContaining(['SPRINT STATISTICS']));
+            enzymeMountWrapper.find('button.MuiButton-outlined span.MuiButton-label').at(2).simulate('click');
+
+            // Sprint Statistics modal visible with the correct sprint name
+            expect(enzymeMountWrapper.find('.MuiTypography-h4').prop('children'))
+                .toEqual(["Sprint #1", " Overview"]);
+
+            // Click upper-right cancel button and modal is removed
+            enzymeMountWrapper.find('.MuiSvgIcon-root.MuiSvgIcon-fontSizeLarge').simulate('click');
+            expect(enzymeMountWrapper.find('.MuiTypography-h4')).toHaveLength(0);
+    });
+
+    it("Next Sprint's three action buttons should open the appropriate modals and close properly.", () => {
+        const { enzymeMountWrapper } = mountSetupWithMockStore();
+
+        /* --- Toggle Next Sprint Open --- */
+
+            // Close Current Sprint
+            expect(enzymeMountWrapper.find('button.MuiButton-contained span.MuiButton-label').at(0).prop('children'))
+                .toEqual(expect.arrayContaining(['CURRENT SPRINT']));
+            enzymeMountWrapper.find('button.MuiButton-contained span.MuiButton-label').at(0).simulate('click');
+
+            // Click Next Sprint button
+            expect(enzymeMountWrapper.find('button.MuiButton-contained span.MuiButton-label').at(1).prop('children'))
+                .toEqual(expect.arrayContaining(['NEXT SPRINT']));
+            enzymeMountWrapper.find('button.MuiButton-contained span.MuiButton-label').at(1).simulate('click');
+
+        /* --- Add New Project --- */
+
+            // Click Add New Project
+            expect(enzymeMountWrapper.find('button.MuiButton-outlined span.MuiButton-label').at(0).prop('children'))
+                .toEqual(expect.arrayContaining(['ADD NEW PROJECT']));
+            enzymeMountWrapper.find('button.MuiButton-outlined span.MuiButton-label').at(0).simulate('click');
+
+            // Add New Project modal visible with the correct sprint Id
+            expect(enzymeMountWrapper.find('.MuiTypography-h4').prop('children'))
+                .toEqual(["Create", " Project"]);
+            expect(enzymeMountWrapper.find('[data-testid="readonly"]').at(0).prop('children'))
+                .toEqual("test_sprintId2");
+
+            // Click upper-right cancel button and modal is removed
+            enzymeMountWrapper.find('.MuiSvgIcon-root.MuiSvgIcon-fontSizeLarge').simulate('click');
+            expect(enzymeMountWrapper.find('.MuiTypography-h4')).toHaveLength(0);
+
+        /* --- Edit Sprint --- */
+
+            // Click Edit Sprint
+            expect(enzymeMountWrapper.find('button.MuiButton-outlined span.MuiButton-label').at(1).prop('children'))
+                .toEqual(expect.arrayContaining(['EDIT SPRINT']));
+            enzymeMountWrapper.find('button.MuiButton-outlined span.MuiButton-label').at(1).simulate('click');
+
+            // Edit Sprint modal visible with the correct sprint Id
+            expect(enzymeMountWrapper.find('.MuiTypography-h4').prop('children'))
+                .toEqual(["Edit", " Sprint"]);
+            expect(enzymeMountWrapper.find('[data-testid="readonly"]').at(0).prop('children'))
+                .toEqual("test_sprintId2");
+
+            // Click upper-right cancel button and modal is removed
+            enzymeMountWrapper.find('.MuiSvgIcon-root.MuiSvgIcon-fontSizeLarge').simulate('click');
+            expect(enzymeMountWrapper.find('.MuiTypography-h4')).toHaveLength(0);
+
+        /* --- Sprint Statistics --- */
+
+            // Click Sprint Statistics
+            expect(enzymeMountWrapper.find('button.MuiButton-outlined span.MuiButton-label').at(2).prop('children'))
+                .toEqual(expect.arrayContaining(['SPRINT STATISTICS']));
+            enzymeMountWrapper.find('button.MuiButton-outlined span.MuiButton-label').at(2).simulate('click');
+
+            // Sprint Statistics modal visible with the correct sprint name
+            expect(enzymeMountWrapper.find('.MuiTypography-h4').prop('children'))
+                .toEqual(["Sprint #2", " Overview"]);
+
+            // Click upper-right cancel button and modal is removed
+            enzymeMountWrapper.find('.MuiSvgIcon-root.MuiSvgIcon-fontSizeLarge').simulate('click');
+            expect(enzymeMountWrapper.find('.MuiTypography-h4')).toHaveLength(0);
+    });
+
+    it("Future Sprint's three action buttons should open the appropriate modals and close properly.", () => {
+        const { enzymeMountWrapper } = mountSetupWithMockStore();
+
+        /* --- Toggle Future Sprints Open --- */
+
+            // Close Current Sprint
+            expect(enzymeMountWrapper.find('button.MuiButton-contained span.MuiButton-label').at(0).prop('children'))
+                .toEqual(expect.arrayContaining(['CURRENT SPRINT']));
+            enzymeMountWrapper.find('button.MuiButton-contained span.MuiButton-label').at(0).simulate('click');
+
+            // Click Future Sprints button
+            expect(enzymeMountWrapper.find('button.MuiButton-contained span.MuiButton-label').at(3).prop('children'))
+                .toEqual(expect.arrayContaining(['FUTURE SPRINTS']));
+            enzymeMountWrapper.find('button.MuiButton-contained span.MuiButton-label').at(3).simulate('click');
+
+        /* --- Add New Project --- */
+
+            // Click Add New Project
+            expect(enzymeMountWrapper.find('button.MuiButton-outlined span.MuiButton-label').at(0).prop('children'))
+                .toEqual(expect.arrayContaining(['ADD NEW PROJECT']));
+            enzymeMountWrapper.find('button.MuiButton-outlined span.MuiButton-label').at(0).simulate('click');
+
+            // Add New Project modal visible with the correct sprint Id
+            expect(enzymeMountWrapper.find('.MuiTypography-h4').prop('children'))
+                .toEqual(["Create", " Project"]);
+            expect(enzymeMountWrapper.find('[data-testid="readonly"]').at(0).prop('children'))
+                .toEqual("test_sprintId3");
+
+            // Click upper-right cancel button and modal is removed
+            enzymeMountWrapper.find('.MuiSvgIcon-root.MuiSvgIcon-fontSizeLarge').simulate('click');
+            expect(enzymeMountWrapper.find('.MuiTypography-h4')).toHaveLength(0);
+
+        /* --- Edit Sprint --- */
+
+            // Click Edit Sprint
+            expect(enzymeMountWrapper.find('button.MuiButton-outlined span.MuiButton-label').at(1).prop('children'))
+                .toEqual(expect.arrayContaining(['EDIT SPRINT']));
+            enzymeMountWrapper.find('button.MuiButton-outlined span.MuiButton-label').at(1).simulate('click');
+
+            // Edit Sprint modal visible with the correct sprint Id
+            expect(enzymeMountWrapper.find('.MuiTypography-h4').prop('children'))
+                .toEqual(["Edit", " Sprint"]);
+            expect(enzymeMountWrapper.find('[data-testid="readonly"]').at(0).prop('children'))
+                .toEqual("test_sprintId3");
+
+            // Click upper-right cancel button and modal is removed
+            enzymeMountWrapper.find('.MuiSvgIcon-root.MuiSvgIcon-fontSizeLarge').simulate('click');
+            expect(enzymeMountWrapper.find('.MuiTypography-h4')).toHaveLength(0);
+
+        /* --- Sprint Statistics --- */
+
+            // Click Sprint Statistics
+            expect(enzymeMountWrapper.find('button.MuiButton-outlined span.MuiButton-label').at(2).prop('children'))
+                .toEqual(expect.arrayContaining(['SPRINT STATISTICS']));
+            enzymeMountWrapper.find('button.MuiButton-outlined span.MuiButton-label').at(2).simulate('click');
+
+            // Sprint Statistics modal visible with the correct sprint name
+            expect(enzymeMountWrapper.find('.MuiTypography-h4').prop('children'))
+                .toEqual(["Sprint #3", " Overview"]);
+
+            // Click upper-right cancel button and modal is removed
+            enzymeMountWrapper.find('.MuiSvgIcon-root.MuiSvgIcon-fontSizeLarge').simulate('click');
+            expect(enzymeMountWrapper.find('.MuiTypography-h4')).toHaveLength(0);
+    });
+
+    it("Project Queue's one action button should open the appropriate modal and close properly.", () => {
+        const { enzymeMountWrapper } = mountSetupWithMockStore();
+
+        /* --- Toggle Project Queue Open --- */
+
+            // Close Current Sprint
+            expect(enzymeMountWrapper.find('button.MuiButton-contained span.MuiButton-label').at(0).prop('children'))
+                .toEqual(expect.arrayContaining(['CURRENT SPRINT']));
+            enzymeMountWrapper.find('button.MuiButton-contained span.MuiButton-label').at(0).simulate('click');
+
+            // Click Project Queue button
+            expect(enzymeMountWrapper.find('button.MuiButton-contained span.MuiButton-label').at(2).prop('children'))
+                .toEqual(expect.arrayContaining(['PROJECT QUEUE']));
+            enzymeMountWrapper.find('button.MuiButton-contained span.MuiButton-label').at(2).simulate('click');
+
+        /* --- Add New Project --- */
+
+            // Click Add New Project
+            expect(enzymeMountWrapper.find('button.MuiButton-outlined span.MuiButton-label').at(0).prop('children'))
+                .toEqual(expect.arrayContaining(['ADD NEW PROJECT']));
+            enzymeMountWrapper.find('button.MuiButton-outlined span.MuiButton-label').at(0).simulate('click');
+
+            // Add New Project modal visible with the correct sprint Id
+            expect(enzymeMountWrapper.find('.MuiTypography-h4').prop('children'))
+                .toEqual(["Create", " Project"]);
+            expect(enzymeMountWrapper.find('[data-testid="readonly"]').at(0).prop('children'))
+                .toEqual("n/a - on Project Queue");
+
+            // Click upper-right cancel button and modal is removed
+            enzymeMountWrapper.find('.MuiSvgIcon-root.MuiSvgIcon-fontSizeLarge').simulate('click');
+            expect(enzymeMountWrapper.find('.MuiTypography-h4')).toHaveLength(0);
+    });
+
 
 
     /* --- Misc. Functionality --- */
+
+    it('When there are no sprints and no queue, should show messages for missing data.', () => {
+        const { enzymeMountWrapper } = mountSetup([], []); // Blank arrays for sprints and the queue
+
+        // Current Sprint message visible by default
+        expect(enzymeMountWrapper.find('[data-testid="NoCurrentSprint"]').prop('children'))
+            .toEqual("No current sprint.");
+
+        // Click Next Sprint button
+        expect(enzymeMountWrapper.find('[data-testid="NoNextSprint"]')).toHaveLength(0);
+        enzymeMountWrapper.find('button.MuiButton-contained span.MuiButton-label').at(1).simulate('click');
+
+        // Next Sprint missing message visible
+        expect(enzymeMountWrapper.find('[data-testid="NoNextSprint"]').prop('children'))
+            .toEqual("No upcoming sprint.");
+
+        // Click Project Queue button
+        expect(enzymeMountWrapper.find('[data-testid="NoQueueProjects"]')).toHaveLength(0);
+        enzymeMountWrapper.find('button.MuiButton-contained span.MuiButton-label').at(2).simulate('click');        
+
+        // Queue Projects missing message visible
+        expect(enzymeMountWrapper.find('[data-testid="NoQueueProjects"]').prop('children'))
+            .toEqual("No projects in the queue.");
+
+        // Click Future Sprints button
+        expect(enzymeMountWrapper.find('[data-testid="NoFutureSprints"]')).toHaveLength(0);
+        enzymeMountWrapper.find('button.MuiButton-contained span.MuiButton-label').at(3).simulate('click');
+
+        // Future Sprints missing message visible
+        expect(enzymeMountWrapper.find('[data-testid="NoFutureSprints"]').prop('children'))
+            .toEqual("No upcoming sprints.");
+    });
 
     it('Toggling the Future Sprints button should open two sprint tables and two sets of action buttons when there are two future sprints.', () => {
         let twoFutureSprintsData = [...dynamicSprintData];
@@ -642,8 +933,8 @@ describe('MainView Component', () => {
         expect(enzymeMountWrapper.find('tbody tr')).toHaveLength(5); // 3 from Sprint #1, 1 from Sprint #3, and 1 from Sprint #4
     });
 
-    it('Clicking Create New Sprint opens the create sprint window and clicking cancel closes it.', () => {
-        const { enzymeMountWrapper } = mountSetup();
+    it('Clicking Create New Sprint opens the create sprint window and clicking cancel button closes it.', () => {
+        const { enzymeMountWrapper } = mountSetupWithMockStore(); // Mock store necessary so that EditSprint can access it
 
         // Click Create New Sprint button
         expect(enzymeMountWrapper.find('button.MuiButton-text span.MuiButton-label').at(0).prop('children'))
@@ -651,55 +942,34 @@ describe('MainView Component', () => {
         enzymeMountWrapper.find('button.MuiButton-text span.MuiButton-label').at(0).simulate('click');
 
         // Create Sprint modal exists
-        // console.log(enzymeMountWrapper.find('div[role="presentation"]').debug());
-        // expect(enzymeMountWrapper.find('.MuiTypography-root.MuiTypography-h4').prop('children')).toEqual(["Sprint #2", " Overview"]);
+        expect(enzymeMountWrapper.find('.MuiTypography-h4').prop('children'))
+            .toEqual(["Create", " Sprint"]);
+        
+        // Click upper-right cancel button
+        enzymeMountWrapper.find('.MuiSvgIcon-root.MuiSvgIcon-fontSizeLarge').simulate('click');
 
-        // expect(enzymeMountWrapper.find('.MuiTypography-h4').prop('children'))
-        //     .toEqual(["Create", " Sprint"]);
+        // Create Sprint modal no longer exists
+        expect(enzymeMountWrapper.find('.MuiTypography-h4')).toHaveLength(0);
+    });
 
-        // // Click Future Sprints button
-        // expect(enzymeMountWrapper.find('button.MuiButton-contained span.MuiButton-label').at(3).prop('children'))
-        //     .toEqual(expect.arrayContaining(['FUTURE SPRINTS']));
-        // enzymeMountWrapper.find('button.MuiButton-contained span.MuiButton-label').at(3).simulate('click');
+    it("Clicking the edit icon on a project's table row opens the Edit Project window and clicking the cancel button closes it.", () => {
+        const { enzymeMountWrapper } = mountSetupWithMockStore();
 
-        // // Two sets of Future Sprints action buttons visible (on top of current sprint's) but no others
-        // expect(enzymeMountWrapper.find('button.MuiButton-outlined span.MuiButton-label').at(3).prop('children'))
-        //     .toEqual(expect.arrayContaining(['ADD NEW PROJECT']));
-        // expect(enzymeMountWrapper.find('button.MuiButton-outlined span.MuiButton-label').at(4).prop('children'))
-        //     .toEqual(expect.arrayContaining(['EDIT SPRINT']));
-        // expect(enzymeMountWrapper.find('button.MuiButton-outlined span.MuiButton-label').at(5).prop('children'))
-        //     .toEqual(expect.arrayContaining(['SPRINT STATISTICS']));
-        // expect(enzymeMountWrapper.find('button.MuiButton-outlined span.MuiButton-label').at(6).prop('children'))
-        //     .toEqual(expect.arrayContaining(['ADD NEW PROJECT']));
-        // expect(enzymeMountWrapper.find('button.MuiButton-outlined span.MuiButton-label').at(7).prop('children'))
-        //     .toEqual(expect.arrayContaining(['EDIT SPRINT']));
-        // expect(enzymeMountWrapper.find('button.MuiButton-outlined span.MuiButton-label').at(8).prop('children'))
-        //     .toEqual(expect.arrayContaining(['SPRINT STATISTICS']));
-        // expect(enzymeMountWrapper.find('button.MuiButton-outlined span.MuiButton-label').at(9))
-        //     .toHaveLength(0);
+        // Click Edit Project button
+        enzymeMountWrapper.find('tbody tr td div button').at(0).simulate('click');
 
-        // // Future Sprints and Current Sprint tables visible but no others
-        // expect(enzymeMountWrapper.find('h6.MuiTypography-root.MuiTypography-h6').at(1).prop('children'))
-        //     .toEqual(expect.stringContaining('Sprint #3'));
-        // expect(enzymeMountWrapper.find('h6.MuiTypography-root.MuiTypography-h6').at(2).prop('children'))
-        //     .toEqual(expect.stringContaining('Sprint #4'));
-        // expect(enzymeMountWrapper.find('thead tr')).toHaveLength(3);
-        // expect(enzymeMountWrapper.find('tbody tr')).toHaveLength(5); // 3 from Sprint #1, 1 from Sprint #3, and 1 from Sprint #4
+        // Edit Project modal exists and is the correct project
+        expect(enzymeMountWrapper.find('.MuiTypography-h4').prop('children'))
+            .toEqual(["Edit", " Project"]);
+        expect(enzymeMountWrapper.find('[data-testid="readonly"]').at(0).prop('children'))
+            .toEqual("test_sprintId");
+        expect(enzymeMountWrapper.find('[data-testid="readonly"]').at(1).prop('children'))
+            .toEqual(1);
+        
+        // Click upper-right cancel button
+        enzymeMountWrapper.find('.MuiSvgIcon-root.MuiSvgIcon-fontSizeLarge').simulate('click');
+
+        // Create Sprint modal no longer exists
+        expect(enzymeMountWrapper.find('.MuiTypography-h4')).toHaveLength(0);
     });
 });
-
-
-
-
-// Current sprint: add new project, edit sprint, view statistics
-// Next sprint: add new project, edit sprint, view statistics
-// Queue: add new project
-// Future sprint: add new project, edit sprint, view statistics
-
-// No current sprint, show message
-// No next sprint, show message
-// Queue always shows table, even if empty
-// No future sprints, show message
-
-
-// Create new sprint opens create sprint window

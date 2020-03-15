@@ -311,7 +311,7 @@ export class MainView extends Component {
                 </div>
             );
         } else if (this.state.displayCurrentSprint) {
-            currentSprint = <div className={classes.sprintMissingMessage}>No current sprint.</div>
+            currentSprint = <div className={classes.sprintMissingMessage} data-testid="NoCurrentSprint">No current sprint.</div>
         }
 
         // Displaying Next Sprint
@@ -336,7 +336,7 @@ export class MainView extends Component {
                 </div>
             );
         } else if (this.state.displayNextSprint) {
-            nextSprint = <div className={classes.sprintMissingMessage}>No upcoming sprint.</div>
+            nextSprint = <div className={classes.sprintMissingMessage} data-testid="NoNextSprint">No upcoming sprint.</div>
         }
 
         // Displaying Queue
@@ -356,7 +356,7 @@ export class MainView extends Component {
                 </div>
             );
         } else if (this.state.displayQueue) {
-            queue = <div className={classes.sprintMissingMessage}>No projects in the queue.</div>
+            queue = <div className={classes.sprintMissingMessage} data-testid="NoQueueProjects">No projects in the queue.</div>
         }
 
         // Displaying Future Sprints
@@ -411,7 +411,7 @@ export class MainView extends Component {
                 </div>
             );
         } else if(this.state.displayFutureSprints) {
-            futureSprints = <div className={classes.sprintMissingMessage}>No upcoming sprints.</div>
+            futureSprints = <div className={classes.sprintMissingMessage} data-testid="NoFutureSprints">No upcoming sprints.</div>
         }
 
         // --------------------
