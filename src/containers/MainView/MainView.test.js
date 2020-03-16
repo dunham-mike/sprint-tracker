@@ -413,6 +413,7 @@ const mountSetup = (sprintData, queueData, isDemo) => {
 
     return {
         enzymeMountWrapper,
+        onInitiateDemo,
     }
 }
 
@@ -971,5 +972,11 @@ describe('MainView Component', () => {
 
         // Create Sprint modal no longer exists
         expect(enzymeMountWrapper.find('.MuiTypography-h4')).toHaveLength(0);
+    });
+
+    it("Loading the MainView with isDemo = true will call onInitiateDemo().", () => {
+        const { enzymeMountWrapper, onInitiateDemo } = mountSetup(undefined, undefined, true);
+
+        expect(onInitiateDemo).toHaveBeenCalled();
     });
 });

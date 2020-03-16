@@ -25,7 +25,7 @@ const store = createStore(
     ),
 );
 
-const app = (
+export const app = (
     <Provider store={store}>
         <BrowserRouter>
             <App />

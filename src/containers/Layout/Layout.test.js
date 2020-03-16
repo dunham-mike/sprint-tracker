@@ -173,7 +173,7 @@ describe('Layout Component', () => {
         
         expect(enzymeMountWrapper.find('header')).toHaveLength(1);
         expect(enzymeMountWrapper.find('button[aria-label="menu"] span')).toHaveLength(2);
-        expect(enzymeMountWrapper.find('a[href="/"]')).toHaveLength(1);
+        expect(enzymeMountWrapper.find('a[href="/demo"]')).toHaveLength(1);
     });
 
     it('should show the right-side end demo button when authenticated', () => {

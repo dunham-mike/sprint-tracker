@@ -18,7 +18,7 @@ import Logout from './components/Login/Logout/Logout';
 
 import ErrorBoundary from './containers/ErrorBoundary/ErrorBoundary';
 
-class App extends Component {
+export class App extends Component {
     componentDidMount = () => {
         // Only try to login if the user is not starting on the demo page
         if(this.props.location.pathname !== "/demo") {
@@ -42,30 +42,33 @@ class App extends Component {
                 </Switch>
             </Suspense>
         );
-    
-        if (this.props.isAuth) {
+
+        if (this.props.isDemo) {
+            routes = (
+                <Suspense fallback={<div>Loading...</div>}>
+                  <Switch>
+                        <Route path="/login" component={Login} /> {/* So Redirect inside Login can work and route to different areas of the app that require login. */}
+                        <Route path="/demo" exact component = {MainView}/>
+                        <Route path="/logout" component={Logout} />
+                        <Route path="/" exact component = {Logout}/> {/* Hitting the back button in the Demo can take you back to the FrontPage. */}
+                        <Route path="/past-sprints" component={PastSprints} />
+                        <Redirect to="/demo" />
+                  </Switch>
+                </Suspense>
+              );
+        } else if (this.props.isAuth) {
             routes = (
               <Suspense fallback={<div>Loading...</div>}>
                 <Switch>
                     <Route path="/login" component={Login} /> {/* So Redirect inside Login can work and route to different areas of the app that require login. */}
-                    {this.props.isDemo 
-                        ? null
-                        : <Route path="/" exact component = {MainView}/>
-                    }
+                    <Route path="/" exact component = {MainView}/>
                     <Route path="/logout" component={Logout} />
                     <Route path="/past-sprints" component={PastSprints} />
-                    <Route
-                        path='/demo'
-                        render={(props) => <MainView isDemo={true} />}
-                    />
-                    {this.props.isDemo 
-                        ? <Redirect to="/demo" />
-                        : <Redirect to="/" />
-                    }
+                    <Redirect to="/" />
                 </Switch>
               </Suspense>
             );
-        }
+        } 
 
         if (this.props.isServerError) {
             routes = (

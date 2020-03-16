@@ -341,7 +341,7 @@ exports[`Layout Component should match the snapshot for a demo user 1`] = `
                                           "render": [Function],
                                         }
                                       }
-                                      to="/"
+                                      to="/demo"
                                       underline="none"
                                       variant="h6"
                                     >
@@ -371,7 +371,7 @@ exports[`Layout Component should match the snapshot for a demo user 1`] = `
                                             "render": [Function],
                                           }
                                         }
-                                        to="/"
+                                        to="/demo"
                                         underline="none"
                                         variant="h6"
                                       >
@@ -394,7 +394,7 @@ exports[`Layout Component should match the snapshot for a demo user 1`] = `
                                           }
                                           onBlur={[Function]}
                                           onFocus={[Function]}
-                                          to="/"
+                                          to="/demo"
                                           variant="h6"
                                         >
                                           <ForwardRef(Typography)
@@ -450,25 +450,25 @@ exports[`Layout Component should match the snapshot for a demo user 1`] = `
                                             }
                                             onBlur={[Function]}
                                             onFocus={[Function]}
-                                            to="/"
+                                            to="/demo"
                                             variant="h6"
                                           >
                                             <Link
                                               className="MuiTypography-root MuiLink-root MuiLink-underlineNone MuiTypography-h6 MuiTypography-colorInherit"
                                               onBlur={[Function]}
                                               onFocus={[Function]}
-                                              to="/"
+                                              to="/demo"
                                             >
                                               <LinkAnchor
                                                 className="MuiTypography-root MuiLink-root MuiLink-underlineNone MuiTypography-h6 MuiTypography-colorInherit"
-                                                href="/"
+                                                href="/demo"
                                                 navigate={[Function]}
                                                 onBlur={[Function]}
                                                 onFocus={[Function]}
                                               >
                                                 <a
                                                   className="MuiTypography-root MuiLink-root MuiLink-underlineNone MuiTypography-h6 MuiTypography-colorInherit"
-                                                  href="/"
+                                                  href="/demo"
                                                   onBlur={[Function]}
                                                   onClick={[Function]}
                                                   onFocus={[Function]}

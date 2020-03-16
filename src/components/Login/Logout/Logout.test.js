@@ -37,9 +37,9 @@ describe('LogOut Component', () => {
         expect(toJson(enzymeMountWrapper)).toMatchSnapshot();
     });
 
-    it('should render a <Redirect> component', () => {
+    it('should render a logging out div', () => {
         const { enzymeMountWrapper } = mountSetup();
-        expect(enzymeMountWrapper.contains(<Redirect to="/"/>)).toEqual(true);
+        expect(enzymeMountWrapper.contains(<div>Logging out...</div>)).toEqual(true);
     });
 
     it('should fire onLogout()', () => {

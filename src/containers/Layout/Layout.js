@@ -73,7 +73,7 @@ class Layout extends Component {
                         this.props.isAuth
                         ?
                             <React.Fragment>
-                                <ListItem button component={RouterLink} to="/">
+                                <ListItem button component={RouterLink} to={this.props.isDemo ? "/demo" : "/"}>
                                     <ListItemIcon><HomeIcon /></ListItemIcon>
                                     <ListItemText primary="Home"/>
                                 </ListItem>
@@ -129,7 +129,7 @@ class Layout extends Component {
                         <MenuIcon />
                     </IconButton>
                     <Typography variant="h6" className={classes.title}>
-                        <Link component={RouterLink} to="/" color="inherit" variant="h6" underline="none">
+                        <Link component={RouterLink} to={this.props.isDemo ? "/demo" : "/"} color="inherit" variant="h6" underline="none">
                             Deliberate Sprints
                         </Link>
                     </Typography>

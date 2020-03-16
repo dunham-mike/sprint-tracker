@@ -180,7 +180,7 @@ const mapStateToProps = state => {
     return {
         loading: state.authentication.loading,
         error: state.authentication.error,
-        isAuth: state.authentication.token !== null,
+        isAuth: (state.authentication.token !== null) && (state.authentication.token !== 'demo'),
         authRedirectPath: state.authentication.authRedirectPath
     };
 };
