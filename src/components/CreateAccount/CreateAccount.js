@@ -138,7 +138,7 @@ export const createAccount = (props) => {
                     })}
                     onSubmit={(values, { setSubmitting }) => { submitHandler(values, { setSubmitting })}}
                 >
-                    {({ isSubmitting }) => (
+                    {({ isSubmitting, isValid, dirty, touched }) => (
                     <Form>
                         <div className={classes.formContainer}>
                             <div className={classes.innerFormContainer}>
@@ -175,7 +175,14 @@ export const createAccount = (props) => {
                                         className={classes.Button}
                                         variant="contained"
                                         color="primary"
-                                        disabled={isSubmitting}
+                                        disabled={
+                                            !isValid 
+                                            || !dirty 
+                                            || isSubmitting 
+                                            || !touched['firstName']
+                                            || !touched['email']
+                                            || !touched['password']
+                                        }
                                         type="submit"
                                     >
                                         CREATE ACCOUNT

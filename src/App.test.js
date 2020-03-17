@@ -148,7 +148,6 @@ describe('App Component', () => {
     it('["/logout"] should render the Logout component when authenticated.', () => {
         const { enzymeMountWrapper } = mountSetup("/logout", undefined, undefined, true);
 
-        console.log('logout:', enzymeMountWrapper.debug());
         expect(enzymeMountWrapper.find(Logout)).toHaveLength(1);
     });
 

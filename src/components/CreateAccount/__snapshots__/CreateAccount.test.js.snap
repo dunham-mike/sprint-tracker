@@ -669,7 +669,7 @@ exports[`CreateAccount Component should match the snapshot 1`] = `
                               >
                                 <WithStyles(ForwardRef(Button))
                                   color="primary"
-                                  disabled={false}
+                                  disabled={true}
                                   type="submit"
                                   variant="contained"
                                 >
@@ -708,20 +708,20 @@ exports[`CreateAccount Component should match the snapshot 1`] = `
                                       }
                                     }
                                     color="primary"
-                                    disabled={false}
+                                    disabled={true}
                                     type="submit"
                                     variant="contained"
                                   >
                                     <WithStyles(ForwardRef(ButtonBase))
-                                      className="MuiButton-root MuiButton-contained MuiButton-containedPrimary"
+                                      className="MuiButton-root MuiButton-contained MuiButton-containedPrimary Mui-disabled"
                                       component="button"
-                                      disabled={false}
+                                      disabled={true}
                                       focusRipple={true}
                                       focusVisibleClassName="Mui-focusVisible"
                                       type="submit"
                                     >
                                       <ForwardRef(ButtonBase)
-                                        className="MuiButton-root MuiButton-contained MuiButton-containedPrimary"
+                                        className="MuiButton-root MuiButton-contained MuiButton-containedPrimary Mui-disabled"
                                         classes={
                                           Object {
                                             "disabled": "Mui-disabled",
@@ -730,14 +730,14 @@ exports[`CreateAccount Component should match the snapshot 1`] = `
                                           }
                                         }
                                         component="button"
-                                        disabled={false}
+                                        disabled={true}
                                         focusRipple={true}
                                         focusVisibleClassName="Mui-focusVisible"
                                         type="submit"
                                       >
                                         <button
-                                          className="MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary"
-                                          disabled={false}
+                                          className="MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary Mui-disabled Mui-disabled"
+                                          disabled={true}
                                           onBlur={[Function]}
                                           onDragLeave={[Function]}
                                           onFocus={[Function]}
@@ -749,7 +749,7 @@ exports[`CreateAccount Component should match the snapshot 1`] = `
                                           onTouchEnd={[Function]}
                                           onTouchMove={[Function]}
                                           onTouchStart={[Function]}
-                                          tabIndex={0}
+                                          tabIndex={-1}
                                           type="submit"
                                         >
                                           <span
@@ -757,36 +757,7 @@ exports[`CreateAccount Component should match the snapshot 1`] = `
                                           >
                                             CREATE ACCOUNT
                                           </span>
-                                          <NoSsr>
-                                            <WithStyles(undefined)
-                                              center={false}
-                                            >
-                                              <ForwardRef(TouchRipple)
-                                                center={false}
-                                                classes={
-                                                  Object {
-                                                    "child": "MuiTouchRipple-child",
-                                                    "childLeaving": "MuiTouchRipple-childLeaving",
-                                                    "childPulsate": "MuiTouchRipple-childPulsate",
-                                                    "ripple": "MuiTouchRipple-ripple",
-                                                    "ripplePulsate": "MuiTouchRipple-ripplePulsate",
-                                                    "rippleVisible": "MuiTouchRipple-rippleVisible",
-                                                    "root": "MuiTouchRipple-root",
-                                                  }
-                                                }
-                                              >
-                                                <span
-                                                  className="MuiTouchRipple-root"
-                                                >
-                                                  <TransitionGroup
-                                                    childFactory={[Function]}
-                                                    component={null}
-                                                    exit={true}
-                                                  />
-                                                </span>
-                                              </ForwardRef(TouchRipple)>
-                                            </WithStyles(undefined)>
-                                          </NoSsr>
+                                          <NoSsr />
                                         </button>
                                       </ForwardRef(ButtonBase)>
                                     </WithStyles(ForwardRef(ButtonBase))>

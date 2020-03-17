@@ -133,7 +133,7 @@ const login = (props) => {
                     })}
                     onSubmit={(values, { setSubmitting }) => { submitHandler(values, { setSubmitting })}}
                 >
-                    {({ isSubmitting }) => (
+                    {({ isSubmitting, isValid, dirty }) => (
                     <Form>
                         <div className={classes.formContainer}>
                             <div className={classes.innerFormContainer}>
@@ -156,7 +156,7 @@ const login = (props) => {
                                         className={classes.Button}
                                         variant="contained"
                                         color="primary"
-                                        disabled={props.loading}
+                                        disabled={props.loading || !dirty || !isValid || isSubmitting}
                                         type="submit"
                                     >
                                         LOG IN

@@ -6,12 +6,15 @@ import { BrowserRouter } from 'react-router-dom';
 import toJson from 'enzyme-to-json';
 import configureStore from 'redux-mock-store';
 import { Redirect } from 'react-router-dom';
+import { fireEvent } from '@testing-library/dom';
+import { act } from 'react-dom/test-utils';
 
 import CreateAccount from './CreateAccount';
+import { createAccount as UnconnectedCreateAccount } from './CreateAccount';
 
 Enzyme.configure({ adapter: new Adapter() })
 
-const mountSetup = (storeData) => {
+const mountSetup = (storeData, isNoStore) => {
 
     const mockStore = configureStore([]);
     
@@ -30,13 +33,7 @@ const mountSetup = (storeData) => {
         });
     }
 
-    // const onKickoffSignup = jest.fn();
-
-    // const props = {
-    //     onKickoffSignup: onKickoffSignup
-    // }
-
-    const enzymeMountWrapper = mount(
+    let enzymeMountWrapper = mount(
         <BrowserRouter>
             <Provider store={store}>
                 <CreateAccount 
@@ -46,9 +43,33 @@ const mountSetup = (storeData) => {
         </BrowserRouter>
     );
 
+    const onKickoffSignup = jest.fn();
+
+    const props = {
+        onKickoffSignup: onKickoffSignup,
+        classes: {}, // Necessary to work with Material UI
+        authentication: {
+            loading: false,
+            error: null,
+            token: null,
+            authRedirectPath: "/",
+        },
+    }
+
+    if (isNoStore) {
+        enzymeMountWrapper = mount(
+            <BrowserRouter>
+                <UnconnectedCreateAccount 
+                    {...props}
+                />
+            </BrowserRouter>
+        );
+    }
+
     return {
         enzymeMountWrapper,
-        store
+        store,
+        onKickoffSignup
     }
 }
 
@@ -116,6 +137,72 @@ describe('CreateAccount Component', () => {
             }
         );
         expect(enzymeMountWrapper.find(Redirect)).toHaveLength(1);
+    });
+
+    it('should have the Submit button disabled initally. After completing required fields, submit button is enabled.' +
+        'Upon submission, onKickoffSignup() should be fired.', async () => {
+        const { enzymeMountWrapper, onKickoffSignup } = mountSetup(undefined, true);
+
+        /* --- First Name --- */
+
+        // Pattern based on: https://github.com/jaredpalmer/formik/blob/f5d76609b222ce583663add279ac76e807e2d0ba/README.md#testing-formik
+        enzymeMountWrapper.find('input[type="firstName"]').simulate('change', { 
+            persist: () => {},
+                // simulate changing e.target.name and e.target.value
+                target: {
+                    name: 'firstName',
+                    value: 'test_firstName',
+                },
+        });
+
+        // Blur necessary to trigger touched to become true, per: https://stackoverflow.com/questions/57385931/why-isnt-the-formik-touched-property-being-populated
+        enzymeMountWrapper.find('input[type="firstName"]').simulate('blur');
+
+        /* --- Last Name --- */
+
+        // Skipping as optional
+
+        /* --- Email --- */
+
+        enzymeMountWrapper.find('input[type="email"]').simulate('change', { 
+            persist: () => {},
+                // simulate changing e.target.name and e.target.value
+                target: {
+                    name: 'email',
+                    value: 'test@test.com',
+                },
+        });
+
+        enzymeMountWrapper.find('input[type="email"]').simulate('blur');
+
+        // Button is still disabled
+        expect(enzymeMountWrapper.find('button[type="submit"]').props('children').disabled).toEqual(true);
+
+        /* --- Password --- */
+
+        enzymeMountWrapper.find('input[type="password"]').simulate('change', { 
+            persist: () => {},
+                // simulate changing e.target.name and e.target.value
+                target: {
+                    name: 'password',
+                    value: 'test_password',
+                },
+        });
+
+        enzymeMountWrapper.find('input[type="password"]').simulate('blur');
+
+        /* --- Submitting Form --- */
+        
+        expect(enzymeMountWrapper.find('button[type="submit"]').props('children').disabled).toEqual(false);
+
+        // Submit form based on this pattern: https://github.com/jaredpalmer/formik/issues/937#issuecomment-565256589
+        await act(async () => {
+            enzymeMountWrapper.find('form').simulate('submit', {
+                preventDefault: () => {} // no op 
+            })
+        });
+        
+        expect(onKickoffSignup).toHaveBeenCalledTimes(1);
     });
 
 });
