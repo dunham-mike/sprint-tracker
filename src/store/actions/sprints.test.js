@@ -85,7 +85,7 @@ describe('async sprints actions', () => {
 
     /* --- updateProject() --- */
 
-    it('creates UPDATE_PROJECT when updating the project on the server has been completed', () => {
+    it('[sprint] creates UPDATE_PROJECT when updating the project on the server has been completed', () => {
         const resp = {data: 'mock_response'};
         axios.put.mockResolvedValue(resp);
     
@@ -99,6 +99,26 @@ describe('async sprints actions', () => {
         const store = mockStore({ sprints: [] });
     
         return store.dispatch(actions.updateProject('test_sprintId', testProjectObject, 'test_token', 'test_userId'))
+            .then(() => {
+                // return of async actions
+                expect(store.getActions()).toEqual(expectedActions)
+        });
+    });
+
+    it('[queue] creates UPDATE_PROJECT when updating the project on the server has been completed', () => {
+        const resp = {data: 'mock_response'};
+        axios.put.mockResolvedValue(resp);
+    
+        const expectedActions = [
+            { 
+                type: actionTypes.UPDATE_PROJECT,
+                sprintId: -1,
+                projectData: testProjectObject,
+            }
+        ];
+        const store = mockStore({ sprints: [] });
+    
+        return store.dispatch(actions.updateProject(-1, testProjectObject, 'test_token', 'test_userId'))
             .then(() => {
                 // return of async actions
                 expect(store.getActions()).toEqual(expectedActions)
@@ -142,7 +162,7 @@ describe('async sprints actions', () => {
 
     /* --- addProject() --- */
 
-    it('creates ADD_PROJECT when adding the project on the server has been completed', () => {
+    it('[sprint] creates ADD_PROJECT when adding the project on the server has been completed', () => {
         const resp = {data: 'mock_response'};
         axios.put.mockResolvedValue(resp);
     
@@ -156,6 +176,26 @@ describe('async sprints actions', () => {
         const store = mockStore({ sprints: [] });
     
         return store.dispatch(actions.addProject('test_sprintId', testProjectObject, 'test_token', 'test_userId'))
+            .then(() => {
+                // return of async actions
+                expect(store.getActions()).toEqual(expectedActions)
+        });
+    });
+
+    it('[queue] creates ADD_PROJECT when adding the project on the server has been completed', () => {
+        const resp = {data: 'mock_response'};
+        axios.put.mockResolvedValue(resp);
+    
+        const expectedActions = [
+            { 
+                type: actionTypes.ADD_PROJECT,
+                sprintId: -1,
+                projectData: testProjectObject,
+            }
+        ];
+        const store = mockStore({ sprints: [] });
+    
+        return store.dispatch(actions.addProject(-1, testProjectObject, 'test_token', 'test_userId'))
             .then(() => {
                 // return of async actions
                 expect(store.getActions()).toEqual(expectedActions)
@@ -198,7 +238,7 @@ describe('async sprints actions', () => {
 
     /* --- deleteProject() --- */
 
-    it('creates DELETE_PROJECT when deleting the project on the server has been completed', () => {
+    it('[sprint] creates DELETE_PROJECT when deleting the project on the server has been completed', () => {
         const resp = {data: 'mock_response'};
         axios.delete.mockResolvedValue(resp);
     
@@ -212,6 +252,26 @@ describe('async sprints actions', () => {
         const store = mockStore({ sprints: [] });
     
         return store.dispatch(actions.deleteProject('test_sprintId', 'test_projectId', 'test_token', 'test_userId'))
+            .then(() => {
+                // return of async actions
+                expect(store.getActions()).toEqual(expectedActions)
+        });
+    });
+
+    it('[queue] creates DELETE_PROJECT when deleting the project on the server has been completed', () => {
+        const resp = {data: 'mock_response'};
+        axios.delete.mockResolvedValue(resp);
+    
+        const expectedActions = [
+            { 
+                type: actionTypes.DELETE_PROJECT,
+                sprintId: -1,
+                projectId: 'test_projectId',
+            }
+        ];
+        const store = mockStore({ sprints: [] });
+    
+        return store.dispatch(actions.deleteProject(-1, 'test_projectId', 'test_token', 'test_userId'))
             .then(() => {
                 // return of async actions
                 expect(store.getActions()).toEqual(expectedActions)

@@ -84,6 +84,16 @@ const updatedSprintId1 = {
     projects: [],
 };
 
+const updatedSprintId3 = {
+    id: '3',
+    name: 'Sprint #3',
+    startDate: moment.utc('2019-12-01'),
+    endDate: moment.utc('2019-12-31'),
+    participants: 'Mike, Bobby',
+    owner: 'Mike',
+    projects: [],
+};
+
 const stateWithTwoSprintsWithSameStartDate = {
     sprints: [
         {
@@ -317,6 +327,24 @@ describe('sprints reducer', () => {
         ).toEqual(
             {
                 sprints: [testSprintObject],
+                queue: [],
+                error: false,
+            }
+        );
+    });
+
+    it('should handle ADD_SPRINT when inserting a sprint into an existing array and necessitating a reorder by start date', () => {
+        const finalSprintsObject = [...stateWithTwoSprints.sprints];
+        finalSprintsObject.splice(0, 0, { ...updatedSprintId3 });
+        
+        expect(
+            reducer(stateWithTwoSprints, {
+                type: actionTypes.ADD_SPRINT,
+                sprintData: updatedSprintId3,
+            })
+        ).toEqual(
+            {
+                sprints: finalSprintsObject,
                 queue: [],
                 error: false,
             }
