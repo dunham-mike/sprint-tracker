@@ -52,8 +52,6 @@ class Layout extends Component {
 
     toggleDrawer = () => {
         this.setState(prevState => {
-            console.log('Toggling');
-            console.log('Current showDrawer: ' + this.state.showDrawer);
             return { ...this.state, showDrawer: !prevState.showDrawer };
         });
       };

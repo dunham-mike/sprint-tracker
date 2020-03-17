@@ -270,21 +270,28 @@ const deleteSprint = (state, action) => {
     }
 }
 
+const sortingFunction = (a, b) => {
+    // If start dates the same, sort by end date. Otherwise, just sort by start date.
+    if(moment.utc(a.startDate).isSame(moment.utc(b.startDate), "day")) {
+        // console.log('Ordering based on end date (a, b):', a.endDate, b.endDate);
+        return a.endDate - b.endDate;
+    } else {
+        // console.log('Ordering based on start date (a, b):', a.startDate, b.startDate);
+        return a.startDate - b.startDate;
+    }
+}
+
 // NOTE: It's important that the sprints always be sorted by start date, then end date, so other reducer functions should call this one if they edit any sprint's start date or end date
 const getNewSprintsArrayOrderedByStartDate = (sprintsArray) => {
-    let newDateOrderedSprintsArray = [...sprintsArray];
 
-    newDateOrderedSprintsArray.sort((a, b) => {
-        if(moment.utc(a.startDate).isSame(moment.utc(b.startDate), "day")) {
-            // console.log('Ordering based on end date (a, b):', a.endDate, b.endDate);
-            return a.endDate - b.endDate;
-        } else {
-            // console.log('Ordering based on start date (a, b):', a.startDate, b.startDate);
-            return a.startDate - b.startDate;
-        }
-    });
+    let pastSprints = sprintsArray.filter(spr => spr.endDate < moment());
 
-    return newDateOrderedSprintsArray;
+    let currentAndFutureSprints = sprintsArray.filter(spr => spr.endDate > moment());
+
+    pastSprints.sort(sortingFunction);
+    currentAndFutureSprints.sort(sortingFunction);
+
+    return pastSprints.concat(currentAndFutureSprints);
 }
 
 const orderSprintsByStartDate = (state, action) => {
@@ -326,6 +333,8 @@ const loadSprintStore = (state, action) => {
             sprintArray[i].endDate = moment.utc(sprintArray[i].endDate);
         }
     }
+
+    sprintArray = getNewSprintsArrayOrderedByStartDate(sprintArray);
     
     // Convert fetched queue data into an array of projects
     if(action.fetchedQueueData) {

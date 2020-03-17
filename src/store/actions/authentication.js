@@ -13,14 +13,14 @@ export const initiateDemo = () => {
 }
 
 const initiateDemoAuth = () => {
-    console.log('initiateDemoAuth');
+    // console.log('initiateDemoAuth');
     return {
         type: actionTypes.INITIATE_DEMO_AUTH
     }
 }
 
 const initializeDemoData = () => {
-    console.log('initializeDemoData');
+    // console.log('initializeDemoData');
     return {
         type: actionTypes.INITIALIZE_DEMO_DATA
     }
@@ -114,11 +114,11 @@ const loadSprintStore = (fetchedSprintData, fetchedQueueData) => {
 
 export const fetchDataForAuthenticatedUser = (token, userId) => {
     return dispatch => {
-        console.log('Trying to fetch data...');
+        // console.log('Trying to fetch data...');
         const fetchDataFromFirebaseURL = FIREBASE_URL + '/users/' + userId + '.json?auth=' + token;
         return axios.get(fetchDataFromFirebaseURL)
             .then(fetchResponse => {
-                console.log('fetchResponse:', fetchResponse);
+                // console.log('fetchResponse:', fetchResponse);
                 dispatch(loadSprintStore(fetchResponse.data.sprints, fetchResponse.data.queue));
             })
             .catch(fetchErr => {

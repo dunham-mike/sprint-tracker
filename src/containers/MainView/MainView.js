@@ -363,7 +363,7 @@ export class MainView extends Component {
         let futureSprints = null;
 
         if (this.state.displayFutureSprints && this.props.sprints && this.state.futureSprintsStartIndex !== null) {
-            console.log('this.state.futureSprintsStartIndex:', this.state.futureSprintsStartIndex);
+            // console.log('this.state.futureSprintsStartIndex:', this.state.futureSprintsStartIndex);
             const futureSprintsArray = [...this.props.sprints.slice(this.state.futureSprintsStartIndex)]
                 .map((futureSprint => {
                     return (
