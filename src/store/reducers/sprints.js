@@ -1,7 +1,7 @@
 import * as actionTypes from '../actions/actionTypes';
 import { initialDemoState } from '../initialDemoData';
 import { convertObjectIntoArrayOfItsValues } from '../utility';
-import * as moment from 'moment';
+import moment from 'moment';
 
 const initialState = {
     sprints: [],
