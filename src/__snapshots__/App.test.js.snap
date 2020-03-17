@@ -1063,7 +1063,7 @@ exports[`App Component should match the snapshot 1`] = `
                                                         <span
                                                           className="MuiButton-label"
                                                         >
-                                                          Log in
+                                                          LOG IN
                                                         </span>
                                                         <NoSsr>
                                                           <WithStyles(undefined)

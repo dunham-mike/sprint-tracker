@@ -663,7 +663,7 @@ exports[`Layout Component should match the snapshot for a demo user 1`] = `
                                             <span
                                               className="MuiButton-label"
                                             >
-                                              End Demo
+                                              END DEMO
                                             </span>
                                             <NoSsr>
                                               <WithStyles(undefined)
@@ -1740,7 +1740,7 @@ exports[`Layout Component should match the snapshot for an authenticated user 1`
                                             <span
                                               className="MuiButton-label"
                                             >
-                                              Log out
+                                              LOG OUT
                                             </span>
                                             <NoSsr>
                                               <WithStyles(undefined)
@@ -2817,7 +2817,7 @@ exports[`Layout Component should match the snapshot for an unauthenticated user 
                                             <span
                                               className="MuiButton-label"
                                             >
-                                              Log in
+                                              LOG IN
                                             </span>
                                             <NoSsr>
                                               <WithStyles(undefined)

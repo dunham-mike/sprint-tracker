@@ -198,7 +198,7 @@ describe('App Component', () => {
 
         // End Demo link is visible in the Layout component
         expect(enzymeMountWrapper.find('header a span').at(0).prop('children'))
-            .toEqual(expect.arrayContaining(['End Demo']));
+            .toEqual(expect.arrayContaining(['END DEMO']));
     });
 
 

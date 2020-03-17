@@ -134,8 +134,8 @@ class Layout extends Component {
                         </Link>
                     </Typography>
                     {this.props.isAuth 
-                        ? <Button color="inherit" component={RouterLink} to="/logout">{this.props.isDemo ? "End Demo" : "Log out"}</Button> 
-                        : <Button color="inherit" component={RouterLink} to="/login">Log in</Button>
+                        ? <Button color="inherit" component={RouterLink} to="/logout">{this.props.isDemo ? "END DEMO" : "LOG OUT"}</Button> 
+                        : <Button color="inherit" component={RouterLink} to="/login">LOG IN</Button>
                     }
                     </Toolbar>
                 </AppBar>
