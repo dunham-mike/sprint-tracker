@@ -181,7 +181,7 @@ export const createAccount = (props) => {
                                             || isSubmitting 
                                             || !touched['firstName']
                                             || !touched['email']
-                                            || !touched['password']
+                                            // || !touched['password'] // Don't check this, so that submit button will activate once minimum password length reached
                                         }
                                         type="submit"
                                     >

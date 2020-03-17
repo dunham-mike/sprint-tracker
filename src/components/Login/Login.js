@@ -82,7 +82,7 @@ const styles = theme => ({
 
 
 
-const login = (props) => {
+export const login = (props) => {
     const { classes } = props;
 
     let errorMessage = null;
@@ -133,7 +133,7 @@ const login = (props) => {
                     })}
                     onSubmit={(values, { setSubmitting }) => { submitHandler(values, { setSubmitting })}}
                 >
-                    {({ isSubmitting, isValid, dirty }) => (
+                    {({ isSubmitting, isValid, dirty, touched }) => (
                     <Form>
                         <div className={classes.formContainer}>
                             <div className={classes.innerFormContainer}>
@@ -156,7 +156,14 @@ const login = (props) => {
                                         className={classes.Button}
                                         variant="contained"
                                         color="primary"
-                                        disabled={props.loading || !dirty || !isValid || isSubmitting}
+                                        disabled={
+                                            props.loading 
+                                            || !dirty 
+                                            || !isValid 
+                                            || isSubmitting
+                                            || !touched['email']
+                                            // || !touched['password'] // Don't check this, so that submit button will activate once minimum password length reached
+                                        }
                                         type="submit"
                                     >
                                         LOG IN

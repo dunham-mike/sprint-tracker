@@ -1,12 +1,11 @@
 import React from 'react';
-import Enzyme, { mount, shallow } from 'enzyme'
+import Enzyme, { mount } from 'enzyme'
 import Adapter from 'enzyme-adapter-react-16'
 import { Provider } from 'react-redux';
 import { BrowserRouter } from 'react-router-dom';
 import toJson from 'enzyme-to-json';
 import configureStore from 'redux-mock-store';
 import { Redirect } from 'react-router-dom';
-import { fireEvent } from '@testing-library/dom';
 import { act } from 'react-dom/test-utils';
 
 import CreateAccount from './CreateAccount';
@@ -143,6 +142,9 @@ describe('CreateAccount Component', () => {
         'Upon submission, onKickoffSignup() should be fired.', async () => {
         const { enzymeMountWrapper, onKickoffSignup } = mountSetup(undefined, true);
 
+        // Submit button disabled
+        expect(enzymeMountWrapper.find('button[type="submit"]').props('children').disabled).toEqual(true);
+
         /* --- First Name --- */
 
         // Pattern based on: https://github.com/jaredpalmer/formik/blob/f5d76609b222ce583663add279ac76e807e2d0ba/README.md#testing-formik
@@ -175,9 +177,6 @@ describe('CreateAccount Component', () => {
 
         enzymeMountWrapper.find('input[type="email"]').simulate('blur');
 
-        // Button is still disabled
-        expect(enzymeMountWrapper.find('button[type="submit"]').props('children').disabled).toEqual(true);
-
         /* --- Password --- */
 
         enzymeMountWrapper.find('input[type="password"]').simulate('change', { 
@@ -193,6 +192,7 @@ describe('CreateAccount Component', () => {
 
         /* --- Submitting Form --- */
         
+        // Submit button enabled
         expect(enzymeMountWrapper.find('button[type="submit"]').props('children').disabled).toEqual(false);
 
         // Submit form based on this pattern: https://github.com/jaredpalmer/formik/issues/937#issuecomment-565256589
