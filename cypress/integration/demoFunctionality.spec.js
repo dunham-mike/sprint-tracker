@@ -367,9 +367,8 @@ describe('Demo Functionality', function() {
         /* --- Deleting Project on the Queue --- */
 
             // Edit project just added
-            cy.get('td button path').eq(9)
-                .click()
-                // .click({force: true});
+            cy.get('td button path').eq(5)
+                .click({force: true});
 
             // Click Delete Project
             cy.get('form button.MuiButton-outlined').eq(0)

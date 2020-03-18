@@ -13,8 +13,21 @@ describe('Logged In Functionality', function() {
         const authenticationUrl = Cypress.env('authenticationUrl');
         const firebaseUrl = Cypress.env('firebaseUrl');
 
+        // Authentication
         cy.route('POST', `${authenticationUrl}/v1/accounts:signInWithPassword?key=*`, '@loginSuccessJSON').as('submitLogin');
+        
+        // GET
         cy.route('GET', `${firebaseUrl}/users/${userId}.json?auth=*`, '@fetchUserDataSuccessJSON').as('fetchDataForAuthenticatedUser');
+        
+        // PUT
+        cy.route('PUT', `${firebaseUrl}/users/${userId}/sprints/*.json?auth=*`, {}).as('addOrUpdateSprint');
+        cy.route('PUT', `${firebaseUrl}/users/${userId}/sprints/*/projects/*.json?auth=*`, {}).as('addOrUpdateProjectOnSprint');
+        cy.route('PUT', `${firebaseUrl}/users/${userId}/queue/*.json?auth=*`, {}).as('addOrUpdateProjectOnQueue');
+
+        // DELETE
+        cy.route('DELETE', `${firebaseUrl}/users/${userId}/sprints/*.json?auth=*`, {}).as('deleteSprint');
+        cy.route('DELETE', `${firebaseUrl}/users/${userId}/sprints/*/projects/*.json?auth=*`, {}).as('deleteProjectOnSprint');
+        cy.route('DELETE', `${firebaseUrl}/users/${userId}/queue/*.json?auth=*`, {}).as('deleteProjectOnQueue');
     });
 
     it('FrontPage successfully loads', function() {
@@ -38,21 +51,29 @@ describe('Logged In Functionality', function() {
             });
 
         // Submit Login information
+        const loginEmail = 'test@test.com';
+        const loginPassword = 'test_pass';
+
         cy.get('input').eq(0)
-            .type('test@test.com');
+            .type(loginEmail);
         
         cy.get('input').eq(1)
-            .type('test_pass');
+            .type(loginPassword);
         
         cy.get('button[type="submit"]')
             .click();
 
         // Wait for stubbed responses
-        cy.wait([
-            '@submitLogin', 
-            '@fetchDataForAuthenticatedUser'
-        ]);
-
+        cy.wait('@submitLogin')
+            .its('requestBody').should('deep.eq', 
+                { 
+                    email: loginEmail,
+                    password: loginPassword,
+                    returnSecureToken: true
+                 });
+            
+        cy.wait('@fetchDataForAuthenticatedUser')
+            .its('requestBody').should('deep.eq', null);
         
         // MainView
         
@@ -62,402 +83,528 @@ describe('Logged In Functionality', function() {
             .should('have.text', 'CURRENT SPRINT');
     });
 
-    // it('PastSprints successfully loads', function() {
+    it('PastSprints successfully loads', function() {
 
-    //     // Toggle sidebar open
-    //     cy.get('button.MuiButtonBase-root').eq(0).click();
+        // Toggle sidebar open
+        cy.get('button.MuiButtonBase-root').eq(0).click();
 
-    //     // Open Past Sprints
-    //     cy.get('div.MuiListItemText-root').eq(1)
-    //         .should('have.text', 'Past Sprints')
-    //         .click();
+        // Open Past Sprints
+        cy.get('div.MuiListItemText-root').eq(1)
+            .should('have.text', 'Past Sprints')
+            .click();
 
-    //     // On correct page
-    //     cy.url().should('eq', Cypress.config().baseUrl + '/past-sprints');
+        // On correct page
+        cy.url().should('eq', Cypress.config().baseUrl + '/past-sprints');
 
-    //     // Display correct sprints and toggle one
-    //     cy.get('button.MuiButton-contained').eq(0)
-    //         .should('have.text', 'Sprint #0 - Semester Launch Preparation')
-    //         .click();
-    //     cy.get('button.MuiButton-contained').eq(1)
-    //         .should('have.text', 'Sprint #00 - Off-Semester Maintenance');
+        // Display correct sprints and toggle one
+        cy.get('button.MuiButton-contained').eq(0)
+            .should('have.text', 'Sprint #0 - Semester Launch Preparation')
+            .click();
+        cy.get('button.MuiButton-contained').eq(1)
+            .should('have.text', 'Sprint #00 - Off-Semester Maintenance');
 
-    //     // Sprint table displays properly
-    //     cy.get('thead tr').should('have.length', 2);
-    //     cy.get('tbody tr').should('have.length', 6);
-    // });
+        // Sprint table displays properly
+        cy.get('thead tr').should('have.length', 2);
+        cy.get('tbody tr').should('have.length', 6);
+    });
 
-    // it('Navigate back to MainView', function() {
+    it('Navigate back to MainView', function() {
 
-    //     // Click Deliberate Sprints in app bar
-    //     cy.get('a.MuiTypography-h6')
-    //         .should('have.text', 'Deliberate Sprints')
-    //         .click();
+        // Click Deliberate Sprints in app bar
+        cy.get('a.MuiTypography-h6')
+            .should('have.text', 'Deliberate Sprints')
+            .click();
         
-    //     // Back on MainView
-    //     cy.url().should('eq', Cypress.config().baseUrl + '/demo');
-    // });
+        // Back on MainView
+        cy.url().should('eq', Cypress.config().baseUrl + '/');
+    });
 
-    // it('Create new sprint', function() {
+    it('Create new sprint', function() {
 
-    //     // Click Create New Sprint
-    //     cy.get('button.MuiButton-text')
-    //         .should('have.text', 'CREATE NEW SPRINT')
-    //         .click();
+        // Click Create New Sprint
+        cy.get('button.MuiButton-text')
+            .should('have.text', 'CREATE NEW SPRINT')
+            .click();
 
-    //     // Confirm modal opened
-    //     cy.get('div.MuiPaper-root h4')
-    //         .should('have.text', 'Create Sprint');
+        // Confirm modal opened
+        cy.get('div.MuiPaper-root h4')
+            .should('have.text', 'Create Sprint');
 
-    //     // Sprint Name
-    //     cy.get('input').eq(1)
-    //         .type('Demo Sprint #5 - Demo Actions');
+        // Sprint Name
+        cy.get('input').eq(1)
+            .type('Demo Sprint #5 - Demo Actions');
 
-    //     // Start Date
-    //     cy.get('input').eq(2)
-    //         .click();
-    //     cy.get('th.rdtNext').eq(0)
-    //         .click()
-    //         .click()
-    //         .click()
-    //         .click()
-    //         .click();
-    //     cy.get('div.rdtPicker td').eq(7)
-    //         .click();
+        // Start Date
+        cy.get('input').eq(2)
+            .click();
+        cy.get('th.rdtNext').eq(0)
+            .click()
+            .click()
+            .click()
+            .click()
+            .click();
+        cy.get('div.rdtPicker td').eq(7)
+            .click();
 
-    //     // End Date
-    //     cy.get('input').eq(3)
-    //         .click();
-    //     cy.get('th.rdtNext').eq(1)
-    //         .click()
-    //         .click()
-    //         .click()
-    //         .click()
-    //         .click();
-    //     cy.get('div.rdtPicker td').eq(62)
-    //         .click();
+        // End Date
+        cy.get('input').eq(3)
+            .click();
+        cy.get('th.rdtNext').eq(1)
+            .click()
+            .click()
+            .click()
+            .click()
+            .click();
+        cy.get('div.rdtPicker td').eq(62)
+            .click();
         
-    //     // Sprint Participants
-    //     cy.get('input').eq(4)
-    //         .type('Participant #1, Participant #2');
+        // Sprint Participants
+        cy.get('input').eq(4)
+            .type('Participant #1, Participant #2');
         
-    //     // Sprint Owner
-    //     cy.get('input').eq(5)
-    //         .type('Owner Name');
+        // Sprint Owner
+        cy.get('input').eq(5)
+            .type('Owner Name');
         
-    //     // Save
-    //     cy.get('form button.MuiButton-contained').eq(1)
-    //         .should('have.text', 'SAVE')
-    //         .click();
+        // Save
+        cy.get('form button.MuiButton-contained').eq(1)
+            .should('have.text', 'SAVE')
+            .click();
+        cy.wait('@addOrUpdateSprint').then((xhr) => {
+            expect(xhr.requestBody).to.include({ name: "Demo Sprint #5 - Demo Actions" });
+            expect(xhr.requestBody).to.include({ participants: "Participant #1, Participant #2" });
+            expect(xhr.requestBody).to.include({ owner: "Owner Name" });
+            expect(xhr.requestBody).to.include.keys("id", "startDate", "endDate", "projects");
+          });
 
-    //     // Confirm modal closed
-    //     cy.get('div.MuiPaper-root h4')
-    //         .should('not.exist');
-    // });
+        // Confirm modal closed
+        cy.get('div.MuiPaper-root h4')
+            .should('not.exist');
+    });
 
-    // it('Edit sprint', function() {
+    it('Edit sprint', function() {
 
-    //     // Close Current Sprint
-    //     cy.get('button.MuiButton-contained').eq(0)
-    //         .should('have.text', 'CURRENT SPRINT')
-    //         .click();
+        // Close Current Sprint
+        cy.get('button.MuiButton-contained').eq(0)
+            .should('have.text', 'CURRENT SPRINT')
+            .click();
         
-    //     // Open Future Sprints
-    //     cy.get('button.MuiButton-contained').eq(3)
-    //         .should('have.text', 'FUTURE SPRINTS')
-    //         .click();
+        // Open Future Sprints
+        cy.get('button.MuiButton-contained').eq(3)
+            .should('have.text', 'FUTURE SPRINTS')
+            .click();
         
-    //     // Click Edit Sprint for sprint just added
-    //     cy.get('button.MuiButton-outlined').eq(7)
-    //         .should('have.text', 'EDIT SPRINT')
-    //         .click();
+        // Click Edit Sprint for sprint just added
+        cy.get('button.MuiButton-outlined').eq(7)
+            .should('have.text', 'EDIT SPRINT')
+            .click();
     
-    //     // Edit sprint name
-    //     cy.get('form input').eq(0)
-    //         .clear()
-    //         .type('Demo Sprint #5 - New Demo Actions');
+        // Edit sprint name
+        cy.get('form input').eq(0)
+            .clear()
+            .type('Demo Sprint #5 - New Demo Actions');
         
-    //     // Save
-    //     cy.get('form button.MuiButton-contained').eq(1)
-    //         .should('have.text', 'SAVE')
-    //         .click();
+        // Save
+        cy.get('form button.MuiButton-contained').eq(1)
+            .should('have.text', 'SAVE')
+            .click();
+        cy.wait('@addOrUpdateSprint').then((xhr) => {
+            expect(xhr.requestBody).to.include({ name: "Demo Sprint #5 - New Demo Actions" });
+            expect(xhr.requestBody).to.include({ participants: "Participant #1, Participant #2" });
+            expect(xhr.requestBody).to.include({ owner: "Owner Name" });
+            expect(xhr.requestBody).to.include.keys("id", "startDate", "endDate");
+        });
         
-    //     // Confirm modal closed
-    //     cy.get('div.MuiPaper-root h4')
-    //         .should('not.exist');
-    // });
+        // Confirm modal closed
+        cy.get('div.MuiPaper-root h4')
+            .should('not.exist');
+    });
 
-    // it('Add new project', function() {
+    it('Add new project', function() {
         
-    //     // Click Add New Project for sprint just added
-    //     cy.get('button.MuiButton-outlined').eq(6)
-    //         .should('have.text', 'ADD NEW PROJECT')
-    //         .click();
+        // Click Add New Project for sprint just added
+        cy.get('button.MuiButton-outlined').eq(6)
+            .should('have.text', 'ADD NEW PROJECT')
+            .click();
     
-    //     // Project Name
-    //     cy.get('form input').eq(0)
-    //         .type('Demo Project #1');
+        // Project Name
+        cy.get('form input').eq(0)
+            .type('Demo Project #1');
 
-    //     // Project Manager
-    //     cy.get('form input').eq(1)
-    //         .type('Demo Project Manager Name');
+        // Project Manager
+        cy.get('form input').eq(1)
+            .type('Demo Project Manager Name');
 
-    //     // Description
-    //     cy.get('form textarea').eq(0)
-    //         .type('Demo description of the project.');
+        // Description
+        cy.get('form textarea').eq(0)
+            .type('Demo description of the project.');
 
-    //     // Category
-    //     cy.get('form input').eq(2)
-    //         .type('Demo Category');
+        // Category
+        cy.get('form input').eq(2)
+            .type('Demo Category');
         
-    //     // Category Lead
-    //     cy.get('form input').eq(3)
-    //         .type('Demo Category Lead');
+        // Category Lead
+        cy.get('form input').eq(3)
+            .type('Demo Category Lead');
 
-    //     // Save
-    //     cy.get('form button.MuiButton-contained').eq(1)
-    //         .should('have.text', 'SAVE')
-    //         .click();
+        // Save
+        cy.get('form button.MuiButton-contained').eq(1)
+            .should('have.text', 'SAVE')
+            .click();
+        cy.wait('@addOrUpdateProjectOnSprint').then((xhr) => {
+                expect(xhr.requestBody).to.nested.include({ "name.value": "Demo Project #1" })
+                expect(xhr.requestBody).to.nested.include({ "manager.value": "Demo Project Manager Name" });
+                expect(xhr.requestBody).to.nested.include({ "description.value": "Demo description of the project." });
+                expect(xhr.requestBody).to.nested.include({ "category.value": "Demo Category" });
+                expect(xhr.requestBody).to.nested.include({ "categoryLead.value": "Demo Category Lead" });
+                expect(xhr.requestBody).to.nested.include({ "estimatedProjectSize.value": "1 - Extra Small" });
+                expect(xhr.requestBody).to.nested.include({ "mustDo.value": "Must Do" });
+                expect(xhr.requestBody).to.nested.include({ "externalDueDate.value": "" });
+                expect(xhr.requestBody).to.nested.include({ "deliverables.value": "" });
+                expect(xhr.requestBody).to.nested.include({ "deliverableLink.value": "" });
+                expect(xhr.requestBody).to.nested.include({ "notes.value": "" });
+                expect(xhr.requestBody).to.nested.include({ "completionStatus.value": "" });
+                expect(xhr.requestBody).to.nested.include({ "notCompletedExplanation.value": "" });
+                expect(xhr.requestBody).to.nested.include({ "statusEndOfWeek1.value": "" });
+                expect(xhr.requestBody).to.nested.include({ "statusEndOfWeek2.value": "" });
+                expect(xhr.requestBody).to.nested.include({ "statusEndOfWeek3.value": "" });
+                expect(xhr.requestBody).to.nested.include({ "statusEndOfWeek4.value": "" });
+                expect(xhr.requestBody).to.nested.include({ "statusEndOfWeek5.value": "" });
+                expect(xhr.requestBody).to.nested.include({ "statusEndOfWeek6.value": "" });
+                expect(xhr.requestBody).to.nested.include({ "statusEndOfWeek7.value": "" });
+                expect(xhr.requestBody).to.nested.include({ "statusEndOfWeek8.value": "" });
+                expect(xhr.requestBody).to.include.keys("id");
+            });
         
-    //     // Confirm modal closed
-    //     cy.get('div.MuiPaper-root h4')
-    //         .should('not.exist');
-    // });
+        // Confirm modal closed
+        cy.get('div.MuiPaper-root h4')
+            .should('not.exist');
+    });
 
-    // it('Edit project', function() {
+    it('Edit project', function() {
         
-    //     // Edit project just added
-    //     cy.get('td button path').eq(12)
-    //         .click({force: true});
-    //         // Forcing this because Cypress is reporting the button is covered when it isn't
+        // Edit project just added
+        cy.get('td button path').eq(12)
+            .click({force: true});
+            // Forcing this because Cypress is reporting the button is covered when it isn't
         
-    //     // Edit Project Name
-    //     cy.get('form input').eq(0)
-    //         .clear()
-    //         .type('New Demo Project #1');
+        // Edit Project Name
+        cy.get('form input').eq(0)
+            .clear()
+            .type('New Demo Project #1');
         
-    //     // Save
-    //     cy.get('form button.MuiButton-contained').eq(1)
-    //         .should('have.text', 'SAVE')
-    //         .click();
+        // Save
+        cy.get('form button.MuiButton-contained').eq(1)
+            .should('have.text', 'SAVE')
+            .click();
+        cy.wait('@addOrUpdateProjectOnSprint').then((xhr) => {
+            expect(xhr.requestBody).to.nested.include({ "name.value": "New Demo Project #1" })
+            expect(xhr.requestBody).to.nested.include({ "manager.value": "Demo Project Manager Name" });
+            expect(xhr.requestBody).to.nested.include({ "description.value": "Demo description of the project." });
+            expect(xhr.requestBody).to.nested.include({ "category.value": "Demo Category" });
+            expect(xhr.requestBody).to.nested.include({ "categoryLead.value": "Demo Category Lead" });
+            expect(xhr.requestBody).to.nested.include({ "estimatedProjectSize.value": "1 - Extra Small" });
+            expect(xhr.requestBody).to.nested.include({ "mustDo.value": "Must Do" });
+            expect(xhr.requestBody).to.nested.include({ "externalDueDate.value": "" });
+            expect(xhr.requestBody).to.nested.include({ "deliverables.value": "" });
+            expect(xhr.requestBody).to.nested.include({ "deliverableLink.value": "" });
+            expect(xhr.requestBody).to.nested.include({ "notes.value": "" });
+            expect(xhr.requestBody).to.nested.include({ "completionStatus.value": "" });
+            expect(xhr.requestBody).to.nested.include({ "notCompletedExplanation.value": "" });
+            expect(xhr.requestBody).to.nested.include({ "statusEndOfWeek1.value": "" });
+            expect(xhr.requestBody).to.nested.include({ "statusEndOfWeek2.value": "" });
+            expect(xhr.requestBody).to.nested.include({ "statusEndOfWeek3.value": "" });
+            expect(xhr.requestBody).to.nested.include({ "statusEndOfWeek4.value": "" });
+            expect(xhr.requestBody).to.nested.include({ "statusEndOfWeek5.value": "" });
+            expect(xhr.requestBody).to.nested.include({ "statusEndOfWeek6.value": "" });
+            expect(xhr.requestBody).to.nested.include({ "statusEndOfWeek7.value": "" });
+            expect(xhr.requestBody).to.nested.include({ "statusEndOfWeek8.value": "" });
+            expect(xhr.requestBody).to.include.keys("id");
+        });
         
-    //     // Confirm modal closed
-    //     cy.get('div.MuiPaper-root h4')
-    //         .should('not.exist');
-    // });
+        // Confirm modal closed
+        cy.get('div.MuiPaper-root h4')
+            .should('not.exist');
+    });
 
-    // it('Add new project to the queue', function() {
+    it('Add new project to the queue', function() {
 
-    //     // Open Project Queue
-    //     cy.get('button.MuiButton-contained').eq(2)
-    //         .should('have.text', 'PROJECT QUEUE')
-    //         .click();
+        // Open Project Queue
+        cy.get('button.MuiButton-contained').eq(2)
+            .should('have.text', 'PROJECT QUEUE')
+            .click();
         
-    //     // Click Add New Project for the queue
-    //     cy.get('button.MuiButton-outlined').eq(0)
-    //         .should('have.text', 'ADD NEW PROJECT')
-    //         .click();
+        // Click Add New Project for the queue
+        cy.get('button.MuiButton-outlined').eq(0)
+            .should('have.text', 'ADD NEW PROJECT')
+            .click();
     
-    //     // Project Name
-    //     cy.get('form input').eq(0)
-    //         .type('Demo Project #2');
+        // Project Name
+        cy.get('form input').eq(0)
+            .type('Demo Project #2');
 
-    //     // Project Manager
-    //     cy.get('form input').eq(1)
-    //         .type('Demo Project Manager Name #2');
+        // Project Manager
+        cy.get('form input').eq(1)
+            .type('Demo Project Manager Name #2');
 
-    //     // Description
-    //     cy.get('form textarea').eq(0)
-    //         .type('Demo description #2 of the project.');
+        // Description
+        cy.get('form textarea').eq(0)
+            .type('Demo description #2 of the project.');
 
-    //     // Category
-    //     cy.get('form input').eq(2)
-    //         .type('Demo Category #2');
+        // Category
+        cy.get('form input').eq(2)
+            .type('Demo Category #2');
         
-    //     // Category Lead
-    //     cy.get('form input').eq(3)
-    //         .type('Demo Category Lead #2');
+        // Category Lead
+        cy.get('form input').eq(3)
+            .type('Demo Category Lead #2');
 
-    //     // Save
-    //     cy.get('form button.MuiButton-contained').eq(1)
-    //         .should('have.text', 'SAVE')
-    //         .click();
+        // Save
+        cy.get('form button.MuiButton-contained').eq(1)
+            .should('have.text', 'SAVE')
+            .click();
+        cy.wait('@addOrUpdateProjectOnQueue').then((xhr) => {
+            expect(xhr.requestBody).to.nested.include({ "name.value": "Demo Project #2" })
+            expect(xhr.requestBody).to.nested.include({ "manager.value": "Demo Project Manager Name #2" });
+            expect(xhr.requestBody).to.nested.include({ "description.value": "Demo description #2 of the project." });
+            expect(xhr.requestBody).to.nested.include({ "category.value": "Demo Category #2" });
+            expect(xhr.requestBody).to.nested.include({ "categoryLead.value": "Demo Category Lead #2" });
+            expect(xhr.requestBody).to.nested.include({ "estimatedProjectSize.value": "1 - Extra Small" });
+            expect(xhr.requestBody).to.nested.include({ "mustDo.value": "Must Do" });
+            expect(xhr.requestBody).to.nested.include({ "externalDueDate.value": "" });
+            expect(xhr.requestBody).to.nested.include({ "deliverables.value": "" });
+            expect(xhr.requestBody).to.nested.include({ "deliverableLink.value": "" });
+            expect(xhr.requestBody).to.nested.include({ "notes.value": "" });
+            expect(xhr.requestBody).to.nested.include({ "completionStatus.value": "" });
+            expect(xhr.requestBody).to.nested.include({ "notCompletedExplanation.value": "" });
+            expect(xhr.requestBody).to.nested.include({ "statusEndOfWeek1.value": "" });
+            expect(xhr.requestBody).to.nested.include({ "statusEndOfWeek2.value": "" });
+            expect(xhr.requestBody).to.nested.include({ "statusEndOfWeek3.value": "" });
+            expect(xhr.requestBody).to.nested.include({ "statusEndOfWeek4.value": "" });
+            expect(xhr.requestBody).to.nested.include({ "statusEndOfWeek5.value": "" });
+            expect(xhr.requestBody).to.nested.include({ "statusEndOfWeek6.value": "" });
+            expect(xhr.requestBody).to.nested.include({ "statusEndOfWeek7.value": "" });
+            expect(xhr.requestBody).to.nested.include({ "statusEndOfWeek8.value": "" });
+            expect(xhr.requestBody).to.include.keys("id");
+        });
         
-    //     // Confirm modal closed
-    //     cy.get('div.MuiPaper-root h4')
-    //         .should('not.exist');
-    // });
+        // Confirm modal closed
+        cy.get('div.MuiPaper-root h4')
+            .should('not.exist');
+    });
 
-    // it('Edit and move project on queue to new sprint', function() {
+    it('Edit and move project on queue to new sprint', function() {
         
-    //     // Edit project just added
-    //     cy.get('td button path').eq(3)
-    //         .click({force: true});
-    //         // Forcing this because Cypress is reporting the button is covered when it isn't
+        // Edit project just added
+        cy.get('td button path').eq(3)
+            .click({force: true});
+            // Forcing this because Cypress is reporting the button is covered when it isn't
         
-    //     // Edit Project Name
-    //     cy.get('form input').eq(0)
-    //         .clear()
-    //         .type('New Demo Project #2');
+        // Edit Project Name
+        cy.get('form input').eq(0)
+            .clear()
+            .type('New Demo Project #2');
         
-    //     // Move Project
-    //     cy.get('form button.MuiButton-outlined').eq(1)
-    //         .should('have.text', 'ASSIGN TO ANOTHER SPRINT')
-    //         .click();
+        // Move Project
+        cy.get('form button.MuiButton-outlined').eq(1)
+            .should('have.text', 'ASSIGN TO ANOTHER SPRINT')
+            .click();
         
-    //     // Assign to new sprint
-    //     cy.get('ul div.MuiListItem-root').eq(4)
-    //         .click();
-        
-    //     // Confirm modal closed
-    //     cy.get('div.MuiPaper-root h4')
-    //         .should('not.exist');
-    // });
+        // Assign to new sprint
+        cy.get('ul div.MuiListItem-root').eq(4)
+            .click();
 
-    // it('View sprint statistics', function() {
+        // Server call to add project to sprint
+        cy.wait('@addOrUpdateProjectOnSprint').then((xhr) => {
+            expect(xhr.requestBody).to.nested.include({ "name.value": "New Demo Project #2" })
+            expect(xhr.requestBody).to.nested.include({ "manager.value": "Demo Project Manager Name #2" });
+            expect(xhr.requestBody).to.nested.include({ "description.value": "Demo description #2 of the project." });
+            expect(xhr.requestBody).to.nested.include({ "category.value": "Demo Category #2" });
+            expect(xhr.requestBody).to.nested.include({ "categoryLead.value": "Demo Category Lead #2" });
+            expect(xhr.requestBody).to.nested.include({ "estimatedProjectSize.value": "1 - Extra Small" });
+            expect(xhr.requestBody).to.nested.include({ "mustDo.value": "Must Do" });
+            expect(xhr.requestBody).to.nested.include({ "externalDueDate.value": "" });
+            expect(xhr.requestBody).to.nested.include({ "deliverables.value": "" });
+            expect(xhr.requestBody).to.nested.include({ "deliverableLink.value": "" });
+            expect(xhr.requestBody).to.nested.include({ "notes.value": "" });
+            expect(xhr.requestBody).to.nested.include({ "completionStatus.value": "" });
+            expect(xhr.requestBody).to.nested.include({ "notCompletedExplanation.value": "" });
+            expect(xhr.requestBody).to.nested.include({ "statusEndOfWeek1.value": "" });
+            expect(xhr.requestBody).to.nested.include({ "statusEndOfWeek2.value": "" });
+            expect(xhr.requestBody).to.nested.include({ "statusEndOfWeek3.value": "" });
+            expect(xhr.requestBody).to.nested.include({ "statusEndOfWeek4.value": "" });
+            expect(xhr.requestBody).to.nested.include({ "statusEndOfWeek5.value": "" });
+            expect(xhr.requestBody).to.nested.include({ "statusEndOfWeek6.value": "" });
+            expect(xhr.requestBody).to.nested.include({ "statusEndOfWeek7.value": "" });
+            expect(xhr.requestBody).to.nested.include({ "statusEndOfWeek8.value": "" });
+            expect(xhr.requestBody).to.include.keys("id");
+        });
 
-    //     // Click Sprint Statistics for new sprint
-    //     cy.get('button.MuiButton-outlined').eq(9)
-    //         .should('have.text', 'SPRINT STATISTICS')
-    //         .click();
-        
-    //     // Check that Sprint Statistics modal rendered
-    //     cy.get('div.MuiPaper-root h4')
-    //         .should('have.text', 'Demo Sprint #5 - New Demo Actions Overview')
-    //         .click();
-        
-    //     // Click cancel button
-    //     cy.get('div.MuiPaper-root svg.MuiSvgIcon-root.MuiSvgIcon-fontSizeLarge')
-    //         .click();
-        
-    //     // Confirm modal closed
-    //     cy.get('div.MuiPaper-root h4')
-    //         .should('not.exist');
-    // });
+        // Server call to delete project on queue
+        cy.wait('@deleteProjectOnQueue').then((xhr) => {
+            expect(xhr.requestBody).to.equal(null);
+        });
 
-    // it('Attempt and fail to delete new sprint', function() {
+        // Confirm modal closed
+        cy.get('div.MuiPaper-root h4')
+            .should('not.exist');
+    });
+
+    it('View sprint statistics', function() {
+
+        // Click Sprint Statistics for new sprint
+        cy.get('button.MuiButton-outlined').eq(9)
+            .should('have.text', 'SPRINT STATISTICS')
+            .click();
         
-    //     // Click Edit Sprint for new sprint
-    //     cy.get('button.MuiButton-outlined').eq(8)
-    //         .should('have.text', 'EDIT SPRINT')
-    //         .click();
+        // Check that Sprint Statistics modal rendered
+        cy.get('div.MuiPaper-root h4')
+            .should('have.text', 'Demo Sprint #5 - New Demo Actions Overview')
+            .click();
         
-    //     // Click Delete Sprint
-    //     cy.get('form button.MuiButton-outlined').eq(0)
-    //         .should('have.text', 'DELETE SPRINT')
-    //         .click();
-
-    //     // Dismiss Dialog
-    //     cy.get('div.MuiDialog-paper button').eq(0)
-    //         .should('have.text', 'OKAY, TAKE ME BACK.')
-    //         .click();
+        // Click cancel button
+        cy.get('div.MuiPaper-root svg.MuiSvgIcon-root.MuiSvgIcon-fontSizeLarge')
+            .click();
         
-    //     // Click cancel button
-    //     cy.get('div.MuiPaper-root svg.MuiSvgIcon-root.MuiSvgIcon-fontSizeLarge')
-    //         .click();
+        // Confirm modal closed
+        cy.get('div.MuiPaper-root h4')
+            .should('not.exist');
+    });
+
+    it('Attempt and fail to delete new sprint', function() {
         
-    //     // Confirm modal closed
-    //     cy.get('div.MuiPaper-root h4')
-    //         .should('not.exist');
-    // });
+        // Click Edit Sprint for new sprint
+        cy.get('button.MuiButton-outlined').eq(8)
+            .should('have.text', 'EDIT SPRINT')
+            .click();
+        
+        // Click Delete Sprint
+        cy.get('form button.MuiButton-outlined').eq(0)
+            .should('have.text', 'DELETE SPRINT')
+            .click();
 
-    // it('Delete both projects on the new sprint and a project on the queue', function() {
+        // Dismiss Dialog
+        cy.get('div.MuiDialog-paper button').eq(0)
+            .should('have.text', 'OKAY, TAKE ME BACK.')
+            .click();
+        
+        // Click cancel button
+        cy.get('div.MuiPaper-root svg.MuiSvgIcon-root.MuiSvgIcon-fontSizeLarge')
+            .click();
+        
+        // Confirm modal closed
+        cy.get('div.MuiPaper-root h4')
+            .should('not.exist');
+    });
 
-    //     /* --- Deleting 1st Project --- */
+    it('Delete both projects on the new sprint and a project on the queue', function() {
 
-    //         // Edit project just added
-    //         cy.get('td button path').eq(18)
-    //             // .click()
-    //             .click({force: true});
+        /* --- Deleting 1st Project --- */
 
-    //         // Click Delete Project
-    //         cy.get('form button.MuiButton-outlined').eq(0)
-    //             .should('have.text', 'DELETE PROJECT')
-    //             .click();
+            // Edit project just added
+            cy.get('td button path').eq(18)
+                // .click()
+                .click({force: true});
+
+            // Click Delete Project
+            cy.get('form button.MuiButton-outlined').eq(0)
+                .should('have.text', 'DELETE PROJECT')
+                .click();
             
-    //         // Confirm Deletion
-    //         cy.get('div.MuiDialog-paper button.MuiButton-textSecondary')
-    //             .should('have.text', "YES, I'M CERTAIN I WANT TO DELETE IT.")
-    //             .click();
+            // Confirm Deletion
+            cy.get('div.MuiDialog-paper button.MuiButton-textSecondary')
+                .should('have.text', "YES, I'M CERTAIN I WANT TO DELETE IT.")
+                .click();
+            cy.wait('@deleteProjectOnSprint').then((xhr) => {
+                expect(xhr.requestBody).to.equal(null);
+            });
 
-    //         // Confirm modal closed
-    //         cy.get('div.MuiPaper-root h4')
-    //             .should('not.exist');
+            // Confirm modal closed
+            cy.get('div.MuiPaper-root h4')
+                .should('not.exist');
         
-    //     /* --- Deleting 2nd Project --- */
+        /* --- Deleting 2nd Project --- */
 
-    //         // Edit project just added
-    //         cy.get('td button path').eq(18)
-    //             // .click()
-    //             .click({force: true});
+            // Edit project just added
+            cy.get('td button path').eq(18)
+                // .click()
+                .click({force: true});
 
-    //         // Click Delete Project
-    //         cy.get('form button.MuiButton-outlined').eq(0)
-    //             .should('have.text', 'DELETE PROJECT')
-    //             .click();
+            // Click Delete Project
+            cy.get('form button.MuiButton-outlined').eq(0)
+                .should('have.text', 'DELETE PROJECT')
+                .click();
             
-    //         // Confirm deletion
-    //         cy.get('div.MuiDialog-paper button.MuiButton-textSecondary')
-    //             .should('have.text', "YES, I'M CERTAIN I WANT TO DELETE IT.")
-    //             .click();
+            // Confirm deletion
+            cy.get('div.MuiDialog-paper button.MuiButton-textSecondary')
+                .should('have.text', "YES, I'M CERTAIN I WANT TO DELETE IT.")
+                .click();
+            cy.wait('@deleteProjectOnSprint').then((xhr) => {
+                expect(xhr.requestBody).to.equal(null);
+            });
 
-    //         // Confirm modal closed
-    //         cy.get('div.MuiPaper-root h4')
-    //             .should('not.exist');
+            // Confirm modal closed
+            cy.get('div.MuiPaper-root h4')
+                .should('not.exist');
 
-    //     /* --- Deleting Project on the Queue --- */
+        /* --- Deleting Project on the Queue --- */
 
-    //         // Edit project just added
-    //         cy.get('td button path').eq(9)
-    //             .click()
-    //             // .click({force: true});
+            // Edit queue project
+            cy.get('td button path').eq(5)
+                .click({force: true});
 
-    //         // Click Delete Project
-    //         cy.get('form button.MuiButton-outlined').eq(0)
-    //             .should('have.text', 'DELETE PROJECT')
-    //             .click();
+            // Click Delete Project
+            cy.get('form button.MuiButton-outlined').eq(0)
+                .should('have.text', 'DELETE PROJECT')
+                .click();
             
-    //         // Confirm deletion
-    //         cy.get('div.MuiDialog-paper button.MuiButton-textSecondary')
-    //             .should('have.text', "YES, I'M CERTAIN I WANT TO DELETE IT.")
-    //             .click();
+            // Confirm deletion
+            cy.get('div.MuiDialog-paper button.MuiButton-textSecondary')
+                .should('have.text', "YES, I'M CERTAIN I WANT TO DELETE IT.")
+                .click();
+            cy.wait('@deleteProjectOnQueue').then((xhr) => {
+                expect(xhr.requestBody).to.equal(null);
+            });
 
-    //         // Confirm modal closed
-    //         cy.get('div.MuiPaper-root h4')
-    //             .should('not.exist');
-    // });
+            // Confirm modal closed
+            cy.get('div.MuiPaper-root h4')
+                .should('not.exist');
+    });
 
-    // it('Delete new sprint', function() {
+    it('Delete new sprint', function() {
         
-    //     // Click Edit Sprint for new sprint
-    //     cy.get('button.MuiButton-outlined').eq(8)
-    //         .should('have.text', 'EDIT SPRINT')
-    //         .click();
+        // Click Edit Sprint for new sprint
+        cy.get('button.MuiButton-outlined').eq(8)
+            .should('have.text', 'EDIT SPRINT')
+            .click();
         
-    //     // Click Delete Sprint
-    //     cy.get('form button.MuiButton-outlined').eq(0)
-    //         .should('have.text', 'DELETE SPRINT')
-    //         .click();
+        // Click Delete Sprint
+        cy.get('form button.MuiButton-outlined').eq(0)
+            .should('have.text', 'DELETE SPRINT')
+            .click();
 
-    //     // Confirm deletion
-    //     cy.get('div.MuiDialog-paper button.MuiButton-textSecondary')
-    //             .should('have.text', "YES, I'M CERTAIN I WANT TO DELETE IT.")
-    //             .click();
+        // Confirm deletion
+        cy.get('div.MuiDialog-paper button.MuiButton-textSecondary')
+            .should('have.text', "YES, I'M CERTAIN I WANT TO DELETE IT.")
+            .click();
+        cy.wait('@deleteSprint').then((xhr) => {
+            expect(xhr.requestBody).to.equal(null);
+        });
         
-    //     // Confirm modal closed
-    //     cy.get('div.MuiPaper-root h4')
-    //         .should('not.exist');
-    // });
+        // Confirm modal closed
+        cy.get('div.MuiPaper-root h4')
+            .should('not.exist');
+    });
 
-    // it('End demo and return to FrontPage', function() {
+    it('Log out and return to FrontPage', function() {
 
-    //     // Click End Demo
-    //     cy.get('header div a').eq(1)
-    //         .should('have.text', 'END DEMO')
-    //         .click();
+        // Click Log out
+        cy.get('header div a').eq(1)
+            .should('have.text', 'LOG OUT')
+            .click();
 
-    //     // Confirm back on FrontPage
-    //     cy.url().should('eq', Cypress.config().baseUrl + '/');
-    // });
+        // Confirm back on FrontPage
+        cy.url().should('eq', Cypress.config().baseUrl + '/');
+    });
 
 });
