@@ -40,7 +40,8 @@
     "test:watch": "npm test -- --watch",
     "test:coverage": "set CI=true && react-scripts test --coverage",
     "eject": "react-scripts eject",
-    "cypress:open": "cypress open"
+    "cypress:open": "cypress open",
+    "cypress:run": "cypress run"
   },
   "eslintConfig": {
     "extends": "react-app"

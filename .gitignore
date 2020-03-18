@@ -8,6 +8,10 @@
 # testing
 /coverage
 /cypress/integration/examples
+/cypress/plugins
+/cypress/support
+/cypress/videos
+cypress.json
 
 # production
 /build
