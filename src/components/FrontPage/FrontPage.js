@@ -99,17 +99,17 @@ const frontPage = (props) => {
                 <Grid container spacing={2} justify="center">
                     <Grid item>
                     <Button variant="contained" color="primary" component={RouterLink} to="/demo">
-                        Try a demo
+                        TRY A DEMO
                     </Button>
                     </Grid>
                     <Grid item>
                     <Button variant="outlined" color="primary" component={RouterLink} to="/create-account">
-                        Create an account
+                        CREATE AN ACCOUNT
                     </Button>
                     </Grid>
                     <Grid item>
                     <Button variant="outlined" color="primary" component={RouterLink} to="/login">
-                        Log in
+                        LOG IN
                     </Button>
                     </Grid>
                 </Grid>

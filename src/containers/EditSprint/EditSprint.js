@@ -440,7 +440,7 @@ export class editSprint extends Component {
                         No, take me back.
                     </Button>
                     <Button onClick={this.deleteSprintHandler} color="secondary" autoFocus>
-                        Yes, I'm certain I want to delete it.
+                        YES, I'M CERTAIN I WANT TO DELETE IT.
                     </Button>
                 </DialogActions>
             </Dialog>
@@ -464,7 +464,7 @@ export class editSprint extends Component {
                     </DialogContent>
                     <DialogActions>
                         <Button onClick={this.closeConfirmDeleteDialog} color="primary">
-                            Okay, take me back.
+                            OKAY, TAKE ME BACK.
                         </Button>
                     </DialogActions>
                 </Dialog>

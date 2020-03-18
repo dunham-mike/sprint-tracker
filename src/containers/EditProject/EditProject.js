@@ -794,10 +794,10 @@ export class editProject extends Component {
                 </DialogContent>
                 <DialogActions>
                     <Button onClick={this.closeConfirmDeleteDialog} color="primary">
-                        No, take me back.
+                        NO, TAKE ME BACK.
                     </Button>
                     <Button onClick={this.deleteProjectHandler} color="secondary" autoFocus>
-                        Yes, I'm certain I want to delete it.
+                        YES, I'M CERTAIN I WANT TO DELETE IT.
                     </Button>
                 </DialogActions>
             </Dialog>
