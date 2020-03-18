@@ -1,0 +1,5 @@
+{
+    "expiresIn": 3600,
+    "idToken": "test_token",
+    "localId": "test_userId"
+}

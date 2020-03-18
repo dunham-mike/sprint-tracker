@@ -50,7 +50,7 @@ Array [
                 <span
                   className="MuiButton-label"
                 >
-                  Try a demo
+                  TRY A DEMO
                 </span>
               </a>
             </div>
@@ -79,7 +79,7 @@ Array [
                 <span
                   className="MuiButton-label"
                 >
-                  Create an account
+                  CREATE AN ACCOUNT
                 </span>
               </a>
             </div>
@@ -108,7 +108,7 @@ Array [
                 <span
                   className="MuiButton-label"
                 >
-                  Log in
+                  LOG IN
                 </span>
               </a>
             </div>

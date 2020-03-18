@@ -2470,7 +2470,7 @@ exports[`App Component should match the snapshot 1`] = `
                                                                                 <span
                                                                                   className="MuiButton-label"
                                                                                 >
-                                                                                  Try a demo
+                                                                                  TRY A DEMO
                                                                                 </span>
                                                                                 <NoSsr>
                                                                                   <WithStyles(undefined)
@@ -2809,7 +2809,7 @@ exports[`App Component should match the snapshot 1`] = `
                                                                                 <span
                                                                                   className="MuiButton-label"
                                                                                 >
-                                                                                  Create an account
+                                                                                  CREATE AN ACCOUNT
                                                                                 </span>
                                                                                 <NoSsr>
                                                                                   <WithStyles(undefined)
@@ -3148,7 +3148,7 @@ exports[`App Component should match the snapshot 1`] = `
                                                                                 <span
                                                                                   className="MuiButton-label"
                                                                                 >
-                                                                                  Log in
+                                                                                  LOG IN
                                                                                 </span>
                                                                                 <NoSsr>
                                                                                   <WithStyles(undefined)
