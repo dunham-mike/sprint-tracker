@@ -20,7 +20,7 @@ jobs:
     executor:
       name: node/default
     steps:
-      - npm run build
+      - run: npm run build
 workflows:
     build-and-test:
       jobs:
