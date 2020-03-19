@@ -20,6 +20,6 @@ workflows:
     build-and-test:
       jobs:
         - build-and-test
-        - cypress/run # "run" job comes from "cypress" orb
-          start: npm start
-          wait-on: 'http://localhost:3000'
+        - cypress/run: # "run" job comes from "cypress" orb
+            start: npm start
+            wait-on: 'http://localhost:3000'
