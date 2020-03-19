@@ -61,6 +61,8 @@ workflows:
             start: npm start
             wait-on: 'http://localhost:3000'
             post-steps:
+              - attach_workspace:
+                  at: .
               - store_test_results:
                   path: test-results
         # - build:
