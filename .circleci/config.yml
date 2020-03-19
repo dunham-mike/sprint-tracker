@@ -16,7 +16,7 @@ jobs:
           steps:
             - run: npm install
             - run: npm test
-      - cypress-io/run # "run" job comes from "cypress" orb
+      - run: cypress/run # "run" job comes from "cypress" orb
 workflows:
     build-and-test:
       jobs:
