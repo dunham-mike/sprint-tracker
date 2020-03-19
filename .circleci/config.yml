@@ -21,6 +21,12 @@ jobs:
           root: .
           paths:
               - .
+  build:
+    executor:
+      name: node/default
+    working_directory: /tmp/sprint-tracker
+    steps:
+        - run: npm run build
   deploy-job:
     docker:
       - image: circleci/node:10.16.3
@@ -38,10 +44,13 @@ workflows:
         - cypress/run: # "run" job comes from "cypress" orb
             start: npm start
             wait-on: 'http://localhost:3000'
-        - deploy-job:
+        - build:
             requires:
               - unit-tests
               - cypress/run
+        - deploy-job:
+            requires:
+              - build
             filters:
               branches:
                 only: master
