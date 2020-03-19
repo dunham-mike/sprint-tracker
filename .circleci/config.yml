@@ -16,11 +16,14 @@ jobs:
           steps:
             - run: npm install
             - run: npm test
-  build:
-    executor:
-      name: node/default
+  deploy-job:
+    docker:
+      - image: circleci/node:10.16.3
+    # working_directory: /tmp/my-project
     steps:
-      - run: npm run build
+      - run:
+          name: Deploy Master to Firebase
+          command: ./node_modules/.bin/firebase deploy --token=$FIREBASE_DEPLOY_TOKEN
 workflows:
     build-and-test:
       jobs:
@@ -28,4 +31,10 @@ workflows:
         - cypress/run: # "run" job comes from "cypress" orb
             start: npm start
             wait-on: 'http://localhost:3000'
-        - build
+        - deploy-job
+            requires:
+              - unit-tests
+              - cypress/run
+            filters:
+              branches:
+                only: master
