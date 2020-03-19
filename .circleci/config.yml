@@ -21,16 +21,16 @@ jobs:
   #         root: .
   #         paths:
   #             - .
-  # build:
-  #   executor:
-  #     name: node/default
-  #   working_directory: /tmp/sprint-tracker
-  #   steps:
-  #       - persist_to_workspace:
-  #         root: .
-  #         paths:
-  #             - build/*
-  #       - run: npm run build
+  build:
+    executor:
+      name: node/default
+    working_directory: /tmp/sprint-tracker
+    steps:
+        - persist_to_workspace:
+          root: .
+          paths:
+              - build/*
+        - run: npm run build
   deploy:
     docker:
       - image: circleci/node:10.16.3
