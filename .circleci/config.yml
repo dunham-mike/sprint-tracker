@@ -64,7 +64,7 @@ workflows:
             wait-on: 'http://localhost:3000'
             post-steps:
               - store_test_results:
-                  path: test-results
+                  path: cypress-coverage
         # - build:
         #     requires:
         #       - unit-tests
