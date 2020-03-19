@@ -24,6 +24,7 @@ jobs:
   deploy-job:
     docker:
       - image: circleci/node:10.16.3
+    working_directory: /tmp/sprint-tracker
     steps:
       - attach_workspace:
           at: .
