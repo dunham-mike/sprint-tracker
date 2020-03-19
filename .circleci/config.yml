@@ -7,20 +7,20 @@ orbs:
   # to lock the version and prevent unexpected CI changes
   cypress: cypress-io/cypress@1
 jobs:
-  # unit-tests:
-  #   executor:
-  #     name: node/default
-  #   working_directory: /tmp/sprint-tracker
-  #   steps:
-  #     - checkout
-  #     - node/with-cache:
-  #         steps:
-  #           - run: npm install
-  #           - run: npm test
-  #     - persist_to_workspace:
-  #         root: .
-  #         paths:
-  #             - .
+  unit-tests:
+    executor:
+      name: node/default
+    working_directory: /tmp/sprint-tracker
+    steps:
+      - checkout
+      - node/with-cache:
+          steps:
+            - run: npm install
+            - run: npm test
+      - persist_to_workspace:
+          root: .
+          paths:
+              - .
   build:
     executor:
       name: node/default
@@ -44,14 +44,13 @@ jobs:
 workflows:
     build-and-test:
       jobs:
-        # - unit-tests
+        - unit-tests
         # - cypress/run: # "run" job comes from "cypress" orb
         #     start: npm start
         #     wait-on: 'http://localhost:3000'
-        - build
-            # :
-            # requires:
-            #   - unit-tests
+        - build:
+            requires:
+              - unit-tests
             #   - cypress/run
         - deploy:
             requires:
