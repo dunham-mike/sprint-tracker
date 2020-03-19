@@ -15,7 +15,6 @@ jobs:
       - node/with-cache:
           steps:
             - run: npm install
-            - run: mkdir test-results
             - run:
                 name: Install JUnit coverage reporter
                 command: npm install --dev jest-junit
@@ -27,7 +26,6 @@ jobs:
       - store_test_results:
           path: test-results
       - store_artifacts:
-          # path: test-results
           path: coverage
           destination: coverage
       - persist_to_workspace:
@@ -71,7 +69,7 @@ workflows:
         - build:
             requires:
               - unit-tests
-              # - cypress/run
+              - cypress/run
         - deploy:
             requires:
               - build
