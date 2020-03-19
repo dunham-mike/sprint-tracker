@@ -103,6 +103,26 @@ describe('Logged In Functionality', function() {
         cy.get('button.MuiButton-contained').eq(1)
             .should('have.text', 'Sprint #00 - Off-Semester Maintenance');
 
+        // View Sprint Statistics
+
+            // Click Sprint Statistics for top sprint
+            cy.get('button.MuiButton-outlined')
+                .should('have.text', 'SPRINT STATISTICS')
+                .click();
+            
+            // Check that Sprint Statistics modal rendered
+            cy.get('div.MuiPaper-root h4')
+                .should('have.text', 'Sprint #0 - Semester Launch Preparation Overview')
+                .click();
+            
+            // Click cancel button
+            cy.get('div.MuiPaper-root svg.MuiSvgIcon-root.MuiSvgIcon-fontSizeLarge')
+                .click();
+            
+            // Confirm modal closed
+            cy.get('div.MuiPaper-root h4')
+                .should('not.exist');
+
         // Sprint table displays properly
         cy.get('thead tr').should('have.length', 2);
         cy.get('tbody tr').should('have.length', 6);
