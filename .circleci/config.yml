@@ -17,6 +17,8 @@ jobs:
             - run: npm install
             - run: npm test
   build:
+    executor:
+      name: node/default
     steps:
       - npm run build
 workflows:
