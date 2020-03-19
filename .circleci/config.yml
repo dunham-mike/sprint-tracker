@@ -7,7 +7,7 @@ orbs:
   # to lock the version and prevent unexpected CI changes
   cypress: cypress-io/cypress@1
 jobs:
-  setup:
+  unit-tests:
     executor:
       name: node/default
     steps:
@@ -15,19 +15,13 @@ jobs:
       - node/with-cache:
           steps:
             - run: npm install
+            - run: npm test
+            - store_test_results:
+                path: test-results
       - persist_to_workspace:
           root: .
           paths:
               - .
-  unit-tests:
-    executor:
-      name: node/default
-    steps:
-      - attach_workspace:
-          at: .
-      - run: npm test
-      - store_test_results:
-          path: test-results
   build:
     executor:
       name: node/default
@@ -51,10 +45,7 @@ jobs:
 workflows:
     build-and-test:
       jobs:
-        - setup
-        - unit-tests:
-            requires:
-              - setup
+        - unit-tests
         - cypress/run: # "run" job comes from "cypress" orb
             store_artifacts: true
             start: npm start
