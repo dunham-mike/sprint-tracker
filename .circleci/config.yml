@@ -26,16 +26,18 @@ jobs:
       name: node/default
     working_directory: /tmp/sprint-tracker
     steps:
-      - attach_workspace:
-          at: .
+      # - attach_workspace: # may need to restore this
+      #     at: .
       - run: npm run build
       - persist_to_workspace:
           root: .
           paths:
               - .
   deploy:
-    docker:
-      - image: circleci/node:10.16.3
+    executor:
+      name: node/default
+    # docker:
+    #   - image: circleci/node:10.16.3
     working_directory: /tmp/sprint-tracker
     steps:
       - attach_workspace:
