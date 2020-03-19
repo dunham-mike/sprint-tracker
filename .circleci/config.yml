@@ -10,13 +10,11 @@ jobs:
   setup:
     executor:
       name: node/default
-    # working_directory: /tmp/sprint-tracker
     steps:
       - checkout
       - node/with-cache:
           steps:
             - run: npm install
-            # - run: npm test
       - persist_to_workspace:
           root: .
           paths:
@@ -28,10 +26,11 @@ jobs:
       - attach_workspace:
           at: .
       - run: npm test
+      - store_test_results:
+          path: test-results
   build:
     executor:
       name: node/default
-    # working_directory: /tmp/sprint-tracker
     steps:
       - attach_workspace:
           at: .
@@ -43,9 +42,6 @@ jobs:
   deploy:
     executor:
       name: node/default
-    # docker:
-    #   - image: circleci/node:10.16.3
-    # working_directory: /tmp/sprint-tracker
     steps:
       - attach_workspace:
           at: .
@@ -59,13 +55,17 @@ workflows:
         - unit-tests:
             requires:
               - setup
-        # - cypress/run: # "run" job comes from "cypress" orb
-        #     start: npm start
-        #     wait-on: 'http://localhost:3000'
+        - cypress/run: # "run" job comes from "cypress" orb
+            store_artifacts: true
+            start: npm start
+            wait-on: 'http://localhost:3000'
+            post-steps:
+              - store_test_results:
+                  path: cypress/results
         - build:
             requires:
               - unit-tests
-            #   - cypress/run
+              - cypress/run
         - deploy:
             requires:
               - build
