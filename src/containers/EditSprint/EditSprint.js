@@ -176,8 +176,6 @@ export class editSprint extends Component {
     }
 
     loadStateForNewSprint = () => {
-        console.log('loadStateForNewSprint!');
-
         let updatedSprintData = {...this.state.sprintData};
 
         // Generate new unique sprint Id
@@ -189,8 +187,6 @@ export class editSprint extends Component {
     }
 
     loadStateFromExistingSprint = () => {
-        console.log('loadStateFromExistingSprint!');
-
         let newSprintData = {}
 
         let sprintIndex = null;
@@ -238,8 +234,6 @@ export class editSprint extends Component {
     }
 
     inputChangedHandler = (event, inputIdentifier) => {
-        console.log('inputChangedHandler firing');
-
         const updatedSprintData = {
             ...this.state.sprintData
         };
@@ -267,7 +261,7 @@ export class editSprint extends Component {
 
     dateChangedHandler = (incomingDateObject, dateInputIdentifier) => {
         /* Create a new Moment object based on the string output of the old object. This is necessary because Moment objects
-           hold onto their initial value in _i, even though the current value is captured in _d. When using console.log, this
+           hold onto their initial value in _i, even though the current value is captured in _d. When using console log, this
            will cause confusing output, so creating a fresh object makes debugging easier. */
         // console.log('incomingDateObject:', incomingDateObject);
         let updatedDate = null;

@@ -36,9 +36,24 @@ const styles = theme => ({
   heroButtons: {
     marginTop: theme.spacing(4),
   },
+  buttonContainer: {
+    justifyContent: "center",
+    ['@media (max-width: 500px)']: {
+        flexDirection: 'column',
+    },
+  },
+  buttonGridItem: {
+    ['@media (max-width: 500px)']: {
+        margin: '0 auto',
+    },
+  },
   cardGrid: {
     paddingTop: theme.spacing(8),
     paddingBottom: theme.spacing(8),
+  },
+  cardContainer: {
+    display: 'flex',
+    justifyContent: 'center'
   },
   card: {
     height: '100%',
@@ -99,21 +114,21 @@ const frontPage = (props) => {
                 Sprint tracking. With a point of view.
                 </Typography>
                 <div className={classes.heroButtons}>
-                <Grid container spacing={2} justify="center">
-                    <Grid item>
-                    <Button variant="contained" color="primary" component={RouterLink} to="/demo">
-                        TRY A DEMO
-                    </Button>
+                <Grid container spacing={2} className={classes.buttonContainer}>
+                    <Grid item className={classes.buttonGridItem}>
+                        <Button variant="contained" color="primary" component={RouterLink} to="/demo">
+                            TRY A DEMO
+                        </Button>
                     </Grid>
-                    <Grid item>
-                    <Button variant="outlined" color="primary" component={RouterLink} to="/create-account">
-                        CREATE AN ACCOUNT
-                    </Button>
+                    <Grid item className={classes.buttonGridItem}>
+                        <Button variant="outlined" color="primary" component={RouterLink} to="/create-account">
+                            CREATE AN ACCOUNT
+                        </Button>
                     </Grid>
-                    <Grid item>
-                    <Button variant="outlined" color="primary" component={RouterLink} to="/login">
-                        LOG IN
-                    </Button>
+                    <Grid item className={classes.buttonGridItem}>
+                        <Button variant="outlined" color="primary" component={RouterLink} to="/login">
+                            LOG IN
+                        </Button>
                     </Grid>
                 </Grid>
                 </div>
@@ -121,25 +136,25 @@ const frontPage = (props) => {
             </div>
             <Container className={classes.cardGrid} maxWidth="md">
             {/* End hero unit */}
-            <Grid container spacing={4}>
-                {cards.map(card => (
-                <Grid item key={card.heading} xs={12} sm={6} md={4}>
-                    <Card className={classes.card}>
-                    <CardMedia
-                        className={classes.cardMedia}
-                        image={card.imageUrl}
-                        title={card.heading}
-                    />
-                    <CardContent className={classes.cardContent}>
-                        <Typography gutterBottom variant="h5" component="h2">
-                        {card.heading}
-                        </Typography>
-                        <Typography>
-                        {card.content}
-                        </Typography>
-                    </CardContent>
-                    </Card>
-                </Grid>
+            <Grid container spacing={4} className={classes.cardContainer}>
+                {cards.map((card, index) => (
+                    <Grid item key={card.heading} xs={11} sm={index === 0 ? 8 : 6} md={4}>
+                        <Card className={classes.card}>
+                        <CardMedia
+                            className={classes.cardMedia}
+                            image={card.imageUrl}
+                            title={card.heading}
+                        />
+                        <CardContent className={classes.cardContent}>
+                            <Typography gutterBottom variant="h5" component="h2">
+                            {card.heading}
+                            </Typography>
+                            <Typography>
+                            {card.content}
+                            </Typography>
+                        </CardContent>
+                        </Card>
+                    </Grid>
                 ))}
             </Grid>
             </Container>

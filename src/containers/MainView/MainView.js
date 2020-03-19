@@ -257,8 +257,6 @@ export class MainView extends Component {
     }
 
     openCreatingSprint = (sprintId) => {
-        console.log('openCreatingSprint!');
-
         this.setState({
             creatingSprint: true,
         });

@@ -20,7 +20,7 @@ export const updateProject = (sprintId, projectData, token, userId) => {
 
             return axios.put(updateProjectURL, projectData)
                 .then((response) => {
-                    console.log('updateProject response:', response);
+                    // console.log('updateProject response:', response);
                     dispatch(updateProjectInStore(sprintId, projectData));
                 })
                 .catch(error => {
@@ -62,7 +62,7 @@ export const addProject = (sprintId, projectData, token, userId) => {
 
             return axios.put(addProjectURL, projectData)
                 .then((response) => {
-                    console.log('addProject response:', response);
+                    // console.log('addProject response:', response);
                     dispatch(addProjectToStore(sprintId, projectData));
                 })
                 .catch(error => {
@@ -99,7 +99,7 @@ export const deleteProject = (sprintId, projectId, token, userId) => {
 
             return axios.delete(deleteProjectURL)
                 .then((response) => {
-                    console.log('deleteProject response:', response);
+                    // console.log('deleteProject response:', response);
                     dispatch(deleteProjectInStore(sprintId, projectId));
                 })
                 .catch(error => {
@@ -134,7 +134,7 @@ export const updateSprint = (sprintId, sprintData, token, userId) => {
 
             return axios.put(updateSprintURL, sprintData)
                 .then((response) => {
-                    console.log('updateSprint response:', response);
+                    // console.log('updateSprint response:', response);
                     dispatch(updateSprintInStore(sprintId, sprintData));
                 })
                 .catch(error => {
@@ -162,7 +162,7 @@ export const addSprint = (sprintData, token, userId) => {
 
             return axios.put(addSprintURL, sprintData)
                 .then((response) => {
-                    console.log('addSprint response:', response);
+                    // console.log('addSprint response:', response);
                     dispatch(addSprintToStore(sprintData));
                 })
                 .catch(error => {
@@ -189,7 +189,7 @@ export const deleteSprint = (sprintId, token, userId) => {
 
             return axios.delete(deleteSprintURL)
                 .then((response) => {
-                    console.log('deleteSprint response:', response);
+                    // console.log('deleteSprint response:', response);
                     dispatch(deleteSprintInStore(sprintId));
                 })
                 .catch(error => {

@@ -102,7 +102,7 @@ const projectTable = (props) => {
         icon: Edit,
         tooltip: 'Edit Project',
         onClick: (event, rowData) => {
-            console.log('rowData:', rowData);
+            // console.log('rowData:', rowData);
             let newRowData = {...rowData};
             delete newRowData['tableData'];
             return props.onOpenProject(newRowData.id, props.sprintId);

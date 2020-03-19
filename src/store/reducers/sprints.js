@@ -21,7 +21,7 @@ const getSprintIndexWithSprintId = (state, sprintId) => {
         }
     };
 
-    console.log('returning null');
+    console.log('[Error] getSprintIndexWithSprintId() returning null');
     // If no match found, return null
     return null;
 };
@@ -77,7 +77,7 @@ const updateProjectOnSprint = (state, action) => {
     // console.log('projectIndex:', projectIndex);
 
     if (sprintIndex === null || projectIndex === null) {
-        console.log('[ERROR] Cannot find sprint and/or project index in current state');
+        console.log('[Error] Cannot find sprint and/or project index in current state');
         return state;
     } else {
         // Create new array of projects from the chosen sprint, with the updated projectData replaced at the correct spot
@@ -99,7 +99,7 @@ const addProjectOnSprint = (state, action) => {
     const sprintIndex = getSprintIndexWithSprintId(state, action.sprintId);
 
     if (sprintIndex === null) {
-        console.log('[ERROR] Cannot find sprint index in current state');
+        console.log('[Error] Cannot find sprint index in current state');
         return state;
     } else {
         let newProjectsArray = [...state.sprints[sprintIndex].projects];
@@ -121,7 +121,7 @@ const deleteProjectOnSprint = (state, action) => {
     const sprintIndex = getSprintIndexWithSprintId(state, action.sprintId);
 
     if (sprintIndex === null) {
-        console.log('[ERROR] Cannot find sprint index in current state');
+        console.log('[Error] Cannot find sprint index in current state');
         return state;
     } else {
         const projectIndex = getProjectIndexWithSprintIndexAndProjectId(state, sprintIndex, action.projectId);
@@ -256,7 +256,7 @@ const deleteSprint = (state, action) => {
     const sprintIndex = getSprintIndexWithSprintId(state, action.sprintId);
 
     if (state.sprints[sprintIndex].projects.length > 0) {
-        console.log('[Reducer] deleteSprint error, because sprint still has projects on it.', state.sprints[sprintIndex].projects)
+        console.log('[Error] deleteSprint error, because sprint still has projects on it.', state.sprints[sprintIndex].projects)
         return state;
     }
 

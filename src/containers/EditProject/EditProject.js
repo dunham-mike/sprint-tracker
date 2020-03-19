@@ -642,7 +642,7 @@ export class editProject extends Component {
     }
 
     deleteProjectHandler = () => {
-        console.log('Deleting projectId ' + this.state.projectData.id.value + ' from sprintId ' + this.props.sprintId);
+        // console.log('Deleting projectId ' + this.state.projectData.id.value + ' from sprintId ' + this.props.sprintId);
         this.closeConfirmDeleteDialog();
         this.props.onDeleteProject(this.props.sprintId, this.state.projectData.id.value, this.props.token, this.props.userId);
         this.props.onCloseProject();

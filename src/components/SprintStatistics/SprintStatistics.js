@@ -98,7 +98,7 @@ const sprintStatistics = (props) => {
 
     const calculateNumProjectsByGrouping = (grouping) => {
         // Grouping options: 'manager', 'category'
-        console.log('calculateNumProjectsByGrouping()');
+        // console.log('calculateNumProjectsByGrouping()');
 
         const sprintIndex = getSprintIndexBySprintId(props.sprintId);
         // if (sprintIndex === null) {
@@ -132,7 +132,7 @@ const sprintStatistics = (props) => {
 
     const calculateProjectPointsByGrouping = (grouping) => {
         // Grouping options: 'manager', 'category'
-        console.log('calculateProjectPointsByGrouping()');
+        // console.log('calculateProjectPointsByGrouping()');
 
         const sprintIndex = getSprintIndexBySprintId(props.sprintId);
         // if (sprintIndex === null) {
