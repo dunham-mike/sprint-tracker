@@ -7,7 +7,7 @@ orbs:
   # to lock the version and prevent unexpected CI changes
   cypress: cypress-io/cypress@1
 jobs:
-  build-and-test:
+  unit-tests:
     executor:
       name: node/default
     steps:
@@ -16,10 +16,14 @@ jobs:
           steps:
             - run: npm install
             - run: npm test
+  build:
+    steps:
+      - npm run build
 workflows:
     build-and-test:
       jobs:
-        - build-and-test
+        - unit-tests
         - cypress/run: # "run" job comes from "cypress" orb
             start: npm start
             wait-on: 'http://localhost:3000'
+        - build
