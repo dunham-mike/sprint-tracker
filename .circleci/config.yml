@@ -59,11 +59,13 @@ workflows:
       jobs:
         # - unit-tests
         - cypress/run: # "run" job comes from "cypress" orb
-            store_artifacts: true
+            # store_artifacts: true
             start: npm start
             wait-on: 'http://localhost:3000'
             post-steps:
               - store_test_results:
+                  path: test-results
+              - store_artifacts:
                   path: cypress-coverage
         # - build:
         #     requires:
