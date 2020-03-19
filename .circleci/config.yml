@@ -28,11 +28,11 @@ jobs:
     steps:
       - attach_workspace:
           at: .
+      - run: npm run build
       - persist_to_workspace:
           root: .
           paths:
               - .
-      - run: npm run build
   deploy:
     docker:
       - image: circleci/node:10.16.3
