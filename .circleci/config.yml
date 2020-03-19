@@ -10,6 +10,7 @@ jobs:
   unit-tests:
     executor:
       name: node/default
+    working_directory: /tmp/sprint-tracker
     steps:
       - checkout
       - node/with-cache:
@@ -23,8 +24,9 @@ jobs:
   deploy-job:
     docker:
       - image: circleci/node:10.16.3
-    # working_directory: /tmp/my-project
     steps:
+      - attach_workspace:
+          at: .
       - run:
           name: Deploy Master to Firebase
           command: ./node_modules/.bin/firebase deploy --token=$FIREBASE_DEPLOY_TOKEN
