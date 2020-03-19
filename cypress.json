@@ -1,4 +1,9 @@
 {
+    "reporter": "junit",
+    "reporterOptions": {
+        "mochaFile": "test-results/cypress-test-results.xml",
+        "toConsole": true
+    },
     "baseUrl": "http://localhost:3000",
     "env": {
         "authenticationUrl": "https://identitytoolkit.googleapis.com",
