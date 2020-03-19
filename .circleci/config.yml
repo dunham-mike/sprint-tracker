@@ -7,31 +7,31 @@ orbs:
   # to lock the version and prevent unexpected CI changes
   cypress: cypress-io/cypress@1
 jobs:
-  unit-tests:
-    executor:
-      name: node/default
-    steps:
-      - checkout
-      - node/with-cache:
-          steps:
-            - run: npm install
-            - run: mkdir test-results
-            - run:
-                name: Install JUnit coverage reporter
-                command: npm install --dev jest-junit
-            - run:
-                name: Run tests with JUnit as reporter
-                command: npm test -- --ci --runInBand --reporters=default --reporters=jest-junit
-                environment:
-                  JEST_JUNIT_OUTPUT_DIR: "test-results/junit"
-      - store_test_results:
-          path: test-results
-      - store_artifacts:
-          path: test-results
-      - persist_to_workspace:
-          root: .
-          paths:
-              - .
+  # unit-tests:
+  #   executor:
+  #     name: node/default
+  #   steps:
+  #     - checkout
+  #     - node/with-cache:
+  #         steps:
+  #           - run: npm install
+  #           - run: mkdir test-results
+  #           - run:
+  #               name: Install JUnit coverage reporter
+  #               command: npm install --dev jest-junit
+  #           - run:
+  #               name: Run tests with JUnit as reporter
+  #               command: npm test -- --ci --runInBand --reporters=default --reporters=jest-junit
+  #               environment:
+  #                 JEST_JUNIT_OUTPUT_DIR: "test-results/junit"
+  #     - store_test_results:
+  #         path: test-results
+  #     - store_artifacts:
+  #         path: test-results
+  #     - persist_to_workspace:
+  #         root: .
+  #         paths:
+  #             - .
   # build:
   #   executor:
   #     name: node/default
@@ -55,14 +55,14 @@ jobs:
 workflows:
     build-and-test:
       jobs:
-        - unit-tests
+        # - unit-tests
         - cypress/run: # "run" job comes from "cypress" orb
             store_artifacts: true
             start: npm start
             wait-on: 'http://localhost:3000'
             post-steps:
               - store_test_results:
-                  path: test-results/cypress
+                  path: test-results
         # - build:
         #     requires:
         #       - unit-tests
