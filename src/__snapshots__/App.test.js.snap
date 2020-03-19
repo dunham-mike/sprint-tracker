@@ -1863,6 +1863,7 @@ exports[`App Component should match the snapshot 1`] = `
                                               "cardContent": "frontPage-cardContent-154",
                                               "cardGrid": "frontPage-cardGrid-151",
                                               "cardMedia": "frontPage-cardMedia-153",
+                                              "copyright": "frontPage-copyright-157",
                                               "footer": "frontPage-footer-156",
                                               "heroButtons": "frontPage-heroButtons-150",
                                               "heroContent": "frontPage-heroContent-149",
@@ -3649,7 +3650,7 @@ exports[`App Component should match the snapshot 1`] = `
                                                                                   <p
                                                                                     className="MuiTypography-root MuiTypography-body1"
                                                                                   >
-                                                                                    Purposely designed for lightweight data collection, so individuals can be flexible in how they hit their goals.
+                                                                                    Purposely designed for lightweight data collection, so individuals can be flexible in how they manage their work.
                                                                                   </p>
                                                                                 </ForwardRef(Typography)>
                                                                               </WithStyles(ForwardRef(Typography))>
@@ -4716,124 +4717,82 @@ exports[`App Component should match the snapshot 1`] = `
                                                 </p>
                                               </ForwardRef(Typography)>
                                             </WithStyles(ForwardRef(Typography))>
-                                            <Copyright>
-                                              <WithStyles(ForwardRef(Typography))
-                                                align="center"
-                                                color="textSecondary"
-                                                variant="body2"
-                                              >
-                                                <ForwardRef(Typography)
+                                            <div
+                                              className="frontPage-copyright-157"
+                                            >
+                                              <Copyright>
+                                                <WithStyles(ForwardRef(Typography))
                                                   align="center"
-                                                  classes={
-                                                    Object {
-                                                      "alignCenter": "MuiTypography-alignCenter",
-                                                      "alignJustify": "MuiTypography-alignJustify",
-                                                      "alignLeft": "MuiTypography-alignLeft",
-                                                      "alignRight": "MuiTypography-alignRight",
-                                                      "body1": "MuiTypography-body1",
-                                                      "body2": "MuiTypography-body2",
-                                                      "button": "MuiTypography-button",
-                                                      "caption": "MuiTypography-caption",
-                                                      "colorError": "MuiTypography-colorError",
-                                                      "colorInherit": "MuiTypography-colorInherit",
-                                                      "colorPrimary": "MuiTypography-colorPrimary",
-                                                      "colorSecondary": "MuiTypography-colorSecondary",
-                                                      "colorTextPrimary": "MuiTypography-colorTextPrimary",
-                                                      "colorTextSecondary": "MuiTypography-colorTextSecondary",
-                                                      "displayBlock": "MuiTypography-displayBlock",
-                                                      "displayInline": "MuiTypography-displayInline",
-                                                      "gutterBottom": "MuiTypography-gutterBottom",
-                                                      "h1": "MuiTypography-h1",
-                                                      "h2": "MuiTypography-h2",
-                                                      "h3": "MuiTypography-h3",
-                                                      "h4": "MuiTypography-h4",
-                                                      "h5": "MuiTypography-h5",
-                                                      "h6": "MuiTypography-h6",
-                                                      "noWrap": "MuiTypography-noWrap",
-                                                      "overline": "MuiTypography-overline",
-                                                      "paragraph": "MuiTypography-paragraph",
-                                                      "root": "MuiTypography-root",
-                                                      "srOnly": "MuiTypography-srOnly",
-                                                      "subtitle1": "MuiTypography-subtitle1",
-                                                      "subtitle2": "MuiTypography-subtitle2",
-                                                    }
-                                                  }
                                                   color="textSecondary"
                                                   variant="body2"
                                                 >
-                                                  <p
-                                                    className="MuiTypography-root MuiTypography-body2 MuiTypography-colorTextSecondary MuiTypography-alignCenter"
+                                                  <ForwardRef(Typography)
+                                                    align="center"
+                                                    classes={
+                                                      Object {
+                                                        "alignCenter": "MuiTypography-alignCenter",
+                                                        "alignJustify": "MuiTypography-alignJustify",
+                                                        "alignLeft": "MuiTypography-alignLeft",
+                                                        "alignRight": "MuiTypography-alignRight",
+                                                        "body1": "MuiTypography-body1",
+                                                        "body2": "MuiTypography-body2",
+                                                        "button": "MuiTypography-button",
+                                                        "caption": "MuiTypography-caption",
+                                                        "colorError": "MuiTypography-colorError",
+                                                        "colorInherit": "MuiTypography-colorInherit",
+                                                        "colorPrimary": "MuiTypography-colorPrimary",
+                                                        "colorSecondary": "MuiTypography-colorSecondary",
+                                                        "colorTextPrimary": "MuiTypography-colorTextPrimary",
+                                                        "colorTextSecondary": "MuiTypography-colorTextSecondary",
+                                                        "displayBlock": "MuiTypography-displayBlock",
+                                                        "displayInline": "MuiTypography-displayInline",
+                                                        "gutterBottom": "MuiTypography-gutterBottom",
+                                                        "h1": "MuiTypography-h1",
+                                                        "h2": "MuiTypography-h2",
+                                                        "h3": "MuiTypography-h3",
+                                                        "h4": "MuiTypography-h4",
+                                                        "h5": "MuiTypography-h5",
+                                                        "h6": "MuiTypography-h6",
+                                                        "noWrap": "MuiTypography-noWrap",
+                                                        "overline": "MuiTypography-overline",
+                                                        "paragraph": "MuiTypography-paragraph",
+                                                        "root": "MuiTypography-root",
+                                                        "srOnly": "MuiTypography-srOnly",
+                                                        "subtitle1": "MuiTypography-subtitle1",
+                                                        "subtitle2": "MuiTypography-subtitle2",
+                                                      }
+                                                    }
+                                                    color="textSecondary"
+                                                    variant="body2"
                                                   >
-                                                    Copyright © 
-                                                    <WithStyles(ForwardRef(Link))
-                                                      color="inherit"
-                                                      href="https://github.com/dunham-mike"
-                                                      rel="noopener noreferrer"
-                                                      target="_blank"
+                                                    <p
+                                                      className="MuiTypography-root MuiTypography-body2 MuiTypography-colorTextSecondary MuiTypography-alignCenter"
                                                     >
-                                                      <ForwardRef(Link)
-                                                        classes={
-                                                          Object {
-                                                            "button": "MuiLink-button",
-                                                            "focusVisible": "Mui-focusVisible",
-                                                            "root": "MuiLink-root",
-                                                            "underlineAlways": "MuiLink-underlineAlways",
-                                                            "underlineHover": "MuiLink-underlineHover",
-                                                            "underlineNone": "MuiLink-underlineNone",
-                                                          }
-                                                        }
+                                                      Copyright © 
+                                                      <WithStyles(ForwardRef(Link))
                                                         color="inherit"
                                                         href="https://github.com/dunham-mike"
                                                         rel="noopener noreferrer"
                                                         target="_blank"
                                                       >
-                                                        <WithStyles(ForwardRef(Typography))
-                                                          className="MuiLink-root MuiLink-underlineHover"
+                                                        <ForwardRef(Link)
+                                                          classes={
+                                                            Object {
+                                                              "button": "MuiLink-button",
+                                                              "focusVisible": "Mui-focusVisible",
+                                                              "root": "MuiLink-root",
+                                                              "underlineAlways": "MuiLink-underlineAlways",
+                                                              "underlineHover": "MuiLink-underlineHover",
+                                                              "underlineNone": "MuiLink-underlineNone",
+                                                            }
+                                                          }
                                                           color="inherit"
-                                                          component="a"
                                                           href="https://github.com/dunham-mike"
-                                                          onBlur={[Function]}
-                                                          onFocus={[Function]}
                                                           rel="noopener noreferrer"
                                                           target="_blank"
-                                                          variant="inherit"
                                                         >
-                                                          <ForwardRef(Typography)
+                                                          <WithStyles(ForwardRef(Typography))
                                                             className="MuiLink-root MuiLink-underlineHover"
-                                                            classes={
-                                                              Object {
-                                                                "alignCenter": "MuiTypography-alignCenter",
-                                                                "alignJustify": "MuiTypography-alignJustify",
-                                                                "alignLeft": "MuiTypography-alignLeft",
-                                                                "alignRight": "MuiTypography-alignRight",
-                                                                "body1": "MuiTypography-body1",
-                                                                "body2": "MuiTypography-body2",
-                                                                "button": "MuiTypography-button",
-                                                                "caption": "MuiTypography-caption",
-                                                                "colorError": "MuiTypography-colorError",
-                                                                "colorInherit": "MuiTypography-colorInherit",
-                                                                "colorPrimary": "MuiTypography-colorPrimary",
-                                                                "colorSecondary": "MuiTypography-colorSecondary",
-                                                                "colorTextPrimary": "MuiTypography-colorTextPrimary",
-                                                                "colorTextSecondary": "MuiTypography-colorTextSecondary",
-                                                                "displayBlock": "MuiTypography-displayBlock",
-                                                                "displayInline": "MuiTypography-displayInline",
-                                                                "gutterBottom": "MuiTypography-gutterBottom",
-                                                                "h1": "MuiTypography-h1",
-                                                                "h2": "MuiTypography-h2",
-                                                                "h3": "MuiTypography-h3",
-                                                                "h4": "MuiTypography-h4",
-                                                                "h5": "MuiTypography-h5",
-                                                                "h6": "MuiTypography-h6",
-                                                                "noWrap": "MuiTypography-noWrap",
-                                                                "overline": "MuiTypography-overline",
-                                                                "paragraph": "MuiTypography-paragraph",
-                                                                "root": "MuiTypography-root",
-                                                                "srOnly": "MuiTypography-srOnly",
-                                                                "subtitle1": "MuiTypography-subtitle1",
-                                                                "subtitle2": "MuiTypography-subtitle2",
-                                                              }
-                                                            }
                                                             color="inherit"
                                                             component="a"
                                                             href="https://github.com/dunham-mike"
@@ -4843,27 +4802,73 @@ exports[`App Component should match the snapshot 1`] = `
                                                             target="_blank"
                                                             variant="inherit"
                                                           >
-                                                            <a
-                                                              className="MuiTypography-root MuiLink-root MuiLink-underlineHover MuiTypography-colorInherit"
+                                                            <ForwardRef(Typography)
+                                                              className="MuiLink-root MuiLink-underlineHover"
+                                                              classes={
+                                                                Object {
+                                                                  "alignCenter": "MuiTypography-alignCenter",
+                                                                  "alignJustify": "MuiTypography-alignJustify",
+                                                                  "alignLeft": "MuiTypography-alignLeft",
+                                                                  "alignRight": "MuiTypography-alignRight",
+                                                                  "body1": "MuiTypography-body1",
+                                                                  "body2": "MuiTypography-body2",
+                                                                  "button": "MuiTypography-button",
+                                                                  "caption": "MuiTypography-caption",
+                                                                  "colorError": "MuiTypography-colorError",
+                                                                  "colorInherit": "MuiTypography-colorInherit",
+                                                                  "colorPrimary": "MuiTypography-colorPrimary",
+                                                                  "colorSecondary": "MuiTypography-colorSecondary",
+                                                                  "colorTextPrimary": "MuiTypography-colorTextPrimary",
+                                                                  "colorTextSecondary": "MuiTypography-colorTextSecondary",
+                                                                  "displayBlock": "MuiTypography-displayBlock",
+                                                                  "displayInline": "MuiTypography-displayInline",
+                                                                  "gutterBottom": "MuiTypography-gutterBottom",
+                                                                  "h1": "MuiTypography-h1",
+                                                                  "h2": "MuiTypography-h2",
+                                                                  "h3": "MuiTypography-h3",
+                                                                  "h4": "MuiTypography-h4",
+                                                                  "h5": "MuiTypography-h5",
+                                                                  "h6": "MuiTypography-h6",
+                                                                  "noWrap": "MuiTypography-noWrap",
+                                                                  "overline": "MuiTypography-overline",
+                                                                  "paragraph": "MuiTypography-paragraph",
+                                                                  "root": "MuiTypography-root",
+                                                                  "srOnly": "MuiTypography-srOnly",
+                                                                  "subtitle1": "MuiTypography-subtitle1",
+                                                                  "subtitle2": "MuiTypography-subtitle2",
+                                                                }
+                                                              }
+                                                              color="inherit"
+                                                              component="a"
                                                               href="https://github.com/dunham-mike"
                                                               onBlur={[Function]}
                                                               onFocus={[Function]}
                                                               rel="noopener noreferrer"
                                                               target="_blank"
+                                                              variant="inherit"
                                                             >
-                                                              Mike Dunham
-                                                            </a>
-                                                          </ForwardRef(Typography)>
-                                                        </WithStyles(ForwardRef(Typography))>
-                                                      </ForwardRef(Link)>
-                                                    </WithStyles(ForwardRef(Link))>
-                                                     
-                                                    2020
-                                                    .
-                                                  </p>
-                                                </ForwardRef(Typography)>
-                                              </WithStyles(ForwardRef(Typography))>
-                                            </Copyright>
+                                                              <a
+                                                                className="MuiTypography-root MuiLink-root MuiLink-underlineHover MuiTypography-colorInherit"
+                                                                href="https://github.com/dunham-mike"
+                                                                onBlur={[Function]}
+                                                                onFocus={[Function]}
+                                                                rel="noopener noreferrer"
+                                                                target="_blank"
+                                                              >
+                                                                Mike Dunham
+                                                              </a>
+                                                            </ForwardRef(Typography)>
+                                                          </WithStyles(ForwardRef(Typography))>
+                                                        </ForwardRef(Link)>
+                                                      </WithStyles(ForwardRef(Link))>
+                                                       
+                                                      2020
+                                                      .
+                                                    </p>
+                                                  </ForwardRef(Typography)>
+                                                </WithStyles(ForwardRef(Typography))>
+                                              </Copyright>
+                                            </div>
                                           </footer>
                                         </frontPage>
                                       </WithStyles(frontPage)>
