@@ -26,8 +26,10 @@ jobs:
       name: node/default
     working_directory: /tmp/sprint-tracker
     steps:
-        - attach_workspace:
-            at: .
+        - persist_to_workspace:
+          root: .
+          paths:
+              - build/*
         - run: npm run build
   deploy-job:
     docker:
