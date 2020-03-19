@@ -7,59 +7,58 @@ orbs:
   # to lock the version and prevent unexpected CI changes
   cypress: cypress-io/cypress@1
 jobs:
-  # unit-tests:
-  #   executor:
-  #     name: node/default
-  #   steps:
-  #     - checkout
-  #     - node/with-cache:
-  #         steps:
-  #           - run: npm install
-  #           - run: mkdir test-results
-  #           - run:
-  #               name: Install JUnit coverage reporter
-  #               command: npm install --dev jest-junit
-  #           - run:
-  #               name: Run tests with JUnit as reporter and Instanbul for code coverage reporting
-  #               command: npm test -- --ci --runInBand --reporters=default --reporters=jest-junit --collectCoverage=true
-  #               environment:
-  #                 JEST_JUNIT_OUTPUT_DIR: "test-results/junit"
-  #     - store_test_results:
-  #         path: test-results
-  #     - store_artifacts:
-  #         # path: test-results
-  #         path: coverage
-  #         destination: coverage
-  #     - persist_to_workspace:
-  #         root: .
-  #         paths:
-  #             - .
-  # build:
-  #   executor:
-  #     name: node/default
-  #   steps:
-  #     - attach_workspace:
-  #         at: .
-  #     - run: npm run build
-  #     - persist_to_workspace:
-  #         root: .
-  #         paths:
-  #             - .
-  # deploy:
-  #   executor:
-  #     name: node/default
-  #   steps:
-  #     - attach_workspace:
-  #         at: .
-  #     - run:
-  #         name: Deploy Master to Firebase
-  #         command: ./node_modules/.bin/firebase deploy --token=$FIREBASE_DEPLOY_TOKEN
+  unit-tests:
+    executor:
+      name: node/default
+    steps:
+      - checkout
+      - node/with-cache:
+          steps:
+            - run: npm install
+            - run: mkdir test-results
+            - run:
+                name: Install JUnit coverage reporter
+                command: npm install --dev jest-junit
+            - run:
+                name: Run tests with JUnit as reporter and Instanbul for code coverage reporting
+                command: npm test -- --ci --runInBand --reporters=default --reporters=jest-junit --collectCoverage=true
+                environment:
+                  JEST_JUNIT_OUTPUT_DIR: "test-results/junit"
+      - store_test_results:
+          path: test-results
+      - store_artifacts:
+          # path: test-results
+          path: coverage
+          destination: coverage
+      - persist_to_workspace:
+          root: .
+          paths:
+              - .
+  build:
+    executor:
+      name: node/default
+    steps:
+      - attach_workspace:
+          at: .
+      - run: npm run build
+      - persist_to_workspace:
+          root: .
+          paths:
+              - .
+  deploy:
+    executor:
+      name: node/default
+    steps:
+      - attach_workspace:
+          at: .
+      - run:
+          name: Deploy Master to Firebase
+          command: ./node_modules/.bin/firebase deploy --token=$FIREBASE_DEPLOY_TOKEN
 workflows:
     build-and-test:
       jobs:
-        # - unit-tests
+        - unit-tests
         - cypress/run: # "run" job comes from "cypress" orb
-            # store_artifacts: true
             start: npm start
             wait-on: 'http://localhost:3000'
             post-steps:
@@ -67,13 +66,15 @@ workflows:
                   path: test-results
               - store_artifacts:
                   path: cypress-coverage
-        # - build:
-        #     requires:
-        #       - unit-tests
-        #       # - cypress/run
-        # - deploy:
-        #     requires:
-        #       - build
-        #     filters:
-        #       branches:
-        #         only: master
+              - store_artifacts:
+                  path: cypress/videos
+        - build:
+            requires:
+              - unit-tests
+              # - cypress/run
+        - deploy:
+            requires:
+              - build
+            filters:
+              branches:
+                only: master
