@@ -15,15 +15,16 @@ jobs:
       - node/with-cache:
           steps:
             - run: npm install
-            # - run: npm test
-            - run:
-                name: Install JUnit coverage reporter
-                command: npm install --dev jest-junit
-            - run:
-                name: Run tests with JUnit as reporter
-                command: npm test --ci --runInBand --reporters=default --reporters=jest-junit
-                environment:
-                  JEST_JUNIT_OUTPUT_DIR: "test-results/junit/js-test-results.xml"
+            - run: mkdir test-results
+            - run: npm test
+            # - run:
+            #     name: Install JUnit coverage reporter
+            #     command: npm install --dev jest-junit
+            # - run:
+            #     name: Run tests with JUnit as reporter
+            #     command: npm test --ci --runInBand --reporters=default --reporters=jest-junit
+            #     environment:
+            #       JEST_JUNIT_OUTPUT_DIR: "test-results/junit/js-test-results.xml"
       - store_test_results:
           path: test-results
       - persist_to_workspace:
