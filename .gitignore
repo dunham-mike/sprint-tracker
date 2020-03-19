@@ -8,15 +8,9 @@
 # testing
 /coverage
 /cypress/videos
-# cypress.env.json
 
 # production
 /build
-
-# firebase
-# .firebaserc
-# firebase.json
-# /.firebase
 
 # misc
 .DS_Store
