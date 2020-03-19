@@ -22,35 +22,37 @@ jobs:
                 command: npm install --dev jest-junit
             - run:
                 name: Run tests with JUnit as reporter
-                command: npm test --ci --runInBand --reporters=default --reporters=jest-junit
+                command: npm jest --ci --runInBand --reporters=default --reporters=jest-junit
                 environment:
                   JEST_JUNIT_OUTPUT_DIR: "test-results/junit/js-test-results.xml"
       - store_test_results:
-          path: test-results
+          path: test-results/junit
+      - store_artifacts:
+          path: test-results/junit
       - persist_to_workspace:
           root: .
           paths:
               - .
-  build:
-    executor:
-      name: node/default
-    steps:
-      - attach_workspace:
-          at: .
-      - run: npm run build
-      - persist_to_workspace:
-          root: .
-          paths:
-              - .
-  deploy:
-    executor:
-      name: node/default
-    steps:
-      - attach_workspace:
-          at: .
-      - run:
-          name: Deploy Master to Firebase
-          command: ./node_modules/.bin/firebase deploy --token=$FIREBASE_DEPLOY_TOKEN
+  # build:
+  #   executor:
+  #     name: node/default
+  #   steps:
+  #     - attach_workspace:
+  #         at: .
+  #     - run: npm run build
+  #     - persist_to_workspace:
+  #         root: .
+  #         paths:
+  #             - .
+  # deploy:
+  #   executor:
+  #     name: node/default
+  #   steps:
+  #     - attach_workspace:
+  #         at: .
+  #     - run:
+  #         name: Deploy Master to Firebase
+  #         command: ./node_modules/.bin/firebase deploy --token=$FIREBASE_DEPLOY_TOKEN
 workflows:
     build-and-test:
       jobs:
@@ -62,13 +64,13 @@ workflows:
         #     post-steps:
         #       - store_test_results:
         #           path: cypress/results
-        - build:
-            requires:
-              - unit-tests
-              # - cypress/run
-        - deploy:
-            requires:
-              - build
-            filters:
-              branches:
-                only: master
+        # - build:
+        #     requires:
+        #       - unit-tests
+        #       # - cypress/run
+        # - deploy:
+        #     requires:
+        #       - build
+        #     filters:
+        #       branches:
+        #         only: master
