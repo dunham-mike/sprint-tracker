@@ -1859,16 +1859,19 @@ exports[`App Component should match the snapshot 1`] = `
                                         <frontPage
                                           classes={
                                             Object {
-                                              "card": "frontPage-card-152",
-                                              "cardContent": "frontPage-cardContent-154",
-                                              "cardGrid": "frontPage-cardGrid-151",
-                                              "cardMedia": "frontPage-cardMedia-153",
-                                              "copyright": "frontPage-copyright-157",
-                                              "footer": "frontPage-footer-156",
+                                              "buttonContainer": "frontPage-buttonContainer-151",
+                                              "buttonGridItem": "frontPage-buttonGridItem-152",
+                                              "card": "frontPage-card-155",
+                                              "cardContainer": "frontPage-cardContainer-154",
+                                              "cardContent": "frontPage-cardContent-157",
+                                              "cardGrid": "frontPage-cardGrid-153",
+                                              "cardMedia": "frontPage-cardMedia-156",
+                                              "copyright": "frontPage-copyright-160",
+                                              "footer": "frontPage-footer-159",
                                               "heroButtons": "frontPage-heroButtons-150",
                                               "heroContent": "frontPage-heroContent-149",
                                               "icon": "frontPage-icon-148",
-                                              "tryDemo": "frontPage-tryDemo-155",
+                                              "tryDemo": "frontPage-tryDemo-158",
                                             }
                                           }
                                           history={
@@ -2055,11 +2058,12 @@ exports[`App Component should match the snapshot 1`] = `
                                                       className="frontPage-heroButtons-150"
                                                     >
                                                       <WithStyles(ForwardRef(Grid))
+                                                        className="frontPage-buttonContainer-151"
                                                         container={true}
-                                                        justify="center"
                                                         spacing={2}
                                                       >
                                                         <ForwardRef(Grid)
+                                                          className="frontPage-buttonContainer-151"
                                                           classes={
                                                             Object {
                                                               "align-content-xs-center": "MuiGrid-align-content-xs-center",
@@ -2168,16 +2172,17 @@ exports[`App Component should match the snapshot 1`] = `
                                                             }
                                                           }
                                                           container={true}
-                                                          justify="center"
                                                           spacing={2}
                                                         >
                                                           <div
-                                                            className="MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-2 MuiGrid-justify-xs-center"
+                                                            className="MuiGrid-root frontPage-buttonContainer-151 MuiGrid-container MuiGrid-spacing-xs-2"
                                                           >
                                                             <WithStyles(ForwardRef(Grid))
+                                                              className="frontPage-buttonGridItem-152"
                                                               item={true}
                                                             >
                                                               <ForwardRef(Grid)
+                                                                className="frontPage-buttonGridItem-152"
                                                                 classes={
                                                                   Object {
                                                                     "align-content-xs-center": "MuiGrid-align-content-xs-center",
@@ -2288,7 +2293,7 @@ exports[`App Component should match the snapshot 1`] = `
                                                                 item={true}
                                                               >
                                                                 <div
-                                                                  className="MuiGrid-root MuiGrid-item"
+                                                                  className="MuiGrid-root frontPage-buttonGridItem-152 MuiGrid-item"
                                                                 >
                                                                   <WithStyles(ForwardRef(Button))
                                                                     color="primary"
@@ -2514,9 +2519,11 @@ exports[`App Component should match the snapshot 1`] = `
                                                               </ForwardRef(Grid)>
                                                             </WithStyles(ForwardRef(Grid))>
                                                             <WithStyles(ForwardRef(Grid))
+                                                              className="frontPage-buttonGridItem-152"
                                                               item={true}
                                                             >
                                                               <ForwardRef(Grid)
+                                                                className="frontPage-buttonGridItem-152"
                                                                 classes={
                                                                   Object {
                                                                     "align-content-xs-center": "MuiGrid-align-content-xs-center",
@@ -2627,7 +2634,7 @@ exports[`App Component should match the snapshot 1`] = `
                                                                 item={true}
                                                               >
                                                                 <div
-                                                                  className="MuiGrid-root MuiGrid-item"
+                                                                  className="MuiGrid-root frontPage-buttonGridItem-152 MuiGrid-item"
                                                                 >
                                                                   <WithStyles(ForwardRef(Button))
                                                                     color="primary"
@@ -2853,9 +2860,11 @@ exports[`App Component should match the snapshot 1`] = `
                                                               </ForwardRef(Grid)>
                                                             </WithStyles(ForwardRef(Grid))>
                                                             <WithStyles(ForwardRef(Grid))
+                                                              className="frontPage-buttonGridItem-152"
                                                               item={true}
                                                             >
                                                               <ForwardRef(Grid)
+                                                                className="frontPage-buttonGridItem-152"
                                                                 classes={
                                                                   Object {
                                                                     "align-content-xs-center": "MuiGrid-align-content-xs-center",
@@ -2966,7 +2975,7 @@ exports[`App Component should match the snapshot 1`] = `
                                                                 item={true}
                                                               >
                                                                 <div
-                                                                  className="MuiGrid-root MuiGrid-item"
+                                                                  className="MuiGrid-root frontPage-buttonGridItem-152 MuiGrid-item"
                                                                 >
                                                                   <WithStyles(ForwardRef(Button))
                                                                     color="primary"
@@ -3200,11 +3209,11 @@ exports[`App Component should match the snapshot 1`] = `
                                               </WithStyles(ForwardRef(Container))>
                                             </div>
                                             <WithStyles(ForwardRef(Container))
-                                              className="frontPage-cardGrid-151"
+                                              className="frontPage-cardGrid-153"
                                               maxWidth="md"
                                             >
                                               <ForwardRef(Container)
-                                                className="frontPage-cardGrid-151"
+                                                className="frontPage-cardGrid-153"
                                                 classes={
                                                   Object {
                                                     "disableGutters": "MuiContainer-disableGutters",
@@ -3220,13 +3229,15 @@ exports[`App Component should match the snapshot 1`] = `
                                                 maxWidth="md"
                                               >
                                                 <div
-                                                  className="MuiContainer-root frontPage-cardGrid-151 MuiContainer-maxWidthMd"
+                                                  className="MuiContainer-root frontPage-cardGrid-153 MuiContainer-maxWidthMd"
                                                 >
                                                   <WithStyles(ForwardRef(Grid))
+                                                    className="frontPage-cardContainer-154"
                                                     container={true}
                                                     spacing={4}
                                                   >
                                                     <ForwardRef(Grid)
+                                                      className="frontPage-cardContainer-154"
                                                       classes={
                                                         Object {
                                                           "align-content-xs-center": "MuiGrid-align-content-xs-center",
@@ -3338,14 +3349,14 @@ exports[`App Component should match the snapshot 1`] = `
                                                       spacing={4}
                                                     >
                                                       <div
-                                                        className="MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-4"
+                                                        className="MuiGrid-root frontPage-cardContainer-154 MuiGrid-container MuiGrid-spacing-xs-4"
                                                       >
                                                         <WithStyles(ForwardRef(Grid))
                                                           item={true}
                                                           key="Simple, structured sprints."
                                                           md={4}
-                                                          sm={6}
-                                                          xs={12}
+                                                          sm={8}
+                                                          xs={11}
                                                         >
                                                           <ForwardRef(Grid)
                                                             classes={
@@ -3457,17 +3468,17 @@ exports[`App Component should match the snapshot 1`] = `
                                                             }
                                                             item={true}
                                                             md={4}
-                                                            sm={6}
-                                                            xs={12}
+                                                            sm={8}
+                                                            xs={11}
                                                           >
                                                             <div
-                                                              className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-sm-6 MuiGrid-grid-md-4"
+                                                              className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-11 MuiGrid-grid-sm-8 MuiGrid-grid-md-4"
                                                             >
                                                               <WithStyles(ForwardRef(Card))
-                                                                className="frontPage-card-152"
+                                                                className="frontPage-card-155"
                                                               >
                                                                 <ForwardRef(Card)
-                                                                  className="frontPage-card-152"
+                                                                  className="frontPage-card-155"
                                                                   classes={
                                                                     Object {
                                                                       "root": "MuiCard-root",
@@ -3475,11 +3486,11 @@ exports[`App Component should match the snapshot 1`] = `
                                                                   }
                                                                 >
                                                                   <WithStyles(ForwardRef(Paper))
-                                                                    className="MuiCard-root frontPage-card-152"
+                                                                    className="MuiCard-root frontPage-card-155"
                                                                     elevation={1}
                                                                   >
                                                                     <ForwardRef(Paper)
-                                                                      className="MuiCard-root frontPage-card-152"
+                                                                      className="MuiCard-root frontPage-card-155"
                                                                       classes={
                                                                         Object {
                                                                           "elevation0": "MuiPaper-elevation0",
@@ -3515,15 +3526,15 @@ exports[`App Component should match the snapshot 1`] = `
                                                                       elevation={1}
                                                                     >
                                                                       <div
-                                                                        className="MuiPaper-root MuiCard-root frontPage-card-152 MuiPaper-elevation1 MuiPaper-rounded"
+                                                                        className="MuiPaper-root MuiCard-root frontPage-card-155 MuiPaper-elevation1 MuiPaper-rounded"
                                                                       >
                                                                         <WithStyles(ForwardRef(CardMedia))
-                                                                          className="frontPage-cardMedia-153"
+                                                                          className="frontPage-cardMedia-156"
                                                                           image="https://images.unsplash.com/photo-1568584263125-bf8f0a77d51c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1051&q=80"
                                                                           title="Simple, structured sprints."
                                                                         >
                                                                           <ForwardRef(CardMedia)
-                                                                            className="frontPage-cardMedia-153"
+                                                                            className="frontPage-cardMedia-156"
                                                                             classes={
                                                                               Object {
                                                                                 "img": "MuiCardMedia-img",
@@ -3535,7 +3546,7 @@ exports[`App Component should match the snapshot 1`] = `
                                                                             title="Simple, structured sprints."
                                                                           >
                                                                             <div
-                                                                              className="MuiCardMedia-root frontPage-cardMedia-153"
+                                                                              className="MuiCardMedia-root frontPage-cardMedia-156"
                                                                               style={
                                                                                 Object {
                                                                                   "backgroundImage": "url(\\"https://images.unsplash.com/photo-1568584263125-bf8f0a77d51c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1051&q=80\\")",
@@ -3546,10 +3557,10 @@ exports[`App Component should match the snapshot 1`] = `
                                                                           </ForwardRef(CardMedia)>
                                                                         </WithStyles(ForwardRef(CardMedia))>
                                                                         <WithStyles(ForwardRef(CardContent))
-                                                                          className="frontPage-cardContent-154"
+                                                                          className="frontPage-cardContent-157"
                                                                         >
                                                                           <ForwardRef(CardContent)
-                                                                            className="frontPage-cardContent-154"
+                                                                            className="frontPage-cardContent-157"
                                                                             classes={
                                                                               Object {
                                                                                 "root": "MuiCardContent-root",
@@ -3557,7 +3568,7 @@ exports[`App Component should match the snapshot 1`] = `
                                                                             }
                                                                           >
                                                                             <div
-                                                                              className="MuiCardContent-root frontPage-cardContent-154"
+                                                                              className="MuiCardContent-root frontPage-cardContent-157"
                                                                             >
                                                                               <WithStyles(ForwardRef(Typography))
                                                                                 component="h2"
@@ -3670,7 +3681,7 @@ exports[`App Component should match the snapshot 1`] = `
                                                           key="Weekly progress tracking."
                                                           md={4}
                                                           sm={6}
-                                                          xs={12}
+                                                          xs={11}
                                                         >
                                                           <ForwardRef(Grid)
                                                             classes={
@@ -3783,16 +3794,16 @@ exports[`App Component should match the snapshot 1`] = `
                                                             item={true}
                                                             md={4}
                                                             sm={6}
-                                                            xs={12}
+                                                            xs={11}
                                                           >
                                                             <div
-                                                              className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-sm-6 MuiGrid-grid-md-4"
+                                                              className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-11 MuiGrid-grid-sm-6 MuiGrid-grid-md-4"
                                                             >
                                                               <WithStyles(ForwardRef(Card))
-                                                                className="frontPage-card-152"
+                                                                className="frontPage-card-155"
                                                               >
                                                                 <ForwardRef(Card)
-                                                                  className="frontPage-card-152"
+                                                                  className="frontPage-card-155"
                                                                   classes={
                                                                     Object {
                                                                       "root": "MuiCard-root",
@@ -3800,11 +3811,11 @@ exports[`App Component should match the snapshot 1`] = `
                                                                   }
                                                                 >
                                                                   <WithStyles(ForwardRef(Paper))
-                                                                    className="MuiCard-root frontPage-card-152"
+                                                                    className="MuiCard-root frontPage-card-155"
                                                                     elevation={1}
                                                                   >
                                                                     <ForwardRef(Paper)
-                                                                      className="MuiCard-root frontPage-card-152"
+                                                                      className="MuiCard-root frontPage-card-155"
                                                                       classes={
                                                                         Object {
                                                                           "elevation0": "MuiPaper-elevation0",
@@ -3840,15 +3851,15 @@ exports[`App Component should match the snapshot 1`] = `
                                                                       elevation={1}
                                                                     >
                                                                       <div
-                                                                        className="MuiPaper-root MuiCard-root frontPage-card-152 MuiPaper-elevation1 MuiPaper-rounded"
+                                                                        className="MuiPaper-root MuiCard-root frontPage-card-155 MuiPaper-elevation1 MuiPaper-rounded"
                                                                       >
                                                                         <WithStyles(ForwardRef(CardMedia))
-                                                                          className="frontPage-cardMedia-153"
+                                                                          className="frontPage-cardMedia-156"
                                                                           image="https://images.unsplash.com/photo-1559526323-cb2f2fe2591b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80"
                                                                           title="Weekly progress tracking."
                                                                         >
                                                                           <ForwardRef(CardMedia)
-                                                                            className="frontPage-cardMedia-153"
+                                                                            className="frontPage-cardMedia-156"
                                                                             classes={
                                                                               Object {
                                                                                 "img": "MuiCardMedia-img",
@@ -3860,7 +3871,7 @@ exports[`App Component should match the snapshot 1`] = `
                                                                             title="Weekly progress tracking."
                                                                           >
                                                                             <div
-                                                                              className="MuiCardMedia-root frontPage-cardMedia-153"
+                                                                              className="MuiCardMedia-root frontPage-cardMedia-156"
                                                                               style={
                                                                                 Object {
                                                                                   "backgroundImage": "url(\\"https://images.unsplash.com/photo-1559526323-cb2f2fe2591b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80\\")",
@@ -3871,10 +3882,10 @@ exports[`App Component should match the snapshot 1`] = `
                                                                           </ForwardRef(CardMedia)>
                                                                         </WithStyles(ForwardRef(CardMedia))>
                                                                         <WithStyles(ForwardRef(CardContent))
-                                                                          className="frontPage-cardContent-154"
+                                                                          className="frontPage-cardContent-157"
                                                                         >
                                                                           <ForwardRef(CardContent)
-                                                                            className="frontPage-cardContent-154"
+                                                                            className="frontPage-cardContent-157"
                                                                             classes={
                                                                               Object {
                                                                                 "root": "MuiCardContent-root",
@@ -3882,7 +3893,7 @@ exports[`App Component should match the snapshot 1`] = `
                                                                             }
                                                                           >
                                                                             <div
-                                                                              className="MuiCardContent-root frontPage-cardContent-154"
+                                                                              className="MuiCardContent-root frontPage-cardContent-157"
                                                                             >
                                                                               <WithStyles(ForwardRef(Typography))
                                                                                 component="h2"
@@ -3995,7 +4006,7 @@ exports[`App Component should match the snapshot 1`] = `
                                                           key="Authentication built-in."
                                                           md={4}
                                                           sm={6}
-                                                          xs={12}
+                                                          xs={11}
                                                         >
                                                           <ForwardRef(Grid)
                                                             classes={
@@ -4108,16 +4119,16 @@ exports[`App Component should match the snapshot 1`] = `
                                                             item={true}
                                                             md={4}
                                                             sm={6}
-                                                            xs={12}
+                                                            xs={11}
                                                           >
                                                             <div
-                                                              className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-sm-6 MuiGrid-grid-md-4"
+                                                              className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-11 MuiGrid-grid-sm-6 MuiGrid-grid-md-4"
                                                             >
                                                               <WithStyles(ForwardRef(Card))
-                                                                className="frontPage-card-152"
+                                                                className="frontPage-card-155"
                                                               >
                                                                 <ForwardRef(Card)
-                                                                  className="frontPage-card-152"
+                                                                  className="frontPage-card-155"
                                                                   classes={
                                                                     Object {
                                                                       "root": "MuiCard-root",
@@ -4125,11 +4136,11 @@ exports[`App Component should match the snapshot 1`] = `
                                                                   }
                                                                 >
                                                                   <WithStyles(ForwardRef(Paper))
-                                                                    className="MuiCard-root frontPage-card-152"
+                                                                    className="MuiCard-root frontPage-card-155"
                                                                     elevation={1}
                                                                   >
                                                                     <ForwardRef(Paper)
-                                                                      className="MuiCard-root frontPage-card-152"
+                                                                      className="MuiCard-root frontPage-card-155"
                                                                       classes={
                                                                         Object {
                                                                           "elevation0": "MuiPaper-elevation0",
@@ -4165,15 +4176,15 @@ exports[`App Component should match the snapshot 1`] = `
                                                                       elevation={1}
                                                                     >
                                                                       <div
-                                                                        className="MuiPaper-root MuiCard-root frontPage-card-152 MuiPaper-elevation1 MuiPaper-rounded"
+                                                                        className="MuiPaper-root MuiCard-root frontPage-card-155 MuiPaper-elevation1 MuiPaper-rounded"
                                                                       >
                                                                         <WithStyles(ForwardRef(CardMedia))
-                                                                          className="frontPage-cardMedia-153"
+                                                                          className="frontPage-cardMedia-156"
                                                                           image="https://images.unsplash.com/photo-1581291518857-4e27b48ff24e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80"
                                                                           title="Authentication built-in."
                                                                         >
                                                                           <ForwardRef(CardMedia)
-                                                                            className="frontPage-cardMedia-153"
+                                                                            className="frontPage-cardMedia-156"
                                                                             classes={
                                                                               Object {
                                                                                 "img": "MuiCardMedia-img",
@@ -4185,7 +4196,7 @@ exports[`App Component should match the snapshot 1`] = `
                                                                             title="Authentication built-in."
                                                                           >
                                                                             <div
-                                                                              className="MuiCardMedia-root frontPage-cardMedia-153"
+                                                                              className="MuiCardMedia-root frontPage-cardMedia-156"
                                                                               style={
                                                                                 Object {
                                                                                   "backgroundImage": "url(\\"https://images.unsplash.com/photo-1581291518857-4e27b48ff24e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80\\")",
@@ -4196,10 +4207,10 @@ exports[`App Component should match the snapshot 1`] = `
                                                                           </ForwardRef(CardMedia)>
                                                                         </WithStyles(ForwardRef(CardMedia))>
                                                                         <WithStyles(ForwardRef(CardContent))
-                                                                          className="frontPage-cardContent-154"
+                                                                          className="frontPage-cardContent-157"
                                                                         >
                                                                           <ForwardRef(CardContent)
-                                                                            className="frontPage-cardContent-154"
+                                                                            className="frontPage-cardContent-157"
                                                                             classes={
                                                                               Object {
                                                                                 "root": "MuiCardContent-root",
@@ -4207,7 +4218,7 @@ exports[`App Component should match the snapshot 1`] = `
                                                                             }
                                                                           >
                                                                             <div
-                                                                              className="MuiCardContent-root frontPage-cardContent-154"
+                                                                              className="MuiCardContent-root frontPage-cardContent-157"
                                                                             >
                                                                               <WithStyles(ForwardRef(Typography))
                                                                                 component="h2"
@@ -4322,7 +4333,7 @@ exports[`App Component should match the snapshot 1`] = `
                                               </ForwardRef(Container)>
                                             </WithStyles(ForwardRef(Container))>
                                             <div
-                                              className="frontPage-tryDemo-155"
+                                              className="frontPage-tryDemo-158"
                                             >
                                               <WithStyles(ForwardRef(Container))
                                                 maxWidth="sm"
@@ -4571,7 +4582,7 @@ exports[`App Component should match the snapshot 1`] = `
                                             </div>
                                           </main>
                                           <footer
-                                            className="frontPage-footer-156"
+                                            className="frontPage-footer-159"
                                           >
                                             <WithStyles(ForwardRef(Typography))
                                               align="center"
@@ -4718,7 +4729,7 @@ exports[`App Component should match the snapshot 1`] = `
                                               </ForwardRef(Typography)>
                                             </WithStyles(ForwardRef(Typography))>
                                             <div
-                                              className="frontPage-copyright-157"
+                                              className="frontPage-copyright-160"
                                             >
                                               <Copyright>
                                                 <WithStyles(ForwardRef(Typography))

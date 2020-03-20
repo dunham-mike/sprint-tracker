@@ -38,12 +38,12 @@ const styles = theme => ({
   },
   buttonContainer: {
     justifyContent: "center",
-    ['@media (max-width: 500px)']: {
+    '@media (max-width: 500px)': {
         flexDirection: 'column',
     },
   },
   buttonGridItem: {
-    ['@media (max-width: 500px)']: {
+    '@media (max-width: 500px)': {
         margin: '0 auto',
     },
   },

@@ -36,9 +36,11 @@ describe('Demo Functionality', function() {
 
         // Display correct sprints and toggle one
         cy.get('button.MuiButton-contained').eq(0)
+            .should('have.text', 'PAST SPRINTS')
+        cy.get('button.MuiButton-contained').eq(1)
             .should('have.text', 'Sprint #0 - Semester Launch Preparation')
             .click();
-        cy.get('button.MuiButton-contained').eq(1)
+        cy.get('button.MuiButton-contained').eq(2)
             .should('have.text', 'Sprint #00 - Off-Semester Maintenance');
 
         // View Sprint Statistics

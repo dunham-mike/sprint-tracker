@@ -174,14 +174,16 @@ describe('PastSprints Component', () => {
     it('should render one sprint button when there is only one past sprint', () => {
         const { enzymeMountWrapper } = mountSetup(oneTestSprint);
 
-        expect(enzymeMountWrapper.find('.MuiButton-label').prop('children')).toEqual([undefined, "Sprint #2", undefined]);
+        expect(enzymeMountWrapper.find('.MuiButton-label')).toHaveLength(2); // Title button and one sprint button
+
+        expect(enzymeMountWrapper.find('.MuiButton-label').at(1).prop('children')).toEqual([undefined, "Sprint #2", undefined]);
     });
 
     it('should display the Sprint Statistics component when the Sprint Statistics button is clicked and hide it when the cancel button is clicked', () => {
         const { enzymeMountWrapper } = mountSetup(oneTestSprint);
 
-        enzymeMountWrapper.find('.MuiButtonBase-root').simulate('click'); // Open sprint
-        enzymeMountWrapper.find('.MuiButton-label').at(1).simulate('click'); // Open Sprint Statistics
+        enzymeMountWrapper.find('.MuiButtonBase-root').at(1).simulate('click'); // Open sprint
+        enzymeMountWrapper.find('.MuiButton-outlined').at(0).simulate('click'); // Open Sprint Statistics
 
         expect(enzymeMountWrapper.find('.MuiTypography-root.MuiTypography-h4').prop('children')).toEqual(["Sprint #2", " Overview"]);
 
@@ -197,8 +199,9 @@ describe('PastSprints Component', () => {
     it('should render two sprint buttons when there are two past sprints, and they should be rendered in reverse order of end date', () => {
         const { enzymeMountWrapper } = mountSetup(twoTestSprints);
 
-        expect(enzymeMountWrapper.find('.MuiButton-label').at(0).prop('children')).toEqual([undefined, "Sprint #2", undefined]);
-        expect(enzymeMountWrapper.find('.MuiButton-label').at(1).prop('children')).toEqual([undefined, "Sprint #1", undefined]);
+        expect(enzymeMountWrapper.find('.MuiButton-label')).toHaveLength(3); // Title button and twp sprint buttons
+        expect(enzymeMountWrapper.find('.MuiButton-label').at(1).prop('children')).toEqual([undefined, "Sprint #2", undefined]);
+        expect(enzymeMountWrapper.find('.MuiButton-label').at(2).prop('children')).toEqual([undefined, "Sprint #1", undefined]);
     });
 
 });

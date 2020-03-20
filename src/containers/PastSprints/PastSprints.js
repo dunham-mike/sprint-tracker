@@ -4,7 +4,9 @@ import { withStyles } from '@material-ui/core/styles';
 
 import * as moment from 'moment';
 
+import blue from '@material-ui/core/colors/blue';
 import Typography from '@material-ui/core/Typography';
+import Button from '@material-ui/core/Button';
 
 import PastSprint from './PastSprint/PastSprint';
 import SprintStatistics from '../../components/SprintStatistics/SprintStatistics';
@@ -18,6 +20,28 @@ const styles = theme => ({
         marginLeft: theme.spacing(3),
         position: 'relative',
     },
+    titleContainer: {
+        width: '100%',
+        textAlign: 'center',
+        marginBottom: theme.spacing(2),
+        
+    },
+    paper: {
+        textAlign: 'center',
+        width: '250px',
+        margin: '0 auto',
+        padding: theme.spacing(1),
+    },
+    button: {
+        width: theme.spacing(40),
+        fontWeight: 'bold',
+        cursor: 'default',
+        pointerEvents: 'auto',
+        "&:hover": {
+            backgroundColor: blue[500],
+            boxShadow: '0px 3px 1px -2px rgba(0,0,0,0.2), 0px 2px 2px 0px rgba(0,0,0,0.14), 0px 1px 5px 0px rgba(0,0,0,0.12)',
+        }
+    }
 });
 
 class PastSprints extends Component {
@@ -96,6 +120,21 @@ class PastSprints extends Component {
 
         return(
             <div className={classes.mainViewContainer}>
+                <div className={classes.titleContainer}>
+                    {/* <Paper className={classes.paper}> */}
+                        {/* <Typography variant="h4"> */}
+                            <Button variant="contained" 
+                                disableRipple 
+                                disableFocusRipple 
+                                color="primary" 
+                                className={classes.button}
+                            >
+                                PAST SPRINTS
+                            </Button>
+                            
+                        {/* </Typography>  */}
+                    {/* </Paper> */}
+                </div>
                 {sprintsToDisplay.length === 0 ? noSprintsMessage : null}
                 {sprintsToDisplay}
                 {sprintStatistics}

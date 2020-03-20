@@ -23,10 +23,10 @@ Array [
           className="frontPage-heroButtons-3"
         >
           <div
-            className="MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-2 MuiGrid-justify-xs-center"
+            className="MuiGrid-root frontPage-buttonContainer-4 MuiGrid-container MuiGrid-spacing-xs-2"
           >
             <div
-              className="MuiGrid-root MuiGrid-item"
+              className="MuiGrid-root frontPage-buttonGridItem-5 MuiGrid-item"
             >
               <a
                 aria-disabled={false}
@@ -55,7 +55,7 @@ Array [
               </a>
             </div>
             <div
-              className="MuiGrid-root MuiGrid-item"
+              className="MuiGrid-root frontPage-buttonGridItem-5 MuiGrid-item"
             >
               <a
                 aria-disabled={false}
@@ -84,7 +84,7 @@ Array [
               </a>
             </div>
             <div
-              className="MuiGrid-root MuiGrid-item"
+              className="MuiGrid-root frontPage-buttonGridItem-5 MuiGrid-item"
             >
               <a
                 aria-disabled={false}
@@ -117,19 +117,19 @@ Array [
       </div>
     </div>
     <div
-      className="MuiContainer-root frontPage-cardGrid-4 MuiContainer-maxWidthMd"
+      className="MuiContainer-root frontPage-cardGrid-6 MuiContainer-maxWidthMd"
     >
       <div
-        className="MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-4"
+        className="MuiGrid-root frontPage-cardContainer-7 MuiGrid-container MuiGrid-spacing-xs-4"
       >
         <div
-          className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-sm-6 MuiGrid-grid-md-4"
+          className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-11 MuiGrid-grid-sm-8 MuiGrid-grid-md-4"
         >
           <div
-            className="MuiPaper-root MuiCard-root frontPage-card-5 MuiPaper-elevation1 MuiPaper-rounded"
+            className="MuiPaper-root MuiCard-root frontPage-card-8 MuiPaper-elevation1 MuiPaper-rounded"
           >
             <div
-              className="MuiCardMedia-root frontPage-cardMedia-6"
+              className="MuiCardMedia-root frontPage-cardMedia-9"
               style={
                 Object {
                   "backgroundImage": "url(\\"https://images.unsplash.com/photo-1568584263125-bf8f0a77d51c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1051&q=80\\")",
@@ -138,7 +138,7 @@ Array [
               title="Simple, structured sprints."
             />
             <div
-              className="MuiCardContent-root frontPage-cardContent-7"
+              className="MuiCardContent-root frontPage-cardContent-10"
             >
               <h2
                 className="MuiTypography-root MuiTypography-h5 MuiTypography-gutterBottom"
@@ -154,13 +154,13 @@ Array [
           </div>
         </div>
         <div
-          className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-sm-6 MuiGrid-grid-md-4"
+          className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-11 MuiGrid-grid-sm-6 MuiGrid-grid-md-4"
         >
           <div
-            className="MuiPaper-root MuiCard-root frontPage-card-5 MuiPaper-elevation1 MuiPaper-rounded"
+            className="MuiPaper-root MuiCard-root frontPage-card-8 MuiPaper-elevation1 MuiPaper-rounded"
           >
             <div
-              className="MuiCardMedia-root frontPage-cardMedia-6"
+              className="MuiCardMedia-root frontPage-cardMedia-9"
               style={
                 Object {
                   "backgroundImage": "url(\\"https://images.unsplash.com/photo-1559526323-cb2f2fe2591b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80\\")",
@@ -169,7 +169,7 @@ Array [
               title="Weekly progress tracking."
             />
             <div
-              className="MuiCardContent-root frontPage-cardContent-7"
+              className="MuiCardContent-root frontPage-cardContent-10"
             >
               <h2
                 className="MuiTypography-root MuiTypography-h5 MuiTypography-gutterBottom"
@@ -185,13 +185,13 @@ Array [
           </div>
         </div>
         <div
-          className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-sm-6 MuiGrid-grid-md-4"
+          className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-11 MuiGrid-grid-sm-6 MuiGrid-grid-md-4"
         >
           <div
-            className="MuiPaper-root MuiCard-root frontPage-card-5 MuiPaper-elevation1 MuiPaper-rounded"
+            className="MuiPaper-root MuiCard-root frontPage-card-8 MuiPaper-elevation1 MuiPaper-rounded"
           >
             <div
-              className="MuiCardMedia-root frontPage-cardMedia-6"
+              className="MuiCardMedia-root frontPage-cardMedia-9"
               style={
                 Object {
                   "backgroundImage": "url(\\"https://images.unsplash.com/photo-1581291518857-4e27b48ff24e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80\\")",
@@ -200,7 +200,7 @@ Array [
               title="Authentication built-in."
             />
             <div
-              className="MuiCardContent-root frontPage-cardContent-7"
+              className="MuiCardContent-root frontPage-cardContent-10"
             >
               <h2
                 className="MuiTypography-root MuiTypography-h5 MuiTypography-gutterBottom"
@@ -218,7 +218,7 @@ Array [
       </div>
     </div>
     <div
-      className="frontPage-tryDemo-8"
+      className="frontPage-tryDemo-11"
     >
       <div
         className="MuiContainer-root MuiContainer-maxWidthSm"
@@ -252,7 +252,7 @@ Array [
     </div>
   </main>,
   <footer
-    className="frontPage-footer-9"
+    className="frontPage-footer-12"
   >
     <h6
       className="MuiTypography-root MuiTypography-h6 MuiTypography-gutterBottom MuiTypography-alignCenter"
@@ -277,7 +277,7 @@ Array [
        in Burlingame, CA.
     </p>
     <div
-      className="frontPage-copyright-10"
+      className="frontPage-copyright-13"
     >
       <p
         className="MuiTypography-root MuiTypography-body2 MuiTypography-colorTextSecondary MuiTypography-alignCenter"
