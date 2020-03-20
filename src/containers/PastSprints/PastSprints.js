@@ -121,19 +121,14 @@ class PastSprints extends Component {
         return(
             <div className={classes.mainViewContainer}>
                 <div className={classes.titleContainer}>
-                    {/* <Paper className={classes.paper}> */}
-                        {/* <Typography variant="h4"> */}
-                            <Button variant="contained" 
-                                disableRipple 
-                                disableFocusRipple 
-                                color="primary" 
-                                className={classes.button}
-                            >
-                                PAST SPRINTS
-                            </Button>
-                            
-                        {/* </Typography>  */}
-                    {/* </Paper> */}
+                    <Button variant="contained" 
+                        disableRipple 
+                        disableFocusRipple 
+                        color="primary" 
+                        className={classes.button}
+                    >
+                        PAST SPRINTS
+                    </Button>
                 </div>
                 {sprintsToDisplay.length === 0 ? noSprintsMessage : null}
                 {sprintsToDisplay}
