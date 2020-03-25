@@ -4,7 +4,25 @@ describe('Logged In Functionality', function() {
         
         // Fixtures
         cy.fixture('loginSuccess.json').as('loginSuccessJSON');
-        cy.fixture('fetchUserDataSuccess.json').as('fetchUserDataSuccessJSON');
+        cy.fixture('fetchUserDataSuccess.json')
+            .then((userData) => {
+                // Make dates dynamic so tests will always run properly
+                userData.sprints['demo_00'].startDate = Cypress.moment.utc(Cypress.moment().subtract(53,'day'));
+                userData.sprints['demo_00'].endDate = Cypress.moment.utc(Cypress.moment().subtract(26,'day'));
+
+                userData.sprints['demo_0'].startDate = Cypress.moment.utc(Cypress.moment().subtract(23,'day'));
+                userData.sprints['demo_0'].endDate = Cypress.moment.utc(Cypress.moment().subtract(10,'day'));
+
+                userData.sprints['demo_1'].startDate = Cypress.moment.utc(Cypress.moment().subtract(7,'day'));
+                userData.sprints['demo_1'].endDate = Cypress.moment.utc(Cypress.moment().add(6,'day'));
+
+                userData.sprints['demo_2'].startDate = Cypress.moment.utc(Cypress.moment().add(9,'day'));
+                userData.sprints['demo_2'].endDate = Cypress.moment.utc(Cypress.moment().add(29,'day'));
+
+                userData.sprints['demo_3'].startDate = Cypress.moment.utc(Cypress.moment().add(32,'day'));
+                userData.sprints['demo_3'].endDate = Cypress.moment.utc(Cypress.moment().add(87,'day'));
+            })
+            .as('fetchUserDataSuccessJSON');
         const userId = 'test_userId'; // should match fetchUserDataSuccess fixture
 
         // Network stubs
