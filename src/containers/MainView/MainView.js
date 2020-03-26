@@ -17,6 +17,7 @@ import SprintStatistics from '../../components/SprintStatistics/SprintStatistics
 import ModalErrorBoundary from '../ErrorBoundary/ModalErrorBoundary/ModalErrorBoundary';
 import Footer from '../../components/Footer/Footer';
 import CurrentSprint from './CurrentSprint/CurrentSprint';
+import NextSprint from './NextSprint/NextSprint';
 
 const styles = theme => ({
     overallContainer: {
@@ -296,31 +297,6 @@ export class MainView extends Component {
     render() {
         const { classes } = this.props;
 
-        // Displaying Next Sprint
-        let nextSprint = null;
-
-        if (this.state.displayNextSprint && this.props.sprints && this.state.nextSprintIndex !== null ) {
-            nextSprint = (
-                <div className={classes.sprintContainer}>
-                    <div className={classes.innerSprintContainer}>
-                        <Sprint 
-                            sprint={this.props.sprints[this.state.nextSprintIndex]} 
-                            sprintId={
-                                // This check is necessary to avoid an error when first deleting the next sprint
-                                this.props.sprints[this.state.nextSprintIndex] 
-                                ? this.props.sprints[this.state.nextSprintIndex].id
-                                : null
-                            }
-                            onOpenProject={this.openEditingProject}
-                            sprintType="next"
-                        />
-                    </div>
-                </div>
-            );
-        } else if (this.state.displayNextSprint) {
-            nextSprint = <div className={classes.sprintMissingMessage} data-testid="NoNextSprint">No upcoming sprint.</div>
-        }
-
         // Displaying Queue
         let queue = null;
 
@@ -510,39 +486,16 @@ export class MainView extends Component {
                         openSprintStatistics={this.openSprintStatistics}
                     />
 
-                    {/* Next Sprint Section */}
-                    <div className={classes.sprintSectionContainer}>
-                        <div className={classes.buttonContainer}>
-                            <Button variant="contained" color="secondary" className={classes.buttonSpacing} onClick={this.toggleNextSprint}>NEXT SPRINT</Button>
-                            {this.state.displayNextSprint && this.state.nextSprintIndex !== null
-                            ?   <div className={classes.conditionalButtonsContainer}>
-                                    <Button 
-                                        size="small" variant="outlined" color="secondary" className={classes.conditionalButtons} 
-                                        startIcon={<AddCircleOutlineOutlinedIcon />}
-                                        onClick={() => this.openCreatingProject(this.props.sprints[this.state.nextSprintIndex].id)}
-                                    >
-                                        ADD NEW PROJECT
-                                    </Button>
-                                    <Button 
-                                        size="small" variant="outlined" color="secondary" className={classes.conditionalButtons} 
-                                        startIcon={<EditOutlinedIcon />}
-                                        onClick={() => this.openEditingSprint(this.props.sprints[this.state.nextSprintIndex].id)}
-                                    >
-                                        EDIT SPRINT
-                                    </Button>
-                                    <Button 
-                                        size="small" variant="outlined" color="secondary" className={classes.conditionalButtons} 
-                                        startIcon={<InsertChartOutlinedOutlinedIcon />}
-                                        onClick={() => this.openSprintStatistics(this.props.sprints[this.state.nextSprintIndex].id)}
-                                    >
-                                        SPRINT STATISTICS
-                                    </Button>
-                                </div>
-                            : null    
-                            }
-                        </div> 
-                        {nextSprint}
-                    </div>    
+                    <NextSprint 
+                        displayNextSprint={this.state.displayNextSprint}
+                        sprints={this.props.sprints}
+                        nextSprintIndex={this.state.nextSprintIndex}
+                        openEditingProject={this.openEditingProject}
+                        toggleNextSprint={this.toggleNextSprint}
+                        openCreatingProject={this.openCreatingProject}
+                        openEditingSprint={this.openEditingSprint}
+                        openSprintStatistics={this.openSprintStatistics}
+                    />
 
                     {/* Queue Section */}
                     <div className={classes.sprintSectionContainer}>
