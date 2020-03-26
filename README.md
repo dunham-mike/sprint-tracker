@@ -9,7 +9,7 @@
 </h3>
 <div align="center">
   <a href="https://deliberate-sprints.web.app/">
-    <img alt="Deliberate Sprints Screenshot" src="public/deliberate-sprints.png" height="300" />
+    <img alt="Deliberate Sprints Screenshot" src="public/deliberate-sprints.png" style="max-height: 300px" />
   </a>
 </div>
 
