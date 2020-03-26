@@ -18,6 +18,7 @@ import ModalErrorBoundary from '../ErrorBoundary/ModalErrorBoundary/ModalErrorBo
 import Footer from '../../components/Footer/Footer';
 import CurrentSprint from './CurrentSprint/CurrentSprint';
 import NextSprint from './NextSprint/NextSprint';
+import Queue from './Queue/Queue';
 
 const styles = theme => ({
     overallContainer: {
@@ -96,7 +97,6 @@ export class MainView extends Component {
         // Tracking which sprints to display
         currentSprintIndex: null,
         nextSprintIndex: null,
-        queueSprintId: -1,
         futureSprintsStartIndex: null,
 
         // Tracking which sections to display
@@ -297,25 +297,7 @@ export class MainView extends Component {
     render() {
         const { classes } = this.props;
 
-        // Displaying Queue
-        let queue = null;
-
-        if (this.state.displayQueue && this.props.queue !== null && this.props.queue.length > 0) {
-            queue = (
-                <div className={classes.sprintContainer}>
-                    <div className={classes.innerSprintContainer}>
-                        <Sprint 
-                            sprint={this.props.queue} 
-                            sprintId={this.state.queueSprintId}
-                            onOpenProject={this.openEditingProject}
-                            sprintType="queue"
-                        />
-                    </div>
-                </div>
-            );
-        } else if (this.state.displayQueue) {
-            queue = <div className={classes.sprintMissingMessage} data-testid="NoQueueProjects">No projects in the queue.</div>
-        }
+        const queueSprintId = -1;
 
         // Displaying Future Sprints
         let futureSprints = null;
@@ -497,25 +479,14 @@ export class MainView extends Component {
                         openSprintStatistics={this.openSprintStatistics}
                     />
 
-                    {/* Queue Section */}
-                    <div className={classes.sprintSectionContainer}>
-                        <div className={classes.buttonContainer}>
-                            <Button variant="contained" color="default" className={classes.buttonSpacing} onClick={this.toggleQueue}>PROJECT QUEUE</Button>
-                            {this.state.displayQueue
-                            ?   <div className={classes.conditionalButtonsContainer}>
-                                    <Button 
-                                        size="small" variant="outlined" color="default" className={classes.conditionalButtons} 
-                                        startIcon={<AddCircleOutlineOutlinedIcon />}
-                                        onClick={() => this.openCreatingProject(this.state.queueSprintId)}
-                                    >
-                                        ADD NEW PROJECT
-                                    </Button>
-                                </div>
-                            : null    
-                            }
-                            {queue}
-                        </div>
-                    </div>
+                    <Queue 
+                        displayQueue={this.state.displayQueue}
+                        queue={this.props.queue}
+                        queueSprintId={queueSprintId}
+                        openEditingProject={this.openEditingProject}
+                        toggleQueue={this.toggleQueue}
+                        openCreatingProject={this.openCreatingProject}
+                    />
 
                     {/* Future Sprints Section */}
                     <div className={classes.sprintSectionContainer}>
