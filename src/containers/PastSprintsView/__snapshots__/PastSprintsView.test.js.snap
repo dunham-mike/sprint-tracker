@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`PastSprints Component should match the snapshot 1`] = `
+exports[`PastSprintsView Component should match the snapshot 1`] = `
 <Provider
   store={
     Object {
@@ -13,8 +13,8 @@ exports[`PastSprints Component should match the snapshot 1`] = `
     }
   }
 >
-  <Connect(WithStyles(PastSprints))>
-    <WithStyles(PastSprints)
+  <Connect(WithStyles(PastSprintsView))>
+    <WithStyles(PastSprintsView)
       dispatch={[Function]}
       sprints={
         Array [
@@ -244,14 +244,14 @@ exports[`PastSprints Component should match the snapshot 1`] = `
         ]
       }
     >
-      <PastSprints
+      <PastSprintsView
         classes={
           Object {
-            "button": "PastSprints-button-5",
-            "mainViewContainer": "PastSprints-mainViewContainer-2",
-            "overallContainer": "PastSprints-overallContainer-1",
-            "paper": "PastSprints-paper-4",
-            "titleContainer": "PastSprints-titleContainer-3",
+            "button": "PastSprintsView-button-5",
+            "mainViewContainer": "PastSprintsView-mainViewContainer-2",
+            "overallContainer": "PastSprintsView-overallContainer-1",
+            "paper": "PastSprintsView-paper-4",
+            "titleContainer": "PastSprintsView-titleContainer-3",
           }
         }
         dispatch={[Function]}
@@ -484,23 +484,23 @@ exports[`PastSprints Component should match the snapshot 1`] = `
         }
       >
         <div
-          className="PastSprints-overallContainer-1"
+          className="PastSprintsView-overallContainer-1"
         >
           <div
-            className="PastSprints-mainViewContainer-2"
+            className="PastSprintsView-mainViewContainer-2"
           >
             <div
-              className="PastSprints-titleContainer-3"
+              className="PastSprintsView-titleContainer-3"
             >
               <WithStyles(ForwardRef(Button))
-                className="PastSprints-button-5"
+                className="PastSprintsView-button-5"
                 color="primary"
                 disableFocusRipple={true}
                 disableRipple={true}
                 variant="contained"
               >
                 <ForwardRef(Button)
-                  className="PastSprints-button-5"
+                  className="PastSprintsView-button-5"
                   classes={
                     Object {
                       "colorInherit": "MuiButton-colorInherit",
@@ -540,7 +540,7 @@ exports[`PastSprints Component should match the snapshot 1`] = `
                   variant="contained"
                 >
                   <WithStyles(ForwardRef(ButtonBase))
-                    className="MuiButton-root MuiButton-contained PastSprints-button-5 MuiButton-containedPrimary"
+                    className="MuiButton-root MuiButton-contained PastSprintsView-button-5 MuiButton-containedPrimary"
                     component="button"
                     disableRipple={true}
                     disabled={false}
@@ -549,7 +549,7 @@ exports[`PastSprints Component should match the snapshot 1`] = `
                     type="button"
                   >
                     <ForwardRef(ButtonBase)
-                      className="MuiButton-root MuiButton-contained PastSprints-button-5 MuiButton-containedPrimary"
+                      className="MuiButton-root MuiButton-contained PastSprintsView-button-5 MuiButton-containedPrimary"
                       classes={
                         Object {
                           "disabled": "Mui-disabled",
@@ -565,7 +565,7 @@ exports[`PastSprints Component should match the snapshot 1`] = `
                       type="button"
                     >
                       <button
-                        className="MuiButtonBase-root MuiButton-root MuiButton-contained PastSprints-button-5 MuiButton-containedPrimary"
+                        className="MuiButtonBase-root MuiButton-root MuiButton-contained PastSprintsView-button-5 MuiButton-containedPrimary"
                         disabled={false}
                         onBlur={[Function]}
                         onDragLeave={[Function]}
@@ -593,7 +593,7 @@ exports[`PastSprints Component should match the snapshot 1`] = `
                 </ForwardRef(Button)>
               </WithStyles(ForwardRef(Button))>
             </div>
-            <WithStyles(PastSprints)
+            <WithStyles(PastSprint)
               key="test_sprintId2"
               openSprintStatistics={[Function]}
               sprint={
@@ -608,17 +608,17 @@ exports[`PastSprints Component should match the snapshot 1`] = `
                 }
               }
             >
-              <PastSprints
+              <PastSprint
                 classes={
                   Object {
-                    "buttonContainer": "PastSprints-buttonContainer-39",
-                    "buttonSpacing": "PastSprints-buttonSpacing-42",
-                    "conditionalButtons": "PastSprints-conditionalButtons-41",
-                    "conditionalButtonsContainer": "PastSprints-conditionalButtonsContainer-40",
-                    "innerSprintContainer": "PastSprints-innerSprintContainer-44",
-                    "sprintContainer": "PastSprints-sprintContainer-43",
-                    "sprintSectionContainer": "PastSprints-sprintSectionContainer-38",
-                    "tableContainer": "PastSprints-tableContainer-45",
+                    "buttonContainer": "PastSprint-buttonContainer-39",
+                    "buttonSpacing": "PastSprint-buttonSpacing-42",
+                    "conditionalButtons": "PastSprint-conditionalButtons-41",
+                    "conditionalButtonsContainer": "PastSprint-conditionalButtonsContainer-40",
+                    "innerSprintContainer": "PastSprint-innerSprintContainer-44",
+                    "sprintContainer": "PastSprint-sprintContainer-43",
+                    "sprintSectionContainer": "PastSprint-sprintSectionContainer-38",
+                    "tableContainer": "PastSprint-tableContainer-45",
                   }
                 }
                 openSprintStatistics={[Function]}
@@ -635,19 +635,19 @@ exports[`PastSprints Component should match the snapshot 1`] = `
                 }
               >
                 <div
-                  className="PastSprints-sprintSectionContainer-38"
+                  className="PastSprint-sprintSectionContainer-38"
                 >
                   <div
-                    className="PastSprints-buttonContainer-39"
+                    className="PastSprint-buttonContainer-39"
                   >
                     <WithStyles(ForwardRef(Button))
-                      className="PastSprints-buttonSpacing-42"
+                      className="PastSprint-buttonSpacing-42"
                       color="primary"
                       onClick={[Function]}
                       variant="contained"
                     >
                       <ForwardRef(Button)
-                        className="PastSprints-buttonSpacing-42"
+                        className="PastSprint-buttonSpacing-42"
                         classes={
                           Object {
                             "colorInherit": "MuiButton-colorInherit",
@@ -686,7 +686,7 @@ exports[`PastSprints Component should match the snapshot 1`] = `
                         variant="contained"
                       >
                         <WithStyles(ForwardRef(ButtonBase))
-                          className="MuiButton-root MuiButton-contained PastSprints-buttonSpacing-42 MuiButton-containedPrimary"
+                          className="MuiButton-root MuiButton-contained PastSprint-buttonSpacing-42 MuiButton-containedPrimary"
                           component="button"
                           disabled={false}
                           focusRipple={true}
@@ -695,7 +695,7 @@ exports[`PastSprints Component should match the snapshot 1`] = `
                           type="button"
                         >
                           <ForwardRef(ButtonBase)
-                            className="MuiButton-root MuiButton-contained PastSprints-buttonSpacing-42 MuiButton-containedPrimary"
+                            className="MuiButton-root MuiButton-contained PastSprint-buttonSpacing-42 MuiButton-containedPrimary"
                             classes={
                               Object {
                                 "disabled": "Mui-disabled",
@@ -711,7 +711,7 @@ exports[`PastSprints Component should match the snapshot 1`] = `
                             type="button"
                           >
                             <button
-                              className="MuiButtonBase-root MuiButton-root MuiButton-contained PastSprints-buttonSpacing-42 MuiButton-containedPrimary"
+                              className="MuiButtonBase-root MuiButton-root MuiButton-contained PastSprint-buttonSpacing-42 MuiButton-containedPrimary"
                               disabled={false}
                               onBlur={[Function]}
                               onClick={[Function]}
@@ -770,9 +770,9 @@ exports[`PastSprints Component should match the snapshot 1`] = `
                     </WithStyles(ForwardRef(Button))>
                   </div>
                 </div>
-              </PastSprints>
-            </WithStyles(PastSprints)>
-            <WithStyles(PastSprints)
+              </PastSprint>
+            </WithStyles(PastSprint)>
+            <WithStyles(PastSprint)
               key="test_sprintId"
               openSprintStatistics={[Function]}
               sprint={
@@ -992,17 +992,17 @@ exports[`PastSprints Component should match the snapshot 1`] = `
                 }
               }
             >
-              <PastSprints
+              <PastSprint
                 classes={
                   Object {
-                    "buttonContainer": "PastSprints-buttonContainer-39",
-                    "buttonSpacing": "PastSprints-buttonSpacing-42",
-                    "conditionalButtons": "PastSprints-conditionalButtons-41",
-                    "conditionalButtonsContainer": "PastSprints-conditionalButtonsContainer-40",
-                    "innerSprintContainer": "PastSprints-innerSprintContainer-44",
-                    "sprintContainer": "PastSprints-sprintContainer-43",
-                    "sprintSectionContainer": "PastSprints-sprintSectionContainer-38",
-                    "tableContainer": "PastSprints-tableContainer-45",
+                    "buttonContainer": "PastSprint-buttonContainer-39",
+                    "buttonSpacing": "PastSprint-buttonSpacing-42",
+                    "conditionalButtons": "PastSprint-conditionalButtons-41",
+                    "conditionalButtonsContainer": "PastSprint-conditionalButtonsContainer-40",
+                    "innerSprintContainer": "PastSprint-innerSprintContainer-44",
+                    "sprintContainer": "PastSprint-sprintContainer-43",
+                    "sprintSectionContainer": "PastSprint-sprintSectionContainer-38",
+                    "tableContainer": "PastSprint-tableContainer-45",
                   }
                 }
                 openSprintStatistics={[Function]}
@@ -1224,19 +1224,19 @@ exports[`PastSprints Component should match the snapshot 1`] = `
                 }
               >
                 <div
-                  className="PastSprints-sprintSectionContainer-38"
+                  className="PastSprint-sprintSectionContainer-38"
                 >
                   <div
-                    className="PastSprints-buttonContainer-39"
+                    className="PastSprint-buttonContainer-39"
                   >
                     <WithStyles(ForwardRef(Button))
-                      className="PastSprints-buttonSpacing-42"
+                      className="PastSprint-buttonSpacing-42"
                       color="primary"
                       onClick={[Function]}
                       variant="contained"
                     >
                       <ForwardRef(Button)
-                        className="PastSprints-buttonSpacing-42"
+                        className="PastSprint-buttonSpacing-42"
                         classes={
                           Object {
                             "colorInherit": "MuiButton-colorInherit",
@@ -1275,7 +1275,7 @@ exports[`PastSprints Component should match the snapshot 1`] = `
                         variant="contained"
                       >
                         <WithStyles(ForwardRef(ButtonBase))
-                          className="MuiButton-root MuiButton-contained PastSprints-buttonSpacing-42 MuiButton-containedPrimary"
+                          className="MuiButton-root MuiButton-contained PastSprint-buttonSpacing-42 MuiButton-containedPrimary"
                           component="button"
                           disabled={false}
                           focusRipple={true}
@@ -1284,7 +1284,7 @@ exports[`PastSprints Component should match the snapshot 1`] = `
                           type="button"
                         >
                           <ForwardRef(ButtonBase)
-                            className="MuiButton-root MuiButton-contained PastSprints-buttonSpacing-42 MuiButton-containedPrimary"
+                            className="MuiButton-root MuiButton-contained PastSprint-buttonSpacing-42 MuiButton-containedPrimary"
                             classes={
                               Object {
                                 "disabled": "Mui-disabled",
@@ -1300,7 +1300,7 @@ exports[`PastSprints Component should match the snapshot 1`] = `
                             type="button"
                           >
                             <button
-                              className="MuiButtonBase-root MuiButton-root MuiButton-contained PastSprints-buttonSpacing-42 MuiButton-containedPrimary"
+                              className="MuiButtonBase-root MuiButton-root MuiButton-contained PastSprint-buttonSpacing-42 MuiButton-containedPrimary"
                               disabled={false}
                               onBlur={[Function]}
                               onClick={[Function]}
@@ -1359,8 +1359,8 @@ exports[`PastSprints Component should match the snapshot 1`] = `
                     </WithStyles(ForwardRef(Button))>
                   </div>
                 </div>
-              </PastSprints>
-            </WithStyles(PastSprints)>
+              </PastSprint>
+            </WithStyles(PastSprint)>
           </div>
           <WithStyles(footer)>
             <footer
@@ -1676,8 +1676,8 @@ exports[`PastSprints Component should match the snapshot 1`] = `
             </footer>
           </WithStyles(footer)>
         </div>
-      </PastSprints>
-    </WithStyles(PastSprints)>
-  </Connect(WithStyles(PastSprints))>
+      </PastSprintsView>
+    </WithStyles(PastSprintsView)>
+  </Connect(WithStyles(PastSprintsView))>
 </Provider>
 `;

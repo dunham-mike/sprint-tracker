@@ -6,7 +6,7 @@ import toJson from 'enzyme-to-json';
 import configureStore from 'redux-mock-store';
 import * as moment from 'moment';
 
-import PastSprints from './PastSprints';
+import PastSprintsView from './PastSprintsView';
 
 Enzyme.configure({ adapter: new Adapter() });
 
@@ -141,7 +141,7 @@ const mountSetup = (storeData) => {
 
     const enzymeMountWrapper = mount(
         <Provider store={store}>
-            <PastSprints />
+            <PastSprintsView />
         </Provider>
     );
 
@@ -150,7 +150,7 @@ const mountSetup = (storeData) => {
     }
 }
 
-describe('PastSprints Component', () => {
+describe('PastSprintsView Component', () => {
 
     it('should match the snapshot', () => {
         const { enzymeMountWrapper } = mountSetup();

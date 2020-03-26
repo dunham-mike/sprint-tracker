@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`PastSprint Component should match the snapshot 1`] = `
-<WithStyles(PastSprints)
+<WithStyles(PastSprint)
   openSprintStatistics={[MockFunction]}
   sprint={
     Object {
@@ -220,17 +220,17 @@ exports[`PastSprint Component should match the snapshot 1`] = `
     }
   }
 >
-  <PastSprints
+  <PastSprint
     classes={
       Object {
-        "buttonContainer": "PastSprints-buttonContainer-2",
-        "buttonSpacing": "PastSprints-buttonSpacing-5",
-        "conditionalButtons": "PastSprints-conditionalButtons-4",
-        "conditionalButtonsContainer": "PastSprints-conditionalButtonsContainer-3",
-        "innerSprintContainer": "PastSprints-innerSprintContainer-7",
-        "sprintContainer": "PastSprints-sprintContainer-6",
-        "sprintSectionContainer": "PastSprints-sprintSectionContainer-1",
-        "tableContainer": "PastSprints-tableContainer-8",
+        "buttonContainer": "PastSprint-buttonContainer-2",
+        "buttonSpacing": "PastSprint-buttonSpacing-5",
+        "conditionalButtons": "PastSprint-conditionalButtons-4",
+        "conditionalButtonsContainer": "PastSprint-conditionalButtonsContainer-3",
+        "innerSprintContainer": "PastSprint-innerSprintContainer-7",
+        "sprintContainer": "PastSprint-sprintContainer-6",
+        "sprintSectionContainer": "PastSprint-sprintSectionContainer-1",
+        "tableContainer": "PastSprint-tableContainer-8",
       }
     }
     openSprintStatistics={[MockFunction]}
@@ -452,19 +452,19 @@ exports[`PastSprint Component should match the snapshot 1`] = `
     }
   >
     <div
-      className="PastSprints-sprintSectionContainer-1"
+      className="PastSprint-sprintSectionContainer-1"
     >
       <div
-        className="PastSprints-buttonContainer-2"
+        className="PastSprint-buttonContainer-2"
       >
         <WithStyles(ForwardRef(Button))
-          className="PastSprints-buttonSpacing-5"
+          className="PastSprint-buttonSpacing-5"
           color="primary"
           onClick={[Function]}
           variant="contained"
         >
           <ForwardRef(Button)
-            className="PastSprints-buttonSpacing-5"
+            className="PastSprint-buttonSpacing-5"
             classes={
               Object {
                 "colorInherit": "MuiButton-colorInherit",
@@ -503,7 +503,7 @@ exports[`PastSprint Component should match the snapshot 1`] = `
             variant="contained"
           >
             <WithStyles(ForwardRef(ButtonBase))
-              className="MuiButton-root MuiButton-contained PastSprints-buttonSpacing-5 MuiButton-containedPrimary"
+              className="MuiButton-root MuiButton-contained PastSprint-buttonSpacing-5 MuiButton-containedPrimary"
               component="button"
               disabled={false}
               focusRipple={true}
@@ -512,7 +512,7 @@ exports[`PastSprint Component should match the snapshot 1`] = `
               type="button"
             >
               <ForwardRef(ButtonBase)
-                className="MuiButton-root MuiButton-contained PastSprints-buttonSpacing-5 MuiButton-containedPrimary"
+                className="MuiButton-root MuiButton-contained PastSprint-buttonSpacing-5 MuiButton-containedPrimary"
                 classes={
                   Object {
                     "disabled": "Mui-disabled",
@@ -528,7 +528,7 @@ exports[`PastSprint Component should match the snapshot 1`] = `
                 type="button"
               >
                 <button
-                  className="MuiButtonBase-root MuiButton-root MuiButton-contained PastSprints-buttonSpacing-5 MuiButton-containedPrimary"
+                  className="MuiButtonBase-root MuiButton-root MuiButton-contained PastSprint-buttonSpacing-5 MuiButton-containedPrimary"
                   disabled={false}
                   onBlur={[Function]}
                   onClick={[Function]}
@@ -587,6 +587,6 @@ exports[`PastSprint Component should match the snapshot 1`] = `
         </WithStyles(ForwardRef(Button))>
       </div>
     </div>
-  </PastSprints>
-</WithStyles(PastSprints)>
+  </PastSprint>
+</WithStyles(PastSprint)>
 `;

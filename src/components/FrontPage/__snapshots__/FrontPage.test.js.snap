@@ -1,10 +1,14 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Render FrontPage renders FrontPage component correctly 1`] = `
-Array [
-  <main>
+<div
+  className="frontPage-overallContainer-1"
+>
+  <main
+    className="frontPage-nonFooterContainer-2"
+  >
     <div
-      className="hero-heroContent-1"
+      className="hero-heroContent-3"
     >
       <div
         className="MuiContainer-root MuiContainer-maxWidthSm"
@@ -20,17 +24,17 @@ Array [
           Sprint tracking. With a point of view.
         </p>
         <div
-          className="hero-heroButtons-2"
+          className="hero-heroButtons-4"
         >
           <div
-            className="MuiGrid-root hero-buttonContainer-3 MuiGrid-container MuiGrid-spacing-xs-2"
+            className="MuiGrid-root hero-buttonContainer-5 MuiGrid-container MuiGrid-spacing-xs-2"
           >
             <div
-              className="MuiGrid-root hero-buttonGridItem-4 MuiGrid-item"
+              className="MuiGrid-root hero-buttonGridItem-6 MuiGrid-item"
             >
               <a
                 aria-disabled={false}
-                className="MuiButtonBase-root MuiButton-root MuiButton-contained hero-button-5 MuiButton-containedPrimary"
+                className="MuiButtonBase-root MuiButton-root MuiButton-contained hero-button-7 MuiButton-containedPrimary"
                 href="/demo"
                 onBlur={[Function]}
                 onClick={[Function]}
@@ -55,11 +59,11 @@ Array [
               </a>
             </div>
             <div
-              className="MuiGrid-root hero-buttonGridItem-4 MuiGrid-item"
+              className="MuiGrid-root hero-buttonGridItem-6 MuiGrid-item"
             >
               <a
                 aria-disabled={false}
-                className="MuiButtonBase-root MuiButton-root MuiButton-outlined hero-button-5 MuiButton-outlinedPrimary"
+                className="MuiButtonBase-root MuiButton-root MuiButton-outlined hero-button-7 MuiButton-outlinedPrimary"
                 href="/create-account"
                 onBlur={[Function]}
                 onClick={[Function]}
@@ -84,11 +88,11 @@ Array [
               </a>
             </div>
             <div
-              className="MuiGrid-root hero-buttonGridItem-4 MuiGrid-item"
+              className="MuiGrid-root hero-buttonGridItem-6 MuiGrid-item"
             >
               <a
                 aria-disabled={false}
-                className="MuiButtonBase-root MuiButton-root MuiButton-outlined hero-button-5 MuiButton-outlinedPrimary"
+                className="MuiButtonBase-root MuiButton-root MuiButton-outlined hero-button-7 MuiButton-outlinedPrimary"
                 href="/login"
                 onBlur={[Function]}
                 onClick={[Function]}
@@ -117,19 +121,19 @@ Array [
       </div>
     </div>
     <div
-      className="MuiContainer-root cardSection-cardGrid-179 MuiContainer-maxWidthMd"
+      className="MuiContainer-root cardSection-cardGrid-181 MuiContainer-maxWidthMd"
     >
       <div
-        className="MuiGrid-root cardSection-cardContainer-180 MuiGrid-container MuiGrid-spacing-xs-4"
+        className="MuiGrid-root cardSection-cardContainer-182 MuiGrid-container MuiGrid-spacing-xs-4"
       >
         <div
           className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-11 MuiGrid-grid-sm-8 MuiGrid-grid-md-4"
         >
           <div
-            className="MuiPaper-root MuiCard-root cardSection-card-181 MuiPaper-elevation1 MuiPaper-rounded"
+            className="MuiPaper-root MuiCard-root cardSection-card-183 MuiPaper-elevation1 MuiPaper-rounded"
           >
             <div
-              className="MuiCardMedia-root cardSection-cardMedia-182"
+              className="MuiCardMedia-root cardSection-cardMedia-184"
               style={
                 Object {
                   "backgroundImage": "url(\\"https://images.unsplash.com/photo-1568584263125-bf8f0a77d51c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1051&q=80\\")",
@@ -138,7 +142,7 @@ Array [
               title="Simple, structured sprints."
             />
             <div
-              className="MuiCardContent-root cardSection-cardContent-183"
+              className="MuiCardContent-root cardSection-cardContent-185"
             >
               <h2
                 className="MuiTypography-root MuiTypography-h5 MuiTypography-gutterBottom"
@@ -157,10 +161,10 @@ Array [
           className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-11 MuiGrid-grid-sm-6 MuiGrid-grid-md-4"
         >
           <div
-            className="MuiPaper-root MuiCard-root cardSection-card-181 MuiPaper-elevation1 MuiPaper-rounded"
+            className="MuiPaper-root MuiCard-root cardSection-card-183 MuiPaper-elevation1 MuiPaper-rounded"
           >
             <div
-              className="MuiCardMedia-root cardSection-cardMedia-182"
+              className="MuiCardMedia-root cardSection-cardMedia-184"
               style={
                 Object {
                   "backgroundImage": "url(\\"https://images.unsplash.com/photo-1559526323-cb2f2fe2591b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80\\")",
@@ -169,7 +173,7 @@ Array [
               title="Weekly progress tracking."
             />
             <div
-              className="MuiCardContent-root cardSection-cardContent-183"
+              className="MuiCardContent-root cardSection-cardContent-185"
             >
               <h2
                 className="MuiTypography-root MuiTypography-h5 MuiTypography-gutterBottom"
@@ -188,10 +192,10 @@ Array [
           className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-11 MuiGrid-grid-sm-6 MuiGrid-grid-md-4"
         >
           <div
-            className="MuiPaper-root MuiCard-root cardSection-card-181 MuiPaper-elevation1 MuiPaper-rounded"
+            className="MuiPaper-root MuiCard-root cardSection-card-183 MuiPaper-elevation1 MuiPaper-rounded"
           >
             <div
-              className="MuiCardMedia-root cardSection-cardMedia-182"
+              className="MuiCardMedia-root cardSection-cardMedia-184"
               style={
                 Object {
                   "backgroundImage": "url(\\"https://images.unsplash.com/photo-1581291518857-4e27b48ff24e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80\\")",
@@ -200,7 +204,7 @@ Array [
               title="Authentication built-in."
             />
             <div
-              className="MuiCardContent-root cardSection-cardContent-183"
+              className="MuiCardContent-root cardSection-cardContent-185"
             >
               <h2
                 className="MuiTypography-root MuiTypography-h5 MuiTypography-gutterBottom"
@@ -218,14 +222,14 @@ Array [
       </div>
     </div>
     <div
-      className="cardSection-tryDemo-184"
+      className="cardSection-tryDemo-186"
     >
       <div
         className="MuiContainer-root MuiContainer-maxWidthSm"
       >
         <a
           aria-disabled={false}
-          className="MuiButtonBase-root MuiButton-root MuiButton-outlined cardSection-button-185 MuiButton-outlinedSecondary"
+          className="MuiButtonBase-root MuiButton-root MuiButton-outlined cardSection-button-187 MuiButton-outlinedSecondary"
           href="/create-account"
           onBlur={[Function]}
           onClick={[Function]}
@@ -250,9 +254,9 @@ Array [
         </a>
       </div>
     </div>
-  </main>,
+  </main>
   <footer
-    className="footer-footer-219"
+    className="footer-footer-221"
   >
     <h6
       className="MuiTypography-root MuiTypography-h6 MuiTypography-gutterBottom MuiTypography-alignCenter"
@@ -260,7 +264,7 @@ Array [
       Built with React and Material UI.
     </h6>
     <p
-      className="MuiTypography-root footer-flexDisplay-221 MuiTypography-subtitle1 MuiTypography-colorTextSecondary MuiTypography-alignCenter"
+      className="MuiTypography-root footer-flexDisplay-223 MuiTypography-subtitle1 MuiTypography-colorTextSecondary MuiTypography-alignCenter"
     >
       <span>
         Made with 
@@ -281,7 +285,7 @@ Array [
       </span>
     </p>
     <p
-      className="MuiTypography-root footer-copyright-220 MuiTypography-body2 MuiTypography-colorTextSecondary MuiTypography-alignCenter"
+      className="MuiTypography-root footer-copyright-222 MuiTypography-body2 MuiTypography-colorTextSecondary MuiTypography-alignCenter"
     >
       © 
       <a
@@ -297,6 +301,6 @@ Array [
        
       2020
     </p>
-  </footer>,
-]
+  </footer>
+</div>
 `;

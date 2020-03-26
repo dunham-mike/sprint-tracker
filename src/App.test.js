@@ -12,7 +12,7 @@ import App from './App';
 
 import FrontPage from './components/FrontPage/FrontPage';
 import MainView from './containers/MainView/MainView';
-import PastSprints from './containers/PastSprints/PastSprints';
+import PastSprintsView from './containers/PastSprintsView/PastSprintsView';
 import Layout from './containers/Layout/Layout';
 import Login from './components/Login/Login';
 import CreateAccount from './components/CreateAccount/CreateAccount';
@@ -139,10 +139,10 @@ describe('App Component', () => {
         expect(enzymeMountWrapper.find(MainView)).toHaveLength(1);
     });
 
-    it('["/past-sprints"] should render the PastSprints page when authenticated.', () => {
+    it('["/past-sprints"] should render the PastSprintsView page when authenticated.', () => {
         const { enzymeMountWrapper } = mountSetup("/past-sprints", undefined, undefined, true);
 
-        expect(enzymeMountWrapper.find(PastSprints)).toHaveLength(1);
+        expect(enzymeMountWrapper.find(PastSprintsView)).toHaveLength(1);
     });
 
     it('["/logout"] should render the Logout component when authenticated.', () => {
@@ -185,10 +185,10 @@ describe('App Component', () => {
         expect(enzymeMountWrapper.find(Logout)).toHaveLength(1);
     });
 
-    it('["/past-sprints"] should render the PastSprints component when in the demo.', () => {
+    it('["/past-sprints"] should render the PastSprintsView component when in the demo.', () => {
         const { enzymeMountWrapper } = mountSetup("/past-sprints", undefined, true);
 
-        expect(enzymeMountWrapper.find(PastSprints)).toHaveLength(1);
+        expect(enzymeMountWrapper.find(PastSprintsView)).toHaveLength(1);
     });
 
     it('["/demo"] should render the MainView component when in the demo.', () => {

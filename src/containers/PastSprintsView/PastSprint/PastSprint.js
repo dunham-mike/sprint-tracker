@@ -73,7 +73,7 @@ const styles = theme => ({
     }
 });
 
-class PastSprints extends Component {
+class PastSprint extends Component {
     state = {
         displaySprint: false,
     }
@@ -148,4 +148,4 @@ class PastSprints extends Component {
 };
 
 
-export default withStyles(styles)(PastSprints);
+export default withStyles(styles)(PastSprint);

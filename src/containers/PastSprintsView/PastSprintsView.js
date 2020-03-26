@@ -52,7 +52,7 @@ const styles = theme => ({
     }
 });
 
-class PastSprints extends Component {
+class PastSprintsView extends Component {
     state = {
         displayingSprintStatistics: false,
         sprintIdBeingViewed: null,
@@ -155,4 +155,4 @@ const mapStateToProps = state => {
     }
 }
 
-export default connect(mapStateToProps)(withStyles(styles)(PastSprints));
+export default connect(mapStateToProps)(withStyles(styles)(PastSprintsView));

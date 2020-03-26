@@ -8,7 +8,7 @@ import Typography from '@material-ui/core/Typography';
 
 import FrontPage from './components/FrontPage/FrontPage';
 import MainView from './containers/MainView/MainView';
-import PastSprints from './containers/PastSprints/PastSprints';
+import PastSprintsView from './containers/PastSprintsView/PastSprintsView';
 import Layout from './containers/Layout/Layout';
 import { theme } from './theme/theme';
 import Login from './components/Login/Login';
@@ -51,7 +51,7 @@ export class App extends Component {
                         <Route path="/demo" exact component = {MainView}/>
                         <Route path="/logout" component={Logout} />
                         <Route path="/" exact component = {Logout}/> {/* Hitting the back button in the Demo can take you back to the FrontPage. */}
-                        <Route path="/past-sprints" component={PastSprints} />
+                        <Route path="/past-sprints" component={PastSprintsView} />
                         <Redirect to="/demo" />
                   </Switch>
                 </Suspense>
@@ -63,7 +63,7 @@ export class App extends Component {
                     <Route path="/login" component={Login} /> {/* So Redirect inside Login can work and route to different areas of the app that require login. */}
                     <Route path="/" exact component = {MainView}/>
                     <Route path="/logout" component={Logout} />
-                    <Route path="/past-sprints" component={PastSprints} />
+                    <Route path="/past-sprints" component={PastSprintsView} />
                     <Redirect to="/" />
                 </Switch>
               </Suspense>
