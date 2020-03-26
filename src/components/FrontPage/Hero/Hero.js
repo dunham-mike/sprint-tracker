@@ -19,6 +19,8 @@ const styles = theme => ({
         justifyContent: "center",
         '@media (max-width: 500px)': {
             flexDirection: 'column',
+            paddingLeft: theme.spacing(2),
+            paddingRight: theme.spacing(2),
         },
     },
     buttonGridItem: {

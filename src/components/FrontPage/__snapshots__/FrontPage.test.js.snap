@@ -4,7 +4,7 @@ exports[`Render FrontPage renders FrontPage component correctly 1`] = `
 Array [
   <main>
     <div
-      className="hero-heroContent-8"
+      className="hero-heroContent-1"
     >
       <div
         className="MuiContainer-root MuiContainer-maxWidthSm"
@@ -20,17 +20,17 @@ Array [
           Sprint tracking. With a point of view.
         </p>
         <div
-          className="hero-heroButtons-9"
+          className="hero-heroButtons-2"
         >
           <div
-            className="MuiGrid-root hero-buttonContainer-10 MuiGrid-container MuiGrid-spacing-xs-2"
+            className="MuiGrid-root hero-buttonContainer-3 MuiGrid-container MuiGrid-spacing-xs-2"
           >
             <div
-              className="MuiGrid-root hero-buttonGridItem-11 MuiGrid-item"
+              className="MuiGrid-root hero-buttonGridItem-4 MuiGrid-item"
             >
               <a
                 aria-disabled={false}
-                className="MuiButtonBase-root MuiButton-root MuiButton-contained hero-button-12 MuiButton-containedPrimary"
+                className="MuiButtonBase-root MuiButton-root MuiButton-contained hero-button-5 MuiButton-containedPrimary"
                 href="/demo"
                 onBlur={[Function]}
                 onClick={[Function]}
@@ -55,11 +55,11 @@ Array [
               </a>
             </div>
             <div
-              className="MuiGrid-root hero-buttonGridItem-11 MuiGrid-item"
+              className="MuiGrid-root hero-buttonGridItem-4 MuiGrid-item"
             >
               <a
                 aria-disabled={false}
-                className="MuiButtonBase-root MuiButton-root MuiButton-outlined hero-button-12 MuiButton-outlinedPrimary"
+                className="MuiButtonBase-root MuiButton-root MuiButton-outlined hero-button-5 MuiButton-outlinedPrimary"
                 href="/create-account"
                 onBlur={[Function]}
                 onClick={[Function]}
@@ -84,11 +84,11 @@ Array [
               </a>
             </div>
             <div
-              className="MuiGrid-root hero-buttonGridItem-11 MuiGrid-item"
+              className="MuiGrid-root hero-buttonGridItem-4 MuiGrid-item"
             >
               <a
                 aria-disabled={false}
-                className="MuiButtonBase-root MuiButton-root MuiButton-outlined hero-button-12 MuiButton-outlinedPrimary"
+                className="MuiButtonBase-root MuiButton-root MuiButton-outlined hero-button-5 MuiButton-outlinedPrimary"
                 href="/login"
                 onBlur={[Function]}
                 onClick={[Function]}
@@ -117,19 +117,19 @@ Array [
       </div>
     </div>
     <div
-      className="MuiContainer-root frontPage-cardGrid-2 MuiContainer-maxWidthMd"
+      className="MuiContainer-root cardSection-cardGrid-179 MuiContainer-maxWidthMd"
     >
       <div
-        className="MuiGrid-root frontPage-cardContainer-3 MuiGrid-container MuiGrid-spacing-xs-4"
+        className="MuiGrid-root cardSection-cardContainer-180 MuiGrid-container MuiGrid-spacing-xs-4"
       >
         <div
           className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-11 MuiGrid-grid-sm-8 MuiGrid-grid-md-4"
         >
           <div
-            className="MuiPaper-root MuiCard-root frontPage-card-4 MuiPaper-elevation1 MuiPaper-rounded"
+            className="MuiPaper-root MuiCard-root cardSection-card-181 MuiPaper-elevation1 MuiPaper-rounded"
           >
             <div
-              className="MuiCardMedia-root frontPage-cardMedia-5"
+              className="MuiCardMedia-root cardSection-cardMedia-182"
               style={
                 Object {
                   "backgroundImage": "url(\\"https://images.unsplash.com/photo-1568584263125-bf8f0a77d51c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1051&q=80\\")",
@@ -138,7 +138,7 @@ Array [
               title="Simple, structured sprints."
             />
             <div
-              className="MuiCardContent-root frontPage-cardContent-6"
+              className="MuiCardContent-root cardSection-cardContent-183"
             >
               <h2
                 className="MuiTypography-root MuiTypography-h5 MuiTypography-gutterBottom"
@@ -157,10 +157,10 @@ Array [
           className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-11 MuiGrid-grid-sm-6 MuiGrid-grid-md-4"
         >
           <div
-            className="MuiPaper-root MuiCard-root frontPage-card-4 MuiPaper-elevation1 MuiPaper-rounded"
+            className="MuiPaper-root MuiCard-root cardSection-card-181 MuiPaper-elevation1 MuiPaper-rounded"
           >
             <div
-              className="MuiCardMedia-root frontPage-cardMedia-5"
+              className="MuiCardMedia-root cardSection-cardMedia-182"
               style={
                 Object {
                   "backgroundImage": "url(\\"https://images.unsplash.com/photo-1559526323-cb2f2fe2591b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80\\")",
@@ -169,7 +169,7 @@ Array [
               title="Weekly progress tracking."
             />
             <div
-              className="MuiCardContent-root frontPage-cardContent-6"
+              className="MuiCardContent-root cardSection-cardContent-183"
             >
               <h2
                 className="MuiTypography-root MuiTypography-h5 MuiTypography-gutterBottom"
@@ -188,10 +188,10 @@ Array [
           className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-11 MuiGrid-grid-sm-6 MuiGrid-grid-md-4"
         >
           <div
-            className="MuiPaper-root MuiCard-root frontPage-card-4 MuiPaper-elevation1 MuiPaper-rounded"
+            className="MuiPaper-root MuiCard-root cardSection-card-181 MuiPaper-elevation1 MuiPaper-rounded"
           >
             <div
-              className="MuiCardMedia-root frontPage-cardMedia-5"
+              className="MuiCardMedia-root cardSection-cardMedia-182"
               style={
                 Object {
                   "backgroundImage": "url(\\"https://images.unsplash.com/photo-1581291518857-4e27b48ff24e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80\\")",
@@ -200,7 +200,7 @@ Array [
               title="Authentication built-in."
             />
             <div
-              className="MuiCardContent-root frontPage-cardContent-6"
+              className="MuiCardContent-root cardSection-cardContent-183"
             >
               <h2
                 className="MuiTypography-root MuiTypography-h5 MuiTypography-gutterBottom"
@@ -218,14 +218,14 @@ Array [
       </div>
     </div>
     <div
-      className="frontPage-tryDemo-7"
+      className="cardSection-tryDemo-184"
     >
       <div
         className="MuiContainer-root MuiContainer-maxWidthSm"
       >
         <a
           aria-disabled={false}
-          className="MuiButtonBase-root MuiButton-root MuiButton-outlined MuiButton-outlinedSecondary"
+          className="MuiButtonBase-root MuiButton-root MuiButton-outlined cardSection-button-185 MuiButton-outlinedSecondary"
           href="/create-account"
           onBlur={[Function]}
           onClick={[Function]}
