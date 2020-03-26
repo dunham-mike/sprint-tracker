@@ -11,28 +11,11 @@ import Typography from '@material-ui/core/Typography';
 import Container from '@material-ui/core/Container';
 
 import Footer from '../Footer/Footer';
+import Hero from './Hero/Hero';
 
 const styles = theme => ({
   icon: {
     marginRight: theme.spacing(2),
-  },
-  heroContent: {
-    backgroundColor: theme.palette.background.paper,
-    padding: theme.spacing(8, 0, 6),
-  },
-  heroButtons: {
-    marginTop: theme.spacing(4),
-  },
-  buttonContainer: {
-    justifyContent: "center",
-    '@media (max-width: 500px)': {
-        flexDirection: 'column',
-    },
-  },
-  buttonGridItem: {
-    '@media (max-width: 500px)': {
-        margin: '0 auto',
-    },
   },
   cardGrid: {
     paddingTop: theme.spacing(8),
@@ -57,18 +40,6 @@ const styles = theme => ({
       marginTop: theme.spacing(-2),
       marginBottom: theme.spacing(6),
       textAlign: 'center',
-  },
-  footer: {
-    backgroundColor: theme.palette.background.paper,
-    padding: theme.spacing(6),
-  },
-  copyright: {
-    marginTop: theme.spacing(1.3)
-  },
-  flexDisplay: {
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
   },
 });
 
@@ -96,72 +67,44 @@ const frontPage = (props) => {
     return(
         <React.Fragment>
             <main>
-            {/* Hero unit */}
-            <div className={classes.heroContent}>
-            <Container maxWidth="sm">
-                <Typography component="h1" variant="h2" align="center" color="textPrimary" gutterBottom>
-                Deliberate Sprints
-                </Typography>
-                <Typography variant="h5" align="center" color="textSecondary" paragraph>
-                Sprint tracking. With a point of view.
-                </Typography>
-                <div className={classes.heroButtons}>
-                <Grid container spacing={2} className={classes.buttonContainer}>
-                    <Grid item className={classes.buttonGridItem}>
-                        <Button variant="contained" color="primary" component={RouterLink} to="/demo">
-                            TRY A DEMO
-                        </Button>
-                    </Grid>
-                    <Grid item className={classes.buttonGridItem}>
-                        <Button variant="outlined" color="primary" component={RouterLink} to="/create-account">
-                            CREATE AN ACCOUNT
-                        </Button>
-                    </Grid>
-                    <Grid item className={classes.buttonGridItem}>
-                        <Button variant="outlined" color="primary" component={RouterLink} to="/login">
-                            LOG IN
-                        </Button>
-                    </Grid>
+                <Hero />
+            
+                <Container className={classes.cardGrid} maxWidth="md">
+                {/* End hero unit */}
+                <Grid container spacing={4} className={classes.cardContainer}>
+                    {cards.map((card, index) => (
+                        <Grid item key={card.heading} xs={11} sm={index === 0 ? 8 : 6} md={4}>
+                            <Card className={classes.card}>
+                            <CardMedia
+                                className={classes.cardMedia}
+                                image={card.imageUrl}
+                                title={card.heading}
+                            />
+                            <CardContent className={classes.cardContent}>
+                                <Typography gutterBottom variant="h5" component="h2">
+                                {card.heading}
+                                </Typography>
+                                <Typography>
+                                {card.content}
+                                </Typography>
+                            </CardContent>
+                            </Card>
+                        </Grid>
+                    ))}
                 </Grid>
+                </Container>
+                <div className={classes.tryDemo}>
+                <Container maxWidth="sm">
+                    <Button variant="outlined" color="secondary" component={RouterLink} to="/create-account">
+                        Create your free account
+                    </Button>
+                </Container>
                 </div>
-            </Container>
-            </div>
-            <Container className={classes.cardGrid} maxWidth="md">
-            {/* End hero unit */}
-            <Grid container spacing={4} className={classes.cardContainer}>
-                {cards.map((card, index) => (
-                    <Grid item key={card.heading} xs={11} sm={index === 0 ? 8 : 6} md={4}>
-                        <Card className={classes.card}>
-                        <CardMedia
-                            className={classes.cardMedia}
-                            image={card.imageUrl}
-                            title={card.heading}
-                        />
-                        <CardContent className={classes.cardContent}>
-                            <Typography gutterBottom variant="h5" component="h2">
-                            {card.heading}
-                            </Typography>
-                            <Typography>
-                            {card.content}
-                            </Typography>
-                        </CardContent>
-                        </Card>
-                    </Grid>
-                ))}
-            </Grid>
-            </Container>
-            <div className={classes.tryDemo}>
-            <Container maxWidth="sm">
-                <Button variant="outlined" color="secondary" component={RouterLink} to="/create-account">
-                    Create your free account
-                </Button>
-            </Container>
-            </div>
-        </main>
+            </main>
 
-        <Footer />
+            <Footer />
         
-      </React.Fragment>
+        </React.Fragment>
     );
 };
 
