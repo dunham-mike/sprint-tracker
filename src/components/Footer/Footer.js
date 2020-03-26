@@ -9,7 +9,6 @@ const styles = theme => ({
     footer: {
       backgroundColor: theme.palette.background.paper,
       padding: theme.spacing(6),
-      marginTop: theme.spacing(4),
     },
     copyright: {
       marginTop: theme.spacing(1.3)

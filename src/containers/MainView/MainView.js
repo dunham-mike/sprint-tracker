@@ -28,6 +28,7 @@ const styles = theme => ({
         flexDirection: 'column',
         paddingTop: theme.spacing(1),
         marginLeft: theme.spacing(3),
+        marginBottom: theme.spacing(4),
         position: 'relative',
         flex: '1'
     },
