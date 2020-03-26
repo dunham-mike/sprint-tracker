@@ -2,16 +2,13 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { withStyles } from '@material-ui/core/styles';
 
-import * as moment from 'moment';
-
 import blue from '@material-ui/core/colors/blue';
-import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
 
-import PastSprint from './PastSprint/PastSprint';
 import SprintStatistics from '../../components/SprintStatistics/SprintStatistics';
 import ModalErrorBoundary from '../ErrorBoundary/ModalErrorBoundary/ModalErrorBoundary';
 import Footer from '../../components/Footer/Footer';
+import PastSprints from './PastSprints/PastSprints';
 
 const styles = theme => ({
     overallContainer: {
@@ -33,12 +30,6 @@ const styles = theme => ({
         textAlign: 'center',
         marginBottom: theme.spacing(2),
         
-    },
-    paper: {
-        textAlign: 'center',
-        width: '250px',
-        margin: '0 auto',
-        padding: theme.spacing(1),
     },
     button: {
         width: theme.spacing(40),
@@ -86,32 +77,10 @@ class PastSprintsView extends Component {
     render(){
         const { classes } = this.props;
 
-        const noSprintsMessage = (
-            <Typography variant="h5" style={{textAlign: 'center',}}>
-                There are no completed sprints to display.
-            </Typography>
-        );
-    
-        const sprintsToDisplay = this.props.sprints
-            .filter(sprint => { 
-                return  moment.utc().isAfter(moment.utc(sprint.endDate), "day"); }
-            )
-            .sort((a, b) => b.endDate - a.endDate) // Sort so most recent end dates are at the top
-            .map(sprint => {
-                return (
-                    <PastSprint 
-                        sprint={sprint} 
-                        openSprintStatistics={this.openSprintStatistics}
-                        key={sprint.id}
-                    />
-                );
-            });
-
-        // Displaying the Sprint Statistics Modal
-        let sprintStatistics = null;
+        let sprintStatisticsModal = null;
 
         if (this.state.displayingSprintStatistics) {
-            sprintStatistics = (
+            sprintStatisticsModal = (
                 <div>
                     <ModalErrorBoundary
                         onClose={this.closeSprintStatistics}
@@ -139,9 +108,11 @@ class PastSprintsView extends Component {
                             PAST SPRINTS
                         </Button>
                     </div>
-                    {sprintsToDisplay.length === 0 ? noSprintsMessage : null}
-                    {sprintsToDisplay}
-                    {sprintStatistics}
+                    <PastSprints 
+                        sprints={this.props.sprints} 
+                        openSprintStatistics={this.openSprintStatistics}
+                    />
+                    {sprintStatisticsModal}
                 </div>
                 <Footer />
             </div>

@@ -1,19 +1,13 @@
 import React, { Component } from 'react';
-// import { connect } from 'react-redux';
-// import * as moment from 'moment';
 // Changed import from 'import * as moment' to accommodate testing, per: https://github.com/palantir/blueprint/issues/959#issuecomment-562836914
 import moment from 'moment'; 
 
 import { withStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
-// import AddCircleOutlineOutlinedIcon from '@material-ui/icons/AddCircleOutlineOutlined';
-// import EditOutlinedIcon from '@material-ui/icons/EditOutlined';
 import InsertChartOutlinedOutlinedIcon from '@material-ui/icons/InsertChartOutlinedOutlined';
 import yellow from '@material-ui/core/colors/yellow';
-// import green from '@material-ui/core/colors/green';
 
-
-import ProjectTable from '../../../components/Sprint/ProjectTable/ProjectTable';
+import ProjectTable from '../../../../components/Sprint/ProjectTable/ProjectTable';
 
 const styles = theme => ({
     sprintSectionContainer: {
@@ -38,11 +32,6 @@ const styles = theme => ({
       },
     conditionalButtons: {
         margin: '0 2px',
-        // backgroundColor: yellow[400],
-        // color: yellow[400],
-        // '&:hover': {
-        //     backgroundColor: yellow[600],
-        //   },
     },
     buttonSpacing: {
         marginBottom: theme.spacing(1),
@@ -84,7 +73,6 @@ class PastSprint extends Component {
                 displaySprint: !prevState.displaySprint
             }
         });
-        // console.log('toggleCurrentSprint');
     }
 
     getSprintLength = () => {
