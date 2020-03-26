@@ -1867,6 +1867,7 @@ exports[`App Component should match the snapshot 1`] = `
                                               "cardGrid": "frontPage-cardGrid-153",
                                               "cardMedia": "frontPage-cardMedia-156",
                                               "copyright": "frontPage-copyright-160",
+                                              "flexDisplay": "frontPage-flexDisplay-161",
                                               "footer": "frontPage-footer-159",
                                               "heroButtons": "frontPage-heroButtons-150",
                                               "heroContent": "frontPage-heroContent-149",
@@ -4581,164 +4582,178 @@ exports[`App Component should match the snapshot 1`] = `
                                               </WithStyles(ForwardRef(Container))>
                                             </div>
                                           </main>
-                                          <footer
-                                            className="frontPage-footer-159"
-                                          >
-                                            <WithStyles(ForwardRef(Typography))
-                                              align="center"
-                                              gutterBottom={true}
-                                              variant="h6"
-                                            >
-                                              <ForwardRef(Typography)
-                                                align="center"
-                                                classes={
-                                                  Object {
-                                                    "alignCenter": "MuiTypography-alignCenter",
-                                                    "alignJustify": "MuiTypography-alignJustify",
-                                                    "alignLeft": "MuiTypography-alignLeft",
-                                                    "alignRight": "MuiTypography-alignRight",
-                                                    "body1": "MuiTypography-body1",
-                                                    "body2": "MuiTypography-body2",
-                                                    "button": "MuiTypography-button",
-                                                    "caption": "MuiTypography-caption",
-                                                    "colorError": "MuiTypography-colorError",
-                                                    "colorInherit": "MuiTypography-colorInherit",
-                                                    "colorPrimary": "MuiTypography-colorPrimary",
-                                                    "colorSecondary": "MuiTypography-colorSecondary",
-                                                    "colorTextPrimary": "MuiTypography-colorTextPrimary",
-                                                    "colorTextSecondary": "MuiTypography-colorTextSecondary",
-                                                    "displayBlock": "MuiTypography-displayBlock",
-                                                    "displayInline": "MuiTypography-displayInline",
-                                                    "gutterBottom": "MuiTypography-gutterBottom",
-                                                    "h1": "MuiTypography-h1",
-                                                    "h2": "MuiTypography-h2",
-                                                    "h3": "MuiTypography-h3",
-                                                    "h4": "MuiTypography-h4",
-                                                    "h5": "MuiTypography-h5",
-                                                    "h6": "MuiTypography-h6",
-                                                    "noWrap": "MuiTypography-noWrap",
-                                                    "overline": "MuiTypography-overline",
-                                                    "paragraph": "MuiTypography-paragraph",
-                                                    "root": "MuiTypography-root",
-                                                    "srOnly": "MuiTypography-srOnly",
-                                                    "subtitle1": "MuiTypography-subtitle1",
-                                                    "subtitle2": "MuiTypography-subtitle2",
-                                                  }
+                                          <WithStyles(footer)>
+                                            <footer
+                                              classes={
+                                                Object {
+                                                  "copyright": "footer-copyright-279",
+                                                  "flexDisplay": "footer-flexDisplay-280",
+                                                  "footer": "footer-footer-278",
                                                 }
-                                                gutterBottom={true}
-                                                variant="h6"
-                                              >
-                                                <h6
-                                                  className="MuiTypography-root MuiTypography-h6 MuiTypography-gutterBottom MuiTypography-alignCenter"
-                                                >
-                                                  Built with React and Material UI.
-                                                </h6>
-                                              </ForwardRef(Typography)>
-                                            </WithStyles(ForwardRef(Typography))>
-                                            <WithStyles(ForwardRef(Typography))
-                                              align="center"
-                                              color="textSecondary"
-                                              component="p"
-                                              variant="subtitle1"
+                                              }
                                             >
-                                              <ForwardRef(Typography)
-                                                align="center"
-                                                classes={
-                                                  Object {
-                                                    "alignCenter": "MuiTypography-alignCenter",
-                                                    "alignJustify": "MuiTypography-alignJustify",
-                                                    "alignLeft": "MuiTypography-alignLeft",
-                                                    "alignRight": "MuiTypography-alignRight",
-                                                    "body1": "MuiTypography-body1",
-                                                    "body2": "MuiTypography-body2",
-                                                    "button": "MuiTypography-button",
-                                                    "caption": "MuiTypography-caption",
-                                                    "colorError": "MuiTypography-colorError",
-                                                    "colorInherit": "MuiTypography-colorInherit",
-                                                    "colorPrimary": "MuiTypography-colorPrimary",
-                                                    "colorSecondary": "MuiTypography-colorSecondary",
-                                                    "colorTextPrimary": "MuiTypography-colorTextPrimary",
-                                                    "colorTextSecondary": "MuiTypography-colorTextSecondary",
-                                                    "displayBlock": "MuiTypography-displayBlock",
-                                                    "displayInline": "MuiTypography-displayInline",
-                                                    "gutterBottom": "MuiTypography-gutterBottom",
-                                                    "h1": "MuiTypography-h1",
-                                                    "h2": "MuiTypography-h2",
-                                                    "h3": "MuiTypography-h3",
-                                                    "h4": "MuiTypography-h4",
-                                                    "h5": "MuiTypography-h5",
-                                                    "h6": "MuiTypography-h6",
-                                                    "noWrap": "MuiTypography-noWrap",
-                                                    "overline": "MuiTypography-overline",
-                                                    "paragraph": "MuiTypography-paragraph",
-                                                    "root": "MuiTypography-root",
-                                                    "srOnly": "MuiTypography-srOnly",
-                                                    "subtitle1": "MuiTypography-subtitle1",
-                                                    "subtitle2": "MuiTypography-subtitle2",
-                                                  }
-                                                }
-                                                color="textSecondary"
-                                                component="p"
-                                                variant="subtitle1"
+                                              <footer
+                                                className="footer-footer-278"
                                               >
-                                                <p
-                                                  className="MuiTypography-root MuiTypography-subtitle1 MuiTypography-colorTextSecondary MuiTypography-alignCenter"
+                                                <WithStyles(ForwardRef(Typography))
+                                                  align="center"
+                                                  gutterBottom={true}
+                                                  variant="h6"
                                                 >
-                                                  Made with 
-                                                  <ForwardRef
-                                                    color="secondary"
-                                                    fontSize="small"
+                                                  <ForwardRef(Typography)
+                                                    align="center"
+                                                    classes={
+                                                      Object {
+                                                        "alignCenter": "MuiTypography-alignCenter",
+                                                        "alignJustify": "MuiTypography-alignJustify",
+                                                        "alignLeft": "MuiTypography-alignLeft",
+                                                        "alignRight": "MuiTypography-alignRight",
+                                                        "body1": "MuiTypography-body1",
+                                                        "body2": "MuiTypography-body2",
+                                                        "button": "MuiTypography-button",
+                                                        "caption": "MuiTypography-caption",
+                                                        "colorError": "MuiTypography-colorError",
+                                                        "colorInherit": "MuiTypography-colorInherit",
+                                                        "colorPrimary": "MuiTypography-colorPrimary",
+                                                        "colorSecondary": "MuiTypography-colorSecondary",
+                                                        "colorTextPrimary": "MuiTypography-colorTextPrimary",
+                                                        "colorTextSecondary": "MuiTypography-colorTextSecondary",
+                                                        "displayBlock": "MuiTypography-displayBlock",
+                                                        "displayInline": "MuiTypography-displayInline",
+                                                        "gutterBottom": "MuiTypography-gutterBottom",
+                                                        "h1": "MuiTypography-h1",
+                                                        "h2": "MuiTypography-h2",
+                                                        "h3": "MuiTypography-h3",
+                                                        "h4": "MuiTypography-h4",
+                                                        "h5": "MuiTypography-h5",
+                                                        "h6": "MuiTypography-h6",
+                                                        "noWrap": "MuiTypography-noWrap",
+                                                        "overline": "MuiTypography-overline",
+                                                        "paragraph": "MuiTypography-paragraph",
+                                                        "root": "MuiTypography-root",
+                                                        "srOnly": "MuiTypography-srOnly",
+                                                        "subtitle1": "MuiTypography-subtitle1",
+                                                        "subtitle2": "MuiTypography-subtitle2",
+                                                      }
+                                                    }
+                                                    gutterBottom={true}
+                                                    variant="h6"
                                                   >
-                                                    <WithStyles(ForwardRef(SvgIcon))
-                                                      color="secondary"
-                                                      fontSize="small"
+                                                    <h6
+                                                      className="MuiTypography-root MuiTypography-h6 MuiTypography-gutterBottom MuiTypography-alignCenter"
                                                     >
-                                                      <ForwardRef(SvgIcon)
-                                                        classes={
-                                                          Object {
-                                                            "colorAction": "MuiSvgIcon-colorAction",
-                                                            "colorDisabled": "MuiSvgIcon-colorDisabled",
-                                                            "colorError": "MuiSvgIcon-colorError",
-                                                            "colorPrimary": "MuiSvgIcon-colorPrimary",
-                                                            "colorSecondary": "MuiSvgIcon-colorSecondary",
-                                                            "fontSizeInherit": "MuiSvgIcon-fontSizeInherit",
-                                                            "fontSizeLarge": "MuiSvgIcon-fontSizeLarge",
-                                                            "fontSizeSmall": "MuiSvgIcon-fontSizeSmall",
-                                                            "root": "MuiSvgIcon-root",
-                                                          }
-                                                        }
+                                                      Built with React and Material UI.
+                                                    </h6>
+                                                  </ForwardRef(Typography)>
+                                                </WithStyles(ForwardRef(Typography))>
+                                                <WithStyles(ForwardRef(Typography))
+                                                  align="center"
+                                                  className="footer-flexDisplay-280"
+                                                  color="textSecondary"
+                                                  component="p"
+                                                  variant="subtitle1"
+                                                >
+                                                  <ForwardRef(Typography)
+                                                    align="center"
+                                                    className="footer-flexDisplay-280"
+                                                    classes={
+                                                      Object {
+                                                        "alignCenter": "MuiTypography-alignCenter",
+                                                        "alignJustify": "MuiTypography-alignJustify",
+                                                        "alignLeft": "MuiTypography-alignLeft",
+                                                        "alignRight": "MuiTypography-alignRight",
+                                                        "body1": "MuiTypography-body1",
+                                                        "body2": "MuiTypography-body2",
+                                                        "button": "MuiTypography-button",
+                                                        "caption": "MuiTypography-caption",
+                                                        "colorError": "MuiTypography-colorError",
+                                                        "colorInherit": "MuiTypography-colorInherit",
+                                                        "colorPrimary": "MuiTypography-colorPrimary",
+                                                        "colorSecondary": "MuiTypography-colorSecondary",
+                                                        "colorTextPrimary": "MuiTypography-colorTextPrimary",
+                                                        "colorTextSecondary": "MuiTypography-colorTextSecondary",
+                                                        "displayBlock": "MuiTypography-displayBlock",
+                                                        "displayInline": "MuiTypography-displayInline",
+                                                        "gutterBottom": "MuiTypography-gutterBottom",
+                                                        "h1": "MuiTypography-h1",
+                                                        "h2": "MuiTypography-h2",
+                                                        "h3": "MuiTypography-h3",
+                                                        "h4": "MuiTypography-h4",
+                                                        "h5": "MuiTypography-h5",
+                                                        "h6": "MuiTypography-h6",
+                                                        "noWrap": "MuiTypography-noWrap",
+                                                        "overline": "MuiTypography-overline",
+                                                        "paragraph": "MuiTypography-paragraph",
+                                                        "root": "MuiTypography-root",
+                                                        "srOnly": "MuiTypography-srOnly",
+                                                        "subtitle1": "MuiTypography-subtitle1",
+                                                        "subtitle2": "MuiTypography-subtitle2",
+                                                      }
+                                                    }
+                                                    color="textSecondary"
+                                                    component="p"
+                                                    variant="subtitle1"
+                                                  >
+                                                    <p
+                                                      className="MuiTypography-root footer-flexDisplay-280 MuiTypography-subtitle1 MuiTypography-colorTextSecondary MuiTypography-alignCenter"
+                                                    >
+                                                      <span>
+                                                        Made with 
+                                                      </span>
+                                                      <ForwardRef
                                                         color="secondary"
                                                         fontSize="small"
                                                       >
-                                                        <svg
-                                                          aria-hidden="true"
-                                                          className="MuiSvgIcon-root MuiSvgIcon-colorSecondary MuiSvgIcon-fontSizeSmall"
-                                                          focusable="false"
-                                                          role="presentation"
-                                                          viewBox="0 0 24 24"
+                                                        <WithStyles(ForwardRef(SvgIcon))
+                                                          color="secondary"
+                                                          fontSize="small"
                                                         >
-                                                          <path
-                                                            d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"
-                                                          />
-                                                        </svg>
-                                                      </ForwardRef(SvgIcon)>
-                                                    </WithStyles(ForwardRef(SvgIcon))>
-                                                  </ForwardRef>
-                                                   in Burlingame, CA.
-                                                </p>
-                                              </ForwardRef(Typography)>
-                                            </WithStyles(ForwardRef(Typography))>
-                                            <div
-                                              className="frontPage-copyright-160"
-                                            >
-                                              <Copyright>
+                                                          <ForwardRef(SvgIcon)
+                                                            classes={
+                                                              Object {
+                                                                "colorAction": "MuiSvgIcon-colorAction",
+                                                                "colorDisabled": "MuiSvgIcon-colorDisabled",
+                                                                "colorError": "MuiSvgIcon-colorError",
+                                                                "colorPrimary": "MuiSvgIcon-colorPrimary",
+                                                                "colorSecondary": "MuiSvgIcon-colorSecondary",
+                                                                "fontSizeInherit": "MuiSvgIcon-fontSizeInherit",
+                                                                "fontSizeLarge": "MuiSvgIcon-fontSizeLarge",
+                                                                "fontSizeSmall": "MuiSvgIcon-fontSizeSmall",
+                                                                "root": "MuiSvgIcon-root",
+                                                              }
+                                                            }
+                                                            color="secondary"
+                                                            fontSize="small"
+                                                          >
+                                                            <svg
+                                                              aria-hidden="true"
+                                                              className="MuiSvgIcon-root MuiSvgIcon-colorSecondary MuiSvgIcon-fontSizeSmall"
+                                                              focusable="false"
+                                                              role="presentation"
+                                                              viewBox="0 0 24 24"
+                                                            >
+                                                              <path
+                                                                d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"
+                                                              />
+                                                            </svg>
+                                                          </ForwardRef(SvgIcon)>
+                                                        </WithStyles(ForwardRef(SvgIcon))>
+                                                      </ForwardRef>
+                                                      <span>
+                                                         in Burlingame, CA.
+                                                      </span>
+                                                    </p>
+                                                  </ForwardRef(Typography)>
+                                                </WithStyles(ForwardRef(Typography))>
                                                 <WithStyles(ForwardRef(Typography))
                                                   align="center"
+                                                  className="footer-copyright-279"
                                                   color="textSecondary"
                                                   variant="body2"
                                                 >
                                                   <ForwardRef(Typography)
                                                     align="center"
+                                                    className="footer-copyright-279"
                                                     classes={
                                                       Object {
                                                         "alignCenter": "MuiTypography-alignCenter",
@@ -4777,12 +4792,12 @@ exports[`App Component should match the snapshot 1`] = `
                                                     variant="body2"
                                                   >
                                                     <p
-                                                      className="MuiTypography-root MuiTypography-body2 MuiTypography-colorTextSecondary MuiTypography-alignCenter"
+                                                      className="MuiTypography-root footer-copyright-279 MuiTypography-body2 MuiTypography-colorTextSecondary MuiTypography-alignCenter"
                                                     >
-                                                      Copyright © 
+                                                      © 
                                                       <WithStyles(ForwardRef(Link))
                                                         color="inherit"
-                                                        href="https://github.com/dunham-mike"
+                                                        href="https://www.mikedunham.org"
                                                         rel="noopener noreferrer"
                                                         target="_blank"
                                                       >
@@ -4798,7 +4813,7 @@ exports[`App Component should match the snapshot 1`] = `
                                                             }
                                                           }
                                                           color="inherit"
-                                                          href="https://github.com/dunham-mike"
+                                                          href="https://www.mikedunham.org"
                                                           rel="noopener noreferrer"
                                                           target="_blank"
                                                         >
@@ -4806,7 +4821,7 @@ exports[`App Component should match the snapshot 1`] = `
                                                             className="MuiLink-root MuiLink-underlineHover"
                                                             color="inherit"
                                                             component="a"
-                                                            href="https://github.com/dunham-mike"
+                                                            href="https://www.mikedunham.org"
                                                             onBlur={[Function]}
                                                             onFocus={[Function]}
                                                             rel="noopener noreferrer"
@@ -4851,7 +4866,7 @@ exports[`App Component should match the snapshot 1`] = `
                                                               }
                                                               color="inherit"
                                                               component="a"
-                                                              href="https://github.com/dunham-mike"
+                                                              href="https://www.mikedunham.org"
                                                               onBlur={[Function]}
                                                               onFocus={[Function]}
                                                               rel="noopener noreferrer"
@@ -4860,7 +4875,7 @@ exports[`App Component should match the snapshot 1`] = `
                                                             >
                                                               <a
                                                                 className="MuiTypography-root MuiLink-root MuiLink-underlineHover MuiTypography-colorInherit"
-                                                                href="https://github.com/dunham-mike"
+                                                                href="https://www.mikedunham.org"
                                                                 onBlur={[Function]}
                                                                 onFocus={[Function]}
                                                                 rel="noopener noreferrer"
@@ -4874,13 +4889,12 @@ exports[`App Component should match the snapshot 1`] = `
                                                       </WithStyles(ForwardRef(Link))>
                                                        
                                                       2020
-                                                      .
                                                     </p>
                                                   </ForwardRef(Typography)>
                                                 </WithStyles(ForwardRef(Typography))>
-                                              </Copyright>
-                                            </div>
-                                          </footer>
+                                              </footer>
+                                            </footer>
+                                          </WithStyles(footer)>
                                         </frontPage>
                                       </WithStyles(frontPage)>
                                     </Route>

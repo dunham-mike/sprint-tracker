@@ -11,14 +11,21 @@ import Button from '@material-ui/core/Button';
 import PastSprint from './PastSprint/PastSprint';
 import SprintStatistics from '../../components/SprintStatistics/SprintStatistics';
 import ModalErrorBoundary from '../ErrorBoundary/ModalErrorBoundary/ModalErrorBoundary';
+import Footer from '../../components/Footer/Footer';
 
 const styles = theme => ({
+    overallContainer: {
+        display: 'flex',
+        flexDirection: 'column',
+        minHeight: 'calc(100vh - 72px)',
+    },
     mainViewContainer: {
         display: 'flex',
         flexDirection: 'column',
         paddingTop: theme.spacing(1),
         marginLeft: theme.spacing(3),
         position: 'relative',
+        flex: '1',
     },
     titleContainer: {
         width: '100%',
@@ -119,20 +126,23 @@ class PastSprints extends Component {
         }
 
         return(
-            <div className={classes.mainViewContainer}>
-                <div className={classes.titleContainer}>
-                    <Button variant="contained" 
-                        disableRipple 
-                        disableFocusRipple 
-                        color="primary" 
-                        className={classes.button}
-                    >
-                        PAST SPRINTS
-                    </Button>
+            <div className={classes.overallContainer}>
+                <div className={classes.mainViewContainer}>
+                    <div className={classes.titleContainer}>
+                        <Button variant="contained" 
+                            disableRipple 
+                            disableFocusRipple 
+                            color="primary" 
+                            className={classes.button}
+                        >
+                            PAST SPRINTS
+                        </Button>
+                    </div>
+                    {sprintsToDisplay.length === 0 ? noSprintsMessage : null}
+                    {sprintsToDisplay}
+                    {sprintStatistics}
                 </div>
-                {sprintsToDisplay.length === 0 ? noSprintsMessage : null}
-                {sprintsToDisplay}
-                {sprintStatistics}
+                <Footer />
             </div>
         );
     }

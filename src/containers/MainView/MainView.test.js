@@ -483,7 +483,7 @@ describe('MainView Component', () => {
             .toHaveLength(0);
 
         // Current Sprint table visible and no other tables visible
-        expect(enzymeMountWrapper.find('h6.MuiTypography-root.MuiTypography-h6').prop('children'))
+        expect(enzymeMountWrapper.find('div.MuiToolbar-root h6.MuiTypography-root.MuiTypography-h6').prop('children'))
             .toEqual(expect.stringContaining('Sprint #1'));
         expect(enzymeMountWrapper.find('thead tr')).toHaveLength(1);
         expect(enzymeMountWrapper.find('tbody tr')).toHaveLength(3);
@@ -511,7 +511,7 @@ describe('MainView Component', () => {
 
         // Current Sprint's action buttons disappear
         expect(enzymeMountWrapper.find('button.MuiButton-outlined span.MuiButton-label')).toHaveLength(0);
-        expect(enzymeMountWrapper.find('h6.MuiTypography-root.MuiTypography-h6')).toHaveLength(0);
+        expect(enzymeMountWrapper.find('div.MuiToolbar-root h6.MuiTypography-root.MuiTypography-h6')).toHaveLength(0);
 
         /* Open Toggle */
 
@@ -529,7 +529,7 @@ describe('MainView Component', () => {
             .toHaveLength(0);
 
         // Current Sprint table visible and no other tables visible
-        expect(enzymeMountWrapper.find('h6.MuiTypography-root.MuiTypography-h6').prop('children'))
+        expect(enzymeMountWrapper.find('div.MuiToolbar-root h6.MuiTypography-root.MuiTypography-h6').prop('children'))
             .toEqual(expect.stringContaining('Sprint #1'));
         expect(enzymeMountWrapper.find('thead tr')).toHaveLength(1);
         expect(enzymeMountWrapper.find('tbody tr')).toHaveLength(3);
@@ -567,7 +567,7 @@ describe('MainView Component', () => {
             .toHaveLength(0);
 
         // No table after Current Sprint
-        expect(enzymeMountWrapper.find('h6.MuiTypography-root.MuiTypography-h6').at(1)).toHaveLength(0);
+        expect(enzymeMountWrapper.find('div.MuiToolbar-root h6.MuiTypography-root.MuiTypography-h6').at(1)).toHaveLength(0);
         expect(enzymeMountWrapper.find('thead tr')).toHaveLength(1);
         expect(enzymeMountWrapper.find('tbody tr')).toHaveLength(3); 
     });
@@ -587,7 +587,7 @@ describe('MainView Component', () => {
             .toHaveLength(0);
 
         // Queue and Current Sprint tables visible but no others
-        expect(enzymeMountWrapper.find('h6.MuiTypography-root.MuiTypography-h6').at(1).prop('children'))
+        expect(enzymeMountWrapper.find('div.MuiToolbar-root h6.MuiTypography-root.MuiTypography-h6').at(1).prop('children'))
             .toEqual(expect.stringContaining('Queue'));
         expect(enzymeMountWrapper.find('thead tr')).toHaveLength(2);
         expect(enzymeMountWrapper.find('tbody tr')).toHaveLength(6); // 3 from Sprint #1 and 3 from Queue
@@ -600,7 +600,7 @@ describe('MainView Component', () => {
             .toHaveLength(0);
 
         // No table after Current Sprint
-        expect(enzymeMountWrapper.find('h6.MuiTypography-root.MuiTypography-h6').at(1)).toHaveLength(0);
+        expect(enzymeMountWrapper.find('div.MuiToolbar-root h6.MuiTypography-root.MuiTypography-h6').at(1)).toHaveLength(0);
         expect(enzymeMountWrapper.find('thead tr')).toHaveLength(1);
         expect(enzymeMountWrapper.find('tbody tr')).toHaveLength(3); 
     });
@@ -624,7 +624,7 @@ describe('MainView Component', () => {
             .toHaveLength(0);
 
         // Future Sprints and Current Sprint tables visible but no others
-        expect(enzymeMountWrapper.find('h6.MuiTypography-root.MuiTypography-h6').at(1).prop('children'))
+        expect(enzymeMountWrapper.find('div.MuiToolbar-root h6.MuiTypography-root.MuiTypography-h6').at(1).prop('children'))
             .toEqual(expect.stringContaining('Sprint #3'));
         expect(enzymeMountWrapper.find('thead tr')).toHaveLength(2);
         expect(enzymeMountWrapper.find('tbody tr')).toHaveLength(4); // 3 from Sprint #1 and 1 from Sprint #3
@@ -637,7 +637,7 @@ describe('MainView Component', () => {
             .toHaveLength(0);
 
         // No table after Current Sprint
-        expect(enzymeMountWrapper.find('h6.MuiTypography-root.MuiTypography-h6').at(1)).toHaveLength(0);
+        expect(enzymeMountWrapper.find('div.MuiToolbar-root h6.MuiTypography-root.MuiTypography-h6').at(1)).toHaveLength(0);
         expect(enzymeMountWrapper.find('thead tr')).toHaveLength(1);
         expect(enzymeMountWrapper.find('tbody tr')).toHaveLength(3); 
     });
@@ -926,9 +926,9 @@ describe('MainView Component', () => {
             .toHaveLength(0);
 
         // Future Sprints and Current Sprint tables visible but no others
-        expect(enzymeMountWrapper.find('h6.MuiTypography-root.MuiTypography-h6').at(1).prop('children'))
+        expect(enzymeMountWrapper.find('div.MuiToolbar-root h6.MuiTypography-root.MuiTypography-h6').at(1).prop('children'))
             .toEqual(expect.stringContaining('Sprint #3'));
-        expect(enzymeMountWrapper.find('h6.MuiTypography-root.MuiTypography-h6').at(2).prop('children'))
+        expect(enzymeMountWrapper.find('div.MuiToolbar-root h6.MuiTypography-root.MuiTypography-h6').at(2).prop('children'))
             .toEqual(expect.stringContaining('Sprint #4'));
         expect(enzymeMountWrapper.find('thead tr')).toHaveLength(3);
         expect(enzymeMountWrapper.find('tbody tr')).toHaveLength(5); // 3 from Sprint #1, 1 from Sprint #3, and 1 from Sprint #4

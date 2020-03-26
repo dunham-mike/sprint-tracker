@@ -15,14 +15,21 @@ import EditProject from '../EditProject/EditProject';
 import * as actions from '../../store/actions/index';
 import SprintStatistics from '../../components/SprintStatistics/SprintStatistics';
 import ModalErrorBoundary from '../ErrorBoundary/ModalErrorBoundary/ModalErrorBoundary';
+import Footer from '../../components/Footer/Footer';
 
 const styles = theme => ({
+    overallContainer: {
+        display: 'flex',
+        flexDirection: 'column',
+        minHeight: 'calc(100vh - 72px)',
+    },
     mainViewContainer: {
         display: 'flex',
         flexDirection: 'column',
         paddingTop: theme.spacing(1),
         marginLeft: theme.spacing(3),
         position: 'relative',
+        flex: '1'
     },
     sprintSectionContainer: {
         width: '100%',
@@ -513,124 +520,129 @@ export class MainView extends Component {
         }
 
         return(
-            <div className={classes.mainViewContainer}>
-                {/* Current Sprint Section */}
-                <div className={classes.sprintSectionContainer}>
-                    <div className={classes.buttonContainer}>
-                        <Button variant="contained" color="primary" className={classes.buttonSpacing} onClick={this.toggleCurrentSprint}>CURRENT SPRINT</Button>
-                        {this.state.displayCurrentSprint && this.state.currentSprintIndex !== null
-                        ?   <div className={classes.conditionalButtonsContainer}>
-                                <Button 
-                                    size="small" variant="outlined" color="primary" className={classes.conditionalButtons} 
-                                    startIcon={<AddCircleOutlineOutlinedIcon />} 
-                                    onClick={() => this.openCreatingProject(this.props.sprints[this.state.currentSprintIndex].id)}
-                                >
-                                    ADD NEW PROJECT
-                                </Button>
-                                <Button 
-                                    size="small" variant="outlined" color="primary" className={classes.conditionalButtons} 
-                                    startIcon={<EditOutlinedIcon />}
-                                    onClick={() => this.openEditingSprint(this.props.sprints[this.state.currentSprintIndex].id)}
-                                >
-                                    EDIT SPRINT
-                                </Button>
-                                <Button 
-                                    size="small" variant="outlined" color="primary" className={classes.conditionalButtons} 
-                                    startIcon={<InsertChartOutlinedOutlinedIcon />}
-                                    onClick={() => this.openSprintStatistics(this.props.sprints[this.state.currentSprintIndex].id)}
-                                >
-                                    SPRINT STATISTICS
-                                </Button>
-                            </div>
-                        : null    
-                        }
+            <div className={classes.overallContainer}>
+                <div className={classes.mainViewContainer}>
+                    {/* Current Sprint Section */}
+                    <div className={classes.sprintSectionContainer}>
+                        <div className={classes.buttonContainer}>
+                            <Button variant="contained" color="primary" className={classes.buttonSpacing} onClick={this.toggleCurrentSprint}>CURRENT SPRINT</Button>
+                            {this.state.displayCurrentSprint && this.state.currentSprintIndex !== null
+                            ?   <div className={classes.conditionalButtonsContainer}>
+                                    <Button 
+                                        size="small" variant="outlined" color="primary" className={classes.conditionalButtons} 
+                                        startIcon={<AddCircleOutlineOutlinedIcon />} 
+                                        onClick={() => this.openCreatingProject(this.props.sprints[this.state.currentSprintIndex].id)}
+                                    >
+                                        ADD NEW PROJECT
+                                    </Button>
+                                    <Button 
+                                        size="small" variant="outlined" color="primary" className={classes.conditionalButtons} 
+                                        startIcon={<EditOutlinedIcon />}
+                                        onClick={() => this.openEditingSprint(this.props.sprints[this.state.currentSprintIndex].id)}
+                                    >
+                                        EDIT SPRINT
+                                    </Button>
+                                    <Button 
+                                        size="small" variant="outlined" color="primary" className={classes.conditionalButtons} 
+                                        startIcon={<InsertChartOutlinedOutlinedIcon />}
+                                        onClick={() => this.openSprintStatistics(this.props.sprints[this.state.currentSprintIndex].id)}
+                                    >
+                                        SPRINT STATISTICS
+                                    </Button>
+                                </div>
+                            : null    
+                            }
+                        </div>
+                        {currentSprint}
                     </div>
-                    {currentSprint}
-                </div>
 
-                {/* Next Sprint Section */}
-                <div className={classes.sprintSectionContainer}>
-                    <div className={classes.buttonContainer}>
-                        <Button variant="contained" color="secondary" className={classes.buttonSpacing} onClick={this.toggleNextSprint}>NEXT SPRINT</Button>
-                        {this.state.displayNextSprint && this.state.nextSprintIndex !== null
-                        ?   <div className={classes.conditionalButtonsContainer}>
-                                <Button 
-                                    size="small" variant="outlined" color="secondary" className={classes.conditionalButtons} 
-                                    startIcon={<AddCircleOutlineOutlinedIcon />}
-                                    onClick={() => this.openCreatingProject(this.props.sprints[this.state.nextSprintIndex].id)}
-                                >
-                                    ADD NEW PROJECT
-                                </Button>
-                                <Button 
-                                    size="small" variant="outlined" color="secondary" className={classes.conditionalButtons} 
-                                    startIcon={<EditOutlinedIcon />}
-                                    onClick={() => this.openEditingSprint(this.props.sprints[this.state.nextSprintIndex].id)}
-                                >
-                                    EDIT SPRINT
-                                </Button>
-                                <Button 
-                                    size="small" variant="outlined" color="secondary" className={classes.conditionalButtons} 
-                                    startIcon={<InsertChartOutlinedOutlinedIcon />}
-                                    onClick={() => this.openSprintStatistics(this.props.sprints[this.state.nextSprintIndex].id)}
-                                >
-                                    SPRINT STATISTICS
-                                </Button>
-                            </div>
-                        : null    
-                        }
-                    </div> 
-                    {nextSprint}
-                </div>    
+                    {/* Next Sprint Section */}
+                    <div className={classes.sprintSectionContainer}>
+                        <div className={classes.buttonContainer}>
+                            <Button variant="contained" color="secondary" className={classes.buttonSpacing} onClick={this.toggleNextSprint}>NEXT SPRINT</Button>
+                            {this.state.displayNextSprint && this.state.nextSprintIndex !== null
+                            ?   <div className={classes.conditionalButtonsContainer}>
+                                    <Button 
+                                        size="small" variant="outlined" color="secondary" className={classes.conditionalButtons} 
+                                        startIcon={<AddCircleOutlineOutlinedIcon />}
+                                        onClick={() => this.openCreatingProject(this.props.sprints[this.state.nextSprintIndex].id)}
+                                    >
+                                        ADD NEW PROJECT
+                                    </Button>
+                                    <Button 
+                                        size="small" variant="outlined" color="secondary" className={classes.conditionalButtons} 
+                                        startIcon={<EditOutlinedIcon />}
+                                        onClick={() => this.openEditingSprint(this.props.sprints[this.state.nextSprintIndex].id)}
+                                    >
+                                        EDIT SPRINT
+                                    </Button>
+                                    <Button 
+                                        size="small" variant="outlined" color="secondary" className={classes.conditionalButtons} 
+                                        startIcon={<InsertChartOutlinedOutlinedIcon />}
+                                        onClick={() => this.openSprintStatistics(this.props.sprints[this.state.nextSprintIndex].id)}
+                                    >
+                                        SPRINT STATISTICS
+                                    </Button>
+                                </div>
+                            : null    
+                            }
+                        </div> 
+                        {nextSprint}
+                    </div>    
 
-                {/* Queue Section */}
-                <div className={classes.sprintSectionContainer}>
-                    <div className={classes.buttonContainer}>
-                        <Button variant="contained" color="default" className={classes.buttonSpacing} onClick={this.toggleQueue}>PROJECT QUEUE</Button>
-                        {this.state.displayQueue
-                        ?   <div className={classes.conditionalButtonsContainer}>
-                                <Button 
-                                    size="small" variant="outlined" color="default" className={classes.conditionalButtons} 
-                                    startIcon={<AddCircleOutlineOutlinedIcon />}
-                                    onClick={() => this.openCreatingProject(this.state.queueSprintId)}
-                                >
-                                    ADD NEW PROJECT
-                                </Button>
-                            </div>
-                        : null    
-                        }
-                        {queue}
+                    {/* Queue Section */}
+                    <div className={classes.sprintSectionContainer}>
+                        <div className={classes.buttonContainer}>
+                            <Button variant="contained" color="default" className={classes.buttonSpacing} onClick={this.toggleQueue}>PROJECT QUEUE</Button>
+                            {this.state.displayQueue
+                            ?   <div className={classes.conditionalButtonsContainer}>
+                                    <Button 
+                                        size="small" variant="outlined" color="default" className={classes.conditionalButtons} 
+                                        startIcon={<AddCircleOutlineOutlinedIcon />}
+                                        onClick={() => this.openCreatingProject(this.state.queueSprintId)}
+                                    >
+                                        ADD NEW PROJECT
+                                    </Button>
+                                </div>
+                            : null    
+                            }
+                            {queue}
+                        </div>
                     </div>
-                </div>
 
-                {/* Future Sprints Section */}
-                <div className={classes.sprintSectionContainer}>
-                    <div className={classes.buttonContainer}>
-                        <Button variant="contained" color="default" className={classes.buttonSpacing} onClick={this.toggleFutureSprints}>FUTURE SPRINTS</Button>
-                            {futureSprints}
+                    {/* Future Sprints Section */}
+                    <div className={classes.sprintSectionContainer}>
+                        <div className={classes.buttonContainer}>
+                            <Button variant="contained" color="default" className={classes.buttonSpacing} onClick={this.toggleFutureSprints}>FUTURE SPRINTS</Button>
+                                {futureSprints}
+                        </div>
                     </div>
-                </div>
 
-                {/* Create New Sprint Section */}
-                <div className={classes.sprintSectionContainer}>
-                    <div className={classes.buttonContainer}>
-                        <Button 
-                            variant="text" color="default" className={classes.buttonSpacing} 
-                            startIcon={<AddCircleOutlineOutlinedIcon />}
-                            onClick={this.openCreatingSprint}
-                        >
-                            CREATE NEW SPRINT
-                        </Button>
+                    {/* Create New Sprint Section */}
+                    <div className={classes.sprintSectionContainer}>
+                        <div className={classes.buttonContainer}>
+                            <Button 
+                                variant="text" color="default" className={classes.buttonSpacing} 
+                                startIcon={<AddCircleOutlineOutlinedIcon />}
+                                onClick={this.openCreatingSprint}
+                            >
+                                CREATE NEW SPRINT
+                            </Button>
+                        </div>
                     </div>
+
+                    {/* Edit Projects and Sprints Modals */}
+                    {projectEdit}
+                    {projectCreate}
+                    {sprintEdit}
+                    {sprintCreate}
+
+                    {/* Sprint Statistics Modal */}
+                    {sprintStatistics}
+
+                    
                 </div>
-
-                {/* Edit Projects and Sprints Modals */}
-                {projectEdit}
-                {projectCreate}
-                {sprintEdit}
-                {sprintCreate}
-
-                {/* Sprint Statistics Modal */}
-                {sprintStatistics}
+                <Footer />
             </div>
         );
     }

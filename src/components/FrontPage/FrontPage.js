@@ -9,21 +9,8 @@ import CardMedia from '@material-ui/core/CardMedia';
 import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
 import Container from '@material-ui/core/Container';
-import Link from '@material-ui/core/Link';
-import FavoriteIcon from '@material-ui/icons/Favorite';
 
-function Copyright() {
-  return (
-    <Typography variant="body2" color="textSecondary" align="center">
-      {'Copyright © '}
-      <Link color="inherit" href="https://github.com/dunham-mike" target="_blank" rel="noopener noreferrer">
-        Mike Dunham
-      </Link>{' '}
-      {new Date().getFullYear()}
-      {'.'}
-    </Typography>
-  );
-}
+import Footer from '../Footer/Footer';
 
 const styles = theme => ({
   icon: {
@@ -76,8 +63,13 @@ const styles = theme => ({
     padding: theme.spacing(6),
   },
   copyright: {
-    marginTop: theme.spacing(0.3)
-  }
+    marginTop: theme.spacing(1.3)
+  },
+  flexDisplay: {
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
 });
 
 const cards = [
@@ -166,19 +158,9 @@ const frontPage = (props) => {
             </Container>
             </div>
         </main>
-        {/* Footer */}
-        <footer className={classes.footer}>
-            <Typography variant="h6" align="center" gutterBottom>
-            Built with React and Material UI.
-            </Typography>
-            <Typography variant="subtitle1" align="center" color="textSecondary" component="p">
-                Made with <FavoriteIcon fontSize="small" color={"secondary"} /> in Burlingame, CA.
-            </Typography>
-            <div className={classes.copyright}>
-                <Copyright  />
-            </div>
-            
-        </footer>
+
+        <Footer />
+        
       </React.Fragment>
     );
 };

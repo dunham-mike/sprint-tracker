@@ -252,7 +252,7 @@ Array [
     </div>
   </main>,
   <footer
-    className="frontPage-footer-12"
+    className="footer-footer-221"
   >
     <h6
       className="MuiTypography-root MuiTypography-h6 MuiTypography-gutterBottom MuiTypography-alignCenter"
@@ -260,9 +260,11 @@ Array [
       Built with React and Material UI.
     </h6>
     <p
-      className="MuiTypography-root MuiTypography-subtitle1 MuiTypography-colorTextSecondary MuiTypography-alignCenter"
+      className="MuiTypography-root footer-flexDisplay-223 MuiTypography-subtitle1 MuiTypography-colorTextSecondary MuiTypography-alignCenter"
     >
-      Made with 
+      <span>
+        Made with 
+      </span>
       <svg
         aria-hidden="true"
         className="MuiSvgIcon-root MuiSvgIcon-colorSecondary MuiSvgIcon-fontSizeSmall"
@@ -274,30 +276,27 @@ Array [
           d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"
         />
       </svg>
-       in Burlingame, CA.
+      <span>
+         in Burlingame, CA.
+      </span>
     </p>
-    <div
-      className="frontPage-copyright-13"
+    <p
+      className="MuiTypography-root footer-copyright-222 MuiTypography-body2 MuiTypography-colorTextSecondary MuiTypography-alignCenter"
     >
-      <p
-        className="MuiTypography-root MuiTypography-body2 MuiTypography-colorTextSecondary MuiTypography-alignCenter"
+      © 
+      <a
+        className="MuiTypography-root MuiLink-root MuiLink-underlineHover MuiTypography-colorInherit"
+        href="https://www.mikedunham.org"
+        onBlur={[Function]}
+        onFocus={[Function]}
+        rel="noopener noreferrer"
+        target="_blank"
       >
-        Copyright © 
-        <a
-          className="MuiTypography-root MuiLink-root MuiLink-underlineHover MuiTypography-colorInherit"
-          href="https://github.com/dunham-mike"
-          onBlur={[Function]}
-          onFocus={[Function]}
-          rel="noopener noreferrer"
-          target="_blank"
-        >
-          Mike Dunham
-        </a>
-         
-        2020
-        .
-      </p>
-    </div>
+        Mike Dunham
+      </a>
+       
+      2020
+    </p>
   </footer>,
 ]
 `;
