@@ -19,7 +19,7 @@ const tableIcons = {
     SortArrow: forwardRef((props, ref) => <ArrowDownward {...props} ref={ref} />),
   };
 
-const projectTable = (props) => {
+const ProjectTable = (props) => {
     // Widths for table columns
     const width100 = { width: 100 };
     const width150 = { width: 150 };
@@ -114,43 +114,43 @@ const projectTable = (props) => {
     }
 
     return (
-      <div style={{ maxWidth: "100%" }}>
-        <MaterialTable
-            icons={tableIcons}
-            columns={manualColumnNames}
-            data={formattedTableData}
-            title={props.tableTitle}
-            actions={actionsArray}
-            localization={{
-                header: {
-                    actions: ''
-                }
-            }}
-            options={{
-            //   filtering: true, // Search seems to accomplish the same thing
-                tableLayout: 'fixed',
-                sorting: true,
-                headerStyle: {
-                    backgroundColor: defaultBackgroundColor, // Default background color
-                    color: '#FFF',
-                    textAlign: 'center',
-                    fontWeight: 'bold',
-                    fontSize: '1rem',
-                    padding: 10,
-                },
-                cellStyle: {
-                    fontSize: '0.8rem',
-                },
-                showFirstLastPageButtons: false,
-                padding: 'dense',
-                fixedColumns: {
-                    left: 1 // This is buggy but looks okay for one column
-                },
-                paging: false,
-          }}
-        />
-      </div>
+        <div style={{ maxWidth: "100%" }}>
+            <MaterialTable
+                icons={tableIcons}
+                columns={manualColumnNames}
+                data={formattedTableData}
+                title={props.tableTitle}
+                actions={actionsArray}
+                localization={{
+                    header: {
+                        actions: ''
+                    }
+                }}
+                options={{
+                //   filtering: true, // Search seems to accomplish the same thing
+                    tableLayout: 'fixed',
+                    sorting: true,
+                    headerStyle: {
+                        backgroundColor: defaultBackgroundColor, // Default background color
+                        color: '#FFF',
+                        textAlign: 'center',
+                        fontWeight: 'bold',
+                        fontSize: '1rem',
+                        padding: 10,
+                    },
+                    cellStyle: {
+                        fontSize: '0.8rem',
+                    },
+                    showFirstLastPageButtons: false,
+                    padding: 'dense',
+                    fixedColumns: {
+                        left: 1 // This is buggy but looks okay for one column
+                    },
+                    paging: false,
+                }}
+            />
+        </div>
     );
 }
 
-export default projectTable;
+export default ProjectTable;

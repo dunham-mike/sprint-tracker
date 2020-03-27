@@ -16,7 +16,7 @@ const styles = theme => ({
     }
 });
 
-const sprint = (props) => {
+const Sprint = (props) => {
     const { classes } = props;
 
     let sprintToDisplay = (
@@ -80,4 +80,4 @@ const sprint = (props) => {
     );
 };
 
-export default withStyles(styles)(sprint);
+export default withStyles(styles)(Sprint);
