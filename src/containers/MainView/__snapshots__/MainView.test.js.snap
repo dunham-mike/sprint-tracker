@@ -486,7 +486,8 @@ exports[`MainView Component should match the snapshot 1`] = `
 >
   <div>
     <div>
-      <WithStyles(CurrentSprint)
+      <CurrentSprint
+        classes={Object {}}
         currentSprintIndex={null}
         openCreatingProject={[Function]}
         openEditingProject={[Function]}
@@ -738,323 +739,69 @@ exports[`MainView Component should match the snapshot 1`] = `
           ]
         }
       >
-        <CurrentSprint
-          classes={
-            Object {
-              "buttonContainer": "CurrentSprint-buttonContainer-5",
-              "buttonSpacing": "CurrentSprint-buttonSpacing-7",
-              "conditionalButtons": "CurrentSprint-conditionalButtons-8",
-              "conditionalButtonsContainer": "CurrentSprint-conditionalButtonsContainer-6",
-              "innerSprintContainer": "CurrentSprint-innerSprintContainer-3",
-              "sprintContainer": "CurrentSprint-sprintContainer-2",
-              "sprintMissingMessage": "CurrentSprint-sprintMissingMessage-4",
-              "sprintSectionContainer": "CurrentSprint-sprintSectionContainer-1",
-            }
-          }
-          currentSprintIndex={null}
-          openCreatingProject={[Function]}
-          openEditingProject={[Function]}
-          openEditingSprint={[Function]}
-          openSprintStatistics={[Function]}
-          sprints={
-            Array [
-              Object {
-                "endDate": "2120-02-06T00:00:00.000Z",
-                "id": "test_sprintId",
-                "name": "Sprint #1",
-                "owner": "Mike",
-                "participants": "Mike, Bobby",
-                "projects": Array [
-                  Object {
-                    "category": Object {
-                      "value": "Grades & Transcripts",
-                    },
-                    "categoryLead": Object {
-                      "value": "Bobby",
-                    },
-                    "completionStatus": Object {
-                      "value": "",
-                    },
-                    "deliverableLink": Object {
-                      "value": "",
-                    },
-                    "deliverables": Object {
-                      "value": "Historical Illuminate courses matched with current equivalencies.",
-                    },
-                    "description": Object {
-                      "value": "-Audit all historical expeditions grades & match courses to equivalents",
-                    },
-                    "estimatedProjectSize": Object {
-                      "value": "3 - Small-to-Medium",
-                    },
-                    "externalDueDate": Object {
-                      "value": "",
-                    },
-                    "id": Object {
-                      "value": 1,
-                    },
-                    "manager": Object {
-                      "value": "Bobby",
-                    },
-                    "mustDo": Object {
-                      "value": "Nice-to-Have",
-                    },
-                    "name": Object {
-                      "value": "Verify course equivalencies & Grad Requirements in Illuminate",
-                    },
-                    "notCompletedExplanation": Object {
-                      "value": "",
-                    },
-                    "notes": Object {
-                      "value": "",
-                    },
-                    "statusEndOfWeek1": Object {
-                      "value": "25%",
-                    },
-                    "statusEndOfWeek2": Object {
-                      "value": "",
-                    },
-                    "statusEndOfWeek3": Object {
-                      "value": "",
-                    },
-                    "statusEndOfWeek4": Object {
-                      "value": "",
-                    },
-                    "statusEndOfWeek5": Object {
-                      "value": "",
-                    },
-                    "statusEndOfWeek6": Object {
-                      "value": "",
-                    },
-                    "statusEndOfWeek7": Object {
-                      "value": "",
-                    },
-                    "statusEndOfWeek8": Object {
-                      "value": "",
-                    },
-                  },
-                  Object {
-                    "category": Object {
-                      "value": "Grades & Transcripts",
-                    },
-                    "categoryLead": Object {
-                      "value": "Bobby",
-                    },
-                    "completionStatus": Object {
-                      "value": "",
-                    },
-                    "deliverableLink": Object {
-                      "value": "",
-                    },
-                    "deliverables": Object {
-                      "value": "Historical Illuminate courses matched with current equivalencies.",
-                    },
-                    "description": Object {
-                      "value": "-Audit all historical expeditions grades & match courses to equivalents",
-                    },
-                    "estimatedProjectSize": Object {
-                      "value": "3 - Small-to-Medium",
-                    },
-                    "externalDueDate": Object {
-                      "value": "",
-                    },
-                    "id": Object {
-                      "value": 2,
-                    },
-                    "manager": Object {
-                      "value": "Mike",
-                    },
-                    "mustDo": Object {
-                      "value": "Nice-to-Have",
-                    },
-                    "name": Object {
-                      "value": "Verify course equivalencies & Grad Requirements in Illuminate",
-                    },
-                    "notCompletedExplanation": Object {
-                      "value": "",
-                    },
-                    "notes": Object {
-                      "value": "",
-                    },
-                    "statusEndOfWeek1": Object {
-                      "value": "",
-                    },
-                    "statusEndOfWeek2": Object {
-                      "value": "",
-                    },
-                    "statusEndOfWeek3": Object {
-                      "value": "",
-                    },
-                    "statusEndOfWeek4": Object {
-                      "value": "",
-                    },
-                    "statusEndOfWeek5": Object {
-                      "value": "",
-                    },
-                    "statusEndOfWeek6": Object {
-                      "value": "",
-                    },
-                    "statusEndOfWeek7": Object {
-                      "value": "",
-                    },
-                    "statusEndOfWeek8": Object {
-                      "value": "",
-                    },
-                  },
-                  Object {
-                    "category": Object {
-                      "value": "Grades & Transcripts",
-                    },
-                    "categoryLead": Object {
-                      "value": "Bobby",
-                    },
-                    "completionStatus": Object {
-                      "value": "",
-                    },
-                    "deliverableLink": Object {
-                      "value": "",
-                    },
-                    "deliverables": Object {
-                      "value": "Historical Illuminate courses matched with current equivalencies.",
-                    },
-                    "description": Object {
-                      "value": "-Audit all historical expeditions grades & match courses to equivalents",
-                    },
-                    "estimatedProjectSize": Object {
-                      "value": "1 - Extra Small",
-                    },
-                    "externalDueDate": Object {
-                      "value": "",
-                    },
-                    "id": Object {
-                      "value": 3,
-                    },
-                    "manager": Object {
-                      "value": "Bobby",
-                    },
-                    "mustDo": Object {
-                      "value": "Nice-to-Have",
-                    },
-                    "name": Object {
-                      "value": "Verify course equivalencies & Grad Requirements in Illuminate",
-                    },
-                    "notCompletedExplanation": Object {
-                      "value": "",
-                    },
-                    "notes": Object {
-                      "value": "",
-                    },
-                    "statusEndOfWeek1": Object {
-                      "value": "",
-                    },
-                    "statusEndOfWeek2": Object {
-                      "value": "",
-                    },
-                    "statusEndOfWeek3": Object {
-                      "value": "",
-                    },
-                    "statusEndOfWeek4": Object {
-                      "value": "",
-                    },
-                    "statusEndOfWeek5": Object {
-                      "value": "",
-                    },
-                    "statusEndOfWeek6": Object {
-                      "value": "",
-                    },
-                    "statusEndOfWeek7": Object {
-                      "value": "",
-                    },
-                    "statusEndOfWeek8": Object {
-                      "value": "",
-                    },
-                  },
-                ],
-                "startDate": "2120-01-24T00:00:00.000Z",
-              },
-              Object {
-                "endDate": "2120-03-06T00:00:00.000Z",
-                "id": "test_sprintId2",
-                "name": "Sprint #2",
-                "owner": "Mike",
-                "participants": "Mike, Bobby",
-                "projects": Array [],
-                "startDate": "2120-02-10T00:00:00.000Z",
-              },
-              Object {
-                "endDate": "2120-03-30T00:00:00.000Z",
-                "id": "test_sprintId3",
-                "name": "Sprint #3",
-                "owner": "Mike",
-                "participants": "Mike, Bobby",
-                "projects": Array [],
-                "startDate": "2120-03-09T00:00:00.000Z",
-              },
-              Object {
-                "endDate": "2120-05-06T00:00:00.000Z",
-                "id": "test_sprintId4",
-                "name": "Sprint #4",
-                "owner": "Mike",
-                "participants": "Mike, Bobby",
-                "projects": Array [],
-                "startDate": "2120-04-01T00:00:00.000Z",
-              },
-            ]
-          }
-        >
-          <div
-            className="CurrentSprint-sprintSectionContainer-1"
-          >
-            <div
-              className="CurrentSprint-buttonContainer-5"
+        <div>
+          <div>
+            <WithStyles(ForwardRef(Button))
+              color="primary"
+              onClick={[Function]}
+              variant="contained"
             >
-              <WithStyles(ForwardRef(Button))
-                className="CurrentSprint-buttonSpacing-7"
+              <ForwardRef(Button)
+                classes={
+                  Object {
+                    "colorInherit": "MuiButton-colorInherit",
+                    "contained": "MuiButton-contained",
+                    "containedPrimary": "MuiButton-containedPrimary",
+                    "containedSecondary": "MuiButton-containedSecondary",
+                    "containedSizeLarge": "MuiButton-containedSizeLarge",
+                    "containedSizeSmall": "MuiButton-containedSizeSmall",
+                    "disableElevation": "MuiButton-disableElevation",
+                    "disabled": "Mui-disabled",
+                    "endIcon": "MuiButton-endIcon",
+                    "focusVisible": "Mui-focusVisible",
+                    "fullWidth": "MuiButton-fullWidth",
+                    "iconSizeLarge": "MuiButton-iconSizeLarge",
+                    "iconSizeMedium": "MuiButton-iconSizeMedium",
+                    "iconSizeSmall": "MuiButton-iconSizeSmall",
+                    "label": "MuiButton-label",
+                    "outlined": "MuiButton-outlined",
+                    "outlinedPrimary": "MuiButton-outlinedPrimary",
+                    "outlinedSecondary": "MuiButton-outlinedSecondary",
+                    "outlinedSizeLarge": "MuiButton-outlinedSizeLarge",
+                    "outlinedSizeSmall": "MuiButton-outlinedSizeSmall",
+                    "root": "MuiButton-root",
+                    "sizeLarge": "MuiButton-sizeLarge",
+                    "sizeSmall": "MuiButton-sizeSmall",
+                    "startIcon": "MuiButton-startIcon",
+                    "text": "MuiButton-text",
+                    "textPrimary": "MuiButton-textPrimary",
+                    "textSecondary": "MuiButton-textSecondary",
+                    "textSizeLarge": "MuiButton-textSizeLarge",
+                    "textSizeSmall": "MuiButton-textSizeSmall",
+                  }
+                }
                 color="primary"
                 onClick={[Function]}
                 variant="contained"
               >
-                <ForwardRef(Button)
-                  className="CurrentSprint-buttonSpacing-7"
-                  classes={
-                    Object {
-                      "colorInherit": "MuiButton-colorInherit",
-                      "contained": "MuiButton-contained",
-                      "containedPrimary": "MuiButton-containedPrimary",
-                      "containedSecondary": "MuiButton-containedSecondary",
-                      "containedSizeLarge": "MuiButton-containedSizeLarge",
-                      "containedSizeSmall": "MuiButton-containedSizeSmall",
-                      "disableElevation": "MuiButton-disableElevation",
-                      "disabled": "Mui-disabled",
-                      "endIcon": "MuiButton-endIcon",
-                      "focusVisible": "Mui-focusVisible",
-                      "fullWidth": "MuiButton-fullWidth",
-                      "iconSizeLarge": "MuiButton-iconSizeLarge",
-                      "iconSizeMedium": "MuiButton-iconSizeMedium",
-                      "iconSizeSmall": "MuiButton-iconSizeSmall",
-                      "label": "MuiButton-label",
-                      "outlined": "MuiButton-outlined",
-                      "outlinedPrimary": "MuiButton-outlinedPrimary",
-                      "outlinedSecondary": "MuiButton-outlinedSecondary",
-                      "outlinedSizeLarge": "MuiButton-outlinedSizeLarge",
-                      "outlinedSizeSmall": "MuiButton-outlinedSizeSmall",
-                      "root": "MuiButton-root",
-                      "sizeLarge": "MuiButton-sizeLarge",
-                      "sizeSmall": "MuiButton-sizeSmall",
-                      "startIcon": "MuiButton-startIcon",
-                      "text": "MuiButton-text",
-                      "textPrimary": "MuiButton-textPrimary",
-                      "textSecondary": "MuiButton-textSecondary",
-                      "textSizeLarge": "MuiButton-textSizeLarge",
-                      "textSizeSmall": "MuiButton-textSizeSmall",
-                    }
-                  }
-                  color="primary"
+                <WithStyles(ForwardRef(ButtonBase))
+                  className="MuiButton-root MuiButton-contained MuiButton-containedPrimary"
+                  component="button"
+                  disabled={false}
+                  focusRipple={true}
+                  focusVisibleClassName="Mui-focusVisible"
                   onClick={[Function]}
-                  variant="contained"
+                  type="button"
                 >
-                  <WithStyles(ForwardRef(ButtonBase))
-                    className="MuiButton-root MuiButton-contained CurrentSprint-buttonSpacing-7 MuiButton-containedPrimary"
+                  <ForwardRef(ButtonBase)
+                    className="MuiButton-root MuiButton-contained MuiButton-containedPrimary"
+                    classes={
+                      Object {
+                        "disabled": "Mui-disabled",
+                        "focusVisible": "Mui-focusVisible",
+                        "root": "MuiButtonBase-root",
+                      }
+                    }
                     component="button"
                     disabled={false}
                     focusRipple={true}
@@ -1062,91 +809,74 @@ exports[`MainView Component should match the snapshot 1`] = `
                     onClick={[Function]}
                     type="button"
                   >
-                    <ForwardRef(ButtonBase)
-                      className="MuiButton-root MuiButton-contained CurrentSprint-buttonSpacing-7 MuiButton-containedPrimary"
-                      classes={
-                        Object {
-                          "disabled": "Mui-disabled",
-                          "focusVisible": "Mui-focusVisible",
-                          "root": "MuiButtonBase-root",
-                        }
-                      }
-                      component="button"
+                    <button
+                      className="MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary"
                       disabled={false}
-                      focusRipple={true}
-                      focusVisibleClassName="Mui-focusVisible"
+                      onBlur={[Function]}
                       onClick={[Function]}
+                      onDragLeave={[Function]}
+                      onFocus={[Function]}
+                      onKeyDown={[Function]}
+                      onKeyUp={[Function]}
+                      onMouseDown={[Function]}
+                      onMouseLeave={[Function]}
+                      onMouseUp={[Function]}
+                      onTouchEnd={[Function]}
+                      onTouchMove={[Function]}
+                      onTouchStart={[Function]}
+                      tabIndex={0}
                       type="button"
                     >
-                      <button
-                        className="MuiButtonBase-root MuiButton-root MuiButton-contained CurrentSprint-buttonSpacing-7 MuiButton-containedPrimary"
-                        disabled={false}
-                        onBlur={[Function]}
-                        onClick={[Function]}
-                        onDragLeave={[Function]}
-                        onFocus={[Function]}
-                        onKeyDown={[Function]}
-                        onKeyUp={[Function]}
-                        onMouseDown={[Function]}
-                        onMouseLeave={[Function]}
-                        onMouseUp={[Function]}
-                        onTouchEnd={[Function]}
-                        onTouchMove={[Function]}
-                        onTouchStart={[Function]}
-                        tabIndex={0}
-                        type="button"
+                      <span
+                        className="MuiButton-label"
                       >
-                        <span
-                          className="MuiButton-label"
+                        CURRENT SPRINT
+                      </span>
+                      <NoSsr>
+                        <WithStyles(undefined)
+                          center={false}
                         >
-                          CURRENT SPRINT
-                        </span>
-                        <NoSsr>
-                          <WithStyles(undefined)
+                          <ForwardRef(TouchRipple)
                             center={false}
-                          >
-                            <ForwardRef(TouchRipple)
-                              center={false}
-                              classes={
-                                Object {
-                                  "child": "MuiTouchRipple-child",
-                                  "childLeaving": "MuiTouchRipple-childLeaving",
-                                  "childPulsate": "MuiTouchRipple-childPulsate",
-                                  "ripple": "MuiTouchRipple-ripple",
-                                  "ripplePulsate": "MuiTouchRipple-ripplePulsate",
-                                  "rippleVisible": "MuiTouchRipple-rippleVisible",
-                                  "root": "MuiTouchRipple-root",
-                                }
+                            classes={
+                              Object {
+                                "child": "MuiTouchRipple-child",
+                                "childLeaving": "MuiTouchRipple-childLeaving",
+                                "childPulsate": "MuiTouchRipple-childPulsate",
+                                "ripple": "MuiTouchRipple-ripple",
+                                "ripplePulsate": "MuiTouchRipple-ripplePulsate",
+                                "rippleVisible": "MuiTouchRipple-rippleVisible",
+                                "root": "MuiTouchRipple-root",
                               }
+                            }
+                          >
+                            <span
+                              className="MuiTouchRipple-root"
                             >
-                              <span
-                                className="MuiTouchRipple-root"
-                              >
-                                <TransitionGroup
-                                  childFactory={[Function]}
-                                  component={null}
-                                  exit={true}
-                                />
-                              </span>
-                            </ForwardRef(TouchRipple)>
-                          </WithStyles(undefined)>
-                        </NoSsr>
-                      </button>
-                    </ForwardRef(ButtonBase)>
-                  </WithStyles(ForwardRef(ButtonBase))>
-                </ForwardRef(Button)>
-              </WithStyles(ForwardRef(Button))>
-            </div>
-            <div
-              className="CurrentSprint-sprintMissingMessage-4"
-              data-testid="NoCurrentSprint"
-            >
-              No current sprint.
-            </div>
+                              <TransitionGroup
+                                childFactory={[Function]}
+                                component={null}
+                                exit={true}
+                              />
+                            </span>
+                          </ForwardRef(TouchRipple)>
+                        </WithStyles(undefined)>
+                      </NoSsr>
+                    </button>
+                  </ForwardRef(ButtonBase)>
+                </WithStyles(ForwardRef(ButtonBase))>
+              </ForwardRef(Button)>
+            </WithStyles(ForwardRef(Button))>
           </div>
-        </CurrentSprint>
-      </WithStyles(CurrentSprint)>
-      <WithStyles(NextSprint)
+          <div
+            data-testid="NoCurrentSprint"
+          >
+            No current sprint.
+          </div>
+        </div>
+      </CurrentSprint>
+      <NextSprint
+        classes={Object {}}
         nextSprintIndex={0}
         openCreatingProject={[Function]}
         openEditingProject={[Function]}
@@ -1398,323 +1128,69 @@ exports[`MainView Component should match the snapshot 1`] = `
           ]
         }
       >
-        <NextSprint
-          classes={
-            Object {
-              "buttonContainer": "NextSprint-buttonContainer-45",
-              "buttonSpacing": "NextSprint-buttonSpacing-47",
-              "conditionalButtons": "NextSprint-conditionalButtons-48",
-              "conditionalButtonsContainer": "NextSprint-conditionalButtonsContainer-46",
-              "innerSprintContainer": "NextSprint-innerSprintContainer-43",
-              "sprintContainer": "NextSprint-sprintContainer-42",
-              "sprintMissingMessage": "NextSprint-sprintMissingMessage-44",
-              "sprintSectionContainer": "NextSprint-sprintSectionContainer-41",
-            }
-          }
-          nextSprintIndex={0}
-          openCreatingProject={[Function]}
-          openEditingProject={[Function]}
-          openEditingSprint={[Function]}
-          openSprintStatistics={[Function]}
-          sprints={
-            Array [
-              Object {
-                "endDate": "2120-02-06T00:00:00.000Z",
-                "id": "test_sprintId",
-                "name": "Sprint #1",
-                "owner": "Mike",
-                "participants": "Mike, Bobby",
-                "projects": Array [
-                  Object {
-                    "category": Object {
-                      "value": "Grades & Transcripts",
-                    },
-                    "categoryLead": Object {
-                      "value": "Bobby",
-                    },
-                    "completionStatus": Object {
-                      "value": "",
-                    },
-                    "deliverableLink": Object {
-                      "value": "",
-                    },
-                    "deliverables": Object {
-                      "value": "Historical Illuminate courses matched with current equivalencies.",
-                    },
-                    "description": Object {
-                      "value": "-Audit all historical expeditions grades & match courses to equivalents",
-                    },
-                    "estimatedProjectSize": Object {
-                      "value": "3 - Small-to-Medium",
-                    },
-                    "externalDueDate": Object {
-                      "value": "",
-                    },
-                    "id": Object {
-                      "value": 1,
-                    },
-                    "manager": Object {
-                      "value": "Bobby",
-                    },
-                    "mustDo": Object {
-                      "value": "Nice-to-Have",
-                    },
-                    "name": Object {
-                      "value": "Verify course equivalencies & Grad Requirements in Illuminate",
-                    },
-                    "notCompletedExplanation": Object {
-                      "value": "",
-                    },
-                    "notes": Object {
-                      "value": "",
-                    },
-                    "statusEndOfWeek1": Object {
-                      "value": "25%",
-                    },
-                    "statusEndOfWeek2": Object {
-                      "value": "",
-                    },
-                    "statusEndOfWeek3": Object {
-                      "value": "",
-                    },
-                    "statusEndOfWeek4": Object {
-                      "value": "",
-                    },
-                    "statusEndOfWeek5": Object {
-                      "value": "",
-                    },
-                    "statusEndOfWeek6": Object {
-                      "value": "",
-                    },
-                    "statusEndOfWeek7": Object {
-                      "value": "",
-                    },
-                    "statusEndOfWeek8": Object {
-                      "value": "",
-                    },
-                  },
-                  Object {
-                    "category": Object {
-                      "value": "Grades & Transcripts",
-                    },
-                    "categoryLead": Object {
-                      "value": "Bobby",
-                    },
-                    "completionStatus": Object {
-                      "value": "",
-                    },
-                    "deliverableLink": Object {
-                      "value": "",
-                    },
-                    "deliverables": Object {
-                      "value": "Historical Illuminate courses matched with current equivalencies.",
-                    },
-                    "description": Object {
-                      "value": "-Audit all historical expeditions grades & match courses to equivalents",
-                    },
-                    "estimatedProjectSize": Object {
-                      "value": "3 - Small-to-Medium",
-                    },
-                    "externalDueDate": Object {
-                      "value": "",
-                    },
-                    "id": Object {
-                      "value": 2,
-                    },
-                    "manager": Object {
-                      "value": "Mike",
-                    },
-                    "mustDo": Object {
-                      "value": "Nice-to-Have",
-                    },
-                    "name": Object {
-                      "value": "Verify course equivalencies & Grad Requirements in Illuminate",
-                    },
-                    "notCompletedExplanation": Object {
-                      "value": "",
-                    },
-                    "notes": Object {
-                      "value": "",
-                    },
-                    "statusEndOfWeek1": Object {
-                      "value": "",
-                    },
-                    "statusEndOfWeek2": Object {
-                      "value": "",
-                    },
-                    "statusEndOfWeek3": Object {
-                      "value": "",
-                    },
-                    "statusEndOfWeek4": Object {
-                      "value": "",
-                    },
-                    "statusEndOfWeek5": Object {
-                      "value": "",
-                    },
-                    "statusEndOfWeek6": Object {
-                      "value": "",
-                    },
-                    "statusEndOfWeek7": Object {
-                      "value": "",
-                    },
-                    "statusEndOfWeek8": Object {
-                      "value": "",
-                    },
-                  },
-                  Object {
-                    "category": Object {
-                      "value": "Grades & Transcripts",
-                    },
-                    "categoryLead": Object {
-                      "value": "Bobby",
-                    },
-                    "completionStatus": Object {
-                      "value": "",
-                    },
-                    "deliverableLink": Object {
-                      "value": "",
-                    },
-                    "deliverables": Object {
-                      "value": "Historical Illuminate courses matched with current equivalencies.",
-                    },
-                    "description": Object {
-                      "value": "-Audit all historical expeditions grades & match courses to equivalents",
-                    },
-                    "estimatedProjectSize": Object {
-                      "value": "1 - Extra Small",
-                    },
-                    "externalDueDate": Object {
-                      "value": "",
-                    },
-                    "id": Object {
-                      "value": 3,
-                    },
-                    "manager": Object {
-                      "value": "Bobby",
-                    },
-                    "mustDo": Object {
-                      "value": "Nice-to-Have",
-                    },
-                    "name": Object {
-                      "value": "Verify course equivalencies & Grad Requirements in Illuminate",
-                    },
-                    "notCompletedExplanation": Object {
-                      "value": "",
-                    },
-                    "notes": Object {
-                      "value": "",
-                    },
-                    "statusEndOfWeek1": Object {
-                      "value": "",
-                    },
-                    "statusEndOfWeek2": Object {
-                      "value": "",
-                    },
-                    "statusEndOfWeek3": Object {
-                      "value": "",
-                    },
-                    "statusEndOfWeek4": Object {
-                      "value": "",
-                    },
-                    "statusEndOfWeek5": Object {
-                      "value": "",
-                    },
-                    "statusEndOfWeek6": Object {
-                      "value": "",
-                    },
-                    "statusEndOfWeek7": Object {
-                      "value": "",
-                    },
-                    "statusEndOfWeek8": Object {
-                      "value": "",
-                    },
-                  },
-                ],
-                "startDate": "2120-01-24T00:00:00.000Z",
-              },
-              Object {
-                "endDate": "2120-03-06T00:00:00.000Z",
-                "id": "test_sprintId2",
-                "name": "Sprint #2",
-                "owner": "Mike",
-                "participants": "Mike, Bobby",
-                "projects": Array [],
-                "startDate": "2120-02-10T00:00:00.000Z",
-              },
-              Object {
-                "endDate": "2120-03-30T00:00:00.000Z",
-                "id": "test_sprintId3",
-                "name": "Sprint #3",
-                "owner": "Mike",
-                "participants": "Mike, Bobby",
-                "projects": Array [],
-                "startDate": "2120-03-09T00:00:00.000Z",
-              },
-              Object {
-                "endDate": "2120-05-06T00:00:00.000Z",
-                "id": "test_sprintId4",
-                "name": "Sprint #4",
-                "owner": "Mike",
-                "participants": "Mike, Bobby",
-                "projects": Array [],
-                "startDate": "2120-04-01T00:00:00.000Z",
-              },
-            ]
-          }
-        >
-          <div
-            className="NextSprint-sprintSectionContainer-41"
-          >
-            <div
-              className="NextSprint-buttonContainer-45"
+        <div>
+          <div>
+            <WithStyles(ForwardRef(Button))
+              color="secondary"
+              onClick={[Function]}
+              variant="contained"
             >
-              <WithStyles(ForwardRef(Button))
-                className="NextSprint-buttonSpacing-47"
+              <ForwardRef(Button)
+                classes={
+                  Object {
+                    "colorInherit": "MuiButton-colorInherit",
+                    "contained": "MuiButton-contained",
+                    "containedPrimary": "MuiButton-containedPrimary",
+                    "containedSecondary": "MuiButton-containedSecondary",
+                    "containedSizeLarge": "MuiButton-containedSizeLarge",
+                    "containedSizeSmall": "MuiButton-containedSizeSmall",
+                    "disableElevation": "MuiButton-disableElevation",
+                    "disabled": "Mui-disabled",
+                    "endIcon": "MuiButton-endIcon",
+                    "focusVisible": "Mui-focusVisible",
+                    "fullWidth": "MuiButton-fullWidth",
+                    "iconSizeLarge": "MuiButton-iconSizeLarge",
+                    "iconSizeMedium": "MuiButton-iconSizeMedium",
+                    "iconSizeSmall": "MuiButton-iconSizeSmall",
+                    "label": "MuiButton-label",
+                    "outlined": "MuiButton-outlined",
+                    "outlinedPrimary": "MuiButton-outlinedPrimary",
+                    "outlinedSecondary": "MuiButton-outlinedSecondary",
+                    "outlinedSizeLarge": "MuiButton-outlinedSizeLarge",
+                    "outlinedSizeSmall": "MuiButton-outlinedSizeSmall",
+                    "root": "MuiButton-root",
+                    "sizeLarge": "MuiButton-sizeLarge",
+                    "sizeSmall": "MuiButton-sizeSmall",
+                    "startIcon": "MuiButton-startIcon",
+                    "text": "MuiButton-text",
+                    "textPrimary": "MuiButton-textPrimary",
+                    "textSecondary": "MuiButton-textSecondary",
+                    "textSizeLarge": "MuiButton-textSizeLarge",
+                    "textSizeSmall": "MuiButton-textSizeSmall",
+                  }
+                }
                 color="secondary"
                 onClick={[Function]}
                 variant="contained"
               >
-                <ForwardRef(Button)
-                  className="NextSprint-buttonSpacing-47"
-                  classes={
-                    Object {
-                      "colorInherit": "MuiButton-colorInherit",
-                      "contained": "MuiButton-contained",
-                      "containedPrimary": "MuiButton-containedPrimary",
-                      "containedSecondary": "MuiButton-containedSecondary",
-                      "containedSizeLarge": "MuiButton-containedSizeLarge",
-                      "containedSizeSmall": "MuiButton-containedSizeSmall",
-                      "disableElevation": "MuiButton-disableElevation",
-                      "disabled": "Mui-disabled",
-                      "endIcon": "MuiButton-endIcon",
-                      "focusVisible": "Mui-focusVisible",
-                      "fullWidth": "MuiButton-fullWidth",
-                      "iconSizeLarge": "MuiButton-iconSizeLarge",
-                      "iconSizeMedium": "MuiButton-iconSizeMedium",
-                      "iconSizeSmall": "MuiButton-iconSizeSmall",
-                      "label": "MuiButton-label",
-                      "outlined": "MuiButton-outlined",
-                      "outlinedPrimary": "MuiButton-outlinedPrimary",
-                      "outlinedSecondary": "MuiButton-outlinedSecondary",
-                      "outlinedSizeLarge": "MuiButton-outlinedSizeLarge",
-                      "outlinedSizeSmall": "MuiButton-outlinedSizeSmall",
-                      "root": "MuiButton-root",
-                      "sizeLarge": "MuiButton-sizeLarge",
-                      "sizeSmall": "MuiButton-sizeSmall",
-                      "startIcon": "MuiButton-startIcon",
-                      "text": "MuiButton-text",
-                      "textPrimary": "MuiButton-textPrimary",
-                      "textSecondary": "MuiButton-textSecondary",
-                      "textSizeLarge": "MuiButton-textSizeLarge",
-                      "textSizeSmall": "MuiButton-textSizeSmall",
-                    }
-                  }
-                  color="secondary"
+                <WithStyles(ForwardRef(ButtonBase))
+                  className="MuiButton-root MuiButton-contained MuiButton-containedSecondary"
+                  component="button"
+                  disabled={false}
+                  focusRipple={true}
+                  focusVisibleClassName="Mui-focusVisible"
                   onClick={[Function]}
-                  variant="contained"
+                  type="button"
                 >
-                  <WithStyles(ForwardRef(ButtonBase))
-                    className="MuiButton-root MuiButton-contained NextSprint-buttonSpacing-47 MuiButton-containedSecondary"
+                  <ForwardRef(ButtonBase)
+                    className="MuiButton-root MuiButton-contained MuiButton-containedSecondary"
+                    classes={
+                      Object {
+                        "disabled": "Mui-disabled",
+                        "focusVisible": "Mui-focusVisible",
+                        "root": "MuiButtonBase-root",
+                      }
+                    }
                     component="button"
                     disabled={false}
                     focusRipple={true}
@@ -1722,85 +1198,69 @@ exports[`MainView Component should match the snapshot 1`] = `
                     onClick={[Function]}
                     type="button"
                   >
-                    <ForwardRef(ButtonBase)
-                      className="MuiButton-root MuiButton-contained NextSprint-buttonSpacing-47 MuiButton-containedSecondary"
-                      classes={
-                        Object {
-                          "disabled": "Mui-disabled",
-                          "focusVisible": "Mui-focusVisible",
-                          "root": "MuiButtonBase-root",
-                        }
-                      }
-                      component="button"
+                    <button
+                      className="MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedSecondary"
                       disabled={false}
-                      focusRipple={true}
-                      focusVisibleClassName="Mui-focusVisible"
+                      onBlur={[Function]}
                       onClick={[Function]}
+                      onDragLeave={[Function]}
+                      onFocus={[Function]}
+                      onKeyDown={[Function]}
+                      onKeyUp={[Function]}
+                      onMouseDown={[Function]}
+                      onMouseLeave={[Function]}
+                      onMouseUp={[Function]}
+                      onTouchEnd={[Function]}
+                      onTouchMove={[Function]}
+                      onTouchStart={[Function]}
+                      tabIndex={0}
                       type="button"
                     >
-                      <button
-                        className="MuiButtonBase-root MuiButton-root MuiButton-contained NextSprint-buttonSpacing-47 MuiButton-containedSecondary"
-                        disabled={false}
-                        onBlur={[Function]}
-                        onClick={[Function]}
-                        onDragLeave={[Function]}
-                        onFocus={[Function]}
-                        onKeyDown={[Function]}
-                        onKeyUp={[Function]}
-                        onMouseDown={[Function]}
-                        onMouseLeave={[Function]}
-                        onMouseUp={[Function]}
-                        onTouchEnd={[Function]}
-                        onTouchMove={[Function]}
-                        onTouchStart={[Function]}
-                        tabIndex={0}
-                        type="button"
+                      <span
+                        className="MuiButton-label"
                       >
-                        <span
-                          className="MuiButton-label"
+                        NEXT SPRINT
+                      </span>
+                      <NoSsr>
+                        <WithStyles(undefined)
+                          center={false}
                         >
-                          NEXT SPRINT
-                        </span>
-                        <NoSsr>
-                          <WithStyles(undefined)
+                          <ForwardRef(TouchRipple)
                             center={false}
-                          >
-                            <ForwardRef(TouchRipple)
-                              center={false}
-                              classes={
-                                Object {
-                                  "child": "MuiTouchRipple-child",
-                                  "childLeaving": "MuiTouchRipple-childLeaving",
-                                  "childPulsate": "MuiTouchRipple-childPulsate",
-                                  "ripple": "MuiTouchRipple-ripple",
-                                  "ripplePulsate": "MuiTouchRipple-ripplePulsate",
-                                  "rippleVisible": "MuiTouchRipple-rippleVisible",
-                                  "root": "MuiTouchRipple-root",
-                                }
+                            classes={
+                              Object {
+                                "child": "MuiTouchRipple-child",
+                                "childLeaving": "MuiTouchRipple-childLeaving",
+                                "childPulsate": "MuiTouchRipple-childPulsate",
+                                "ripple": "MuiTouchRipple-ripple",
+                                "ripplePulsate": "MuiTouchRipple-ripplePulsate",
+                                "rippleVisible": "MuiTouchRipple-rippleVisible",
+                                "root": "MuiTouchRipple-root",
                               }
+                            }
+                          >
+                            <span
+                              className="MuiTouchRipple-root"
                             >
-                              <span
-                                className="MuiTouchRipple-root"
-                              >
-                                <TransitionGroup
-                                  childFactory={[Function]}
-                                  component={null}
-                                  exit={true}
-                                />
-                              </span>
-                            </ForwardRef(TouchRipple)>
-                          </WithStyles(undefined)>
-                        </NoSsr>
-                      </button>
-                    </ForwardRef(ButtonBase)>
-                  </WithStyles(ForwardRef(ButtonBase))>
-                </ForwardRef(Button)>
-              </WithStyles(ForwardRef(Button))>
-            </div>
+                              <TransitionGroup
+                                childFactory={[Function]}
+                                component={null}
+                                exit={true}
+                              />
+                            </span>
+                          </ForwardRef(TouchRipple)>
+                        </WithStyles(undefined)>
+                      </NoSsr>
+                    </button>
+                  </ForwardRef(ButtonBase)>
+                </WithStyles(ForwardRef(ButtonBase))>
+              </ForwardRef(Button)>
+            </WithStyles(ForwardRef(Button))>
           </div>
-        </NextSprint>
-      </WithStyles(NextSprint)>
-      <WithStyles(Queue)
+        </div>
+      </NextSprint>
+      <Queue
+        classes={Object {}}
         openCreatingProject={[Function]}
         openEditingProject={[Function]}
         queue={
@@ -2012,283 +1472,69 @@ exports[`MainView Component should match the snapshot 1`] = `
           ]
         }
       >
-        <Queue
-          classes={
-            Object {
-              "buttonContainer": "Queue-buttonContainer-53",
-              "buttonSpacing": "Queue-buttonSpacing-55",
-              "conditionalButtons": "Queue-conditionalButtons-56",
-              "conditionalButtonsContainer": "Queue-conditionalButtonsContainer-54",
-              "innerSprintContainer": "Queue-innerSprintContainer-51",
-              "sprintContainer": "Queue-sprintContainer-50",
-              "sprintMissingMessage": "Queue-sprintMissingMessage-52",
-              "sprintSectionContainer": "Queue-sprintSectionContainer-49",
-            }
-          }
-          openCreatingProject={[Function]}
-          openEditingProject={[Function]}
-          queue={
-            Array [
-              Object {
-                "category": Object {
-                  "value": "Grades & Transcripts",
-                },
-                "categoryLead": Object {
-                  "value": "Bobby",
-                },
-                "completionStatus": Object {
-                  "value": "",
-                },
-                "deliverableLink": Object {
-                  "value": "",
-                },
-                "deliverables": Object {
-                  "value": "Historical Illuminate courses matched with current equivalencies.",
-                },
-                "description": Object {
-                  "value": "-Audit all historical expeditions grades & match courses to equivalents",
-                },
-                "estimatedProjectSize": Object {
-                  "value": "3 - Small-to-Medium",
-                },
-                "externalDueDate": Object {
-                  "value": "",
-                },
-                "id": Object {
-                  "value": 1,
-                },
-                "manager": Object {
-                  "value": "Bobby",
-                },
-                "mustDo": Object {
-                  "value": "Nice-to-Have",
-                },
-                "name": Object {
-                  "value": "Verify course equivalencies & Grad Requirements in Illuminate",
-                },
-                "notCompletedExplanation": Object {
-                  "value": "",
-                },
-                "notes": Object {
-                  "value": "",
-                },
-                "statusEndOfWeek1": Object {
-                  "value": "25%",
-                },
-                "statusEndOfWeek2": Object {
-                  "value": "",
-                },
-                "statusEndOfWeek3": Object {
-                  "value": "",
-                },
-                "statusEndOfWeek4": Object {
-                  "value": "",
-                },
-                "statusEndOfWeek5": Object {
-                  "value": "",
-                },
-                "statusEndOfWeek6": Object {
-                  "value": "",
-                },
-                "statusEndOfWeek7": Object {
-                  "value": "",
-                },
-                "statusEndOfWeek8": Object {
-                  "value": "",
-                },
-              },
-              Object {
-                "category": Object {
-                  "value": "Grades & Transcripts",
-                },
-                "categoryLead": Object {
-                  "value": "Bobby",
-                },
-                "completionStatus": Object {
-                  "value": "",
-                },
-                "deliverableLink": Object {
-                  "value": "",
-                },
-                "deliverables": Object {
-                  "value": "Historical Illuminate courses matched with current equivalencies.",
-                },
-                "description": Object {
-                  "value": "-Audit all historical expeditions grades & match courses to equivalents",
-                },
-                "estimatedProjectSize": Object {
-                  "value": "3 - Small-to-Medium",
-                },
-                "externalDueDate": Object {
-                  "value": "",
-                },
-                "id": Object {
-                  "value": 2,
-                },
-                "manager": Object {
-                  "value": "Mike",
-                },
-                "mustDo": Object {
-                  "value": "Nice-to-Have",
-                },
-                "name": Object {
-                  "value": "Verify course equivalencies & Grad Requirements in Illuminate",
-                },
-                "notCompletedExplanation": Object {
-                  "value": "",
-                },
-                "notes": Object {
-                  "value": "",
-                },
-                "statusEndOfWeek1": Object {
-                  "value": "",
-                },
-                "statusEndOfWeek2": Object {
-                  "value": "",
-                },
-                "statusEndOfWeek3": Object {
-                  "value": "",
-                },
-                "statusEndOfWeek4": Object {
-                  "value": "",
-                },
-                "statusEndOfWeek5": Object {
-                  "value": "",
-                },
-                "statusEndOfWeek6": Object {
-                  "value": "",
-                },
-                "statusEndOfWeek7": Object {
-                  "value": "",
-                },
-                "statusEndOfWeek8": Object {
-                  "value": "",
-                },
-              },
-              Object {
-                "category": Object {
-                  "value": "Grades & Transcripts",
-                },
-                "categoryLead": Object {
-                  "value": "Bobby",
-                },
-                "completionStatus": Object {
-                  "value": "",
-                },
-                "deliverableLink": Object {
-                  "value": "",
-                },
-                "deliverables": Object {
-                  "value": "Historical Illuminate courses matched with current equivalencies.",
-                },
-                "description": Object {
-                  "value": "-Audit all historical expeditions grades & match courses to equivalents",
-                },
-                "estimatedProjectSize": Object {
-                  "value": "1 - Extra Small",
-                },
-                "externalDueDate": Object {
-                  "value": "",
-                },
-                "id": Object {
-                  "value": 3,
-                },
-                "manager": Object {
-                  "value": "Bobby",
-                },
-                "mustDo": Object {
-                  "value": "Nice-to-Have",
-                },
-                "name": Object {
-                  "value": "Verify course equivalencies & Grad Requirements in Illuminate",
-                },
-                "notCompletedExplanation": Object {
-                  "value": "",
-                },
-                "notes": Object {
-                  "value": "",
-                },
-                "statusEndOfWeek1": Object {
-                  "value": "",
-                },
-                "statusEndOfWeek2": Object {
-                  "value": "",
-                },
-                "statusEndOfWeek3": Object {
-                  "value": "",
-                },
-                "statusEndOfWeek4": Object {
-                  "value": "",
-                },
-                "statusEndOfWeek5": Object {
-                  "value": "",
-                },
-                "statusEndOfWeek6": Object {
-                  "value": "",
-                },
-                "statusEndOfWeek7": Object {
-                  "value": "",
-                },
-                "statusEndOfWeek8": Object {
-                  "value": "",
-                },
-              },
-            ]
-          }
-        >
-          <div
-            className="Queue-sprintSectionContainer-49"
-          >
-            <div
-              className="Queue-buttonContainer-53"
+        <div>
+          <div>
+            <WithStyles(ForwardRef(Button))
+              color="default"
+              onClick={[Function]}
+              variant="contained"
             >
-              <WithStyles(ForwardRef(Button))
-                className="Queue-buttonSpacing-55"
+              <ForwardRef(Button)
+                classes={
+                  Object {
+                    "colorInherit": "MuiButton-colorInherit",
+                    "contained": "MuiButton-contained",
+                    "containedPrimary": "MuiButton-containedPrimary",
+                    "containedSecondary": "MuiButton-containedSecondary",
+                    "containedSizeLarge": "MuiButton-containedSizeLarge",
+                    "containedSizeSmall": "MuiButton-containedSizeSmall",
+                    "disableElevation": "MuiButton-disableElevation",
+                    "disabled": "Mui-disabled",
+                    "endIcon": "MuiButton-endIcon",
+                    "focusVisible": "Mui-focusVisible",
+                    "fullWidth": "MuiButton-fullWidth",
+                    "iconSizeLarge": "MuiButton-iconSizeLarge",
+                    "iconSizeMedium": "MuiButton-iconSizeMedium",
+                    "iconSizeSmall": "MuiButton-iconSizeSmall",
+                    "label": "MuiButton-label",
+                    "outlined": "MuiButton-outlined",
+                    "outlinedPrimary": "MuiButton-outlinedPrimary",
+                    "outlinedSecondary": "MuiButton-outlinedSecondary",
+                    "outlinedSizeLarge": "MuiButton-outlinedSizeLarge",
+                    "outlinedSizeSmall": "MuiButton-outlinedSizeSmall",
+                    "root": "MuiButton-root",
+                    "sizeLarge": "MuiButton-sizeLarge",
+                    "sizeSmall": "MuiButton-sizeSmall",
+                    "startIcon": "MuiButton-startIcon",
+                    "text": "MuiButton-text",
+                    "textPrimary": "MuiButton-textPrimary",
+                    "textSecondary": "MuiButton-textSecondary",
+                    "textSizeLarge": "MuiButton-textSizeLarge",
+                    "textSizeSmall": "MuiButton-textSizeSmall",
+                  }
+                }
                 color="default"
                 onClick={[Function]}
                 variant="contained"
               >
-                <ForwardRef(Button)
-                  className="Queue-buttonSpacing-55"
-                  classes={
-                    Object {
-                      "colorInherit": "MuiButton-colorInherit",
-                      "contained": "MuiButton-contained",
-                      "containedPrimary": "MuiButton-containedPrimary",
-                      "containedSecondary": "MuiButton-containedSecondary",
-                      "containedSizeLarge": "MuiButton-containedSizeLarge",
-                      "containedSizeSmall": "MuiButton-containedSizeSmall",
-                      "disableElevation": "MuiButton-disableElevation",
-                      "disabled": "Mui-disabled",
-                      "endIcon": "MuiButton-endIcon",
-                      "focusVisible": "Mui-focusVisible",
-                      "fullWidth": "MuiButton-fullWidth",
-                      "iconSizeLarge": "MuiButton-iconSizeLarge",
-                      "iconSizeMedium": "MuiButton-iconSizeMedium",
-                      "iconSizeSmall": "MuiButton-iconSizeSmall",
-                      "label": "MuiButton-label",
-                      "outlined": "MuiButton-outlined",
-                      "outlinedPrimary": "MuiButton-outlinedPrimary",
-                      "outlinedSecondary": "MuiButton-outlinedSecondary",
-                      "outlinedSizeLarge": "MuiButton-outlinedSizeLarge",
-                      "outlinedSizeSmall": "MuiButton-outlinedSizeSmall",
-                      "root": "MuiButton-root",
-                      "sizeLarge": "MuiButton-sizeLarge",
-                      "sizeSmall": "MuiButton-sizeSmall",
-                      "startIcon": "MuiButton-startIcon",
-                      "text": "MuiButton-text",
-                      "textPrimary": "MuiButton-textPrimary",
-                      "textSecondary": "MuiButton-textSecondary",
-                      "textSizeLarge": "MuiButton-textSizeLarge",
-                      "textSizeSmall": "MuiButton-textSizeSmall",
-                    }
-                  }
-                  color="default"
+                <WithStyles(ForwardRef(ButtonBase))
+                  className="MuiButton-root MuiButton-contained"
+                  component="button"
+                  disabled={false}
+                  focusRipple={true}
+                  focusVisibleClassName="Mui-focusVisible"
                   onClick={[Function]}
-                  variant="contained"
+                  type="button"
                 >
-                  <WithStyles(ForwardRef(ButtonBase))
-                    className="MuiButton-root MuiButton-contained Queue-buttonSpacing-55"
+                  <ForwardRef(ButtonBase)
+                    className="MuiButton-root MuiButton-contained"
+                    classes={
+                      Object {
+                        "disabled": "Mui-disabled",
+                        "focusVisible": "Mui-focusVisible",
+                        "root": "MuiButtonBase-root",
+                      }
+                    }
                     component="button"
                     disabled={false}
                     focusRipple={true}
@@ -2296,85 +1542,69 @@ exports[`MainView Component should match the snapshot 1`] = `
                     onClick={[Function]}
                     type="button"
                   >
-                    <ForwardRef(ButtonBase)
-                      className="MuiButton-root MuiButton-contained Queue-buttonSpacing-55"
-                      classes={
-                        Object {
-                          "disabled": "Mui-disabled",
-                          "focusVisible": "Mui-focusVisible",
-                          "root": "MuiButtonBase-root",
-                        }
-                      }
-                      component="button"
+                    <button
+                      className="MuiButtonBase-root MuiButton-root MuiButton-contained"
                       disabled={false}
-                      focusRipple={true}
-                      focusVisibleClassName="Mui-focusVisible"
+                      onBlur={[Function]}
                       onClick={[Function]}
+                      onDragLeave={[Function]}
+                      onFocus={[Function]}
+                      onKeyDown={[Function]}
+                      onKeyUp={[Function]}
+                      onMouseDown={[Function]}
+                      onMouseLeave={[Function]}
+                      onMouseUp={[Function]}
+                      onTouchEnd={[Function]}
+                      onTouchMove={[Function]}
+                      onTouchStart={[Function]}
+                      tabIndex={0}
                       type="button"
                     >
-                      <button
-                        className="MuiButtonBase-root MuiButton-root MuiButton-contained Queue-buttonSpacing-55"
-                        disabled={false}
-                        onBlur={[Function]}
-                        onClick={[Function]}
-                        onDragLeave={[Function]}
-                        onFocus={[Function]}
-                        onKeyDown={[Function]}
-                        onKeyUp={[Function]}
-                        onMouseDown={[Function]}
-                        onMouseLeave={[Function]}
-                        onMouseUp={[Function]}
-                        onTouchEnd={[Function]}
-                        onTouchMove={[Function]}
-                        onTouchStart={[Function]}
-                        tabIndex={0}
-                        type="button"
+                      <span
+                        className="MuiButton-label"
                       >
-                        <span
-                          className="MuiButton-label"
+                        PROJECT QUEUE
+                      </span>
+                      <NoSsr>
+                        <WithStyles(undefined)
+                          center={false}
                         >
-                          PROJECT QUEUE
-                        </span>
-                        <NoSsr>
-                          <WithStyles(undefined)
+                          <ForwardRef(TouchRipple)
                             center={false}
-                          >
-                            <ForwardRef(TouchRipple)
-                              center={false}
-                              classes={
-                                Object {
-                                  "child": "MuiTouchRipple-child",
-                                  "childLeaving": "MuiTouchRipple-childLeaving",
-                                  "childPulsate": "MuiTouchRipple-childPulsate",
-                                  "ripple": "MuiTouchRipple-ripple",
-                                  "ripplePulsate": "MuiTouchRipple-ripplePulsate",
-                                  "rippleVisible": "MuiTouchRipple-rippleVisible",
-                                  "root": "MuiTouchRipple-root",
-                                }
+                            classes={
+                              Object {
+                                "child": "MuiTouchRipple-child",
+                                "childLeaving": "MuiTouchRipple-childLeaving",
+                                "childPulsate": "MuiTouchRipple-childPulsate",
+                                "ripple": "MuiTouchRipple-ripple",
+                                "ripplePulsate": "MuiTouchRipple-ripplePulsate",
+                                "rippleVisible": "MuiTouchRipple-rippleVisible",
+                                "root": "MuiTouchRipple-root",
                               }
+                            }
+                          >
+                            <span
+                              className="MuiTouchRipple-root"
                             >
-                              <span
-                                className="MuiTouchRipple-root"
-                              >
-                                <TransitionGroup
-                                  childFactory={[Function]}
-                                  component={null}
-                                  exit={true}
-                                />
-                              </span>
-                            </ForwardRef(TouchRipple)>
-                          </WithStyles(undefined)>
-                        </NoSsr>
-                      </button>
-                    </ForwardRef(ButtonBase)>
-                  </WithStyles(ForwardRef(ButtonBase))>
-                </ForwardRef(Button)>
-              </WithStyles(ForwardRef(Button))>
-            </div>
+                              <TransitionGroup
+                                childFactory={[Function]}
+                                component={null}
+                                exit={true}
+                              />
+                            </span>
+                          </ForwardRef(TouchRipple)>
+                        </WithStyles(undefined)>
+                      </NoSsr>
+                    </button>
+                  </ForwardRef(ButtonBase)>
+                </WithStyles(ForwardRef(ButtonBase))>
+              </ForwardRef(Button)>
+            </WithStyles(ForwardRef(Button))>
           </div>
-        </Queue>
-      </WithStyles(Queue)>
-      <WithStyles(FutureSprints)
+        </div>
+      </Queue>
+      <FutureSprints
+        classes={Object {}}
         futureSprintsStartIndex={1}
         openCreatingProject={[Function]}
         openEditingProject={[Function]}
@@ -2626,325 +1856,69 @@ exports[`MainView Component should match the snapshot 1`] = `
           ]
         }
       >
-        <FutureSprints
-          classes={
-            Object {
-              "buttonContainer": "FutureSprints-buttonContainer-61",
-              "buttonSpacing": "FutureSprints-buttonSpacing-63",
-              "conditionalButtons": "FutureSprints-conditionalButtons-64",
-              "conditionalButtonsContainer": "FutureSprints-conditionalButtonsContainer-62",
-              "futureSprintsConditionalButtonsContainer": "FutureSprints-futureSprintsConditionalButtonsContainer-66",
-              "futureSprintsContainer": "FutureSprints-futureSprintsContainer-65",
-              "innerSprintContainer": "FutureSprints-innerSprintContainer-59",
-              "sprintContainer": "FutureSprints-sprintContainer-58",
-              "sprintMissingMessage": "FutureSprints-sprintMissingMessage-60",
-              "sprintSectionContainer": "FutureSprints-sprintSectionContainer-57",
-            }
-          }
-          futureSprintsStartIndex={1}
-          openCreatingProject={[Function]}
-          openEditingProject={[Function]}
-          openEditingSprint={[Function]}
-          openSprintStatistics={[Function]}
-          sprints={
-            Array [
-              Object {
-                "endDate": "2120-02-06T00:00:00.000Z",
-                "id": "test_sprintId",
-                "name": "Sprint #1",
-                "owner": "Mike",
-                "participants": "Mike, Bobby",
-                "projects": Array [
-                  Object {
-                    "category": Object {
-                      "value": "Grades & Transcripts",
-                    },
-                    "categoryLead": Object {
-                      "value": "Bobby",
-                    },
-                    "completionStatus": Object {
-                      "value": "",
-                    },
-                    "deliverableLink": Object {
-                      "value": "",
-                    },
-                    "deliverables": Object {
-                      "value": "Historical Illuminate courses matched with current equivalencies.",
-                    },
-                    "description": Object {
-                      "value": "-Audit all historical expeditions grades & match courses to equivalents",
-                    },
-                    "estimatedProjectSize": Object {
-                      "value": "3 - Small-to-Medium",
-                    },
-                    "externalDueDate": Object {
-                      "value": "",
-                    },
-                    "id": Object {
-                      "value": 1,
-                    },
-                    "manager": Object {
-                      "value": "Bobby",
-                    },
-                    "mustDo": Object {
-                      "value": "Nice-to-Have",
-                    },
-                    "name": Object {
-                      "value": "Verify course equivalencies & Grad Requirements in Illuminate",
-                    },
-                    "notCompletedExplanation": Object {
-                      "value": "",
-                    },
-                    "notes": Object {
-                      "value": "",
-                    },
-                    "statusEndOfWeek1": Object {
-                      "value": "25%",
-                    },
-                    "statusEndOfWeek2": Object {
-                      "value": "",
-                    },
-                    "statusEndOfWeek3": Object {
-                      "value": "",
-                    },
-                    "statusEndOfWeek4": Object {
-                      "value": "",
-                    },
-                    "statusEndOfWeek5": Object {
-                      "value": "",
-                    },
-                    "statusEndOfWeek6": Object {
-                      "value": "",
-                    },
-                    "statusEndOfWeek7": Object {
-                      "value": "",
-                    },
-                    "statusEndOfWeek8": Object {
-                      "value": "",
-                    },
-                  },
-                  Object {
-                    "category": Object {
-                      "value": "Grades & Transcripts",
-                    },
-                    "categoryLead": Object {
-                      "value": "Bobby",
-                    },
-                    "completionStatus": Object {
-                      "value": "",
-                    },
-                    "deliverableLink": Object {
-                      "value": "",
-                    },
-                    "deliverables": Object {
-                      "value": "Historical Illuminate courses matched with current equivalencies.",
-                    },
-                    "description": Object {
-                      "value": "-Audit all historical expeditions grades & match courses to equivalents",
-                    },
-                    "estimatedProjectSize": Object {
-                      "value": "3 - Small-to-Medium",
-                    },
-                    "externalDueDate": Object {
-                      "value": "",
-                    },
-                    "id": Object {
-                      "value": 2,
-                    },
-                    "manager": Object {
-                      "value": "Mike",
-                    },
-                    "mustDo": Object {
-                      "value": "Nice-to-Have",
-                    },
-                    "name": Object {
-                      "value": "Verify course equivalencies & Grad Requirements in Illuminate",
-                    },
-                    "notCompletedExplanation": Object {
-                      "value": "",
-                    },
-                    "notes": Object {
-                      "value": "",
-                    },
-                    "statusEndOfWeek1": Object {
-                      "value": "",
-                    },
-                    "statusEndOfWeek2": Object {
-                      "value": "",
-                    },
-                    "statusEndOfWeek3": Object {
-                      "value": "",
-                    },
-                    "statusEndOfWeek4": Object {
-                      "value": "",
-                    },
-                    "statusEndOfWeek5": Object {
-                      "value": "",
-                    },
-                    "statusEndOfWeek6": Object {
-                      "value": "",
-                    },
-                    "statusEndOfWeek7": Object {
-                      "value": "",
-                    },
-                    "statusEndOfWeek8": Object {
-                      "value": "",
-                    },
-                  },
-                  Object {
-                    "category": Object {
-                      "value": "Grades & Transcripts",
-                    },
-                    "categoryLead": Object {
-                      "value": "Bobby",
-                    },
-                    "completionStatus": Object {
-                      "value": "",
-                    },
-                    "deliverableLink": Object {
-                      "value": "",
-                    },
-                    "deliverables": Object {
-                      "value": "Historical Illuminate courses matched with current equivalencies.",
-                    },
-                    "description": Object {
-                      "value": "-Audit all historical expeditions grades & match courses to equivalents",
-                    },
-                    "estimatedProjectSize": Object {
-                      "value": "1 - Extra Small",
-                    },
-                    "externalDueDate": Object {
-                      "value": "",
-                    },
-                    "id": Object {
-                      "value": 3,
-                    },
-                    "manager": Object {
-                      "value": "Bobby",
-                    },
-                    "mustDo": Object {
-                      "value": "Nice-to-Have",
-                    },
-                    "name": Object {
-                      "value": "Verify course equivalencies & Grad Requirements in Illuminate",
-                    },
-                    "notCompletedExplanation": Object {
-                      "value": "",
-                    },
-                    "notes": Object {
-                      "value": "",
-                    },
-                    "statusEndOfWeek1": Object {
-                      "value": "",
-                    },
-                    "statusEndOfWeek2": Object {
-                      "value": "",
-                    },
-                    "statusEndOfWeek3": Object {
-                      "value": "",
-                    },
-                    "statusEndOfWeek4": Object {
-                      "value": "",
-                    },
-                    "statusEndOfWeek5": Object {
-                      "value": "",
-                    },
-                    "statusEndOfWeek6": Object {
-                      "value": "",
-                    },
-                    "statusEndOfWeek7": Object {
-                      "value": "",
-                    },
-                    "statusEndOfWeek8": Object {
-                      "value": "",
-                    },
-                  },
-                ],
-                "startDate": "2120-01-24T00:00:00.000Z",
-              },
-              Object {
-                "endDate": "2120-03-06T00:00:00.000Z",
-                "id": "test_sprintId2",
-                "name": "Sprint #2",
-                "owner": "Mike",
-                "participants": "Mike, Bobby",
-                "projects": Array [],
-                "startDate": "2120-02-10T00:00:00.000Z",
-              },
-              Object {
-                "endDate": "2120-03-30T00:00:00.000Z",
-                "id": "test_sprintId3",
-                "name": "Sprint #3",
-                "owner": "Mike",
-                "participants": "Mike, Bobby",
-                "projects": Array [],
-                "startDate": "2120-03-09T00:00:00.000Z",
-              },
-              Object {
-                "endDate": "2120-05-06T00:00:00.000Z",
-                "id": "test_sprintId4",
-                "name": "Sprint #4",
-                "owner": "Mike",
-                "participants": "Mike, Bobby",
-                "projects": Array [],
-                "startDate": "2120-04-01T00:00:00.000Z",
-              },
-            ]
-          }
-        >
-          <div
-            className="FutureSprints-sprintSectionContainer-57"
-          >
-            <div
-              className="FutureSprints-buttonContainer-61"
+        <div>
+          <div>
+            <WithStyles(ForwardRef(Button))
+              color="default"
+              onClick={[Function]}
+              variant="contained"
             >
-              <WithStyles(ForwardRef(Button))
-                className="FutureSprints-buttonSpacing-63"
+              <ForwardRef(Button)
+                classes={
+                  Object {
+                    "colorInherit": "MuiButton-colorInherit",
+                    "contained": "MuiButton-contained",
+                    "containedPrimary": "MuiButton-containedPrimary",
+                    "containedSecondary": "MuiButton-containedSecondary",
+                    "containedSizeLarge": "MuiButton-containedSizeLarge",
+                    "containedSizeSmall": "MuiButton-containedSizeSmall",
+                    "disableElevation": "MuiButton-disableElevation",
+                    "disabled": "Mui-disabled",
+                    "endIcon": "MuiButton-endIcon",
+                    "focusVisible": "Mui-focusVisible",
+                    "fullWidth": "MuiButton-fullWidth",
+                    "iconSizeLarge": "MuiButton-iconSizeLarge",
+                    "iconSizeMedium": "MuiButton-iconSizeMedium",
+                    "iconSizeSmall": "MuiButton-iconSizeSmall",
+                    "label": "MuiButton-label",
+                    "outlined": "MuiButton-outlined",
+                    "outlinedPrimary": "MuiButton-outlinedPrimary",
+                    "outlinedSecondary": "MuiButton-outlinedSecondary",
+                    "outlinedSizeLarge": "MuiButton-outlinedSizeLarge",
+                    "outlinedSizeSmall": "MuiButton-outlinedSizeSmall",
+                    "root": "MuiButton-root",
+                    "sizeLarge": "MuiButton-sizeLarge",
+                    "sizeSmall": "MuiButton-sizeSmall",
+                    "startIcon": "MuiButton-startIcon",
+                    "text": "MuiButton-text",
+                    "textPrimary": "MuiButton-textPrimary",
+                    "textSecondary": "MuiButton-textSecondary",
+                    "textSizeLarge": "MuiButton-textSizeLarge",
+                    "textSizeSmall": "MuiButton-textSizeSmall",
+                  }
+                }
                 color="default"
                 onClick={[Function]}
                 variant="contained"
               >
-                <ForwardRef(Button)
-                  className="FutureSprints-buttonSpacing-63"
-                  classes={
-                    Object {
-                      "colorInherit": "MuiButton-colorInherit",
-                      "contained": "MuiButton-contained",
-                      "containedPrimary": "MuiButton-containedPrimary",
-                      "containedSecondary": "MuiButton-containedSecondary",
-                      "containedSizeLarge": "MuiButton-containedSizeLarge",
-                      "containedSizeSmall": "MuiButton-containedSizeSmall",
-                      "disableElevation": "MuiButton-disableElevation",
-                      "disabled": "Mui-disabled",
-                      "endIcon": "MuiButton-endIcon",
-                      "focusVisible": "Mui-focusVisible",
-                      "fullWidth": "MuiButton-fullWidth",
-                      "iconSizeLarge": "MuiButton-iconSizeLarge",
-                      "iconSizeMedium": "MuiButton-iconSizeMedium",
-                      "iconSizeSmall": "MuiButton-iconSizeSmall",
-                      "label": "MuiButton-label",
-                      "outlined": "MuiButton-outlined",
-                      "outlinedPrimary": "MuiButton-outlinedPrimary",
-                      "outlinedSecondary": "MuiButton-outlinedSecondary",
-                      "outlinedSizeLarge": "MuiButton-outlinedSizeLarge",
-                      "outlinedSizeSmall": "MuiButton-outlinedSizeSmall",
-                      "root": "MuiButton-root",
-                      "sizeLarge": "MuiButton-sizeLarge",
-                      "sizeSmall": "MuiButton-sizeSmall",
-                      "startIcon": "MuiButton-startIcon",
-                      "text": "MuiButton-text",
-                      "textPrimary": "MuiButton-textPrimary",
-                      "textSecondary": "MuiButton-textSecondary",
-                      "textSizeLarge": "MuiButton-textSizeLarge",
-                      "textSizeSmall": "MuiButton-textSizeSmall",
-                    }
-                  }
-                  color="default"
+                <WithStyles(ForwardRef(ButtonBase))
+                  className="MuiButton-root MuiButton-contained"
+                  component="button"
+                  disabled={false}
+                  focusRipple={true}
+                  focusVisibleClassName="Mui-focusVisible"
                   onClick={[Function]}
-                  variant="contained"
+                  type="button"
                 >
-                  <WithStyles(ForwardRef(ButtonBase))
-                    className="MuiButton-root MuiButton-contained FutureSprints-buttonSpacing-63"
+                  <ForwardRef(ButtonBase)
+                    className="MuiButton-root MuiButton-contained"
+                    classes={
+                      Object {
+                        "disabled": "Mui-disabled",
+                        "focusVisible": "Mui-focusVisible",
+                        "root": "MuiButtonBase-root",
+                      }
+                    }
                     component="button"
                     disabled={false}
                     focusRipple={true}
@@ -2952,112 +1926,95 @@ exports[`MainView Component should match the snapshot 1`] = `
                     onClick={[Function]}
                     type="button"
                   >
-                    <ForwardRef(ButtonBase)
-                      className="MuiButton-root MuiButton-contained FutureSprints-buttonSpacing-63"
-                      classes={
-                        Object {
-                          "disabled": "Mui-disabled",
-                          "focusVisible": "Mui-focusVisible",
-                          "root": "MuiButtonBase-root",
-                        }
-                      }
-                      component="button"
+                    <button
+                      className="MuiButtonBase-root MuiButton-root MuiButton-contained"
                       disabled={false}
-                      focusRipple={true}
-                      focusVisibleClassName="Mui-focusVisible"
+                      onBlur={[Function]}
                       onClick={[Function]}
+                      onDragLeave={[Function]}
+                      onFocus={[Function]}
+                      onKeyDown={[Function]}
+                      onKeyUp={[Function]}
+                      onMouseDown={[Function]}
+                      onMouseLeave={[Function]}
+                      onMouseUp={[Function]}
+                      onTouchEnd={[Function]}
+                      onTouchMove={[Function]}
+                      onTouchStart={[Function]}
+                      tabIndex={0}
                       type="button"
                     >
-                      <button
-                        className="MuiButtonBase-root MuiButton-root MuiButton-contained FutureSprints-buttonSpacing-63"
-                        disabled={false}
-                        onBlur={[Function]}
-                        onClick={[Function]}
-                        onDragLeave={[Function]}
-                        onFocus={[Function]}
-                        onKeyDown={[Function]}
-                        onKeyUp={[Function]}
-                        onMouseDown={[Function]}
-                        onMouseLeave={[Function]}
-                        onMouseUp={[Function]}
-                        onTouchEnd={[Function]}
-                        onTouchMove={[Function]}
-                        onTouchStart={[Function]}
-                        tabIndex={0}
-                        type="button"
+                      <span
+                        className="MuiButton-label"
                       >
-                        <span
-                          className="MuiButton-label"
+                        FUTURE SPRINTS
+                      </span>
+                      <NoSsr>
+                        <WithStyles(undefined)
+                          center={false}
                         >
-                          FUTURE SPRINTS
-                        </span>
-                        <NoSsr>
-                          <WithStyles(undefined)
+                          <ForwardRef(TouchRipple)
                             center={false}
-                          >
-                            <ForwardRef(TouchRipple)
-                              center={false}
-                              classes={
-                                Object {
-                                  "child": "MuiTouchRipple-child",
-                                  "childLeaving": "MuiTouchRipple-childLeaving",
-                                  "childPulsate": "MuiTouchRipple-childPulsate",
-                                  "ripple": "MuiTouchRipple-ripple",
-                                  "ripplePulsate": "MuiTouchRipple-ripplePulsate",
-                                  "rippleVisible": "MuiTouchRipple-rippleVisible",
-                                  "root": "MuiTouchRipple-root",
-                                }
+                            classes={
+                              Object {
+                                "child": "MuiTouchRipple-child",
+                                "childLeaving": "MuiTouchRipple-childLeaving",
+                                "childPulsate": "MuiTouchRipple-childPulsate",
+                                "ripple": "MuiTouchRipple-ripple",
+                                "ripplePulsate": "MuiTouchRipple-ripplePulsate",
+                                "rippleVisible": "MuiTouchRipple-rippleVisible",
+                                "root": "MuiTouchRipple-root",
                               }
+                            }
+                          >
+                            <span
+                              className="MuiTouchRipple-root"
                             >
-                              <span
-                                className="MuiTouchRipple-root"
-                              >
-                                <TransitionGroup
-                                  childFactory={[Function]}
-                                  component={null}
-                                  exit={true}
-                                />
-                              </span>
-                            </ForwardRef(TouchRipple)>
-                          </WithStyles(undefined)>
-                        </NoSsr>
-                      </button>
-                    </ForwardRef(ButtonBase)>
-                  </WithStyles(ForwardRef(ButtonBase))>
-                </ForwardRef(Button)>
-              </WithStyles(ForwardRef(Button))>
-            </div>
+                              <TransitionGroup
+                                childFactory={[Function]}
+                                component={null}
+                                exit={true}
+                              />
+                            </span>
+                          </ForwardRef(TouchRipple)>
+                        </WithStyles(undefined)>
+                      </NoSsr>
+                    </button>
+                  </ForwardRef(ButtonBase)>
+                </WithStyles(ForwardRef(ButtonBase))>
+              </ForwardRef(Button)>
+            </WithStyles(ForwardRef(Button))>
           </div>
-        </FutureSprints>
-      </WithStyles(FutureSprints)>
+        </div>
+      </FutureSprints>
       <WithStyles(createNewSprintButton)
         openCreatingSprint={[Function]}
       >
         <createNewSprintButton
           classes={
             Object {
-              "buttonContainer": "createNewSprintButton-buttonContainer-68",
-              "buttonSpacing": "createNewSprintButton-buttonSpacing-69",
-              "sprintSectionContainer": "createNewSprintButton-sprintSectionContainer-67",
+              "buttonContainer": "createNewSprintButton-buttonContainer-34",
+              "buttonSpacing": "createNewSprintButton-buttonSpacing-35",
+              "sprintSectionContainer": "createNewSprintButton-sprintSectionContainer-33",
             }
           }
           openCreatingSprint={[Function]}
         >
           <div
-            className="createNewSprintButton-sprintSectionContainer-67"
+            className="createNewSprintButton-sprintSectionContainer-33"
           >
             <div
-              className="createNewSprintButton-buttonContainer-68"
+              className="createNewSprintButton-buttonContainer-34"
             >
               <WithStyles(ForwardRef(Button))
-                className="createNewSprintButton-buttonSpacing-69"
+                className="createNewSprintButton-buttonSpacing-35"
                 color="default"
                 onClick={[Function]}
                 startIcon={<UNDEFINED />}
                 variant="text"
               >
                 <ForwardRef(Button)
-                  className="createNewSprintButton-buttonSpacing-69"
+                  className="createNewSprintButton-buttonSpacing-35"
                   classes={
                     Object {
                       "colorInherit": "MuiButton-colorInherit",
@@ -3097,7 +2054,7 @@ exports[`MainView Component should match the snapshot 1`] = `
                   variant="text"
                 >
                   <WithStyles(ForwardRef(ButtonBase))
-                    className="MuiButton-root MuiButton-text createNewSprintButton-buttonSpacing-69"
+                    className="MuiButton-root MuiButton-text createNewSprintButton-buttonSpacing-35"
                     component="button"
                     disabled={false}
                     focusRipple={true}
@@ -3106,7 +2063,7 @@ exports[`MainView Component should match the snapshot 1`] = `
                     type="button"
                   >
                     <ForwardRef(ButtonBase)
-                      className="MuiButton-root MuiButton-text createNewSprintButton-buttonSpacing-69"
+                      className="MuiButton-root MuiButton-text createNewSprintButton-buttonSpacing-35"
                       classes={
                         Object {
                           "disabled": "Mui-disabled",
@@ -3122,7 +2079,7 @@ exports[`MainView Component should match the snapshot 1`] = `
                       type="button"
                     >
                       <button
-                        className="MuiButtonBase-root MuiButton-root MuiButton-text createNewSprintButton-buttonSpacing-69"
+                        className="MuiButtonBase-root MuiButton-root MuiButton-text createNewSprintButton-buttonSpacing-35"
                         disabled={false}
                         onBlur={[Function]}
                         onClick={[Function]}
@@ -3238,14 +2195,14 @@ exports[`MainView Component should match the snapshot 1`] = `
       <footer
         classes={
           Object {
-            "copyright": "footer-copyright-80",
-            "flexDisplay": "footer-flexDisplay-81",
-            "footer": "footer-footer-79",
+            "copyright": "footer-copyright-46",
+            "flexDisplay": "footer-flexDisplay-47",
+            "footer": "footer-footer-45",
           }
         }
       >
         <footer
-          className="footer-footer-79"
+          className="footer-footer-45"
         >
           <WithStyles(ForwardRef(Typography))
             align="center"
@@ -3300,14 +2257,14 @@ exports[`MainView Component should match the snapshot 1`] = `
           </WithStyles(ForwardRef(Typography))>
           <WithStyles(ForwardRef(Typography))
             align="center"
-            className="footer-flexDisplay-81"
+            className="footer-flexDisplay-47"
             color="textSecondary"
             component="p"
             variant="subtitle1"
           >
             <ForwardRef(Typography)
               align="center"
-              className="footer-flexDisplay-81"
+              className="footer-flexDisplay-47"
               classes={
                 Object {
                   "alignCenter": "MuiTypography-alignCenter",
@@ -3347,7 +2304,7 @@ exports[`MainView Component should match the snapshot 1`] = `
               variant="subtitle1"
             >
               <p
-                className="MuiTypography-root footer-flexDisplay-81 MuiTypography-subtitle1 MuiTypography-colorTextSecondary MuiTypography-alignCenter"
+                className="MuiTypography-root footer-flexDisplay-47 MuiTypography-subtitle1 MuiTypography-colorTextSecondary MuiTypography-alignCenter"
               >
                 <span>
                   Made with 
@@ -3399,13 +2356,13 @@ exports[`MainView Component should match the snapshot 1`] = `
           </WithStyles(ForwardRef(Typography))>
           <WithStyles(ForwardRef(Typography))
             align="center"
-            className="footer-copyright-80"
+            className="footer-copyright-46"
             color="textSecondary"
             variant="body2"
           >
             <ForwardRef(Typography)
               align="center"
-              className="footer-copyright-80"
+              className="footer-copyright-46"
               classes={
                 Object {
                   "alignCenter": "MuiTypography-alignCenter",
@@ -3444,7 +2401,7 @@ exports[`MainView Component should match the snapshot 1`] = `
               variant="body2"
             >
               <p
-                className="MuiTypography-root footer-copyright-80 MuiTypography-body2 MuiTypography-colorTextSecondary MuiTypography-alignCenter"
+                className="MuiTypography-root footer-copyright-46 MuiTypography-body2 MuiTypography-colorTextSecondary MuiTypography-alignCenter"
               >
                 © 
                 <WithStyles(ForwardRef(Link))

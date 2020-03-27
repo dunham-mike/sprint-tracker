@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { withStyles } from '@material-ui/core/styles';
 
 import AddCircleOutlineOutlinedIcon from '@material-ui/icons/AddCircleOutlineOutlined';
 import EditOutlinedIcon from '@material-ui/icons/EditOutlined';
@@ -7,64 +6,6 @@ import InsertChartOutlinedOutlinedIcon from '@material-ui/icons/InsertChartOutli
 import Button from '@material-ui/core/Button';
 
 import Sprint from '../../../components/Sprint/Sprint';
-
-const styles = theme => ({
-    sprintSectionContainer: {
-        width: '100%',
-    },
-    sprintContainer: {
-        marginBottom: theme.spacing(2),
-        paddingRight: theme.spacing(3),
-        width: '100%',
-        minHeight: theme.spacing(7),
-    },
-    innerSprintContainer: {
-        position: 'relative',
-        width: '100%',
-        height: '100%',
-        marginBottom: theme.spacing(4)
-    },
-    sprintMissingMessage: {
-        marginBottom: theme.spacing(2)
-    },
-    buttonContainer: {
-        width: '100%',
-        position: 'relative',
-    },
-    conditionalButtonsContainer: {
-        paddingTop: theme.spacing(0.75),
-        paddingRight: theme.spacing(3),
-        display: 'flex',
-        justifyContent: 'flex-end',
-        flexWrap: 'wrap',
-        marginTop: theme.spacing(-5),
-    },
-    buttonSpacing: {
-        marginBottom: theme.spacing(1),
-        width: theme.spacing(40),
-        fontWeight: 'bold',
-    },
-    conditionalButtons: {
-        margin: '2px 2px',
-    },
-    futureSprintsContainer: {
-        marginTop: theme.spacing(-5),
-    },
-    [theme.breakpoints.down('sm')]: { // Docs: https://material-ui.com/customization/breakpoints/#theme-breakpoints-down-key-media-query
-        conditionalButtonsContainer: {
-            marginTop: '0',
-        },
-        futureSprintsContainer: {
-            marginTop: '0',
-        },
-    },
-    futureSprintsConditionalButtonsContainer: {
-        marginTop: theme.spacing(0.75),
-        display: 'flex',
-        justifyContent: 'flex-end',
-        flexWrap: 'wrap',
-    },
-});
   
 const FutureSprints = (props) => {
 
@@ -138,4 +79,4 @@ const FutureSprints = (props) => {
     );
 }
 
-export default withStyles(styles)(FutureSprints);
+export default FutureSprints;

@@ -28,6 +28,80 @@ const styles = theme => ({
         position: 'relative',
         flex: '1'
     },
+
+    // Sprint Section Styles
+    sprintSectionContainer: {
+        width: '100%',
+    },
+    sprintContainer: {
+        marginBottom: theme.spacing(2),
+        paddingRight: theme.spacing(3),
+        width: '100%',
+        minHeight: theme.spacing(7),
+    },
+    innerSprintContainer: {
+        position: 'relative',
+        width: '100%',
+        height: '100%',
+        marginBottom: theme.spacing(4)
+    },
+    sprintMissingMessage: {
+        marginBottom: theme.spacing(2)
+    },
+    buttonContainer: {
+        width: '100%',
+        position: 'relative',
+    },
+    conditionalButtonsContainer: {
+        paddingTop: theme.spacing(0.75),
+        paddingRight: theme.spacing(3),
+        display: 'flex',
+        justifyContent: 'flex-end',
+        flexWrap: 'wrap',
+        marginTop: theme.spacing(-5),
+    },
+    buttonSpacing: {
+        marginBottom: theme.spacing(1),
+        width: theme.spacing(40),
+        fontWeight: 'bold',
+    },
+    conditionalButtons: {
+        margin: '2px 2px',
+    },
+
+    // Future Sprints-Specific Styles
+    futureSprintsContainer: {
+        marginTop: theme.spacing(-5),
+    },
+    futureSprintsConditionalButtonsContainer: {
+        marginTop: theme.spacing(0.75),
+        display: 'flex',
+        justifyContent: 'flex-end',
+        flexWrap: 'wrap',
+    },
+
+    // Breakpoints
+    [theme.breakpoints.down('sm')]: { // Docs: https://material-ui.com/customization/breakpoints/#theme-breakpoints-down-key-media-query
+        conditionalButtonsContainer: {
+            marginTop: '0',
+        },
+        futureSprintsContainer: {
+            marginTop: '0',
+        },
+    },
+    [theme.breakpoints.down('xs')]: { // Docs: https://material-ui.com/customization/breakpoints/#theme-breakpoints-down-key-media-query
+        conditionalButtonsContainer: {
+            flexDirection: 'column',
+        },
+        futureSprintsConditionalButtonsContainer: {
+            flexDirection: 'column',
+        },
+        conditionalButtons: {
+            width: '100%',
+            maxWidth: '320px',
+            margin: '2px 0',
+        },
+    },
 });
 
 export class MainView extends Component {
@@ -208,6 +282,7 @@ export class MainView extends Component {
             <div className={classes.overallContainer}>
                 <div className={classes.mainViewContainer}>
                     <CurrentSprint 
+                        classes={classes}
                         sprints={this.props.sprints}
                         currentSprintIndex={this.state.currentSprintIndex}
                         openEditingProject={this.openEditingProject}
@@ -217,6 +292,7 @@ export class MainView extends Component {
                     />
 
                     <NextSprint 
+                        classes={classes}
                         sprints={this.props.sprints}
                         nextSprintIndex={this.state.nextSprintIndex}
                         openEditingProject={this.openEditingProject}
@@ -226,12 +302,14 @@ export class MainView extends Component {
                     />
 
                     <Queue 
+                        classes={classes}
                         queue={this.props.queue}
                         openEditingProject={this.openEditingProject}
                         openCreatingProject={this.openCreatingProject}
                     />
 
                     <FutureSprints 
+                        classes={classes}
                         sprints={this.props.sprints}
                         futureSprintsStartIndex={this.state.futureSprintsStartIndex}
                         openCreatingProject={this.openCreatingProject}
