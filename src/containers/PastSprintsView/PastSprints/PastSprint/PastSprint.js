@@ -25,14 +25,6 @@ const styles = theme => ({
         flexWrap: 'wrap',
         marginTop: theme.spacing(-5),
     },
-    [theme.breakpoints.down('xs')]: { // Docs: https://material-ui.com/customization/breakpoints/#theme-breakpoints-down-key-media-query
-        conditionalButtonsContainer: {
-            marginTop: '0',
-        },
-      },
-    conditionalButtons: {
-        margin: '0 2px',
-    },
     buttonSpacing: {
         marginBottom: theme.spacing(1),
         width: theme.spacing(40),
@@ -59,7 +51,17 @@ const styles = theme => ({
         marginTop: theme.spacing(1),
         maxHeight: '500px',
         overflow: 'auto',
-    }
+    },
+    [theme.breakpoints.down('xs')]: { // Docs: https://material-ui.com/customization/breakpoints/#theme-breakpoints-down-key-media-query
+        conditionalButtonsContainer: {
+            marginTop: '0',
+            flexDirection: 'column',
+        },
+        conditionalButtons: {
+            width: '100%',
+            maxWidth: '320px',
+        },
+    },
 });
 
 class PastSprint extends Component {
