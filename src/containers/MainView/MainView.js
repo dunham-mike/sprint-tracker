@@ -18,6 +18,7 @@ import CurrentSprint from './CurrentSprint/CurrentSprint';
 import NextSprint from './NextSprint/NextSprint';
 import Queue from './Queue/Queue';
 import FutureSprints from './FutureSprints/FutureSprints';
+import CreateNewSprintButton from './CreateNewSprintButton/CreateNewSprintButton';
 
 const styles = theme => ({
     overallContainer: {
@@ -443,18 +444,7 @@ export class MainView extends Component {
                         toggleFutureSprints={this.toggleFutureSprints}
                     />
 
-                    {/* Create New Sprint Section */}
-                    <div className={classes.sprintSectionContainer}>
-                        <div className={classes.buttonContainer}>
-                            <Button 
-                                variant="text" color="default" className={classes.buttonSpacing} 
-                                startIcon={<AddCircleOutlineOutlinedIcon />}
-                                onClick={this.openCreatingSprint}
-                            >
-                                CREATE NEW SPRINT
-                            </Button>
-                        </div>
-                    </div>
+                    <CreateNewSprintButton openCreatingSprint={this.openCreatingSprint} />
 
                     {/* Edit Projects and Sprints Modals */}
                     {projectEdit}

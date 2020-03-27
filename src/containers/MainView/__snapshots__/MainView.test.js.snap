@@ -3048,186 +3048,207 @@ exports[`MainView Component should match the snapshot 1`] = `
           </div>
         </futureSprints>
       </WithStyles(futureSprints)>
-      <div>
-        <div>
-          <WithStyles(ForwardRef(Button))
-            color="default"
-            onClick={[Function]}
-            startIcon={<UNDEFINED />}
-            variant="text"
+      <WithStyles(createNewSprintButton)
+        openCreatingSprint={[Function]}
+      >
+        <createNewSprintButton
+          classes={
+            Object {
+              "buttonContainer": "createNewSprintButton-buttonContainer-68",
+              "buttonSpacing": "createNewSprintButton-buttonSpacing-69",
+              "sprintSectionContainer": "createNewSprintButton-sprintSectionContainer-67",
+            }
+          }
+          openCreatingSprint={[Function]}
+        >
+          <div
+            className="createNewSprintButton-sprintSectionContainer-67"
           >
-            <ForwardRef(Button)
-              classes={
-                Object {
-                  "colorInherit": "MuiButton-colorInherit",
-                  "contained": "MuiButton-contained",
-                  "containedPrimary": "MuiButton-containedPrimary",
-                  "containedSecondary": "MuiButton-containedSecondary",
-                  "containedSizeLarge": "MuiButton-containedSizeLarge",
-                  "containedSizeSmall": "MuiButton-containedSizeSmall",
-                  "disableElevation": "MuiButton-disableElevation",
-                  "disabled": "Mui-disabled",
-                  "endIcon": "MuiButton-endIcon",
-                  "focusVisible": "Mui-focusVisible",
-                  "fullWidth": "MuiButton-fullWidth",
-                  "iconSizeLarge": "MuiButton-iconSizeLarge",
-                  "iconSizeMedium": "MuiButton-iconSizeMedium",
-                  "iconSizeSmall": "MuiButton-iconSizeSmall",
-                  "label": "MuiButton-label",
-                  "outlined": "MuiButton-outlined",
-                  "outlinedPrimary": "MuiButton-outlinedPrimary",
-                  "outlinedSecondary": "MuiButton-outlinedSecondary",
-                  "outlinedSizeLarge": "MuiButton-outlinedSizeLarge",
-                  "outlinedSizeSmall": "MuiButton-outlinedSizeSmall",
-                  "root": "MuiButton-root",
-                  "sizeLarge": "MuiButton-sizeLarge",
-                  "sizeSmall": "MuiButton-sizeSmall",
-                  "startIcon": "MuiButton-startIcon",
-                  "text": "MuiButton-text",
-                  "textPrimary": "MuiButton-textPrimary",
-                  "textSecondary": "MuiButton-textSecondary",
-                  "textSizeLarge": "MuiButton-textSizeLarge",
-                  "textSizeSmall": "MuiButton-textSizeSmall",
-                }
-              }
-              color="default"
-              onClick={[Function]}
-              startIcon={<UNDEFINED />}
-              variant="text"
+            <div
+              className="createNewSprintButton-buttonContainer-68"
             >
-              <WithStyles(ForwardRef(ButtonBase))
-                className="MuiButton-root MuiButton-text"
-                component="button"
-                disabled={false}
-                focusRipple={true}
-                focusVisibleClassName="Mui-focusVisible"
+              <WithStyles(ForwardRef(Button))
+                className="createNewSprintButton-buttonSpacing-69"
+                color="default"
                 onClick={[Function]}
-                type="button"
+                startIcon={<UNDEFINED />}
+                variant="text"
               >
-                <ForwardRef(ButtonBase)
-                  className="MuiButton-root MuiButton-text"
+                <ForwardRef(Button)
+                  className="createNewSprintButton-buttonSpacing-69"
                   classes={
                     Object {
+                      "colorInherit": "MuiButton-colorInherit",
+                      "contained": "MuiButton-contained",
+                      "containedPrimary": "MuiButton-containedPrimary",
+                      "containedSecondary": "MuiButton-containedSecondary",
+                      "containedSizeLarge": "MuiButton-containedSizeLarge",
+                      "containedSizeSmall": "MuiButton-containedSizeSmall",
+                      "disableElevation": "MuiButton-disableElevation",
                       "disabled": "Mui-disabled",
+                      "endIcon": "MuiButton-endIcon",
                       "focusVisible": "Mui-focusVisible",
-                      "root": "MuiButtonBase-root",
+                      "fullWidth": "MuiButton-fullWidth",
+                      "iconSizeLarge": "MuiButton-iconSizeLarge",
+                      "iconSizeMedium": "MuiButton-iconSizeMedium",
+                      "iconSizeSmall": "MuiButton-iconSizeSmall",
+                      "label": "MuiButton-label",
+                      "outlined": "MuiButton-outlined",
+                      "outlinedPrimary": "MuiButton-outlinedPrimary",
+                      "outlinedSecondary": "MuiButton-outlinedSecondary",
+                      "outlinedSizeLarge": "MuiButton-outlinedSizeLarge",
+                      "outlinedSizeSmall": "MuiButton-outlinedSizeSmall",
+                      "root": "MuiButton-root",
+                      "sizeLarge": "MuiButton-sizeLarge",
+                      "sizeSmall": "MuiButton-sizeSmall",
+                      "startIcon": "MuiButton-startIcon",
+                      "text": "MuiButton-text",
+                      "textPrimary": "MuiButton-textPrimary",
+                      "textSecondary": "MuiButton-textSecondary",
+                      "textSizeLarge": "MuiButton-textSizeLarge",
+                      "textSizeSmall": "MuiButton-textSizeSmall",
                     }
                   }
-                  component="button"
-                  disabled={false}
-                  focusRipple={true}
-                  focusVisibleClassName="Mui-focusVisible"
+                  color="default"
                   onClick={[Function]}
-                  type="button"
+                  startIcon={<UNDEFINED />}
+                  variant="text"
                 >
-                  <button
-                    className="MuiButtonBase-root MuiButton-root MuiButton-text"
+                  <WithStyles(ForwardRef(ButtonBase))
+                    className="MuiButton-root MuiButton-text createNewSprintButton-buttonSpacing-69"
+                    component="button"
                     disabled={false}
-                    onBlur={[Function]}
+                    focusRipple={true}
+                    focusVisibleClassName="Mui-focusVisible"
                     onClick={[Function]}
-                    onDragLeave={[Function]}
-                    onFocus={[Function]}
-                    onKeyDown={[Function]}
-                    onKeyUp={[Function]}
-                    onMouseDown={[Function]}
-                    onMouseLeave={[Function]}
-                    onMouseUp={[Function]}
-                    onTouchEnd={[Function]}
-                    onTouchMove={[Function]}
-                    onTouchStart={[Function]}
-                    tabIndex={0}
                     type="button"
                   >
-                    <span
-                      className="MuiButton-label"
+                    <ForwardRef(ButtonBase)
+                      className="MuiButton-root MuiButton-text createNewSprintButton-buttonSpacing-69"
+                      classes={
+                        Object {
+                          "disabled": "Mui-disabled",
+                          "focusVisible": "Mui-focusVisible",
+                          "root": "MuiButtonBase-root",
+                        }
+                      }
+                      component="button"
+                      disabled={false}
+                      focusRipple={true}
+                      focusVisibleClassName="Mui-focusVisible"
+                      onClick={[Function]}
+                      type="button"
                     >
-                      <span
-                        className="MuiButton-startIcon MuiButton-iconSizeMedium"
+                      <button
+                        className="MuiButtonBase-root MuiButton-root MuiButton-text createNewSprintButton-buttonSpacing-69"
+                        disabled={false}
+                        onBlur={[Function]}
+                        onClick={[Function]}
+                        onDragLeave={[Function]}
+                        onFocus={[Function]}
+                        onKeyDown={[Function]}
+                        onKeyUp={[Function]}
+                        onMouseDown={[Function]}
+                        onMouseLeave={[Function]}
+                        onMouseUp={[Function]}
+                        onTouchEnd={[Function]}
+                        onTouchMove={[Function]}
+                        onTouchStart={[Function]}
+                        tabIndex={0}
+                        type="button"
                       >
-                        <ForwardRef>
-                          <WithStyles(ForwardRef(SvgIcon))>
-                            <ForwardRef(SvgIcon)
+                        <span
+                          className="MuiButton-label"
+                        >
+                          <span
+                            className="MuiButton-startIcon MuiButton-iconSizeMedium"
+                          >
+                            <ForwardRef>
+                              <WithStyles(ForwardRef(SvgIcon))>
+                                <ForwardRef(SvgIcon)
+                                  classes={
+                                    Object {
+                                      "colorAction": "MuiSvgIcon-colorAction",
+                                      "colorDisabled": "MuiSvgIcon-colorDisabled",
+                                      "colorError": "MuiSvgIcon-colorError",
+                                      "colorPrimary": "MuiSvgIcon-colorPrimary",
+                                      "colorSecondary": "MuiSvgIcon-colorSecondary",
+                                      "fontSizeInherit": "MuiSvgIcon-fontSizeInherit",
+                                      "fontSizeLarge": "MuiSvgIcon-fontSizeLarge",
+                                      "fontSizeSmall": "MuiSvgIcon-fontSizeSmall",
+                                      "root": "MuiSvgIcon-root",
+                                    }
+                                  }
+                                >
+                                  <svg
+                                    aria-hidden="true"
+                                    className="MuiSvgIcon-root"
+                                    focusable="false"
+                                    role="presentation"
+                                    viewBox="0 0 24 24"
+                                  >
+                                    <path
+                                      d="M13 7h-2v4H7v2h4v4h2v-4h4v-2h-4V7zm-1-5C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"
+                                    />
+                                  </svg>
+                                </ForwardRef(SvgIcon)>
+                              </WithStyles(ForwardRef(SvgIcon))>
+                            </ForwardRef>
+                          </span>
+                          CREATE NEW SPRINT
+                        </span>
+                        <NoSsr>
+                          <WithStyles(undefined)
+                            center={false}
+                          >
+                            <ForwardRef(TouchRipple)
+                              center={false}
                               classes={
                                 Object {
-                                  "colorAction": "MuiSvgIcon-colorAction",
-                                  "colorDisabled": "MuiSvgIcon-colorDisabled",
-                                  "colorError": "MuiSvgIcon-colorError",
-                                  "colorPrimary": "MuiSvgIcon-colorPrimary",
-                                  "colorSecondary": "MuiSvgIcon-colorSecondary",
-                                  "fontSizeInherit": "MuiSvgIcon-fontSizeInherit",
-                                  "fontSizeLarge": "MuiSvgIcon-fontSizeLarge",
-                                  "fontSizeSmall": "MuiSvgIcon-fontSizeSmall",
-                                  "root": "MuiSvgIcon-root",
+                                  "child": "MuiTouchRipple-child",
+                                  "childLeaving": "MuiTouchRipple-childLeaving",
+                                  "childPulsate": "MuiTouchRipple-childPulsate",
+                                  "ripple": "MuiTouchRipple-ripple",
+                                  "ripplePulsate": "MuiTouchRipple-ripplePulsate",
+                                  "rippleVisible": "MuiTouchRipple-rippleVisible",
+                                  "root": "MuiTouchRipple-root",
                                 }
                               }
                             >
-                              <svg
-                                aria-hidden="true"
-                                className="MuiSvgIcon-root"
-                                focusable="false"
-                                role="presentation"
-                                viewBox="0 0 24 24"
+                              <span
+                                className="MuiTouchRipple-root"
                               >
-                                <path
-                                  d="M13 7h-2v4H7v2h4v4h2v-4h4v-2h-4V7zm-1-5C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"
+                                <TransitionGroup
+                                  childFactory={[Function]}
+                                  component={null}
+                                  exit={true}
                                 />
-                              </svg>
-                            </ForwardRef(SvgIcon)>
-                          </WithStyles(ForwardRef(SvgIcon))>
-                        </ForwardRef>
-                      </span>
-                      CREATE NEW SPRINT
-                    </span>
-                    <NoSsr>
-                      <WithStyles(undefined)
-                        center={false}
-                      >
-                        <ForwardRef(TouchRipple)
-                          center={false}
-                          classes={
-                            Object {
-                              "child": "MuiTouchRipple-child",
-                              "childLeaving": "MuiTouchRipple-childLeaving",
-                              "childPulsate": "MuiTouchRipple-childPulsate",
-                              "ripple": "MuiTouchRipple-ripple",
-                              "ripplePulsate": "MuiTouchRipple-ripplePulsate",
-                              "rippleVisible": "MuiTouchRipple-rippleVisible",
-                              "root": "MuiTouchRipple-root",
-                            }
-                          }
-                        >
-                          <span
-                            className="MuiTouchRipple-root"
-                          >
-                            <TransitionGroup
-                              childFactory={[Function]}
-                              component={null}
-                              exit={true}
-                            />
-                          </span>
-                        </ForwardRef(TouchRipple)>
-                      </WithStyles(undefined)>
-                    </NoSsr>
-                  </button>
-                </ForwardRef(ButtonBase)>
-              </WithStyles(ForwardRef(ButtonBase))>
-            </ForwardRef(Button)>
-          </WithStyles(ForwardRef(Button))>
-        </div>
-      </div>
+                              </span>
+                            </ForwardRef(TouchRipple)>
+                          </WithStyles(undefined)>
+                        </NoSsr>
+                      </button>
+                    </ForwardRef(ButtonBase)>
+                  </WithStyles(ForwardRef(ButtonBase))>
+                </ForwardRef(Button)>
+              </WithStyles(ForwardRef(Button))>
+            </div>
+          </div>
+        </createNewSprintButton>
+      </WithStyles(createNewSprintButton)>
     </div>
     <WithStyles(footer)>
       <footer
         classes={
           Object {
-            "copyright": "footer-copyright-77",
-            "flexDisplay": "footer-flexDisplay-78",
-            "footer": "footer-footer-76",
+            "copyright": "footer-copyright-80",
+            "flexDisplay": "footer-flexDisplay-81",
+            "footer": "footer-footer-79",
           }
         }
       >
         <footer
-          className="footer-footer-76"
+          className="footer-footer-79"
         >
           <WithStyles(ForwardRef(Typography))
             align="center"
@@ -3282,14 +3303,14 @@ exports[`MainView Component should match the snapshot 1`] = `
           </WithStyles(ForwardRef(Typography))>
           <WithStyles(ForwardRef(Typography))
             align="center"
-            className="footer-flexDisplay-78"
+            className="footer-flexDisplay-81"
             color="textSecondary"
             component="p"
             variant="subtitle1"
           >
             <ForwardRef(Typography)
               align="center"
-              className="footer-flexDisplay-78"
+              className="footer-flexDisplay-81"
               classes={
                 Object {
                   "alignCenter": "MuiTypography-alignCenter",
@@ -3329,7 +3350,7 @@ exports[`MainView Component should match the snapshot 1`] = `
               variant="subtitle1"
             >
               <p
-                className="MuiTypography-root footer-flexDisplay-78 MuiTypography-subtitle1 MuiTypography-colorTextSecondary MuiTypography-alignCenter"
+                className="MuiTypography-root footer-flexDisplay-81 MuiTypography-subtitle1 MuiTypography-colorTextSecondary MuiTypography-alignCenter"
               >
                 <span>
                   Made with 
@@ -3381,13 +3402,13 @@ exports[`MainView Component should match the snapshot 1`] = `
           </WithStyles(ForwardRef(Typography))>
           <WithStyles(ForwardRef(Typography))
             align="center"
-            className="footer-copyright-77"
+            className="footer-copyright-80"
             color="textSecondary"
             variant="body2"
           >
             <ForwardRef(Typography)
               align="center"
-              className="footer-copyright-77"
+              className="footer-copyright-80"
               classes={
                 Object {
                   "alignCenter": "MuiTypography-alignCenter",
@@ -3426,7 +3447,7 @@ exports[`MainView Component should match the snapshot 1`] = `
               variant="body2"
             >
               <p
-                className="MuiTypography-root footer-copyright-77 MuiTypography-body2 MuiTypography-colorTextSecondary MuiTypography-alignCenter"
+                className="MuiTypography-root footer-copyright-80 MuiTypography-body2 MuiTypography-colorTextSecondary MuiTypography-alignCenter"
               >
                 © 
                 <WithStyles(ForwardRef(Link))
