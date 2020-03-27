@@ -5,20 +5,19 @@ import { connect } from 'react-redux';
 import moment from 'moment'; 
 
 import AddCircleOutlineOutlinedIcon from '@material-ui/icons/AddCircleOutlineOutlined';
-import EditOutlinedIcon from '@material-ui/icons/EditOutlined';
-import InsertChartOutlinedOutlinedIcon from '@material-ui/icons/InsertChartOutlinedOutlined';
 
-import Sprint from '../../components/Sprint/Sprint';
 import EditSprint from '../EditSprint/EditSprint';
 import { withStyles } from '@material-ui/core/styles';
 import EditProject from '../EditProject/EditProject';
 import * as actions from '../../store/actions/index';
 import SprintStatistics from '../../components/SprintStatistics/SprintStatistics';
 import ModalErrorBoundary from '../ErrorBoundary/ModalErrorBoundary/ModalErrorBoundary';
+
 import Footer from '../../components/Footer/Footer';
 import CurrentSprint from './CurrentSprint/CurrentSprint';
 import NextSprint from './NextSprint/NextSprint';
 import Queue from './Queue/Queue';
+import FutureSprints from './FutureSprints/FutureSprints';
 
 const styles = theme => ({
     overallContainer: {
@@ -299,61 +298,6 @@ export class MainView extends Component {
 
         const queueSprintId = -1;
 
-        // Displaying Future Sprints
-        let futureSprints = null;
-
-        if (this.state.displayFutureSprints && this.props.sprints && this.state.futureSprintsStartIndex !== null) {
-            // console.log('this.state.futureSprintsStartIndex:', this.state.futureSprintsStartIndex);
-            const futureSprintsArray = [...this.props.sprints.slice(this.state.futureSprintsStartIndex)]
-                .map((futureSprint => {
-                    return (
-                    <div key={futureSprint.id}>
-                        <div className={classes.futureSprintsConditionalButtonsContainer}>
-                            <Button 
-                                size="small" variant="outlined" color="default" className={classes.conditionalButtons} 
-                                startIcon={<AddCircleOutlineOutlinedIcon />}
-                                onClick={() => this.openCreatingProject(futureSprint.id)}
-                            >
-                                ADD NEW PROJECT
-                            </Button>
-                            <Button 
-                                size="small" variant="outlined" color="default" className={classes.conditionalButtons} 
-                                startIcon={<EditOutlinedIcon />}
-                                onClick={() => this.openEditingSprint(futureSprint.id)}
-                            >
-                                EDIT SPRINT
-                            </Button>
-                            <Button 
-                                size="small" variant="outlined" color="default" className={classes.conditionalButtons} 
-                                startIcon={<InsertChartOutlinedOutlinedIcon />}
-                                onClick={() => this.openSprintStatistics(futureSprint.id)}
-                            >
-                                SPRINT STATISTICS
-                            </Button>
-                        </div>
-                        <div className={classes.innerSprintContainer}>
-                        <Sprint 
-                            sprint={futureSprint} 
-                            sprintId={futureSprint.id}
-                            onOpenProject={this.openEditingProject}
-                            sprintType="future"
-                        />
-                        </div>
-                    </div>
-                    )
-                }));
-            
-            futureSprints = (
-                <div className={classes.futureSprintsContainer}>
-                    <div className={classes.sprintContainer}>
-                        {futureSprintsArray}
-                    </div>
-                </div>
-            );
-        } else if(this.state.displayFutureSprints) {
-            futureSprints = <div className={classes.sprintMissingMessage} data-testid="NoFutureSprints">No upcoming sprints.</div>
-        }
-
         // --------------------
 
         // Displaying the Project Editing Modal
@@ -488,13 +432,16 @@ export class MainView extends Component {
                         openCreatingProject={this.openCreatingProject}
                     />
 
-                    {/* Future Sprints Section */}
-                    <div className={classes.sprintSectionContainer}>
-                        <div className={classes.buttonContainer}>
-                            <Button variant="contained" color="default" className={classes.buttonSpacing} onClick={this.toggleFutureSprints}>FUTURE SPRINTS</Button>
-                                {futureSprints}
-                        </div>
-                    </div>
+                    <FutureSprints 
+                        displayFutureSprints={this.state.displayFutureSprints}
+                        sprints={this.props.sprints}
+                        futureSprintsStartIndex={this.state.futureSprintsStartIndex}
+                        openCreatingProject={this.openCreatingProject}
+                        openEditingSprint={this.openEditingSprint}
+                        openSprintStatistics={this.openSprintStatistics}
+                        openEditingProject={this.openEditingProject}
+                        toggleFutureSprints={this.toggleFutureSprints}
+                    />
 
                     {/* Create New Sprint Section */}
                     <div className={classes.sprintSectionContainer}>
