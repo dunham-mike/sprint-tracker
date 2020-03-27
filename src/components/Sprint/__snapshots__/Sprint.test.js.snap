@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Sprint Component should match the snapshot 1`] = `
-<WithStyles(sprint)
+<WithStyles(Sprint)
   onOpenProject={[MockFunction]}
   sprint={
     Object {
@@ -222,11 +222,11 @@ exports[`Sprint Component should match the snapshot 1`] = `
   sprintId="test_sprintId"
   sprintType="current"
 >
-  <sprint
+  <Sprint
     classes={
       Object {
-        "sprintTitle": "sprint-sprintTitle-1",
-        "tableContainer": "sprint-tableContainer-2",
+        "sprintTitle": "Sprint-sprintTitle-1",
+        "tableContainer": "Sprint-tableContainer-2",
       }
     }
     onOpenProject={[MockFunction]}
@@ -451,9 +451,9 @@ exports[`Sprint Component should match the snapshot 1`] = `
   >
     <div>
       <div
-        className="sprint-tableContainer-2"
+        className="Sprint-tableContainer-2"
       >
-        <projectTable
+        <ProjectTable
           onOpenProject={[MockFunction]}
           sprintId="test_sprintId"
           sprintLength={4}
@@ -33960,9 +33960,9 @@ exports[`Sprint Component should match the snapshot 1`] = `
               </Component>
             </WithStyles(Component)>
           </div>
-        </projectTable>
+        </ProjectTable>
       </div>
     </div>
-  </sprint>
-</WithStyles(sprint)>
+  </Sprint>
+</WithStyles(Sprint)>
 `;

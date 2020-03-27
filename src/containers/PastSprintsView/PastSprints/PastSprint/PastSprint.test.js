@@ -138,7 +138,7 @@ describe('PastSprint Component', () => {
 
         expect(enzymeMountWrapper.find('.MuiButton-label').prop('children')).toEqual(expect.arrayContaining(["Sprint #1"]));
 
-        expect(enzymeMountWrapper.find('projectTable')).toHaveLength(0);
+        expect(enzymeMountWrapper.find('ProjectTable')).toHaveLength(0);
     });
 
 
@@ -150,7 +150,7 @@ describe('PastSprint Component', () => {
 
         enzymeMountWrapper.find('.MuiButtonBase-root').simulate('click');
 
-        expect(enzymeMountWrapper.find('projectTable')).toHaveLength(1);
+        expect(enzymeMountWrapper.find('ProjectTable')).toHaveLength(1);
         expect(enzymeMountWrapper.find('.MuiButton-label')).toHaveLength(2); // Second button added
     });
 
