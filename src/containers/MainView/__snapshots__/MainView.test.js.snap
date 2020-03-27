@@ -486,9 +486,8 @@ exports[`MainView Component should match the snapshot 1`] = `
 >
   <div>
     <div>
-      <WithStyles(currentSprint)
+      <WithStyles(CurrentSprint)
         currentSprintIndex={null}
-        displayCurrentSprint={true}
         openCreatingProject={[Function]}
         openEditingProject={[Function]}
         openEditingSprint={[Function]}
@@ -738,23 +737,21 @@ exports[`MainView Component should match the snapshot 1`] = `
             },
           ]
         }
-        toggleCurrentSprint={[Function]}
       >
-        <currentSprint
+        <CurrentSprint
           classes={
             Object {
-              "buttonContainer": "currentSprint-buttonContainer-5",
-              "buttonSpacing": "currentSprint-buttonSpacing-7",
-              "conditionalButtons": "currentSprint-conditionalButtons-8",
-              "conditionalButtonsContainer": "currentSprint-conditionalButtonsContainer-6",
-              "innerSprintContainer": "currentSprint-innerSprintContainer-3",
-              "sprintContainer": "currentSprint-sprintContainer-2",
-              "sprintMissingMessage": "currentSprint-sprintMissingMessage-4",
-              "sprintSectionContainer": "currentSprint-sprintSectionContainer-1",
+              "buttonContainer": "CurrentSprint-buttonContainer-5",
+              "buttonSpacing": "CurrentSprint-buttonSpacing-7",
+              "conditionalButtons": "CurrentSprint-conditionalButtons-8",
+              "conditionalButtonsContainer": "CurrentSprint-conditionalButtonsContainer-6",
+              "innerSprintContainer": "CurrentSprint-innerSprintContainer-3",
+              "sprintContainer": "CurrentSprint-sprintContainer-2",
+              "sprintMissingMessage": "CurrentSprint-sprintMissingMessage-4",
+              "sprintSectionContainer": "CurrentSprint-sprintSectionContainer-1",
             }
           }
           currentSprintIndex={null}
-          displayCurrentSprint={true}
           openCreatingProject={[Function]}
           openEditingProject={[Function]}
           openEditingSprint={[Function]}
@@ -1004,22 +1001,21 @@ exports[`MainView Component should match the snapshot 1`] = `
               },
             ]
           }
-          toggleCurrentSprint={[Function]}
         >
           <div
-            className="currentSprint-sprintSectionContainer-1"
+            className="CurrentSprint-sprintSectionContainer-1"
           >
             <div
-              className="currentSprint-buttonContainer-5"
+              className="CurrentSprint-buttonContainer-5"
             >
               <WithStyles(ForwardRef(Button))
-                className="currentSprint-buttonSpacing-7"
+                className="CurrentSprint-buttonSpacing-7"
                 color="primary"
                 onClick={[Function]}
                 variant="contained"
               >
                 <ForwardRef(Button)
-                  className="currentSprint-buttonSpacing-7"
+                  className="CurrentSprint-buttonSpacing-7"
                   classes={
                     Object {
                       "colorInherit": "MuiButton-colorInherit",
@@ -1058,7 +1054,7 @@ exports[`MainView Component should match the snapshot 1`] = `
                   variant="contained"
                 >
                   <WithStyles(ForwardRef(ButtonBase))
-                    className="MuiButton-root MuiButton-contained currentSprint-buttonSpacing-7 MuiButton-containedPrimary"
+                    className="MuiButton-root MuiButton-contained CurrentSprint-buttonSpacing-7 MuiButton-containedPrimary"
                     component="button"
                     disabled={false}
                     focusRipple={true}
@@ -1067,7 +1063,7 @@ exports[`MainView Component should match the snapshot 1`] = `
                     type="button"
                   >
                     <ForwardRef(ButtonBase)
-                      className="MuiButton-root MuiButton-contained currentSprint-buttonSpacing-7 MuiButton-containedPrimary"
+                      className="MuiButton-root MuiButton-contained CurrentSprint-buttonSpacing-7 MuiButton-containedPrimary"
                       classes={
                         Object {
                           "disabled": "Mui-disabled",
@@ -1083,7 +1079,7 @@ exports[`MainView Component should match the snapshot 1`] = `
                       type="button"
                     >
                       <button
-                        className="MuiButtonBase-root MuiButton-root MuiButton-contained currentSprint-buttonSpacing-7 MuiButton-containedPrimary"
+                        className="MuiButtonBase-root MuiButton-root MuiButton-contained CurrentSprint-buttonSpacing-7 MuiButton-containedPrimary"
                         disabled={false}
                         onBlur={[Function]}
                         onClick={[Function]}
@@ -1142,16 +1138,15 @@ exports[`MainView Component should match the snapshot 1`] = `
               </WithStyles(ForwardRef(Button))>
             </div>
             <div
-              className="currentSprint-sprintMissingMessage-4"
+              className="CurrentSprint-sprintMissingMessage-4"
               data-testid="NoCurrentSprint"
             >
               No current sprint.
             </div>
           </div>
-        </currentSprint>
-      </WithStyles(currentSprint)>
-      <WithStyles(nextSprint)
-        displayNextSprint={false}
+        </CurrentSprint>
+      </WithStyles(CurrentSprint)>
+      <WithStyles(NextSprint)
         nextSprintIndex={0}
         openCreatingProject={[Function]}
         openEditingProject={[Function]}
@@ -1402,22 +1397,20 @@ exports[`MainView Component should match the snapshot 1`] = `
             },
           ]
         }
-        toggleNextSprint={[Function]}
       >
-        <nextSprint
+        <NextSprint
           classes={
             Object {
-              "buttonContainer": "nextSprint-buttonContainer-45",
-              "buttonSpacing": "nextSprint-buttonSpacing-47",
-              "conditionalButtons": "nextSprint-conditionalButtons-48",
-              "conditionalButtonsContainer": "nextSprint-conditionalButtonsContainer-46",
-              "innerSprintContainer": "nextSprint-innerSprintContainer-43",
-              "sprintContainer": "nextSprint-sprintContainer-42",
-              "sprintMissingMessage": "nextSprint-sprintMissingMessage-44",
-              "sprintSectionContainer": "nextSprint-sprintSectionContainer-41",
+              "buttonContainer": "NextSprint-buttonContainer-45",
+              "buttonSpacing": "NextSprint-buttonSpacing-47",
+              "conditionalButtons": "NextSprint-conditionalButtons-48",
+              "conditionalButtonsContainer": "NextSprint-conditionalButtonsContainer-46",
+              "innerSprintContainer": "NextSprint-innerSprintContainer-43",
+              "sprintContainer": "NextSprint-sprintContainer-42",
+              "sprintMissingMessage": "NextSprint-sprintMissingMessage-44",
+              "sprintSectionContainer": "NextSprint-sprintSectionContainer-41",
             }
           }
-          displayNextSprint={false}
           nextSprintIndex={0}
           openCreatingProject={[Function]}
           openEditingProject={[Function]}
@@ -1668,22 +1661,21 @@ exports[`MainView Component should match the snapshot 1`] = `
               },
             ]
           }
-          toggleNextSprint={[Function]}
         >
           <div
-            className="nextSprint-sprintSectionContainer-41"
+            className="NextSprint-sprintSectionContainer-41"
           >
             <div
-              className="nextSprint-buttonContainer-45"
+              className="NextSprint-buttonContainer-45"
             >
               <WithStyles(ForwardRef(Button))
-                className="nextSprint-buttonSpacing-47"
+                className="NextSprint-buttonSpacing-47"
                 color="secondary"
                 onClick={[Function]}
                 variant="contained"
               >
                 <ForwardRef(Button)
-                  className="nextSprint-buttonSpacing-47"
+                  className="NextSprint-buttonSpacing-47"
                   classes={
                     Object {
                       "colorInherit": "MuiButton-colorInherit",
@@ -1722,7 +1714,7 @@ exports[`MainView Component should match the snapshot 1`] = `
                   variant="contained"
                 >
                   <WithStyles(ForwardRef(ButtonBase))
-                    className="MuiButton-root MuiButton-contained nextSprint-buttonSpacing-47 MuiButton-containedSecondary"
+                    className="MuiButton-root MuiButton-contained NextSprint-buttonSpacing-47 MuiButton-containedSecondary"
                     component="button"
                     disabled={false}
                     focusRipple={true}
@@ -1731,7 +1723,7 @@ exports[`MainView Component should match the snapshot 1`] = `
                     type="button"
                   >
                     <ForwardRef(ButtonBase)
-                      className="MuiButton-root MuiButton-contained nextSprint-buttonSpacing-47 MuiButton-containedSecondary"
+                      className="MuiButton-root MuiButton-contained NextSprint-buttonSpacing-47 MuiButton-containedSecondary"
                       classes={
                         Object {
                           "disabled": "Mui-disabled",
@@ -1747,7 +1739,7 @@ exports[`MainView Component should match the snapshot 1`] = `
                       type="button"
                     >
                       <button
-                        className="MuiButtonBase-root MuiButton-root MuiButton-contained nextSprint-buttonSpacing-47 MuiButton-containedSecondary"
+                        className="MuiButtonBase-root MuiButton-root MuiButton-contained NextSprint-buttonSpacing-47 MuiButton-containedSecondary"
                         disabled={false}
                         onBlur={[Function]}
                         onClick={[Function]}
@@ -1806,10 +1798,9 @@ exports[`MainView Component should match the snapshot 1`] = `
               </WithStyles(ForwardRef(Button))>
             </div>
           </div>
-        </nextSprint>
-      </WithStyles(nextSprint)>
-      <WithStyles(queue)
-        displayQueue={false}
+        </NextSprint>
+      </WithStyles(NextSprint)>
+      <WithStyles(Queue)
         openCreatingProject={[Function]}
         openEditingProject={[Function]}
         queue={
@@ -2020,22 +2011,20 @@ exports[`MainView Component should match the snapshot 1`] = `
             },
           ]
         }
-        toggleQueue={[Function]}
       >
-        <queue
+        <Queue
           classes={
             Object {
-              "buttonContainer": "queue-buttonContainer-53",
-              "buttonSpacing": "queue-buttonSpacing-55",
-              "conditionalButtons": "queue-conditionalButtons-56",
-              "conditionalButtonsContainer": "queue-conditionalButtonsContainer-54",
-              "innerSprintContainer": "queue-innerSprintContainer-51",
-              "sprintContainer": "queue-sprintContainer-50",
-              "sprintMissingMessage": "queue-sprintMissingMessage-52",
-              "sprintSectionContainer": "queue-sprintSectionContainer-49",
+              "buttonContainer": "Queue-buttonContainer-53",
+              "buttonSpacing": "Queue-buttonSpacing-55",
+              "conditionalButtons": "Queue-conditionalButtons-56",
+              "conditionalButtonsContainer": "Queue-conditionalButtonsContainer-54",
+              "innerSprintContainer": "Queue-innerSprintContainer-51",
+              "sprintContainer": "Queue-sprintContainer-50",
+              "sprintMissingMessage": "Queue-sprintMissingMessage-52",
+              "sprintSectionContainer": "Queue-sprintSectionContainer-49",
             }
           }
-          displayQueue={false}
           openCreatingProject={[Function]}
           openEditingProject={[Function]}
           queue={
@@ -2246,22 +2235,21 @@ exports[`MainView Component should match the snapshot 1`] = `
               },
             ]
           }
-          toggleQueue={[Function]}
         >
           <div
-            className="queue-sprintSectionContainer-49"
+            className="Queue-sprintSectionContainer-49"
           >
             <div
-              className="queue-buttonContainer-53"
+              className="Queue-buttonContainer-53"
             >
               <WithStyles(ForwardRef(Button))
-                className="queue-buttonSpacing-55"
+                className="Queue-buttonSpacing-55"
                 color="default"
                 onClick={[Function]}
                 variant="contained"
               >
                 <ForwardRef(Button)
-                  className="queue-buttonSpacing-55"
+                  className="Queue-buttonSpacing-55"
                   classes={
                     Object {
                       "colorInherit": "MuiButton-colorInherit",
@@ -2300,7 +2288,7 @@ exports[`MainView Component should match the snapshot 1`] = `
                   variant="contained"
                 >
                   <WithStyles(ForwardRef(ButtonBase))
-                    className="MuiButton-root MuiButton-contained queue-buttonSpacing-55"
+                    className="MuiButton-root MuiButton-contained Queue-buttonSpacing-55"
                     component="button"
                     disabled={false}
                     focusRipple={true}
@@ -2309,7 +2297,7 @@ exports[`MainView Component should match the snapshot 1`] = `
                     type="button"
                   >
                     <ForwardRef(ButtonBase)
-                      className="MuiButton-root MuiButton-contained queue-buttonSpacing-55"
+                      className="MuiButton-root MuiButton-contained Queue-buttonSpacing-55"
                       classes={
                         Object {
                           "disabled": "Mui-disabled",
@@ -2325,7 +2313,7 @@ exports[`MainView Component should match the snapshot 1`] = `
                       type="button"
                     >
                       <button
-                        className="MuiButtonBase-root MuiButton-root MuiButton-contained queue-buttonSpacing-55"
+                        className="MuiButtonBase-root MuiButton-root MuiButton-contained Queue-buttonSpacing-55"
                         disabled={false}
                         onBlur={[Function]}
                         onClick={[Function]}
@@ -2384,10 +2372,9 @@ exports[`MainView Component should match the snapshot 1`] = `
               </WithStyles(ForwardRef(Button))>
             </div>
           </div>
-        </queue>
-      </WithStyles(queue)>
-      <WithStyles(futureSprints)
-        displayFutureSprints={false}
+        </Queue>
+      </WithStyles(Queue)>
+      <WithStyles(FutureSprints)
         futureSprintsStartIndex={1}
         openCreatingProject={[Function]}
         openEditingProject={[Function]}
@@ -2638,24 +2625,22 @@ exports[`MainView Component should match the snapshot 1`] = `
             },
           ]
         }
-        toggleFutureSprints={[Function]}
       >
-        <futureSprints
+        <FutureSprints
           classes={
             Object {
-              "buttonContainer": "futureSprints-buttonContainer-61",
-              "buttonSpacing": "futureSprints-buttonSpacing-63",
-              "conditionalButtons": "futureSprints-conditionalButtons-64",
-              "conditionalButtonsContainer": "futureSprints-conditionalButtonsContainer-62",
-              "futureSprintsConditionalButtonsContainer": "futureSprints-futureSprintsConditionalButtonsContainer-66",
-              "futureSprintsContainer": "futureSprints-futureSprintsContainer-65",
-              "innerSprintContainer": "futureSprints-innerSprintContainer-59",
-              "sprintContainer": "futureSprints-sprintContainer-58",
-              "sprintMissingMessage": "futureSprints-sprintMissingMessage-60",
-              "sprintSectionContainer": "futureSprints-sprintSectionContainer-57",
+              "buttonContainer": "FutureSprints-buttonContainer-61",
+              "buttonSpacing": "FutureSprints-buttonSpacing-63",
+              "conditionalButtons": "FutureSprints-conditionalButtons-64",
+              "conditionalButtonsContainer": "FutureSprints-conditionalButtonsContainer-62",
+              "futureSprintsConditionalButtonsContainer": "FutureSprints-futureSprintsConditionalButtonsContainer-66",
+              "futureSprintsContainer": "FutureSprints-futureSprintsContainer-65",
+              "innerSprintContainer": "FutureSprints-innerSprintContainer-59",
+              "sprintContainer": "FutureSprints-sprintContainer-58",
+              "sprintMissingMessage": "FutureSprints-sprintMissingMessage-60",
+              "sprintSectionContainer": "FutureSprints-sprintSectionContainer-57",
             }
           }
-          displayFutureSprints={false}
           futureSprintsStartIndex={1}
           openCreatingProject={[Function]}
           openEditingProject={[Function]}
@@ -2906,22 +2891,21 @@ exports[`MainView Component should match the snapshot 1`] = `
               },
             ]
           }
-          toggleFutureSprints={[Function]}
         >
           <div
-            className="futureSprints-sprintSectionContainer-57"
+            className="FutureSprints-sprintSectionContainer-57"
           >
             <div
-              className="futureSprints-buttonContainer-61"
+              className="FutureSprints-buttonContainer-61"
             >
               <WithStyles(ForwardRef(Button))
-                className="futureSprints-buttonSpacing-63"
+                className="FutureSprints-buttonSpacing-63"
                 color="default"
                 onClick={[Function]}
                 variant="contained"
               >
                 <ForwardRef(Button)
-                  className="futureSprints-buttonSpacing-63"
+                  className="FutureSprints-buttonSpacing-63"
                   classes={
                     Object {
                       "colorInherit": "MuiButton-colorInherit",
@@ -2960,7 +2944,7 @@ exports[`MainView Component should match the snapshot 1`] = `
                   variant="contained"
                 >
                   <WithStyles(ForwardRef(ButtonBase))
-                    className="MuiButton-root MuiButton-contained futureSprints-buttonSpacing-63"
+                    className="MuiButton-root MuiButton-contained FutureSprints-buttonSpacing-63"
                     component="button"
                     disabled={false}
                     focusRipple={true}
@@ -2969,7 +2953,7 @@ exports[`MainView Component should match the snapshot 1`] = `
                     type="button"
                   >
                     <ForwardRef(ButtonBase)
-                      className="MuiButton-root MuiButton-contained futureSprints-buttonSpacing-63"
+                      className="MuiButton-root MuiButton-contained FutureSprints-buttonSpacing-63"
                       classes={
                         Object {
                           "disabled": "Mui-disabled",
@@ -2985,7 +2969,7 @@ exports[`MainView Component should match the snapshot 1`] = `
                       type="button"
                     >
                       <button
-                        className="MuiButtonBase-root MuiButton-root MuiButton-contained futureSprints-buttonSpacing-63"
+                        className="MuiButtonBase-root MuiButton-root MuiButton-contained FutureSprints-buttonSpacing-63"
                         disabled={false}
                         onBlur={[Function]}
                         onClick={[Function]}
@@ -3044,8 +3028,8 @@ exports[`MainView Component should match the snapshot 1`] = `
               </WithStyles(ForwardRef(Button))>
             </div>
           </div>
-        </futureSprints>
-      </WithStyles(futureSprints)>
+        </FutureSprints>
+      </WithStyles(FutureSprints)>
       <WithStyles(createNewSprintButton)
         openCreatingSprint={[Function]}
       >

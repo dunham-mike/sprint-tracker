@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { withStyles } from '@material-ui/core/styles';
 
 import AddCircleOutlineOutlinedIcon from '@material-ui/icons/AddCircleOutlineOutlined';
@@ -45,16 +45,26 @@ const styles = theme => ({
     conditionalButtons: {
         margin: '2px 2px',
     },
+    [theme.breakpoints.down('sm')]: { // Docs: https://material-ui.com/customization/breakpoints/#theme-breakpoints-down-key-media-query
+        conditionalButtonsContainer: {
+            marginTop: '0',
+        },
+    },
 });
   
-const queue = (props) => {
+const Queue = (props) => {
     const { classes } = props;
+
+    const [displayQueue, setDisplayQueue] = useState(false);
+
+    const toggleQueue = () => {
+        setDisplayQueue(!displayQueue);
+    }
 
     const queueSprintId = -1;
 
     let queue = null;
-
-    if (props.displayQueue && props.queue !== null && props.queue.length > 0) {
+    if (displayQueue && props.queue !== null && props.queue.length > 0) {
         queue = (
             <div className={classes.sprintContainer}>
                 <div className={classes.innerSprintContainer}>
@@ -67,15 +77,15 @@ const queue = (props) => {
                 </div>
             </div>
         );
-    } else if (props.displayQueue) {
+    } else if (displayQueue) {
         queue = <div className={classes.sprintMissingMessage} data-testid="NoQueueProjects">No projects in the queue.</div>
     }
 
     return(
         <div className={classes.sprintSectionContainer}>
             <div className={classes.buttonContainer}>
-                <Button variant="contained" color="default" className={classes.buttonSpacing} onClick={props.toggleQueue}>PROJECT QUEUE</Button>
-                {props.displayQueue
+                <Button variant="contained" color="default" className={classes.buttonSpacing} onClick={toggleQueue}>PROJECT QUEUE</Button>
+                {displayQueue
                 ?   <div className={classes.conditionalButtonsContainer}>
                         <Button 
                             size="small" variant="outlined" color="default" className={classes.conditionalButtons} 
@@ -93,4 +103,4 @@ const queue = (props) => {
     );
 }
 
-export default withStyles(styles)(queue);
+export default withStyles(styles)(Queue);

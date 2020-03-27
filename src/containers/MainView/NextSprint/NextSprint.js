@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { withStyles } from '@material-ui/core/styles';
 
 import AddCircleOutlineOutlinedIcon from '@material-ui/icons/AddCircleOutlineOutlined';
@@ -47,14 +47,24 @@ const styles = theme => ({
     conditionalButtons: {
         margin: '2px 2px',
     },
+    [theme.breakpoints.down('sm')]: { // Docs: https://material-ui.com/customization/breakpoints/#theme-breakpoints-down-key-media-query
+        conditionalButtonsContainer: {
+            marginTop: '0',
+        },
+    },
 });
   
-const nextSprint = (props) => {
+const NextSprint = (props) => {
     const { classes } = props;
 
-    let nextSprint = null;
+    const [displayNextSprint, setDisplayNextSprint] = useState(false);
 
-    if (props.displayNextSprint && props.sprints && props.nextSprintIndex !== null ) {
+    const toggleNextSprint = () => {
+        setDisplayNextSprint(!displayNextSprint);
+    }
+
+    let nextSprint = null;
+    if (displayNextSprint && props.sprints && props.nextSprintIndex !== null ) {
         nextSprint = (
             <div className={classes.sprintContainer}>
                 <div className={classes.innerSprintContainer}>
@@ -72,15 +82,15 @@ const nextSprint = (props) => {
                 </div>
             </div>
         );
-    } else if (props.displayNextSprint) {
+    } else if (displayNextSprint) {
         nextSprint = <div className={classes.sprintMissingMessage} data-testid="NoNextSprint">No upcoming sprint.</div>
     }
 
     return(
         <div className={classes.sprintSectionContainer}>
             <div className={classes.buttonContainer}>
-                <Button variant="contained" color="secondary" className={classes.buttonSpacing} onClick={props.toggleNextSprint}>NEXT SPRINT</Button>
-                {props.displayNextSprint && props.nextSprintIndex !== null
+                <Button variant="contained" color="secondary" className={classes.buttonSpacing} onClick={toggleNextSprint}>NEXT SPRINT</Button>
+                {displayNextSprint && props.nextSprintIndex !== null
                 ?   <div className={classes.conditionalButtonsContainer}>
                         <Button 
                             size="small" variant="outlined" color="secondary" className={classes.conditionalButtons} 
@@ -112,4 +122,4 @@ const nextSprint = (props) => {
     );
 }
 
-export default withStyles(styles)(nextSprint);
+export default withStyles(styles)(NextSprint);

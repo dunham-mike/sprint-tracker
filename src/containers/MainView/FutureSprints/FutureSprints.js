@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { withStyles } from '@material-ui/core/styles';
 
 import AddCircleOutlineOutlinedIcon from '@material-ui/icons/AddCircleOutlineOutlined';
@@ -66,12 +66,18 @@ const styles = theme => ({
     },
 });
   
-const futureSprints = (props) => {
+const FutureSprints = (props) => {
+
     const { classes } = props;
 
-    let futureSprints = null;
+    const [displayFutureSprints, setDisplayFutureSprints] = useState(false);
 
-    if (props.displayFutureSprints && props.sprints && props.futureSprintsStartIndex !== null) {
+    const toggleFutureSprints = () => {
+        setDisplayFutureSprints(!displayFutureSprints);
+    }
+
+    let futureSprints = null;
+    if (displayFutureSprints && props.sprints && props.futureSprintsStartIndex !== null) {
         const futureSprintsArray = [...props.sprints.slice(props.futureSprintsStartIndex)]
             .map((futureSprint => {
                 return (
@@ -118,18 +124,18 @@ const futureSprints = (props) => {
                 </div>
             </div>
         );
-    } else if(props.displayFutureSprints) {
+    } else if(displayFutureSprints) {
         futureSprints = <div className={classes.sprintMissingMessage} data-testid="NoFutureSprints">No upcoming sprints.</div>
     }
 
     return(
         <div className={classes.sprintSectionContainer}>
             <div className={classes.buttonContainer}>
-                <Button variant="contained" color="default" className={classes.buttonSpacing} onClick={props.toggleFutureSprints}>FUTURE SPRINTS</Button>
+                <Button variant="contained" color="default" className={classes.buttonSpacing} onClick={toggleFutureSprints}>FUTURE SPRINTS</Button>
                     {futureSprints}
             </div>
         </div>
     );
 }
 
-export default withStyles(styles)(futureSprints);
+export default withStyles(styles)(FutureSprints);

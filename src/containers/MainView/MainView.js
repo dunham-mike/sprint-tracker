@@ -28,61 +28,6 @@ const styles = theme => ({
         position: 'relative',
         flex: '1'
     },
-    sprintSectionContainer: {
-        width: '100%',
-    },
-    buttonContainer: {
-        width: '100%',
-        position: 'relative',
-    },
-    conditionalButtonsContainer: {
-        paddingTop: theme.spacing(0.75),
-        paddingRight: theme.spacing(3),
-        display: 'flex',
-        justifyContent: 'flex-end',
-        flexWrap: 'wrap',
-        marginTop: theme.spacing(-5),
-    },
-    futureSprintsContainer: {
-        marginTop: theme.spacing(-5),
-    },
-    [theme.breakpoints.down('sm')]: { // Docs: https://material-ui.com/customization/breakpoints/#theme-breakpoints-down-key-media-query
-        conditionalButtonsContainer: {
-            marginTop: '0',
-        },
-        futureSprintsContainer: {
-            marginTop: '0',
-        },
-      },
-    futureSprintsConditionalButtonsContainer: {
-        marginTop: theme.spacing(0.75),
-        display: 'flex',
-        justifyContent: 'flex-end',
-        flexWrap: 'wrap',
-    },
-    conditionalButtons: {
-        margin: '2px 2px',
-    },
-    buttonSpacing: {
-        marginBottom: theme.spacing(1),
-        width: theme.spacing(40),
-        fontWeight: 'bold',
-    },
-    sprintContainer: {
-        marginBottom: theme.spacing(2),
-        paddingRight: theme.spacing(3),
-        width: '100%',
-        minHeight: theme.spacing(7),
-    },
-    innerSprintContainer: {
-        position: 'relative',
-        width: '100%',
-        height: '100%',
-        marginBottom: theme.spacing(4)
-    },
-    sprintMissingMessage: {
-        marginBottom: theme.spacing(2)
-    }
 });
 
 export class MainView extends Component {
@@ -91,12 +36,6 @@ export class MainView extends Component {
         currentSprintIndex: null,
         nextSprintIndex: null,
         futureSprintsStartIndex: null,
-
-        // Tracking which sections to display
-        displayCurrentSprint: true,
-        displayNextSprint: false,
-        displayQueue: false,
-        displayFutureSprints: false,
 
         // Editing/creating a project
         editingProject: false,
@@ -170,30 +109,6 @@ export class MainView extends Component {
                 futureSprintsStartIndex: futureSprintsStartIndex,
             });
         }        
-    }
-
-    toggleCurrentSprint = () => {
-        this.setState(prevState => {
-            return { displayCurrentSprint: !prevState.displayCurrentSprint }
-        });
-    }
-
-    toggleNextSprint = () => {
-        this.setState(prevState => {
-            return { displayNextSprint: !prevState.displayNextSprint }
-        });
-    }
-
-    toggleQueue = () => {
-        this.setState(prevState => {
-            return { displayQueue: !prevState.displayQueue }
-        });
-    }
-
-    toggleFutureSprints = () => {
-        this.setState(prevState => {
-            return { displayFutureSprints: !prevState.displayFutureSprints }
-        });
     }
 
     getSprintIndexFromSprintId = (sprintId) => {
@@ -293,44 +208,36 @@ export class MainView extends Component {
             <div className={classes.overallContainer}>
                 <div className={classes.mainViewContainer}>
                     <CurrentSprint 
-                        displayCurrentSprint={this.state.displayCurrentSprint}
                         sprints={this.props.sprints}
                         currentSprintIndex={this.state.currentSprintIndex}
                         openEditingProject={this.openEditingProject}
-                        toggleCurrentSprint={this.toggleCurrentSprint}
                         openCreatingProject={this.openCreatingProject}
                         openEditingSprint={this.openEditingSprint}
                         openSprintStatistics={this.openSprintStatistics}
                     />
 
                     <NextSprint 
-                        displayNextSprint={this.state.displayNextSprint}
                         sprints={this.props.sprints}
                         nextSprintIndex={this.state.nextSprintIndex}
                         openEditingProject={this.openEditingProject}
-                        toggleNextSprint={this.toggleNextSprint}
                         openCreatingProject={this.openCreatingProject}
                         openEditingSprint={this.openEditingSprint}
                         openSprintStatistics={this.openSprintStatistics}
                     />
 
                     <Queue 
-                        displayQueue={this.state.displayQueue}
                         queue={this.props.queue}
                         openEditingProject={this.openEditingProject}
-                        toggleQueue={this.toggleQueue}
                         openCreatingProject={this.openCreatingProject}
                     />
 
                     <FutureSprints 
-                        displayFutureSprints={this.state.displayFutureSprints}
                         sprints={this.props.sprints}
                         futureSprintsStartIndex={this.state.futureSprintsStartIndex}
                         openCreatingProject={this.openCreatingProject}
                         openEditingSprint={this.openEditingSprint}
                         openSprintStatistics={this.openSprintStatistics}
                         openEditingProject={this.openEditingProject}
-                        toggleFutureSprints={this.toggleFutureSprints}
                     />
 
                     <CreateNewSprintButton openCreatingSprint={this.openCreatingSprint} />
@@ -355,7 +262,6 @@ export class MainView extends Component {
                         displayingSprintStatistics={this.state.displayingSprintStatistics}
                         closeSprintStatistics={this.closeSprintStatistics}
                     />
-                    
                 </div>
                 <Footer />
             </div>

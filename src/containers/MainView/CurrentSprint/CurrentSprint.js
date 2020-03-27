@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { withStyles } from '@material-ui/core/styles';
 
 import AddCircleOutlineOutlinedIcon from '@material-ui/icons/AddCircleOutlineOutlined';
@@ -47,14 +47,25 @@ const styles = theme => ({
     conditionalButtons: {
         margin: '2px 2px',
     },
+    [theme.breakpoints.down('sm')]: { // Docs: https://material-ui.com/customization/breakpoints/#theme-breakpoints-down-key-media-query
+        conditionalButtonsContainer: {
+            marginTop: '0',
+        },
+    },
 });
   
-const currentSprint = (props) => {
+const CurrentSprint = (props) => {
+
     const { classes } = props;
 
-    let currentSprint = null;
+    const [displayCurrentSprint, setDisplayCurrentSprint] = useState(true);
 
-    if (props.displayCurrentSprint && props.sprints && props.currentSprintIndex !== null) {
+    const toggleCurrentSprint = () => {
+        setDisplayCurrentSprint(!displayCurrentSprint);
+    }
+
+    let currentSprint = null;
+    if (displayCurrentSprint && props.sprints && props.currentSprintIndex !== null) {
         currentSprint = (
             <div className={classes.sprintContainer}>
                 <div className={classes.innerSprintContainer}>
@@ -72,15 +83,15 @@ const currentSprint = (props) => {
                 </div>
             </div>
         );
-    } else if (props.displayCurrentSprint) {
+    } else if (displayCurrentSprint) {
         currentSprint = <div className={classes.sprintMissingMessage} data-testid="NoCurrentSprint">No current sprint.</div>
     }
 
     return(
         <div className={classes.sprintSectionContainer}>
             <div className={classes.buttonContainer}>
-                <Button variant="contained" color="primary" className={classes.buttonSpacing} onClick={props.toggleCurrentSprint}>CURRENT SPRINT</Button>
-                {props.displayCurrentSprint && props.currentSprintIndex !== null
+                <Button variant="contained" color="primary" className={classes.buttonSpacing} onClick={toggleCurrentSprint}>CURRENT SPRINT</Button>
+                {displayCurrentSprint && props.currentSprintIndex !== null
                 ?   <div className={classes.conditionalButtonsContainer}>
                         <Button 
                             size="small" variant="outlined" color="primary" className={classes.conditionalButtons} 
@@ -112,4 +123,4 @@ const currentSprint = (props) => {
     );
 }
 
-export default withStyles(styles)(currentSprint);
+export default withStyles(styles)(CurrentSprint);
