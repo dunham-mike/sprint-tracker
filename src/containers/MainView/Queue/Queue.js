@@ -50,6 +50,8 @@ const styles = theme => ({
 const queue = (props) => {
     const { classes } = props;
 
+    const queueSprintId = -1;
+
     let queue = null;
 
     if (props.displayQueue && props.queue !== null && props.queue.length > 0) {
@@ -58,7 +60,7 @@ const queue = (props) => {
                 <div className={classes.innerSprintContainer}>
                     <Sprint 
                         sprint={props.queue} 
-                        sprintId={props.queueSprintId}
+                        sprintId={queueSprintId}
                         onOpenProject={props.openEditingProject}
                         sprintType="queue"
                     />
@@ -78,7 +80,7 @@ const queue = (props) => {
                         <Button 
                             size="small" variant="outlined" color="default" className={classes.conditionalButtons} 
                             startIcon={<AddCircleOutlineOutlinedIcon />}
-                            onClick={() => props.openCreatingProject(props.queueSprintId)}
+                            onClick={() => props.openCreatingProject(queueSprintId)}
                         >
                             ADD NEW PROJECT
                         </Button>

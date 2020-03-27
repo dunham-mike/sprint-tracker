@@ -2020,7 +2020,6 @@ exports[`MainView Component should match the snapshot 1`] = `
             },
           ]
         }
-        queueSprintId={-1}
         toggleQueue={[Function]}
       >
         <queue
@@ -2247,7 +2246,6 @@ exports[`MainView Component should match the snapshot 1`] = `
               },
             ]
           }
-          queueSprintId={-1}
           toggleQueue={[Function]}
         >
           <div
@@ -3236,6 +3234,21 @@ exports[`MainView Component should match the snapshot 1`] = `
           </div>
         </createNewSprintButton>
       </WithStyles(createNewSprintButton)>
+      <mainViewModals
+        closeCreatingProject={[Function]}
+        closeCreatingSprint={[Function]}
+        closeEditingProject={[Function]}
+        closeEditingSprint={[Function]}
+        closeSprintStatistics={[Function]}
+        creatingProject={false}
+        creatingSprint={false}
+        displayingSprintStatistics={false}
+        editingProject={false}
+        editingSprint={false}
+        projectIdBeingViewed={null}
+        sprintIdBeingViewed={null}
+        sprintIndexBeingViewed={null}
+      />
     </div>
     <WithStyles(footer)>
       <footer

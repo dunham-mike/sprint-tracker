@@ -1,17 +1,9 @@
 import React, { Component } from 'react';
-import Button from '@material-ui/core/Button';
 import { connect } from 'react-redux';
-
 import moment from 'moment'; 
 
-import AddCircleOutlineOutlinedIcon from '@material-ui/icons/AddCircleOutlineOutlined';
-
-import EditSprint from '../EditSprint/EditSprint';
 import { withStyles } from '@material-ui/core/styles';
-import EditProject from '../EditProject/EditProject';
 import * as actions from '../../store/actions/index';
-import SprintStatistics from '../../components/SprintStatistics/SprintStatistics';
-import ModalErrorBoundary from '../ErrorBoundary/ModalErrorBoundary/ModalErrorBoundary';
 
 import Footer from '../../components/Footer/Footer';
 import CurrentSprint from './CurrentSprint/CurrentSprint';
@@ -19,6 +11,7 @@ import NextSprint from './NextSprint/NextSprint';
 import Queue from './Queue/Queue';
 import FutureSprints from './FutureSprints/FutureSprints';
 import CreateNewSprintButton from './CreateNewSprintButton/CreateNewSprintButton';
+import MainViewModals from './MainViewModals/MainViewModals';
 
 const styles = theme => ({
     overallContainer: {
@@ -119,7 +112,6 @@ export class MainView extends Component {
     }
 
     componentDidMount = () => {
-        // console.log('process.env.REACT_APP_FIREBASE_API_KEY:', process.env.REACT_APP_FIREBASE_API_KEY);
         this.props.onOrderSprintsByStartDate();
         this.categorizeSprintsByStartDate();
         if(this.props.isDemo) {
@@ -297,108 +289,6 @@ export class MainView extends Component {
     render() {
         const { classes } = this.props;
 
-        const queueSprintId = -1;
-
-        // --------------------
-
-        // Displaying the Project Editing Modal
-        let projectEdit = null;
-
-        if (this.state.editingProject) {
-            projectEdit = (
-                <div>
-                    <ModalErrorBoundary
-                        onClose={this.closeEditingProject}
-                    >
-                        <EditProject 
-                            projectId={this.state.projectIdBeingViewed}
-                            sprintId={this.state.sprintIdBeingViewed}
-                            sprintIndex={this.state.sprintIndexBeingViewed}
-                            onCloseProject={this.closeEditingProject}
-                            actionType={"edit"}
-                        />
-                    </ModalErrorBoundary>
-                </div>
-            );
-        }
-
-        // Displaying the Project Creating Modal
-        let projectCreate = null;
-
-        if (this.state.creatingProject) {
-            projectCreate = (
-                <div>
-                    <ModalErrorBoundary
-                        onClose={this.closeCreatingProject}
-                    >
-                        <EditProject 
-                            projectId={null}
-                            sprintId={this.state.sprintIdBeingViewed}
-                            sprintIndex={this.state.sprintIndexBeingViewed}
-                            onCloseProject={this.closeCreatingProject}
-                            actionType={"create"}
-                        />
-                    </ModalErrorBoundary>
-                </div>
-            );
-        }
-
-        // Displaying the Sprint Editing Modal
-        let sprintEdit = null;
-
-        if (this.state.editingSprint) {
-            sprintEdit = (
-                <div>
-                    <ModalErrorBoundary
-                        onClose={this.closeEditingSprint}
-                    >
-                        <EditSprint
-                            sprintId={this.state.sprintIdBeingViewed}
-                            onCloseSprint={this.closeEditingSprint}
-                            actionType={"edit"}
-                        />
-                     </ModalErrorBoundary>
-                </div>
-            );
-        }
-
-        // Displaying the Sprint Creating Modal
-        let sprintCreate = null;
-
-        if (this.state.creatingSprint) {
-            sprintCreate = (
-                <div>
-                    <ModalErrorBoundary
-                        onClose={this.closeCreatingSprint}
-                    >
-                        <EditSprint
-                            onCloseSprint={this.closeCreatingSprint}
-                            actionType={"create"}
-                        />
-                     </ModalErrorBoundary>
-                </div>
-            );
-        }
-
-        // Displaying the Sprint Statistics Modal
-        let sprintStatistics = null;
-
-        if (this.state.displayingSprintStatistics) {
-            sprintStatistics = (
-                <div>
-                    <ModalErrorBoundary
-                        onClose={this.closeSprintStatistics}
-                    >
-                        <SprintStatistics 
-                            sprintId={this.state.sprintIdBeingViewed}
-                            sprintIndex={this.state.sprintIndexBeingViewed}
-                            onCloseSprintStatistics={this.closeSprintStatistics}
-                        />
-                    </ModalErrorBoundary>
-                </div>
-            );
-        }
-
         return(
             <div className={classes.overallContainer}>
                 <div className={classes.mainViewContainer}>
@@ -427,7 +317,6 @@ export class MainView extends Component {
                     <Queue 
                         displayQueue={this.state.displayQueue}
                         queue={this.props.queue}
-                        queueSprintId={queueSprintId}
                         openEditingProject={this.openEditingProject}
                         toggleQueue={this.toggleQueue}
                         openCreatingProject={this.openCreatingProject}
@@ -446,15 +335,26 @@ export class MainView extends Component {
 
                     <CreateNewSprintButton openCreatingSprint={this.openCreatingSprint} />
 
-                    {/* Edit Projects and Sprints Modals */}
-                    {projectEdit}
-                    {projectCreate}
-                    {sprintEdit}
-                    {sprintCreate}
+                    <MainViewModals 
+                        sprintIdBeingViewed={this.state.sprintIdBeingViewed}
+                        sprintIndexBeingViewed={this.state.sprintIndexBeingViewed}
 
-                    {/* Sprint Statistics Modal */}
-                    {sprintStatistics}
+                        editingProject={this.state.editingProject}
+                        closeEditingProject={this.closeEditingProject}
+                        projectIdBeingViewed={this.state.projectIdBeingViewed}
 
+                        creatingProject={this.state.creatingProject}
+                        closeCreatingProject={this.closeCreatingProject}
+
+                        editingSprint={this.state.editingSprint}
+                        closeEditingSprint={this.closeEditingSprint}
+
+                        creatingSprint={this.state.creatingSprint}
+                        closeCreatingSprint={this.closeCreatingSprint}
+
+                        displayingSprintStatistics={this.state.displayingSprintStatistics}
+                        closeSprintStatistics={this.closeSprintStatistics}
+                    />
                     
                 </div>
                 <Footer />
