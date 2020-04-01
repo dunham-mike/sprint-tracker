@@ -10,27 +10,17 @@ const initialState = {
 }
 
 const getSprintIndexWithSprintId = (state, sprintId) => {
-    // console.log('Start of getSprintIndexWithSprintId');
-    // console.log('state.sprints.length:', state.sprints.length);
 
     for(let i=0; i<state.sprints.length; i++) {
-        // console.log('running i =', i);
         if(state.sprints[i].id === sprintId) {
-            // console.log('returning i=', i);
             return i;
         }
     };
 
-    console.log('[Error] getSprintIndexWithSprintId() returning null');
-    // If no match found, return null
-    return null;
+    throw new Error('[sprints.js] getSprintIndexWithSprintId() cannot find a sprint with that sprintId');
 };
 
 const getProjectIndexWithSprintIndexAndProjectId = (state, sprintIndex, projectId) => {
-    // console.log('state:', state);
-    // console.log('sprintIndex:', sprintIndex);
-    // console.log('projectId:', projectId);
-
     let projectArray;
     if (sprintIndex === -1) { // A value of -1 indicates the sprint is the queue
         projectArray = state.queue;
@@ -38,16 +28,13 @@ const getProjectIndexWithSprintIndexAndProjectId = (state, sprintIndex, projectI
         projectArray = state.sprints[sprintIndex].projects;
     }
     
-    // console.log('projectArray:', projectArray);
-
     for(let i=0; i<projectArray.length; i++) {
         if(projectArray[i].id.value === projectId) {
             return i;
         }
     }
 
-    // If no match found, return null
-    return null;
+    throw new Error('[sprints.js] getProjectIndexWithSprintIndexAndProjectId() cannot find a project with that sprintIndex and projectId');
 };
 
 const updateObjectInArray = (array, newItemIndex, newItem) => {
@@ -59,22 +46,15 @@ const updateObjectInArray = (array, newItemIndex, newItem) => {
       }
       // Otherwise, this is the one we want - return an updated value
       return {
-        ...item, // TODO: don't understand what the spread operator here is doing...
+        ...item,
         ...newItem
       }
     })
 };
 
 const updateProjectOnSprint = (state, action) => {
-    // console.log('state:', state);
-    // console.log('action:', action);
-    // console.log('action.sprintId:', action.sprintId);
-
     const sprintIndex = getSprintIndexWithSprintId(state, action.sprintId);
-    // console.log('sprintIndex:', sprintIndex);
     const projectIndex = getProjectIndexWithSprintIndexAndProjectId(state, sprintIndex, action.projectData.id.value);
-    // console.log('sprintIndex:', sprintIndex);
-    // console.log('projectIndex:', projectIndex);
 
     if (sprintIndex === null || projectIndex === null) {
         console.log('[Error] Cannot find sprint and/or project index in current state');
@@ -207,8 +187,6 @@ const deleteProject = (state, action) => {
 }
 
 const updateSprint = (state, action) => {
-    // console.log('updateSprint triggered');
-
     // Important Note: action.sprintData does NOT include the existing projects, so those need to be copied onto the updated sprint object
     const sprintIndex = getSprintIndexWithSprintId(state, action.sprintId);
     let newSprintObjectWithProjects = {...action.sprintData};
@@ -231,11 +209,8 @@ const updateSprint = (state, action) => {
 };
 
 const addSprint = (state, action) => {
-    // console.log('addSprint reducer function firing');
-
     // Important Note: action.sprintData does NOT include a projects key, so that needs to be added
     let newSprintObjectWithProjects = {...action.sprintData};
-    // newSprintObjectWithProjects['projects'] = []; // Commenting out to handle in EditSprint
 
     // Push the updated sprint object onto a new copy of the sprints array
     let updatedFullSprintsArray = [...state.sprints];
@@ -273,10 +248,8 @@ const deleteSprint = (state, action) => {
 const sortingFunction = (a, b) => {
     // If start dates the same, sort by end date. Otherwise, just sort by start date.
     if(moment.utc(a.startDate).isSame(moment.utc(b.startDate), "day")) {
-        // console.log('Ordering based on end date (a, b):', a.endDate, b.endDate);
         return a.endDate - b.endDate;
     } else {
-        // console.log('Ordering based on start date (a, b):', a.startDate, b.startDate);
         return a.startDate - b.startDate;
     }
 }
